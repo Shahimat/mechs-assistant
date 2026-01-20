@@ -170,7 +170,10 @@ export const RobotsGrid: React.FC = () => {
         filter: false,
         lockPosition: 'left', // Блокируем перемещение столбца "parameter" слева
         suppressMovable: false, // Разрешаем перемещение, но блокируем позицию
-        cellStyle: { fontWeight: 'bold' },
+        cellStyle: { 
+          fontWeight: 'bold',
+          borderRight: '1px solid #e0e0e0', // Вертикальная граница между столбцами
+        },
       },
     ];
 
@@ -208,10 +211,14 @@ export const RobotsGrid: React.FC = () => {
         cellStyle: (params) => {
           // Для строки "Базовый робот" центрируем содержимое
           if (params.data?.parameter === 'Базовый робот') {
-            return { textAlign: 'center' };
+            return { 
+              textAlign: 'center',
+              borderRight: '1px solid #e0e0e0', // Вертикальная граница между столбцами
+            };
           }
           const baseStyle: Record<string, string> = {
             textAlign: 'right', // Все значения выравниваем по правому краю
+            borderRight: '1px solid #e0e0e0', // Вертикальная граница между столбцами
           };
 
           // Базовый робот не сравниваем
@@ -336,6 +343,9 @@ export const RobotsGrid: React.FC = () => {
       resizable: true,
       sortable: false,
       filter: false,
+      cellStyle: {
+        borderRight: '1px solid #e0e0e0', // Вертикальная граница между столбцами
+      },
     }),
     []
   );
