@@ -1,172 +1,29 @@
-import { useMemo, useRef, useCallback } from 'react';
+import { useMemo, useRef, useCallback, useEffect } from 'react';
 import { AgGridReact } from 'ag-grid-react';
 import type { ColDef, GridOptions, ColumnMovedEvent, GridApi, GridReadyEvent } from 'ag-grid-community';
 import { ModuleRegistry, AllCommunityModule } from 'ag-grid-community';
-import { Box, Typography } from '@mui/material';
-import type { Robot } from '../types/robot';
-import robotsData from '../../data/robots.json';
+import { Box, Typography, CircularProgress, Alert } from '@mui/material';
+import { useRobotsStore } from '../stores/robotsStore';
 
 // Регистрация модулей AG Grid
 ModuleRegistry.registerModules([AllCommunityModule]);
 
 /**
- * Преобразует данные роботов в транспонированный формат
- * (параметры в строках, роботы в столбцах)
- */
-function transposeRobotsData(robots: Robot[]) {
-  const rows: Record<string, unknown>[] = [];
-
-  // Базовые параметры (Название и Модель скрыты)
-  rows.push({
-    parameter: 'Тип',
-    ...robots.reduce((acc, robot, index) => {
-      acc[`robot_${index}`] = robot.type;
-      return acc;
-    }, {} as Record<string, unknown>),
-  });
-
-  rows.push({
-    parameter: 'Уровень',
-    ...robots.reduce((acc, robot, index) => {
-      acc[`robot_${index}`] = robot.requiredLevel;
-      return acc;
-    }, {} as Record<string, unknown>),
-  });
-
-  // Характеристики
-  rows.push({
-    parameter: 'Прочность',
-    ...robots.reduce((acc, robot, index) => {
-      acc[`robot_${index}`] = robot.stats.durability;
-      return acc;
-    }, {} as Record<string, unknown>),
-  });
-
-  rows.push({
-    parameter: 'Вместимость',
-    ...robots.reduce((acc, robot, index) => {
-      acc[`robot_${index}`] = robot.stats.capacity;
-      return acc;
-    }, {} as Record<string, unknown>),
-  });
-
-  rows.push({
-    parameter: 'Макс. вместимость',
-    ...robots.reduce((acc, robot, index) => {
-      acc[`robot_${index}`] = robot.stats.maxCapacity ?? '-';
-      return acc;
-    }, {} as Record<string, unknown>),
-  });
-
-  rows.push({
-    parameter: 'Скорость',
-    ...robots.reduce((acc, robot, index) => {
-      acc[`robot_${index}`] = robot.stats.speed;
-      return acc;
-    }, {} as Record<string, unknown>),
-  });
-
-  rows.push({
-    parameter: 'Макс. скорость',
-    ...robots.reduce((acc, robot, index) => {
-      acc[`robot_${index}`] = robot.stats.maxSpeed;
-      return acc;
-    }, {} as Record<string, unknown>),
-  });
-
-  rows.push({
-    parameter: 'Броня',
-    ...robots.reduce((acc, robot, index) => {
-      acc[`robot_${index}`] = robot.stats.armor;
-      return acc;
-    }, {} as Record<string, unknown>),
-  });
-
-  rows.push({
-    parameter: 'Поля',
-    ...robots.reduce((acc, robot, index) => {
-      acc[`robot_${index}`] = robot.stats.energyFields;
-      return acc;
-    }, {} as Record<string, unknown>),
-  });
-
-  rows.push({
-    parameter: 'Восстановление/мин',
-    ...robots.reduce((acc, robot, index) => {
-      acc[`robot_${index}`] = robot.stats.regenerationPerMinute ?? '-';
-      return acc;
-    }, {} as Record<string, unknown>),
-  });
-
-  rows.push({
-    parameter: 'Доп. неуязвимость',
-    ...robots.reduce((acc, robot, index) => {
-      const value = robot.stats.additionalInvulnerability;
-      acc[`robot_${index}`] = value != null ? `${value > 0 ? '+' : ''}${value}с` : '-';
-      return acc;
-    }, {} as Record<string, unknown>),
-  });
-
-  rows.push({
-    parameter: 'Доп. ускорение',
-    ...robots.reduce((acc, robot, index) => {
-      const value = robot.stats.additionalAcceleration;
-      acc[`robot_${index}`] = value != null ? `${value > 0 ? '+' : ''}${value}с` : '-';
-      return acc;
-    }, {} as Record<string, unknown>),
-  });
-
-  // Цены
-  rows.push({
-    parameter: 'Цена покупки (бонусы)',
-    ...robots.reduce((acc, robot, index) => {
-      acc[`robot_${index}`] = robot.buyPrice?.bonds ?? '-';
-      return acc;
-    }, {} as Record<string, unknown>),
-  });
-
-  rows.push({
-    parameter: 'Цена покупки (реглы)',
-    ...robots.reduce((acc, robot, index) => {
-      acc[`robot_${index}`] = robot.buyPrice?.regls ?? '-';
-      return acc;
-    }, {} as Record<string, unknown>),
-  });
-
-  rows.push({
-    parameter: 'Цена продажи (бонусы)',
-    ...robots.reduce((acc, robot, index) => {
-      acc[`robot_${index}`] = robot.sellPrice?.bonds ?? '-';
-      return acc;
-    }, {} as Record<string, unknown>),
-  });
-
-  rows.push({
-    parameter: 'Цена продажи (реглы)',
-    ...robots.reduce((acc, robot, index) => {
-      acc[`robot_${index}`] = robot.sellPrice?.regls ?? '-';
-      return acc;
-    }, {} as Record<string, unknown>),
-  });
-
-  rows.push({
-    parameter: 'Прокачка (реглы %)',
-    ...robots.reduce((acc, robot, index) => {
-      acc[`robot_${index}`] = robot.upgradeReglPercent ? `${robot.upgradeReglPercent}%` : '-';
-      return acc;
-    }, {} as Record<string, unknown>),
-  });
-
-  return { rows, robots };
-}
-
-/**
  * Компонент для отображения таблицы роботов с использованием ag-grid
  */
 export const RobotsGrid: React.FC = () => {
-  const robots = robotsData as Robot[];
-  const { rows, robots: robotList } = transposeRobotsData(robots);
+  const { robots, transposedData, isLoading, error, initializeRobots } = useRobotsStore();
   const gridApiRef = useRef<GridApi | null>(null);
+
+  // Инициализируем данные при монтировании компонента
+  useEffect(() => {
+    if (!transposedData && !isLoading) {
+      initializeRobots();
+    }
+  }, [transposedData, isLoading, initializeRobots]);
+
+  // Получаем данные для таблицы
+  const { rows, robots: robotList } = transposedData || { rows: [], robots: [] };
 
   // Обработчик готовности грида
   const handleGridReady = useCallback((params: GridReadyEvent) => {
@@ -202,10 +59,13 @@ export const RobotsGrid: React.FC = () => {
             allColumns = api.columnApi.getAllDisplayedColumns();
           } else {
             const cols = gridApiRef.current.getColumns() || [];
-            const colsWithPos = cols.map((col: { getColId: () => string; getLeft: () => number }) => ({
-              col,
-              left: col.getLeft?.() ?? 0,
-            }));
+            const colsWithPos = cols.map((col) => {
+              const left = (col as unknown as { getLeft?: () => number | null }).getLeft?.() ?? null;
+              return {
+                col,
+                left: left ?? 0,
+              };
+            });
             colsWithPos.sort((a, b) => a.left - b.left);
             allColumns = colsWithPos.map((item) => item.col);
           }
@@ -220,21 +80,15 @@ export const RobotsGrid: React.FC = () => {
             try {
               const api = gridApiRef.current;
               
-              // Используем moveColumn для перемещения столбца на позицию после parameter
-              // В AG Grid v35 moveColumn принимает column и toIndex
+              // Используем moveColumns для перемещения столбца на позицию после parameter
+              // В AG Grid v35 используется moveColumns
               const targetIndex = parameterIndex + 1;
               
-              // Пробуем разные способы перемещения
-              if (typeof api.moveColumn === 'function') {
-                // Стандартный способ
-                api.moveColumn(movedColumnId, targetIndex);
-              } else {
-                // Альтернативный способ через moveColumns
-                const moveColumns = (api as unknown as { moveColumns?: (columns: unknown[], toIndex: number) => void }).moveColumns;
-                if (moveColumns) {
-                  const columnToMove = allColumns[movedColumnIndex];
-                  moveColumns([columnToMove], targetIndex);
-                }
+              // Используем moveColumns
+              const moveColumns = (api as unknown as { moveColumns?: (columns: unknown[], toIndex: number) => void }).moveColumns;
+              if (moveColumns) {
+                const columnToMove = allColumns[movedColumnIndex];
+                moveColumns([columnToMove], targetIndex);
               }
               
               // Дополнительно обновляем отображение
@@ -467,6 +321,31 @@ export const RobotsGrid: React.FC = () => {
     [handleGridReady, handleColumnMoved]
   );
 
+  // Показываем загрузку или ошибку
+  if (isLoading) {
+    return (
+      <Box sx={{ width: '100%', height: '100vh', p: 2, display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+        <CircularProgress />
+      </Box>
+    );
+  }
+
+  if (error) {
+    return (
+      <Box sx={{ width: '100%', height: '100vh', p: 2 }}>
+        <Alert severity="error">{error}</Alert>
+      </Box>
+    );
+  }
+
+  if (!transposedData || rows.length === 0) {
+    return (
+      <Box sx={{ width: '100%', height: '100vh', p: 2 }}>
+        <Alert severity="info">Нет данных для отображения</Alert>
+      </Box>
+    );
+  }
+
   return (
     <Box sx={{ width: '100%', height: '100vh', p: 2 }}>
       <Typography variant="h4" component="h1" gutterBottom sx={{ mb: 2 }}>
@@ -490,7 +369,6 @@ export const RobotsGrid: React.FC = () => {
           columnDefs={columnDefs}
           defaultColDef={defaultColDef}
           gridOptions={gridOptions}
-          style={{ width: '100%', height: '100%' }}
         />
       </Box>
     </Box>
