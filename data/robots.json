@@ -2,7 +2,7 @@
   {
     "name": "Аэро Тягач 60",
     "model": "Аэро Тягач",
-    "type": "боец",
+    "type": "транспортник",
     "requiredLevel": 60,
     "stats": {
       "durability": 10000,
@@ -25,7 +25,7 @@
   {
     "name": "Аэро Тягач 70",
     "model": "Аэро Тягач",
-    "type": "боец",
+    "type": "транспортник",
     "requiredLevel": 70,
     "stats": {
       "durability": 20000,
@@ -46,9 +46,29 @@
     }
   },
   {
+    "name": "Аэро Тягач 70",
+    "model": "Аэро Тягач",
+    "type": "транспортник",
+    "requiredLevel": 70,
+    "stats": {
+      "durability": 20000,
+      "capacity": 35000,
+      "speed": 9.1,
+      "maxSpeed": 20.02,
+      "armor": 0,
+      "energyFields": 0
+    },
+    "buyPrice": {
+      "bonds": 12000000
+    },
+    "sellPrice": {
+      "bonds": 3000000
+    }
+  },
+  {
     "name": "Аэро Тягач 80",
     "model": "Аэро Тягач",
-    "type": "боец",
+    "type": "транспортник",
     "requiredLevel": 80,
     "stats": {
       "durability": 25000,
@@ -71,9 +91,30 @@
     "upgradeReglPercent": 100
   },
   {
+    "name": "Аэро Тягач 80 м",
+    "model": "Аэро Тягач",
+    "type": "транспортник",
+    "requiredLevel": 80,
+    "stats": {
+      "durability": 25000,
+      "capacity": 50000,
+      "speed": 9.1,
+      "maxSpeed": 20.02,
+      "armor": 0,
+      "energyFields": 0,
+      "additionalInvulnerability": 2
+    },
+    "buyPrice": {
+      "bonds": 4000000
+    },
+    "sellPrice": {
+      "bonds": 1000000
+    }
+  },
+  {
     "name": "Аэро Тягач 90",
     "model": "Аэро Тягач",
-    "type": "боец",
+    "type": "транспортник",
     "requiredLevel": 90,
     "stats": {
       "durability": 90000,
@@ -96,9 +137,30 @@
     "upgradeReglPercent": 100
   },
   {
+    "name": "Аэро Тягач 90 м",
+    "model": "Аэро Тягач",
+    "type": "транспортник",
+    "requiredLevel": 90,
+    "stats": {
+      "durability": 90000,
+      "capacity": 70000,
+      "speed": 9.6,
+      "maxSpeed": 21.12,
+      "armor": 80,
+      "energyFields": 80,
+      "additionalInvulnerability": 2
+    },
+    "buyPrice": {
+      "bonds": 5500000
+    },
+    "sellPrice": {
+      "bonds": 1375000
+    }
+  },
+  {
     "name": "Аэро Тягач 95",
     "model": "Аэро Тягач",
-    "type": "боец",
+    "type": "транспортник",
     "requiredLevel": 95,
     "stats": {
       "durability": 220000,
@@ -122,6 +184,28 @@
     "upgradeReglPercent": 100
   },
   {
+    "name": "Аэро Тягач 95 м",
+    "model": "Аэро Тягач",
+    "type": "транспортник",
+    "requiredLevel": 95,
+    "stats": {
+      "durability": 220000,
+      "capacity": 100000,
+      "speed": 9.3,
+      "maxSpeed": 20.46,
+      "armor": 85,
+      "energyFields": 85,
+      "regenerationPerMinute": 24000,
+      "additionalInvulnerability": 3
+    },
+    "buyPrice": {
+      "bonds": 7000000
+    },
+    "sellPrice": {
+      "bonds": 1750000
+    }
+  },
+  {
     "name": "Бекас 96",
     "model": "Бекас",
     "type": "боец",
@@ -138,11 +222,11 @@
       "additionalAcceleration": 1
     },
     "buyPrice": {
-      "bonds": 100000000,
+      "bonds": 9000000,
       "regls": null
     },
     "sellPrice": {
-      "bonds": 25000000,
+      "bonds": 2250000,
       "regls": null
     }
   },
@@ -197,6 +281,29 @@
       "regls": null
     },
     "upgradeReglPercent": 300
+  },
+  {
+    "name": "Бекас 96 м",
+    "model": "Бекас",
+    "type": "боец",
+    "requiredLevel": 96,
+    "stats": {
+      "durability": 400000,
+      "capacity": 2750,
+      "speed": 9.4,
+      "maxSpeed": 20.68,
+      "armor": 500,
+      "energyFields": 500,
+      "regenerationPerMinute": 225000,
+      "additionalInvulnerability": -1,
+      "additionalAcceleration": 1
+    },
+    "buyPrice": {
+      "bonds": 5000000
+    },
+    "sellPrice": {
+      "bonds": 1250000
+    }
   },
   {
     "name": "Беркут 35",
@@ -380,7 +487,7 @@
     "upgradeReglPercent": 100
   },
   {
-    "name": "Бугай 100",
+    "name": "Бугай 100 м",
     "model": "Бугай",
     "type": "боец",
     "requiredLevel": 100,
@@ -392,7 +499,7 @@
       "armor": 550,
       "energyFields": 550,
       "regenerationPerMinute": 240000,
-      "additionalInvulnerability": 2,
+      "additionalInvulnerability": -2,
       "additionalAcceleration": 1.5
     },
     "buyPrice": {
@@ -406,7 +513,7 @@
     "upgradeReglPercent": 100
   },
   {
-    "name": "Бугай 100",
+    "name": "Бугай 100 тмк",
     "model": "Бугай",
     "type": "боец",
     "requiredLevel": 100,
@@ -418,7 +525,7 @@
       "armor": 550,
       "energyFields": 550,
       "regenerationPerMinute": 240000,
-      "additionalInvulnerability": 2,
+      "additionalInvulnerability": -2,
       "additionalAcceleration": 1.5
     },
     "buyPrice": {
@@ -432,7 +539,7 @@
     "upgradeReglPercent": 300
   },
   {
-    "name": "Бугай 100",
+    "name": "Бугай 100 т",
     "model": "Бугай",
     "type": "боец",
     "requiredLevel": 100,
@@ -444,7 +551,7 @@
       "armor": 550,
       "energyFields": 550,
       "regenerationPerMinute": 240000,
-      "additionalInvulnerability": 2,
+      "additionalInvulnerability": -2,
       "additionalAcceleration": 1.5
     },
     "buyPrice": {
@@ -457,33 +564,71 @@
     }
   },
   {
-    "name": "Бугай 100",
-    "model": "Бугай",
+    "name": "Бугай 92",
+    "model": "Бугай",
     "type": "боец",
-    "requiredLevel": 100,
+    "requiredLevel": 92,
     "stats": {
-      "durability": 500000,
-      "capacity": 3000,
-      "speed": 8.2,
-      "maxSpeed": 18.04,
-      "armor": 550,
-      "energyFields": 550,
-      "regenerationPerMinute": 240000,
-      "additionalInvulnerability": 2,
-      "additionalAcceleration": 1.5
+      "durability": 240000,
+      "capacity": 2500,
+      "speed": 9.1,
+      "maxSpeed": 20.02,
+      "armor": 350,
+      "energyFields": 350,
+      "regenerationPerMinute": 60000
     },
     "buyPrice": {
-      "bonds": 300000000,
-      "regls": null
+      "bonds": 3000000
     },
     "sellPrice": {
-      "bonds": 75000000,
-      "regls": null
+      "bonds": 750000
     }
   },
   {
-    "name": "Бугай 100",
-    "model": "Бугай",
+    "name": "Бугай 94",
+    "model": "Бугай",
+    "type": "боец",
+    "requiredLevel": 94,
+    "stats": {
+      "durability": 330000,
+      "capacity": 2750,
+      "speed": 9.1,
+      "maxSpeed": 20.02,
+      "armor": 420,
+      "energyFields": 420,
+      "regenerationPerMinute": 90000
+    },
+    "buyPrice": {
+      "bonds": 7000000
+    },
+    "sellPrice": {
+      "bonds": 1750000
+    }
+  },
+  {
+    "name": "Бугай 98",
+    "model": "Бугай",
+    "type": "боец",
+    "requiredLevel": 98,
+    "stats": {
+      "durability": 360000,
+      "capacity": 3000,
+      "speed": 9.1,
+      "maxSpeed": 20.02,
+      "armor": 460,
+      "energyFields": 460,
+      "regenerationPerMinute": 240000
+    },
+    "buyPrice": {
+      "bonds": 3500000
+    },
+    "sellPrice": {
+      "bonds": 875000
+    }
+  },
+  {
+    "name": "Бугай 100",
+    "model": "Бугай",
     "type": "боец",
     "requiredLevel": 100,
     "stats": {
@@ -498,14 +643,11 @@
       "additionalAcceleration": 1.5
     },
     "buyPrice": {
-      "bonds": 10500000,
-      "regls": 2400
+      "bonds": 300000000
     },
     "sellPrice": {
-      "bonds": 2625000,
-      "regls": null
-    },
-    "upgradeReglPercent": 300
+      "bonds": 75000000
+    }
   },
   {
     "name": "Гарпий",
@@ -527,6 +669,26 @@
     "sellPrice": {
       "bonds": 2500,
       "regls": null
+    }
+  },
+  {
+    "name": "Гарпий 5",
+    "model": "Гарпий",
+    "type": "боец",
+    "requiredLevel": 5,
+    "stats": {
+      "durability": 8000,
+      "capacity": 465,
+      "speed": 11,
+      "maxSpeed": 24.2,
+      "armor": 6,
+      "energyFields": 6
+    },
+    "buyPrice": {
+      "bonds": 10000
+    },
+    "sellPrice": {
+      "bonds": 2500
     }
   },
   {
@@ -769,52 +931,6 @@
     "type": "боец",
     "requiredLevel": 90,
     "stats": {
-      "durability": 230000,
-      "capacity": 2400,
-      "speed": 10.5,
-      "maxSpeed": 23.1,
-      "armor": 400,
-      "energyFields": 400,
-      "regenerationPerMinute": 60000
-    },
-    "buyPrice": {
-      "bonds": 8000000,
-      "regls": null
-    },
-    "sellPrice": {
-      "bonds": 2000000,
-      "regls": null
-    }
-  },
-  {
-    "name": "Дроф 90",
-    "model": "Дроф",
-    "type": "боец",
-    "requiredLevel": 90,
-    "stats": {
-      "durability": 220000,
-      "capacity": 2400,
-      "speed": 10.5,
-      "maxSpeed": 23.1,
-      "armor": 600,
-      "energyFields": 250,
-      "regenerationPerMinute": 60000
-    },
-    "buyPrice": {
-      "bonds": 8000000,
-      "regls": null
-    },
-    "sellPrice": {
-      "bonds": 2000000,
-      "regls": null
-    }
-  },
-  {
-    "name": "Дроф 90",
-    "model": "Дроф",
-    "type": "боец",
-    "requiredLevel": 90,
-    "stats": {
       "durability": 220000,
       "capacity": 2400,
       "speed": 10.5,
@@ -855,6 +971,29 @@
     "sellPrice": {
       "bonds": 10000000,
       "regls": null
+    }
+  },
+  {
+    "name": "Казуар 100",
+    "model": "Казуар",
+    "type": "боец",
+    "requiredLevel": 100,
+    "stats": {
+      "durability": 500000,
+      "capacity": 1800,
+      "speed": 9.5,
+      "maxSpeed": 20.9,
+      "armor": 350,
+      "energyFields": 350,
+      "regenerationPerMinute": 210000,
+      "additionalInvulnerability": 2,
+      "additionalAcceleration": 2
+    },
+    "buyPrice": {
+      "bonds": 60000000
+    },
+    "sellPrice": {
+      "bonds": 15000000
     }
   },
   {
@@ -924,6 +1063,26 @@
     }
   },
   {
+    "name": "Кондор 70",
+    "model": "Кондор",
+    "type": "боец",
+    "requiredLevel": 70,
+    "stats": {
+      "durability": 110000,
+      "capacity": 1100,
+      "speed": 11.4,
+      "maxSpeed": 25.08,
+      "armor": 160,
+      "energyFields": 160
+    },
+    "buyPrice": {
+      "bonds": 1000000
+    },
+    "sellPrice": {
+      "bonds": 250000
+    }
+  },
+  {
     "name": "Кондор 90",
     "model": "Кондор",
     "type": "боец",
@@ -943,6 +1102,26 @@
     "sellPrice": {
       "bonds": 500000,
       "regls": null
+    }
+  },
+  {
+    "name": "Кондор 90",
+    "model": "Кондор",
+    "type": "боец",
+    "requiredLevel": 90,
+    "stats": {
+      "durability": 130000,
+      "capacity": 1300,
+      "speed": 11.4,
+      "maxSpeed": 25.08,
+      "armor": 180,
+      "energyFields": 180
+    },
+    "buyPrice": {
+      "bonds": 2000000
+    },
+    "sellPrice": {
+      "bonds": 500000
     }
   },
   {
@@ -970,6 +1149,29 @@
       "regls": null
     },
     "upgradeReglPercent": 200
+  },
+  {
+    "name": "Кондор 100 м",
+    "model": "Кондор",
+    "type": "боец",
+    "requiredLevel": 100,
+    "stats": {
+      "durability": 290000,
+      "capacity": 2500,
+      "speed": 12.3,
+      "maxSpeed": 27.06,
+      "armor": 390,
+      "energyFields": 390,
+      "regenerationPerMinute": 166666.66,
+      "additionalInvulnerability": 7,
+      "additionalAcceleration": -3
+    },
+    "buyPrice": {
+      "bonds": 5000000
+    },
+    "sellPrice": {
+      "bonds": 1250000
+    }
   },
   {
     "name": "Кречет 15",
@@ -1038,6 +1240,26 @@
     }
   },
   {
+    "name": "Кречет 80",
+    "model": "Кречет",
+    "type": "боец",
+    "requiredLevel": 80,
+    "stats": {
+      "durability": 130000,
+      "capacity": 2000,
+      "speed": 11,
+      "maxSpeed": 24.2,
+      "armor": 320,
+      "energyFields": 320
+    },
+    "buyPrice": {
+      "bonds": 3200000
+    },
+    "sellPrice": {
+      "bonds": 800000
+    }
+  },
+  {
     "name": "Кречет 90",
     "model": "Кречет",
     "type": "боец",
@@ -1057,6 +1279,26 @@
     "sellPrice": {
       "bonds": 1375000,
       "regls": null
+    }
+  },
+  {
+    "name": "Кречет 90",
+    "model": "Кречет",
+    "type": "боец",
+    "requiredLevel": 90,
+    "stats": {
+      "durability": 150000,
+      "capacity": 2500,
+      "speed": 10,
+      "maxSpeed": 22,
+      "armor": 350,
+      "energyFields": 350
+    },
+    "buyPrice": {
+      "bonds": 5500000
+    },
+    "sellPrice": {
+      "bonds": 1375000
     }
   },
   {
@@ -1106,7 +1348,7 @@
   {
     "name": "Манакин 8",
     "model": "Манакин",
-    "type": "боец",
+    "type": "транспортник",
     "requiredLevel": 8,
     "stats": {
       "durability": 7965,
@@ -1129,7 +1371,7 @@
   {
     "name": "Манакин 15",
     "model": "Манакин",
-    "type": "боец",
+    "type": "транспортник",
     "requiredLevel": 15,
     "stats": {
       "durability": 11730,
@@ -1152,7 +1394,7 @@
   {
     "name": "Манакин 21",
     "model": "Манакин",
-    "type": "боец",
+    "type": "транспортник",
     "requiredLevel": 21,
     "stats": {
       "durability": 15750,
@@ -1265,6 +1507,87 @@
       "regls": null
     },
     "upgradeReglPercent": 100
+  },
+  {
+    "name": "Муравей 50",
+    "model": "Муравей",
+    "type": "транспортник",
+    "requiredLevel": 50,
+    "stats": {
+      "durability": 28000,
+      "capacity": 12500,
+      "speed": 9.1,
+      "maxSpeed": 20.02,
+      "armor": 0,
+      "energyFields": 0
+    },
+    "buyPrice": {
+      "bonds": 3000000
+    },
+    "sellPrice": {
+      "bonds": 750000
+    }
+  },
+  {
+    "name": "Муравей 60",
+    "model": "Муравей",
+    "type": "транспортник",
+    "requiredLevel": 60,
+    "stats": {
+      "durability": 40000,
+      "capacity": 14500,
+      "speed": 9.6,
+      "maxSpeed": 21.12,
+      "armor": 50,
+      "energyFields": 50
+    },
+    "buyPrice": {
+      "bonds": 5000000
+    },
+    "sellPrice": {
+      "bonds": 1250000
+    }
+  },
+  {
+    "name": "Муравей 70",
+    "model": "Муравей",
+    "type": "транспортник",
+    "requiredLevel": 70,
+    "stats": {
+      "durability": 46000,
+      "capacity": 17500,
+      "speed": 9.6,
+      "maxSpeed": 21.12,
+      "armor": 50,
+      "energyFields": 50
+    },
+    "buyPrice": {
+      "bonds": 10000000
+    },
+    "sellPrice": {
+      "bonds": 2500000
+    }
+  },
+  {
+    "name": "Муравей 80",
+    "model": "Муравей",
+    "type": "транспортник",
+    "requiredLevel": 80,
+    "stats": {
+      "durability": 56000,
+      "capacity": 21500,
+      "speed": 9.6,
+      "maxSpeed": 21.12,
+      "armor": 70,
+      "energyFields": 70,
+      "regenerationPerMinute": 18000
+    },
+    "buyPrice": {
+      "bonds": 3000000
+    },
+    "sellPrice": {
+      "bonds": 750000
+    }
   },
   {
     "name": "Орел 67",
@@ -1425,6 +1748,27 @@
     "upgradeReglPercent": 100
   },
   {
+    "name": "Сапсан 92 м",
+    "model": "Сапсан",
+    "type": "боец",
+    "requiredLevel": 92,
+    "stats": {
+      "durability": 110000,
+      "capacity": 1800,
+      "speed": 13.5,
+      "maxSpeed": 29.7,
+      "armor": 150,
+      "energyFields": 150,
+      "regenerationPerMinute": 12000
+    },
+    "buyPrice": {
+      "bonds": 2500000
+    },
+    "sellPrice": {
+      "bonds": 625000
+    }
+  },
+  {
     "name": "Сапсан 98",
     "model": "Сапсан",
     "type": "боец",
@@ -1449,6 +1793,27 @@
     "upgradeReglPercent": 100
   },
   {
+    "name": "Сапсан 98 м",
+    "model": "Сапсан",
+    "type": "боец",
+    "requiredLevel": 98,
+    "stats": {
+      "durability": 130000,
+      "capacity": 2000,
+      "speed": 13.2,
+      "maxSpeed": 29.04,
+      "armor": 260,
+      "energyFields": 260,
+      "regenerationPerMinute": 80000
+    },
+    "buyPrice": {
+      "bonds": 3000000
+    },
+    "sellPrice": {
+      "bonds": 750000
+    }
+  },
+  {
     "name": "Сапсан 100",
     "model": "Сапсан",
     "type": "боец",
@@ -1465,11 +1830,11 @@
       "additionalAcceleration": 2.5
     },
     "buyPrice": {
-      "bonds": 5000000,
+      "bonds": 9000000,
       "regls": 600
     },
     "sellPrice": {
-      "bonds": 1250000,
+      "bonds": 2250000,
       "regls": null
     },
     "upgradeReglPercent": 100
@@ -1526,6 +1891,52 @@
     "upgradeReglPercent": 300
   },
   {
+    "name": "Сапсан 100 м",
+    "model": "Сапсан",
+    "type": "боец",
+    "requiredLevel": 100,
+    "stats": {
+      "durability": 240000,
+      "capacity": 2000,
+      "speed": 13.3,
+      "maxSpeed": 29.26,
+      "armor": 350,
+      "energyFields": 350,
+      "regenerationPerMinute": 100000,
+      "additionalInvulnerability": 3.5,
+      "additionalAcceleration": -2.5
+    },
+    "buyPrice": {
+      "bonds": 5000000
+    },
+    "sellPrice": {
+      "bonds": 1250000
+    }
+  },
+  {
+    "name": "Сапсан 100 мк",
+    "model": "Сапсан",
+    "type": "боец",
+    "requiredLevel": 100,
+    "stats": {
+      "durability": 240000,
+      "capacity": 2000,
+      "speed": 13.3,
+      "maxSpeed": 29.26,
+      "armor": 350,
+      "energyFields": 350,
+      "regenerationPerMinute": 100000,
+      "additionalInvulnerability": 3.5,
+      "additionalAcceleration": -2.5
+    },
+    "buyPrice": {
+      "bonds": 9000000
+    },
+    "sellPrice": {
+      "bonds": 2250000
+    }
+  },
+  {
     "name": "Скоп 70",
     "model": "Скоп",
     "type": "боец",
@@ -1546,6 +1957,27 @@
     "sellPrice": {
       "bonds": 500000,
       "regls": null
+    }
+  },
+  {
+    "name": "Скоп 70",
+    "model": "Скоп",
+    "type": "боец",
+    "requiredLevel": 70,
+    "stats": {
+      "durability": 135000,
+      "capacity": 1700,
+      "speed": 11,
+      "maxSpeed": 24.2,
+      "armor": 200,
+      "energyFields": 200,
+      "regenerationPerMinute": 30000
+    },
+    "buyPrice": {
+      "bonds": 2000000
+    },
+    "sellPrice": {
+      "bonds": 500000
     }
   },
   {
@@ -1572,6 +2004,27 @@
     }
   },
   {
+    "name": "Скоп 80",
+    "model": "Скоп",
+    "type": "боец",
+    "requiredLevel": 80,
+    "stats": {
+      "durability": 150000,
+      "capacity": 1800,
+      "speed": 11,
+      "maxSpeed": 24.2,
+      "armor": 225,
+      "energyFields": 225,
+      "regenerationPerMinute": 48000
+    },
+    "buyPrice": {
+      "bonds": 3000000
+    },
+    "sellPrice": {
+      "bonds": 750000
+    }
+  },
+  {
     "name": "Скоп 90",
     "model": "Скоп",
     "type": "боец",
@@ -1592,6 +2045,27 @@
     "sellPrice": {
       "bonds": 1250000,
       "regls": null
+    }
+  },
+  {
+    "name": "Скоп 90",
+    "model": "Скоп",
+    "type": "боец",
+    "requiredLevel": 90,
+    "stats": {
+      "durability": 175000,
+      "capacity": 2100,
+      "speed": 10,
+      "maxSpeed": 22,
+      "armor": 250,
+      "energyFields": 250,
+      "regenerationPerMinute": 30000
+    },
+    "buyPrice": {
+      "bonds": 5000000
+    },
+    "sellPrice": {
+      "bonds": 1250000
     }
   },
   {
@@ -1678,11 +2152,11 @@
       "additionalAcceleration": 2
     },
     "buyPrice": {
-      "bonds": 100000000,
+      "bonds": 9000000,
       "regls": null
     },
     "sellPrice": {
-      "bonds": 25000000,
+      "bonds": 2250000,
       "regls": null
     }
   },
@@ -1739,6 +2213,29 @@
     "upgradeReglPercent": 300
   },
   {
+    "name": "Стриж 100 м",
+    "model": "Стриж",
+    "type": "боец",
+    "requiredLevel": 100,
+    "stats": {
+      "durability": 300000,
+      "capacity": 2300,
+      "speed": 11.2,
+      "maxSpeed": 24.64,
+      "armor": 410,
+      "energyFields": 410,
+      "regenerationPerMinute": 120000,
+      "additionalInvulnerability": 1.5,
+      "additionalAcceleration": -2
+    },
+    "buyPrice": {
+      "bonds": 5000000
+    },
+    "sellPrice": {
+      "bonds": 1250000
+    }
+  },
+  {
     "name": "Титанис 70",
     "model": "Титанис",
     "type": "боец",
@@ -1783,6 +2280,26 @@
     }
   },
   {
+    "name": "Титанис 80",
+    "model": "Титанис",
+    "type": "боец",
+    "requiredLevel": 80,
+    "stats": {
+      "durability": 260000,
+      "capacity": 1200,
+      "speed": 10,
+      "maxSpeed": 22,
+      "armor": 135,
+      "energyFields": 135
+    },
+    "buyPrice": {
+      "bonds": 4000000
+    },
+    "sellPrice": {
+      "bonds": 1000000
+    }
+  },
+  {
     "name": "Титанис 90",
     "model": "Титанис",
     "type": "боец",
@@ -1802,6 +2319,26 @@
     "sellPrice": {
       "bonds": 1500000,
       "regls": null
+    }
+  },
+  {
+    "name": "Титанис 90",
+    "model": "Титанис",
+    "type": "боец",
+    "requiredLevel": 90,
+    "stats": {
+      "durability": 300000,
+      "capacity": 2000,
+      "speed": 9.6,
+      "maxSpeed": 21.12,
+      "armor": 300,
+      "energyFields": 300
+    },
+    "buyPrice": {
+      "bonds": 6000000
+    },
+    "sellPrice": {
+      "bonds": 1500000
     }
   },
   {
@@ -1831,6 +2368,29 @@
     "upgradeReglPercent": 100
   },
   {
+    "name": "Титанис 100 м",
+    "model": "Титанис",
+    "type": "боец",
+    "requiredLevel": 100,
+    "stats": {
+      "durability": 800000,
+      "capacity": 3300,
+      "speed": 7,
+      "maxSpeed": 15.4,
+      "armor": 600,
+      "energyFields": 600,
+      "regenerationPerMinute": 240000,
+      "additionalInvulnerability": -2,
+      "additionalAcceleration": 2
+    },
+    "buyPrice": {
+      "bonds": 8000000
+    },
+    "sellPrice": {
+      "bonds": 2000000
+    }
+  },
+  {
     "name": "Торнис",
     "model": "Торнис",
     "type": "боец",
@@ -1857,6 +2417,28 @@
     "upgradeReglPercent": 100
   },
   {
+    "name": "ТОРНИС 95 м",
+    "model": "Торнис",
+    "type": "транспортник",
+    "requiredLevel": 95,
+    "stats": {
+      "durability": 380000,
+      "capacity": 50000,
+      "speed": 8.8,
+      "maxSpeed": 19.36,
+      "armor": 100,
+      "energyFields": 100,
+      "regenerationPerMinute": 78000,
+      "additionalInvulnerability": -2
+    },
+    "buyPrice": {
+      "bonds": 8000000
+    },
+    "sellPrice": {
+      "bonds": 2000000
+    }
+  },
+  {
     "name": "Троган 85",
     "model": "Троган",
     "type": "боец",
@@ -1879,6 +2461,27 @@
       "regls": null
     },
     "upgradeReglPercent": 100
+  },
+  {
+    "name": "Троган 85 м",
+    "model": "Троган",
+    "type": "транспортник",
+    "requiredLevel": 85,
+    "stats": {
+      "durability": 156000,
+      "capacity": 12000,
+      "speed": 10.7,
+      "maxSpeed": 23.54,
+      "armor": 200,
+      "energyFields": 200,
+      "regenerationPerMinute": 30000
+    },
+    "buyPrice": {
+      "bonds": 3500000
+    },
+    "sellPrice": {
+      "bonds": 875000
+    }
   },
   {
     "name": "Троган 90",
@@ -1905,6 +2508,27 @@
     "upgradeReglPercent": 100
   },
   {
+    "name": "Троган 90 м",
+    "model": "Троган",
+    "type": "транспортник",
+    "requiredLevel": 90,
+    "stats": {
+      "durability": 166000,
+      "capacity": 11000,
+      "speed": 11.2,
+      "maxSpeed": 24.64,
+      "armor": 200,
+      "energyFields": 200,
+      "regenerationPerMinute": 42000
+    },
+    "buyPrice": {
+      "bonds": 4500000
+    },
+    "sellPrice": {
+      "bonds": 1125000
+    }
+  },
+  {
     "name": "Троган 92",
     "model": "Троган",
     "type": "боец",
@@ -1929,9 +2553,30 @@
     "upgradeReglPercent": 100
   },
   {
+    "name": "Троган 92 м",
+    "model": "Троган",
+    "type": "транспортник",
+    "requiredLevel": 92,
+    "stats": {
+      "durability": 176000,
+      "capacity": 14000,
+      "speed": 11.2,
+      "maxSpeed": 24.64,
+      "armor": 220,
+      "energyFields": 220,
+      "regenerationPerMinute": 36000
+    },
+    "buyPrice": {
+      "bonds": 5500000
+    },
+    "sellPrice": {
+      "bonds": 1375000
+    }
+  },
+  {
     "name": "Троган 95",
     "model": "Троган",
-    "type": "боец",
+    "type": "транспортник",
     "requiredLevel": 95,
     "stats": {
       "durability": 186000,
@@ -1943,11 +2588,11 @@
       "regenerationPerMinute": 53333.33
     },
     "buyPrice": {
-      "bonds": 6000000,
+      "bonds": 500000000,
       "regls": 1200
     },
     "sellPrice": {
-      "bonds": 1500000,
+      "bonds": 125000000,
       "regls": null
     },
     "upgradeReglPercent": 100
@@ -1976,9 +2621,30 @@
     }
   },
   {
+    "name": "Троган 95 м",
+    "model": "Троган",
+    "type": "транспортник",
+    "requiredLevel": 95,
+    "stats": {
+      "durability": 186000,
+      "capacity": 14000,
+      "speed": 11.2,
+      "maxSpeed": 24.64,
+      "armor": 220,
+      "energyFields": 220,
+      "regenerationPerMinute": 53333.33
+    },
+    "buyPrice": {
+      "bonds": 6000000
+    },
+    "sellPrice": {
+      "bonds": 1500000
+    }
+  },
+  {
     "name": "Тягач 28",
     "model": "Тягач",
-    "type": "боец",
+    "type": "транспортник",
     "requiredLevel": 28,
     "stats": {
       "durability": 18000,
@@ -2001,7 +2667,7 @@
   {
     "name": "Тягач 35",
     "model": "Тягач",
-    "type": "боец",
+    "type": "транспортник",
     "requiredLevel": 35,
     "stats": {
       "durability": 23000,
@@ -2022,9 +2688,29 @@
     }
   },
   {
+    "name": "Тягач 35",
+    "model": "Тягач",
+    "type": "транспортник",
+    "requiredLevel": 35,
+    "stats": {
+      "durability": 23000,
+      "capacity": 7000,
+      "speed": 9.6,
+      "maxSpeed": 21.12,
+      "armor": 0,
+      "energyFields": 0
+    },
+    "buyPrice": {
+      "bonds": 1000000
+    },
+    "sellPrice": {
+      "bonds": 250000
+    }
+  },
+  {
     "name": "Фаэтон 15",
     "model": "Фаэтон",
-    "type": "боец",
+    "type": "транспортник",
     "requiredLevel": 15,
     "stats": {
       "durability": 11730,
@@ -2047,7 +2733,7 @@
   {
     "name": "Фаэтон 28",
     "model": "Фаэтон",
-    "type": "боец",
+    "type": "транспортник",
     "requiredLevel": 28,
     "stats": {
       "durability": 16000,
@@ -2070,7 +2756,7 @@
   {
     "name": "Фаэтон 35",
     "model": "Фаэтон",
-    "type": "боец",
+    "type": "транспортник",
     "requiredLevel": 35,
     "stats": {
       "durability": 20000,
@@ -2159,5 +2845,28 @@
       "regls": null
     },
     "upgradeReglPercent": 100
+  },
+  {
+    "name": "Филин 100",
+    "model": "Филин",
+    "type": "боец",
+    "requiredLevel": 100,
+    "stats": {
+      "durability": 350000,
+      "capacity": 2650,
+      "speed": 11,
+      "maxSpeed": 24.2,
+      "armor": 480,
+      "energyFields": 480,
+      "regenerationPerMinute": 150000,
+      "additionalInvulnerability": 4.5,
+      "additionalAcceleration": -1
+    },
+    "buyPrice": {
+      "bonds": 6000000
+    },
+    "sellPrice": {
+      "bonds": 1500000
+    }
   }
 ]
