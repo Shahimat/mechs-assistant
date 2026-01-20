@@ -1,7 +1,8 @@
 import { create } from 'zustand';
 import { devtools } from 'zustand/middleware';
-import type { Robot } from '../types/robot';
-import robotsData from '../../data/robots.json';
+import type { Robot } from '../../types/robot';
+import type { RobotCustomization } from './types';
+import robotsData from '../../../data/robots.json';
 
 /**
  * Тип для строки транспонированной таблицы
@@ -16,15 +17,15 @@ export interface TransposedRow {
  */
 export interface TransposedRobotsData {
   rows: TransposedRow[];
-  robots: Robot[];
+  robots: RobotCustomization[];
 }
 
 /**
  * Состояние store для роботов
  */
 interface RobotsState {
-  /** Исходные данные роботов */
-  robots: Robot[];
+  /** Исходные данные роботов с кастомизацией */
+  robots: RobotCustomization[];
   /** Флаг загрузки */
   isLoading: boolean;
   /** Ошибка загрузки */
@@ -33,13 +34,15 @@ interface RobotsState {
   initializeRobots: () => void;
   /** Получить транспонированные данные (вычисляемое значение) */
   getTransposedData: () => TransposedRobotsData;
+  /** Установить базового робота по индексу */
+  setBaseRobot: (index: number) => void;
 }
 
 /**
  * Преобразует данные роботов в транспонированный формат
  * (параметры в строках, роботы в столбцах)
  */
-export function transposeRobotsData(robots: Robot[]): TransposedRobotsData {
+export function transposeRobotsData(robots: RobotCustomization[]): TransposedRobotsData {
   const rows: TransposedRow[] = [];
 
   // Базовые параметры (Название и Модель скрыты)
@@ -55,6 +58,15 @@ export function transposeRobotsData(robots: Robot[]): TransposedRobotsData {
     parameter: 'Уровень',
     ...robots.reduce((acc, robot, index) => {
       acc[`robot_${index}`] = robot.requiredLevel;
+      return acc;
+    }, {} as Record<string, unknown>),
+  });
+
+  // Базовый робот
+  rows.push({
+    parameter: 'Базовый робот',
+    ...robots.reduce((acc, robot, index) => {
+      acc[`robot_${index}`] = robot.baseRobot;
       return acc;
     }, {} as Record<string, unknown>),
   });
@@ -203,7 +215,13 @@ export const useRobotsStore = create<RobotsState>()(
         set({ isLoading: true, error: null });
 
         try {
-          const robots = robotsData as Robot[];
+          const robotsDataArray = robotsData as Robot[];
+          
+          // Преобразуем Robot[] в RobotCustomization[] с установкой baseRobot
+          const robots: RobotCustomization[] = robotsDataArray.map((robot, index) => ({
+            ...robot,
+            baseRobot: index === 0, // Первый робот - базовый, остальные - нет
+          }));
 
           set({
             robots,
@@ -237,6 +255,27 @@ export const useRobotsStore = create<RobotsState>()(
 
         // Вычисляем транспонированные данные на основе текущих robots
         return transposeRobotsData(state.robots);
+      },
+
+      /**
+       * Установить базового робота по индексу
+       * При установке нового базового робота, у всех остальных baseRobot становится false
+       */
+      setBaseRobot: (index: number) => {
+        const state = get();
+        if (index < 0 || index >= state.robots.length) {
+          return;
+        }
+
+        // Обновляем всех роботов: устанавливаем baseRobot=true только для выбранного
+        const updatedRobots = state.robots.map((robot, robotIndex) => ({
+          ...robot,
+          baseRobot: robotIndex === index,
+        }));
+
+        set({
+          robots: updatedRobots,
+        });
       },
     }),
     {

@@ -1,12 +1,48 @@
 import { useMemo, useRef, useCallback, useEffect } from 'react';
 import { AgGridReact } from 'ag-grid-react';
-import type { ColDef, GridOptions, ColumnMovedEvent, GridApi, GridReadyEvent } from 'ag-grid-community';
+import type { ColDef, GridOptions, ColumnMovedEvent, GridApi, GridReadyEvent, ICellRendererParams } from 'ag-grid-community';
 import { ModuleRegistry, AllCommunityModule } from 'ag-grid-community';
-import { Box, Typography, CircularProgress, Alert } from '@mui/material';
-import { useRobotsStore, transposeRobotsData } from '../stores/robotsStore';
+import { Box, Typography, CircularProgress, Alert, Checkbox } from '@mui/material';
+import { useRobotsStore, transposeRobotsData } from '../stores/robots/store';
 
 // Регистрация модулей AG Grid
 ModuleRegistry.registerModules([AllCommunityModule]);
+
+/**
+ * Компонент для отображения чекбокса базового робота
+ */
+const BaseRobotCheckboxCell: React.FC<{ robotIndex: number; isChecked: boolean }> = ({ robotIndex, isChecked }) => {
+  const { setBaseRobot } = useRobotsStore();
+
+  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    if (event.target.checked) {
+      setBaseRobot(robotIndex);
+    }
+  };
+
+  return (
+    <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100%' }}>
+      <Checkbox checked={isChecked} onChange={handleChange} size="small" />
+    </Box>
+  );
+};
+
+/**
+ * Рендерер ячейки для AG Grid
+ */
+const BaseRobotCheckboxRenderer: React.FC<ICellRendererParams> = (params) => {
+  // Если это строка "Базовый робот", показываем чекбокс
+  if (params.data?.parameter === 'Базовый робот') {
+    const robotIndex = parseInt(params.column?.getColId().replace('robot_', '') || '0', 10);
+    const isChecked = params.value === true;
+
+    return <BaseRobotCheckboxCell robotIndex={robotIndex} isChecked={isChecked} />;
+  }
+
+  // Для остальных строк возвращаем элемент с отформатированным значением
+  // Это позволяет AG Grid корректно отображать данные
+  return <span>{params.valueFormatted ?? params.value}</span>;
+};
 
 /**
  * Компонент для отображения таблицы роботов с использованием ag-grid
@@ -30,6 +66,14 @@ export const RobotsGrid: React.FC = () => {
     return transposeRobotsData(robots);
   }, [robots]);
   const { rows, robots: robotList } = transposedData;
+
+  // Обновляем таблицу при изменении базового робота
+  useEffect(() => {
+    if (gridApiRef.current && transposedData.rows.length > 0) {
+      // Обновляем все ячейки для пересчета цветов и обновления чекбоксов
+      gridApiRef.current.refreshCells({ force: true });
+    }
+  }, [robots, transposedData.rows.length]);
 
   // Обработчик готовности грида
   const handleGridReady = useCallback((params: GridReadyEvent) => {
@@ -130,9 +174,12 @@ export const RobotsGrid: React.FC = () => {
       },
     ];
 
+    // Находим индекс базового робота (с baseRobot=true)
+    const baseRobotIndex = robotList.findIndex((robot) => robot.baseRobot);
+
     // Добавляем столбец для каждого робота
     robotList.forEach((robot, index) => {
-      const isBaseRobot = index === 0;
+      const isBaseRobot = robot.baseRobot;
       
       cols.push({
         field: `robot_${index}`,
@@ -141,7 +188,13 @@ export const RobotsGrid: React.FC = () => {
         sortable: false,
         filter: false,
         suppressMovable: false, // Разрешаем перемещение
+        // Для строки "Базовый робот" используем кастомный рендерер с чекбоксом
+        cellRenderer: BaseRobotCheckboxRenderer,
         valueFormatter: (params) => {
+          // Для строки "Базовый робот" не форматируем значение (оно отображается через cellRenderer)
+          if (params.data?.parameter === 'Базовый робот') {
+            return '';
+          }
           if (params.value == null || params.value === '-') return '-';
           if (typeof params.value === 'number') {
             // Форматируем большие числа
@@ -153,6 +206,10 @@ export const RobotsGrid: React.FC = () => {
           return params.value;
         },
         cellStyle: (params) => {
+          // Для строки "Базовый робот" центрируем содержимое
+          if (params.data?.parameter === 'Базовый робот') {
+            return { textAlign: 'center' };
+          }
           const baseStyle: Record<string, string> = {
             textAlign: 'right', // Все значения выравниваем по правому краю
           };
@@ -162,13 +219,13 @@ export const RobotsGrid: React.FC = () => {
             return baseStyle;
           }
 
-          // Получаем значения
-          const baseValue = params.data?.robot_0;
+          // Получаем значения относительно базового робота (с baseRobot=true)
+          const baseValue = baseRobotIndex !== -1 ? params.data?.[`robot_${baseRobotIndex}`] : null;
           const currentValue = params.value;
           const parameterName = params.data?.parameter as string;
 
-          // Тип и Уровень - без цветового различия
-          if (parameterName === 'Тип' || parameterName === 'Уровень') {
+          // Тип, Уровень и Базовый робот - без цветового различия
+          if (parameterName === 'Тип' || parameterName === 'Уровень' || parameterName === 'Базовый робот') {
             return baseStyle;
           }
 
