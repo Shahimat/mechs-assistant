@@ -53,6 +53,10 @@ export default defineConfig({
         test: /\.css$/,
         type: 'css',
       },
+      {
+        test: /\.json$/,
+        type: 'json',
+      },
     ],
   },
   plugins: [
