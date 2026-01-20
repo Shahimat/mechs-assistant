@@ -1,6 +1,6 @@
-import { useMemo } from 'react';
+import { useMemo, useRef, useCallback } from 'react';
 import { AgGridReact } from 'ag-grid-react';
-import type { ColDef, GridOptions } from 'ag-grid-community';
+import type { ColDef, GridOptions, ColumnMovedEvent, GridApi, GridReadyEvent } from 'ag-grid-community';
 import { ModuleRegistry, AllCommunityModule } from 'ag-grid-community';
 import { Box, Typography } from '@mui/material';
 import type { Robot } from '../types/robot';
@@ -16,23 +16,7 @@ ModuleRegistry.registerModules([AllCommunityModule]);
 function transposeRobotsData(robots: Robot[]) {
   const rows: Record<string, unknown>[] = [];
 
-  // Базовые параметры
-  rows.push({
-    parameter: 'Название',
-    ...robots.reduce((acc, robot, index) => {
-      acc[`robot_${index}`] = robot.name;
-      return acc;
-    }, {} as Record<string, unknown>),
-  });
-
-  rows.push({
-    parameter: 'Модель',
-    ...robots.reduce((acc, robot, index) => {
-      acc[`robot_${index}`] = robot.model;
-      return acc;
-    }, {} as Record<string, unknown>),
-  });
-
+  // Базовые параметры (Название и Модель скрыты)
   rows.push({
     parameter: 'Тип',
     ...robots.reduce((acc, robot, index) => {
@@ -182,6 +166,93 @@ function transposeRobotsData(robots: Robot[]) {
 export const RobotsGrid: React.FC = () => {
   const robots = robotsData as Robot[];
   const { rows, robots: robotList } = transposeRobotsData(robots);
+  const gridApiRef = useRef<GridApi | null>(null);
+
+  // Обработчик готовности грида
+  const handleGridReady = useCallback((params: GridReadyEvent) => {
+    gridApiRef.current = params.api;
+  }, []);
+
+
+  // Обработчик после перемещения - проверяем и исправляем если нужно
+  const handleColumnMoved = useCallback((event: ColumnMovedEvent) => {
+    if (!event.column || !gridApiRef.current) return;
+
+    const movedColumnId = event.column.getColId();
+    
+    // Если перемещается сам столбец "parameter", разрешаем
+    if (movedColumnId === 'parameter') {
+      return;
+    }
+
+    // Даем время AG Grid обновить порядок
+    requestAnimationFrame(() => {
+      requestAnimationFrame(() => {
+        if (!gridApiRef.current) return;
+
+        try {
+          // Получаем все столбцы в порядке отображения
+          const api = gridApiRef.current as unknown as {
+            columnApi?: { getAllDisplayedColumns: () => Array<{ getColId: () => string }> };
+          };
+          
+          let allColumns: Array<{ getColId: () => string }> = [];
+          
+          if (api.columnApi) {
+            allColumns = api.columnApi.getAllDisplayedColumns();
+          } else {
+            const cols = gridApiRef.current.getColumns() || [];
+            const colsWithPos = cols.map((col: { getColId: () => string; getLeft: () => number }) => ({
+              col,
+              left: col.getLeft?.() ?? 0,
+            }));
+            colsWithPos.sort((a, b) => a.left - b.left);
+            allColumns = colsWithPos.map((item) => item.col);
+          }
+          
+          // Находим позицию столбца "parameter"
+          const parameterIndex = allColumns.findIndex((col) => col.getColId() === 'parameter');
+          const movedColumnIndex = allColumns.findIndex((col) => col.getColId() === movedColumnId);
+          
+          // Если перемещенный столбец оказался перед "parameter", возвращаем его обратно
+          if (parameterIndex !== -1 && movedColumnIndex !== -1 && movedColumnIndex < parameterIndex) {
+            // Перемещаем столбец обратно после parameter
+            try {
+              const api = gridApiRef.current;
+              
+              // Используем moveColumn для перемещения столбца на позицию после parameter
+              // В AG Grid v35 moveColumn принимает column и toIndex
+              const targetIndex = parameterIndex + 1;
+              
+              // Пробуем разные способы перемещения
+              if (typeof api.moveColumn === 'function') {
+                // Стандартный способ
+                api.moveColumn(movedColumnId, targetIndex);
+              } else {
+                // Альтернативный способ через moveColumns
+                const moveColumns = (api as unknown as { moveColumns?: (columns: unknown[], toIndex: number) => void }).moveColumns;
+                if (moveColumns) {
+                  const columnToMove = allColumns[movedColumnIndex];
+                  moveColumns([columnToMove], targetIndex);
+                }
+              }
+              
+              // Дополнительно обновляем отображение
+              setTimeout(() => {
+                if (gridApiRef.current) {
+                  gridApiRef.current.refreshCells({ force: true });
+                }
+              }, 50);
+            } catch (moveError) {
+              console.error('Ошибка при возврате столбца:', moveError);
+            }
+          }
+        } catch (error) {
+          console.error('Ошибка при проверке перемещения столбца:', error);
+        }
+      });
+    });
+  }, []);
 
   // Создаем определения столбцов динамически
   const columnDefs: ColDef[] = useMemo(() => {
@@ -193,18 +264,23 @@ export const RobotsGrid: React.FC = () => {
         pinned: 'left',
         sortable: false,
         filter: false,
+        lockPosition: 'left', // Блокируем перемещение столбца "parameter" слева
+        suppressMovable: false, // Разрешаем перемещение, но блокируем позицию
         cellStyle: { fontWeight: 'bold' },
       },
     ];
 
     // Добавляем столбец для каждого робота
     robotList.forEach((robot, index) => {
+      const isBaseRobot = index === 0;
+      
       cols.push({
         field: `robot_${index}`,
         headerName: robot.name,
         width: 150,
         sortable: false,
         filter: false,
+        suppressMovable: false, // Разрешаем перемещение
         valueFormatter: (params) => {
           if (params.value == null || params.value === '-') return '-';
           if (typeof params.value === 'number') {
@@ -217,11 +293,120 @@ export const RobotsGrid: React.FC = () => {
           return params.value;
         },
         cellStyle: (params) => {
-          // Подсветка для числовых значений
-          if (typeof params.value === 'number') {
-            return { textAlign: 'right' };
+          const baseStyle: Record<string, string> = {
+            textAlign: 'right', // Все значения выравниваем по правому краю
+          };
+
+          // Базовый робот не сравниваем
+          if (isBaseRobot) {
+            return baseStyle;
           }
-          return { textAlign: 'left' };
+
+          // Получаем значения
+          const baseValue = params.data?.robot_0;
+          const currentValue = params.value;
+          const parameterName = params.data?.parameter as string;
+
+          // Тип и Уровень - без цветового различия
+          if (parameterName === 'Тип' || parameterName === 'Уровень') {
+            return baseStyle;
+          }
+
+          // Функция для преобразования значения в число (прочерк = 0)
+          const getNumericValue = (value: unknown): number => {
+            if (value === '-' || value == null) return 0;
+            if (typeof value === 'number') return value;
+            if (typeof value === 'string') {
+              // Убираем символы типа "с", "%" и т.д.
+              const num = parseFloat(value.replace(/[^\d.-]/g, ''));
+              return isNaN(num) ? 0 : num;
+            }
+            return 0;
+          };
+
+          // Функция для проверки наличия значения (не прочерк)
+          const hasValue = (value: unknown): boolean => {
+            return value !== '-' && value != null;
+          };
+
+          // Обработка дополнительных параметров (неуязвимость, ускорение, прокачка)
+          if (
+            parameterName === 'Доп. неуязвимость' ||
+            parameterName === 'Доп. ускорение'
+          ) {
+            const baseHasValue = hasValue(baseValue);
+            const currentHasValue = hasValue(currentValue);
+
+            if (currentHasValue && !baseHasValue) {
+              baseStyle.color = '#2e7d32'; // зеленый
+            } else if (!currentHasValue && baseHasValue) {
+              baseStyle.color = '#d32f2f'; // красный
+            }
+            return baseStyle;
+          }
+
+          // Обработка прокачки
+          if (parameterName === 'Прокачка (реглы %)') {
+            const baseHasValue = hasValue(baseValue);
+            const currentHasValue = hasValue(currentValue);
+
+            if (currentHasValue && !baseHasValue) {
+              baseStyle.color = '#d32f2f'; // красный
+            } else if (!currentHasValue && baseHasValue) {
+              baseStyle.color = '#2e7d32'; // зеленый
+            }
+            return baseStyle;
+          }
+
+          // Обработка цен покупки
+          if (
+            parameterName === 'Цена покупки (бонусы)' ||
+            parameterName === 'Цена покупки (реглы)'
+          ) {
+            const baseNum = getNumericValue(baseValue);
+            const currentNum = getNumericValue(currentValue);
+
+            if (currentNum !== baseNum) {
+              if (currentNum > baseNum) {
+                baseStyle.color = '#d32f2f'; // красный
+              } else {
+                baseStyle.color = '#2e7d32'; // зеленый
+              }
+            }
+            return baseStyle;
+          }
+
+          // Обработка цен продажи
+          if (
+            parameterName === 'Цена продажи (бонусы)' ||
+            parameterName === 'Цена продажи (реглы)'
+          ) {
+            const baseNum = getNumericValue(baseValue);
+            const currentNum = getNumericValue(currentValue);
+
+            if (currentNum !== baseNum) {
+              if (currentNum > baseNum) {
+                baseStyle.color = '#2e7d32'; // зеленый
+              } else {
+                baseStyle.color = '#d32f2f'; // красный
+              }
+            }
+            return baseStyle;
+          }
+
+          // Обработка остальных параметров (больше = зеленый, меньше = красный)
+          const baseNum = getNumericValue(baseValue);
+          const currentNum = getNumericValue(currentValue);
+
+          if (currentNum !== baseNum) {
+            if (currentNum > baseNum) {
+              baseStyle.color = '#2e7d32'; // зеленый
+            } else {
+              baseStyle.color = '#d32f2f'; // красный
+            }
+          }
+
+          return baseStyle;
         },
       });
     });
@@ -246,6 +431,8 @@ export const RobotsGrid: React.FC = () => {
       suppressRowClickSelection: true,
       animateRows: true,
       suppressHorizontalScroll: false,
+      onGridReady: handleGridReady,
+      onColumnMoved: handleColumnMoved,
       localeText: {
         // Кастомизация текстов на русский
         page: 'Страница',
@@ -277,7 +464,7 @@ export const RobotsGrid: React.FC = () => {
         clearFilter: 'Очистить фильтр',
       },
     }),
-    []
+    [handleGridReady, handleColumnMoved]
   );
 
   return (
