@@ -1,0 +1,7 @@
+node_modules
+dist
+build
+coverage
+.rspack
+*.min.js
+*.min.css
