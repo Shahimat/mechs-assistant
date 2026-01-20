@@ -1,4 +1,4 @@
-import { useMemo, useEffect } from 'react';
+import { useMemo } from 'react';
 import { AgGridReact } from 'ag-grid-react';
 import type { ColDef, GridOptions } from 'ag-grid-community';
 import { ModuleRegistry, AllCommunityModule } from 'ag-grid-community';
@@ -10,241 +10,242 @@ import robotsData from '../../data/robots.json';
 ModuleRegistry.registerModules([AllCommunityModule]);
 
 /**
+ * Преобразует данные роботов в транспонированный формат
+ * (параметры в строках, роботы в столбцах)
+ */
+function transposeRobotsData(robots: Robot[]) {
+  const rows: Record<string, unknown>[] = [];
+
+  // Базовые параметры
+  rows.push({
+    parameter: 'Название',
+    ...robots.reduce((acc, robot, index) => {
+      acc[`robot_${index}`] = robot.name;
+      return acc;
+    }, {} as Record<string, unknown>),
+  });
+
+  rows.push({
+    parameter: 'Модель',
+    ...robots.reduce((acc, robot, index) => {
+      acc[`robot_${index}`] = robot.model;
+      return acc;
+    }, {} as Record<string, unknown>),
+  });
+
+  rows.push({
+    parameter: 'Тип',
+    ...robots.reduce((acc, robot, index) => {
+      acc[`robot_${index}`] = robot.type;
+      return acc;
+    }, {} as Record<string, unknown>),
+  });
+
+  rows.push({
+    parameter: 'Уровень',
+    ...robots.reduce((acc, robot, index) => {
+      acc[`robot_${index}`] = robot.requiredLevel;
+      return acc;
+    }, {} as Record<string, unknown>),
+  });
+
+  // Характеристики
+  rows.push({
+    parameter: 'Прочность',
+    ...robots.reduce((acc, robot, index) => {
+      acc[`robot_${index}`] = robot.stats.durability;
+      return acc;
+    }, {} as Record<string, unknown>),
+  });
+
+  rows.push({
+    parameter: 'Вместимость',
+    ...robots.reduce((acc, robot, index) => {
+      acc[`robot_${index}`] = robot.stats.capacity;
+      return acc;
+    }, {} as Record<string, unknown>),
+  });
+
+  rows.push({
+    parameter: 'Макс. вместимость',
+    ...robots.reduce((acc, robot, index) => {
+      acc[`robot_${index}`] = robot.stats.maxCapacity ?? '-';
+      return acc;
+    }, {} as Record<string, unknown>),
+  });
+
+  rows.push({
+    parameter: 'Скорость',
+    ...robots.reduce((acc, robot, index) => {
+      acc[`robot_${index}`] = robot.stats.speed;
+      return acc;
+    }, {} as Record<string, unknown>),
+  });
+
+  rows.push({
+    parameter: 'Макс. скорость',
+    ...robots.reduce((acc, robot, index) => {
+      acc[`robot_${index}`] = robot.stats.maxSpeed;
+      return acc;
+    }, {} as Record<string, unknown>),
+  });
+
+  rows.push({
+    parameter: 'Броня',
+    ...robots.reduce((acc, robot, index) => {
+      acc[`robot_${index}`] = robot.stats.armor;
+      return acc;
+    }, {} as Record<string, unknown>),
+  });
+
+  rows.push({
+    parameter: 'Поля',
+    ...robots.reduce((acc, robot, index) => {
+      acc[`robot_${index}`] = robot.stats.energyFields;
+      return acc;
+    }, {} as Record<string, unknown>),
+  });
+
+  rows.push({
+    parameter: 'Восстановление/мин',
+    ...robots.reduce((acc, robot, index) => {
+      acc[`robot_${index}`] = robot.stats.regenerationPerMinute ?? '-';
+      return acc;
+    }, {} as Record<string, unknown>),
+  });
+
+  rows.push({
+    parameter: 'Доп. неуязвимость',
+    ...robots.reduce((acc, robot, index) => {
+      const value = robot.stats.additionalInvulnerability;
+      acc[`robot_${index}`] = value != null ? `${value > 0 ? '+' : ''}${value}с` : '-';
+      return acc;
+    }, {} as Record<string, unknown>),
+  });
+
+  rows.push({
+    parameter: 'Доп. ускорение',
+    ...robots.reduce((acc, robot, index) => {
+      const value = robot.stats.additionalAcceleration;
+      acc[`robot_${index}`] = value != null ? `${value > 0 ? '+' : ''}${value}с` : '-';
+      return acc;
+    }, {} as Record<string, unknown>),
+  });
+
+  // Цены
+  rows.push({
+    parameter: 'Цена покупки (бонусы)',
+    ...robots.reduce((acc, robot, index) => {
+      acc[`robot_${index}`] = robot.buyPrice?.bonds ?? '-';
+      return acc;
+    }, {} as Record<string, unknown>),
+  });
+
+  rows.push({
+    parameter: 'Цена покупки (реглы)',
+    ...robots.reduce((acc, robot, index) => {
+      acc[`robot_${index}`] = robot.buyPrice?.regls ?? '-';
+      return acc;
+    }, {} as Record<string, unknown>),
+  });
+
+  rows.push({
+    parameter: 'Цена продажи (бонусы)',
+    ...robots.reduce((acc, robot, index) => {
+      acc[`robot_${index}`] = robot.sellPrice?.bonds ?? '-';
+      return acc;
+    }, {} as Record<string, unknown>),
+  });
+
+  rows.push({
+    parameter: 'Цена продажи (реглы)',
+    ...robots.reduce((acc, robot, index) => {
+      acc[`robot_${index}`] = robot.sellPrice?.regls ?? '-';
+      return acc;
+    }, {} as Record<string, unknown>),
+  });
+
+  rows.push({
+    parameter: 'Прокачка (реглы %)',
+    ...robots.reduce((acc, robot, index) => {
+      acc[`robot_${index}`] = robot.upgradeReglPercent ? `${robot.upgradeReglPercent}%` : '-';
+      return acc;
+    }, {} as Record<string, unknown>),
+  });
+
+  return { rows, robots };
+}
+
+/**
  * Компонент для отображения таблицы роботов с использованием ag-grid
  */
 export const RobotsGrid: React.FC = () => {
   const robots = robotsData as Robot[];
+  const { rows, robots: robotList } = transposeRobotsData(robots);
 
-  const columnDefs: ColDef<Robot>[] = useMemo(
-    () => [
+  // Создаем определения столбцов динамически
+  const columnDefs: ColDef[] = useMemo(() => {
+    const cols: ColDef[] = [
       {
-        field: 'name',
-        headerName: 'Название',
-        width: 180,
+        field: 'parameter',
+        headerName: 'Параметр',
+        width: 200,
         pinned: 'left',
-        filter: 'agTextColumnFilter',
-        sortable: true,
+        sortable: false,
+        filter: false,
+        cellStyle: { fontWeight: 'bold' },
       },
-      {
-        field: 'model',
-        headerName: 'Модель',
+    ];
+
+    // Добавляем столбец для каждого робота
+    robotList.forEach((robot, index) => {
+      cols.push({
+        field: `robot_${index}`,
+        headerName: robot.name,
         width: 150,
-        filter: 'agTextColumnFilter',
-        sortable: true,
-      },
-      {
-        field: 'type',
-        headerName: 'Тип',
-        width: 120,
-        filter: 'agSetColumnFilter',
-        sortable: true,
-      },
-      {
-        field: 'requiredLevel',
-        headerName: 'Уровень',
-        width: 100,
-        filter: 'agNumberColumnFilter',
-        sortable: true,
-        type: 'numericColumn',
-      },
-      {
-        headerName: 'Характеристики',
-        children: [
-          {
-            field: 'stats.durability',
-            headerName: 'Прочность',
-            width: 120,
-            filter: 'agNumberColumnFilter',
-            sortable: true,
-            type: 'numericColumn',
-            valueFormatter: (params) => {
-              if (params.value == null) return '';
-              return params.value.toLocaleString('ru-RU');
-            },
-          },
-          {
-            field: 'stats.capacity',
-            headerName: 'Вместимость',
-            width: 120,
-            filter: 'agNumberColumnFilter',
-            sortable: true,
-            type: 'numericColumn',
-            valueFormatter: (params) => {
-              if (params.value == null) return '';
-              return params.value.toLocaleString('ru-RU');
-            },
-          },
-          {
-            field: 'stats.maxCapacity',
-            headerName: 'Макс. вместимость',
-            width: 140,
-            filter: 'agNumberColumnFilter',
-            sortable: true,
-            type: 'numericColumn',
-            valueFormatter: (params) => {
-              if (params.value == null) return '';
-              return params.value.toLocaleString('ru-RU');
-            },
-          },
-          {
-            field: 'stats.speed',
-            headerName: 'Скорость',
-            width: 100,
-            filter: 'agNumberColumnFilter',
-            sortable: true,
-            type: 'numericColumn',
-          },
-          {
-            field: 'stats.maxSpeed',
-            headerName: 'Макс. скорость',
-            width: 130,
-            filter: 'agNumberColumnFilter',
-            sortable: true,
-            type: 'numericColumn',
-          },
-          {
-            field: 'stats.armor',
-            headerName: 'Броня',
-            width: 100,
-            filter: 'agNumberColumnFilter',
-            sortable: true,
-            type: 'numericColumn',
-          },
-          {
-            field: 'stats.energyFields',
-            headerName: 'Поля',
-            width: 100,
-            filter: 'agNumberColumnFilter',
-            sortable: true,
-            type: 'numericColumn',
-          },
-          {
-            field: 'stats.regenerationPerMinute',
-            headerName: 'Восстановление/мин',
-            width: 160,
-            filter: 'agNumberColumnFilter',
-            sortable: true,
-            type: 'numericColumn',
-            valueFormatter: (params) => {
-              if (params.value == null) return '';
-              return params.value.toLocaleString('ru-RU', {
-                maximumFractionDigits: 2,
-              });
-            },
-          },
-          {
-            field: 'stats.additionalInvulnerability',
-            headerName: 'Доп. неуязвимость',
-            width: 150,
-            filter: 'agNumberColumnFilter',
-            sortable: true,
-            type: 'numericColumn',
-            valueFormatter: (params) => {
-              if (params.value == null) return '';
-              return `${params.value > 0 ? '+' : ''}${params.value}с`;
-            },
-          },
-          {
-            field: 'stats.additionalAcceleration',
-            headerName: 'Доп. ускорение',
-            width: 140,
-            filter: 'agNumberColumnFilter',
-            sortable: true,
-            type: 'numericColumn',
-            valueFormatter: (params) => {
-              if (params.value == null) return '';
-              return `${params.value > 0 ? '+' : ''}${params.value}с`;
-            },
-          },
-        ],
-      },
-      {
-        headerName: 'Цены',
-        children: [
-          {
-            field: 'buyPrice.bonds',
-            headerName: 'Цена покупки (бонусы)',
-            width: 160,
-            filter: 'agNumberColumnFilter',
-            sortable: true,
-            type: 'numericColumn',
-            valueFormatter: (params) => {
-              if (params.value == null) return '';
-              return params.value.toLocaleString('ru-RU');
-            },
-          },
-          {
-            field: 'buyPrice.regls',
-            headerName: 'Цена покупки (реглы)',
-            width: 160,
-            filter: 'agNumberColumnFilter',
-            sortable: true,
-            type: 'numericColumn',
-            valueFormatter: (params) => {
-              if (params.value == null) return '-';
-              return params.value.toLocaleString('ru-RU');
-            },
-          },
-          {
-            field: 'sellPrice.bonds',
-            headerName: 'Цена продажи (бонусы)',
-            width: 160,
-            filter: 'agNumberColumnFilter',
-            sortable: true,
-            type: 'numericColumn',
-            valueFormatter: (params) => {
-              if (params.value == null) return '';
-              return params.value.toLocaleString('ru-RU');
-            },
-          },
-          {
-            field: 'sellPrice.regls',
-            headerName: 'Цена продажи (реглы)',
-            width: 160,
-            filter: 'agNumberColumnFilter',
-            sortable: true,
-            type: 'numericColumn',
-            valueFormatter: (params) => {
-              if (params.value == null) return '-';
-              return params.value.toLocaleString('ru-RU');
-            },
-          },
-        ],
-      },
-      {
-        field: 'upgradeReglPercent',
-        headerName: 'Прокачка (реглы %)',
-        width: 150,
-        filter: 'agNumberColumnFilter',
-        sortable: true,
-        type: 'numericColumn',
+        sortable: false,
+        filter: false,
         valueFormatter: (params) => {
-          if (params.value == null) return '';
-          return `${params.value}%`;
+          if (params.value == null || params.value === '-') return '-';
+          if (typeof params.value === 'number') {
+            // Форматируем большие числа
+            if (params.value >= 1000) {
+              return params.value.toLocaleString('ru-RU');
+            }
+            return params.value.toString();
+          }
+          return params.value;
         },
-      },
-    ],
-    []
-  );
+        cellStyle: (params) => {
+          // Подсветка для числовых значений
+          if (typeof params.value === 'number') {
+            return { textAlign: 'right' };
+          }
+          return { textAlign: 'left' };
+        },
+      });
+    });
+
+    return cols;
+  }, [robotList]);
 
   const defaultColDef: ColDef = useMemo(
     () => ({
       resizable: true,
-      sortable: true,
-      filter: true,
+      sortable: false,
+      filter: false,
     }),
     []
   );
 
-  const gridOptions: GridOptions<Robot> = useMemo(
+  const gridOptions: GridOptions = useMemo(
     () => ({
-      pagination: true,
-      paginationPageSize: 50,
-      paginationPageSizeSelector: [25, 50, 100, 200],
+      pagination: false, // Отключаем пагинацию для транспонированной таблицы
       enableRangeSelection: true,
       rowSelection: 'multiple',
       suppressRowClickSelection: true,
       animateRows: true,
+      suppressHorizontalScroll: false,
       localeText: {
         // Кастомизация текстов на русский
         page: 'Страница',
@@ -297,8 +298,8 @@ export const RobotsGrid: React.FC = () => {
           flexDirection: 'column',
         }}
       >
-        <AgGridReact<Robot>
-          rowData={robots}
+        <AgGridReact
+          rowData={rows}
           columnDefs={columnDefs}
           defaultColDef={defaultColDef}
           gridOptions={gridOptions}
