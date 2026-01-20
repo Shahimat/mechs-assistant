@@ -3,7 +3,7 @@ import { AgGridReact } from 'ag-grid-react';
 import type { ColDef, GridOptions, ColumnMovedEvent, GridApi, GridReadyEvent } from 'ag-grid-community';
 import { ModuleRegistry, AllCommunityModule } from 'ag-grid-community';
 import { Box, Typography, CircularProgress, Alert } from '@mui/material';
-import { useRobotsStore } from '../stores/robotsStore';
+import { useRobotsStore, transposeRobotsData } from '../stores/robotsStore';
 
 // Регистрация модулей AG Grid
 ModuleRegistry.registerModules([AllCommunityModule]);
@@ -12,18 +12,24 @@ ModuleRegistry.registerModules([AllCommunityModule]);
  * Компонент для отображения таблицы роботов с использованием ag-grid
  */
 export const RobotsGrid: React.FC = () => {
-  const { robots, transposedData, isLoading, error, initializeRobots } = useRobotsStore();
+  const { robots, isLoading, error, initializeRobots } = useRobotsStore();
   const gridApiRef = useRef<GridApi | null>(null);
 
   // Инициализируем данные при монтировании компонента
   useEffect(() => {
-    if (!transposedData && !isLoading) {
+    if (robots.length === 0 && !isLoading) {
       initializeRobots();
     }
-  }, [transposedData, isLoading, initializeRobots]);
+  }, [robots.length, isLoading, initializeRobots]);
 
-  // Получаем данные для таблицы
-  const { rows, robots: robotList } = transposedData || { rows: [], robots: [] };
+  // Получаем транспонированные данные (вычисляемое значение)
+  const transposedData = useMemo(() => {
+    if (robots.length === 0) {
+      return { rows: [], robots: [] };
+    }
+    return transposeRobotsData(robots);
+  }, [robots]);
+  const { rows, robots: robotList } = transposedData;
 
   // Обработчик готовности грида
   const handleGridReady = useCallback((params: GridReadyEvent) => {
@@ -279,10 +285,8 @@ export const RobotsGrid: React.FC = () => {
 
   const gridOptions: GridOptions = useMemo(
     () => ({
+      theme: 'legacy', // Используем legacy темы (CSS файлы)
       pagination: false, // Отключаем пагинацию для транспонированной таблицы
-      enableRangeSelection: true,
-      rowSelection: 'multiple',
-      suppressRowClickSelection: true,
       animateRows: true,
       suppressHorizontalScroll: false,
       onGridReady: handleGridReady,

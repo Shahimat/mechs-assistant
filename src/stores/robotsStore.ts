@@ -25,15 +25,13 @@ export interface TransposedRobotsData {
 interface RobotsState {
   /** Исходные данные роботов */
   robots: Robot[];
-  /** Транспонированные данные для таблицы */
-  transposedData: TransposedRobotsData | null;
   /** Флаг загрузки */
   isLoading: boolean;
   /** Ошибка загрузки */
   error: string | null;
   /** Инициализация данных */
   initializeRobots: () => void;
-  /** Получить транспонированные данные */
+  /** Получить транспонированные данные (вычисляемое значение) */
   getTransposedData: () => TransposedRobotsData;
 }
 
@@ -41,7 +39,7 @@ interface RobotsState {
  * Преобразует данные роботов в транспонированный формат
  * (параметры в строках, роботы в столбцах)
  */
-function transposeRobotsData(robots: Robot[]): TransposedRobotsData {
+export function transposeRobotsData(robots: Robot[]): TransposedRobotsData {
   const rows: TransposedRow[] = [];
 
   // Базовые параметры (Название и Модель скрыты)
@@ -195,7 +193,6 @@ export const useRobotsStore = create<RobotsState>()(
   devtools(
     (set, get) => ({
       robots: [],
-      transposedData: null,
       isLoading: false,
       error: null,
 
@@ -207,11 +204,9 @@ export const useRobotsStore = create<RobotsState>()(
 
         try {
           const robots = robotsData as Robot[];
-          const transposedData = transposeRobotsData(robots);
 
           set({
             robots,
-            transposedData,
             isLoading: false,
             error: null,
           });
@@ -225,19 +220,23 @@ export const useRobotsStore = create<RobotsState>()(
       },
 
       /**
-       * Получить транспонированные данные
+       * Получить транспонированные данные (вычисляемое значение)
        * Если данные еще не загружены, инициализирует их
        */
       getTransposedData: () => {
         const state = get();
-        if (state.transposedData) {
-          return state.transposedData;
+        if (state.robots.length === 0) {
+          // Если данных нет, инициализируем
+          state.initializeRobots();
+          const updatedState = get();
+          if (updatedState.robots.length === 0) {
+            return { rows: [], robots: [] };
+          }
+          return transposeRobotsData(updatedState.robots);
         }
 
-        // Если данных нет, инициализируем
-        state.initializeRobots();
-        const updatedState = get();
-        return updatedState.transposedData || { rows: [], robots: [] };
+        // Вычисляем транспонированные данные на основе текущих robots
+        return transposeRobotsData(state.robots);
       },
     }),
     {
