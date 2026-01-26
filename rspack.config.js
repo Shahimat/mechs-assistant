@@ -68,10 +68,7 @@ export default defineConfig({
       'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV || 'development'),
     }),
     ...(process.env.NODE_ENV !== 'production'
-      ? [
-          new ReactRefreshPlugin(),
-          new rspack.ProgressPlugin({}),
-        ]
+      ? [new ReactRefreshPlugin(), new rspack.ProgressPlugin({})]
       : []),
   ],
   devServer: {

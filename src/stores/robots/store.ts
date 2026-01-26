@@ -48,151 +48,205 @@ export function transposeRobotsData(robots: RobotCustomization[]): TransposedRob
   // Базовые параметры (Название и Модель скрыты)
   rows.push({
     parameter: 'Тип',
-    ...robots.reduce((acc, robot, index) => {
-      acc[`robot_${index}`] = robot.type;
-      return acc;
-    }, {} as Record<string, unknown>),
+    ...robots.reduce(
+      (acc, robot, index) => {
+        acc[`robot_${index}`] = robot.type;
+        return acc;
+      },
+      {} as Record<string, unknown>
+    ),
   });
 
   rows.push({
     parameter: 'Уровень',
-    ...robots.reduce((acc, robot, index) => {
-      acc[`robot_${index}`] = robot.requiredLevel;
-      return acc;
-    }, {} as Record<string, unknown>),
+    ...robots.reduce(
+      (acc, robot, index) => {
+        acc[`robot_${index}`] = robot.requiredLevel;
+        return acc;
+      },
+      {} as Record<string, unknown>
+    ),
   });
 
   // Базовый робот
   rows.push({
     parameter: 'Базовый робот',
-    ...robots.reduce((acc, robot, index) => {
-      acc[`robot_${index}`] = robot.baseRobot;
-      return acc;
-    }, {} as Record<string, unknown>),
+    ...robots.reduce(
+      (acc, robot, index) => {
+        acc[`robot_${index}`] = robot.baseRobot;
+        return acc;
+      },
+      {} as Record<string, unknown>
+    ),
   });
 
   // Характеристики
   rows.push({
     parameter: 'Прочность',
-    ...robots.reduce((acc, robot, index) => {
-      acc[`robot_${index}`] = robot.stats.durability;
-      return acc;
-    }, {} as Record<string, unknown>),
+    ...robots.reduce(
+      (acc, robot, index) => {
+        acc[`robot_${index}`] = robot.stats.durability;
+        return acc;
+      },
+      {} as Record<string, unknown>
+    ),
   });
 
   rows.push({
     parameter: 'Вместимость',
-    ...robots.reduce((acc, robot, index) => {
-      acc[`robot_${index}`] = robot.stats.capacity;
-      return acc;
-    }, {} as Record<string, unknown>),
+    ...robots.reduce(
+      (acc, robot, index) => {
+        acc[`robot_${index}`] = robot.stats.capacity;
+        return acc;
+      },
+      {} as Record<string, unknown>
+    ),
   });
 
   rows.push({
     parameter: 'Макс. вместимость',
-    ...robots.reduce((acc, robot, index) => {
-      acc[`robot_${index}`] = robot.stats.maxCapacity ?? '-';
-      return acc;
-    }, {} as Record<string, unknown>),
+    ...robots.reduce(
+      (acc, robot, index) => {
+        acc[`robot_${index}`] = robot.stats.maxCapacity ?? '-';
+        return acc;
+      },
+      {} as Record<string, unknown>
+    ),
   });
 
   rows.push({
     parameter: 'Скорость',
-    ...robots.reduce((acc, robot, index) => {
-      acc[`robot_${index}`] = robot.stats.speed;
-      return acc;
-    }, {} as Record<string, unknown>),
+    ...robots.reduce(
+      (acc, robot, index) => {
+        acc[`robot_${index}`] = robot.stats.speed;
+        return acc;
+      },
+      {} as Record<string, unknown>
+    ),
   });
 
   rows.push({
     parameter: 'Макс. скорость',
-    ...robots.reduce((acc, robot, index) => {
-      acc[`robot_${index}`] = robot.stats.maxSpeed;
-      return acc;
-    }, {} as Record<string, unknown>),
+    ...robots.reduce(
+      (acc, robot, index) => {
+        acc[`robot_${index}`] = robot.stats.maxSpeed;
+        return acc;
+      },
+      {} as Record<string, unknown>
+    ),
   });
 
   rows.push({
     parameter: 'Броня',
-    ...robots.reduce((acc, robot, index) => {
-      acc[`robot_${index}`] = robot.stats.armor;
-      return acc;
-    }, {} as Record<string, unknown>),
+    ...robots.reduce(
+      (acc, robot, index) => {
+        acc[`robot_${index}`] = robot.stats.armor;
+        return acc;
+      },
+      {} as Record<string, unknown>
+    ),
   });
 
   rows.push({
     parameter: 'Поля',
-    ...robots.reduce((acc, robot, index) => {
-      acc[`robot_${index}`] = robot.stats.energyFields;
-      return acc;
-    }, {} as Record<string, unknown>),
+    ...robots.reduce(
+      (acc, robot, index) => {
+        acc[`robot_${index}`] = robot.stats.energyFields;
+        return acc;
+      },
+      {} as Record<string, unknown>
+    ),
   });
 
   rows.push({
     parameter: 'Восстановление/мин',
-    ...robots.reduce((acc, robot, index) => {
-      acc[`robot_${index}`] = robot.stats.regenerationPerMinute ?? '-';
-      return acc;
-    }, {} as Record<string, unknown>),
+    ...robots.reduce(
+      (acc, robot, index) => {
+        acc[`robot_${index}`] = robot.stats.regenerationPerMinute ?? '-';
+        return acc;
+      },
+      {} as Record<string, unknown>
+    ),
   });
 
   rows.push({
     parameter: 'Доп. неуязвимость',
-    ...robots.reduce((acc, robot, index) => {
-      const value = robot.stats.additionalInvulnerability;
-      acc[`robot_${index}`] = value != null ? `${value > 0 ? '+' : ''}${value}с` : '-';
-      return acc;
-    }, {} as Record<string, unknown>),
+    ...robots.reduce(
+      (acc, robot, index) => {
+        const value = robot.stats.additionalInvulnerability;
+        acc[`robot_${index}`] = value != null ? `${value > 0 ? '+' : ''}${value}с` : '-';
+        return acc;
+      },
+      {} as Record<string, unknown>
+    ),
   });
 
   rows.push({
     parameter: 'Доп. ускорение',
-    ...robots.reduce((acc, robot, index) => {
-      const value = robot.stats.additionalAcceleration;
-      acc[`robot_${index}`] = value != null ? `${value > 0 ? '+' : ''}${value}с` : '-';
-      return acc;
-    }, {} as Record<string, unknown>),
+    ...robots.reduce(
+      (acc, robot, index) => {
+        const value = robot.stats.additionalAcceleration;
+        acc[`robot_${index}`] = value != null ? `${value > 0 ? '+' : ''}${value}с` : '-';
+        return acc;
+      },
+      {} as Record<string, unknown>
+    ),
   });
 
   // Цены
   rows.push({
     parameter: 'Цена покупки (бонусы)',
-    ...robots.reduce((acc, robot, index) => {
-      acc[`robot_${index}`] = robot.buyPrice?.bonds ?? '-';
-      return acc;
-    }, {} as Record<string, unknown>),
+    ...robots.reduce(
+      (acc, robot, index) => {
+        acc[`robot_${index}`] = robot.buyPrice?.bonds ?? '-';
+        return acc;
+      },
+      {} as Record<string, unknown>
+    ),
   });
 
   rows.push({
     parameter: 'Цена покупки (реглы)',
-    ...robots.reduce((acc, robot, index) => {
-      acc[`robot_${index}`] = robot.buyPrice?.regls ?? '-';
-      return acc;
-    }, {} as Record<string, unknown>),
+    ...robots.reduce(
+      (acc, robot, index) => {
+        acc[`robot_${index}`] = robot.buyPrice?.regls ?? '-';
+        return acc;
+      },
+      {} as Record<string, unknown>
+    ),
   });
 
   rows.push({
     parameter: 'Цена продажи (бонусы)',
-    ...robots.reduce((acc, robot, index) => {
-      acc[`robot_${index}`] = robot.sellPrice?.bonds ?? '-';
-      return acc;
-    }, {} as Record<string, unknown>),
+    ...robots.reduce(
+      (acc, robot, index) => {
+        acc[`robot_${index}`] = robot.sellPrice?.bonds ?? '-';
+        return acc;
+      },
+      {} as Record<string, unknown>
+    ),
   });
 
   rows.push({
     parameter: 'Цена продажи (реглы)',
-    ...robots.reduce((acc, robot, index) => {
-      acc[`robot_${index}`] = robot.sellPrice?.regls ?? '-';
-      return acc;
-    }, {} as Record<string, unknown>),
+    ...robots.reduce(
+      (acc, robot, index) => {
+        acc[`robot_${index}`] = robot.sellPrice?.regls ?? '-';
+        return acc;
+      },
+      {} as Record<string, unknown>
+    ),
   });
 
   rows.push({
     parameter: 'Прокачка (реглы %)',
-    ...robots.reduce((acc, robot, index) => {
-      acc[`robot_${index}`] = robot.upgradeReglPercent ? `${robot.upgradeReglPercent}%` : '-';
-      return acc;
-    }, {} as Record<string, unknown>),
+    ...robots.reduce(
+      (acc, robot, index) => {
+        acc[`robot_${index}`] = robot.upgradeReglPercent ? `${robot.upgradeReglPercent}%` : '-';
+        return acc;
+      },
+      {} as Record<string, unknown>
+    ),
   });
 
   return { rows, robots };
@@ -216,7 +270,7 @@ export const useRobotsStore = create<RobotsState>()(
 
         try {
           const robotsDataArray = robotsData as Robot[];
-          
+
           // Преобразуем Robot[] в RobotCustomization[] с установкой baseRobot
           const robots: RobotCustomization[] = robotsDataArray.map((robot, index) => ({
             ...robot,
@@ -229,7 +283,8 @@ export const useRobotsStore = create<RobotsState>()(
             error: null,
           });
         } catch (error) {
-          const errorMessage = error instanceof Error ? error.message : 'Неизвестная ошибка при загрузке данных';
+          const errorMessage =
+            error instanceof Error ? error.message : 'Неизвестная ошибка при загрузке данных';
           set({
             isLoading: false,
             error: errorMessage,

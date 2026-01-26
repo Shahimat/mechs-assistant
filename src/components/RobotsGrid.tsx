@@ -1,6 +1,13 @@
 import { useMemo, useRef, useCallback, useEffect } from 'react';
 import { AgGridReact } from 'ag-grid-react';
-import type { ColDef, GridOptions, ColumnMovedEvent, GridApi, GridReadyEvent, ICellRendererParams } from 'ag-grid-community';
+import type {
+  ColDef,
+  GridOptions,
+  ColumnMovedEvent,
+  GridApi,
+  GridReadyEvent,
+  ICellRendererParams,
+} from 'ag-grid-community';
 import { ModuleRegistry, AllCommunityModule } from 'ag-grid-community';
 import { Box, Typography, CircularProgress, Alert, Checkbox } from '@mui/material';
 import { useRobotsStore, transposeRobotsData } from '../stores/robots/store';
@@ -11,7 +18,10 @@ ModuleRegistry.registerModules([AllCommunityModule]);
 /**
  * Компонент для отображения чекбокса базового робота
  */
-const BaseRobotCheckboxCell: React.FC<{ robotIndex: number; isChecked: boolean }> = ({ robotIndex, isChecked }) => {
+const BaseRobotCheckboxCell: React.FC<{ robotIndex: number; isChecked: boolean }> = ({
+  robotIndex,
+  isChecked,
+}) => {
   const { setBaseRobot } = useRobotsStore();
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -80,13 +90,12 @@ export const RobotsGrid: React.FC = () => {
     gridApiRef.current = params.api;
   }, []);
 
-
   // Обработчик после перемещения - проверяем и исправляем если нужно
   const handleColumnMoved = useCallback((event: ColumnMovedEvent) => {
     if (!event.column || !gridApiRef.current) return;
 
     const movedColumnId = event.column.getColId();
-    
+
     // Если перемещается сам столбец "parameter", разрешаем
     if (movedColumnId === 'parameter') {
       return;
@@ -102,15 +111,16 @@ export const RobotsGrid: React.FC = () => {
           const api = gridApiRef.current as unknown as {
             columnApi?: { getAllDisplayedColumns: () => Array<{ getColId: () => string }> };
           };
-          
+
           let allColumns: Array<{ getColId: () => string }> = [];
-          
+
           if (api.columnApi) {
             allColumns = api.columnApi.getAllDisplayedColumns();
           } else {
             const cols = gridApiRef.current.getColumns() || [];
             const colsWithPos = cols.map((col) => {
-              const left = (col as unknown as { getLeft?: () => number | null }).getLeft?.() ?? null;
+              const left =
+                (col as unknown as { getLeft?: () => number | null }).getLeft?.() ?? null;
               return {
                 col,
                 left: left ?? 0,
@@ -119,28 +129,34 @@ export const RobotsGrid: React.FC = () => {
             colsWithPos.sort((a, b) => a.left - b.left);
             allColumns = colsWithPos.map((item) => item.col);
           }
-          
+
           // Находим позицию столбца "parameter"
           const parameterIndex = allColumns.findIndex((col) => col.getColId() === 'parameter');
           const movedColumnIndex = allColumns.findIndex((col) => col.getColId() === movedColumnId);
-          
+
           // Если перемещенный столбец оказался перед "parameter", возвращаем его обратно
-          if (parameterIndex !== -1 && movedColumnIndex !== -1 && movedColumnIndex < parameterIndex) {
+          if (
+            parameterIndex !== -1 &&
+            movedColumnIndex !== -1 &&
+            movedColumnIndex < parameterIndex
+          ) {
             // Перемещаем столбец обратно после parameter
             try {
               const api = gridApiRef.current;
-              
+
               // Используем moveColumns для перемещения столбца на позицию после parameter
               // В AG Grid v35 используется moveColumns
               const targetIndex = parameterIndex + 1;
-              
+
               // Используем moveColumns
-              const moveColumns = (api as unknown as { moveColumns?: (columns: unknown[], toIndex: number) => void }).moveColumns;
+              const moveColumns = (
+                api as unknown as { moveColumns?: (columns: unknown[], toIndex: number) => void }
+              ).moveColumns;
               if (moveColumns) {
                 const columnToMove = allColumns[movedColumnIndex];
                 moveColumns([columnToMove], targetIndex);
               }
-              
+
               // Дополнительно обновляем отображение
               setTimeout(() => {
                 if (gridApiRef.current) {
@@ -170,7 +186,7 @@ export const RobotsGrid: React.FC = () => {
         filter: false,
         lockPosition: 'left', // Блокируем перемещение столбца "parameter" слева
         suppressMovable: false, // Разрешаем перемещение, но блокируем позицию
-        cellStyle: { 
+        cellStyle: {
           fontWeight: 'bold',
           borderRight: '1px solid #e0e0e0', // Вертикальная граница между столбцами
         },
@@ -183,7 +199,7 @@ export const RobotsGrid: React.FC = () => {
     // Добавляем столбец для каждого робота
     robotList.forEach((robot, index) => {
       const isBaseRobot = robot.baseRobot;
-      
+
       cols.push({
         field: `robot_${index}`,
         headerName: robot.name,
@@ -211,7 +227,7 @@ export const RobotsGrid: React.FC = () => {
         cellStyle: (params) => {
           // Для строки "Базовый робот" центрируем содержимое
           if (params.data?.parameter === 'Базовый робот') {
-            return { 
+            return {
               textAlign: 'center',
               borderRight: '1px solid #e0e0e0', // Вертикальная граница между столбцами
             };
@@ -232,7 +248,11 @@ export const RobotsGrid: React.FC = () => {
           const parameterName = params.data?.parameter as string;
 
           // Тип, Уровень и Базовый робот - без цветового различия
-          if (parameterName === 'Тип' || parameterName === 'Уровень' || parameterName === 'Базовый робот') {
+          if (
+            parameterName === 'Тип' ||
+            parameterName === 'Уровень' ||
+            parameterName === 'Базовый робот'
+          ) {
             return baseStyle;
           }
 
@@ -254,10 +274,7 @@ export const RobotsGrid: React.FC = () => {
           };
 
           // Обработка дополнительных параметров (неуязвимость, ускорение, прокачка)
-          if (
-            parameterName === 'Доп. неуязвимость' ||
-            parameterName === 'Доп. ускорение'
-          ) {
+          if (parameterName === 'Доп. неуязвимость' || parameterName === 'Доп. ускорение') {
             const baseHasValue = hasValue(baseValue);
             const currentHasValue = hasValue(currentValue);
 
@@ -395,7 +412,16 @@ export const RobotsGrid: React.FC = () => {
   // Показываем загрузку или ошибку
   if (isLoading) {
     return (
-      <Box sx={{ width: '100%', height: '100vh', p: 2, display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+      <Box
+        sx={{
+          width: '100%',
+          height: '100vh',
+          p: 2,
+          display: 'flex',
+          justifyContent: 'center',
+          alignItems: 'center',
+        }}
+      >
         <CircularProgress />
       </Box>
     );
