@@ -18,15 +18,15 @@ ModuleRegistry.registerModules([AllCommunityModule]);
 /**
  * Компонент для отображения чекбокса базового робота
  */
-const BaseRobotCheckboxCell: React.FC<{ robotIndex: number; isChecked: boolean }> = ({
-  robotIndex,
+const BaseRobotCheckboxCell: React.FC<{ robotKey: string; isChecked: boolean }> = ({
+  robotKey,
   isChecked,
 }) => {
   const { setBaseRobot } = useRobotsStore();
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     if (event.target.checked) {
-      setBaseRobot(robotIndex);
+      setBaseRobot(robotKey);
     }
   };
 
@@ -43,10 +43,10 @@ const BaseRobotCheckboxCell: React.FC<{ robotIndex: number; isChecked: boolean }
 const BaseRobotCheckboxRenderer: React.FC<ICellRendererParams> = (params) => {
   // Если это строка "Базовый робот", показываем чекбокс
   if (params.data?.parameter === 'Базовый робот') {
-    const robotIndex = parseInt(params.column?.getColId().replace('robot_', '') || '0', 10);
+    const robotKey = params.column?.getColId() || '';
     const isChecked = params.value === true;
 
-    return <BaseRobotCheckboxCell robotIndex={robotIndex} isChecked={isChecked} />;
+    return <BaseRobotCheckboxCell robotKey={robotKey} isChecked={isChecked} />;
   }
 
   // Для остальных строк возвращаем элемент с отформатированным значением
@@ -194,15 +194,15 @@ export const RobotsGrid: React.FC = () => {
       },
     ];
 
-    // Находим индекс базового робота (с baseRobot=true)
-    const baseRobotIndex = robotList.findIndex((robot) => robot.baseRobot);
+    // Находим ключ базового робота (с baseRobot=true)
+    const baseRobotKey = robotList.find((robot) => robot.baseRobot)?.key;
 
     // Добавляем столбец для каждого робота
-    robotList.forEach((robot, index) => {
+    robotList.forEach((robot) => {
       const isBaseRobot = robot.baseRobot;
 
       cols.push({
-        field: `robot_${index}`,
+        field: robot.key,
         headerName: robot.name,
         width: 150,
         sortable: false,
@@ -244,7 +244,7 @@ export const RobotsGrid: React.FC = () => {
           }
 
           // Получаем значения относительно базового робота (с baseRobot=true)
-          const baseValue = baseRobotIndex !== -1 ? params.data?.[`robot_${baseRobotIndex}`] : null;
+          const baseValue = baseRobotKey ? params.data?.[baseRobotKey] : null;
           const currentValue = params.value;
           const parameterName = params.data?.parameter as string;
 
