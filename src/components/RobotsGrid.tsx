@@ -247,11 +247,13 @@ export const RobotsGrid: React.FC = () => {
           const currentValue = params.value;
           const parameterName = params.data?.parameter as string;
 
-          // Тип, Уровень и Базовый робот - без цветового различия
+          // Тип, Уровень, Базовый робот, Дополнительные слоты, Особенности - без цветового различия
           if (
             parameterName === 'Тип' ||
             parameterName === 'Уровень' ||
-            parameterName === 'Базовый робот'
+            parameterName === 'Базовый робот' ||
+            parameterName === 'Дополнительные слоты' ||
+            parameterName === 'Особенности'
           ) {
             return baseStyle;
           }
@@ -286,8 +288,11 @@ export const RobotsGrid: React.FC = () => {
             return baseStyle;
           }
 
-          // Обработка прокачки
-          if (parameterName === 'Прокачка (реглы %)') {
+          // Обработка прокачки (реглы и предметы - меньше = лучше)
+          if (
+            parameterName === 'Прокачка (реглы %)' ||
+            parameterName === 'Прокачка предметов (%)'
+          ) {
             const baseHasValue = hasValue(baseValue);
             const currentHasValue = hasValue(currentValue);
 
@@ -295,6 +300,14 @@ export const RobotsGrid: React.FC = () => {
               baseStyle.color = '#d32f2f'; // красный
             } else if (!currentHasValue && baseHasValue) {
               baseStyle.color = '#2e7d32'; // зеленый
+            } else if (currentHasValue && baseHasValue) {
+              const baseNum = getNumericValue(baseValue);
+              const currentNum = getNumericValue(currentValue);
+              if (currentNum > baseNum) {
+                baseStyle.color = '#d32f2f'; // красный (больше процентов = хуже)
+              } else if (currentNum < baseNum) {
+                baseStyle.color = '#2e7d32'; // зеленый (меньше процентов = лучше)
+              }
             }
             return baseStyle;
           }
@@ -330,6 +343,54 @@ export const RobotsGrid: React.FC = () => {
                 baseStyle.color = '#2e7d32'; // зеленый
               } else {
                 baseStyle.color = '#d32f2f'; // красный
+              }
+            }
+            return baseStyle;
+          }
+
+          // Обработка цены для прокачки (аналогично ценам покупки)
+          if (
+            parameterName === 'Цена для прокачки (бонусы)' ||
+            parameterName === 'Цена для прокачки (реглы)'
+          ) {
+            const baseNum = getNumericValue(baseValue);
+            const currentNum = getNumericValue(currentValue);
+
+            if (currentNum !== baseNum) {
+              if (currentNum > baseNum) {
+                baseStyle.color = '#d32f2f'; // красный (больше цена = хуже)
+              } else {
+                baseStyle.color = '#2e7d32'; // зеленый (меньше цена = лучше)
+              }
+            }
+            return baseStyle;
+          }
+
+          // Обработка урона в спину/бок и от гаубиц (меньше = лучше)
+          if (parameterName === 'Урон в спину/бок (%)' || parameterName === 'Урон от гаубиц (%)') {
+            const baseNum = getNumericValue(baseValue);
+            const currentNum = getNumericValue(currentValue);
+
+            if (currentNum !== baseNum) {
+              if (currentNum < baseNum) {
+                baseStyle.color = '#2e7d32'; // зеленый (меньше урона = лучше)
+              } else {
+                baseStyle.color = '#d32f2f'; // красный (больше урона = хуже)
+              }
+            }
+            return baseStyle;
+          }
+
+          // Обработка вероятности промаха (больше = лучше)
+          if (parameterName === 'Вероятность промаха (%)') {
+            const baseNum = getNumericValue(baseValue);
+            const currentNum = getNumericValue(currentValue);
+
+            if (currentNum !== baseNum) {
+              if (currentNum > baseNum) {
+                baseStyle.color = '#2e7d32'; // зеленый (больше вероятность = лучше)
+              } else {
+                baseStyle.color = '#d32f2f'; // красный (меньше вероятность = хуже)
               }
             }
             return baseStyle;

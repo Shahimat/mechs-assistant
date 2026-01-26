@@ -249,6 +249,96 @@ export function transposeRobotsData(robots: RobotCustomization[]): TransposedRob
     ),
   });
 
+  rows.push({
+    parameter: 'Цена для прокачки (бонусы)',
+    ...robots.reduce(
+      (acc, robot, index) => {
+        acc[`robot_${index}`] = robot.upgradePrice?.bonds ?? '-';
+        return acc;
+      },
+      {} as Record<string, unknown>
+    ),
+  });
+
+  rows.push({
+    parameter: 'Цена для прокачки (реглы)',
+    ...robots.reduce(
+      (acc, robot, index) => {
+        acc[`robot_${index}`] = robot.upgradePrice?.regls ?? '-';
+        return acc;
+      },
+      {} as Record<string, unknown>
+    ),
+  });
+
+  rows.push({
+    parameter: 'Прокачка предметов (%)',
+    ...robots.reduce(
+      (acc, robot, index) => {
+        acc[`robot_${index}`] = robot.itemUpgradePercent ? `${robot.itemUpgradePercent}%` : '-';
+        return acc;
+      },
+      {} as Record<string, unknown>
+    ),
+  });
+
+  rows.push({
+    parameter: 'Дополнительные слоты',
+    ...robots.reduce(
+      (acc, robot, index) => {
+        acc[`robot_${index}`] =
+          robot.extraSlots && robot.extraSlots.length > 0 ? robot.extraSlots.join(', ') : '-';
+        return acc;
+      },
+      {} as Record<string, unknown>
+    ),
+  });
+
+  rows.push({
+    parameter: 'Особенности',
+    ...robots.reduce(
+      (acc, robot, index) => {
+        acc[`robot_${index}`] =
+          robot.features && robot.features.length > 0 ? robot.features.join(', ') : '-';
+        return acc;
+      },
+      {} as Record<string, unknown>
+    ),
+  });
+
+  rows.push({
+    parameter: 'Урон в спину/бок (%)',
+    ...robots.reduce(
+      (acc, robot, index) => {
+        acc[`robot_${index}`] = robot.backSideDamage != null ? `${robot.backSideDamage}%` : '-';
+        return acc;
+      },
+      {} as Record<string, unknown>
+    ),
+  });
+
+  rows.push({
+    parameter: 'Урон от гаубиц (%)',
+    ...robots.reduce(
+      (acc, robot, index) => {
+        acc[`robot_${index}`] = robot.howitzerDamage != null ? `${robot.howitzerDamage}%` : '-';
+        return acc;
+      },
+      {} as Record<string, unknown>
+    ),
+  });
+
+  rows.push({
+    parameter: 'Вероятность промаха (%)',
+    ...robots.reduce(
+      (acc, robot, index) => {
+        acc[`robot_${index}`] = robot.missChance != null ? `${robot.missChance}%` : '-';
+        return acc;
+      },
+      {} as Record<string, unknown>
+    ),
+  });
+
   return { rows, robots };
 }
 
