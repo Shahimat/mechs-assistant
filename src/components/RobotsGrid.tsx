@@ -180,7 +180,7 @@ export const RobotsGrid: React.FC = () => {
       {
         field: 'parameter',
         headerName: 'Параметр',
-        width: 200,
+        width: 240,
         pinned: 'left',
         sortable: false,
         filter: false,
@@ -189,6 +189,7 @@ export const RobotsGrid: React.FC = () => {
         cellStyle: {
           fontWeight: 'bold',
           borderRight: '1px solid #e0e0e0', // Вертикальная граница между столбцами
+          padding: '4px 8px', // Уменьшенный padding для более компактного вида
         },
       },
     ];
@@ -423,6 +424,7 @@ export const RobotsGrid: React.FC = () => {
       filter: false,
       cellStyle: {
         borderRight: '1px solid #e0e0e0', // Вертикальная граница между столбцами
+        padding: '4px 8px', // Уменьшенный padding для более компактного вида
       },
     }),
     []
@@ -434,6 +436,7 @@ export const RobotsGrid: React.FC = () => {
       pagination: false, // Отключаем пагинацию для транспонированной таблицы
       animateRows: true,
       suppressHorizontalScroll: false,
+      rowHeight: 32, // Уменьшенная высота строк для более компактного вида
       onGridReady: handleGridReady,
       onColumnMoved: handleColumnMoved,
       localeText: {
