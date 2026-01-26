@@ -35,6 +35,8 @@ export interface RobotStats {
 }
 
 export interface Robot {
+  /** Уникальный ключ робота */
+  key: string;
   /** Название робота (с уровнем, если вариантов больше одного) */
   name: string;
   /** Модель робота */
@@ -49,8 +51,22 @@ export interface Robot {
   buyPrice?: RobotPrice;
   /** Цена продажи */
   sellPrice?: RobotPrice;
+  /** Цена для прокачки */
+  upgradePrice?: RobotPrice;
   /** Процент прокачки в реглах */
   upgradeReglPercent?: number;
+  /** Процент прокачки предметов */
+  itemUpgradePercent?: number;
+  /** Дополнительные слоты для установки оборудования */
+  extraSlots?: string[];
+  /** Особенности робота (например, "Рывок охотника") */
+  features?: string[];
+  /** Получаемый урон в спину/бок (в процентах, если не указан, то 100%) */
+  backSideDamage?: number;
+  /** Получаемый урон от гаубиц (в процентах, если не указан, то 100%) */
+  howitzerDamage?: number;
+  /** Вероятность промаха (в процентах) */
+  missChance?: number;
   /** Описание робота (если есть) */
   description?: string;
   /** URL изображения (если есть) */
