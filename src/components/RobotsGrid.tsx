@@ -11,6 +11,7 @@ import type {
 import { ModuleRegistry, AllCommunityModule } from 'ag-grid-community';
 import { Box, Typography, CircularProgress, Alert, Checkbox } from '@mui/material';
 import { useRobotsStore, transposeRobotsData } from '../stores/robots/store';
+import { FavoriteStarCell } from './FavoriteStarCell';
 
 // Регистрация модулей AG Grid
 ModuleRegistry.registerModules([AllCommunityModule]);
@@ -38,19 +39,21 @@ const BaseRobotCheckboxCell: React.FC<{ robotKey: string; isChecked: boolean }> 
 };
 
 /**
- * Рендерер ячейки для AG Grid
+ * Универсальный рендерер ячейки для AG Grid:
+ * отображает чекбокс для "Базовый робот", звёздочку для "Избранное",
+ * форматированное значение для остальных строк
  */
-const BaseRobotCheckboxRenderer: React.FC<ICellRendererParams> = (params) => {
-  // Если это строка "Базовый робот", показываем чекбокс
-  if (params.data?.parameter === 'Базовый робот') {
-    const robotKey = params.column?.getColId() || '';
-    const isChecked = params.value === true;
+const RobotCellRenderer: React.FC<ICellRendererParams> = (params) => {
+  const robotKey = params.column?.getColId() || '';
 
-    return <BaseRobotCheckboxCell robotKey={robotKey} isChecked={isChecked} />;
+  if (params.data?.parameter === 'Избранное') {
+    return <FavoriteStarCell robotKey={robotKey} isFavorite={params.value === true} />;
   }
 
-  // Для остальных строк возвращаем элемент с отформатированным значением
-  // Это позволяет AG Grid корректно отображать данные
+  if (params.data?.parameter === 'Базовый робот') {
+    return <BaseRobotCheckboxCell robotKey={robotKey} isChecked={params.value === true} />;
+  }
+
   return <span>{params.valueFormatted ?? params.value}</span>;
 };
 
@@ -58,8 +61,10 @@ const BaseRobotCheckboxRenderer: React.FC<ICellRendererParams> = (params) => {
  * Компонент для отображения таблицы роботов с использованием ag-grid
  */
 export const RobotsGrid: React.FC = () => {
-  const { robots, isLoading, error, initializeRobots } = useRobotsStore();
+  const { robots, baseRobotKey, favorites, isLoading, error, initializeRobots } =
+    useRobotsStore();
   const gridApiRef = useRef<GridApi | null>(null);
+  const isProgrammaticMoveRef = useRef(false);
 
   // Инициализируем данные при монтировании компонента
   useEffect(() => {
@@ -69,30 +74,50 @@ export const RobotsGrid: React.FC = () => {
   }, [robots.length, isLoading, initializeRobots]);
 
   // Получаем транспонированные данные (вычисляемое значение)
+  // baseRobotKey нужен, чтобы строка "Базовый робот" и чекбоксы отображались корректно
   const transposedData = useMemo(() => {
     if (robots.length === 0) {
       return { rows: [], robots: [] };
     }
-    return transposeRobotsData(robots);
-  }, [robots]);
+    return transposeRobotsData(robots, baseRobotKey, favorites);
+  }, [robots, baseRobotKey, favorites]);
   const { rows, robots: robotList } = transposedData;
 
-  // Обновляем таблицу при изменении базового робота
+  // Обновляем ячейки при изменении базового робота или избранного
   useEffect(() => {
     if (gridApiRef.current && transposedData.rows.length > 0) {
-      // Обновляем все ячейки для пересчета цветов и обновления чекбоксов
       gridApiRef.current.refreshCells({ force: true });
     }
-  }, [robots, transposedData.rows.length]);
+  }, [robots, baseRobotKey, favorites, transposedData.rows.length]);
+
+  // Перемещаем столбцы избранных мехов в начало (после parameter)
+  useEffect(() => {
+    if (!gridApiRef.current || favorites.length === 0) return;
+
+    const api = gridApiRef.current;
+    const allCols = api.getColumns();
+    if (!allCols || allCols.length === 0) return;
+
+    const favCols = favorites
+      .map((key) => allCols.find((c) => c.getColId() === key))
+      .filter((c): c is NonNullable<typeof c> => c != null);
+
+    if (favCols.length === 0) return;
+
+    isProgrammaticMoveRef.current = true;
+    api.moveColumns(favCols, 1);
+    isProgrammaticMoveRef.current = false;
+  }, [favorites]);
 
   // Обработчик готовности грида
   const handleGridReady = useCallback((params: GridReadyEvent) => {
     gridApiRef.current = params.api;
   }, []);
 
-  // Обработчик после перемещения - проверяем и исправляем если нужно
+  // Обработчик после перемещения — только для пользовательского D&D
   const handleColumnMoved = useCallback((event: ColumnMovedEvent) => {
     if (!event.column || !gridApiRef.current) return;
+    if (isProgrammaticMoveRef.current) return;
 
     const movedColumnId = event.column.getColId();
 
@@ -194,30 +219,25 @@ export const RobotsGrid: React.FC = () => {
       },
     ];
 
-    // Находим ключ базового робота (с baseRobot=true)
-    const baseRobotKey = robotList.find((robot) => robot.baseRobot)?.key;
-
     // Добавляем столбец для каждого робота
     robotList.forEach((robot) => {
-      const isBaseRobot = robot.baseRobot;
-
       cols.push({
         field: robot.key,
         headerName: robot.name,
         width: 150,
         sortable: false,
         filter: false,
-        suppressMovable: false, // Разрешаем перемещение
-        // Для строки "Базовый робот" используем кастомный рендерер с чекбоксом
-        cellRenderer: BaseRobotCheckboxRenderer,
+        suppressMovable: false,
+        cellRenderer: RobotCellRenderer,
         valueFormatter: (params) => {
-          // Для строки "Базовый робот" не форматируем значение (оно отображается через cellRenderer)
-          if (params.data?.parameter === 'Базовый робот') {
+          if (
+            params.data?.parameter === 'Базовый робот' ||
+            params.data?.parameter === 'Избранное'
+          ) {
             return '';
           }
           if (params.value == null || params.value === '-') return '-';
           if (typeof params.value === 'number') {
-            // Форматируем большие числа
             if (params.value >= 1000) {
               return params.value.toLocaleString('ru-RU');
             }
@@ -226,25 +246,28 @@ export const RobotsGrid: React.FC = () => {
           return params.value;
         },
         cellStyle: (params) => {
-          // Для строки "Базовый робот" центрируем содержимое
-          if (params.data?.parameter === 'Базовый робот') {
+          if (
+            params.data?.parameter === 'Базовый робот' ||
+            params.data?.parameter === 'Избранное'
+          ) {
             return {
               textAlign: 'center',
-              borderRight: '1px solid #e0e0e0', // Вертикальная граница между столбцами
+              borderRight: '1px solid #e0e0e0',
             };
           }
           const baseStyle: Record<string, string> = {
-            textAlign: 'right', // Все значения выравниваем по правому краю
-            borderRight: '1px solid #e0e0e0', // Вертикальная граница между столбцами
+            textAlign: 'right',
+            borderRight: '1px solid #e0e0e0',
           };
 
-          // Базовый робот не сравниваем
+          const ctxBaseKey = params.context?.baseRobotKey as string | null;
+          const isBaseRobot = robot.key === ctxBaseKey;
+
           if (isBaseRobot) {
             return baseStyle;
           }
 
-          // Получаем значения относительно базового робота (с baseRobot=true)
-          const baseValue = baseRobotKey ? params.data?.[baseRobotKey] : null;
+          const baseValue = ctxBaseKey ? params.data?.[ctxBaseKey] : null;
           const currentValue = params.value;
           const parameterName = params.data?.parameter as string;
 
@@ -253,6 +276,7 @@ export const RobotsGrid: React.FC = () => {
             parameterName === 'Тип' ||
             parameterName === 'Уровень' ||
             parameterName === 'Базовый робот' ||
+            parameterName === 'Избранное' ||
             parameterName === 'Дополнительные слоты' ||
             parameterName === 'Особенности'
           ) {
@@ -530,6 +554,7 @@ export const RobotsGrid: React.FC = () => {
           columnDefs={columnDefs}
           defaultColDef={defaultColDef}
           gridOptions={gridOptions}
+          context={{ baseRobotKey, favorites }}
         />
       </Box>
     </Box>

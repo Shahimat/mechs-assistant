@@ -1,8 +1,10 @@
 import { create } from 'zustand';
 import { devtools } from 'zustand/middleware';
+import type { StoreApi } from 'zustand';
 import type { Robot } from '../../types/robot';
 import type { RobotCustomization } from './types';
 import robotsData from '../../../data/robots.json';
+import { indexedDBMiddleware } from './indexedDBMiddleware';
 
 /**
  * Тип для строки транспонированной таблицы
@@ -26,6 +28,12 @@ export interface TransposedRobotsData {
 interface RobotsState {
   /** Исходные данные роботов с кастомизацией */
   robots: RobotCustomization[];
+  /** Ключ базового робота (null если не установлен) */
+  baseRobotKey: string | null;
+  /** Ключи избранных роботов */
+  favorites: string[];
+  /** Флаг: данные загружены из indexedDB (не перезаписывать до этого) */
+  _persistHydrated: boolean;
   /** Флаг загрузки */
   isLoading: boolean;
   /** Ошибка загрузки */
@@ -36,15 +44,32 @@ interface RobotsState {
   getTransposedData: () => TransposedRobotsData;
   /** Установить базового робота по ключу */
   setBaseRobot: (key: string) => void;
+  /** Переключить избранное для робота по ключу */
+  toggleFavorite: (robotKey: string) => void;
 }
 
 /**
  * Преобразует данные роботов в транспонированный формат
  * (параметры в строках, роботы в столбцах)
  */
-export function transposeRobotsData(robots: RobotCustomization[]): TransposedRobotsData {
+export function transposeRobotsData(
+  robots: RobotCustomization[],
+  baseRobotKey: string | null = null,
+  favorites: string[] = []
+): TransposedRobotsData {
+  const favSet = new Set(favorites);
+
   const rows: TransposedRow[] = [
-    // Базовые параметры (Название и Модель скрыты)
+    {
+      parameter: 'Избранное',
+      ...robots.reduce(
+        (acc, robot) => {
+          acc[robot.key] = favSet.has(robot.key);
+          return acc;
+        },
+        {} as Record<string, unknown>
+      ),
+    },
     {
       parameter: 'Тип',
       ...robots.reduce(
@@ -70,7 +95,9 @@ export function transposeRobotsData(robots: RobotCustomization[]): TransposedRob
       parameter: 'Базовый робот',
       ...robots.reduce(
         (acc, robot) => {
-          acc[robot.key] = robot.baseRobot;
+          // Проверяем, является ли этот робот базовым
+          const currentBaseRobotKey = baseRobotKey ?? (robots.length > 0 ? robots[0].key : null);
+          acc[robot.key] = robot.key === currentBaseRobotKey;
           return acc;
         },
         {} as Record<string, unknown>
@@ -322,83 +349,112 @@ export function transposeRobotsData(robots: RobotCustomization[]): TransposedRob
  */
 export const useRobotsStore = create<RobotsState>()(
   devtools(
-    (set, get) => ({
-      robots: [],
-      isLoading: false,
-      error: null,
+    indexedDBMiddleware<RobotsState>({
+      dbName: 'mechs-assistant',
+      dbVersion: 2,
+      storeName: 'robots-store',
+      persistKeys: ['baseRobotKey', 'favorites'],
+    })(
+      (
+        set: StoreApi<RobotsState>['setState'],
+        get: StoreApi<RobotsState>['getState']
+      ) => ({
+        robots: [],
+        baseRobotKey: null,
+        favorites: [],
+        _persistHydrated: false,
+        isLoading: false,
+        error: null,
 
-      /**
-       * Инициализация данных роботов
-       */
-      initializeRobots: () => {
-        set({ isLoading: true, error: null });
+        /**
+         * Инициализация данных роботов
+         * baseRobotKey не перезаписывается до завершения загрузки из indexedDB (_persistHydrated)
+         */
+        initializeRobots: () => {
+          set({ isLoading: true, error: null });
 
-        try {
-          const robotsDataArray = robotsData as Robot[];
+          try {
+            const robotsDataArray = robotsData as Robot[];
+            const state = get();
 
-          // Преобразуем Robot[] в RobotCustomization[] с установкой baseRobot
-          const robots: RobotCustomization[] = robotsDataArray.map((robot, index) => ({
-            ...robot,
-            baseRobot: index === 0, // Первый робот - базовый, остальные - нет
-          }));
+            // Дефолтный базовый робот — только после гидратации из indexedDB, иначе не трогаем
+            const defaultBaseRobotKey =
+              state.baseRobotKey ??
+              (state._persistHydrated && robotsDataArray.length > 0
+                ? robotsDataArray[0].key
+                : null);
 
-          set({
-            robots,
-            isLoading: false,
-            error: null,
-          });
-        } catch (error) {
-          const errorMessage =
-            error instanceof Error ? error.message : 'Неизвестная ошибка при загрузке данных';
-          set({
-            isLoading: false,
-            error: errorMessage,
-          });
-        }
-      },
+            const robots: RobotCustomization[] = robotsDataArray;
 
-      /**
-       * Получить транспонированные данные (вычисляемое значение)
-       * Если данные еще не загружены, инициализирует их
-       */
-      getTransposedData: () => {
-        const state = get();
-        if (state.robots.length === 0) {
-          // Если данных нет, инициализируем
-          state.initializeRobots();
-          const updatedState = get();
-          if (updatedState.robots.length === 0) {
-            return { rows: [], robots: [] };
+            set({
+              robots,
+              baseRobotKey: defaultBaseRobotKey,
+              isLoading: false,
+              error: null,
+            });
+          } catch (error) {
+            const errorMessage =
+              error instanceof Error ? error.message : 'Неизвестная ошибка при загрузке данных';
+            set({
+              isLoading: false,
+              error: errorMessage,
+            });
           }
-          return transposeRobotsData(updatedState.robots);
-        }
+        },
 
-        // Вычисляем транспонированные данные на основе текущих robots
-        return transposeRobotsData(state.robots);
-      },
+        /**
+         * Получить транспонированные данные (вычисляемое значение)
+         * Если данные еще не загружены, инициализирует их
+         */
+        getTransposedData: () => {
+          const state = get();
+          if (state.robots.length === 0) {
+            // Если данных нет, инициализируем
+            state.initializeRobots();
+            const updatedState = get();
+            if (updatedState.robots.length === 0) {
+              return { rows: [], robots: [] };
+            }
+            return transposeRobotsData(
+              updatedState.robots,
+              updatedState.baseRobotKey,
+              updatedState.favorites
+            );
+          }
 
-      /**
-       * Установить базового робота по ключу
-       * При установке нового базового робота, у всех остальных baseRobot становится false
-       */
-      setBaseRobot: (key: string) => {
-        const state = get();
-        const robotExists = state.robots.some((robot) => robot.key === key);
-        if (!robotExists) {
-          return;
-        }
+          return transposeRobotsData(state.robots, state.baseRobotKey, state.favorites);
+        },
 
-        // Обновляем всех роботов: устанавливаем baseRobot=true только для выбранного
-        const updatedRobots = state.robots.map((robot) => ({
-          ...robot,
-          baseRobot: robot.key === key,
-        }));
+        /**
+         * Установить базового робота по ключу
+         * Обновляет baseRobotKey в состоянии (middleware автоматически сохранит в indexedDB)
+         */
+        setBaseRobot: (key: string) => {
+          const state = get();
+          const robotExists = state.robots.some((robot: RobotCustomization) => robot.key === key);
+          if (!robotExists) {
+            return;
+          }
 
-        set({
-          robots: updatedRobots,
-        });
-      },
-    }),
+          // Обновляем baseRobotKey в состоянии
+          // Middleware автоматически сохранит его в indexedDB
+          // Роботы не изменяются, меняется только baseRobotKey в состоянии
+          set({
+            baseRobotKey: key,
+          });
+        },
+
+        toggleFavorite: (robotKey: string) => {
+          const state = get();
+          const idx = state.favorites.indexOf(robotKey);
+          const next =
+            idx === -1
+              ? [...state.favorites, robotKey]
+              : state.favorites.filter((k) => k !== robotKey);
+          set({ favorites: next });
+        },
+      })
+    ),
     {
       name: 'robots-store',
     }
