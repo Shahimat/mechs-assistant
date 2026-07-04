@@ -81,4 +81,7 @@ export default defineConfig({
     usedExports: true,
     sideEffects: true,
   },
+  experiments: {
+    css: true,
+  },
 });
