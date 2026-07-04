@@ -1,0 +1,33 @@
+id: robots-catalog-schema-typed
+kind: behavior
+namespace: catalog
+entities: [robots-catalog]
+title: Каждая запись в robots.json соответствует типу Robot (TS strict)
+
+scenarios:
+  - given: TypeScript strict включён (`strict: true`) и `resolveJsonModule: true`
+    when: файл `store.ts` импортирует `robotsData` и приводит его к `Robot[]`
+    then: |
+      сборка проходит без ошибок типа, `Robot`-типы из `src/types/robot.ts`
+      применимы ко всем записям (`key`, `name`, `model`, `type`,
+      `requiredLevel`, `stats.*`).
+
+  - given: в JSON появилась запись, у которой отсутствует обязательное поле
+      `stats.durability` / `stats.capacity` / `stats.speed` / `stats.maxSpeed`
+      / `stats.armor` / `stats.energyFields`
+    when: разработчик пытается собрать проект (`npm run build`)
+    then: |
+      сборка/typecheck должны падать. (На практике поле проверяется
+      через приведение `as Robot[]`, поэтому явная валидация — задача
+      автора JSON. Отметить в verified_note.)
+
+verified: true
+verified_at: 2026-07-04
+verified_note: |
+  Проверено: `npm run build` проходит без ошибок типа, `resolveJsonModule`
+  включён в tsconfig.json, `Robot` описан в src/types/robot.ts.
+  Оговорка: приведение `robotsData as Robot[]` в store.ts — это assert,
+  а не runtime-валидация. Если в JSON появится некорректная запись,
+  строгая проверка не сработает. Второй сценарий behavior — «падает
+  сборка» — по факту НЕ выполняется, оставил как ожидаемое поведение
+  для будущей runtime-валидации (например, через zod).

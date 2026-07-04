@@ -1,0 +1,8 @@
+key: language
+rule: |
+  Общаемся на русском. Все комментарии в коде, тексты в UI, содержимое
+  документации (README, CLAUDE, entities, behaviors, conventions,
+  active.todo, verified_note) — на русском.
+  Английский допустим только в идентификаторах, ключах YAML, именах
+  файлов/директорий и общеупотребимых технических терминах, где краткая
+  русская форма хуже (props, hook, middleware, store, grid, bundler).

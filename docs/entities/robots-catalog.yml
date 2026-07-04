@@ -1,0 +1,51 @@
+id: robots-catalog
+kind: entity
+namespace: catalog
+version: "1.x"
+
+description: |
+  Каталог роботов игры Мехи.Земля. Единый источник данных для приложения.
+  Данные хранятся в `data/robots.json` (массив объектов `Robot`),
+  импортируются в zustand-стор напрямую (без сетевого слоя).
+  Схема — TypeScript-типы в `src/types/robot.ts`.
+
+source_files:
+  data: data/robots.json
+  types: src/types/robot.ts
+  raw_html: raw-data/          # gitignored, HTML-выгрузки — исходники, из которых собран JSON
+
+schema:
+  robot_types: [боец, транспортник, добытчик, разведчик]
+  robot_key_fields:
+    - key            # уникальный идентификатор
+    - name           # название с уровнем
+    - model          # модель робота
+    - type           # RobotType
+    - requiredLevel  # требуемый уровень персонажа
+    - stats          # RobotStats
+  stats_fields:
+    required: [durability, capacity, speed, maxSpeed, armor, energyFields]
+    optional: [maxCapacity, regenerationPerMinute, additionalInvulnerability, additionalAcceleration]
+  optional_top_level:
+    - buyPrice
+    - sellPrice
+    - upgradePrice
+    - upgradeReglPercent
+    - itemUpgradePercent
+    - extraSlots
+    - features
+    - backSideDamage
+    - howitzerDamage
+    - missChance
+    - description
+    - imageUrl
+    - wikiUrl
+
+features_enabled: [json-source, typed-schema]
+features_disabled: [network-fetch, dynamic-schema]
+
+manuals: []
+behaviors:
+  - robots-catalog-loaded-from-json
+  - robots-catalog-schema-typed
+  - robots-grid-renders-transposed-table   # кросс-ссылка: grid читает данные каталога

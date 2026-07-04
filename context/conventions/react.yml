@@ -1,0 +1,12 @@
+key: react
+rule: |
+  React 18+. Только функциональные компоненты + hooks.
+    - Тип компонента — `React.FC<Props>` или явное описание props.
+    - Обёртки над MUI-компонентами — свои функциональные компоненты
+      с явной сигнатурой props.
+    - Для больших списков — виртуализация (`react-window`), если это
+      уместно. В текущем проекте виртуализация делается через AG Grid,
+      `react-window` числится в deps, но не используется — см. active.todo.
+    - Корневой bootstrap завёрнут в `React.StrictMode` +
+      `QueryClientProvider` + `ThemeProvider` + `CssBaseline`
+      (см. `src/index.tsx`).

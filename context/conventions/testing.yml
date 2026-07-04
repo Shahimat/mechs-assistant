@@ -1,0 +1,11 @@
+key: testing
+rule: |
+  Jest + React Testing Library (`@testing-library/react`,
+  `@testing-library/jest-dom`).
+    - Тесты компонентов оборачиваем в `ThemeProvider` c проектной темой
+      (`src/theme.ts`).
+    - Использовать `screen.getByText / getByRole` — не query по классам MUI.
+    - Целевое покрытие критичного кода — >80% (не самоцель, ориентир).
+    - Setup — `src/setupTests.ts` (jest-dom matchers).
+    - Компоненты, зависящие от zustand-стора, тестировать с моком стора
+      или с реальным стором + сбросом состояния между тестами.

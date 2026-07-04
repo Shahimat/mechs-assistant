@@ -1,0 +1,50 @@
+id: robots-grid
+kind: entity
+namespace: ui
+version: "1.x"
+
+description: |
+  Основной UI-компонент приложения: транспонированная таблица роботов.
+  Столбец `parameter` слева (закреплён), далее по столбцу на каждого
+  робота. Реализация на AG Grid Community v35 (`ag-grid-react`).
+  Данные строит `transposeRobotsData` из zustand-стора.
+
+source_files:
+  main: src/components/RobotsGrid.tsx
+  cell_renderers:
+    - src/components/FavoriteStarCell.tsx    # звёздочка избранного
+    - BaseRobotCheckboxCell                  # чекбокс базового робота, внутри RobotsGrid.tsx
+  data_source: src/stores/robots/store.ts     # useRobotsStore + transposeRobotsData
+
+grid:
+  library: ag-grid-community + ag-grid-react
+  version: "35.x"
+  theme: legacy (ag-theme-alpine)
+  pagination: false
+  row_height: 32
+  parameter_column:
+    field: parameter
+    width: 240
+    pinned: left
+    lock_position: left
+    sortable: false
+    filter: false
+
+features_enabled:
+  - transposed-view          # параметры — строки, роботы — столбцы
+  - russian-locale           # localeText в gridOptions
+  - column-drag              # пользователь может двигать столбцы роботов
+  - parameter-locked-left    # столбец `parameter` нельзя перенести правее
+
+features_disabled:
+  - pagination
+  - sorting
+  - filtering
+  - virtualization-via-react-window   # виртуализация — только внутри AG Grid
+
+manuals: []
+behaviors:
+  - robots-grid-renders-transposed-table
+  - robots-grid-parameter-column-locked-left
+  - favorites-columns-pinned-after-parameter   # кросс-ссылка: перемещение favorite-столбцов делается в grid
+  - base-robot-comparison-highlights-diff      # кросс-ссылка: подсветка ячеек делается в grid

@@ -1,0 +1,54 @@
+name: mechs-assistant
+description: WEB-ассистент игры Мехи.Земля. Сравнительная таблица роботов.
+author:
+  name: Gevorg Nakhapetyan
+  email: ngs22071993@gmail.com
+  github: https://github.com/Shahimat
+
+stack:
+  language: TypeScript (strict)
+  ui: React 18 + MUI v5 + Emotion
+  grid: AG Grid Community v35 (ag-grid-react)
+  state: Zustand + собственный indexedDB middleware
+  data_layer: TanStack Query (v5) — подключён в bootstrap, реальных queries пока нет
+  bundler: Rspack
+  testing: Jest + React Testing Library
+  lint: ESLint (@typescript-eslint) + Prettier
+
+runtime:
+  dev_port: 3000
+  dev_server: rspack serve
+  indexeddb:
+    db_name: mechs-assistant
+    db_version: 2
+    store_name: robots-store
+    persisted_keys: [baseRobotKey, favorites]
+
+paths:
+  source: src/
+  data_processed: data/robots.json
+  data_raw: raw-data/       # gitignored, HTML-выгрузки со страниц вики (исходники для robots.json)
+  docs_entities: docs/entities/
+  docs_behavior: docs/behavior/
+  conventions: context/conventions/
+  workflow: context/workflow.md
+  active_todo: context/views/active.todo
+
+namespaces:
+  - catalog       # каталог роботов, источники данных
+  - ui            # компоненты интерфейса
+  - comparison    # избранное и базовый робот
+  - persistence   # IndexedDB-персистенция
+
+commands:
+  install: npm install
+  dev: npm run dev
+  build: npm run build
+  test: npm test
+  test_watch: npm run test:watch
+  test_coverage: npm run test:coverage
+  lint: npm run lint
+  format: npm run format
+
+external_links:
+  wiki_game: unknown  # источник HTML-страниц в raw-data/ — точный URL не задокументирован, уточнить у юзера

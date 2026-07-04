@@ -32,3 +32,7 @@ lerna-debug.log*
 
 # Rspack
 .rspack
+
+# Сырые HTML-выгрузки со страниц вики — исходники для data/robots.json.
+# Хранятся локально, в репозиторий не пушим.
+raw-data/

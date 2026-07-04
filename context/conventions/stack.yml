@@ -1,0 +1,14 @@
+key: stack
+rule: |
+  Фиксированный стек проекта:
+    - React 18 (функциональные компоненты, hooks)
+    - MUI v5 (Material-UI Core) + Emotion (@emotion/react, @emotion/styled)
+    - Zustand (глобальное состояние) + собственный indexedDB middleware
+    - TanStack Query v5 (подключён в bootstrap; реальных queries пока нет)
+    - AG Grid Community v35 (ag-grid-react) — основная таблица
+    - TypeScript strict (см. convention `typescript`)
+    - Rspack (bundler)
+    - Jest + React Testing Library (см. convention `testing`)
+  Смена мажорной версии любой из этих библиотек — только после согласования.
+  Ввод новой библиотеки — согласовать (проверить, что нельзя решить
+  существующим стеком).

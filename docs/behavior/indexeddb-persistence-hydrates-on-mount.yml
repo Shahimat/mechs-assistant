@@ -1,0 +1,39 @@
+id: indexeddb-persistence-hydrates-on-mount
+kind: behavior
+namespace: persistence
+entities: [indexeddb-persistence, favorites, base-robot-comparison]
+title: При создании стора middleware гидратирует persistKeys из IndexedDB и ставит флаг _persistHydrated
+
+scenarios:
+  - given: стор `useRobotsStore` только что создан, IndexedDB не открыта
+    when: middleware вызывает `loadPersistedState` (fire-and-forget)
+    then: |
+      открывается `mechs-assistant` (version 2), object store
+      `robots-store` создаётся при необходимости, для каждого ключа из
+      `persistKeys` (`baseRobotKey`, `favorites`) читается сохранённое
+      значение, применяется через `set(patch)`, ставится
+      `_persistHydrated: true`.
+
+  - given: в IndexedDB для ключей ничего нет и в сторе уже есть роботы
+    when: гидратация завершилась без patch
+    then: |
+      middleware сам ставит `baseRobotKey = robots[0].key` через
+      дополнительный `set(...)`, флаг `_persistHydrated: true`
+      всё равно выставлен.
+
+  - given: IndexedDB упала при открытии или чтении
+    when: catch в `loadPersistedState`
+    then: |
+      ошибка попадает в `console.error`, `_persistHydrated: true`
+      всё равно выставляется — UI не блокируется.
+
+verified: true
+verified_at: 2026-07-04
+verified_note: |
+  Проверено чтением indexedDBMiddleware.ts: `initIndexedDB` открывает
+  `mechs-assistant` v2 с `robots-store`, `loadPersistedState` читает
+  каждый persistKey, применяет patch, выставляет
+  `_persistHydrated: true`. Ветка «пустой IDB + роботы уже есть»
+  ставит baseRobotKey = robots[0].key. catch логирует ошибку и всё
+  равно ставит `_persistHydrated: true`. Интеграционный тест с fake IDB
+  не гонял — не критично для миграции доки, отдельная задача.

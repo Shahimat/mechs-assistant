@@ -1,0 +1,32 @@
+id: robots-grid-renders-transposed-table
+kind: behavior
+namespace: ui
+entities: [robots-grid, robots-catalog]
+title: RobotsGrid рендерит транспонированную таблицу: параметры — строки, роботы — столбцы
+
+scenarios:
+  - given: в сторе загружены роботы (`robots.length > 0`), `isLoading = false`, `error = null`
+    when: RobotsGrid монтируется
+    then: |
+      отображается `<Typography variant="h4">Роботы Мехи.Земля</Typography>`,
+      счётчик «Всего роботов: N», AgGridReact с колонками
+      `parameter` + по одной колонке на каждого робота,
+      и строками по параметрам из `transposeRobotsData`.
+
+  - given: числовое значение параметра ≥ 1000
+    when: cellFormatter форматирует значение
+    then: значение отображается через `toLocaleString('ru-RU')` (разделители тысяч).
+
+  - given: значение параметра `null` или `'-'`
+    when: cellFormatter форматирует значение
+    then: отображается прочерк «-».
+
+verified: true
+verified_at: 2026-07-04
+verified_note: |
+  Проверено чтением RobotsGrid.tsx: заголовок «Роботы Мехи.Земля»,
+  счётчик «Всего роботов: {robots.length}», columnDefs строятся из
+  robotList, valueFormatter форматирует числа ≥ 1000 через
+  toLocaleString('ru-RU') и возвращает «-» для null/'-'. `npm run build`
+  проходит. Интеграционный тест через RTL здесь не гонял: App.test.tsx
+  сломан (см. active.todo), AG Grid + jsdom требует отдельного окружения.

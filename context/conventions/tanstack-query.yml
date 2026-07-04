@@ -1,0 +1,12 @@
+key: tanstack-query
+rule: |
+  TanStack Query v5. Сейчас подключён на уровне bootstrap
+  (`QueryClientProvider` в `src/index.tsx`) с настройками:
+    refetchOnWindowFocus: false, retry: 1.
+  Реальных queries в проекте пока НЕТ (данные — статический
+  `data/robots.json` через zustand). Если появятся:
+    - использовать Query Key Factory (фабрика ключей на домен);
+    - для состояния загрузки — MUI-скелетоны (`Skeleton`,
+      `CircularProgress` — см. текущий `RobotsGrid`).
+  Пока queries не появятся — вопрос «оставить или снести Provider»
+  висит в `active.todo` (namespace `data`).

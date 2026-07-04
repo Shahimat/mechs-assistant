@@ -1,0 +1,15 @@
+key: typescript
+rule: |
+  Строгий TypeScript (`strict: true`). Активные флаги в `tsconfig.json`:
+    noImplicitAny, strictNullChecks, strictFunctionTypes,
+    strictBindCallApply, strictPropertyInitialization, noImplicitThis,
+    alwaysStrict, noUnusedLocals, noUnusedParameters,
+    noFallthroughCasesInSwitch.
+  Правила:
+    - НИКОГДА не использовать `any`. Для props MUI — `ComponentProps<...>`.
+      Если тип действительно неизвестен на границе — `unknown` с явной
+      проверкой типа.
+    - `resolveJsonModule: true` — данные из `data/*.json` импортируем
+      как модули с типом (`as Robot[]`).
+    - Модульные пути через alias `@/*` → `src/*` (см. tsconfig `paths`
+      и rspack.config `resolve.alias`).

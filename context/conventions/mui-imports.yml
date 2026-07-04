@@ -1,0 +1,8 @@
+key: mui-imports
+rule: |
+  MUI-компоненты и иконки импортировать именованно из корня пакета:
+    import { Button, TextField, Box } from '@mui/material';
+    import { Add as AddIcon } from '@mui/icons-material';
+  НЕ импортировать по подпутям (`@mui/material/Button`) — tree-shaking
+  в связке Rspack + MUI работает и с именованными импортами, а
+  подпути ломают консистентность.

@@ -1,0 +1,31 @@
+id: favorites-columns-pinned-after-parameter
+kind: behavior
+namespace: comparison
+entities: [favorites, robots-grid]
+title: Столбцы избранных роботов автоматически сдвигаются к началу (сразу после `parameter`)
+
+scenarios:
+  - given: `favorites` непустой, grid готов (gridApiRef.current != null)
+    when: срабатывает useEffect по зависимости `favorites`
+    then: |
+      берутся columns по ключам из favorites,
+      выставляется `isProgrammaticMoveRef = true`,
+      вызывается `api.moveColumns(favCols, 1)` (сразу после `parameter`),
+      затем `isProgrammaticMoveRef = false`.
+
+  - given: `favorites` пустой
+    when: useEffect срабатывает
+    then: обработчик возвращается без перемещений.
+
+  - given: программное перемещение favorites-столбцов уже началось
+    when: попутно срабатывает `onColumnMoved`
+    then: handleColumnMoved возвращается без отката (см. `robots-grid-parameter-column-locked-left`).
+
+verified: true
+verified_at: 2026-07-04
+verified_note: |
+  Проверено чтением RobotsGrid.tsx: useEffect по `[favorites]` берёт
+  columns по ключам, выставляет isProgrammaticMoveRef = true, вызывает
+  `api.moveColumns(favCols, 1)`, сбрасывает флаг. Пустой массив
+  favorites — ранний return. Взаимодействие с `handleColumnMoved` через
+  флаг isProgrammaticMoveRef подтверждено.

@@ -1,0 +1,49 @@
+id: indexeddb-persistence
+kind: entity
+namespace: persistence
+version: "1.x"
+
+description: |
+  Собственный middleware для Zustand, персистирующий указанные ключи
+  состояния в IndexedDB. При старте (mount стора) — гидратирует значения
+  из IDB в состояние и выставляет флаг `_persistHydrated: true`. При
+  изменении состояния сравнивает `persistKeys` и записывает изменённые
+  ключи обратно в IDB. Не использует `zustand/middleware` persist —
+  своя реализация с явным контролем ключей и гидратации.
+
+source_files:
+  middleware: src/stores/robots/indexedDBMiddleware.ts
+  usage: src/stores/robots/store.ts
+
+config:
+  db_name: mechs-assistant
+  db_version: 2
+  store_name: robots-store
+  persist_keys: [baseRobotKey, favorites]
+
+state_flags:
+  _persistHydrated: |
+    Ставится в true после первой попытки чтения из IDB (успешной или
+    пустой). Используется в `initializeRobots`, чтобы не перезаписывать
+    baseRobotKey значением по умолчанию до завершения гидратации.
+
+fallbacks:
+  hydration_empty: |
+    Если в IDB нет `baseRobotKey` и в сторе уже есть роботы —
+    middleware сам ставит `baseRobotKey = robots[0].key`.
+  errors: |
+    Ошибки IDB логируются в `console.error`, но флаг `_persistHydrated`
+    всё равно проставляется в true, чтобы UI не завис.
+
+features_enabled:
+  - selective-persist        # только ключи из persistKeys
+  - hydration-on-mount
+  - default-base-robot-after-empty-hydration
+
+features_disabled:
+  - zustand-persist-middleware   # собственная реализация, а не стандартная
+
+manuals: []
+behaviors:
+  - indexeddb-persistence-hydrates-on-mount
+  - indexeddb-persistence-writes-on-key-change

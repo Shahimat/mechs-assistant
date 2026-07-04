@@ -1,0 +1,15 @@
+key: zustand
+rule: |
+  Zustand как единственное глобальное состояние клиента.
+    - Слайсы (slices) — если стор растёт до нескольких доменов.
+      Сейчас стор один — `src/stores/robots/store.ts`.
+    - `devtools` middleware обязателен (виден в devtools как
+      `robots-store`).
+    - Персистенция состояния — через собственный
+      `indexedDBMiddleware` (`src/stores/robots/indexedDBMiddleware.ts`).
+      НЕ использовать `zustand/middleware` persist для полей проекта
+      без явного согласования — у нас свой middleware с гидратацией
+      и явными `persistKeys`.
+    - Действия (actions) описывать прямо в `create(...)`, без внешних
+      сервисов. Обновление состояния через `set` — атомарно, без
+      побочных эффектов вне того, что сохраняет middleware.

@@ -1,0 +1,10 @@
+key: mui
+rule: |
+  MUI v5+ (Core). Правила использования:
+    - обязательный ThemeProvider на корне (см. `src/index.tsx`, `src/theme.ts`);
+    - кастомизация — через `styled()` (Emotion) или `sx` prop;
+    - иконки — из `@mui/icons-material`;
+    - избегать `@mui/lab` в production-коде;
+    - MUI-компоненты — как строительные блоки; сложные обёртки прячем
+      в свои компоненты;
+    - для типов props MUI использовать `ComponentProps<...>` вместо `any`.
