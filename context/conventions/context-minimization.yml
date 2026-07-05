@@ -1,0 +1,24 @@
+key: context-minimization
+rule: |
+  Правила минимизации контекста: читать ровно то, что нужно для
+  текущей задачи.
+
+  Порядок обычного захода в задачу:
+    - `context/project.yml` и `context/workflow.md`;
+    - `context/index.yml` — карта для точечного выбора;
+    - релевантные `context/conventions/*.yml` по ключам задачи
+      (соответствие «правка → convention» самоочевидно из ключа);
+    - `docs/entities/*.yml` и `docs/behavior/*.yml` по `namespace`
+      задачи (выбранные через индекс);
+    - `docs/manuals/*.md` — только для процедурных задач;
+    - `context/views/active.todo` — только в сценариях `report` /
+      `execute`.
+
+  Не делать:
+    - полного обхода `docs/` или `context/` подряд;
+    - чтения всех behavior подряд «на всякий случай»;
+    - чтения `active.todo` вне сценариев `report` / `execute`;
+    - чтения behavior / entity вне релевантного namespace без причины.
+
+  Если контекст задачи неоднозначен — сначала спросить юзера, а не
+  тянуть всё подряд.

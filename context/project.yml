@@ -5,6 +5,17 @@ author:
   email: ngs22071993@gmail.com
   github: https://github.com/Shahimat
 
+# Синхронизация с источниками (см. workflow.md, раздел «Синхронизация с
+# источниками»). Все SHA-256 — hex-строка. Fetch — только curl, WebFetch
+# для source-sync запрещён. Обновляется по команде «сверь всё».
+sync:
+  index_source: https://raw.githubusercontent.com/Shahimat/ai-prompts/main/prompts/index.yml
+  index_sha: ac8122b9b1c1efbd6540fc17a11caf38636a47dde07d811ea6f97177c5ab1248
+  contract:
+    key: agent-operational-contract-v2
+    synced_sha: 12bdc7f1bd2e747cf4b0fe000289a76133479abcc9ddadca7bc65f639ca5b39e
+  synced_at: 2026-07-05
+
 stack:
   language: TypeScript (strict)
   ui: React 18 + MUI v5 + Emotion

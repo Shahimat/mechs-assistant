@@ -1,0 +1,103 @@
+# Карта репозитория для агента.
+# namespace → id (entity/behavior) + одностроковое описание.
+# Читается сразу после project.yml — чтобы точечно выбрать релевантные
+# файлы вместо `ls`. Обновляется в том же коммите, что создаёт /
+# удаляет / переименовывает сущность. Расхождение с фактическим
+# содержимым — сигнал рассинхрона.
+
+namespaces:
+  catalog:
+    description: Каталог роботов и его источник данных.
+    entities:
+      - id: robots-catalog
+        one_liner: Единый источник данных приложения (data/robots.json → типы Robot).
+    behaviors:
+      - id: robots-catalog-loaded-from-json
+        one_liner: Каталог загружается из data/robots.json при инициализации стора.
+      - id: robots-catalog-schema-typed
+        one_liner: Каждая запись robots.json соответствует типу Robot (TS strict).
+
+  ui:
+    description: Компоненты интерфейса, таблица AG Grid.
+    entities:
+      - id: robots-grid
+        one_liner: Основной UI-компонент, транспонированная таблица роботов на AG Grid v35.
+    behaviors:
+      - id: robots-grid-renders-transposed-table
+        one_liner: RobotsGrid рендерит транспонированную таблицу (параметры — строки, роботы — столбцы).
+      - id: robots-grid-parameter-column-locked-left
+        one_liner: Столбец `parameter` всегда крайний слева и не может быть перемещён правее.
+
+  comparison:
+    description: Механики сравнения — базовый робот и избранное.
+    entities:
+      - id: base-robot-comparison
+        one_liner: Механика «базового робота» для попарного сравнения через чекбокс.
+      - id: favorites
+        one_liner: Механика избранных роботов (звёздочка в строке, персист выбора).
+    behaviors:
+      - id: base-robot-comparison-highlights-diff
+        one_liner: Ячейки подсвечиваются зелёным/красным относительно базового по семантике параметра.
+      - id: base-robot-selected-via-checkbox
+        one_liner: Клик по чекбоксу «Базовый робот» назначает робота базовым и персистит выбор.
+      - id: favorites-toggle-on-star-click
+        one_liner: Клик по звёздочке добавляет/удаляет робота из избранного и персистит в IndexedDB.
+      - id: favorites-columns-pinned-after-parameter
+        one_liner: Столбцы избранных роботов автоматически сдвигаются к началу (сразу после `parameter`).
+
+  persistence:
+    description: IndexedDB-персистенция состояния Zustand.
+    entities:
+      - id: indexeddb-persistence
+        one_liner: Собственный middleware для Zustand, персистирующий указанные ключи в IndexedDB.
+    behaviors:
+      - id: indexeddb-persistence-hydrates-on-mount
+        one_liner: При создании стора middleware гидратирует persistKeys из IndexedDB и ставит флаг _persistHydrated.
+      - id: indexeddb-persistence-writes-on-key-change
+        one_liner: Middleware записывает в IndexedDB только те persistKeys, значение которых изменилось.
+
+# Атомарные conventions — кросс-namespace, читаются по релевантности задачи.
+# Соответствие «правка → convention» самоочевидно из ключа (rspack.yml
+# про rspack и т.д.); перечисляем только описания.
+conventions:
+  - key: changelog
+    one_liner: CHANGELOG.md — журнал крупных решений, одна запись = одна строка, обновляется только в фазе docs.
+  - key: code-style
+    one_liner: Стиль кода — Prettier + ESLint (2 пробела, одинарные кавычки, trailing commas).
+  - key: completeness
+    one_liner: Новая сущность/правило = сразу файл + двусторонние ссылки + index + active.todo.
+  - key: consistency-check
+    one_liner: Чек-лист непротиворечивости перед сохранением сущности (ссылки, verified, имена).
+  - key: context-minimization
+    one_liner: Читать ровно то, что нужно для задачи; не обходить `docs/` подряд.
+  - key: git-commits
+    one_liner: Коммит и push делает юзер сам; агент — только отчёт, не спрашивать «закоммитить?».
+  - key: language
+    one_liner: Русский для содержательной части; английский — только идентификаторы/YAML-ключи/имена.
+  - key: mui
+    one_liner: MUI v5+ Core, ThemeProvider на корне, кастомизация через `styled()` или `sx`.
+  - key: mui-imports
+    one_liner: Именованные импорты MUI из корня пакета для tree-shaking.
+  - key: openness
+    one_liner: Устойчивые уточнения — в репу, не в memory/hooks; «запомни» = правка доки по умолчанию.
+  - key: react
+    one_liner: React 18+, только функциональные компоненты + hooks.
+  - key: rspack
+    one_liner: Rspack — сборщик и dev-сервер, конфиг ESM, порт 3000, swc-loader.
+  - key: stack
+    one_liner: "Фиксированный стек — React 18, MUI v5, Zustand, TanStack Query, Rspack, Jest+RTL."
+  - key: tanstack-query
+    one_liner: TanStack Query v5 подключён в bootstrap; реальных queries пока нет.
+  - key: testing
+    one_liner: Jest + React Testing Library; компоненты оборачивать в ThemeProvider с проектной темой.
+  - key: typescript
+    one_liner: "Строгий TypeScript (strict: true) с активными noImplicit* флагами."
+  - key: verification
+    one_liner: Механика verified в docs/behavior/*.yml — ставить/сбрасывать по правилам контракта.
+  - key: zustand
+    one_liner: Zustand — единственное глобальное состояние клиента; стор `src/stores/robots/store.ts`.
+
+# Ручные процедуры для человека.
+manuals:
+  - id: setup-safety-hooks
+    one_liner: Настройка страховочного PreToolUse-hook, блокирующего запись проектных фактов в приватную memory Claude Code.
