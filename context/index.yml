@@ -60,6 +60,8 @@ namespaces:
 # Соответствие «правка → convention» самоочевидно из ключа (rspack.yml
 # про rspack и т.д.); перечисляем только описания.
 conventions:
+  - key: blocking-question
+    one_liner: Формат блокирующего вопроса — нумерованные вопросы и варианты, дефолт с обоснованием, стоп после отправки.
   - key: changelog
     one_liner: CHANGELOG.md — журнал крупных решений, одна запись = одна строка, обновляется только в фазе docs.
   - key: code-style

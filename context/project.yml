@@ -10,11 +10,11 @@ author:
 # для source-sync запрещён. Обновляется по команде «сверь всё».
 sync:
   index_source: https://raw.githubusercontent.com/Shahimat/ai-prompts/main/prompts/index.yml
-  index_sha: ac8122b9b1c1efbd6540fc17a11caf38636a47dde07d811ea6f97177c5ab1248
+  index_sha: 8935d1bcf2df47545aa4327bee9531dcf5ba03a6231e724e90e8344cf3aad3c8
   contract:
     key: agent-operational-contract-v2
-    synced_sha: 12bdc7f1bd2e747cf4b0fe000289a76133479abcc9ddadca7bc65f639ca5b39e
-  synced_at: 2026-07-05
+    synced_sha: 6f002e3a8037cab3f70723b6f5995f3b010a10c445716c0ed04ae4a3cc28640a
+  synced_at: 2026-07-09
 
 stack:
   language: TypeScript (strict)
