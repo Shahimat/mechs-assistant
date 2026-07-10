@@ -1,0 +1,36 @@
+id: other--favorites
+kind: entity
+namespace: comparison
+version: "1.x"
+
+description: |
+  Механика избранных мехов. Пользователь ставит звёздочку в карточке
+  меха (внутри `view--robots-catalog`) — мех помечается как favorite.
+  Выбор персистится в IndexedDB через `other--indexeddb-persistence`.
+
+  В MVP1 автоматической перестановки карточек по избранному нет —
+  порядок определяет каталог. Механика приоритизации / фильтра по
+  избранному может быть добавлена позже (MVP2+).
+
+source_files:
+  store: src/stores/robots/store.ts               # поле `favorites: string[]`, action `toggleFavorite`
+
+state:
+  storage_key: favorites                # ключ в zustand-состоянии и в indexedDB
+  storage_type: string[]                # массив ключей роботов (robot.key)
+  toggle_action: toggleFavorite(robotKey)
+
+persistence:
+  layer: other--indexeddb-persistence
+  persisted: true                        # см. persistKeys в store.ts
+
+ui_behavior:
+  visual: MUI Star (жёлтый) / StarBorder (серый) внутри RobotCard
+
+features_enabled: [toggle, persist]
+
+manuals: []
+behaviors:
+  - other--favorites-toggle-on-star-click
+  - other--indexeddb-persistence-hydrates-on-mount    # кросс-ссылка: favorites персистится
+  - other--indexeddb-persistence-writes-on-key-change # кросс-ссылка: favorites персистится

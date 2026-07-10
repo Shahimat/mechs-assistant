@@ -1,4 +1,4 @@
-id: robots-catalog
+id: data--robots-catalog
 kind: entity
 namespace: catalog
 version: "1.x"
@@ -9,10 +9,14 @@ description: |
   импортируются в zustand-стор напрямую (без сетевого слоя).
   Схема — TypeScript-типы в `src/types/robot.ts`.
 
+  Первичный источник данных — вики `new.mechs.su/wiki/robots`; наполнение
+  и обновление `robots.json` будет автоматизировано через долгоживущий
+  парсер (future entity `parser--wiki-robots`, см. context/roadmap.md,
+  сквозной эпик «Данные»).
+
 source_files:
   data: data/robots.json
   types: src/types/robot.ts
-  raw_html: raw-data/          # gitignored, HTML-выгрузки — исходники, из которых собран JSON
 
 schema:
   robot_types: [боец, транспортник, добытчик, разведчик]
@@ -46,6 +50,6 @@ features_disabled: [network-fetch, dynamic-schema]
 
 manuals: []
 behaviors:
-  - robots-catalog-loaded-from-json
-  - robots-catalog-schema-typed
-  - robots-grid-renders-transposed-table   # кросс-ссылка: grid читает данные каталога
+  - data--robots-catalog-loaded-from-json
+  - data--robots-catalog-schema-typed
+  - view--robots-catalog-renders-cards-grid   # кросс-ссылка: карточный view читает данные каталога

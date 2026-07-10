@@ -1,0 +1,31 @@
+id: view--robots-catalog-renders-cards-grid
+kind: behavior
+namespace: ui
+entities: [view--robots-catalog]
+title: view--robots-catalog рендерит сетку карточек мехов из data--robots-catalog
+
+scenarios:
+  - given: стор роботов гидратирован, `robots` содержит массив мехов
+    when: пользователь открыл приложение
+    then: |
+      view--robots-catalog рендерит сетку RobotCard — по одной карточке
+      на каждый мех из стора. В карточке отображаются: название, тип,
+      требуемый уровень, ключевые характеристики (durability, speed и
+      т.п.) и звёздочка избранного. Иллюстрация меха — из data--robots-catalog
+      (поле imageUrl).
+
+  - given: массив `robots` пуст (данные ещё не загружены или JSON пустой)
+    when: пользователь открыл приложение
+    then: |
+      view--robots-catalog показывает empty state (скелетоны или
+      сообщение «нет данных» — конкретика решается в фазе feat).
+
+  - given: `error` не null (ошибка загрузки данных)
+    when: пользователь открыл приложение
+    then: view--robots-catalog показывает error state (алерт с текстом ошибки).
+
+verified: false
+verified_at:
+verified_note: |
+  Спецификация MVP1 — заведена в фазе docs, реализация в фазе feat.
+  Компоненты RobotsCatalog / RobotCard / RobotDetail ещё не созданы.

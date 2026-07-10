@@ -1,0 +1,28 @@
+id: other--indexeddb-persistence-writes-on-key-change
+kind: behavior
+namespace: persistence
+entities: [other--indexeddb-persistence, other--favorites]
+title: Middleware записывает в IndexedDB только те persistKeys, значение которых изменилось
+
+scenarios:
+  - given: `toggleFavorite(K)` вызван, `favorites` в состоянии меняется
+    when: setWithPersistence сравнивает next[key] и current[key] для каждого persistKey
+    then: |
+      для `favorites` (значение изменилось) вызывается
+      `setToIndexedDB(db, 'robots-store', 'favorites', <newArray>)`.
+
+  - given: `initializeRobots` пишет `robots`, `isLoading`, `error`
+    when: setWithPersistence обрабатывает патч
+    then: |
+      `robots`/`isLoading`/`error` не входят в persistKeys — запись
+      в IDB для них НЕ выполняется, `set(partial)` применяется как обычно.
+
+  - given: запись в IDB упала (например, из-за ограничения квоты)
+    when: catch в цепочке `.then(setToIndexedDB).catch(...)`
+    then: ошибка логируется в `console.error`, состояние в памяти всё равно обновлено.
+
+verified: false
+verified_at:
+verified_note: |
+  Спецификация обновлена в фазе docs MVP1: снят сценарий с `setBaseRobot`
+  (механика базового робота снесена). Реализация — фаза refactor MVP1.

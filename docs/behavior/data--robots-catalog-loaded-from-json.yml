@@ -1,0 +1,33 @@
+id: data--robots-catalog-loaded-from-json
+kind: behavior
+namespace: catalog
+entities: [data--robots-catalog]
+title: Каталог роботов загружается из data/robots.json при инициализации стора
+
+scenarios:
+  - given: пользователь открыл приложение, стор роботов ещё пустой
+    when: срабатывает `initializeRobots` (через useEffect в корневом
+      компоненте `view--robots-catalog`)
+    then: |
+      состояние стора `robots` заполнено массивом из `data/robots.json`,
+      `isLoading` перешёл из true в false, `error` = null.
+
+  - given: JSON успешно распарсен, но массив пустой
+    when: срабатывает `initializeRobots`
+    then: |
+      `robots = []`, `view--robots-catalog` показывает empty state
+      (см. `view--robots-catalog-renders-cards-grid`, сценарий 2).
+
+  - given: при чтении/парсинге JSON выброшена ошибка
+    when: `initializeRobots` попадает в catch
+    then: |
+      `isLoading = false`, `error` = текст ошибки, `view--robots-catalog`
+      показывает error state.
+
+verified: false
+verified_at:
+verified_note: |
+  Спецификация обновлена в фазе docs MVP1: сняты упоминания снесённых
+  `RobotsGrid` и `getTransposedData`, инициализация переезжает в
+  корневой компонент `view--robots-catalog`. Реализация — фазы refactor
+  и feat MVP1.

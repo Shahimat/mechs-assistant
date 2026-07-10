@@ -1,0 +1,52 @@
+key: entity-naming
+rule: |
+  Именование entities и связанных с ними behaviors.
+
+  **Формат.** `<type>--<name>`, где `<type>` — тип сущности из
+  фиксированного набора, `<name>` — kebab-case-описание. Разделитель
+  между типом и именем — двойной дефис `--` (визуально отличается от
+  одинарного дефиса в kebab-case). Пример:
+  `view--robots-catalog`, `data--robots-catalog`.
+
+  **Фиксированный набор типов.**
+
+    - `view--` — представления UI (React-компоненты, экраны, модалки).
+      Пример: `view--robots-catalog`, `view--mech-detail`.
+
+    - `data--` — представления данных (схемы, каталоги, JSON-источники,
+      TS-типы). Пример: `data--robots-catalog`, `data--resources`.
+
+    - `parser--` — парсеры внешних источников (HTML-вики, JSON-API,
+      скриншотов). Пример: `parser--wiki-robots`.
+
+    - `other--` — временный контейнер для сущностей, тип которых пока
+      неясен или не укладывается в существующие префиксы. Впоследствии
+      расщепляется на новые префиксы, когда наберётся критическая масса.
+      Пример: `other--favorites`, `other--indexeddb-persistence`.
+
+  **Наследование префикса в behaviors.**
+
+  Behaviors получают тот же префикс, что и связанная с ними entity.
+  Пример: entity `view--robots-catalog` → behavior
+  `view--robots-catalog-renders-cards-grid`. Если behavior привязан к
+  нескольким entities с разными префиксами — использовать префикс
+  «главной» entity (той, что первой в списке `entities:`).
+
+  **Namespace vs префикс — разные оси.**
+
+  Namespace (`catalog`, `ui`, `comparison`, `persistence`) — большая
+  предметная категория. Префикс (`view--`, `data--`, `parser--`,
+  `other--`) — тип сущности. Одна и та же entity имеет и namespace, и
+  префикс: `view--robots-catalog` живёт в namespace `ui`.
+
+  **Расщепление `other--`.**
+
+  Когда в `other--` накапливается 3+ сущности одного нового типа —
+  завести отдельный префикс и мигрировать пачкой. Одиночные
+  несоответствия оставлять в `other--`, не плодить префиксы «на будущее».
+
+  **Имя файла = id.**
+
+  Правило совпадения имени файла и `id` внутри YAML (см. convention
+  `consistency-check`) сохраняется. Файл
+  `docs/entities/view--robots-catalog.yml` → внутри `id: view--robots-catalog`.

@@ -1,0 +1,38 @@
+id: view--robots-catalog
+kind: entity
+namespace: ui
+version: "0.x"
+
+description: |
+  Основной UI-компонент MVP1 — карточный каталог мехов. Сетка карточек
+  с иллюстрацией, ключевыми параметрами и звёздочкой избранного. По
+  клику на карточке открывается детализация меха (модалка или отдельная
+  страница — уточняется в фазе feat, зависит от макета).
+
+  Заменяет снесённые `robots-grid` и `base-robot-comparison`. Полная
+  сравнительная механика (spec-sheet + radar overlay) вернётся в MVP4
+  (боевой калькулятор), см. context/roadmap.md.
+
+  Читает данные каталога из `data--robots-catalog` через zustand-стор,
+  использует механику избранного из `other--favorites`.
+
+source_files:
+  planned:                                # появятся в фазе feat MVP1
+    - src/components/RobotsCatalog.tsx    # сетка карточек (корень view)
+    - src/components/RobotCard.tsx         # одна карточка меха
+    - src/components/RobotDetail.tsx       # детализация меха (модалка/страница)
+
+features_enabled:
+  - cards-grid           # сетка карточек мехов
+  - mech-detail-view     # детализация меха по клику
+  - favorites-star       # звёздочка избранного прямо в карточке
+
+features_disabled:
+  - transposed-table     # таблица снесена
+  - base-robot-diff      # diff-подсветка снесена, вернётся в MVP4
+
+manuals: []
+behaviors:
+  - view--robots-catalog-renders-cards-grid
+  - view--robots-catalog-opens-mech-detail-on-click
+  - other--favorites-toggle-on-star-click   # звёздочка живёт внутри карточки меха

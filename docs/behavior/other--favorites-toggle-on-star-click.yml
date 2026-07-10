@@ -1,0 +1,36 @@
+id: other--favorites-toggle-on-star-click
+kind: behavior
+namespace: comparison
+entities: [other--favorites, view--robots-catalog]
+title: Клик по звёздочке в карточке меха добавляет/удаляет робота из избранного и персистит в IndexedDB
+
+scenarios:
+  - given: мех с ключом K не в избранном (`favorites` не содержит K)
+    when: пользователь кликает по звёздочке в карточке меха
+      (внутри `view--robots-catalog`)
+    then: |
+      вызывается `toggleFavorite(K)`, `favorites` становится [...prev, K],
+      middleware записывает новый массив в IndexedDB
+      (`db=mechs-assistant`, `store=robots-store`, `key=favorites`),
+      иконка меняется на жёлтый Star. Клик по звёздочке НЕ открывает
+      детализацию меха (см. `view--robots-catalog-opens-mech-detail-on-click`,
+      сценарий 3).
+
+  - given: мех с ключом K уже в избранном
+    when: пользователь кликает по звёздочке
+    then: |
+      `favorites` становится prev.filter(k => k !== K), IndexedDB
+      обновляется, иконка меняется на серый StarBorder.
+
+  - given: пользователь перезагрузил страницу
+    when: стор гидратируется из IndexedDB
+    then: |
+      `favorites` восстанавливается из IDB, звёздочки в карточках
+      сохранённых мехов отрисовываются жёлтыми (Star).
+
+verified: false
+verified_at:
+verified_note: |
+  Спецификация обновлена в фазе docs MVP1: снесён `FavoriteStarCell`
+  (ag-grid-специфичный), звёздочка переезжает в карточку меха
+  (`RobotCard`). Реализация — фаза feat MVP1.

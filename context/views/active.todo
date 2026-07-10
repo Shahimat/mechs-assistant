@@ -9,11 +9,16 @@
 ## blocker
 
 ## high
+ui: MVP1 refactor стора — снести baseRobotKey/setBaseRobot/transpose*/getTransposedData из src/stores/robots/store.ts, вычистить fallback baseRobotKey из middleware → фаза refactor → нет
+ui: MVP1 feat #1 — каркас view--robots-catalog (RobotsCatalog + RobotCard + RobotDetail), звёздочка избранного в карточке, App.tsx как корень, переписать App.test.tsx под каталог → фаза feat → refactor стора
+ui: MVP1 feat #2 — визуальный дизайн карточек и детализации (после макета в Perplexity/Figma), мобильная адаптация → фаза feat → feat #1 + макет
+catalog: parser--wiki-robots — долгоживущий js/ts-скрипт парсинга new.mechs.su/wiki/robots в data/robots.json (данные + ссылки на иллюстрации мехов) → фаза feat → нет (параллельно MVP1)
+data: overlay-механизм — data/overrides.yml поверх robots.json (уточнения/патчи/недостающие поля) → фаза feat → parser выше
 
 ## medium
-ui: починить App.test.tsx — тесты ищут отсутствующие тексты «Мехи.Земля», «WEB ассистент игры» → переписать под RobotsGrid (мок стора) → нет
-data: решить судьбу @tanstack/react-query — либо начать использовать, либо убрать (сейчас Provider без queries) → нет
+ui: MVP1 chore — снести RobotsGrid.tsx, FavoriteStarCell.tsx, вычистить ag-grid-community/ag-grid-react/react-window из package.json, убрать CSS-импорты ag-grid из src/index.tsx → фаза chore → feat #2
+ui: MVP1 audit — verified: true + verified_at на новые view--robots-catalog behaviors и обновлённые data--/other-- behaviors → фаза audit → chore
+data: решить судьбу @tanstack/react-query — либо начать использовать (в parser? в data-fetching?), либо убрать (сейчас Provider без queries) → нет
 
 ## low
-build: вычистить react-window из package.json — не используется (grid = ag-grid) → удалить зависимость → нет
 catalog: TS-приведение `robotsData as Robot[]` не даёт runtime-валидации — рассмотреть zod/valibot для JSON-схемы → нет

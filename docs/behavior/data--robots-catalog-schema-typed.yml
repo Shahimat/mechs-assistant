@@ -1,7 +1,7 @@
-id: robots-catalog-schema-typed
+id: data--robots-catalog-schema-typed
 kind: behavior
 namespace: catalog
-entities: [robots-catalog]
+entities: [data--robots-catalog]
 title: Каждая запись в robots.json соответствует типу Robot (TS strict)
 
 scenarios:

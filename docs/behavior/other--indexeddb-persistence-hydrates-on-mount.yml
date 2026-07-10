@@ -1,0 +1,28 @@
+id: other--indexeddb-persistence-hydrates-on-mount
+kind: behavior
+namespace: persistence
+entities: [other--indexeddb-persistence, other--favorites]
+title: При создании стора middleware гидратирует persistKeys из IndexedDB и ставит флаг _persistHydrated
+
+scenarios:
+  - given: стор `useRobotsStore` только что создан, IndexedDB не открыта
+    when: middleware вызывает `loadPersistedState` (fire-and-forget)
+    then: |
+      открывается `mechs-assistant` (version 2), object store
+      `robots-store` создаётся при необходимости, для каждого ключа из
+      `persistKeys` (`favorites`) читается сохранённое значение,
+      применяется через `set(patch)`, ставится `_persistHydrated: true`.
+
+  - given: IndexedDB упала при открытии или чтении
+    when: catch в `loadPersistedState`
+    then: |
+      ошибка попадает в `console.error`, `_persistHydrated: true`
+      всё равно выставляется — UI не блокируется.
+
+verified: false
+verified_at:
+verified_note: |
+  Спецификация обновлена в фазе docs MVP1: `baseRobotKey` убран из
+  persistKeys (снос механики базового робота), фолбек «дефолтный
+  base-robot после пустой гидратации» также снят. Реализация — фаза
+  refactor MVP1.

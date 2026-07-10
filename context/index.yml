@@ -4,56 +4,51 @@
 # файлы вместо `ls`. Обновляется в том же коммите, что создаёт /
 # удаляет / переименовывает сущность. Расхождение с фактическим
 # содержимым — сигнал рассинхрона.
+#
+# Именование entities/behaviors — префикс `<type>--` (view/data/parser/
+# other), см. convention `entity-naming`.
 
 namespaces:
   catalog:
-    description: Каталог роботов и его источник данных.
+    description: Каталог мехов и его источник данных.
     entities:
-      - id: robots-catalog
+      - id: data--robots-catalog
         one_liner: Единый источник данных приложения (data/robots.json → типы Robot).
     behaviors:
-      - id: robots-catalog-loaded-from-json
+      - id: data--robots-catalog-loaded-from-json
         one_liner: Каталог загружается из data/robots.json при инициализации стора.
-      - id: robots-catalog-schema-typed
+      - id: data--robots-catalog-schema-typed
         one_liner: Каждая запись robots.json соответствует типу Robot (TS strict).
 
   ui:
-    description: Компоненты интерфейса, таблица AG Grid.
+    description: Компоненты интерфейса, представления MVP1.
     entities:
-      - id: robots-grid
-        one_liner: Основной UI-компонент, транспонированная таблица роботов на AG Grid v35.
+      - id: view--robots-catalog
+        one_liner: Карточный каталог мехов MVP1 — сетка карточек + детализация меха по клику.
     behaviors:
-      - id: robots-grid-renders-transposed-table
-        one_liner: RobotsGrid рендерит транспонированную таблицу (параметры — строки, роботы — столбцы).
-      - id: robots-grid-parameter-column-locked-left
-        one_liner: Столбец `parameter` всегда крайний слева и не может быть перемещён правее.
+      - id: view--robots-catalog-renders-cards-grid
+        one_liner: view--robots-catalog рендерит сетку RobotCard из data--robots-catalog.
+      - id: view--robots-catalog-opens-mech-detail-on-click
+        one_liner: Клик по карточке меха открывает детализацию (RobotDetail).
 
   comparison:
-    description: Механики сравнения — базовый робот и избранное.
+    description: Механики сравнения и приоритизации мехов (избранное, будущий боевой калькулятор).
     entities:
-      - id: base-robot-comparison
-        one_liner: Механика «базового робота» для попарного сравнения через чекбокс.
-      - id: favorites
-        one_liner: Механика избранных роботов (звёздочка в строке, персист выбора).
+      - id: other--favorites
+        one_liner: Механика избранных мехов (звёздочка в карточке, персист выбора).
     behaviors:
-      - id: base-robot-comparison-highlights-diff
-        one_liner: Ячейки подсвечиваются зелёным/красным относительно базового по семантике параметра.
-      - id: base-robot-selected-via-checkbox
-        one_liner: Клик по чекбоксу «Базовый робот» назначает робота базовым и персистит выбор.
-      - id: favorites-toggle-on-star-click
-        one_liner: Клик по звёздочке добавляет/удаляет робота из избранного и персистит в IndexedDB.
-      - id: favorites-columns-pinned-after-parameter
-        one_liner: Столбцы избранных роботов автоматически сдвигаются к началу (сразу после `parameter`).
+      - id: other--favorites-toggle-on-star-click
+        one_liner: Клик по звёздочке в карточке меха добавляет/удаляет робота из избранного и персистит в IndexedDB.
 
   persistence:
     description: IndexedDB-персистенция состояния Zustand.
     entities:
-      - id: indexeddb-persistence
+      - id: other--indexeddb-persistence
         one_liner: Собственный middleware для Zustand, персистирующий указанные ключи в IndexedDB.
     behaviors:
-      - id: indexeddb-persistence-hydrates-on-mount
+      - id: other--indexeddb-persistence-hydrates-on-mount
         one_liner: При создании стора middleware гидратирует persistKeys из IndexedDB и ставит флаг _persistHydrated.
-      - id: indexeddb-persistence-writes-on-key-change
+      - id: other--indexeddb-persistence-writes-on-key-change
         one_liner: Middleware записывает в IndexedDB только те persistKeys, значение которых изменилось.
 
 # Атомарные conventions — кросс-namespace, читаются по релевантности задачи.
@@ -72,6 +67,8 @@ conventions:
     one_liner: Чек-лист непротиворечивости перед сохранением сущности (ссылки, verified, имена).
   - key: context-minimization
     one_liner: Читать ровно то, что нужно для задачи; не обходить `docs/` подряд.
+  - key: entity-naming
+    one_liner: Именование entities с префиксом `<type>--` (view/data/parser/other), наследуется в behaviors.
   - key: git-commits
     one_liner: Коммит и push делает юзер сам; агент — только отчёт, не спрашивать «закоммитить?».
   - key: language
