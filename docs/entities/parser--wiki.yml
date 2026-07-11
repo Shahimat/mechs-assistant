@@ -18,8 +18,9 @@ description: |
     3. Извлекает данные по CSS/XPath-селекторам (описание правил — в
        конфиге на каждый каталог).
     4. Скачивает иконки, если ссылки на них есть на странице.
-    5. Выкладывает JSON-файлы и иконки в S3-совместимое хранилище на
-       self-hosted Synology.
+    5. Пишет JSON-файлы и иконки прямо в основной репо:
+       `data/<catalog>.json` и `data/icons/<catalog>/<key>.<ext>`.
+    6. Коммитит изменения от имени sync-бота.
 
   **Что НЕ делает:**
 
@@ -27,11 +28,12 @@ description: |
       `/cms/wp-content/uploads/mechsearth/calc/`) — из него берутся
       только формулы как референс, вытаскиваются один раз вручную.
     - Не заполняет overlay-поля (weight, basePrice, recipe) — это
-      ручной ввод, см. convention `data-overlay`.
+      работа `parser--google-sheets`, см. convention `data-overlay`.
 
-  **Запуск.** Локально автором или в CI при обновлении данных. Не в
-  runtime приложения — фронт остаётся статикой (Вариант B, build-time
-  bundle), см. context/roadmap.md эпик «Данные».
+  **Запуск.** Локально автором (для отладки) или в GitHub Actions
+  workflow `sync-and-deploy.yml` (по нажатию кнопки `workflow_dispatch`
+  тем, у кого есть write-доступ к репо). Не в runtime приложения —
+  фронт остаётся статикой, читает уже закоммиченные `data/`.
 
   Shell-entity MVP1: сам скрипт и конфиг появятся в фазе feat пилот-
   цепочки. Первый прогон — только для `data--robots-catalog` (мехи).
@@ -40,6 +42,7 @@ description: |
 source_files:
   script: scripts/parser-wiki/           # директория появится в фазе feat
   config: scripts/parser-wiki/config.ts  # конфиг каталогов
+  output_data: data/                     # JSON и иконки в основном репо
 
 wiki_source_map:
   # Соответствие каталог → page_id-ы вики. Полный источник правды по

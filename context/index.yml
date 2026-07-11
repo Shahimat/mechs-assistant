@@ -35,7 +35,7 @@ namespaces:
       - id: data--skills-catalog
         one_liner: Каталог навыков и умений персонажа (wiki 2902/2905). В MVP1 — только факты, модификаторы позже.
       - id: parser--wiki
-        one_liner: Универсальный js/ts-парсер вики new.mechs.su — один скрипт с конфигом каталогов, выкладывает JSON и иконки в S3.
+        one_liner: Универсальный js/ts-парсер вики new.mechs.su — один скрипт с конфигом каталогов, коммитит JSON и иконки в data/ основного репо.
       - id: parser--google-sheets
         one_liner: Синк из Google Sheets в data/overrides/*.yml — тянет overlay через Sheets API v4, авто-кэш в репе.
     behaviors:
@@ -126,3 +126,7 @@ conventions:
 manuals:
   - id: setup-safety-hooks
     one_liner: Настройка страховочного PreToolUse-hook, блокирующего запись проектных фактов в приватную memory Claude Code.
+  - id: setup-google-sheets
+    one_liner: Настройка Google Cloud Service Account, Sheets API, JSON-ключа локально и в GitHub Secrets для parser--google-sheets.
+  - id: setup-github-workflow
+    one_liner: Настройка публичности репо, Collaborators, GitHub Pages/Vercel, deploy prefix /mechs/, workflow sync-and-deploy с workflow_dispatch.

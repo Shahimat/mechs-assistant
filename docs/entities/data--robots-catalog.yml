@@ -15,7 +15,7 @@ description: |
   парсер `parser--wiki` (см. context/roadmap.md, сквозной эпик «Данные»).
 
   Пилот-каталог MVP1 (подход C): полностью автоматизированная цепочка
-  `wiki → parser--wiki → S3 → build-time bundle → data/robots.json → view`
+  `wiki → parser--wiki → data/robots.json в репе → build → view`
   сначала обкатывается на мехах, потом наливаются остальные 10 каталогов.
 
 source_files:

@@ -13,34 +13,37 @@ description: |
 
     1. Аутентифицируется через Service Account (ключ JSON лежит вне
        репо, путь задан в переменной окружения `GSHEETS_SA_KEY_PATH`
-       или аналогично).
+       локально, или через `secrets.GSHEETS_SA_KEY` в CI).
     2. Для каждого листа Sheets тянет строки через API.
     3. Нормализует в плоский словарь `<key>: { <field>: <value> }` и
-       генерирует `data/overrides/<catalog>.yml`.
+       генерирует `data/overrides/<catalog>.yml` прямо в основном репо.
     4. Помечает служебные поля (`_updatedAt`, `_sourceRow`) для меты,
        используемой build-time merger при формировании `_meta` в merged
        JSON (см. convention `data-overlay`).
+    5. Коммитит изменения `data/overrides/*.yml` от имени sync-бота.
 
   **Что НЕ делает:**
 
     - Не пишет обратно в Sheets. Синхронизация односторонняя: Sheets —
       источник правды, репо — авто-кэш.
-    - Не мержит с parsed-JSON (это делает отдельный build-time скрипт).
-    - Не работает с иконками — иконки складывает автор в S3 вручную
-      через скриншоты.
+    - Не мержит с parsed-JSON (это делает build-time скрипт
+      `scripts/build-data.ts`).
+    - Не работает с иконками — иконки складывает автор в `data/icons/`
+      вручную через скриншоты.
 
-  **Запуск.** Локально автором или в CI (например, GitHub Actions по
-  расписанию раз в сутки, или по webhook при изменении Sheets). Не в
-  runtime приложения.
+  **Запуск.** Локально автором (для отладки, `npm run sync:sheets`) или
+  в GitHub Actions workflow `sync-and-deploy.yml` (по нажатию
+  `workflow_dispatch`). Не в runtime приложения.
 
   Shell-entity MVP1: сам скрипт и настройки Sheets появятся в фазе feat
-  после параллельных `docs`-фаз «Настройка Synology S3» и «Настройка
-  Google Sheets».
+  после `docs`-фазы «Настройка Google Sheets» (см.
+  `docs/manuals/setup-google-sheets.md`).
 
 source_files:
   script: scripts/parser-google-sheets/           # директория появится в фазе feat
   config: scripts/parser-google-sheets/config.ts  # конфиг листов → каталогов
   sa_key_path_env: GSHEETS_SA_KEY_PATH             # переменная окружения с путём к ключу
+  output_data: data/overrides/                    # YAML-кэш в основном репо
 
 sheets_source_map:
   # Соответствие «лист Sheets → каталог». Один Google-документ, N листов.
@@ -58,11 +61,12 @@ sheets_source_map:
   currencies: data--currencies
   skills: data--skills-catalog
 
-manuals: []
+manuals:
+  - setup-google-sheets
+
 behaviors: []
 
 verified_note: |
-  Shell-entity создана в фазе docs MVP1 (расширенная под гибрид B с
-  Google Sheets как источником overlay). Реализация — фаза feat
+  Shell-entity создана в фазе docs MVP1. Реализация — фаза feat
   пилот-цепочки (сначала синк для мехов), затем расширение конфига на
   остальные каталоги.
