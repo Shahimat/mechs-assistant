@@ -10,13 +10,37 @@
 
 namespaces:
   catalog:
-    description: Каталог мехов и его источник данных.
+    description: Данные игровых каталогов и их источники (парсер вики).
     entities:
       - id: data--robots-catalog
-        one_liner: Единый источник данных приложения (data/robots.json → типы Robot).
+        one_liner: Каталог мехов (data/robots.json → типы Robot). Пилот-каталог MVP1.
+      - id: data--weapons-catalog
+        one_liner: Каталог вооружения — оружие в основные слоты мехов (wiki 3341). Shell-entity MVP1.
+      - id: data--equipment-catalog
+        one_liner: Каталог оборудования — Доп. оборудование + Чипы + Энергоснабжение + Защита (wiki 3682/3657/3106/3108). Shell-entity MVP1.
+      - id: data--ammo-catalog
+        one_liner: Каталог боезапасов — расходники для оружия (wiki 3661). Shell-entity MVP1.
+      - id: data--items-catalog
+        one_liner: Каталог используемых предметов — аптечки, ускорители и прочие расходники (wiki 3111). Shell-entity MVP1.
+      - id: data--loot-catalog
+        one_liner: Каталог лута — выпадает с монстров/кротов/пиратов (wiki 3023/3027/20118). Гибридный (парсер + overlay).
+      - id: data--blueprints-catalog
+        one_liner: Каталог чертежей — источники крафта компонентов (wiki 3034). Shell-entity MVP1.
+      - id: data--ore-catalog
+        one_liner: Каталог руды и полезных ископаемых (wiki 3036). Shell-entity MVP1.
+      - id: data--components-catalog
+        one_liner: Каталог компонентов — базовые + составные, крафтятся из лута/чертежей (wiki 3955). Гибридный (парсер + overlay рецептов).
+      - id: data--currencies
+        one_liner: Справочник валют — Боны + Реглы (wiki 3017/3020). Без своего view.
+      - id: data--skills-catalog
+        one_liner: Каталог навыков и умений персонажа (wiki 2902/2905). В MVP1 — только факты, модификаторы позже.
+      - id: parser--wiki
+        one_liner: Универсальный js/ts-парсер вики new.mechs.su — один скрипт с конфигом каталогов, выкладывает JSON и иконки в S3.
+      - id: parser--google-sheets
+        one_liner: Синк из Google Sheets в data/overrides/*.yml — тянет overlay через Sheets API v4, авто-кэш в репе.
     behaviors:
       - id: data--robots-catalog-loaded-from-json
-        one_liner: Каталог загружается из data/robots.json при инициализации стора.
+        one_liner: Каталог мехов загружается из data/robots.json при инициализации стора.
       - id: data--robots-catalog-schema-typed
         one_liner: Каждая запись robots.json соответствует типу Robot (TS strict).
 
@@ -67,6 +91,8 @@ conventions:
     one_liner: Чек-лист непротиворечивости перед сохранением сущности (ссылки, verified, имена).
   - key: context-minimization
     one_liner: Читать ровно то, что нужно для задачи; не обходить `docs/` подряд.
+  - key: data-overlay
+    one_liner: Overlay для гибридных data-сущностей — data/overrides/<catalog>.yml поверх parsed-JSON, merge при build-time.
   - key: entity-naming
     one_liner: Именование entities с префиксом `<type>--` (view/data/parser/other), наследуется в behaviors.
   - key: git-commits

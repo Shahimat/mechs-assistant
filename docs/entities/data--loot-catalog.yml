@@ -1,0 +1,36 @@
+id: data--loot-catalog
+kind: entity
+namespace: catalog
+version: "0.x"
+
+description: |
+  Каталог лута — предметы, выпадающие с монстров, кротов, пиратов.
+  Первичный источник — вики: Лут монстров (page_id=3023), Лут кротов
+  (3027), Лут пиратов (20118).
+
+  **Гибридный каталог.** Часть данных вытаскивает `parser--wiki`
+  (названия лута, источник выпадения, иллюстрации), часть заполняется
+  автором вручную через overlay (`data/overrides/loot.yml`): вес,
+  базовая цена в бонах (без модификатора навыка «Торговля»), возможные
+  уточнения иконок. См. convention `data-overlay`.
+
+  Shell-entity MVP1.
+
+source_files:
+  data: data/loot.json                       # результат merge(parsed, overlay)
+  overlay: data/overrides/loot.yml           # ручной ввод автора
+  types: src/types/loot.ts
+
+wiki_source:
+  page_ids: [3023, 3027, 20118]
+  section: Экономика → Лут монстров/кротов/пиратов
+  data_flow: hybrid
+  overlay_fields: [weight, basePrice, iconPath]
+
+manuals: []
+behaviors: []
+
+verified_note: |
+  Shell-entity создана в фазе docs MVP1. Гибридная модель: парсер +
+  ручной ввод через `data/overrides/loot.yml`. Реализация — при
+  подключении каталога через пилот-цепочку.

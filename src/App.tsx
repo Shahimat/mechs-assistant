@@ -1,7 +1,5 @@
-import { RobotsGrid } from './components/RobotsGrid';
+import { RobotsCatalog } from './components/RobotsCatalog';
 
-const App: React.FC = () => {
-  return <RobotsGrid />;
-};
-
-export default App;
+export default function App() {
+  return <RobotsCatalog />;
+}

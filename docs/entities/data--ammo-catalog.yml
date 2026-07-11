@@ -1,0 +1,28 @@
+id: data--ammo-catalog
+kind: entity
+namespace: catalog
+version: "0.x"
+
+description: |
+  Каталог боезапасов — расходники, используемые оружием мехов.
+  Первичный источник — вики `new.mechs.su/?page_id=3661` (Предметы →
+  Боезапасы). Наполнение — `parser--wiki`. Иконки — из парсера или
+  скриншотов автора, поле `iconPath`.
+
+  Shell-entity MVP1.
+
+source_files:
+  data: data/ammo.json
+  types: src/types/ammo.ts
+
+wiki_source:
+  page_ids: [3661]
+  section: Предметы → Боезапасы
+  data_flow: auto-parsed
+
+manuals: []
+behaviors: []
+
+verified_note: |
+  Shell-entity создана в фазе docs MVP1. Реализация — при подключении
+  каталога через пилот-цепочку.

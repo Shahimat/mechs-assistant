@@ -4,19 +4,28 @@ namespace: catalog
 version: "1.x"
 
 description: |
-  Каталог роботов игры Мехи.Земля. Единый источник данных для приложения.
-  Данные хранятся в `data/robots.json` (массив объектов `Robot`),
-  импортируются в zustand-стор напрямую (без сетевого слоя).
-  Схема — TypeScript-типы в `src/types/robot.ts`.
+  Каталог мехов (роботов) игры Мехи.Земля. Единый источник данных
+  приложения по мехам. Данные хранятся в `data/robots.json` (массив
+  объектов `Robot`), импортируются в zustand-стор напрямую (без
+  сетевого слоя). Схема — TypeScript-типы в `src/types/robot.ts`.
 
-  Первичный источник данных — вики `new.mechs.su/wiki/robots`; наполнение
-  и обновление `robots.json` будет автоматизировано через долгоживущий
-  парсер (future entity `parser--wiki-robots`, см. context/roadmap.md,
-  сквозной эпик «Данные»).
+  Первичный источник — вики `new.mechs.su`, подстраницы по типам мехов:
+  Боец (page_id=3301), Транспортник (3088), Добытчик (3099),
+  Разведчик (3102). Наполнение и обновление `robots.json` — универсальный
+  парсер `parser--wiki` (см. context/roadmap.md, сквозной эпик «Данные»).
+
+  Пилот-каталог MVP1 (подход C): полностью автоматизированная цепочка
+  `wiki → parser--wiki → S3 → build-time bundle → data/robots.json → view`
+  сначала обкатывается на мехах, потом наливаются остальные 10 каталогов.
 
 source_files:
   data: data/robots.json
   types: src/types/robot.ts
+
+wiki_source:
+  page_ids: [3301, 3088, 3099, 3102]
+  section: Роботы
+  data_flow: auto-parsed          # без гибрида, всё из парсера + иконки
 
 schema:
   robot_types: [боец, транспортник, добытчик, разведчик]
@@ -42,7 +51,7 @@ schema:
     - howitzerDamage
     - missChance
     - description
-    - imageUrl
+    - imageUrl        # соответствует iconPath из convention data-overlay
     - wikiUrl
 
 features_enabled: [json-source, typed-schema]

@@ -88,7 +88,6 @@ async function setToIndexedDB<T>(
  */
 type PersistedState = {
   _persistHydrated?: boolean;
-  robots?: Array<{ key: string }>;
 };
 
 export function indexedDBMiddleware<T extends PersistedState>(
@@ -145,17 +144,6 @@ export function indexedDBMiddleware<T extends PersistedState>(
 
         if (Object.keys(patch).length > 0) {
           set(patch as Partial<T>);
-        } else {
-          // Если в indexedDB ничего нет — ставим baseRobotKey первого робота
-          const state = get();
-          if (
-            state.robots &&
-            state.robots.length > 0 &&
-            'baseRobotKey' in state &&
-            (state as Record<string, unknown>).baseRobotKey === null
-          ) {
-            set({ baseRobotKey: state.robots[0].key } as unknown as Partial<T>);
-          }
         }
       } catch (error) {
         console.error('Ошибка загрузки данных из indexedDB:', error);

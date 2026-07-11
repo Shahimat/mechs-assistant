@@ -1,0 +1,30 @@
+id: data--weapons-catalog
+kind: entity
+namespace: catalog
+version: "0.x"
+
+description: |
+  Каталог вооружения — оружие, устанавливаемое в основные слоты мехов.
+  Первичный источник — вики `new.mechs.su/?page_id=3341` (Предметы →
+  Вооружение). Наполнение — `parser--wiki`. Иконки — из парсера или
+  скриншотов автора, поле `iconPath` в схеме сущности.
+
+  Shell-entity MVP1: файл заведён, схема/данные/UI появятся при
+  подключении каталога через пилот-цепочку (после обкатки на мехах).
+
+source_files:
+  data: data/weapons.json                # появится после первого прогона parser--wiki
+  types: src/types/weapon.ts             # появится в фазе feat подключения каталога
+
+wiki_source:
+  page_ids: [3341]
+  section: Предметы → Вооружение
+  data_flow: auto-parsed
+
+manuals: []
+behaviors: []                            # появятся при подключении сущности
+
+verified_note: |
+  Shell-entity создана в фазе docs MVP1 (расширение справочного слоя).
+  Схема, парсер-конфиг, типы и UI — при подключении каталога через
+  пилот-цепочку (см. context/roadmap.md, MVP1, подход C).

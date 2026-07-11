@@ -1,0 +1,68 @@
+id: parser--google-sheets
+kind: entity
+namespace: catalog
+version: "0.x"
+
+description: |
+  Синк из Google Sheets в репозиторий: тянет данные через Sheets API v4
+  и генерирует `data/overrides/<catalog>.yml` для всех каталогов
+  MVP1-справочного слоя. Комплементарен `parser--wiki`: тот вытаскивает
+  автопарс из вики, этот — точечные уточнения от редакторов.
+
+  **Что делает:**
+
+    1. Аутентифицируется через Service Account (ключ JSON лежит вне
+       репо, путь задан в переменной окружения `GSHEETS_SA_KEY_PATH`
+       или аналогично).
+    2. Для каждого листа Sheets тянет строки через API.
+    3. Нормализует в плоский словарь `<key>: { <field>: <value> }` и
+       генерирует `data/overrides/<catalog>.yml`.
+    4. Помечает служебные поля (`_updatedAt`, `_sourceRow`) для меты,
+       используемой build-time merger при формировании `_meta` в merged
+       JSON (см. convention `data-overlay`).
+
+  **Что НЕ делает:**
+
+    - Не пишет обратно в Sheets. Синхронизация односторонняя: Sheets —
+      источник правды, репо — авто-кэш.
+    - Не мержит с parsed-JSON (это делает отдельный build-time скрипт).
+    - Не работает с иконками — иконки складывает автор в S3 вручную
+      через скриншоты.
+
+  **Запуск.** Локально автором или в CI (например, GitHub Actions по
+  расписанию раз в сутки, или по webhook при изменении Sheets). Не в
+  runtime приложения.
+
+  Shell-entity MVP1: сам скрипт и настройки Sheets появятся в фазе feat
+  после параллельных `docs`-фаз «Настройка Synology S3» и «Настройка
+  Google Sheets».
+
+source_files:
+  script: scripts/parser-google-sheets/           # директория появится в фазе feat
+  config: scripts/parser-google-sheets/config.ts  # конфиг листов → каталогов
+  sa_key_path_env: GSHEETS_SA_KEY_PATH             # переменная окружения с путём к ключу
+
+sheets_source_map:
+  # Соответствие «лист Sheets → каталог». Один Google-документ, N листов.
+  # Полный источник правды по каждому каталогу — соответствующий
+  # `data--<catalog>-catalog.yml`.
+  mechs: data--robots-catalog
+  weapons: data--weapons-catalog
+  equipment: data--equipment-catalog
+  ammo: data--ammo-catalog
+  items: data--items-catalog
+  loot: data--loot-catalog
+  blueprints: data--blueprints-catalog
+  ore: data--ore-catalog
+  components: data--components-catalog
+  currencies: data--currencies
+  skills: data--skills-catalog
+
+manuals: []
+behaviors: []
+
+verified_note: |
+  Shell-entity создана в фазе docs MVP1 (расширенная под гибрид B с
+  Google Sheets как источником overlay). Реализация — фаза feat
+  пилот-цепочки (сначала синк для мехов), затем расширение конфига на
+  остальные каталоги.

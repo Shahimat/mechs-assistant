@@ -1,0 +1,65 @@
+id: parser--wiki
+kind: entity
+namespace: catalog
+version: "0.x"
+
+description: |
+  Универсальный долгоживущий js/ts-скрипт для парсинга вики
+  `new.mechs.su`. Один парсер с конфигом «каталог → page_id-ы →
+  правила селекторов» вместо N парсеров под каждый каталог — механика
+  извлечения данных из WordPress-страниц едина.
+
+  **Что делает:**
+
+    1. Проходит по списку каталогов из конфига.
+    2. Для каждого каталога тянет HTML указанных страниц через `curl`
+       (WP отдаёт полный HTML без JS-рендера — SPA-нюансов нет, кроме
+       калькулятора в iframe, который парсим отдельно).
+    3. Извлекает данные по CSS/XPath-селекторам (описание правил — в
+       конфиге на каждый каталог).
+    4. Скачивает иконки, если ссылки на них есть на странице.
+    5. Выкладывает JSON-файлы и иконки в S3-совместимое хранилище на
+       self-hosted Synology.
+
+  **Что НЕ делает:**
+
+    - Не парсит калькулятор прокачки (community-приложение под
+      `/cms/wp-content/uploads/mechsearth/calc/`) — из него берутся
+      только формулы как референс, вытаскиваются один раз вручную.
+    - Не заполняет overlay-поля (weight, basePrice, recipe) — это
+      ручной ввод, см. convention `data-overlay`.
+
+  **Запуск.** Локально автором или в CI при обновлении данных. Не в
+  runtime приложения — фронт остаётся статикой (Вариант B, build-time
+  bundle), см. context/roadmap.md эпик «Данные».
+
+  Shell-entity MVP1: сам скрипт и конфиг появятся в фазе feat пилот-
+  цепочки. Первый прогон — только для `data--robots-catalog` (мехи).
+  Далее конфиг расширяется на остальные 10 каталогов.
+
+source_files:
+  script: scripts/parser-wiki/           # директория появится в фазе feat
+  config: scripts/parser-wiki/config.ts  # конфиг каталогов
+
+wiki_source_map:
+  # Соответствие каталог → page_id-ы вики. Полный источник правды по
+  # каждому каталогу — соответствующий `data--<catalog>-catalog.yml`.
+  data--robots-catalog: [3301, 3088, 3099, 3102]
+  data--weapons-catalog: [3341]
+  data--equipment-catalog: [3682, 3657, 3106, 3108]
+  data--ammo-catalog: [3661]
+  data--items-catalog: [3111]
+  data--loot-catalog: [3023, 3027, 20118]
+  data--blueprints-catalog: [3034]
+  data--ore-catalog: [3036]
+  data--components-catalog: [3955]
+  data--currencies: [3017, 3020]
+  data--skills-catalog: [2902, 2905]
+
+manuals: []
+behaviors: []
+
+verified_note: |
+  Shell-entity создана в фазе docs MVP1. Реализация — фаза feat
+  пилот-цепочки (сначала только для мехов), затем расширение конфига
+  на остальные каталоги.

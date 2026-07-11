@@ -1,0 +1,32 @@
+id: data--currencies
+kind: entity
+namespace: catalog
+version: "0.x"
+
+description: |
+  Справочник валют игры — Боны (page_id=3017) и Реглы (3020).
+  Не «каталог» в смысле сетки карточек, а справочник с двумя записями:
+  ключ, название, описание, иконка. Используется всеми каталогами для
+  форматирования цен и в MVP2 калькуляторе.
+
+  Первичный источник — вики. Наполнение — `parser--wiki`. Иконки — из
+  парсера или скриншотов, поле `iconPath`.
+
+  Shell-entity MVP1. Своего UI-каталога (view-сущности) не будет —
+  валюты отображаются как чипы/иконки в других view.
+
+source_files:
+  data: data/currencies.json
+  types: src/types/currency.ts
+
+wiki_source:
+  page_ids: [3017, 3020]
+  section: Экономика → Боны + Реглы
+  data_flow: auto-parsed
+
+manuals: []
+behaviors: []
+
+verified_note: |
+  Shell-entity создана в фазе docs MVP1. Своего view не заводим — валюты
+  используются в схемах других сущностей как поле цены.

@@ -1,0 +1,28 @@
+id: data--ore-catalog
+kind: entity
+namespace: catalog
+version: "0.x"
+
+description: |
+  Каталог руды и полезных ископаемых (кристаллы, железо и т.п.).
+  Первичный источник — вики `new.mechs.su/?page_id=3036` (Экономика →
+  Полезное ископаемое). Наполнение — `parser--wiki`. Иконки — из
+  парсера или скриншотов, поле `iconPath`.
+
+  Shell-entity MVP1.
+
+source_files:
+  data: data/ore.json
+  types: src/types/ore.ts
+
+wiki_source:
+  page_ids: [3036]
+  section: Экономика → Полезное ископаемое
+  data_flow: auto-parsed
+
+manuals: []
+behaviors: []
+
+verified_note: |
+  Shell-entity создана в фазе docs MVP1. Реализация — при подключении
+  каталога через пилот-цепочку.

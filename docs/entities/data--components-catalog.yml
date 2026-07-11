@@ -1,0 +1,47 @@
+id: data--components-catalog
+kind: entity
+namespace: catalog
+version: "0.x"
+
+description: |
+  Каталог компонентов — материалы для крафта / прокачки. Делятся на:
+
+    - **Базовые** — крафтятся только из лута.
+    - **Составные** — крафтятся из лута + других компонентов, либо
+      только из других компонентов.
+
+  Первичный источник — вики `new.mechs.su/?page_id=3955` (Экономика →
+  Компоненты).
+
+  **Гибридный каталог.** Парсер вытаскивает список компонентов и их
+  названия/описания. **Рецепты крафта** (какой чертёж какой компонент
+  создаёт, из чего состоит) вводятся автором вручную через overlay
+  (`data/overrides/components.yml`) — эта информация в вики
+  практически отсутствует. См. convention `data-overlay`.
+
+  Данные каталога критичны для MVP2 (калькулятор прокачки) — калькулятор
+  разворачивает целевой уровень меха в дерево дефицитных ресурсов
+  через рецепты компонентов.
+
+  Shell-entity MVP1.
+
+source_files:
+  data: data/components.json                       # результат merge(parsed, overlay)
+  overlay: data/overrides/components.yml           # ручной ввод рецептов
+  types: src/types/component.ts
+
+wiki_source:
+  page_ids: [3955]
+  section: Экономика → Компоненты
+  data_flow: hybrid
+  overlay_fields: [kind, recipe, iconPath]         # kind: base|composite; recipe: список входов
+
+manuals: []
+behaviors: []
+
+verified_note: |
+  Shell-entity создана в фазе docs MVP1. Гибридная модель: парсер +
+  ручной ввод рецептов через `data/overrides/components.yml`.
+  Реализация — при подключении каталога через пилот-цепочку.
+  Модель рецептов (структура `recipe`, связка с blueprints и loot) —
+  уточняется при первом наполнении.

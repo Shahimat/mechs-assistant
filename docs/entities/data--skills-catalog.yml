@@ -1,0 +1,35 @@
+id: data--skills-catalog
+kind: entity
+namespace: catalog
+version: "0.x"
+
+description: |
+  Каталог навыков и умений персонажа. Источник — вики: Навык
+  (page_id=2902) + Умение (2905).
+
+  **В MVP1 — только факты:** название, описание, уровни, категория.
+  Модель модификаторов (например, «Торговля» → множитель цены продажи
+  лута) — отдельная фаза `docs` перед MVP2, когда навыки будут
+  использоваться в калькуляторе.
+
+  Наполнение — `parser--wiki`. Иконки — из парсера или скриншотов, поле
+  `iconPath`.
+
+  Shell-entity MVP1.
+
+source_files:
+  data: data/skills.json
+  types: src/types/skill.ts
+
+wiki_source:
+  page_ids: [2902, 2905]
+  section: Персонаж → Навык + Умение
+  data_flow: auto-parsed
+
+manuals: []
+behaviors: []
+
+verified_note: |
+  Shell-entity создана в фазе docs MVP1 — только справочные факты,
+  без модели модификаторов. Модификаторы (влияние на цены, урон,
+  крафт) — фаза docs перед MVP2 калькулятора.

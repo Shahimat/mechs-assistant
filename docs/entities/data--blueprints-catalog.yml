@@ -1,0 +1,31 @@
+id: data--blueprints-catalog
+kind: entity
+namespace: catalog
+version: "0.x"
+
+description: |
+  Каталог чертежей — используются для крафта компонентов и других
+  игровых сущностей. Первичный источник — вики
+  `new.mechs.su/?page_id=3034` (Экономика → Чертежи). Наполнение —
+  `parser--wiki`. Иконки — из парсера или скриншотов, поле `iconPath`.
+
+  Связка «чертёж → рецепт крафта компонента» описывается в
+  `data--components-catalog` (гибридный, с ручным вводом рецептов).
+
+  Shell-entity MVP1.
+
+source_files:
+  data: data/blueprints.json
+  types: src/types/blueprint.ts
+
+wiki_source:
+  page_ids: [3034]
+  section: Экономика → Чертежи
+  data_flow: auto-parsed
+
+manuals: []
+behaviors: []
+
+verified_note: |
+  Shell-entity создана в фазе docs MVP1. Реализация — при подключении
+  каталога через пилот-цепочку.
