@@ -67,6 +67,15 @@ export default defineConfig({
     new rspack.DefinePlugin({
       'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV || 'development'),
     }),
+    new rspack.CopyRspackPlugin({
+      patterns: [
+        {
+          from: 'data/icons',
+          to: 'data/icons',
+          noErrorOnMissing: true,
+        },
+      ],
+    }),
     ...(process.env.NODE_ENV !== 'production'
       ? [new ReactRefreshPlugin(), new rspack.ProgressPlugin({})]
       : []),

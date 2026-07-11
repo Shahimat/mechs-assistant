@@ -1,4 +1,4 @@
-import type { ReactNode } from 'react';
+import { useState, type ReactNode } from 'react';
 import {
   Dialog,
   DialogTitle,
@@ -10,7 +10,7 @@ import {
   Stack,
   Chip,
 } from '@mui/material';
-import { Close } from '@mui/icons-material';
+import { Close, SmartToy } from '@mui/icons-material';
 import type { Robot, RobotPrice } from '../types/robot';
 
 interface RobotDetailProps {
@@ -40,8 +40,18 @@ function Row({ label, value }: { label: string; value: ReactNode }) {
 }
 
 export function RobotDetail({ robot, onClose }: RobotDetailProps) {
+  const [iconFailed, setIconFailed] = useState(false);
+  const iconUrl = robot?.iconPath ? `/${robot.iconPath}` : null;
+  const showIcon = iconUrl && !iconFailed;
+
   return (
-    <Dialog open={robot !== null} onClose={onClose} maxWidth="sm" fullWidth>
+    <Dialog
+      open={robot !== null}
+      onClose={onClose}
+      maxWidth="sm"
+      fullWidth
+      TransitionProps={{ onExited: () => setIconFailed(false) }}
+    >
       {robot && (
         <>
           <DialogTitle sx={{ pr: 6 }}>
@@ -55,9 +65,40 @@ export function RobotDetail({ robot, onClose }: RobotDetailProps) {
             </IconButton>
           </DialogTitle>
           <DialogContent dividers>
+            <Box
+              sx={{
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                height: 220,
+                mb: 2,
+                bgcolor: 'action.hover',
+                borderRadius: 1,
+              }}
+            >
+              {showIcon ? (
+                <Box
+                  component="img"
+                  src={iconUrl}
+                  alt={robot.name}
+                  loading="lazy"
+                  onError={() => setIconFailed(true)}
+                  sx={{
+                    width: '100%',
+                    height: '100%',
+                    objectFit: 'contain',
+                    imageRendering: 'high-quality',
+                  }}
+                />
+              ) : (
+                <SmartToy sx={{ fontSize: 132, color: 'action.disabled' }} />
+              )}
+            </Box>
             <Stack direction="row" spacing={1} sx={{ mb: 2, flexWrap: 'wrap' }}>
               <Chip label={robot.type} size="small" />
-              <Chip label={`Ур. ${robot.requiredLevel}`} size="small" variant="outlined" />
+              {robot.requiredLevel != null && (
+                <Chip label={`Ур. ${robot.requiredLevel}`} size="small" variant="outlined" />
+              )}
               <Chip label={robot.model} size="small" variant="outlined" />
             </Stack>
 

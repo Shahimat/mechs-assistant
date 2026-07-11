@@ -1,4 +1,4 @@
-import type { MouseEvent } from 'react';
+import { useState, type MouseEvent } from 'react';
 import {
   Card,
   CardActionArea,
@@ -27,10 +27,17 @@ const STAT_ROWS: Array<{ label: string; getValue: (r: Robot) => number | string 
 ];
 
 export function RobotCard({ robot, isFavorite, onToggleFavorite, onClick }: RobotCardProps) {
+  const [iconFailed, setIconFailed] = useState(false);
+
   const handleStarClick = (e: MouseEvent) => {
     e.stopPropagation();
     onToggleFavorite(robot.key);
   };
+
+  // iconPath = "data/icons/mechs/<key>.webp" (относительный путь).
+  // Абсолютный от корня — rspack CopyRspackPlugin выкладывает файлы в dist/data/icons/.
+  const iconUrl = robot.iconPath ? `/${robot.iconPath}` : null;
+  const showIcon = iconUrl && !iconFailed;
 
   return (
     <Card sx={{ position: 'relative', height: '100%' }}>
@@ -48,11 +55,27 @@ export function RobotCard({ robot, isFavorite, onToggleFavorite, onClick }: Robo
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
-            height: 120,
-            bgcolor: 'grey.100',
+            height: 180,
+            bgcolor: 'action.hover',
           }}
         >
-          <SmartToy sx={{ fontSize: 72, color: 'grey.400' }} />
+          {showIcon ? (
+            <Box
+              component="img"
+              src={iconUrl}
+              alt={robot.name}
+              loading="lazy"
+              onError={() => setIconFailed(true)}
+              sx={{
+                width: '85%',
+                height: '85%',
+                objectFit: 'contain',
+                imageRendering: 'high-quality',
+              }}
+            />
+          ) : (
+            <SmartToy sx={{ fontSize: 108, color: 'action.disabled' }} />
+          )}
         </Box>
         <CardContent>
           <Typography variant="h6" component="div" gutterBottom noWrap>
@@ -60,7 +83,9 @@ export function RobotCard({ robot, isFavorite, onToggleFavorite, onClick }: Robo
           </Typography>
           <Stack direction="row" spacing={1} sx={{ mb: 1.5 }}>
             <Chip label={robot.type} size="small" />
-            <Chip label={`Ур. ${robot.requiredLevel}`} size="small" variant="outlined" />
+            {robot.requiredLevel != null && (
+              <Chip label={`Ур. ${robot.requiredLevel}`} size="small" variant="outlined" />
+            )}
           </Stack>
           <Stack spacing={0.5}>
             {STAT_ROWS.map(({ label, getValue }) => (

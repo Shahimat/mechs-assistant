@@ -14,6 +14,7 @@ interface RobotsState {
   error: string | null;
   initializeRobots: () => void;
   toggleFavorite: (robotKey: string) => void;
+  reorderFavorites: (newOrder: string[]) => void;
 }
 
 export const useRobotsStore = create<RobotsState>()(
@@ -60,6 +61,10 @@ export const useRobotsStore = create<RobotsState>()(
               ? [...state.favorites, robotKey]
               : state.favorites.filter((k) => k !== robotKey);
           set({ favorites: next });
+        },
+
+        reorderFavorites: (newOrder: string[]) => {
+          set({ favorites: newOrder });
         },
       })
     ),
