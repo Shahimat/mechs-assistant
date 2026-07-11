@@ -224,10 +224,32 @@ React Router (когда роутер появится).
 clone` без ключей. Пороги перехода на Git LFS или отдельное хранилище
 — «когда почувствуем боль».
 
-**GitHub Actions как исполнитель.** Оба парсера и билд крутятся в CI
-через один workflow `sync-and-deploy.yml`, триггер — `workflow_dispatch`
-(«ручка», см. `docs/manuals/setup-github-workflow.md`). Нет cron —
-триггер только вручную теми, кому дан write-доступ к репо.
+**GitHub Actions как исполнитель — три отдельные ручки.**
+
+Разделение по стабильности процесса:
+
+- **`sync-wiki.yml`** — редкий запуск, через **Pull Request**. Парсинг
+  вики нестабилен (изменения вёрстки → парсер может вернуть 40 мехов
+  вместо 97 или сломанные stats). PR-diff — обязательный review до
+  merge. Если сломано — PR закрывается без merge.
+- **`sync-sheets.yml`** — частый запуск, **прямой push в `main`**.
+  Google Sheets API стабилен, overlay-правки точечные, редакторам не
+  надо ждать review.
+- **`deploy.yml`** — **автомат по push в `main`** (с фильтром путей:
+  `data/`, `src/`, `package.json`, config), плюс возможность повторить
+  вручную через `workflow_dispatch`.
+
+Триггер всех трёх — только вручную (кроме автоматического `deploy`),
+никакого cron. Права на `workflow_dispatch` — у Collaborators с
+write-доступом (2-3 человека). См. `docs/manuals/setup-github-workflow.md`.
+
+**Сверка с калькулятором.** У калькулятора прокачки на сайте есть
+публичный CSV `https://new.mechs.su/cms/wp-content/uploads/mechsearth/calc/mechs.txt`
+— полный список мехов игры (~100 строк, разделитель `;`). Используется
+как источник cross-check при review `sync-wiki` PR: если наш JSON
+существенно расходится с calc, парсер что-то потерял. Sanity-check в
+теле PR приводит `wc -l` calc-файла — сравнивать по числу мехов и по
+именам легко.
 
 **Backup Google Sheets.**
 

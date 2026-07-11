@@ -1,0 +1,11 @@
+# АВТО-СГЕНЕРИРОВАНО из Google Sheets (лист: mechs)
+# Правки — в Sheets, следующий синк перезапишет этот файл.
+# См. context/conventions/data-overlay.yml.
+
+test:
+  name: test
+  buyPrice:
+    bonds: 100
+  iconPath: test/test
+  _sourceRow: 2
+  _updatedAt: '2026-07-11T11:24:54.159Z'
