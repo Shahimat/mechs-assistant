@@ -41,7 +41,9 @@ function Row({ label, value }: { label: string; value: ReactNode }) {
 
 export function RobotDetail({ robot, onClose }: RobotDetailProps) {
   const [iconFailed, setIconFailed] = useState(false);
-  const iconUrl = robot?.iconPath ? `/${robot.iconPath}` : null;
+  const iconUrl = robot?.iconPath
+    ? `${__webpack_public_path__}${robot.iconPath}`
+    : null;
   const showIcon = iconUrl && !iconFailed;
 
   return (

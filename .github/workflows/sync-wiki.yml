@@ -1,0 +1,57 @@
+name: sync-wiki
+
+on:
+  workflow_dispatch:
+
+jobs:
+  sync-wiki:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Configure git
+        run: |
+          git config user.email "sync-bot@users.noreply.github.com"
+          git config user.name "mechs-sync-bot"
+
+      - name: Sync wiki
+        run: npm run sync:wiki
+
+      - name: Sanity-check vs калькулятора
+        run: |
+          calc_count=$(curl -sSL https://new.mechs.su/cms/wp-content/uploads/mechsearth/calc/mechs.txt | wc -l)
+          our_count=$(python3 -c "import json; print(len(json.load(open('data/robots.json'))))")
+          echo "калькулятор: $((calc_count - 1)) мехов"
+          echo "у нас:       $our_count мехов"
+          echo "SANITY_CALC=$((calc_count - 1))" >> $GITHUB_ENV
+          echo "SANITY_OURS=$our_count" >> $GITHUB_ENV
+
+      - name: Create Pull Request
+        uses: peter-evans/create-pull-request@v6
+        with:
+          branch: sync/wiki-${{ github.run_number }}
+          title: 'sync: wiki data update'
+          body: |
+            Автоматический sync из вики `new.mechs.su`.
+
+            **Sanity-check:**
+            - калькулятор `mechs.txt`: ${{ env.SANITY_CALC }} мехов
+            - наш парсер: ${{ env.SANITY_OURS }} мехов
+
+            Проверить diff по `data/robots.json`, `data/icons/mechs/`.
+            Если сильное расхождение с калькулятором — не мержить, чинить парсер.
+          commit-message: 'sync: wiki data update'
+          add-paths: |
+            data/robots.json
+            data/icons/**

@@ -1,0 +1,47 @@
+name: sync-sheets
+
+on:
+  workflow_dispatch:
+
+concurrency:
+  group: sync-sheets
+  cancel-in-progress: false
+
+jobs:
+  sync-sheets:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Configure git
+        run: |
+          git config user.email "sync-bot@users.noreply.github.com"
+          git config user.name "mechs-sync-bot"
+
+      - name: Sync sheets
+        env:
+          GSHEETS_SA_KEY: ${{ secrets.GSHEETS_SA_KEY }}
+          MECHS_OVERLAY_SPREADSHEET_ID: ${{ secrets.MECHS_OVERLAY_SPREADSHEET_ID }}
+        run: |
+          # parser-google-sheets читает GSHEETS_SA_KEY (не GSHEETS_SA_KEY_PATH) — JSON строкой из secret.
+          npm run sync:sheets
+
+      - name: Commit overrides
+        run: |
+          git add data/overrides/
+          if git diff --cached --quiet; then
+            echo "Изменений нет"
+          else
+            git commit -m "sync: overrides from Google Sheets ($(date -u +%Y-%m-%dT%H:%M:%SZ))"
+            git push
+          fi

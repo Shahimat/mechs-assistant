@@ -15,12 +15,14 @@ export default defineConfig({
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: '[name].[contenthash].js',
+    publicPath: process.env.NODE_ENV === 'production' ? '/mechs-assistant/' : '/',
     clean: true,
   },
   resolve: {
     extensions: ['.tsx', '.ts', '.jsx', '.js'],
     alias: {
       '@': path.resolve(__dirname, 'src'),
+      '@build': path.resolve(__dirname, '.build'),
     },
   },
   module: {

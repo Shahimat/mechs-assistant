@@ -2,7 +2,9 @@ import { create } from 'zustand';
 import { devtools } from 'zustand/middleware';
 import type { StoreApi } from 'zustand';
 import type { Robot } from '../../types/robot';
-import robotsData from '../../../data/robots.json';
+// Merged JSON (parsed + overrides + _meta), генерируется scripts/build-data
+// перед rspack build. Alias `@build` см. rspack.config.js / tsconfig.json.
+import robotsData from '@build/data/robots.json';
 import { indexedDBMiddleware } from './indexedDBMiddleware';
 
 interface RobotsState {

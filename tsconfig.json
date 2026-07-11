@@ -32,7 +32,8 @@
     /* Paths */
     "baseUrl": ".",
     "paths": {
-      "@/*": ["./src/*"]
+      "@/*": ["./src/*"],
+      "@build/*": ["./.build/*"]
     }
   },
   "include": ["src"],

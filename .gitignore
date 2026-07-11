@@ -41,6 +41,9 @@ lerna-debug.log*
 # Rspack
 .rspack
 
+# Build-time merged JSON (генерируется scripts/build-data перед rspack build)
+.build
+
 # Сырые HTML-выгрузки со страниц вики — исходники для data/robots.json.
 # Хранятся локально, в репозиторий не пушим.
 raw-data/

@@ -35,8 +35,8 @@ export function RobotCard({ robot, isFavorite, onToggleFavorite, onClick }: Robo
   };
 
   // iconPath = "data/icons/mechs/<key>.webp" (относительный путь).
-  // Абсолютный от корня — rspack CopyRspackPlugin выкладывает файлы в dist/data/icons/.
-  const iconUrl = robot.iconPath ? `/${robot.iconPath}` : null;
+  // Подставляем publicPath из rspack (dev: '/', prod: '/mechs-assistant/').
+  const iconUrl = robot.iconPath ? `${__webpack_public_path__}${robot.iconPath}` : null;
   const showIcon = iconUrl && !iconFailed;
 
   return (

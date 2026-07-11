@@ -15,6 +15,12 @@
     "./src/index.tsx"
   ],
   "scripts": {
+    "build:data": "tsx scripts/build-data/index.ts",
+    "predev": "npm run build:data",
+    "prebuild": "npm run build:data",
+    "pretest": "npm run build:data",
+    "pretest:watch": "npm run build:data",
+    "pretest:coverage": "npm run build:data",
     "dev": "rspack serve",
     "build": "rspack build",
     "test": "jest",

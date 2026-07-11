@@ -73,4 +73,15 @@ export interface Robot {
   imageUrl?: string;
   /** URL страницы на вики */
   wikiUrl?: string;
+  /** Метаинформация об overlay-полях (заполняется build-time merger). */
+  _meta?: RobotMeta;
+}
+
+export interface RobotMeta {
+  /** Пути полей, переопределённых через overlay (пример: "buyPrice.bonds", "weight"). */
+  overlayFields: string[];
+  /** Момент последнего изменения overlay-строки в Sheets (ISO). */
+  overlayUpdatedAt?: string;
+  /** Ссылка на источник — например "google-sheets:mechs!row-42". */
+  overlaySource?: string;
 }
