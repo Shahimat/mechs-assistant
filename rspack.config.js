@@ -76,6 +76,10 @@ export default defineConfig({
           to: 'data/icons',
           noErrorOnMissing: true,
         },
+        {
+          from: 'public/favicon',
+          to: 'favicon',
+        },
       ],
     }),
     ...(process.env.NODE_ENV !== 'production'

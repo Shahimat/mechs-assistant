@@ -1,0 +1,22 @@
+{
+  "name": "Мехи.Земля — Ассистент",
+  "short_name": "Мехи.Земля",
+  "description": "WEB ассистент игры Мехи.Земля",
+  "start_url": "/mechs-assistant/",
+  "scope": "/mechs-assistant/",
+  "display": "standalone",
+  "theme_color": "#121212",
+  "background_color": "#121212",
+  "icons": [
+    {
+      "src": "android-chrome-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "android-chrome-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
