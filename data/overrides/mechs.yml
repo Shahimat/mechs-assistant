@@ -5,4 +5,12 @@
 aero_tyagach_70:
   requiredLevel: 71
   _sourceRow: 3
-  _updatedAt: '2026-07-12T05:14:29.418Z'
+  _updatedAt: '2026-07-12T07:03:40.542Z'
+kazuar:
+  stats:
+    durability: 550000
+  buyPrice:
+    regls: 1000
+  description: Короче мороче поменяли значения
+  _sourceRow: 4
+  _updatedAt: '2026-07-12T07:03:40.542Z'
