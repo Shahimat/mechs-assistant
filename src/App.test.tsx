@@ -1,14 +1,14 @@
 import { render, screen, waitFor } from '@testing-library/react';
-import { ThemeProvider } from '@mui/material/styles';
+import { Experimental_CssVarsProvider as CssVarsProvider } from '@mui/material/styles';
 import App from './App';
 import { theme } from './theme';
 
 describe('App', () => {
   it('рендерит каталог мехов и подгружает данные из JSON', async () => {
     render(
-      <ThemeProvider theme={theme}>
+      <CssVarsProvider theme={theme} defaultMode="dark">
         <App />
-      </ThemeProvider>
+      </CssVarsProvider>
     );
 
     expect(screen.getByRole('heading', { name: 'Каталог мехов' })).toBeInTheDocument();

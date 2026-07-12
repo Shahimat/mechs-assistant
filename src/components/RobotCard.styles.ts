@@ -1,0 +1,74 @@
+import { styled } from '@mui/material/styles';
+import { Card, IconButton, Typography } from '@mui/material';
+import { Star, SmartToy } from '@mui/icons-material';
+
+export const StyledCard = styled(Card)({
+  position: 'relative',
+  height: '100%',
+});
+
+export const FavoriteButton = styled(IconButton)(({ theme }) => ({
+  position: 'absolute',
+  top: theme.spacing(0.5),
+  right: theme.spacing(0.5),
+  zIndex: 1,
+}));
+
+export const StarFilled = styled(Star)(({ theme }) => ({
+  color: theme.palette.warning.main,
+}));
+
+export const IconBox = styled('div')(({ theme }) => ({
+  display: 'flex',
+  alignItems: 'center',
+  justifyContent: 'center',
+  height: 180,
+  backgroundColor: theme.palette.action.hover,
+}));
+
+export const IconImage = styled('img')({
+  width: '85%',
+  height: '85%',
+  objectFit: 'contain',
+  imageRendering: 'high-quality',
+});
+
+export const IconPlaceholder = styled(SmartToy)(({ theme }) => ({
+  fontSize: 108,
+  color: theme.palette.action.disabled,
+}));
+
+export const Header = styled('div')(({ theme }) => ({
+  display: 'flex',
+  alignItems: 'center',
+  gap: theme.spacing(0.75),
+  marginBottom: theme.spacing(0.5),
+  minWidth: 0,
+}));
+
+export const Name = styled(Typography)({
+  display: 'inline-block',
+  minWidth: 0,
+});
+
+export const Spacer = styled('div')({
+  flexGrow: 1,
+});
+
+export const ChipRow = styled('div')(({ theme }) => ({
+  display: 'flex',
+  gap: theme.spacing(1),
+  marginBottom: theme.spacing(1.5),
+}));
+
+export const StatList = styled('div')(({ theme }) => ({
+  display: 'flex',
+  flexDirection: 'column',
+  gap: theme.spacing(0.5),
+}));
+
+export const StatRow = styled('div')({
+  display: 'flex',
+  justifyContent: 'space-between',
+  alignItems: 'center',
+});

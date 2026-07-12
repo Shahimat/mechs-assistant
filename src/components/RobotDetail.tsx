@@ -1,20 +1,24 @@
 import { useEffect, useState, type ReactNode } from 'react';
-import {
-  Dialog,
-  DialogTitle,
-  DialogContent,
-  IconButton,
-  Box,
-  Typography,
-  Divider,
-  Stack,
-  Chip,
-} from '@mui/material';
-import { Close, SmartToy } from '@mui/icons-material';
+import { Dialog, DialogContent, IconButton, Typography, Divider, Chip } from '@mui/material';
+import { Close } from '@mui/icons-material';
 import type { Robot, RobotPrice } from '../types/robot';
 import { isOverlaidField, isOverlaidPathOrChildren } from '../utils/overlay';
 import { resolveIconUrl } from '../utils/icons';
 import { OverlayBadge } from './OverlayBadge';
+import { OverlayPill } from '../styles/overlay';
+import {
+  Title,
+  Spacer,
+  IconBox,
+  IconImage,
+  IconPlaceholder,
+  ChipRow,
+  KeyChip,
+  Row,
+  PriceParts,
+  PriceSeparator,
+  Description,
+} from './RobotDetail.styles';
 
 interface RobotDetailProps {
   robot: Robot | null;
@@ -23,29 +27,6 @@ interface RobotDetailProps {
 
 function formatPricePart(value: number, unit: string): string {
   return `${value.toLocaleString('ru-RU')} ${unit}`;
-}
-
-function PricePart({
-  overlaid,
-  children,
-}: {
-  overlaid: boolean;
-  children: ReactNode;
-}) {
-  return (
-    <Box
-      component="span"
-      sx={{
-        color: overlaid ? 'primary.contrastText' : 'inherit',
-        bgcolor: overlaid ? 'primary.main' : 'transparent',
-        px: overlaid ? 1 : 0,
-        borderRadius: overlaid ? 1 : 0,
-        lineHeight: 1.6,
-      }}
-    >
-      {children}
-    </Box>
-  );
 }
 
 function PriceRow({
@@ -64,49 +45,40 @@ function PriceRow({
   const parts: ReactNode[] = [];
   if (price?.bonds != null) {
     parts.push(
-      <PricePart key="bonds" overlaid={bondsOverlaid}>
+      <OverlayPill key="bonds" overlaid={bondsOverlaid}>
         {formatPricePart(price.bonds, 'бонов')}
-      </PricePart>
+      </OverlayPill>
     );
   }
   if (price?.regls != null) {
     parts.push(
-      <PricePart key="regls" overlaid={reglsOverlaid}>
+      <OverlayPill key="regls" overlaid={reglsOverlaid}>
         {formatPricePart(price.regls, 'реглов')}
-      </PricePart>
+      </OverlayPill>
     );
   }
   return (
-    <Box
-      sx={{
-        display: 'flex',
-        justifyContent: 'space-between',
-        py: 0.5,
-        alignItems: 'center',
-      }}
-    >
+    <Row>
       <Typography variant="body2" color="text.secondary">
         {label}
       </Typography>
-      <Box sx={{ display: 'flex', alignItems: 'center', gap: 0.5, fontSize: '0.875rem', fontWeight: 500 }}>
+      <PriceParts>
         {parts.length === 0
           ? '—'
           : parts.flatMap((p, i) =>
               i === 0
                 ? [p]
                 : [
-                    <Box key={`sep-${i}`} component="span" sx={{ color: 'text.secondary' }}>
-                      /
-                    </Box>,
+                    <PriceSeparator key={`sep-${i}`}>/</PriceSeparator>,
                     p,
                   ]
             )}
-      </Box>
-    </Box>
+      </PriceParts>
+    </Row>
   );
 }
 
-function Row({
+function ValueRow({
   robot,
   label,
   value,
@@ -119,32 +91,12 @@ function Row({
 }) {
   const overlaid = isOverlaidPathOrChildren(robot, path);
   return (
-    <Box
-      sx={{
-        display: 'flex',
-        justifyContent: 'space-between',
-        py: 0.5,
-        alignItems: 'center',
-      }}
-    >
+    <Row>
       <Typography variant="body2" color="text.secondary">
         {label}
       </Typography>
-      <Box
-        component="span"
-        sx={{
-          fontSize: '0.875rem',
-          fontWeight: 500,
-          color: overlaid ? 'primary.contrastText' : 'inherit',
-          bgcolor: overlaid ? 'primary.main' : 'transparent',
-          px: overlaid ? 1 : 0,
-          borderRadius: overlaid ? 1 : 0,
-          lineHeight: 1.6,
-        }}
-      >
-        {value}
-      </Box>
-    </Box>
+      <OverlayPill overlaid={overlaid}>{value}</OverlayPill>
+    </Row>
   );
 }
 
@@ -176,57 +128,30 @@ export function RobotDetail({ robot, onClose }: RobotDetailProps) {
     >
       {robot && (
         <>
-          <DialogTitle sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
-            <Box
-              component="span"
-              sx={{
-                display: 'inline-block',
-                color: isOverlaidField(robot, 'name') ? 'primary.contrastText' : 'inherit',
-                bgcolor: isOverlaidField(robot, 'name') ? 'primary.main' : 'transparent',
-                px: isOverlaidField(robot, 'name') ? 1.5 : 0,
-                py: isOverlaidField(robot, 'name') ? 0.25 : 0,
-                borderRadius: isOverlaidField(robot, 'name') ? 1 : 0,
-              }}
-            >
+          <Title>
+            <OverlayPill as="span" overlaid={isOverlaidField(robot, 'name')} size="large">
               {robot.name}
-            </Box>
-            <Box sx={{ flexGrow: 1 }} />
+            </OverlayPill>
+            <Spacer />
             <OverlayBadge robot={robot} size="medium" />
             <IconButton aria-label="Закрыть" onClick={onClose} size="small">
               <Close />
             </IconButton>
-          </DialogTitle>
+          </Title>
           <DialogContent dividers>
-            <Box
-              sx={{
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                height: 220,
-                mb: 2,
-                bgcolor: 'action.hover',
-                borderRadius: 1,
-              }}
-            >
+            <IconBox>
               {showIcon ? (
-                <Box
-                  component="img"
+                <IconImage
                   src={iconUrl}
                   alt={robot.name}
                   loading="lazy"
                   onError={() => setIconFailed(true)}
-                  sx={{
-                    width: '100%',
-                    height: '100%',
-                    objectFit: 'contain',
-                    imageRendering: 'high-quality',
-                  }}
                 />
               ) : (
-                <SmartToy sx={{ fontSize: 132, color: 'action.disabled' }} />
+                <IconPlaceholder />
               )}
-            </Box>
-            <Stack direction="row" spacing={1} sx={{ mb: 2, flexWrap: 'wrap' }}>
+            </IconBox>
+            <ChipRow>
               <Chip
                 label={robot.type}
                 size="small"
@@ -246,38 +171,33 @@ export function RobotDetail({ robot, onClose }: RobotDetailProps) {
                 color={isOverlaidField(robot, 'model') ? 'primary' : 'default'}
                 variant={isOverlaidField(robot, 'model') ? 'filled' : 'outlined'}
               />
-              <Chip
+              <KeyChip
                 label={keyCopied ? `Скопировано · ${robot.key}` : robot.key}
                 size="small"
                 variant={keyCopied ? 'filled' : 'outlined'}
                 color={keyCopied ? 'success' : 'default'}
                 onClick={copyKey}
                 title="Скопировать key в буфер обмена"
-                sx={{
-                  fontFamily: 'monospace',
-                  cursor: 'pointer',
-                  transition: 'all 0.15s',
-                }}
               />
-            </Stack>
+            </ChipRow>
 
             <Typography variant="subtitle2" gutterBottom>
               Характеристики
             </Typography>
-            <Row robot={robot} path="stats.durability" label="Прочность" value={robot.stats.durability} />
-            <Row robot={robot} path="stats.armor" label="Броня" value={robot.stats.armor} />
-            <Row robot={robot} path="stats.speed" label="Скорость" value={robot.stats.speed} />
-            <Row robot={robot} path="stats.maxSpeed" label="Макс. скорость" value={robot.stats.maxSpeed} />
-            <Row robot={robot} path="stats.capacity" label="Вместимость" value={robot.stats.capacity} />
+            <ValueRow robot={robot} path="stats.durability" label="Прочность" value={robot.stats.durability} />
+            <ValueRow robot={robot} path="stats.armor" label="Броня" value={robot.stats.armor} />
+            <ValueRow robot={robot} path="stats.speed" label="Скорость" value={robot.stats.speed} />
+            <ValueRow robot={robot} path="stats.maxSpeed" label="Макс. скорость" value={robot.stats.maxSpeed} />
+            <ValueRow robot={robot} path="stats.capacity" label="Вместимость" value={robot.stats.capacity} />
             {robot.stats.maxCapacity != null && (
-              <Row robot={robot} path="stats.maxCapacity" label="Макс. вместимость" value={robot.stats.maxCapacity} />
+              <ValueRow robot={robot} path="stats.maxCapacity" label="Макс. вместимость" value={robot.stats.maxCapacity} />
             )}
-            <Row robot={robot} path="stats.energyFields" label="Энергополя" value={robot.stats.energyFields} />
+            <ValueRow robot={robot} path="stats.energyFields" label="Энергополя" value={robot.stats.energyFields} />
             {robot.stats.regenerationPerMinute != null && (
-              <Row robot={robot} path="stats.regenerationPerMinute" label="Восстановление/мин" value={robot.stats.regenerationPerMinute} />
+              <ValueRow robot={robot} path="stats.regenerationPerMinute" label="Восстановление/мин" value={robot.stats.regenerationPerMinute} />
             )}
             {robot.stats.additionalInvulnerability != null && (
-              <Row
+              <ValueRow
                 robot={robot}
                 path="stats.additionalInvulnerability"
                 label="Доп. неуязвимость"
@@ -285,7 +205,7 @@ export function RobotDetail({ robot, onClose }: RobotDetailProps) {
               />
             )}
             {robot.stats.additionalAcceleration != null && (
-              <Row
+              <ValueRow
                 robot={robot}
                 path="stats.additionalAcceleration"
                 label="Доп. ускорение"
@@ -301,10 +221,10 @@ export function RobotDetail({ robot, onClose }: RobotDetailProps) {
             <PriceRow robot={robot} label="Продажа" price={robot.sellPrice} basePath="sellPrice" />
             <PriceRow robot={robot} label="Прокачка" price={robot.upgradePrice} basePath="upgradePrice" />
             {robot.upgradeReglPercent != null && (
-              <Row robot={robot} path="upgradeReglPercent" label="Прокачка (реглы %)" value={`${robot.upgradeReglPercent}%`} />
+              <ValueRow robot={robot} path="upgradeReglPercent" label="Прокачка (реглы %)" value={`${robot.upgradeReglPercent}%`} />
             )}
             {robot.itemUpgradePercent != null && (
-              <Row robot={robot} path="itemUpgradePercent" label="Прокачка предметов" value={`${robot.itemUpgradePercent}%`} />
+              <ValueRow robot={robot} path="itemUpgradePercent" label="Прокачка предметов" value={`${robot.itemUpgradePercent}%`} />
             )}
 
             {(robot.backSideDamage != null ||
@@ -316,13 +236,13 @@ export function RobotDetail({ robot, onClose }: RobotDetailProps) {
                   Модификаторы урона
                 </Typography>
                 {robot.backSideDamage != null && (
-                  <Row robot={robot} path="backSideDamage" label="Урон в спину/бок" value={`${robot.backSideDamage}%`} />
+                  <ValueRow robot={robot} path="backSideDamage" label="Урон в спину/бок" value={`${robot.backSideDamage}%`} />
                 )}
                 {robot.howitzerDamage != null && (
-                  <Row robot={robot} path="howitzerDamage" label="Урон от гаубиц" value={`${robot.howitzerDamage}%`} />
+                  <ValueRow robot={robot} path="howitzerDamage" label="Урон от гаубиц" value={`${robot.howitzerDamage}%`} />
                 )}
                 {robot.missChance != null && (
-                  <Row robot={robot} path="missChance" label="Вероятность промаха" value={`${robot.missChance}%`} />
+                  <ValueRow robot={robot} path="missChance" label="Вероятность промаха" value={`${robot.missChance}%`} />
                 )}
               </>
             )}
@@ -335,10 +255,10 @@ export function RobotDetail({ robot, onClose }: RobotDetailProps) {
                   Особенности
                 </Typography>
                 {robot.extraSlots && robot.extraSlots.length > 0 && (
-                  <Row robot={robot} path="extraSlots" label="Доп. слоты" value={robot.extraSlots.join(', ')} />
+                  <ValueRow robot={robot} path="extraSlots" label="Доп. слоты" value={robot.extraSlots.join(', ')} />
                 )}
                 {robot.features && robot.features.length > 0 && (
-                  <Row robot={robot} path="features" label="Особенности" value={robot.features.join(', ')} />
+                  <ValueRow robot={robot} path="features" label="Особенности" value={robot.features.join(', ')} />
                 )}
               </>
             )}
@@ -346,9 +266,7 @@ export function RobotDetail({ robot, onClose }: RobotDetailProps) {
             {robot.description && (
               <>
                 <Divider sx={{ my: 2 }} />
-                <Typography variant="body2" color="text.secondary">
-                  {robot.description}
-                </Typography>
+                <Description>{robot.description}</Description>
               </>
             )}
           </DialogContent>

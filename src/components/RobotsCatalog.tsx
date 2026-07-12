@@ -1,13 +1,10 @@
 import { useEffect, useMemo, useState } from 'react';
 import {
-  Container,
-  Box,
   Typography,
   Alert,
   CircularProgress,
   TextField,
   InputAdornment,
-  Divider,
 } from '@mui/material';
 import { Search } from '@mui/icons-material';
 import {
@@ -30,17 +27,17 @@ import { RobotCard } from './RobotCard';
 import { RobotDetail } from './RobotDetail';
 import { SortableRobotCard } from './SortableRobotCard';
 import type { Robot } from '../types/robot';
-
-const GRID_SX = {
-  display: 'grid',
-  gridTemplateColumns: {
-    xs: '1fr',
-    sm: 'repeat(2, 1fr)',
-    md: 'repeat(3, 1fr)',
-    lg: 'repeat(4, 1fr)',
-  },
-  gap: 2,
-} as const;
+import {
+  Page,
+  CenteredPage,
+  Summary,
+  SectionTitle,
+  Grid,
+  FavoritesGrid,
+  SectionDivider,
+  SectionHeader,
+  SectionHeaderTitle,
+} from './RobotsCatalog.styles';
 
 export function RobotsCatalog() {
   const {
@@ -55,8 +52,6 @@ export function RobotsCatalog() {
   const [selectedRobot, setSelectedRobot] = useState<Robot | null>(null);
   const [query, setQuery] = useState('');
 
-  // activationConstraint.distance: drag стартует только после смещения
-  // на 8px — обычный клик по карточке или звёздочке не запускает drag.
   const sensors = useSensors(
     useSensor(PointerSensor, { activationConstraint: { distance: 8 } }),
     useSensor(KeyboardSensor, { coordinateGetter: sortableKeyboardCoordinates })
@@ -81,9 +76,6 @@ export function RobotsCatalog() {
 
   const { favoriteRobots, otherRobots } = useMemo(() => {
     const byKey = new Map(robots.map((r) => [r.key, r]));
-    // favoriteRobots: в порядке массива favorites (сохраняем D&D-порядок),
-    // пропускаем ключи, которых нет в текущем каталоге (защита от
-    // рассинхронизации между IndexedDB и загруженным JSON).
     const favs: Robot[] = [];
     for (const key of favorites) {
       const robot = byKey.get(key);
@@ -101,43 +93,41 @@ export function RobotsCatalog() {
 
   if (isLoading) {
     return (
-      <Container maxWidth="lg" sx={{ py: 4, display: 'flex', justifyContent: 'center' }}>
+      <CenteredPage maxWidth="lg">
         <CircularProgress />
-      </Container>
+      </CenteredPage>
     );
   }
 
   if (error) {
     return (
-      <Container maxWidth="lg" sx={{ py: 4 }}>
+      <Page maxWidth="lg">
         <Alert severity="error">{error}</Alert>
-      </Container>
+      </Page>
     );
   }
 
   if (robots.length === 0) {
     return (
-      <Container maxWidth="lg" sx={{ py: 4 }}>
+      <Page maxWidth="lg">
         <Alert severity="info">Нет данных для отображения</Alert>
-      </Container>
+      </Page>
     );
   }
 
   return (
-    <Container maxWidth="lg" sx={{ py: 4 }}>
+    <Page maxWidth="lg">
       <Typography variant="h4" component="h1" gutterBottom>
         Каталог мехов
       </Typography>
-      <Typography variant="body2" color="text.secondary" sx={{ mb: 3 }}>
+      <Summary>
         Всего мехов: {robots.length}
         {favoriteRobots.length > 0 && ` · в избранном: ${favoriteRobots.length}`}
-      </Typography>
+      </Summary>
 
       {favoriteRobots.length > 0 && (
         <>
-          <Typography variant="h6" component="h2" sx={{ mb: 1.5 }}>
-            Избранные
-          </Typography>
+          <SectionTitle>Избранные</SectionTitle>
           <DndContext
             sensors={sensors}
             collisionDetection={closestCenter}
@@ -147,7 +137,7 @@ export function RobotsCatalog() {
               items={favoriteRobots.map((r) => r.key)}
               strategy={rectSortingStrategy}
             >
-              <Box sx={{ ...GRID_SX, mb: 4 }}>
+              <FavoritesGrid>
                 {favoriteRobots.map((robot) => (
                   <SortableRobotCard
                     key={robot.key}
@@ -156,31 +146,23 @@ export function RobotsCatalog() {
                     onClick={setSelectedRobot}
                   />
                 ))}
-              </Box>
+              </FavoritesGrid>
             </SortableContext>
           </DndContext>
-          <Divider sx={{ mb: 4 }} />
+          <SectionDivider />
         </>
       )}
 
-      <Box
-        sx={{
-          display: 'flex',
-          alignItems: 'baseline',
-          justifyContent: 'space-between',
-          flexWrap: 'wrap',
-          gap: 2,
-          mb: 2,
-        }}
-      >
-        <Typography variant="h6" component="h2">
+      <SectionHeader>
+        <SectionHeaderTitle>
           {favoriteRobots.length > 0 ? 'Все мехи' : 'Мехи'}
-        </Typography>
+        </SectionHeaderTitle>
         <TextField
           size="small"
           value={query}
           onChange={(e) => setQuery(e.target.value)}
           placeholder="Поиск по названию"
+          sx={{ minWidth: { xs: '100%', sm: 280 } }}
           InputProps={{
             startAdornment: (
               <InputAdornment position="start">
@@ -188,9 +170,8 @@ export function RobotsCatalog() {
               </InputAdornment>
             ),
           }}
-          sx={{ minWidth: { xs: '100%', sm: 280 } }}
         />
-      </Box>
+      </SectionHeader>
 
       {filteredOthers.length === 0 ? (
         <Alert severity="info">
@@ -199,7 +180,7 @@ export function RobotsCatalog() {
             : 'Нет мехов для отображения'}
         </Alert>
       ) : (
-        <Box sx={GRID_SX}>
+        <Grid>
           {filteredOthers.map((robot) => (
             <RobotCard
               key={robot.key}
@@ -209,10 +190,10 @@ export function RobotsCatalog() {
               onClick={setSelectedRobot}
             />
           ))}
-        </Box>
+        </Grid>
       )}
 
       <RobotDetail robot={selectedRobot} onClose={() => setSelectedRobot(null)} />
-    </Container>
+    </Page>
   );
 }

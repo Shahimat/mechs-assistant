@@ -1,8 +1,8 @@
 import { useSortable } from '@dnd-kit/sortable';
 import { CSS } from '@dnd-kit/utilities';
-import { Box } from '@mui/material';
 import { RobotCard } from './RobotCard';
 import type { Robot } from '../types/robot';
+import { SortableWrapper } from './SortableRobotCard.styles';
 
 interface SortableRobotCardProps {
   robot: Robot;
@@ -10,12 +10,6 @@ interface SortableRobotCardProps {
   onClick: (robot: Robot) => void;
 }
 
-/**
- * Обёртка над RobotCard для drag-and-drop через @dnd-kit/sortable.
- * Используется только для блока избранных. Клик по карточке открывает
- * детализацию — drag активируется после смещения на 8px, чтобы не
- * конфликтовать с обычными кликами и клик по звёздочке.
- */
 export function SortableRobotCard({
   robot,
   onToggleFavorite,
@@ -25,14 +19,12 @@ export function SortableRobotCard({
     useSortable({ id: robot.key });
 
   return (
-    <Box
+    <SortableWrapper
       ref={setNodeRef}
+      isDragging={isDragging}
       style={{
         transform: CSS.Transform.toString(transform),
         transition,
-        opacity: isDragging ? 0.5 : 1,
-        cursor: isDragging ? 'grabbing' : 'grab',
-        touchAction: 'none',
       }}
       {...attributes}
       {...listeners}
@@ -43,6 +35,6 @@ export function SortableRobotCard({
         onToggleFavorite={onToggleFavorite}
         onClick={onClick}
       />
-    </Box>
+    </SortableWrapper>
   );
 }
