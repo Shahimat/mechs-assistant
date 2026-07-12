@@ -1,0 +1,31 @@
+id: view--catalogs-hub
+kind: entity
+namespace: ui
+version: "0.x"
+
+description: |
+  Хаб каталогов (`/catalogs`). Сетка квадратных плиток (`other--tile`),
+  каждая — переход в конкретный каталог. На момент 2026-07-12 подключён
+  только каталог мехов (`/catalogs/mechs-catalog` → `view--robots-catalog`).
+  Остальные 10 каталогов (weapons, equipment, ammo, items, loot,
+  blueprints, ore, components, currencies, skills) добавляются по мере
+  подключения их entity/парсеров.
+
+  Визуально и структурно идентичен `view--home` — тот же паттерн
+  «страница из плиток», отличается только контент. Компоненты
+  `other--tile` / `TileGrid` переиспользуются напрямую.
+
+source_files:
+  page: src/pages/CatalogsHubPage.tsx
+
+features_enabled:
+  - tiles-grid
+  - navigate-to-catalog
+
+features_disabled:
+  - catalog-search        # поиск по каталогам не нужен, пока их 11
+  - group-by-category     # плоский список плиток
+
+manuals: []
+behaviors:
+  - view--catalogs-hub-renders-catalog-tiles

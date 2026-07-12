@@ -45,11 +45,29 @@ namespaces:
         one_liner: Каждая запись robots.json соответствует типу Robot (TS strict).
 
   ui:
-    description: Компоненты интерфейса, представления MVP1.
+    description: Компоненты интерфейса — app shell, роутинг, плитки, страницы-хабы, каталоги.
     entities:
+      - id: layout--app-shell
+        one_liner: Общая оболочка приложения — AppHeader (logo + title + breadcrumbs) + Outlet из react-router v7.
+      - id: view--home
+        one_liner: Главная страница `/` — сетка плиток разделов приложения (пока одна плитка «Каталоги»).
+      - id: view--catalogs-hub
+        one_liner: Хаб каталогов `/catalogs` — сетка плиток по одной на каталог (пока «Мехи»).
       - id: view--robots-catalog
-        one_liner: Карточный каталог мехов MVP1 — сетка карточек + детализация меха по клику.
+        one_liner: Карточный каталог мехов `/catalogs/mechs-catalog` — собран из примитивов other--catalog-shell.
+      - id: other--tile
+        one_liner: Квадратная плитка навигации с hover-scale, active-press, focus-ring, слотом для иконки.
+      - id: other--catalog-shell
+        one_liner: Набор примитивов и hook'ов для сборки страницы каталога (не комбайн-компонент, а lightweight-generic).
     behaviors:
+      - id: layout--app-shell-renders-header-and-outlet
+        one_liner: AppLayout рендерит AppHeader (logo/title/breadcrumbs) и вложенную страницу через Outlet.
+      - id: view--home-renders-section-tiles
+        one_liner: Главная рендерит сетку плиток разделов приложения.
+      - id: view--catalogs-hub-renders-catalog-tiles
+        one_liner: Хаб каталогов рендерит по одной плитке на каталог; клик уводит в конкретный каталог.
+      - id: other--tile-scales-on-hover-and-navigates-on-click
+        one_liner: Плитка масштабируется на hover, press-эффект на active, focus-ring, клик уводит на to-URL.
       - id: view--robots-catalog-renders-cards-grid
         one_liner: view--robots-catalog рендерит сетку RobotCard из data--robots-catalog.
       - id: view--robots-catalog-opens-mech-detail-on-click

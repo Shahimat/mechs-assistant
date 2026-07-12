@@ -1,11 +1,11 @@
 import { memo, useState, type MouseEvent } from 'react';
 import { CardActionArea, CardContent, Typography, Chip } from '@mui/material';
 import { StarBorder } from '@mui/icons-material';
-import type { Robot } from '../types/robot';
-import { isOverlaidField } from '../utils/overlay';
-import { resolveIconUrl } from '../utils/icons';
+import type { Robot } from '../../../types/robot';
+import { isOverlaidField } from '../../../utils/overlay';
+import { resolveIconUrl } from '../../../utils/icons';
 import { OverlayBadge } from './OverlayBadge';
-import { OverlayPill } from '../styles/overlay';
+import { OverlayPill } from '../../../styles/overlay';
 import {
   StyledCard,
   FavoriteButton,

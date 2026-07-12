@@ -1,11 +1,11 @@
 import { useEffect, useState, type ReactNode } from 'react';
 import { Dialog, DialogContent, IconButton, Typography, Divider, Chip } from '@mui/material';
 import { Close } from '@mui/icons-material';
-import type { Robot, RobotPrice } from '../types/robot';
-import { isOverlaidField, isOverlaidPathOrChildren } from '../utils/overlay';
-import { resolveIconUrl } from '../utils/icons';
+import type { Robot, RobotPrice } from '../../../types/robot';
+import { isOverlaidField, isOverlaidPathOrChildren } from '../../../utils/overlay';
+import { resolveIconUrl } from '../../../utils/icons';
 import { OverlayBadge } from './OverlayBadge';
-import { OverlayPill } from '../styles/overlay';
+import { OverlayPill } from '../../../styles/overlay';
 import {
   Title,
   Spacer,

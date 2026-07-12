@@ -1,0 +1,32 @@
+id: view--home-renders-section-tiles
+kind: behavior
+namespace: ui
+entities: [view--home]
+title: Главная страница рендерит сетку плиток разделов приложения
+
+scenarios:
+  - given: пользователь открыл `/`
+    when: React Router монтирует `HomePage`
+    then: |
+      отображается `<TileGrid>` с плитками разделов. На момент 2026-07-12
+      подключена одна плитка «Каталоги» (иконка `LibraryBooks`,
+      `to="/catalogs"`). Клик по плитке уводит в `view--catalogs-hub`.
+      Порядок плиток фиксирован в коде страницы.
+
+  - given: список разделов расширяется (появился Калькулятор прокачки, Склад и т.д.)
+    when: разработчик добавляет новую плитку в `HomePage`
+    then: |
+      достаточно добавить `<Tile to="..." title="..." icon={...} />` —
+      сетка адаптивно перестроится, hover/click-эффекты и focus-ring
+      идут из `other--tile` без дополнительного кода.
+
+verified: true
+verified_at: 2026-07-12
+verified_note: |
+  Проверено чтением кода: `HomePage.tsx` рендерит `<TileGrid>` с одной
+  плиткой `<Tile to="/catalogs" title="Каталоги" icon={<LibraryBooks />} />`.
+  `TileGrid` (`TileGrid.styles.ts`) — CSS Grid с адаптивным
+  `repeat(auto-fill, minmax(220-240px, 1fr))`. Финальный визуальный
+  тест навигации (клик по плитке → переход на /catalogs) — за юзером
+  после деплоя, но логика тривиальная — `Tile` = `<Link to>` из
+  react-router-dom.

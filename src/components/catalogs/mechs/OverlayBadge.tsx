@@ -1,6 +1,6 @@
 import { Tooltip } from '@mui/material';
-import type { Robot } from '../types/robot';
-import { hasAnyOverlay, overlayTooltip } from '../utils/overlay';
+import type { Robot } from '../../../types/robot';
+import { hasAnyOverlay, overlayTooltip } from '../../../utils/overlay';
 import { BadgeIcon } from './OverlayBadge.styles';
 
 interface OverlayBadgeProps {

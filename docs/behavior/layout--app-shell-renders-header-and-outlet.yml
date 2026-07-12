@@ -1,0 +1,41 @@
+id: layout--app-shell-renders-header-and-outlet
+kind: behavior
+namespace: ui
+entities: [layout--app-shell]
+title: AppLayout рендерит AppHeader и вложенную страницу через Outlet
+
+scenarios:
+  - given: пользователь открыл любой URL приложения (`/`, `/catalogs`,
+      `/catalogs/mechs-catalog`)
+    when: React Router матчит маршрут и вызывает `<AppLayout />`
+    then: |
+      компонент рендерит `<AppHeader />` (логотип из `@raw/logo.webp`,
+      заголовок «Мехи.Земля / Ассистент», breadcrumbs из
+      `route.handle.crumb`) и следом `<Outlet />`, в который
+      подставляется страница текущего маршрута.
+
+  - given: пользователь на подмаршруте (например, `/catalogs`)
+    when: рендерится Breadcrumbs
+    then: |
+      цепочка крошек `Главная › Каталоги` собирается из `handle.crumb`
+      всех родительских матчей, каждая крошка кроме последней —
+      кликабельный `<Link>`.
+
+  - given: пользователь на главной (`/`)
+    when: рендерится Breadcrumbs
+    then: |
+      показывается одна текущая крошка «Главная» (не кликабельная).
+
+verified: true
+verified_at: 2026-07-12
+verified_note: |
+  Проверено чтением кода: `AppLayout.tsx` рендерит `<AppHeader />` +
+  `<Outlet />`. `AppHeader.tsx` показывает logo (`@raw/logo.webp`) +
+  BrandTitle «Мехи.Земля» + BrandSubtitle «Ассистент» + `<Breadcrumbs />`.
+  `Breadcrumbs.tsx` берёт crumbs через `useMatches()`, фильтрует по
+  наличию `handle.crumb` (type-guard `hasCrumbHandle`), последний
+  элемент — Typography, остальные — Link component={RouterLink}.
+  Роутер (`router.tsx`) определяет `handle: { crumb }` на трёх уровнях
+  (Главная / Каталоги / Мехи). Прод-сборка отдаёт правильный HTML
+  для несуществующих URL через `404.html` = копия `index.html`
+  (verified через `serve dist -s -l 3001 → curl -sI /catalogs → 200`).

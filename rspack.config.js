@@ -23,6 +23,7 @@ export default defineConfig({
     alias: {
       '@': path.resolve(__dirname, 'src'),
       '@build': path.resolve(__dirname, '.build'),
+      '@raw': path.resolve(__dirname, 'assets/raw'),
     },
   },
   module: {
@@ -58,6 +59,10 @@ export default defineConfig({
       {
         test: /\.json$/,
         type: 'json',
+      },
+      {
+        test: /\.(webp|png|jpe?g|svg|gif)$/,
+        type: 'asset/resource',
       },
     ],
   },

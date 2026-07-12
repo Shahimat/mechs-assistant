@@ -1,0 +1,38 @@
+id: layout--app-shell
+kind: entity
+namespace: ui
+version: "0.x"
+
+description: |
+  Общая оболочка приложения — единая для всех страниц. Рендерит
+  AppHeader (логотип + заголовок «Мехи.Земля / Ассистент» +
+  breadcrumbs) и `<Outlet />` для содержимого страницы через
+  React Router v7.
+
+  Заведена одновременно с переходом на роутинг (2026-07-12). До этого
+  приложение было одностраничным (`App.tsx` рендерил `RobotsCatalog`
+  напрямую), теперь на всех уровнях URL живёт один и тот же shell.
+
+  Breadcrumbs берут метки из `route.handle.crumb` (статические строки
+  для трёх текущих маршрутов). Дата-зависимые крошки (например,
+  «Мехи › Аэро Тягач 70» в детализации) — отдельная развилка, сейчас
+  не решаем.
+
+source_files:
+  layout: src/components/layout/AppLayout.tsx
+  header: src/components/layout/AppHeader.tsx
+  breadcrumbs: src/components/layout/Breadcrumbs.tsx
+  header_styles: src/components/layout/AppHeader.styles.ts
+
+features_enabled:
+  - app-header-with-logo
+  - breadcrumbs-from-route-handle
+  - react-router-v7-outlet
+
+features_disabled:
+  - dynamic-crumbs-from-data      # отложено до появления детализаций с данными в URL
+  - side-navigation               # плитки на страницах-хабах закрывают эту потребность
+
+manuals: []
+behaviors:
+  - layout--app-shell-renders-header-and-outlet

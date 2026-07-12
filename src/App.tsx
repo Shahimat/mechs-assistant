@@ -1,5 +1,6 @@
-import { RobotsCatalog } from './components/RobotsCatalog';
+import { RouterProvider } from 'react-router-dom';
+import { router } from './router';
 
 export default function App() {
-  return <RobotsCatalog />;
+  return <RouterProvider router={router} />;
 }

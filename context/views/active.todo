@@ -10,17 +10,19 @@
 
 ## high
 # MVP1 · пилот-цепочка на мехах (подход C) закрыта 2026-07-12 —
-# см. CHANGELOG. Все 13 high-пунктов сделаны и/или audited (verified:
-# true на затронутых behaviors, entity `data--robots-catalog` отражает
-# build-time merger). Дальше — medium: раскатать конвейер на остальные
-# 10 каталогов.
+# см. CHANGELOG. Роутинг + layout + catalog-примитивы (other--catalog-shell)
+# выделены 2026-07-12 (по решению юзера — до второго каталога, ради
+# скорости подключения следующих). Все high-пункты сделаны, дальше —
+# medium: раскатать конвейер на остальные 10 каталогов через новый
+# generic-паттерн.
+ui: визуальная проверка UI-эффектов в браузере на проде — плитки (hover-scale/active-press/focus-ring), breadcrumbs, навигация Home→Catalogs→Мехи, каталог мехов работает как раньше; по результату обновить verified: true на `other--tile-scales-on-hover-and-navigates-on-click` → фаза audit → нужен браузер
 
 ## medium
-# MVP1 · остальные 10 каталогов — накатываются через тот же конвейер после обкатки пилота
+# MVP1 · остальные 10 каталогов — накатываются через тот же конвейер
 catalog: parser--wiki расширить конфиг на остальные каталоги (weapons, equipment, ammo, items, blueprints, ore, currencies, skills, loot, components) → фаза feat → пилот-цепочка отработала
 catalog: parser--google-sheets расширить на остальные листы Sheets → фаза feat → пилот-цепочка отработала
-ui: обобщить RobotsCatalog/RobotCard/RobotDetail в generic-паттерн — после подключения второго каталога, чтобы дублирование стало видимым → фаза refactor → второй каталог подключён
-ui: подключить view для остальных каталогов через generic-паттерн (weapons, equipment, ammo, items, loot, blueprints, ore, components, skills) → фаза feat → generic-паттерн выделен
+ui: подключить view для остальных каталогов через catalog-примитивы (weapons, equipment, ammo, items, loot, blueprints, ore, components, skills) — каждый как отдельный `src/components/catalogs/<slug>/`, плитка в CatalogsHubPage, роут `/catalogs/<slug>-catalog` → фаза feat → catalog-shell выделен, готов к переиспользованию
+ui: подтвердить/расширить catalog-примитивы на втором каталоге — при подключении weapons проверить, какие места требуют расширения (`other--catalog-shell`), а какие копипастятся 1-в-1 → фаза refactor → второй каталог подключён
 data: программный бэкап Google Sheets → отдельный GitHub Actions workflow, дампы в backups/gsheets/YYYY-MM-DD.json → фаза feat → возникает по факту инцидента или роста объёма редакторов
 data: решить судьбу @tanstack/react-query — либо начать использовать, либо убрать → нет
 
@@ -28,4 +30,5 @@ data: решить судьбу @tanstack/react-query — либо начать 
 catalog: TS-приведение `robotsData as Robot[]` не даёт runtime-валидации — рассмотреть zod/valibot для JSON-схемы (актуально для всех 11 data-сущностей после подключения) → нет
 build: рассмотреть Git LFS при росте размера иконок в data/icons/ выше 100 MB → нет
 catalog: добавить недостающих мехов через overlay (Грач — свежий, отсутствует в вики; Снеговик/Стужа — сезонные, страница вики 404) → нужен ручной ввод → нет
-build: включить сплит-чанки / lazy-import — main-бандл ~560 KiB (варнинг rspack при production build) → фаза perf → нет (заведено по факту 2026-07-12, не блокирует)
+build: включить сплит-чанки / lazy-import — main-бандл ~670 KiB после подключения react-router-dom и генериков (варнинг rspack при production build) → фаза perf → нет (заведено по факту 2026-07-12, не блокирует)
+scripts: `scripts/parser-wiki/index.ts:287` — `@typescript-eslint/no-explicit-any` (осталось от старого коммита d48ed8a, не блокирует CI) → фаза chore → нет

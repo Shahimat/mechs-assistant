@@ -33,7 +33,8 @@
     "baseUrl": ".",
     "paths": {
       "@/*": ["./src/*"],
-      "@build/*": ["./.build/*"]
+      "@build/*": ["./.build/*"],
+      "@raw/*": ["./assets/raw/*"]
     }
   },
   "include": ["src"],

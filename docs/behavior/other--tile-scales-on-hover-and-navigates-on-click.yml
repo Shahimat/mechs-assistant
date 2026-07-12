@@ -1,0 +1,44 @@
+id: other--tile-scales-on-hover-and-navigates-on-click
+kind: behavior
+namespace: ui
+entities: [other--tile]
+title: Плитка реагирует на hover/click эффектами и уводит на целевой маршрут
+
+scenarios:
+  - given: плитка `<Tile to="/catalogs" title="Каталоги" icon={<LibraryBooks />} />` смонтирована
+    when: пользователь наводит мышь на плитку
+    then: |
+      плитка плавно увеличивается (`transform: scale(1.03)`), добавляется
+      subtle shadow. Анимация — CSS transition ~150мс.
+
+  - given: пользователь удерживает нажатие / тап на плитке
+    when: срабатывает `:active` состояние
+    then: |
+      плитка кратко «вжимается» (`transform: scale(0.98)`), возвращается
+      в исходное состояние при отпускании.
+
+  - given: пользователь кликнул по плитке
+    when: срабатывает `<Link>` react-router-dom
+    then: |
+      навигация переходит на `to`-URL без перезагрузки страницы,
+      history меняется (URL в адресной строке обновляется).
+
+  - given: пользователь навигируется клавиатурой (Tab, Enter)
+    when: плитка получает фокус
+    then: |
+      появляется focus-ring (`outline` или `box-shadow` с цветом
+      `theme.palette.primary.main`), Enter/Space срабатывают как клик.
+
+verified: false
+verified_at:
+verified_note: |
+  Стили заведены в `Tile.styles.ts`:
+    - hover: `transform: scale(1.03)`, `boxShadow: theme.shadows[6]`,
+      `borderColor: primary.main`, transition 150ms.
+    - active: `transform: scale(0.98)`, transitionDuration 80ms.
+    - focus-visible: `boxShadow: 0 0 0 3px primary.main`.
+  Клик — `<Link>` из react-router-dom, стандартная SPA-навигация.
+  Оставляю `verified: false` до **ручной визуальной проверки в браузере**
+  на проде — CSS transform / hover / focus-эффекты нельзя честно
+  подтвердить без реального DOM (grep стилей не гарантирует, что они
+  визуально работают как заявлено). После проверки — обновить на true.

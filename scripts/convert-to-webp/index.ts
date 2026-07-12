@@ -138,6 +138,7 @@ async function cli(): Promise<void> {
       'usage: npm run convert:webp -- <path> [<path>...]\n' +
         '  --keep-original       не удалять исходник\n' +
         '  --quality=N           lossy режим с указанным качеством (1..100)\n' +
+        '  --resize=N            привести большую сторону к N пикселей (Lanczos3, fit inside)\n' +
         '  --skip-if-exists      пропускать, если .webp уже есть'
     );
     process.exit(1);
@@ -151,6 +152,8 @@ async function cli(): Promise<void> {
     else if (a.startsWith('--quality=')) {
       options.lossless = false;
       options.quality = Number(a.slice('--quality='.length));
+    } else if (a.startsWith('--resize=')) {
+      options.resizeTo = Number(a.slice('--resize='.length));
     } else if (a.startsWith('--')) {
       console.error(`неизвестный флаг: ${a}`);
       process.exit(1);

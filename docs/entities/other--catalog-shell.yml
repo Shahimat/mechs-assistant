@@ -1,0 +1,57 @@
+id: other--catalog-shell
+kind: entity
+namespace: ui
+version: "0.x"
+
+description: |
+  Набор переиспользуемых примитивов и hook'ов для сборки страницы
+  каталога. НЕ является одним компонентом с 17 props — это подход
+  «библиотека блоков»: каждый конкретный каталог (мехи, weapons,
+  ammo, …) собирает свою страницу композицией этих блоков, добавляя
+  свою бизнес-логику (модель данных, специфичные фильтры, карточки).
+
+  Причина lightweight-generic вместо `<CatalogPage props={...}/>`:
+  разные каталоги имеют разные фильтры (у мехов — тип+уровень, у ammo
+  — калибр, у skills — вообще без фильтров), «универсальный
+  комбайн-компонент» превратится в свалку опциональных параметров.
+
+  Пилот-каталог мехов (`view--robots-catalog`) — первый потребитель,
+  собирается из этих примитивов. Второй каталог (weapons) должен
+  собираться так же — если для этого потребуется расширить примитив,
+  а не переписать его, — обобщение состоялось.
+
+source_files:
+  header: src/components/catalog/CatalogHeader.tsx
+  section: src/components/catalog/CatalogSection.tsx
+  grid: src/components/catalog/CatalogGrid.tsx
+  favorites: src/components/catalog/FavoritesDnDSection.tsx
+  filter_panel: src/components/catalog/FilterPanel.tsx
+  search_field: src/components/catalog/SearchField.tsx
+  hook_search: src/components/catalog/hooks/useSearchFilter.ts
+  hook_level: src/components/catalog/hooks/useLevelRangeFilter.ts
+  hook_type: src/components/catalog/hooks/useTypeFilter.ts
+  types: src/components/catalog/types.ts
+
+api_shape:
+  primitives:
+    - CatalogHeader({ title, summary })
+    - CatalogSection({ title, search, children })     # search — необязательный слот (не у всех секций)
+    - CatalogGrid({ children })                        # адаптивная сетка карточек
+    - FavoritesDnDSection({ items, getKey, onReorder, renderCard })
+    - FilterPanel({ children, filtersActive, onReset })
+    - SearchField({ value, onChange, placeholder })
+  hooks:
+    - useSearchFilter(items, getName)                  # → { query, setQuery, filtered }
+    - useLevelRangeFilter(items, getLevel)             # → { range, setRange, min, max, filter }
+    - useTypeFilter(options)                           # → { selected, setSelected, filter }
+
+features_enabled:
+  - layout-primitives
+  - filter-hooks
+  - favorites-dnd-section
+
+features_disabled:
+  - one-size-fits-all-catalog-page   # сознательно НЕ делаем
+
+manuals: []
+behaviors: []                        # поведение проверяется через каталог-потребитель (view--robots-catalog)

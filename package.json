@@ -18,6 +18,7 @@
     "build:data": "tsx scripts/build-data/index.ts",
     "dev": "npm run build:data && rspack serve",
     "build": "npm run build:data && rspack build",
+    "postbuild": "cp dist/index.html dist/404.html",
     "test": "npm run build:data && jest",
     "test:watch": "npm run build:data && jest --watch",
     "test:coverage": "npm run build:data && jest --coverage",
@@ -41,6 +42,7 @@
     "js-yaml": "^5.2.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
+    "react-router-dom": "^7.18.1",
     "zustand": "^4.5.2"
   },
   "devDependencies": {

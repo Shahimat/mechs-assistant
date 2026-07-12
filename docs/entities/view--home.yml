@@ -1,0 +1,29 @@
+id: view--home
+kind: entity
+namespace: ui
+version: "0.x"
+
+description: |
+  Главная страница приложения (`/`). Состоит из сетки квадратных
+  плиток (`other--tile`), каждая — вход в раздел приложения. На
+  момент 2026-07-12 подключён только раздел «Каталоги» (переход в
+  `view--catalogs-hub`). Позже здесь появятся плитки Калькулятор
+  прокачки (MVP2), Клановый склад (MVP3), Боевой калькулятор (MVP4).
+
+  Дизайн-инвариант: одинаковый шаблон для главной и для страниц-хабов
+  (`view--catalogs-hub`) — единая ментальная модель «страница из
+  плиток». Отличие только в наборе плиток.
+
+source_files:
+  page: src/pages/HomePage.tsx
+
+features_enabled:
+  - tiles-grid            # сетка Tile через TileGrid
+  - navigate-to-section   # каждая плитка — Link на подраздел
+
+features_disabled:
+  - dashboard-widgets     # не MVP, дашбордов не заводим
+
+manuals: []
+behaviors:
+  - view--home-renders-section-tiles

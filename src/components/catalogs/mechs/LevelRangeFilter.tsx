@@ -1,6 +1,7 @@
 import { memo, useEffect, useState } from 'react';
 import { Slider } from '@mui/material';
-import { FilterGroup, LevelLabel, LevelSliderWrap } from './RobotsCatalog.styles';
+import { FilterGroup } from '../../catalog/FilterPanel.styles';
+import { LevelLabel, LevelSliderWrap } from './LevelRangeFilter.styles';
 
 interface LevelRangeFilterProps {
   min: number;

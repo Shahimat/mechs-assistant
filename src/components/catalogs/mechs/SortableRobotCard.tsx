@@ -2,7 +2,7 @@ import { memo } from 'react';
 import { useSortable } from '@dnd-kit/sortable';
 import { CSS } from '@dnd-kit/utilities';
 import { RobotCard } from './RobotCard';
-import type { Robot } from '../types/robot';
+import type { Robot } from '../../../types/robot';
 import { SortableWrapper } from './SortableRobotCard.styles';
 
 interface SortableRobotCardProps {

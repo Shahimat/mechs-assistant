@@ -1,0 +1,44 @@
+id: other--tile
+kind: entity
+namespace: ui
+version: "0.x"
+
+description: |
+  Квадратная плитка навигации. Единый строительный блок для
+  `view--home` и `view--catalogs-hub` (и будущих страниц-хабов).
+  Показывает иконку по центру и подпись под ней, целиком является
+  ссылкой (`react-router` `<Link>`).
+
+  Интерактив:
+    - при hover — плавное масштабирование (`transform: scale(1.03)`
+      + subtle shadow).
+    - при active (клик/тап) — короткий press-эффект (`scale(0.98)`).
+    - focus-ring для клавиатурной навигации.
+
+  Иконка передаётся снаружи (`icon: ReactNode`) — сейчас MUI-иконки
+  как плейсхолдеры (`LibraryBooks`, `PrecisionManufacturing`),
+  впоследствии заменяются на кастомные webp-картинки из `assets/raw/`
+  (импорт webp через alias `@raw`).
+
+  Сетка плиток — `TileGrid` (адаптивный CSS Grid, квадратные ячейки
+  через `aspect-ratio: 1`).
+
+source_files:
+  tile: src/components/tiles/Tile.tsx
+  tile_styles: src/components/tiles/Tile.styles.ts
+  grid: src/components/tiles/TileGrid.tsx
+  grid_styles: src/components/tiles/TileGrid.styles.ts
+
+features_enabled:
+  - hover-scale
+  - active-press
+  - focus-ring
+  - custom-icon-slot
+
+features_disabled:
+  - badge-counter         # без счётчиков «сколько внутри»
+  - drag-reorder          # порядок плиток фиксирован в коде
+
+manuals: []
+behaviors:
+  - other--tile-scales-on-hover-and-navigates-on-click
