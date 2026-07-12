@@ -28,6 +28,8 @@ npm run lint     # eslint
 - `data/robots.json` — parsed каталог мехов из вики (первичный источник для build-time merger).
 - `data/overrides/robots.yml` — overlay из Google Sheets (авто-кэш, не редактируется вручную).
 - `data/icons/mechs/` — иконки мехов из вики (webp).
+- `assets/raw/` — исходники изображений (png/jpg/svg — «идеи»).
+- `assets/images/` — готовые для прода webp (импорт через alias `@img`).
 - `scripts/parser-wiki/` — парсер вики `new.mechs.su`.
 - `scripts/parser-google-sheets/` — синк overlay из Google Sheets.
 - `scripts/build-data/` — build-time merger `data/*.json` + `data/overrides/*.yml` → `.build/`.

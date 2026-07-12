@@ -24,6 +24,7 @@ export default defineConfig({
       '@': path.resolve(__dirname, 'src'),
       '@build': path.resolve(__dirname, '.build'),
       '@raw': path.resolve(__dirname, 'assets/raw'),
+      '@img': path.resolve(__dirname, 'assets/images'),
     },
   },
   module: {

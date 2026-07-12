@@ -97,6 +97,8 @@ namespaces:
 # Соответствие «правка → convention» самоочевидно из ключа (rspack.yml
 # про rspack и т.д.); перечисляем только описания.
 conventions:
+  - key: assets-layout
+    one_liner: Разделение assets/ на raw (исходники png/jpg/svg) и images (готовые webp для прода) — webp не хранить в raw.
   - key: blocking-question
     one_liner: Формат блокирующего вопроса — нумерованные вопросы и варианты, дефолт с обоснованием, стоп после отправки.
   - key: changelog

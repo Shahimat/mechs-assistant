@@ -1,4 +1,4 @@
-import logoUrl from '@raw/logo.webp';
+import logoUrl from '@img/logo.webp';
 import { Breadcrumbs } from './Breadcrumbs';
 import {
   Bar,

@@ -15,10 +15,10 @@ description: |
     - при active (клик/тап) — короткий press-эффект (`scale(0.98)`).
     - focus-ring для клавиатурной навигации.
 
-  Иконка передаётся снаружи (`icon: ReactNode`) — сейчас MUI-иконки
-  как плейсхолдеры (`LibraryBooks`, `PrecisionManufacturing`),
-  впоследствии заменяются на кастомные webp-картинки из `assets/raw/`
-  (импорт webp через alias `@raw`).
+  Иконка передаётся снаружи (`icon: ReactNode`) — может быть MUI-иконкой
+  или `<img src={webpUrl}>` из `assets/images/` (импорт через alias
+  `@img`). Заготовки-исходники лежат в `assets/raw/`, конвертация в
+  webp — `npm run convert:webp` (см. convention `assets-layout`).
 
   Сетка плиток — `TileGrid` (адаптивный CSS Grid, квадратные ячейки
   через `aspect-ratio: 1`).

@@ -8,16 +8,24 @@ scenarios:
   - given: пользователь открыл `/catalogs`
     when: React Router монтирует `CatalogsHubPage`
     then: |
-      отображается `<TileGrid>` с плитками каталогов. На момент 2026-07-12
-      подключена одна плитка «Мехи» (иконка `PrecisionManufacturing`,
-      `to="/catalogs/mechs-catalog"`). Клик уводит в
-      `view--robots-catalog`.
+      отображается `<TileGrid>` с 11 плитками (по одной на каталог):
+      Мехи, Оружие, Оборудование, Боезапасы, Предметы, Лут, Чертежи,
+      Ископаемое, Компоненты, Валюта, Навыки. У каждой плитки —
+      webp-иконка из `@img/catalog-icons/<slug>.webp`, переход
+      `to="/catalogs/<slug>-catalog"`.
 
-  - given: подключён новый data-каталог (например, `data--weapons-catalog`)
-    when: разработчик добавляет плитку и страницу в CatalogsHubPage
+  - given: пользователь кликает по плитке «Мехи»
+    when: срабатывает `<Link>` react-router-dom
     then: |
-      плитка встаёт в сетку без изменений компонентов `Tile` / `TileGrid`,
-      навигация ведёт на соответствующий `catalogs/<slug>-catalog` URL.
+      переход на `/catalogs/mechs-catalog` → `view--robots-catalog`
+      (реальный, рабочий каталог мехов).
+
+  - given: пользователь кликает по любой из 10 остальных плиток
+    when: срабатывает `<Link>`
+    then: |
+      переход на `/catalogs/<slug>-catalog` → `CatalogStubPage` с
+      заглушкой (Alert «Каталог в разработке» + title). Готовый view
+      появится, когда парсер вики и overlay расширят этот каталог.
 
   - given: пользователь на подстранице каталога (например, `/catalogs/mechs-catalog`)
     when: он кликает по крошке «Каталоги» в breadcrumbs
@@ -26,10 +34,11 @@ scenarios:
 verified: true
 verified_at: 2026-07-12
 verified_note: |
-  Проверено чтением кода: `CatalogsHubPage.tsx` рендерит `<TileGrid>`
-  с одной плиткой `<Tile to="/catalogs/mechs-catalog" title="Мехи"
-  icon={<PrecisionManufacturing />} />`. Роут `/catalogs/mechs-catalog`
-  ведёт на `MechsCatalogPage`, который рендерит `MechsCatalog` из
-  `src/components/catalogs/mechs/`. Breadcrumb «Каталоги» на подмаршруте
-  кликабелен (Link, `handle: { crumb: 'Каталоги' }` на родителе), это
-  автоматически даёт возврат на /catalogs.
+  Проверено чтением кода: `CatalogsHubPage.tsx` рендерит массив из
+  11 `<Tile>` (см. константу `CATALOGS`), каждая с импортом webp через
+  `@img/catalog-icons/<slug>.webp`. Роутинг: `mechs-catalog` →
+  `MechsCatalogPage`, остальные 10 → `CatalogStubPage` (см.
+  `STUB_CATALOGS` в `router.tsx`). Прод-сборка кладёт все 11 webp в
+  `dist/` через правило `asset/resource` (verified `ls dist/*.webp
+  | wc -l = 13` — 11 плиток + logo + catalog-icon). Финальный
+  визуальный тест — за юзером после деплоя.

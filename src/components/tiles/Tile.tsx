@@ -9,7 +9,7 @@ interface TileProps {
 
 export function Tile({ to, title, icon }: TileProps) {
   return (
-    <TileLink to={to}>
+    <TileLink to={to} draggable={false}>
       <IconSlot>{icon}</IconSlot>
       <TileTitle>{title}</TileTitle>
     </TileLink>

@@ -34,7 +34,8 @@
     "paths": {
       "@/*": ["./src/*"],
       "@build/*": ["./.build/*"],
-      "@raw/*": ["./assets/raw/*"]
+      "@raw/*": ["./assets/raw/*"],
+      "@img/*": ["./assets/images/*"]
     }
   },
   "include": ["src"],
