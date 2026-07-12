@@ -38,7 +38,17 @@ jobs:
           cache: 'npm'
 
       - name: Install dependencies
-        run: npm ci
+        run: npm ci --foreground-scripts
+
+      - name: Dump npm debug logs on failure
+        if: failure()
+        run: |
+          echo "=== npm logs ==="
+          ls -la /home/runner/.npm/_logs/ || true
+          for f in /home/runner/.npm/_logs/*.log; do
+            echo "--- $f ---"
+            cat "$f"
+          done
 
       - name: Build (prebuild запускает build:data — merger parsed + overrides)
         env:
