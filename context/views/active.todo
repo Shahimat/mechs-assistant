@@ -9,20 +9,11 @@
 ## blocker
 
 ## high
-# MVP1 · пилот-цепочка на мехах (подход C) — обкатка сквозной цепочки wiki → data/ → build → deploy
-data: настройка Google Sheets — Google Cloud project, Sheets API, Service Account, JSON-ключ вне репо, доступ на редактирование доверенным игрокам → фаза docs (manual setup-google-sheets.md) → нет
-data: настройка GitHub-репо и Collaborators — публичность репо, добавить второго разраба как Collaborator, права на workflow_dispatch → фаза docs (manual setup-github-workflow.md) → нет
-data: структура data/ в основном репо — папки data/, data/icons/, data/overrides/, .gitignore для локальных временных → фаза docs → нет
-catalog: parser--wiki для мехов — BFS-обход 4 классов + slug/hash URL + PageSpeed=off, WebP-иконки; 97 мехов, sanity-check vs calc/mechs.txt → готово, ждёт коммита
-catalog: parser--google-sheets для листа mechs — тянет через API v4 в data/overrides/mechs.yml → готово, ждёт коммита
-data: build-time merger scripts/build-data.ts — мержит data/*.json с data/overrides/*.yml, сохраняет _meta.overlayFields/overlayUpdatedAt/overlaySource → фаза feat → parser--wiki + parser--google-sheets работают на мехах
-data: GitHub Actions workflow sync-wiki.yml — workflow_dispatch, парсит вики и открывает PR (не пуш в main), review diff перед merge → фаза feat → все локальные скрипты готовы
-data: GitHub Actions workflow sync-sheets.yml — workflow_dispatch с concurrency-guard, парсит Sheets и пушит в main → фаза feat → все локальные скрипты готовы
-data: GitHub Actions workflow deploy.yml — автомат по push в main (paths: data/, src/, config) + workflow_dispatch, build + upload-pages-artifact + deploy-pages → фаза feat → build-time merger готов
-build: настроить публикацию под префиксом /mechs/ — publicPath в rspack.config, GitHub Pages / Vercel адрес деплоя → фаза feat → workflow готов
-ui: подсветка overlay-полей в view--robots-catalog — значок/подчёркивание + tooltip с датой обновления из _meta → фаза feat → build-time merger с meta-полями
-ui: MVP1 chore — снести RobotsGrid.tsx, FavoriteStarCell.tsx, вычистить ag-grid-community/ag-grid-react/react-window из package.json, убрать CSS-импорты ag-grid из src/index.tsx → фаза chore → нет (можно параллельно с data-треком)
-ui: MVP1 audit пилота — verified: true + verified_at на view--robots-catalog behaviors и data--robots-catalog behaviors после подключения парсеров → фаза audit → merger + workflow подключены
+# MVP1 · пилот-цепочка на мехах (подход C) закрыта 2026-07-12 —
+# см. CHANGELOG. Все 13 high-пунктов сделаны и/или audited (verified:
+# true на затронутых behaviors, entity `data--robots-catalog` отражает
+# build-time merger). Дальше — medium: раскатать конвейер на остальные
+# 10 каталогов.
 
 ## medium
 # MVP1 · остальные 10 каталогов — накатываются через тот же конвейер после обкатки пилота
@@ -37,3 +28,4 @@ data: решить судьбу @tanstack/react-query — либо начать 
 catalog: TS-приведение `robotsData as Robot[]` не даёт runtime-валидации — рассмотреть zod/valibot для JSON-схемы (актуально для всех 11 data-сущностей после подключения) → нет
 build: рассмотреть Git LFS при росте размера иконок в data/icons/ выше 100 MB → нет
 catalog: добавить недостающих мехов через overlay (Грач — свежий, отсутствует в вики; Снеговик/Стужа — сезонные, страница вики 404) → нужен ручной ввод → нет
+build: включить сплит-чанки / lazy-import — main-бандл ~560 KiB (варнинг rspack при production build) → фаза perf → нет (заведено по факту 2026-07-12, не блокирует)

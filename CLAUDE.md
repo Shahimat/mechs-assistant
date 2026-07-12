@@ -60,16 +60,21 @@
 
 ## Namespace-ы проекта
 
-- `catalog` — каталог роботов, источники данных.
-- `ui` — компоненты интерфейса, таблица.
-- `comparison` — избранное и «базовый робот».
+- `catalog` — каталоги игровых сущностей, парсеры (wiki + Google Sheets), build-time merger.
+- `ui` — карточные view каталогов и общие UI-компоненты.
+- `comparison` — избранное (список ключей + drag-and-drop сортировка).
 - `persistence` — IndexedDB-персистенция состояния Zustand.
 
 ## Точки входа кода
 
 - `src/index.tsx` — bootstrap (React, ThemeProvider, QueryClientProvider).
-- `src/App.tsx` — рендерит `RobotsGrid`.
-- `src/components/RobotsGrid.tsx` — таблица AG Grid.
+- `src/App.tsx` — рендерит `RobotsCatalog`.
+- `src/components/RobotsCatalog.tsx` — карточный каталог мехов (пилот-view MVP1).
+- `src/components/RobotCard.tsx` / `RobotDetail.tsx` — карточка и модалка детализации.
+- `src/components/OverlayBadge.tsx` + `src/utils/overlay.ts` — маркеры overlay-полей.
 - `src/stores/robots/store.ts` — Zustand-стор роботов.
 - `src/stores/robots/indexedDBMiddleware.ts` — middleware персистенции.
-- `data/robots.json` — источник данных.
+- `data/robots.json` (parsed) + `data/overrides/robots.yml` (overlay) — источники данных.
+- `scripts/build-data/index.ts` — build-time merger → `.build/data/robots.json`.
+- `scripts/parser-wiki/index.ts` — парсер вики `new.mechs.su`.
+- `scripts/parser-google-sheets/index.ts` — синк overlay из Google Sheets.

@@ -3,10 +3,11 @@ rule: |
   TanStack Query v5. Сейчас подключён на уровне bootstrap
   (`QueryClientProvider` в `src/index.tsx`) с настройками:
     refetchOnWindowFocus: false, retry: 1.
-  Реальных queries в проекте пока НЕТ (данные — статический
-  `data/robots.json` через zustand). Если появятся:
+  Реальных queries в проекте пока НЕТ — данные приезжают build-time
+  merger'ом (`scripts/build-data`) в `.build/data/robots.json` и
+  импортируются в zustand-стор напрямую. Если появятся:
     - использовать Query Key Factory (фабрика ключей на домен);
-    - для состояния загрузки — MUI-скелетоны (`Skeleton`,
-      `CircularProgress` — см. текущий `RobotsGrid`).
+    - для состояния загрузки — MUI (`CircularProgress` — как в
+      `RobotsCatalog.tsx:184-190`, `Skeleton` для сетки карточек).
   Пока queries не появятся — вопрос «оставить или снести Provider»
-  висит в `active.todo` (namespace `data`).
+  висит в `active.todo`.

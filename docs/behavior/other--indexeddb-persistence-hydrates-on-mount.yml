@@ -19,10 +19,15 @@ scenarios:
       ошибка попадает в `console.error`, `_persistHydrated: true`
       всё равно выставляется — UI не блокируется.
 
-verified: false
-verified_at:
+verified: true
+verified_at: 2026-07-12
 verified_note: |
-  Спецификация обновлена в фазе docs MVP1: `baseRobotKey` убран из
-  persistKeys (снос механики базового робота), фолбек «дефолтный
-  base-robot после пустой гидратации» также снят. Реализация — фаза
-  refactor MVP1.
+  Проверено чтением кода: `store.ts:22-29` конфигурирует middleware
+  с dbName=`mechs-assistant`, dbVersion=2, storeName=`robots-store`,
+  persistKeys=[`favorites`] (без `baseRobotKey`). `initIndexedDB`
+  создаёт objectStore при onupgradeneeded (`indexedDBMiddleware.ts:36-41`).
+  `loadPersistedState` (`128-152`) проходит по persistKeys, применяет
+  set(patch), выставляет `_persistHydrated: true`. В catch (`148-151`)
+  ошибка идёт в `console.error`, `_persistHydrated: true` всё равно
+  устанавливается — UI не блокируется. `_persistHydrated` объявлен
+  в стейте (`store.ts:14, 36`).

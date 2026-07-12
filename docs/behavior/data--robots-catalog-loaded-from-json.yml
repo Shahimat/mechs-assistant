@@ -24,10 +24,15 @@ scenarios:
       `isLoading = false`, `error` = текст ошибки, `view--robots-catalog`
       показывает error state.
 
-verified: false
-verified_at:
+verified: true
+verified_at: 2026-07-12
 verified_note: |
-  Спецификация обновлена в фазе docs MVP1: сняты упоминания снесённых
-  `RobotsGrid` и `getTransposedData`, инициализация переезжает в
-  корневой компонент `view--robots-catalog`. Реализация — фазы refactor
-  и feat MVP1.
+  Проверено чтением кода: `RobotsCatalog.tsx:89-93` — useEffect вызывает
+  `initializeRobots()` при пустом сторе; `store.ts:40-56` — impl
+  синхронный через `set({ isLoading }) → try/set(robots) / catch/set(error)`.
+  Empty/error state отрисовывается в `RobotsCatalog.tsx:184-206`.
+  Оговорка: стор импортирует данные из `@build/data/robots.json` —
+  merged JSON (parsed + overrides + _meta), генерируется build-time
+  скриптом `scripts/build-data`. Первичный источник (`data/robots.json`)
+  и overlay (`data/overrides/robots.yml`) прогоняются через merger.
+  См. entity `data--robots-catalog`.

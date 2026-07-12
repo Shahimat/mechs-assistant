@@ -5,21 +5,33 @@ version: "1.x"
 
 description: |
   Каталог мехов (роботов) игры Мехи.Земля. Единый источник данных
-  приложения по мехам. Данные хранятся в `data/robots.json` (массив
-  объектов `Robot`), импортируются в zustand-стор напрямую (без
-  сетевого слоя). Схема — TypeScript-типы в `src/types/robot.ts`.
+  приложения по мехам. В zustand-стор импортируется merged JSON
+  (`@build/data/robots.json`) — массив объектов `Robot` без сетевого
+  слоя. Merged JSON генерируется build-time скриптом `scripts/build-data`:
+  parsed-данные `data/robots.json` мержатся с overlay
+  `data/overrides/robots.yml`, каждый мех получает `_meta.overlayFields`,
+  `_meta.overlayUpdatedAt`, `_meta.overlaySource` — на них UI строит
+  подсветку уточнённых полей. Схема — TypeScript-типы в
+  `src/types/robot.ts`.
 
   Первичный источник — вики `new.mechs.su`, подстраницы по типам мехов:
   Боец (page_id=3301), Транспортник (3088), Добытчик (3099),
-  Разведчик (3102). Наполнение и обновление `robots.json` — универсальный
-  парсер `parser--wiki` (см. context/roadmap.md, сквозной эпик «Данные»).
+  Разведчик (3102). Наполнение и обновление `data/robots.json` —
+  универсальный парсер `parser--wiki`. Overlay `data/overrides/robots.yml`
+  синкается из Google Sheets через `parser--google-sheets`
+  (см. context/roadmap.md, сквозной эпик «Данные»).
 
-  Пилот-каталог MVP1 (подход C): полностью автоматизированная цепочка
-  `wiki → parser--wiki → data/robots.json в репе → build → view`
-  сначала обкатывается на мехах, потом наливаются остальные 10 каталогов.
+  Пилот-каталог MVP1 (подход C): цепочка
+  `wiki → parser--wiki → data/robots.json → merger → .build/data/robots.json
+  → view` плюс параллельная ветка `Sheets → parser--google-sheets →
+  data/overrides/robots.yml → merger` обкатана на мехах и готова к
+  накатыванию на остальные 10 каталогов.
 
 source_files:
-  data: data/robots.json
+  parsed: data/robots.json
+  overlay: data/overrides/robots.yml
+  merged: .build/data/robots.json      # генерируется build-time, импортируется стором
+  merger: scripts/build-data/index.ts
   types: src/types/robot.ts
 
 wiki_source:

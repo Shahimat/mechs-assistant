@@ -2,13 +2,16 @@ key: stack
 rule: |
   Фиксированный стек проекта:
     - React 18 (функциональные компоненты, hooks)
-    - MUI v5 (Material-UI Core) + Emotion (@emotion/react, @emotion/styled)
+    - MUI v5 (Material-UI Core) + Emotion (@emotion/react, @emotion/styled — styled components)
+    - dnd-kit (@dnd-kit/core, @dnd-kit/sortable) — drag-and-drop сортировка карточек избранного
     - Zustand (глобальное состояние) + собственный indexedDB middleware
-    - TanStack Query v5 (подключён в bootstrap; реальных queries пока нет)
-    - AG Grid Community v35 (ag-grid-react) — основная таблица
+    - TanStack Query v5 (подключён в bootstrap; реальных queries пока нет — см. active.todo)
     - TypeScript strict (см. convention `typescript`)
     - Rspack (bundler)
     - Jest + React Testing Library (см. convention `testing`)
+    - GitHub Actions + GitHub Pages (deploy-pages@v4) — публикация под /mechs-assistant/
   Смена мажорной версии любой из этих библиотек — только после согласования.
   Ввод новой библиотеки — согласовать (проверить, что нельзя решить
   существующим стеком).
+  AG Grid (ag-grid-community/ag-grid-react) снят вместе с переездом на
+  карточный каталог в MVP1 — не возвращать без обсуждения.

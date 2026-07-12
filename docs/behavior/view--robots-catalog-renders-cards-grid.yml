@@ -24,8 +24,16 @@ scenarios:
     when: пользователь открыл приложение
     then: view--robots-catalog показывает error state (алерт с текстом ошибки).
 
-verified: false
-verified_at:
+verified: true
+verified_at: 2026-07-12
 verified_note: |
-  Спецификация MVP1 — заведена в фазе docs, реализация в фазе feat.
-  Компоненты RobotsCatalog / RobotCard / RobotDetail ещё не созданы.
+  Проверено чтением кода и живого прод-деплоя https://shahimat.github.io/mechs-assistant/:
+  `RobotsCatalog.tsx:326-336` рендерит `<Grid>` из RobotCard по массиву
+  `otherRobots`, избранные — в отдельной `<FavoritesGrid>` c drag-and-drop
+  (dnd-kit); карточка (`RobotCard.tsx:54-117`) отображает название/тип/
+  requiredLevel/durability/armor/speed/capacity и звёздочку избранного.
+  Empty state — Alert `Нет данных для отображения` (RobotsCatalog.tsx:200-206),
+  error state — Alert severity=error с текстом ошибки (192-198). Скелетоны
+  из старой формулировки не использованы — конкретика зафиксирована.
+  Плюс введён loading state (`CircularProgress`, 184-190) и уточнение
+  «Ничего не найдено по фильтрам» при активных фильтрах (319-324).

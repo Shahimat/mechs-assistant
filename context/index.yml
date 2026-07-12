@@ -10,10 +10,10 @@
 
 namespaces:
   catalog:
-    description: Данные игровых каталогов и их источники (парсер вики).
+    description: Данные игровых каталогов, парсеры (wiki + Google Sheets), build-time merger.
     entities:
       - id: data--robots-catalog
-        one_liner: Каталог мехов (data/robots.json → типы Robot). Пилот-каталог MVP1.
+        one_liner: Каталог мехов (parsed data/robots.json + overlay data/overrides/robots.yml → merged .build/data/robots.json → типы Robot). Пилот-каталог MVP1 — закрыт 2026-07-12.
       - id: data--weapons-catalog
         one_liner: Каталог вооружения — оружие в основные слоты мехов (wiki 3341). Shell-entity MVP1.
       - id: data--equipment-catalog
@@ -137,4 +137,4 @@ manuals:
   - id: setup-google-sheets
     one_liner: Настройка Google Cloud Service Account, Sheets API, JSON-ключа локально и в GitHub Secrets для parser--google-sheets.
   - id: setup-github-workflow
-    one_liner: Настройка публичности репо, Collaborators, GitHub Pages/Vercel, deploy prefix /mechs/, workflow sync-and-deploy с workflow_dispatch.
+    one_liner: Настройка публичности репо, Collaborators, GitHub Pages, deploy prefix /mechs-assistant/, три workflow-ручки (sync-wiki PR, sync-sheets прямой push с автотриггером deploy, deploy автомат).

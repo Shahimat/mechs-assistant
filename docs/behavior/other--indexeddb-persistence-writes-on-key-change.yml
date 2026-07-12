@@ -21,8 +21,15 @@ scenarios:
     when: catch в цепочке `.then(setToIndexedDB).catch(...)`
     then: ошибка логируется в `console.error`, состояние в памяти всё равно обновлено.
 
-verified: false
-verified_at:
+verified: true
+verified_at: 2026-07-12
 verified_note: |
-  Спецификация обновлена в фазе docs MVP1: снят сценарий с `setBaseRobot`
-  (механика базового робота снесена). Реализация — фаза refactor MVP1.
+  Проверено чтением кода: `setWithPersistence` (`indexedDBMiddleware.ts:156-183`)
+  вычисляет `nextState`, для каждого key из persistKeys сравнивает
+  `next[key] !== current[key]` и только при изменении вызывает
+  `setToIndexedDB(...)` через `initializeDB().then(...)`. persistKeys
+  = [`favorites`] (`store.ts:28`), поэтому `robots`/`isLoading`/`error`
+  из `initializeRobots` не попадают в IDB — обычный `set(partial)`
+  их применяет. Ошибка записи ловится `.catch((err) => console.error(...))`
+  (`174-178`), состояние в памяти обновляется независимо через
+  безусловный `set(partial, replace)` в конце (`182`).

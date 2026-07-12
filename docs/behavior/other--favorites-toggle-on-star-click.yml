@@ -28,9 +28,17 @@ scenarios:
       `favorites` восстанавливается из IDB, звёздочки в карточках
       сохранённых мехов отрисовываются жёлтыми (Star).
 
-verified: false
-verified_at:
+verified: true
+verified_at: 2026-07-12
 verified_note: |
-  Спецификация обновлена в фазе docs MVP1: снесён `FavoriteStarCell`
-  (ag-grid-специфичный), звёздочка переезжает в карточку меха
-  (`RobotCard`). Реализация — фаза feat MVP1.
+  Проверено чтением кода: звёздочка живёт в `RobotCard.tsx:56-62`
+  (FavoriteButton, `StarFilled` при isFavorite / `StarBorder` иначе);
+  `handleStarClick` вызывает `onToggleFavorite(robot.key)` и делает
+  `e.stopPropagation()` (`RobotCard.tsx:45-48`). Стор: `toggleFavorite`
+  добавляет/удаляет ключ из `favorites` через indexOf + filter
+  (`store.ts:58-66`). Middleware `indexedDBMiddleware.ts:156-183`
+  пишет `favorites` в IDB (db=`mechs-assistant`, store=`robots-store`,
+  key=`favorites`) при изменении. Гидратация из IDB — через
+  `loadPersistedState` (`indexedDBMiddleware.ts:128-152`), звёздочки
+  восстанавливаются автоматически через `isFavorite`-prop
+  (`RobotsCatalog.tsx:328-331`).

@@ -1,5 +1,5 @@
 name: mechs-assistant
-description: WEB-ассистент игры Мехи.Земля. Сравнительная таблица роботов.
+description: WEB-ассистент игры Мехи.Земля. Карточный каталог мехов (MVP1) + фундамент под расширение на 10 других каталогов и калькулятор прокачки.
 author:
   name: Gevorg Nakhapetyan
   email: ngs22071993@gmail.com
@@ -33,13 +33,14 @@ sync:
 
 stack:
   language: TypeScript (strict)
-  ui: React 18 + MUI v5 + Emotion
-  grid: AG Grid Community v35 (ag-grid-react)
+  ui: React 18 + MUI v5 + Emotion (styled components)
+  dnd: dnd-kit — drag-and-drop сортировка избранных карточек
   state: Zustand + собственный indexedDB middleware
-  data_layer: TanStack Query (v5) — подключён в bootstrap, реальных queries пока нет
+  data_layer: TanStack Query (v5) — подключён в bootstrap, реальных queries пока нет (см. active.todo, решить судьбу)
   bundler: Rspack
   testing: Jest + React Testing Library
   lint: ESLint (@typescript-eslint) + Prettier
+  deploy: GitHub Pages (deploy-pages@v4) под префиксом /mechs-assistant/
 
 runtime:
   dev_port: 3000
@@ -48,7 +49,7 @@ runtime:
     db_name: mechs-assistant
     db_version: 2
     store_name: robots-store
-    persisted_keys: [baseRobotKey, favorites]
+    persisted_keys: [favorites]
 
 paths:
   source: src/
@@ -61,9 +62,9 @@ paths:
   active_todo: context/views/active.todo
 
 namespaces:
-  - catalog       # каталог роботов, источники данных
-  - ui            # компоненты интерфейса
-  - comparison    # избранное и базовый робот
+  - catalog       # каталоги, парсеры (wiki + Sheets), build-time merger
+  - ui            # карточные view каталогов, общие UI-компоненты
+  - comparison    # избранное (список ключей + drag-and-drop сортировка)
   - persistence   # IndexedDB-персистенция
 
 commands:

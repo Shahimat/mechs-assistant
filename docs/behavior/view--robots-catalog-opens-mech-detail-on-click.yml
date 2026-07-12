@@ -24,9 +24,19 @@ scenarios:
       детализация НЕ открывается, срабатывает только
       other--favorites-toggle-on-star-click.
 
-verified: false
-verified_at:
+verified: true
+verified_at: 2026-07-12
 verified_note: |
-  Спецификация MVP1 — заведена в фазе docs, реализация в фазе feat.
-  Выбор между модалкой и отдельной страницей — открытая развилка,
-  зависит от макета в Perplexity/Figma.
+  Проверено чтением кода: клик по CardActionArea
+  (`RobotCard.tsx:63`) выставляет selectedRobot через `onClick(robot)`
+  (`RobotsCatalog.tsx:139`), RobotDetail рендерится как MUI Dialog
+  с `open={robot !== null}` (`RobotDetail.tsx:122-125`). Развилка
+  «модалка vs отдельная страница» закрыта в пользу модалки.
+  Закрытие: Dialog `onClose` (крестик, Esc, клик по фону) — стандартное
+  поведение MUI + явная IconButton (`RobotDetail.tsx:137-139`),
+  состояние стора не меняется. Клик по звёздочке использует
+  `e.stopPropagation()` (`RobotCard.tsx:45-48`) — детализация не
+  открывается. В детализации отрисованы все поля Robot: stats,
+  buyPrice/sellPrice/upgradePrice, upgradeReglPercent, itemUpgradePercent,
+  backSideDamage/howitzerDamage/missChance, extraSlots, features,
+  description (`RobotDetail.tsx:184-271`).
