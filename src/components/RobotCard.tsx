@@ -1,4 +1,4 @@
-import { useState, type MouseEvent } from 'react';
+import { memo, useState, type MouseEvent } from 'react';
 import { CardActionArea, CardContent, Typography, Chip } from '@mui/material';
 import { StarBorder } from '@mui/icons-material';
 import type { Robot } from '../types/robot';
@@ -39,7 +39,7 @@ const STAT_ROWS: Array<{
   { label: 'Вместимость', path: 'stats.capacity', getValue: (r) => r.stats.capacity },
 ];
 
-export function RobotCard({ robot, isFavorite, onToggleFavorite, onClick }: RobotCardProps) {
+function RobotCardImpl({ robot, isFavorite, onToggleFavorite, onClick }: RobotCardProps) {
   const [iconFailed, setIconFailed] = useState(false);
 
   const handleStarClick = (e: MouseEvent) => {
@@ -116,3 +116,5 @@ export function RobotCard({ robot, isFavorite, onToggleFavorite, onClick }: Robo
     </StyledCard>
   );
 }
+
+export const RobotCard = memo(RobotCardImpl);

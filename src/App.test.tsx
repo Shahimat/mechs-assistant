@@ -14,7 +14,7 @@ describe('App', () => {
     expect(screen.getByRole('heading', { name: 'Каталог мехов' })).toBeInTheDocument();
 
     await waitFor(() => {
-      expect(screen.getByText(/Всего мехов:/)).toBeInTheDocument();
+      expect(screen.getByText(/Показано:/)).toBeInTheDocument();
     });
   });
 });

@@ -1,3 +1,4 @@
+import { memo } from 'react';
 import { useSortable } from '@dnd-kit/sortable';
 import { CSS } from '@dnd-kit/utilities';
 import { RobotCard } from './RobotCard';
@@ -10,7 +11,7 @@ interface SortableRobotCardProps {
   onClick: (robot: Robot) => void;
 }
 
-export function SortableRobotCard({
+function SortableRobotCardImpl({
   robot,
   onToggleFavorite,
   onClick,
@@ -38,3 +39,5 @@ export function SortableRobotCard({
     </SortableWrapper>
   );
 }
+
+export const SortableRobotCard = memo(SortableRobotCardImpl);

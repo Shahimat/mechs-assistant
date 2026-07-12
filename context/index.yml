@@ -95,6 +95,8 @@ conventions:
     one_liner: Overlay для гибридных data-сущностей — data/overrides/<catalog>.yml поверх parsed-JSON, merge при build-time.
   - key: entity-naming
     one_liner: Именование entities с префиксом `<type>--` (view/data/parser/other), наследуется в behaviors.
+  - key: interactive-stability
+    one_liner: Интерактивные элементы не сдвигают соседний layout при взаимодействии; резервируем места, используем `visibility` вместо conditional render.
   - key: git-commits
     one_liner: Коммит и push делает юзер сам; агент — только отчёт, не спрашивать «закоммитить?».
   - key: language
