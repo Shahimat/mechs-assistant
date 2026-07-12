@@ -12,6 +12,7 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       contents: write
+      actions: write
     steps:
       - uses: actions/checkout@v4
 
@@ -37,11 +38,20 @@ jobs:
           npm run sync:sheets
 
       - name: Commit overrides
+        id: commit
         run: |
           git add data/overrides/
           if git diff --cached --quiet; then
             echo "Изменений нет"
+            echo "committed=false" >> "$GITHUB_OUTPUT"
           else
             git commit -m "sync: overrides from Google Sheets ($(date -u +%Y-%m-%dT%H:%M:%SZ))"
             git push
+            echo "committed=true" >> "$GITHUB_OUTPUT"
           fi
+
+      - name: Trigger deploy
+        if: steps.commit.outputs.committed == 'true'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: gh workflow run deploy.yml --ref main
