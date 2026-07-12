@@ -41,7 +41,6 @@
     "js-yaml": "^5.2.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
-    "tsx": "^4.22.4",
     "zustand": "^4.5.2"
   },
   "devDependencies": {
@@ -71,6 +70,7 @@
     "react-refresh": "^0.14.2",
     "sharp": "^0.35.2",
     "ts-jest": "^29.2.5",
+    "tsx": "^4.23.0",
     "typescript": "^5.5.4"
   }
 }
