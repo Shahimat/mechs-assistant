@@ -35,7 +35,10 @@ async function main() {
     console.log(`syncing sheet: ${sheetName} → ${catalogId}`);
     const res = await sheets.spreadsheets.values.get({
       spreadsheetId: SPREADSHEET_ID,
-      range: `${sheetName}!A:Z`,
+      // A:AZ — до 52 колонок. Для мехов сейчас ~33, запас на будущее.
+      // Range A:Z обрезал бы колонки после Z (description, extraSlots,
+      // features, imageUrl попадают в AA+).
+      range: `${sheetName}!A:AZ`,
     });
     const rows = (res.data.values ?? []) as string[][];
     const overrides = parseRows(rows);
@@ -46,7 +49,9 @@ async function main() {
 
 function parseRows(rows: string[][]): Overrides {
   if (rows.length === 0) return {};
-  const [header, ...body] = rows;
+  // Row 1 — заголовки колонок, Row 2 — описания колонок для редакторов
+  // (справочный текст, в JSON не идёт). Данные начинаются с Row 3.
+  const [header, , ...body] = rows;
   const result: Overrides = {};
   const now = new Date().toISOString();
 
@@ -64,13 +69,13 @@ function parseRows(rows: string[][]): Overrides {
       if (fieldName === 'source_note') continue;
       if (rawValue === undefined || rawValue === '') continue;
 
-      setNestedField(entry, fieldName, parseValue(rawValue));
+      setNestedField(entry, fieldName, parseValue(rawValue, fieldName));
       hasContent = true;
     }
 
     if (!hasContent) return;
 
-    entry._sourceRow = idx + 2; // +1 header, +1 1-indexed
+    entry._sourceRow = idx + 3; // +1 header, +1 description row, +1 1-indexed
     entry._updatedAt = now;
     result[key] = entry;
   });
@@ -94,7 +99,16 @@ function setNestedField(target: Record<string, unknown>, path: string, value: un
   cursor[parts[parts.length - 1]] = value;
 }
 
-function parseValue(raw: string): unknown {
+/** Поля, которые в JSON всегда массивы — Sheets-ячейку сплитим по `;`. */
+const ARRAY_FIELDS = new Set(['extraSlots', 'features']);
+
+function parseValue(raw: string, fieldName?: string): unknown {
+  if (fieldName && ARRAY_FIELDS.has(fieldName)) {
+    return raw
+      .split(';')
+      .map((s) => s.trim())
+      .filter(Boolean);
+  }
   if (/^-?\d+$/.test(raw)) return Number(raw);
   if (/^-?\d+\.\d+$/.test(raw)) return Number(raw);
   const lower = raw.toLowerCase();

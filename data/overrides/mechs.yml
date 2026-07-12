@@ -2,10 +2,42 @@
 # Правки — в Sheets, следующий синк перезапишет этот файл.
 # См. context/conventions/data-overlay.yml.
 
-test:
-  name: test
+aero_tyagach_70:
+  name: Аэро Тягач 70 Вау
+  model: some
+  type: some
+  requiredLevel: 71
+  stats:
+    durability: 1
+    capacity: 1
+    maxCapacity: 1
+    speed: 1
+    maxSpeed: 1
+    armor: 1
+    energyFields: 1
+    regenerationPerMinute: 1
+    additionalInvulnerability: 1
+    additionalAcceleration: 1
   buyPrice:
-    bonds: 100
-  iconPath: test/test
-  _sourceRow: 2
-  _updatedAt: '2026-07-11T11:24:54.159Z'
+    bonds: 1
+    regls: 1
+  sellPrice:
+    regls: 100
+  upgradePrice:
+    bonds: 1
+    regls: 1
+  upgradeReglPercent: 1
+  itemUpgradePercent: 1
+  backSideDamage: 1
+  howitzerDamage: 1
+  missChance: 1
+  description: 11
+  wikiUrl: 1
+  iconPath: 1
+  extraSlots:
+    - '1'
+  features:
+    - '1'
+  imageUrl: 1
+  _sourceRow: 3
+  _updatedAt: '2026-07-12T03:54:55.468Z'

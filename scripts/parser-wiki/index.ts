@@ -7,6 +7,7 @@ import {
   WIKI_BASE,
   ROBOTS_JSON_PATH,
   ICONS_DIR,
+  ICONS_URL_PREFIX,
   FETCH_DELAY_MS,
   type MechClassPage,
 } from './config.js';
@@ -107,11 +108,13 @@ async function main() {
   const downloadedIcons: string[] = [];
   for (const robot of robots) {
     if (!robot.iconPath) continue;
-    const iconUrl = robot.iconPath;
-    const iconFile = path.join(ICONS_DIR, `${robot.key}.png`);
+    const iconUrl = robot.iconPath; // remote URL из HTML
+    const iconFile = path.join(ICONS_DIR, `${robot.key}.png`); // физический путь
     try {
       await downloadFile(iconUrl, iconFile);
-      robot.iconPath = iconFile;
+      // iconPath в JSON — URL от корня сайта, без префикса `data/`.
+      // Rspack копирует data/icons/ → dist/icons/.
+      robot.iconPath = `${ICONS_URL_PREFIX}/${robot.key}.png`;
       downloadedIcons.push(iconFile);
     } catch (err) {
       console.warn(`  icon fail for ${robot.key}: ${(err as Error).message}`);
@@ -131,25 +134,25 @@ async function main() {
       lossless: false,
       quality: 90,
     });
-    const pngToWebp = new Map<string, string>();
+    const successfulKeys = new Set<string>();
     let totalIn = 0;
     let totalOut = 0;
     for (const r of convertResults) {
       if (r.error) {
         console.warn(`  convert fail: ${r.input}: ${r.error}`);
       } else {
-        pngToWebp.set(r.input, r.output);
+        successfulKeys.add(path.basename(r.input, '.png'));
         totalIn += r.originalSize;
         totalOut += r.newSize;
       }
     }
     for (const robot of robots) {
-      if (robot.iconPath && pngToWebp.has(robot.iconPath)) {
-        robot.iconPath = pngToWebp.get(robot.iconPath)!;
+      if (robot.iconPath?.endsWith('.png') && successfulKeys.has(robot.key)) {
+        robot.iconPath = robot.iconPath.replace(/\.png$/, '.webp');
       }
     }
     const savedPct = totalIn > 0 ? Math.round(((totalIn - totalOut) / totalIn) * 100) : 0;
-    console.log(`  ${pngToWebp.size} converted, ${totalIn}→${totalOut} B (-${savedPct}%)`);
+    console.log(`  ${successfulKeys.size} converted, ${totalIn}→${totalOut} B (-${savedPct}%)`);
   }
 
   robots.sort((a, b) => a.key.localeCompare(b.key));

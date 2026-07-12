@@ -22,4 +22,5 @@ export const MECH_CLASS_PAGES: MechClassPage[] = [
 export const WIKI_BASE = 'https://new.mechs.su';
 export const ROBOTS_JSON_PATH = 'data/robots.json';
 export const ICONS_DIR = 'data/icons/mechs';
+export const ICONS_URL_PREFIX = 'mechs';
 export const FETCH_DELAY_MS = 150; // вежливость к серверу

@@ -19,7 +19,7 @@
       "armor": 0,
       "energyFields": 0
     },
-    "iconPath": "data/icons/mechs/aero_tyagach_60.webp",
+    "iconPath": "mechs/aero_tyagach_60.webp",
     "wikiUrl": "https://new.mechs.su/wiki/robots/trader/aero-tractor"
   },
   {
@@ -43,7 +43,7 @@
       "armor": 0,
       "energyFields": 0
     },
-    "iconPath": "data/icons/mechs/aero_tyagach_70.webp",
+    "iconPath": "mechs/aero_tyagach_70.webp",
     "wikiUrl": "https://new.mechs.su/wiki/robots/trader/aero-tractor"
   },
   {
@@ -68,7 +68,7 @@
       "energyFields": 0,
       "additionalInvulnerability": 2
     },
-    "iconPath": "data/icons/mechs/aero_tyagach_80_m.webp",
+    "iconPath": "mechs/aero_tyagach_80_m.webp",
     "wikiUrl": "https://new.mechs.su/wiki/robots/trader/aero-tractor"
   },
   {
@@ -93,7 +93,7 @@
       "energyFields": 80,
       "additionalInvulnerability": 2
     },
-    "iconPath": "data/icons/mechs/aero_tyagach_90_m.webp",
+    "iconPath": "mechs/aero_tyagach_90_m.webp",
     "wikiUrl": "https://new.mechs.su/wiki/robots/trader/aero-tractor"
   },
   {
@@ -109,9 +109,7 @@
     "sellPrice": {
       "bonds": 1750000
     },
-    "extraSlots": [
-      "ДОП ДОП ДОП ДОП"
-    ],
+    "extraSlots": ["ДОП ДОП ДОП ДОП"],
     "stats": {
       "durability": 220000,
       "capacity": 140000,
@@ -122,7 +120,7 @@
       "regenerationPerMinute": 24000,
       "additionalInvulnerability": 3
     },
-    "iconPath": "data/icons/mechs/aero_tyagach_95_m.webp",
+    "iconPath": "mechs/aero_tyagach_95_m.webp",
     "wikiUrl": "https://new.mechs.su/wiki/robots/trader/aero-tractor"
   },
   {
@@ -150,7 +148,7 @@
       "additionalInvulnerability": -1,
       "additionalAcceleration": 1
     },
-    "iconPath": "data/icons/mechs/bekas_96.webp",
+    "iconPath": "mechs/bekas_96.webp",
     "wikiUrl": "https://new.mechs.su/?page_id=21043"
   },
   {
@@ -178,7 +176,7 @@
       "additionalInvulnerability": -1,
       "additionalAcceleration": 1
     },
-    "iconPath": "data/icons/mechs/bekas_96_m.webp",
+    "iconPath": "mechs/bekas_96_m.webp",
     "wikiUrl": "https://new.mechs.su/?page_id=21043"
   },
   {
@@ -206,7 +204,7 @@
       "additionalInvulnerability": -1,
       "additionalAcceleration": 1
     },
-    "iconPath": "data/icons/mechs/bekas_96_mk.webp",
+    "iconPath": "mechs/bekas_96_mk.webp",
     "wikiUrl": "https://new.mechs.su/?page_id=21043"
   },
   {
@@ -229,7 +227,7 @@
       "armor": 71,
       "energyFields": 71
     },
-    "iconPath": "data/icons/mechs/berkut_100.webp",
+    "iconPath": "mechs/berkut_100.webp",
     "wikiUrl": "https://new.mechs.su/?page_id=3277"
   },
   {
@@ -252,7 +250,7 @@
       "armor": 34,
       "energyFields": 34
     },
-    "iconPath": "data/icons/mechs/berkut_35.webp",
+    "iconPath": "mechs/berkut_35.webp",
     "wikiUrl": "https://new.mechs.su/?page_id=3277"
   },
   {
@@ -275,7 +273,7 @@
       "armor": 39,
       "energyFields": 39
     },
-    "iconPath": "data/icons/mechs/berkut_38.webp",
+    "iconPath": "mechs/berkut_38.webp",
     "wikiUrl": "https://new.mechs.su/?page_id=3277"
   },
   {
@@ -298,7 +296,7 @@
       "armor": 51,
       "energyFields": 51
     },
-    "iconPath": "data/icons/mechs/berkut_45.webp",
+    "iconPath": "mechs/berkut_45.webp",
     "wikiUrl": "https://new.mechs.su/?page_id=3277"
   },
   {
@@ -321,7 +319,7 @@
       "armor": 71,
       "energyFields": 71
     },
-    "iconPath": "data/icons/mechs/berkut_55.webp",
+    "iconPath": "mechs/berkut_55.webp",
     "wikiUrl": "https://new.mechs.su/?page_id=3277"
   },
   {
@@ -344,7 +342,7 @@
       "armor": 0,
       "energyFields": 0
     },
-    "iconPath": "data/icons/mechs/bkm_pervyy.webp",
+    "iconPath": "mechs/bkm_pervyy.webp",
     "wikiUrl": "https://new.mechs.su/?page_id=3099"
   },
   {
@@ -367,7 +365,7 @@
       "armor": 0,
       "energyFields": 0
     },
-    "iconPath": "data/icons/mechs/bkm_vtoroy.webp",
+    "iconPath": "mechs/bkm_vtoroy.webp",
     "wikiUrl": "https://new.mechs.su/?page_id=3099"
   },
   {
@@ -395,7 +393,7 @@
       "additionalInvulnerability": -2,
       "additionalAcceleration": 1.5
     },
-    "iconPath": "data/icons/mechs/bugay_100.webp",
+    "iconPath": "mechs/bugay_100.webp",
     "wikiUrl": "https://new.mechs.su/?page_id=3299"
   },
   {
@@ -423,7 +421,7 @@
       "additionalInvulnerability": -2,
       "additionalAcceleration": 1.5
     },
-    "iconPath": "data/icons/mechs/bugay_100_m.webp",
+    "iconPath": "mechs/bugay_100_m.webp",
     "wikiUrl": "https://new.mechs.su/?page_id=3299"
   },
   {
@@ -451,7 +449,7 @@
       "additionalInvulnerability": -2,
       "additionalAcceleration": 1.5
     },
-    "iconPath": "data/icons/mechs/bugay_100_mk.webp",
+    "iconPath": "mechs/bugay_100_mk.webp",
     "wikiUrl": "https://new.mechs.su/?page_id=3299"
   },
   {
@@ -479,7 +477,7 @@
       "additionalInvulnerability": -2,
       "additionalAcceleration": 1.5
     },
-    "iconPath": "data/icons/mechs/bugay_100_t.webp",
+    "iconPath": "mechs/bugay_100_t.webp",
     "wikiUrl": "https://new.mechs.su/?page_id=3299"
   },
   {
@@ -507,7 +505,7 @@
       "additionalInvulnerability": -2,
       "additionalAcceleration": 1.5
     },
-    "iconPath": "data/icons/mechs/bugay_100_tmk.webp",
+    "iconPath": "mechs/bugay_100_tmk.webp",
     "wikiUrl": "https://new.mechs.su/?page_id=3299"
   },
   {
@@ -532,7 +530,7 @@
       "energyFields": 350,
       "regenerationPerMinute": 60000
     },
-    "iconPath": "data/icons/mechs/bugay_92_m.webp",
+    "iconPath": "mechs/bugay_92_m.webp",
     "wikiUrl": "https://new.mechs.su/?page_id=3299"
   },
   {
@@ -556,7 +554,7 @@
       "energyFields": 420,
       "regenerationPerMinute": 90000
     },
-    "iconPath": "data/icons/mechs/bugay_94.webp",
+    "iconPath": "mechs/bugay_94.webp",
     "wikiUrl": "https://new.mechs.su/?page_id=3299"
   },
   {
@@ -581,7 +579,7 @@
       "energyFields": 460,
       "regenerationPerMinute": 240000
     },
-    "iconPath": "data/icons/mechs/bugay_98_m.webp",
+    "iconPath": "mechs/bugay_98_m.webp",
     "wikiUrl": "https://new.mechs.su/?page_id=3299"
   },
   {
@@ -604,7 +602,7 @@
       "armor": 0,
       "energyFields": 0
     },
-    "iconPath": "data/icons/mechs/burovoy_pervyy.webp",
+    "iconPath": "mechs/burovoy_pervyy.webp",
     "wikiUrl": "https://new.mechs.su/?page_id=3099"
   },
   {
@@ -628,7 +626,7 @@
       "energyFields": 250,
       "regenerationPerMinute": 24000
     },
-    "iconPath": "data/icons/mechs/drof_80.webp",
+    "iconPath": "mechs/drof_80.webp",
     "wikiUrl": "https://new.mechs.su/?page_id=3296"
   },
   {
@@ -652,7 +650,7 @@
       "energyFields": 400,
       "regenerationPerMinute": 60000
     },
-    "iconPath": "data/icons/mechs/drof_90.webp",
+    "iconPath": "mechs/drof_90.webp",
     "wikiUrl": "https://new.mechs.su/?page_id=3296"
   },
   {
@@ -676,7 +674,7 @@
       "energyFields": 250,
       "regenerationPerMinute": 60000
     },
-    "iconPath": "data/icons/mechs/drof_90_bronya.webp",
+    "iconPath": "mechs/drof_90_bronya.webp",
     "wikiUrl": "https://new.mechs.su/?page_id=3296"
   },
   {
@@ -700,7 +698,7 @@
       "energyFields": 600,
       "regenerationPerMinute": 60000
     },
-    "iconPath": "data/icons/mechs/drof_90_polya.webp",
+    "iconPath": "mechs/drof_90_polya.webp",
     "wikiUrl": "https://new.mechs.su/?page_id=3296"
   },
   {
@@ -727,7 +725,7 @@
       "additionalInvulnerability": 1,
       "additionalAcceleration": 1
     },
-    "iconPath": "data/icons/mechs/drof_94.webp",
+    "iconPath": "mechs/drof_94.webp",
     "wikiUrl": "https://new.mechs.su/?page_id=3296"
   },
   {
@@ -750,7 +748,7 @@
       "armor": 0,
       "energyFields": 0
     },
-    "iconPath": "data/icons/mechs/faeton_15.webp",
+    "iconPath": "mechs/faeton_15.webp",
     "wikiUrl": "https://new.mechs.su/?page_id=3321"
   },
   {
@@ -773,7 +771,7 @@
       "armor": 0,
       "energyFields": 0
     },
-    "iconPath": "data/icons/mechs/faeton_28.webp",
+    "iconPath": "mechs/faeton_28.webp",
     "wikiUrl": "https://new.mechs.su/?page_id=3321"
   },
   {
@@ -796,7 +794,7 @@
       "armor": 0,
       "energyFields": 0
     },
-    "iconPath": "data/icons/mechs/faeton_35.webp",
+    "iconPath": "mechs/faeton_35.webp",
     "wikiUrl": "https://new.mechs.su/?page_id=3321"
   },
   {
@@ -815,9 +813,7 @@
     "backSideDamage": 70,
     "howitzerDamage": 70,
     "missChance": 15,
-    "extraSlots": [
-      "патр патр оруд 7 оруд 8"
-    ],
+    "extraSlots": ["патр патр оруд 7 оруд 8"],
     "stats": {
       "durability": 350000,
       "capacity": 2650,
@@ -829,7 +825,7 @@
       "additionalInvulnerability": 4.5,
       "additionalAcceleration": -1
     },
-    "iconPath": "data/icons/mechs/filin_100.webp",
+    "iconPath": "mechs/filin_100.webp",
     "wikiUrl": "https://new.mechs.su/?page_id=3282"
   },
   {
@@ -852,7 +848,7 @@
       "armor": 45,
       "energyFields": 45
     },
-    "iconPath": "data/icons/mechs/filin_43.webp",
+    "iconPath": "mechs/filin_43.webp",
     "wikiUrl": "https://new.mechs.su/?page_id=3282"
   },
   {
@@ -875,7 +871,7 @@
       "armor": 75,
       "energyFields": 75
     },
-    "iconPath": "data/icons/mechs/filin_56.webp",
+    "iconPath": "mechs/filin_56.webp",
     "wikiUrl": "https://new.mechs.su/?page_id=3282"
   },
   {
@@ -898,7 +894,7 @@
       "armor": 4,
       "energyFields": 4
     },
-    "iconPath": "data/icons/mechs/garpiy_1.webp",
+    "iconPath": "mechs/garpiy_1.webp",
     "wikiUrl": "https://new.mechs.su/?page_id=3269"
   },
   {
@@ -921,7 +917,7 @@
       "armor": 6,
       "energyFields": 6
     },
-    "iconPath": "data/icons/mechs/garpiy_5.webp",
+    "iconPath": "mechs/garpiy_5.webp",
     "wikiUrl": "https://new.mechs.su/?page_id=3269"
   },
   {
@@ -937,9 +933,7 @@
     "sellPrice": {
       "bonds": 2250000
     },
-    "extraSlots": [
-      "ДОП ДОП патр"
-    ],
+    "extraSlots": ["ДОП ДОП патр"],
     "stats": {
       "durability": 180000,
       "capacity": 60000,
@@ -951,7 +945,7 @@
       "additionalInvulnerability": 2,
       "additionalAcceleration": 2.5
     },
-    "iconPath": "data/icons/mechs/gornyak_90_m.webp",
+    "iconPath": "mechs/gornyak_90_m.webp",
     "wikiUrl": "https://new.mechs.su/?page_id=3099"
   },
   {
@@ -974,7 +968,7 @@
       "armor": 43,
       "energyFields": 43
     },
-    "iconPath": "data/icons/mechs/grifon_40.webp",
+    "iconPath": "mechs/grifon_40.webp",
     "wikiUrl": "https://new.mechs.su/?page_id=3279"
   },
   {
@@ -997,7 +991,7 @@
       "armor": 59,
       "energyFields": 59
     },
-    "iconPath": "data/icons/mechs/grifon_50.webp",
+    "iconPath": "mechs/grifon_50.webp",
     "wikiUrl": "https://new.mechs.su/?page_id=3279"
   },
   {
@@ -1020,7 +1014,7 @@
       "armor": 83,
       "energyFields": 83
     },
-    "iconPath": "data/icons/mechs/grifon_60.webp",
+    "iconPath": "mechs/grifon_60.webp",
     "wikiUrl": "https://new.mechs.su/?page_id=3279"
   },
   {
@@ -1037,9 +1031,7 @@
     },
     "backSideDamage": 75,
     "howitzerDamage": 120,
-    "extraSlots": [
-      "любой любой ДОП ДОП"
-    ],
+    "extraSlots": ["любой любой ДОП ДОП"],
     "stats": {
       "durability": 500000,
       "capacity": 1800,
@@ -1051,7 +1043,7 @@
       "additionalInvulnerability": 2,
       "additionalAcceleration": 2
     },
-    "iconPath": "data/icons/mechs/kazuar.webp",
+    "iconPath": "mechs/kazuar.webp",
     "wikiUrl": "https://new.mechs.su/?page_id=33014"
   },
   {
@@ -1070,9 +1062,7 @@
     "backSideDamage": 70,
     "howitzerDamage": 60,
     "missChance": 35,
-    "extraSlots": [
-      "патр патр оруд 7 оруд 8"
-    ],
+    "extraSlots": ["патр патр оруд 7 оруд 8"],
     "stats": {
       "durability": 290000,
       "capacity": 2500,
@@ -1084,7 +1074,7 @@
       "additionalInvulnerability": 7,
       "additionalAcceleration": -3
     },
-    "iconPath": "data/icons/mechs/kondor_100_m.webp",
+    "iconPath": "mechs/kondor_100_m.webp",
     "wikiUrl": "https://new.mechs.su/?page_id=3287"
   },
   {
@@ -1107,7 +1097,7 @@
       "armor": 65,
       "energyFields": 65
     },
-    "iconPath": "data/icons/mechs/kondor_52.webp",
+    "iconPath": "mechs/kondor_52.webp",
     "wikiUrl": "https://new.mechs.su/?page_id=3287"
   },
   {
@@ -1130,7 +1120,7 @@
       "armor": 110,
       "energyFields": 110
     },
-    "iconPath": "data/icons/mechs/kondor_60.webp",
+    "iconPath": "mechs/kondor_60.webp",
     "wikiUrl": "https://new.mechs.su/?page_id=3287"
   },
   {
@@ -1154,7 +1144,7 @@
       "armor": 160,
       "energyFields": 160
     },
-    "iconPath": "data/icons/mechs/kondor_70.webp",
+    "iconPath": "mechs/kondor_70.webp",
     "wikiUrl": "https://new.mechs.su/?page_id=3287"
   },
   {
@@ -1178,7 +1168,7 @@
       "armor": 180,
       "energyFields": 180
     },
-    "iconPath": "data/icons/mechs/kondor_90.webp",
+    "iconPath": "mechs/kondor_90.webp",
     "wikiUrl": "https://new.mechs.su/?page_id=3287"
   },
   {
@@ -1201,7 +1191,7 @@
       "armor": 13,
       "energyFields": 13
     },
-    "iconPath": "data/icons/mechs/krechet_15.webp",
+    "iconPath": "mechs/krechet_15.webp",
     "wikiUrl": "https://new.mechs.su/?page_id=3273"
   },
   {
@@ -1224,7 +1214,7 @@
       "armor": 280,
       "energyFields": 280
     },
-    "iconPath": "data/icons/mechs/krechet_70.webp",
+    "iconPath": "mechs/krechet_70.webp",
     "wikiUrl": "https://new.mechs.su/?page_id=3273"
   },
   {
@@ -1248,7 +1238,7 @@
       "armor": 320,
       "energyFields": 320
     },
-    "iconPath": "data/icons/mechs/krechet_80.webp",
+    "iconPath": "mechs/krechet_80.webp",
     "wikiUrl": "https://new.mechs.su/?page_id=3273"
   },
   {
@@ -1272,7 +1262,7 @@
       "armor": 350,
       "energyFields": 350
     },
-    "iconPath": "data/icons/mechs/krechet_90.webp",
+    "iconPath": "mechs/krechet_90.webp",
     "wikiUrl": "https://new.mechs.su/?page_id=3273"
   },
   {
@@ -1295,7 +1285,7 @@
       "armor": 9,
       "energyFields": 9
     },
-    "iconPath": "data/icons/mechs/lun_10.webp",
+    "iconPath": "mechs/lun_10.webp",
     "wikiUrl": "https://new.mechs.su/?page_id=3271"
   },
   {
@@ -1318,7 +1308,7 @@
       "armor": 222,
       "energyFields": 222
     },
-    "iconPath": "data/icons/mechs/lun_70.webp",
+    "iconPath": "mechs/lun_70.webp",
     "wikiUrl": "https://new.mechs.su/?page_id=3271"
   },
   {
@@ -1341,7 +1331,7 @@
       "armor": 0,
       "energyFields": 0
     },
-    "iconPath": "data/icons/mechs/manakin_15.webp",
+    "iconPath": "mechs/manakin_15.webp",
     "wikiUrl": "https://new.mechs.su/?page_id=3316"
   },
   {
@@ -1364,7 +1354,7 @@
       "armor": 0,
       "energyFields": 0
     },
-    "iconPath": "data/icons/mechs/manakin_21.webp",
+    "iconPath": "mechs/manakin_21.webp",
     "wikiUrl": "https://new.mechs.su/?page_id=3316"
   },
   {
@@ -1387,7 +1377,7 @@
       "armor": 0,
       "energyFields": 0
     },
-    "iconPath": "data/icons/mechs/manakin_8.webp",
+    "iconPath": "mechs/manakin_8.webp",
     "wikiUrl": "https://new.mechs.su/?page_id=3316"
   },
   {
@@ -1410,7 +1400,7 @@
       "armor": 0,
       "energyFields": 0
     },
-    "iconPath": "data/icons/mechs/muravey_50.webp",
+    "iconPath": "mechs/muravey_50.webp",
     "wikiUrl": "https://new.mechs.su/?page_id=3323"
   },
   {
@@ -1433,7 +1423,7 @@
       "armor": 50,
       "energyFields": 50
     },
-    "iconPath": "data/icons/mechs/muravey_60.webp",
+    "iconPath": "mechs/muravey_60.webp",
     "wikiUrl": "https://new.mechs.su/?page_id=3323"
   },
   {
@@ -1457,7 +1447,7 @@
       "armor": 50,
       "energyFields": 50
     },
-    "iconPath": "data/icons/mechs/muravey_70.webp",
+    "iconPath": "mechs/muravey_70.webp",
     "wikiUrl": "https://new.mechs.su/?page_id=3323"
   },
   {
@@ -1482,7 +1472,7 @@
       "energyFields": 70,
       "regenerationPerMinute": 18000
     },
-    "iconPath": "data/icons/mechs/muravey_80_m.webp",
+    "iconPath": "mechs/muravey_80_m.webp",
     "wikiUrl": "https://new.mechs.su/?page_id=3323"
   },
   {
@@ -1505,7 +1495,7 @@
       "armor": 103,
       "energyFields": 103
     },
-    "iconPath": "data/icons/mechs/orel_67.webp",
+    "iconPath": "mechs/orel_67.webp",
     "wikiUrl": "https://new.mechs.su/?page_id=3284"
   },
   {
@@ -1528,7 +1518,7 @@
       "armor": 111,
       "energyFields": 111
     },
-    "iconPath": "data/icons/mechs/orel_69.webp",
+    "iconPath": "mechs/orel_69.webp",
     "wikiUrl": "https://new.mechs.su/?page_id=3284"
   },
   {
@@ -1551,7 +1541,7 @@
       "armor": 0,
       "energyFields": 0
     },
-    "iconPath": "data/icons/mechs/orlan_40.webp",
+    "iconPath": "mechs/orlan_40.webp",
     "wikiUrl": "https://new.mechs.su/?page_id=3102"
   },
   {
@@ -1575,7 +1565,7 @@
       "armor": 0,
       "energyFields": 0
     },
-    "iconPath": "data/icons/mechs/orlan_60.webp",
+    "iconPath": "mechs/orlan_60.webp",
     "wikiUrl": "https://new.mechs.su/?page_id=3102"
   },
   {
@@ -1600,7 +1590,7 @@
       "energyFields": 100,
       "regenerationPerMinute": 12000
     },
-    "iconPath": "data/icons/mechs/orlan_80_m.webp",
+    "iconPath": "mechs/orlan_80_m.webp",
     "wikiUrl": "https://new.mechs.su/?page_id=3102"
   },
   {
@@ -1623,7 +1613,7 @@
       "armor": 4,
       "energyFields": 4
     },
-    "iconPath": "data/icons/mechs/sapsan_1.webp",
+    "iconPath": "mechs/sapsan_1.webp",
     "wikiUrl": "https://new.mechs.su/?page_id=3293"
   },
   {
@@ -1651,7 +1641,7 @@
       "additionalInvulnerability": 3.5,
       "additionalAcceleration": -2.5
     },
-    "iconPath": "data/icons/mechs/sapsan_100.webp",
+    "iconPath": "mechs/sapsan_100.webp",
     "wikiUrl": "https://new.mechs.su/?page_id=3293"
   },
   {
@@ -1679,7 +1669,7 @@
       "additionalInvulnerability": 3.5,
       "additionalAcceleration": -2.5
     },
-    "iconPath": "data/icons/mechs/sapsan_100_m.webp",
+    "iconPath": "mechs/sapsan_100_m.webp",
     "wikiUrl": "https://new.mechs.su/?page_id=3293"
   },
   {
@@ -1707,7 +1697,7 @@
       "additionalInvulnerability": 3.5,
       "additionalAcceleration": -2.5
     },
-    "iconPath": "data/icons/mechs/sapsan_100_mk.webp",
+    "iconPath": "mechs/sapsan_100_mk.webp",
     "wikiUrl": "https://new.mechs.su/?page_id=3293"
   },
   {
@@ -1731,7 +1721,7 @@
       "armor": 22,
       "energyFields": 22
     },
-    "iconPath": "data/icons/mechs/sapsan_25.webp",
+    "iconPath": "mechs/sapsan_25.webp",
     "wikiUrl": "https://new.mechs.su/?page_id=3293"
   },
   {
@@ -1756,7 +1746,7 @@
       "energyFields": 150,
       "regenerationPerMinute": 12000
     },
-    "iconPath": "data/icons/mechs/sapsan_92_m.webp",
+    "iconPath": "mechs/sapsan_92_m.webp",
     "wikiUrl": "https://new.mechs.su/?page_id=3293"
   },
   {
@@ -1781,7 +1771,7 @@
       "energyFields": 260,
       "regenerationPerMinute": 80000
     },
-    "iconPath": "data/icons/mechs/sapsan_98_m.webp",
+    "iconPath": "mechs/sapsan_98_m.webp",
     "wikiUrl": "https://new.mechs.su/?page_id=3293"
   },
   {
@@ -1806,7 +1796,7 @@
       "energyFields": 100,
       "regenerationPerMinute": 12000
     },
-    "iconPath": "data/icons/mechs/shakhter_70_m.webp",
+    "iconPath": "mechs/shakhter_70_m.webp",
     "wikiUrl": "https://new.mechs.su/?page_id=3099"
   },
   {
@@ -1830,7 +1820,7 @@
       "armor": 0,
       "energyFields": 0
     },
-    "iconPath": "data/icons/mechs/shakhter_m.webp",
+    "iconPath": "mechs/shakhter_m.webp",
     "wikiUrl": "https://new.mechs.su/?page_id=3099"
   },
   {
@@ -1855,7 +1845,7 @@
       "energyFields": 200,
       "regenerationPerMinute": 30000
     },
-    "iconPath": "data/icons/mechs/skop_70.webp",
+    "iconPath": "mechs/skop_70.webp",
     "wikiUrl": "https://new.mechs.su/?page_id=3291"
   },
   {
@@ -1880,7 +1870,7 @@
       "energyFields": 225,
       "regenerationPerMinute": 48000
     },
-    "iconPath": "data/icons/mechs/skop_80.webp",
+    "iconPath": "mechs/skop_80.webp",
     "wikiUrl": "https://new.mechs.su/?page_id=3291"
   },
   {
@@ -1905,7 +1895,7 @@
       "energyFields": 250,
       "regenerationPerMinute": 30000
     },
-    "iconPath": "data/icons/mechs/skop_90.webp",
+    "iconPath": "mechs/skop_90.webp",
     "wikiUrl": "https://new.mechs.su/?page_id=3291"
   },
   {
@@ -1929,7 +1919,7 @@
       "energyFields": 270,
       "regenerationPerMinute": 40000
     },
-    "iconPath": "data/icons/mechs/skop_96.webp",
+    "iconPath": "mechs/skop_96.webp",
     "wikiUrl": "https://new.mechs.su/?page_id=3291"
   },
   {
@@ -1952,7 +1942,7 @@
       "armor": 17,
       "energyFields": 17
     },
-    "iconPath": "data/icons/mechs/sokol_20.webp",
+    "iconPath": "mechs/sokol_20.webp",
     "wikiUrl": "https://new.mechs.su/?page_id=3275"
   },
   {
@@ -1975,7 +1965,7 @@
       "armor": 28,
       "energyFields": 28
     },
-    "iconPath": "data/icons/mechs/sokol_30.webp",
+    "iconPath": "mechs/sokol_30.webp",
     "wikiUrl": "https://new.mechs.su/?page_id=3275"
   },
   {
@@ -2003,7 +1993,7 @@
       "additionalInvulnerability": 1.5,
       "additionalAcceleration": -2
     },
-    "iconPath": "data/icons/mechs/strizh_100.webp",
+    "iconPath": "mechs/strizh_100.webp",
     "wikiUrl": "https://new.mechs.su/?page_id=21034"
   },
   {
@@ -2031,7 +2021,7 @@
       "additionalInvulnerability": 1.5,
       "additionalAcceleration": -2
     },
-    "iconPath": "data/icons/mechs/strizh_100_m.webp",
+    "iconPath": "mechs/strizh_100_m.webp",
     "wikiUrl": "https://new.mechs.su/?page_id=21034"
   },
   {
@@ -2059,7 +2049,7 @@
       "additionalInvulnerability": 1.5,
       "additionalAcceleration": -2
     },
-    "iconPath": "data/icons/mechs/strizh_100_mk.webp",
+    "iconPath": "mechs/strizh_100_mk.webp",
     "wikiUrl": "https://new.mechs.su/?page_id=21034"
   },
   {
@@ -2081,7 +2071,7 @@
       "armor": 0,
       "energyFields": 0
     },
-    "iconPath": "data/icons/mechs/strizh_sport.webp",
+    "iconPath": "mechs/strizh_sport.webp",
     "wikiUrl": "https://new.mechs.su/?page_id=21034"
   },
   {
@@ -2096,9 +2086,7 @@
     "sellPrice": {
       "bonds": 3750000
     },
-    "extraSlots": [
-      "любой любой ДОП ДОП ДОП ДОП"
-    ],
+    "extraSlots": ["любой любой ДОП ДОП ДОП ДОП"],
     "requiredLevel": 100,
     "stats": {
       "durability": 2000000,
@@ -2110,7 +2098,7 @@
       "regenerationPerMinute": 120000,
       "additionalInvulnerability": 3
     },
-    "iconPath": "data/icons/mechs/termit_100_m.webp",
+    "iconPath": "mechs/termit_100_m.webp",
     "wikiUrl": "https://new.mechs.su/wiki/robots/trader/termit"
   },
   {
@@ -2138,7 +2126,7 @@
       "additionalInvulnerability": -2,
       "additionalAcceleration": 2
     },
-    "iconPath": "data/icons/mechs/titanis_100_m.webp",
+    "iconPath": "mechs/titanis_100_m.webp",
     "wikiUrl": "https://new.mechs.su/?page_id=3289"
   },
   {
@@ -2161,7 +2149,7 @@
       "armor": 111,
       "energyFields": 111
     },
-    "iconPath": "data/icons/mechs/titanis_70.webp",
+    "iconPath": "mechs/titanis_70.webp",
     "wikiUrl": "https://new.mechs.su/?page_id=3289"
   },
   {
@@ -2185,7 +2173,7 @@
       "armor": 135,
       "energyFields": 135
     },
-    "iconPath": "data/icons/mechs/titanis_80.webp",
+    "iconPath": "mechs/titanis_80.webp",
     "wikiUrl": "https://new.mechs.su/?page_id=3289"
   },
   {
@@ -2209,7 +2197,7 @@
       "armor": 300,
       "energyFields": 300
     },
-    "iconPath": "data/icons/mechs/titanis_90.webp",
+    "iconPath": "mechs/titanis_90.webp",
     "wikiUrl": "https://new.mechs.su/?page_id=3289"
   },
   {
@@ -2235,7 +2223,7 @@
       "regenerationPerMinute": 78000,
       "additionalInvulnerability": -2
     },
-    "iconPath": "data/icons/mechs/tornis_95_m.webp",
+    "iconPath": "mechs/tornis_95_m.webp",
     "wikiUrl": "https://new.mechs.su/wiki/robots/trader/tornis"
   },
   {
@@ -2260,7 +2248,7 @@
       "energyFields": 200,
       "regenerationPerMinute": 30000
     },
-    "iconPath": "data/icons/mechs/trogan_85_m.webp",
+    "iconPath": "mechs/trogan_85_m.webp",
     "wikiUrl": "https://new.mechs.su/?page_id=3325"
   },
   {
@@ -2285,7 +2273,7 @@
       "energyFields": 200,
       "regenerationPerMinute": 42000
     },
-    "iconPath": "data/icons/mechs/trogan_90_m.webp",
+    "iconPath": "mechs/trogan_90_m.webp",
     "wikiUrl": "https://new.mechs.su/?page_id=3325"
   },
   {
@@ -2310,7 +2298,7 @@
       "energyFields": 220,
       "regenerationPerMinute": 36000
     },
-    "iconPath": "data/icons/mechs/trogan_92_m.webp",
+    "iconPath": "mechs/trogan_92_m.webp",
     "wikiUrl": "https://new.mechs.su/?page_id=3325"
   },
   {
@@ -2335,7 +2323,7 @@
       "energyFields": 220,
       "regenerationPerMinute": 53333.33
     },
-    "iconPath": "data/icons/mechs/trogan_95.webp",
+    "iconPath": "mechs/trogan_95.webp",
     "wikiUrl": "https://new.mechs.su/?page_id=3325"
   },
   {
@@ -2360,7 +2348,7 @@
       "energyFields": 220,
       "regenerationPerMinute": 53333.33
     },
-    "iconPath": "data/icons/mechs/trogan_95_m.webp",
+    "iconPath": "mechs/trogan_95_m.webp",
     "wikiUrl": "https://new.mechs.su/?page_id=3325"
   },
   {
@@ -2383,7 +2371,7 @@
       "armor": 0,
       "energyFields": 0
     },
-    "iconPath": "data/icons/mechs/tyagach_28.webp",
+    "iconPath": "mechs/tyagach_28.webp",
     "wikiUrl": "https://new.mechs.su/?page_id=3318"
   },
   {
@@ -2407,7 +2395,7 @@
       "armor": 0,
       "energyFields": 0
     },
-    "iconPath": "data/icons/mechs/tyagach_35.webp",
+    "iconPath": "mechs/tyagach_35.webp",
     "wikiUrl": "https://new.mechs.su/?page_id=3318"
   }
 ]

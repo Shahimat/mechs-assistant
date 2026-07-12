@@ -1,0 +1,23 @@
+key: theme-colors
+rule: |
+  Цвета определяются в одном месте — `src/theme.ts`.
+
+    - Используем MUI `experimental_extendTheme` / `CssVarsProvider`.
+    - Палитра описана один раз, MUI сам генерирует CSS-переменные вида
+      `--mui-palette-primary-main`, `--mui-palette-background-default`.
+    - Кастомные цвета вне палитры — тоже в theme.ts (например
+      `theme.vars.custom.overlayHighlight`).
+
+  Доступ из кода:
+    - В TSX через MUI: `sx={{ color: 'primary.main' }}` (когда `sx`
+      всё-таки используется), `theme.palette.*`.
+    - В CSS-модулях через переменные: `color: var(--mui-palette-primary-main);`.
+
+  Не писать hex/rgb напрямую в JSX/CSS вне `theme.ts`. Исключение —
+  сторонние SVG-иконки со встроенным `fill`, где цвет часть данных.
+
+  Дизайн-tokens (spacing, radius) — тоже через `theme.spacing()`,
+  `theme.shape.borderRadius`, `--mui-spacing-*`.
+
+  Смена темы (dark/light) — правкой одного `theme.ts`, без правок
+  компонентов.

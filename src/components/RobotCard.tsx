@@ -11,6 +11,9 @@ import {
 } from '@mui/material';
 import { Star, StarBorder, SmartToy } from '@mui/icons-material';
 import type { Robot } from '../types/robot';
+import { isOverlaidField } from '../utils/overlay';
+import { resolveIconUrl } from '../utils/icons';
+import { OverlayBadge } from './OverlayBadge';
 
 interface RobotCardProps {
   robot: Robot;
@@ -19,11 +22,15 @@ interface RobotCardProps {
   onClick: (robot: Robot) => void;
 }
 
-const STAT_ROWS: Array<{ label: string; getValue: (r: Robot) => number | string }> = [
-  { label: 'Прочность', getValue: (r) => r.stats.durability },
-  { label: 'Броня', getValue: (r) => r.stats.armor },
-  { label: 'Скорость', getValue: (r) => r.stats.speed },
-  { label: 'Вместимость', getValue: (r) => r.stats.capacity },
+const STAT_ROWS: Array<{
+  label: string;
+  path: string;
+  getValue: (r: Robot) => number | string;
+}> = [
+  { label: 'Прочность', path: 'stats.durability', getValue: (r) => r.stats.durability },
+  { label: 'Броня', path: 'stats.armor', getValue: (r) => r.stats.armor },
+  { label: 'Скорость', path: 'stats.speed', getValue: (r) => r.stats.speed },
+  { label: 'Вместимость', path: 'stats.capacity', getValue: (r) => r.stats.capacity },
 ];
 
 export function RobotCard({ robot, isFavorite, onToggleFavorite, onClick }: RobotCardProps) {
@@ -34,9 +41,7 @@ export function RobotCard({ robot, isFavorite, onToggleFavorite, onClick }: Robo
     onToggleFavorite(robot.key);
   };
 
-  // iconPath = "data/icons/mechs/<key>.webp" (относительный путь).
-  // Подставляем publicPath из rspack (dev: '/', prod: '/mechs-assistant/').
-  const iconUrl = robot.iconPath ? `${__webpack_public_path__}${robot.iconPath}` : null;
+  const iconUrl = robot.iconPath ? resolveIconUrl(robot.iconPath) : null;
   const showIcon = iconUrl && !iconFailed;
 
   return (
@@ -78,26 +83,74 @@ export function RobotCard({ robot, isFavorite, onToggleFavorite, onClick }: Robo
           )}
         </Box>
         <CardContent>
-          <Typography variant="h6" component="div" gutterBottom noWrap>
-            {robot.name}
-          </Typography>
+          <Stack
+            direction="row"
+            alignItems="center"
+            spacing={0.75}
+            sx={{ mb: 0.5, minWidth: 0 }}
+          >
+            <Typography
+              variant="h6"
+              component="span"
+              noWrap
+              sx={{
+                display: 'inline-block',
+                minWidth: 0,
+                color: isOverlaidField(robot, 'name') ? 'primary.contrastText' : 'inherit',
+                bgcolor: isOverlaidField(robot, 'name') ? 'primary.main' : 'transparent',
+                px: isOverlaidField(robot, 'name') ? 1 : 0,
+                borderRadius: isOverlaidField(robot, 'name') ? 1 : 0,
+              }}
+            >
+              {robot.name}
+            </Typography>
+            <Box sx={{ flexGrow: 1 }} />
+            <OverlayBadge robot={robot} />
+          </Stack>
           <Stack direction="row" spacing={1} sx={{ mb: 1.5 }}>
-            <Chip label={robot.type} size="small" />
+            <Chip
+              label={robot.type}
+              size="small"
+              color={isOverlaidField(robot, 'type') ? 'primary' : 'default'}
+              variant={isOverlaidField(robot, 'type') ? 'filled' : 'filled'}
+            />
             {robot.requiredLevel != null && (
-              <Chip label={`Ур. ${robot.requiredLevel}`} size="small" variant="outlined" />
+              <Chip
+                label={`Ур. ${robot.requiredLevel}`}
+                size="small"
+                color={isOverlaidField(robot, 'requiredLevel') ? 'primary' : 'default'}
+                variant={isOverlaidField(robot, 'requiredLevel') ? 'filled' : 'outlined'}
+              />
             )}
           </Stack>
           <Stack spacing={0.5}>
-            {STAT_ROWS.map(({ label, getValue }) => (
-              <Box key={label} sx={{ display: 'flex', justifyContent: 'space-between' }}>
-                <Typography variant="body2" color="text.secondary">
-                  {label}
-                </Typography>
-                <Typography variant="body2" sx={{ fontWeight: 500 }}>
-                  {getValue(robot)}
-                </Typography>
-              </Box>
-            ))}
+            {STAT_ROWS.map(({ label, path, getValue }) => {
+              const overlaid = isOverlaidField(robot, path);
+              return (
+                <Box
+                  key={label}
+                  sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}
+                >
+                  <Typography variant="body2" color="text.secondary">
+                    {label}
+                  </Typography>
+                  <Box
+                    component="span"
+                    sx={{
+                      fontWeight: 500,
+                      fontSize: '0.875rem',
+                      color: overlaid ? 'primary.contrastText' : 'inherit',
+                      bgcolor: overlaid ? 'primary.main' : 'transparent',
+                      px: overlaid ? 1 : 0,
+                      borderRadius: overlaid ? 1 : 0,
+                      lineHeight: 1.6,
+                    }}
+                  >
+                    {getValue(robot)}
+                  </Box>
+                </Box>
+              );
+            })}
           </Stack>
         </CardContent>
       </CardActionArea>

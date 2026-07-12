@@ -87,6 +87,10 @@ export default defineConfig({
     hot: true,
     open: true,
     historyApiFallback: true,
+    // .build/ содержит merged JSON, генерируемый build-data вне src/.
+    // Без явного watch rspack его не отслеживает, и hot-reload не работает
+    // после npm run sync:sheets && npm run build:data.
+    watchFiles: ['.build/**/*.json'],
   },
   optimization: {
     usedExports: true,

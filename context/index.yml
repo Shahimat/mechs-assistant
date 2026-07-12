@@ -101,6 +101,12 @@ conventions:
     one_liner: Русский для содержательной части; английский — только идентификаторы/YAML-ключи/имена.
   - key: mui
     one_liner: MUI v5+ Core, ThemeProvider на корне, кастомизация через `styled()` или `sx`.
+  - key: no-code-comments
+    one_liner: Комментарии в коде по умолчанию не пишем; только короткие «почему» для скрытых инвариантов.
+  - key: styling
+    one_liner: Стили компонентов — CSS-модули (`*.module.css`) рядом с TSX; `sx` только для крайних случаев.
+  - key: theme-colors
+    one_liner: Цвета в одном месте — `src/theme.ts` через MUI CssVars; в CSS доступ через `var(--mui-palette-*)`.
   - key: mui-imports
     one_liner: Именованные импорты MUI из корня пакета для tree-shaking.
   - key: openness

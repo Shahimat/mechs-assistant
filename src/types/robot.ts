@@ -16,7 +16,7 @@ export interface RobotStats {
   durability: number;
   /** Вместимость (трюм) */
   capacity: number;
-  /** Максимальная вместимость (для добытчиков) */
+  /** Максимальная вместимость под грузом (для транспортников) */
   maxCapacity?: number;
   /** Скорость */
   speed: number;

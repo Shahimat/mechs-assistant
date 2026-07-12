@@ -25,6 +25,8 @@ ui: MVP1 chore — снести RobotsGrid.tsx, FavoriteStarCell.tsx, вычис
 ui: MVP1 audit пилота — verified: true + verified_at на view--robots-catalog behaviors и data--robots-catalog behaviors после подключения парсеров → фаза audit → merger + workflow подключены
 
 ## medium
+ui: миграция существующего `sx` в CSS-модули — RobotCard, RobotDetail, RobotsCatalog, SortableRobotCard, OverlayBadge → фаза refactor → convention `styling`
+ui: перевести `src/theme.ts` на MUI `experimental_extendTheme` + `CssVarsProvider` для автогенерации CSS-переменных → фаза refactor → convention `theme-colors`
 # MVP1 · остальные 10 каталогов — накатываются через тот же конвейер после обкатки пилота
 catalog: parser--wiki расширить конфиг на остальные каталоги (weapons, equipment, ammo, items, blueprints, ore, currencies, skills, loot, components) → фаза feat → пилот-цепочка отработала
 catalog: parser--google-sheets расширить на остальные листы Sheets → фаза feat → пилот-цепочка отработала
