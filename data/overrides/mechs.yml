@@ -5,7 +5,7 @@
 aero_tyagach_70:
   requiredLevel: 71
   _sourceRow: 3
-  _updatedAt: '2026-07-12T07:03:40.542Z'
+  _updatedAt: '2026-07-12T09:40:03.642Z'
 kazuar:
   stats:
     durability: 550000
@@ -13,4 +13,4 @@ kazuar:
     regls: 1000
   description: Короче мороче поменяли значения
   _sourceRow: 4
-  _updatedAt: '2026-07-12T07:03:40.542Z'
+  _updatedAt: '2026-07-12T09:40:03.642Z'
