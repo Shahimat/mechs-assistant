@@ -27,7 +27,7 @@ namespaces:
       - id: data--blueprints-catalog
         one_liner: Каталог чертежей — источники крафта компонентов (wiki 3034). Shell-entity MVP1.
       - id: data--ore-catalog
-        one_liner: Каталог руды и полезных ископаемых (wiki 3036). Shell-entity MVP1.
+        one_liner: 'Каталог руды и полезных ископаемых — 8 записей из wiki 3036 (три кристалла, гафний, магма, железная руда, железо, цезий); поле `foundIn: string[]` — простой список источников (без count/chance, в отличие от items.stats.creates). Стор+view — в фазе feat.'
       - id: data--components-catalog
         one_liner: Каталог компонентов — базовые + составные, крафтятся из лута/чертежей (wiki 3955). Гибридный (парсер + overlay рецептов).
       - id: data--currencies
@@ -81,6 +81,8 @@ namespaces:
         one_liner: Карточный каталог `/catalogs/ammo-catalog` — ~58 боезапасов, PairToggleGroup по `compatibleCategories` (CSS-slug'ам weapons) + LevelRangeFilter. Спецификация есть, реализация — в фазе feat.
       - id: view--items-catalog
         one_liner: 'Карточный каталог `/catalogs/items-catalog` — ~54 предметов, PairToggleGroup по subtype (4 капсулы: паки+подарки/ремкомплект+шокеры/невидимость+сканер/телепортатор), «главный» stat по subtype в карточке. Спецификация есть, реализация — в фазе feat.'
+      - id: view--ore-catalog
+        one_liner: Карточный каталог `/catalogs/ore-catalog` — 8 руд, без фильтров и без поиска (мало записей), foundIn показан только в детализации. Спецификация есть, реализация — в фазе feat.
       - id: other--tile
         one_liner: Квадратная плитка навигации с hover-scale, active-press, focus-ring, слотом для иконки.
       - id: other--catalog-shell
@@ -146,6 +148,14 @@ namespaces:
         one_liner: view--items-catalog рендерит сетку ItemCard из data--items-catalog, фильтр PairToggleGroup по subtype.
       - id: view--items-catalog-opens-detail-on-click
         one_liner: Клик по карточке предмета открывает детализацию (ItemDetail).
+      - id: data--ore-catalog-loaded-from-json
+        one_liner: Каталог руды загружается из merged .build/data/ore.json при инициализации стора.
+      - id: data--ore-catalog-schema-typed
+        one_liner: Каждая запись ore.json соответствует типу Ore (TS strict).
+      - id: view--ore-catalog-renders-cards-grid
+        one_liner: view--ore-catalog рендерит сетку OreCard из data--ore-catalog, без фильтров и поиска.
+      - id: view--ore-catalog-opens-detail-on-click
+        one_liner: Клик по карточке руды открывает детализацию (OreDetail).
 
   comparison:
     description: Механики сравнения и приоритизации мехов (избранное, будущий боевой калькулятор).

@@ -1,0 +1,63 @@
+id: view--ore-catalog
+kind: entity
+namespace: ui
+version: '0.x'
+
+description: |
+  Карточный каталог руды — шестой view MVP1. Сетка из 8 карточек
+  (три кристалла, гафний, магма, железная руда, железо, цезий) со
+  звёздочкой избранного. По клику открывается детализация (MUI Dialog).
+
+  Монтируется по маршруту `/catalogs/ore-catalog` через
+  `OreCatalogPage` — тонкая обёртка поверх `OreCatalog`. Собирается
+  из примитивов `other--catalog-shell` (`CatalogHeader`,
+  `CatalogSection`, `CatalogGrid`, `FavoritesDnDSection`) плюс
+  ore-специфичные компоненты (`OreCard`, `OreDetail`, `SortableOreCard`).
+
+  **Без фильтров и без SearchField.** 8 записей помещаются на один
+  экран, панель фильтров/поиска добавила бы визуального шума без
+  практической пользы.
+
+  Карточка показывает: имя, вес, цену продажи (Боны). Список
+  источников (`foundIn`) в карточку НЕ выносится — только в
+  детализации (по решению юзера 2026-07-13, «в карточке не надо»).
+
+  Детализация показывает: все stats (`weight`), `sellPrice`,
+  `craftFromBlueprints` (если есть), полный список `foundIn` как
+  chip'ы, `description`.
+
+  Читает данные из `data--ore-catalog` через `useOreStore`, общая
+  механика избранного `other--favorites` (отдельная IndexedDB-база).
+
+  Плитка на `CatalogsHubPage` — `@img/catalog-icons/ore.webp` (уже на
+  месте, «Руды» — переименована из «Ископаемое» 2026-07-13).
+
+source_files:
+  page: src/pages/catalogs/OreCatalogPage.tsx
+  view: src/components/catalogs/ore/OreCatalog.tsx
+  card: src/components/catalogs/ore/OreCard.tsx
+  detail: src/components/catalogs/ore/OreDetail.tsx
+  sortable_card: src/components/catalogs/ore/SortableOreCard.tsx
+
+features_enabled:
+  - cards-grid
+  - ore-detail-view
+  - favorites-star
+  - favorites-dnd
+  - overlay-highlight
+
+features_disabled:
+  - filter-panel # 8 записей — фильтры не нужны
+  - search-in-section # 8 записей — поиск избыточен
+  - filter-subtype # у руд нет subtype
+  - filter-level-range # у руд нет requiredLevel
+  - found-in-in-card # по решению юзера 2026-07-13 — только в детализации
+
+manuals: []
+behaviors:
+  - view--ore-catalog-renders-cards-grid
+  - view--ore-catalog-opens-detail-on-click
+  - other--favorites-toggle-on-star-click
+
+verified_note: |
+  Реализация закрыта 2026-07-13. Минималистичный view без фильтров и без SearchField (8 записей помещаются на один экран). Карточка показывает имя, вес, цену продажи. Полный список `foundIn` — только в детализации, chip'ами. Behaviors verified 2026-07-13.

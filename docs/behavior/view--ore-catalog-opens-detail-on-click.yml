@@ -1,0 +1,28 @@
+id: view--ore-catalog-opens-detail-on-click
+kind: behavior
+namespace: ui
+entities: [view--ore-catalog]
+title: Клик по карточке в view--ore-catalog открывает детализацию (OreDetail)
+
+scenarios:
+  - given: сетка карточек отрисована
+    when: пользователь кликает по карточке (не по звёздочке)
+    then: |
+      открывается `OreDetail` — MUI Dialog со всеми полями Ore:
+      `stats.weight`, `sellPrice`, `craftFromBlueprints` (если есть),
+      полный список `foundIn` как chip'ы (если есть), `description`.
+
+  - given: OreDetail открыт
+    when: пользователь закрывает его (крестик / Esc / клик по фону)
+    then: возврат к сетке, состояние стора не меняется.
+
+  - given: пользователь кликает по звёздочке избранного внутри карточки
+    when: обработчик события звёздочки перехватывает клик
+    then: |
+      детализация НЕ открывается, срабатывает только
+      `other--favorites-toggle-on-star-click`.
+
+verified: true
+verified_at: 2026-07-13
+verified_note: |
+  Проверено чтением кода: клик по `<CardActionArea>` в `OreCard.tsx` вызывает `onClick(ore)` → `OreCatalog.tsx` ставит `selectedOre`, `OreDetail` рендерится как MUI Dialog (`ore !== null`). Закрытие — стандартный `onClose` Dialog. Клик по звёздочке использует `e.stopPropagation()`, детализация не открывается. `OreDetail.tsx` показывает: `stats.weight`, `sellPrice`, секцию «Источники» с chip'ами из `foundIn` (только если есть — у Магмы и Цезия секция отсутствует), `craftFromBlueprints` (если есть), `description`, key для копирования. Финальная визуальная проверка в браузере — пройдена юзером 2026-07-13.

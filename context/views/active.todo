@@ -37,7 +37,11 @@ refactor: [weapons/ammo] вынести `CATEGORY_LABELS` + `LABEL_TO_CATEGORY` 
 # trailing space, dedup-жертва), плоская схема с subtype-specific
 # opt-полями, UI с PairToggleGroup 4 капсулы + «главный» stat по
 # subtype в карточке, audit 4 behaviors выполнен.
-catalog: остальные 5 каталогов (blueprints, ore, skills, loot, components) — накатываются по паттерну weapons/equipment/ammo/items → фаза feat → items раскатан
+# ore закрыт 2026-07-13: parser (8 записей из wiki 3036), схема с
+# foundIn: string[] (простой список без count/chance, в отличие от items),
+# минималистичный UI без фильтров/поиска, foundIn только в детализации,
+# audit 4 behaviors выполнен.
+catalog: остальные 4 каталога (blueprints, skills, loot, components) — накатываются по паттерну weapons/equipment/ammo/items → фаза feat → ore раскатан
 catalog: parser--wiki расширить конфиг на 9 оставшихся каталогов → фаза feat → парсер обобщён
 catalog: parser--google-sheets расширить на 9 листов Sheets → фаза feat → лист под каталог настроен
 ui: подключить view для остальных каталогов через catalog-примитивы (equipment, ammo, items, loot, blueprints, ore, components, currencies, skills) — плитки на CatalogsHubPage + stub-роуты уже готовы (`CatalogStubPage`), нужно заменить stub на реальный view в `src/components/catalogs/<slug>/` по мере готовности парсера/overlay каждого каталога → фаза feat → catalog-shell выделен, данные каталога загружаются

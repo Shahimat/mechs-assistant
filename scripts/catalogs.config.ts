@@ -75,6 +75,16 @@ export const CATALOGS: CatalogConfig[] = [
     iconsDir: 'data/icons/items',
     iconsUrlPrefix: 'items',
   },
+  {
+    slug: 'ore',
+    label: 'Руды',
+    parsedJsonPath: 'data/ore.json',
+    overlayYamlPath: 'data/overrides/ore.yml',
+    mergedJsonPath: '.build/data/ore.json',
+    overlaySheetName: 'ore',
+    iconsDir: 'data/icons/ore',
+    iconsUrlPrefix: 'ore',
+  },
 ];
 
 export function findCatalog(slug: string): CatalogConfig {

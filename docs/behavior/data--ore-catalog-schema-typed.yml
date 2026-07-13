@@ -1,0 +1,24 @@
+id: data--ore-catalog-schema-typed
+kind: behavior
+namespace: catalog
+entities: [data--ore-catalog]
+title: Каждая запись в ore.json соответствует типу Ore (TS strict)
+
+scenarios:
+  - given: "TypeScript strict включён (`strict: true`) и `resolveJsonModule: true`"
+    when: файл `store.ts` импортирует `oreData` из `@build/data/ore.json` и
+      приводит его к `Ore[]`
+    then: |
+      сборка проходит без ошибок типа, `Ore`-типы из `src/types/ore.ts`
+      применимы ко всем записям.
+
+  - given: в JSON появилась запись без `stats.weight`
+    when: разработчик пытается собрать проект (`npm run build`)
+    then: |
+      сборка/typecheck должны падать. Оговорка про runtime-валидацию та же,
+      что для всех data-каталогов.
+
+verified: true
+verified_at: 2026-07-13
+verified_note: |
+  Проверено: `npm run build` и `tsc --noEmit` проходят без ошибок типа. `Ore`/`OreStats` описаны в `src/types/ore.ts` (`stats.weight` + опциональные `foundIn: string[]`, `sellPrice`, `craftFromBlueprints`, `description`). Все 8 записей содержат `stats.weight` (валидация в parsePage). Оговорка про runtime-валидацию та же, что для всех data-каталогов (assert `as Ore[]`, не zod).

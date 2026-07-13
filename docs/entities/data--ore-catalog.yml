@@ -1,28 +1,78 @@
 id: data--ore-catalog
 kind: entity
 namespace: catalog
-version: "0.x"
+version: '1.x'
 
 description: |
-  Каталог руды и полезных ископаемых (кристаллы, железо и т.п.).
-  Первичный источник — вики `new.mechs.su/?page_id=3036` (Экономика →
-  Полезное ископаемое). Наполнение — `parser--wiki`. Иконки — из
-  парсера или скриншотов, поле `iconPath`.
+  Каталог руды и полезных ископаемых — 8 записей (три кристалла,
+  гафний, магма, железная руда, железо, цезий). Шестой каталог MVP1
+  после мехов, weapons, equipment, ammo, items. Тянется по обкатанному
+  конвейеру `parser--wiki` + `parser--google-sheets` + `build-data`
+  merger.
 
-  Shell-entity MVP1.
+  В zustand-стор импортируется merged JSON (`@build/data/ore.json`) —
+  массив объектов `Ore`. Merged JSON генерируется build-time скриптом
+  `scripts/build-data`.
+
+  Первичный источник — единственная страница вики `?page_id=3036`
+  («Полезное ископаемое»). Все карточки имеют CSS
+  `wiki-item-type-cargo`, дочерних страниц нет. Разметка минимальна:
+  вес, цена продажи (только Боны), описание, у большинства — «Находится в»
+  (список источников выпадения), у одной руды («ЖЕЛЕЗО») — пустое поле
+  «Крафтится из чертежей» (по описанию крафтится из руды).
+
+  **Поле `foundIn`.** У руд «Находится в» — простой список `<a>` тегов
+  с `data-description` (в отличие от `items.stats.creates` — там сложный
+  `<span class="wiki-inline-block">` с количеством и шансом). У руд
+  количества и шанса нет: только имя источника (подарок/пак/руды монстров
+  и т.п.). Поэтому `foundIn: string[]`, не `LootDrop[]`.
+
+  Overlay `data/overrides/ore.yml` синкается из Google Sheets (лист
+  `ore`) через `parser--google-sheets`. Схема — TS-типы в
+  `src/types/ore.ts`.
 
 source_files:
-  data: data/ore.json
+  parsed: data/ore.json
+  overlay: data/overrides/ore.yml
+  merged: .build/data/ore.json # build-time
+  merger: scripts/build-data/index.ts
+  parser: scripts/parser-wiki/resolvers/ore.ts
   types: src/types/ore.ts
 
 wiki_source:
   page_ids: [3036]
   section: Экономика → Полезное ископаемое
   data_flow: auto-parsed
+  page_structure: |
+    Одна страница, 8 h2.wiki-header с классом `wiki-item-type-cargo`.
+    Рядом с каждым — table.wiki-item-table. «Находится в» разбирается
+    отдельно через `extractSourceNames` (по `<a data-description>`
+    внутри td), потому что `.text()` без разделителей склеивает имена.
+
+schema:
+  ore_key_fields:
+    - key
+    - name
+    - model
+    - stats # OreStats — только вес
+  stats_fields:
+    required: [weight]
+  optional_top_level:
+    - foundIn # `string[]` — список названий источников выпадения (подарки/паки/руды монстров и т.п.); у Магмы и Цезия отсутствует (добываются на шахтах/заводах)
+    - sellPrice # { bonds?, regls? } — у руд встречены только Боны
+    - craftFromBlueprints
+    - description
+    - iconPath # data/icons/ore/<key>.webp
+    - wikiUrl
+
+features_enabled: [json-source, typed-schema, overlay-merge]
+features_disabled: [network-fetch, dynamic-schema]
 
 manuals: []
-behaviors: []
+behaviors:
+  - data--ore-catalog-loaded-from-json
+  - data--ore-catalog-schema-typed
+  - view--ore-catalog-renders-cards-grid # кросс-ссылка
 
 verified_note: |
-  Shell-entity создана в фазе docs MVP1. Реализация — при подключении
-  каталога через пилот-цепочку.
+  Data-слой закрыт 2026-07-13: 8 записей из wiki 3036 (три кристалла, гафний, магма, железная руда, железо, цезий). `foundIn: string[]` — простой список источников (без count/chance) через `extractSourceNames` по `<a data-description>` внутри td. У Магмы и Цезия `foundIn` отсутствует — добываются на шахтах/заводах. Все behaviors verified 2026-07-13.

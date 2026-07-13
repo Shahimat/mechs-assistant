@@ -220,6 +220,25 @@ export const ITEMS_COLUMNS: ColumnSpec[] = [
   { name: 'source_note', description: 'Комментарий редактора (не идёт в JSON)' },
 ];
 
+export const ORE_COLUMNS: ColumnSpec[] = [
+  { name: 'key', description: 'Ключ руды (translit от имени). Копируется из детали в UI' },
+  { name: 'name', description: 'Полное название' },
+  { name: 'model', description: 'Модель (обычно = name у руд)' },
+  { name: 'stats.weight', description: 'Вес единицы' },
+  {
+    name: 'foundIn',
+    description:
+      'Список источников выпадения через ; — имена предметов/монстров/паков, из которых выпадает эта руда',
+  },
+  { name: 'sellPrice.bonds', description: 'Цена продажи в бонах' },
+  { name: 'sellPrice.regls', description: 'Цена продажи в реглах' },
+  { name: 'craftFromBlueprints', description: 'Крафтится из чертежей — список через ;' },
+  { name: 'description', description: 'Свободное описание руды' },
+  { name: 'iconPath', description: 'Путь к иконке (например data/icons/ore/…)' },
+  { name: 'wikiUrl', description: 'URL детальной страницы вики' },
+  { name: 'source_note', description: 'Комментарий редактора (не идёт в JSON)' },
+];
+
 /** Регистр колонок по slug каталога. */
 export const COLUMNS_BY_SLUG: Record<string, ColumnSpec[]> = {
   robots: MECHS_COLUMNS, // slug=robots, но лист=mechs (см. catalogs.config)
@@ -227,4 +246,5 @@ export const COLUMNS_BY_SLUG: Record<string, ColumnSpec[]> = {
   equipment: EQUIPMENT_COLUMNS,
   ammo: AMMO_COLUMNS,
   items: ITEMS_COLUMNS,
+  ore: ORE_COLUMNS,
 };

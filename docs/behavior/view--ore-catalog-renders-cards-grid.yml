@@ -1,0 +1,29 @@
+id: view--ore-catalog-renders-cards-grid
+kind: behavior
+namespace: ui
+entities: [view--ore-catalog]
+title: view--ore-catalog рендерит сетку карточек руды из data--ore-catalog
+
+scenarios:
+  - given: стор руды гидратирован, `ore` содержит записи
+    when: пользователь открыл `/catalogs/ore-catalog`
+    then: |
+      view--ore-catalog рендерит сетку `OreCard` — по одной карточке на
+      запись. В карточке: имя, вес, цена продажи (Боны), звёздочка избранного.
+      Список `foundIn` в карточке НЕ показывается.
+
+      Панель фильтров и поиск отсутствуют (8 записей). Секция «Избранные»
+      появляется, если есть отмеченные звёздочкой, с dnd-сортировкой.
+
+  - given: массив `ore` пуст
+    when: пользователь открыл `/catalogs/ore-catalog`
+    then: view показывает empty state (Alert «Нет данных для отображения»).
+
+  - given: "`error` не null (ошибка загрузки данных)"
+    when: пользователь открыл `/catalogs/ore-catalog`
+    then: view показывает error state (Alert severity=error).
+
+verified: true
+verified_at: 2026-07-13
+verified_note: |
+  Проверено чтением кода: `OreCatalog.tsx` — минималистичный view без `useSearchFilter`/`usePairFilter`/`useLevelRangeFilter`, только базовый split `favoriteOres`/`otherOres` через `Set(favorites)`. Сетка `<CatalogGrid>` из `OreCard`. `OreCard.tsx` показывает имя, вес, цену продажи в бонах (`foundIn` в карточке не рендерится — по решению юзера). Секция «Избранные» с `FavoritesDnDSection` и `SortableOreCard` — только когда есть отмеченные. Empty/error state — Alert через `Page`/`CenteredPage`. Финальная визуальная проверка в браузере — пройдена юзером 2026-07-13.

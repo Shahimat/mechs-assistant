@@ -1,0 +1,145 @@
+[
+  {
+    "key": "gafniy",
+    "name": "Гафний",
+    "model": "Гафний",
+    "sellPrice": {
+      "bonds": 25000
+    },
+    "description": "Редкоземельный элемент, дорогой и востребованый. Требуется для крафта и апгрейда. Иногда заменяет игрокам деньги",
+    "foundIn": [
+      "Подарок",
+      "Поцелуй",
+      "ПАК РЕСУРСЫ"
+    ],
+    "stats": {
+      "weight": 1400
+    },
+    "iconPath": "ore/gafniy.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3036"
+  },
+  {
+    "key": "kristall_krasnyy",
+    "name": "Кристалл Красный",
+    "model": "Кристалл Красный",
+    "sellPrice": {
+      "bonds": 300
+    },
+    "description": "Распространенный и востре-бованный ресурс на планете. Добывается на шахтах или как лут из кротов и больших монстров",
+    "foundIn": [
+      "Цветы",
+      "Сердечко",
+      "Кольцо",
+      "Мишка",
+      "Подарок",
+      "Поцелуй",
+      "ПАК РЕСУРСЫ"
+    ],
+    "stats": {
+      "weight": 200
+    },
+    "iconPath": "ore/kristall_krasnyy.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3036"
+  },
+  {
+    "key": "kristall_siniy",
+    "name": "Кристалл Синий",
+    "model": "Кристалл Синий",
+    "sellPrice": {
+      "bonds": 207
+    },
+    "description": "Распространенный и востре-бованный ресурс на планете. Добывается на шахтах или как лут из кротов и больших монстров",
+    "foundIn": [
+      "Подарок",
+      "Поцелуй",
+      "ПАК РЕСУРСЫ"
+    ],
+    "stats": {
+      "weight": 300
+    },
+    "iconPath": "ore/kristall_siniy.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3036"
+  },
+  {
+    "key": "kristall_zelenyy",
+    "name": "Кристалл Зеленый",
+    "model": "Кристалл Зеленый",
+    "sellPrice": {
+      "bonds": 224
+    },
+    "description": "Распространенный и востре-бованный ресурс на планете. Добывается на шахтах или как лут из кротов и больших монстров",
+    "foundIn": [
+      "Подарок",
+      "Поцелуй",
+      "ПАК РЕСУРСЫ"
+    ],
+    "stats": {
+      "weight": 300
+    },
+    "iconPath": "ore/kristall_zelenyy.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3036"
+  },
+  {
+    "key": "magma",
+    "name": "Магма",
+    "model": "Магма",
+    "sellPrice": {
+      "bonds": 2000000
+    },
+    "stats": {
+      "weight": 20000
+    },
+    "iconPath": "ore/magma.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3036"
+  },
+  {
+    "key": "tseziy",
+    "name": "Цезий",
+    "model": "Цезий",
+    "sellPrice": {
+      "bonds": 6250
+    },
+    "description": "Добывается на заводах переработкиНужен для крафта оборудования на высокие уровни",
+    "stats": {
+      "weight": 500
+    },
+    "iconPath": "ore/tseziy.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3036"
+  },
+  {
+    "key": "zheleznaya_ruda",
+    "name": "Железная Руда",
+    "model": "Железная Руда",
+    "sellPrice": {
+      "bonds": 1000
+    },
+    "description": "Добывается на шахте или как лут из Псов Огромных. Нужна для крафта",
+    "foundIn": [
+      "Подарок",
+      "ПАК РЕСУРСЫ"
+    ],
+    "stats": {
+      "weight": 100
+    },
+    "iconPath": "ore/zheleznaya_ruda.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3036"
+  },
+  {
+    "key": "zhelezo",
+    "name": "Железо",
+    "model": "Железо",
+    "sellPrice": {
+      "bonds": 15000
+    },
+    "craftFromBlueprints": [],
+    "description": "Создается путем крафта из руды, кристаллов и гафния на основе чертежа",
+    "foundIn": [
+      "Подарок"
+    ],
+    "stats": {
+      "weight": 500
+    },
+    "iconPath": "ore/zhelezo.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3036"
+  }
+]
