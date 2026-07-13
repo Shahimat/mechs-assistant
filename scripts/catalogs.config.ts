@@ -55,6 +55,16 @@ export const CATALOGS: CatalogConfig[] = [
     iconsDir: 'data/icons/equipment',
     iconsUrlPrefix: 'equipment',
   },
+  {
+    slug: 'ammo',
+    label: 'Боезапас',
+    parsedJsonPath: 'data/ammo.json',
+    overlayYamlPath: 'data/overrides/ammo.yml',
+    mergedJsonPath: '.build/data/ammo.json',
+    overlaySheetName: 'ammo',
+    iconsDir: 'data/icons/ammo',
+    iconsUrlPrefix: 'ammo',
+  },
 ];
 
 export function findCatalog(slug: string): CatalogConfig {

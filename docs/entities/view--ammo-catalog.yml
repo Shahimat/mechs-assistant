@@ -1,0 +1,84 @@
+id: view--ammo-catalog
+kind: entity
+namespace: ui
+version: '0.x'
+
+description: |
+  Карточный каталог боезапасов — четвёртый view MVP1. Сетка карточек
+  с иллюстрацией, ключевыми параметрами и звёздочкой избранного. По
+  клику на карточке открывается детализация (MUI Dialog).
+
+  Монтируется по маршруту `/catalogs/ammo-catalog` через
+  `AmmoCatalogPage` — тонкая обёртка-страница поверх `AmmoCatalog`.
+  Собирается из примитивов `other--catalog-shell` (`CatalogHeader`,
+  `CatalogSection`, `CatalogGrid`, `FavoritesDnDSection`, `SearchField`,
+  `PairToggleGroup`, `LevelRangeFilter`) плюс ammo-специфичные
+  компоненты (`AmmoCard`, `AmmoDetail`, `SortableAmmoCard`).
+
+  Фильтры:
+    - **Тип** — `PairToggleGroup` (split-капсулы + одиночные) через
+      `usePairFilter`. **Матч — по `ammo.family`** (одиночный CSS-slug
+      конкретного боеприпаса), не по пересечению `compatibleCategories`.
+      Причина: юзер, ищущий патроны «для пушки», ожидает пушечные
+      патроны, а не пулемётные (у которых `compatibleCategories`
+      включает `missile` — так они «влезают» в фильтр «Пушка», хотя это
+      патроны для пулемёта). Пары зашиты по той же логике, что в
+      weapons UI (bullet+missile, mortar+bullet-heavy, howitzer+launcher,
+      …-eng-пары, rk+rk-eng, faser+empp), одиночная — «Запчасти»
+      (repair). `laser` в PairToggleGroup не появляется — у него нет
+      ammo.
+
+  Фильтр по уровню (`LevelRangeFilter`) в этой view не заводится:
+  `requiredLevel` одинаковый (=20) у всех 58 записей — Slider не даёт
+  разделения.
+
+  В карточке и в детализации — chip'ы «Совместимо с: …» строятся из
+  `ammo.compatibleCategories`, лейблы берутся из общей таблицы
+  `CATEGORY_LABELS` (сейчас дублируется в `WeaponsCatalog.tsx` и
+  `AmmoCatalog.tsx`; вынос в `src/utils/weaponCategories.ts` — отдельная
+  фаза refactor после закрытия ammo). Это справочная информация,
+  фильтр не строится по этому полю (см. выше).
+
+  Строка «Урон +N» / «Ремонт +N» (по `family === 'repair'`) — из
+  `powerBonus`. Для «Стандарт» (`powerBonus === 0`) — прочерк «—».
+  Строка присутствует всегда, чтобы карточки не «прыгали» между
+  вариантами.
+
+  Читает данные из `data--ammo-catalog` через `useAmmoStore`
+  (параллель `useWeaponsStore`), использует общую механику избранного
+  `other--favorites` (список ключей + IndexedDB, отдельная база от
+  weapons/robots/equipment).
+
+  Плитка на `CatalogsHubPage` — `@img/catalog-icons/ammo.webp` (уже
+  на месте, добавлять не нужно).
+
+source_files:
+  page: src/pages/catalogs/AmmoCatalogPage.tsx # роутовая обёртка (/catalogs/ammo-catalog)
+  view: src/components/catalogs/ammo/AmmoCatalog.tsx
+  card: src/components/catalogs/ammo/AmmoCard.tsx
+  detail: src/components/catalogs/ammo/AmmoDetail.tsx
+  sortable_card: src/components/catalogs/ammo/SortableAmmoCard.tsx
+
+features_enabled:
+  - cards-grid
+  - ammo-detail-view
+  - favorites-star
+  - favorites-dnd
+  - overlay-highlight # общий OverlayBadge
+  - search-in-section
+  - filter-family # split-капсулы по CSS-slug'ам через `ammo.family`
+  - power-bonus-row # строка «Урон/Ремонт +N» из `powerBonus`
+
+features_disabled:
+  - filter-compatible-categories # пересечение compatibleCategories даёт ложные совпадения (пулемётный патрон в фильтре «Пушка») — переехали на filter-family
+  - filter-level-range # requiredLevel одинаковый (=20) у всех 58 записей, Slider не даёт разделения
+  - filter-slot # `slot` = «Патроны» / «Запчасти» — разбиение по family тоньше
+
+manuals: []
+behaviors:
+  - view--ammo-catalog-renders-cards-grid
+  - view--ammo-catalog-opens-detail-on-click
+  - other--favorites-toggle-on-star-click # кросс-ссылка: звёздочка живёт внутри карточки
+
+verified_note: |
+  Реализация закрыта 2026-07-13. Фильтр по `ammo.family` (одиночный CSS-slug), `compatibleCategories` остаётся справочным полем в chip'ах карточки. LevelRangeFilter снят — `requiredLevel` одинаковый (=20) у всех записей. Карточка показывает строку «Урон +N» / «Ремонт +N» из `powerBonus`. Behaviors verified 2026-07-13.

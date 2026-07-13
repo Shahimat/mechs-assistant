@@ -11,6 +11,7 @@ import { AccumulatorsCatalogPage } from './pages/catalogs/AccumulatorsCatalogPag
 import { ReactorsCatalogPage } from './pages/catalogs/ReactorsCatalogPage';
 import { DrillsCatalogPage } from './pages/catalogs/DrillsCatalogPage';
 import { CargosCatalogPage } from './pages/catalogs/CargosCatalogPage';
+import { AmmoCatalogPage } from './pages/catalogs/AmmoCatalogPage';
 import { CatalogStubPage } from './pages/catalogs/CatalogStubPage';
 
 const basename = process.env.NODE_ENV === 'production' ? '/mechs-assistant' : undefined;
@@ -22,7 +23,6 @@ interface CatalogStub {
 }
 
 const STUB_CATALOGS: CatalogStub[] = [
-  { path: 'ammo-catalog', crumb: 'Боезапасы', title: 'Каталог боезапасов' },
   { path: 'items-catalog', crumb: 'Предметы', title: 'Каталог используемых предметов' },
   { path: 'loot-catalog', crumb: 'Лут', title: 'Каталог лута' },
   { path: 'blueprints-catalog', crumb: 'Чертежи', title: 'Каталог чертежей' },
@@ -71,6 +71,11 @@ export const router = createBrowserRouter(
               path: 'weapons-catalog',
               element: <WeaponsCatalogPage />,
               handle: { crumb: 'Оружие' },
+            },
+            {
+              path: 'ammo-catalog',
+              element: <AmmoCatalogPage />,
+              handle: { crumb: 'Боезапасы' },
             },
             ...EQUIPMENT_ROUTES.map((r) => ({
               path: r.path,

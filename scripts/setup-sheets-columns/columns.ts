@@ -140,9 +140,52 @@ export const EQUIPMENT_COLUMNS: ColumnSpec[] = [
   { name: 'source_note', description: 'Комментарий редактора (не идёт в JSON)' },
 ];
 
+export const AMMO_COLUMNS: ColumnSpec[] = [
+  { name: 'key', description: 'Ключ боезапаса (translit от имени). Копируется из детали в UI' },
+  { name: 'name', description: 'Полное название боезапаса с вариантом («Пулемёт +25»)' },
+  {
+    name: 'model',
+    description: 'Семейный префикс без варианта («Пулемёт», «Гаубица энрг», «Запчасти»)',
+  },
+  {
+    name: 'family',
+    description:
+      'CSS-slug основного типа оружия (тот же формат, что Weapon.category): bullet / missile / mortar / howitzer / launcher / bullet-heavy / bullet-eng / missile-eng / howitzer-eng / launcher-eng / rk / rk-eng / faser / empp / repair',
+  },
+  {
+    name: 'compatibleCategories',
+    description:
+      "Массив CSS-slug'ов совместимого оружия через ; — из «Группы орудий» вики («bullet; missile» для «ПулеметПушка»)",
+  },
+  {
+    name: 'slot',
+    description: 'Слот установки — из поля «Устанавливается в слот» («Патроны» / «Запчасти»)',
+  },
+  { name: 'requiredLevel', description: 'Требуемый уровень персонажа' },
+  {
+    name: 'powerBonus',
+    description:
+      'Прирост мощности из description: +N для «+N мощности», 0 для «стандартной мощности». У боеприпасов = прирост урона, у Запчастей = прирост эффективности ремонта.',
+  },
+  {
+    name: 'stats.rounds',
+    description: 'Число выстрелов в боекомплекте (для ремпушек — «Запчасти»)',
+  },
+  { name: 'stats.weight', description: 'Вес' },
+  { name: 'buyPrice.bonds', description: 'Цена покупки в бонах' },
+  { name: 'buyPrice.regls', description: 'Цена покупки в реглах' },
+  { name: 'sellPrice.bonds', description: 'Цена продажи в бонах (базовая, без «Торговли»)' },
+  { name: 'sellPrice.regls', description: 'Цена продажи в реглах' },
+  { name: 'description', description: 'Свободное описание боезапаса' },
+  { name: 'iconPath', description: 'Путь к иконке (например data/icons/ammo/…)' },
+  { name: 'wikiUrl', description: 'URL детальной страницы вики' },
+  { name: 'source_note', description: 'Комментарий редактора (не идёт в JSON)' },
+];
+
 /** Регистр колонок по slug каталога. */
 export const COLUMNS_BY_SLUG: Record<string, ColumnSpec[]> = {
   robots: MECHS_COLUMNS, // slug=robots, но лист=mechs (см. catalogs.config)
   weapons: WEAPONS_COLUMNS,
   equipment: EQUIPMENT_COLUMNS,
+  ammo: AMMO_COLUMNS,
 };

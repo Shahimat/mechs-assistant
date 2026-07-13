@@ -19,7 +19,7 @@ namespaces:
       - id: data--equipment-catalog
         one_liner: Каталог оборудования — 173 записи из wiki 3682/3657/3106/3108, family+subtype из CSS-класса. Единая data-сущность обслуживает 7 UI-каталогов (chips/shields/armour/accumulators/reactors/drills/cargos).
       - id: data--ammo-catalog
-        one_liner: Каталог боезапасов — расходники для оружия (wiki 3661). Shell-entity MVP1.
+        one_liner: "Каталог боезапасов — ~58 записей из wiki 3661, поле `compatibleCategories: string[]` — массив CSS-slug'ов совместимого оружия (ключевая связь с data--weapons-catalog.category). Стор+view — в фазе feat."
       - id: data--items-catalog
         one_liner: Каталог используемых предметов — аптечки, ускорители и прочие расходники (wiki 3111). Shell-entity MVP1.
       - id: data--loot-catalog
@@ -77,6 +77,8 @@ namespaces:
         one_liner: Карточный каталог `/catalogs/drills-catalog` — subtype='extractor' (7 записей, primary=«Мощность подъема»). LevelRangeFilter.
       - id: view--cargos-catalog
         one_liner: Карточный каталог `/catalogs/cargos-catalog` — subtype='cargo' (13 записей, primary=«Трюм»). LevelRangeFilter.
+      - id: view--ammo-catalog
+        one_liner: Карточный каталог `/catalogs/ammo-catalog` — ~58 боезапасов, PairToggleGroup по `compatibleCategories` (CSS-slug'ам weapons) + LevelRangeFilter. Спецификация есть, реализация — в фазе feat.
       - id: other--tile
         one_liner: Квадратная плитка навигации с hover-scale, active-press, focus-ring, слотом для иконки.
       - id: other--catalog-shell
@@ -126,6 +128,14 @@ namespaces:
         one_liner: view--cargos-catalog фильтрует по subtype='cargo' и рендерит сетку EquipmentCard.
       - id: view--cargos-catalog-opens-detail-on-click
         one_liner: Клик по карточке трюма открывает EquipmentDetail.
+      - id: data--ammo-catalog-loaded-from-json
+        one_liner: Каталог боезапасов загружается из merged .build/data/ammo.json при инициализации стора.
+      - id: data--ammo-catalog-schema-typed
+        one_liner: Каждая запись ammo.json соответствует типу Ammo (TS strict).
+      - id: view--ammo-catalog-renders-cards-grid
+        one_liner: view--ammo-catalog рендерит сетку AmmoCard из data--ammo-catalog, фильтр по compatibleCategories + LevelRangeFilter.
+      - id: view--ammo-catalog-opens-detail-on-click
+        one_liner: Клик по карточке боезапаса открывает детализацию (AmmoDetail).
 
   comparison:
     description: Механики сравнения и приоритизации мехов (избранное, будущий боевой калькулятор).

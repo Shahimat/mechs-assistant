@@ -1,0 +1,1529 @@
+[
+  {
+    "key": "empp_10",
+    "name": "Эмпп +10",
+    "model": "Эмпп",
+    "family": "empp",
+    "compatibleCategories": [
+      "faser",
+      "empp"
+    ],
+    "requiredLevel": 20,
+    "slot": "Патроны",
+    "buyPrice": {
+      "bonds": 25000
+    },
+    "sellPrice": {
+      "bonds": 6250
+    },
+    "description": "Патроны для электромагнитной пушки +10 мощности",
+    "powerBonus": 10,
+    "stats": {
+      "rounds": 400,
+      "weight": 10
+    },
+    "iconPath": "ammo/empp_10.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3661"
+  },
+  {
+    "key": "empp_20",
+    "name": "Эмпп +20",
+    "model": "Эмпп",
+    "family": "empp",
+    "compatibleCategories": [
+      "faser",
+      "empp"
+    ],
+    "requiredLevel": 20,
+    "slot": "Патроны",
+    "buyPrice": {
+      "bonds": 10000,
+      "regls": 10
+    },
+    "sellPrice": {
+      "bonds": 2500
+    },
+    "description": "Патроны для электромагнитной пушки +20 мощности",
+    "powerBonus": 20,
+    "stats": {
+      "rounds": 600,
+      "weight": 10
+    },
+    "iconPath": "ammo/empp_20.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3661"
+  },
+  {
+    "key": "empp_30_m1",
+    "name": "Эмпп +30 М1",
+    "model": "Эмпп",
+    "family": "empp",
+    "compatibleCategories": [
+      "faser",
+      "empp"
+    ],
+    "requiredLevel": 20,
+    "slot": "Патроны",
+    "buyPrice": {
+      "bonds": 1000000,
+      "regls": 30
+    },
+    "sellPrice": {
+      "bonds": 250000
+    },
+    "description": "Патроны для электромагнитной пушки +30 мощности",
+    "powerBonus": 30,
+    "stats": {
+      "rounds": 600,
+      "weight": 10
+    },
+    "iconPath": "ammo/empp_30_m1.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3661"
+  },
+  {
+    "key": "empp_30_m2",
+    "name": "Эмпп +30 М2",
+    "model": "Эмпп",
+    "family": "empp",
+    "compatibleCategories": [
+      "faser",
+      "empp"
+    ],
+    "requiredLevel": 20,
+    "slot": "Патроны",
+    "buyPrice": {
+      "bonds": 18000000
+    },
+    "sellPrice": {
+      "bonds": 4500000
+    },
+    "description": "Патроны для электромагнитной пушки +30 мощности",
+    "powerBonus": 30,
+    "stats": {
+      "rounds": 600,
+      "weight": 10
+    },
+    "iconPath": "ammo/empp_30_m2.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3661"
+  },
+  {
+    "key": "empp_standart",
+    "name": "Эмпп Стандарт",
+    "model": "Эмпп",
+    "family": "empp",
+    "compatibleCategories": [
+      "faser",
+      "empp"
+    ],
+    "requiredLevel": 20,
+    "slot": "Патроны",
+    "buyPrice": {
+      "bonds": 3000
+    },
+    "sellPrice": {
+      "bonds": 750
+    },
+    "description": "Патроны для электромагнитной пушки стандартной мощности",
+    "powerBonus": 0,
+    "stats": {
+      "rounds": 500,
+      "weight": 10
+    },
+    "iconPath": "ammo/empp_standart.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3661"
+  },
+  {
+    "key": "fazer_15",
+    "name": "Фазер +15",
+    "model": "Фазер",
+    "family": "faser",
+    "compatibleCategories": [
+      "faser",
+      "empp"
+    ],
+    "requiredLevel": 20,
+    "slot": "Патроны",
+    "buyPrice": {
+      "bonds": 25000
+    },
+    "sellPrice": {
+      "bonds": 6250
+    },
+    "description": "Патроны для фазера +15 мощности",
+    "powerBonus": 15,
+    "stats": {
+      "rounds": 600,
+      "weight": 10
+    },
+    "iconPath": "ammo/fazer_15.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3661"
+  },
+  {
+    "key": "fazer_25",
+    "name": "Фазер +25",
+    "model": "Фазер",
+    "family": "faser",
+    "compatibleCategories": [
+      "faser",
+      "empp"
+    ],
+    "requiredLevel": 20,
+    "slot": "Патроны",
+    "buyPrice": {
+      "bonds": 10000,
+      "regls": 10
+    },
+    "sellPrice": {
+      "bonds": 2500
+    },
+    "description": "Патроны для фазера +25 мощности",
+    "powerBonus": 25,
+    "stats": {
+      "rounds": 700,
+      "weight": 10
+    },
+    "iconPath": "ammo/fazer_25.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3661"
+  },
+  {
+    "key": "fazer_standart",
+    "name": "Фазер Стандарт",
+    "model": "Фазер",
+    "family": "faser",
+    "compatibleCategories": [
+      "faser",
+      "empp"
+    ],
+    "requiredLevel": 20,
+    "slot": "Патроны",
+    "buyPrice": {
+      "bonds": 3000
+    },
+    "sellPrice": {
+      "bonds": 750
+    },
+    "description": "Патроны для фазера стандартной мощности",
+    "powerBonus": 0,
+    "stats": {
+      "rounds": 700,
+      "weight": 10
+    },
+    "iconPath": "ammo/fazer_standart.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3661"
+  },
+  {
+    "key": "gaubitsa_15",
+    "name": "Гаубица +15",
+    "model": "Гаубица",
+    "family": "howitzer",
+    "compatibleCategories": [
+      "howitzer",
+      "launcher"
+    ],
+    "requiredLevel": 20,
+    "slot": "Патроны",
+    "buyPrice": {
+      "bonds": 25000
+    },
+    "sellPrice": {
+      "bonds": 6250
+    },
+    "description": "Снаряды для гаубицы +15 мощности",
+    "powerBonus": 15,
+    "stats": {
+      "rounds": 200,
+      "weight": 10
+    },
+    "iconPath": "ammo/gaubitsa_15.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3661"
+  },
+  {
+    "key": "gaubitsa_35",
+    "name": "Гаубица +35",
+    "model": "Гаубица",
+    "family": "howitzer",
+    "compatibleCategories": [
+      "howitzer",
+      "launcher"
+    ],
+    "requiredLevel": 20,
+    "slot": "Патроны",
+    "buyPrice": {
+      "bonds": 10000,
+      "regls": 10
+    },
+    "sellPrice": {
+      "bonds": 2500
+    },
+    "description": "Снаряды для гаубицы +35 мощности",
+    "powerBonus": 35,
+    "stats": {
+      "rounds": 200,
+      "weight": 10
+    },
+    "iconPath": "ammo/gaubitsa_35.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3661"
+  },
+  {
+    "key": "gaubitsa_enrg_15",
+    "name": "Гаубица Энрг +15",
+    "model": "Гаубица Энрг",
+    "family": "howitzer-eng",
+    "compatibleCategories": [
+      "howitzer-eng",
+      "launcher-eng"
+    ],
+    "requiredLevel": 20,
+    "slot": "Патроны",
+    "buyPrice": {
+      "bonds": 25000
+    },
+    "sellPrice": {
+      "bonds": 6250
+    },
+    "description": "Снаряды для гаубицы энергетической +15 мощности",
+    "powerBonus": 15,
+    "stats": {
+      "rounds": 200,
+      "weight": 10
+    },
+    "iconPath": "ammo/gaubitsa_enrg_15.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3661"
+  },
+  {
+    "key": "gaubitsa_enrg_35",
+    "name": "Гаубица Энрг +35",
+    "model": "Гаубица Энрг",
+    "family": "howitzer-eng",
+    "compatibleCategories": [
+      "howitzer-eng",
+      "launcher-eng"
+    ],
+    "requiredLevel": 20,
+    "slot": "Патроны",
+    "buyPrice": {
+      "bonds": 10000,
+      "regls": 10
+    },
+    "sellPrice": {
+      "bonds": 2500
+    },
+    "description": "Снаряды для гаубицы энергетической +35 мощности",
+    "powerBonus": 35,
+    "stats": {
+      "rounds": 200,
+      "weight": 10
+    },
+    "iconPath": "ammo/gaubitsa_enrg_35.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3661"
+  },
+  {
+    "key": "gaubitsa_enrg_standart",
+    "name": "Гаубица Энрг Стандарт",
+    "model": "Гаубица Энрг",
+    "family": "howitzer-eng",
+    "compatibleCategories": [
+      "howitzer-eng",
+      "launcher-eng"
+    ],
+    "requiredLevel": 20,
+    "slot": "Патроны",
+    "buyPrice": {
+      "bonds": 8000
+    },
+    "sellPrice": {
+      "bonds": 2000
+    },
+    "description": "Снаряды для гаубицы энергетической стандартной мощности",
+    "powerBonus": 0,
+    "stats": {
+      "rounds": 200,
+      "weight": 10
+    },
+    "iconPath": "ammo/gaubitsa_enrg_standart.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3661"
+  },
+  {
+    "key": "gaubitsa_standart",
+    "name": "Гаубица Стандарт",
+    "model": "Гаубица",
+    "family": "howitzer",
+    "compatibleCategories": [
+      "howitzer",
+      "launcher"
+    ],
+    "requiredLevel": 20,
+    "slot": "Патроны",
+    "buyPrice": {
+      "bonds": 8000
+    },
+    "sellPrice": {
+      "bonds": 2000
+    },
+    "description": "Снаряды для гаубицы стандартной мощности",
+    "powerBonus": 0,
+    "stats": {
+      "rounds": 200,
+      "weight": 10
+    },
+    "iconPath": "ammo/gaubitsa_standart.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3661"
+  },
+  {
+    "key": "granatomet_10",
+    "name": "Гранатомет +10",
+    "model": "Гранатомет",
+    "family": "launcher",
+    "compatibleCategories": [
+      "howitzer",
+      "launcher"
+    ],
+    "requiredLevel": 20,
+    "slot": "Патроны",
+    "buyPrice": {
+      "bonds": 15000
+    },
+    "sellPrice": {
+      "bonds": 3750
+    },
+    "description": "Снаряды для гранатомета +10 мощности",
+    "powerBonus": 10,
+    "stats": {
+      "rounds": 500,
+      "weight": 10
+    },
+    "iconPath": "ammo/granatomet_10.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3661"
+  },
+  {
+    "key": "granatomet_20",
+    "name": "Гранатомет +20",
+    "model": "Гранатомет",
+    "family": "launcher",
+    "compatibleCategories": [
+      "howitzer",
+      "launcher"
+    ],
+    "requiredLevel": 20,
+    "slot": "Патроны",
+    "buyPrice": {
+      "bonds": 10000,
+      "regls": 10
+    },
+    "sellPrice": {
+      "bonds": 2500
+    },
+    "description": "Снаряды для гранатомета +20 мощности",
+    "powerBonus": 20,
+    "stats": {
+      "rounds": 500,
+      "weight": 10
+    },
+    "iconPath": "ammo/granatomet_20.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3661"
+  },
+  {
+    "key": "granatomet_40_m1",
+    "name": "Гранатомет +40 М1",
+    "model": "Гранатомет",
+    "family": "launcher",
+    "compatibleCategories": [
+      "howitzer",
+      "launcher"
+    ],
+    "requiredLevel": 20,
+    "slot": "Патроны",
+    "buyPrice": {
+      "bonds": 10000,
+      "regls": 50
+    },
+    "sellPrice": {
+      "bonds": 2500
+    },
+    "description": "Снаряды для гранатомета +40 мощности",
+    "powerBonus": 40,
+    "stats": {
+      "rounds": 500,
+      "weight": 10
+    },
+    "iconPath": "ammo/granatomet_40_m1.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3661"
+  },
+  {
+    "key": "granatomet_40_m2",
+    "name": "Гранатомет +40 М2",
+    "model": "Гранатомет",
+    "family": "launcher",
+    "compatibleCategories": [
+      "howitzer",
+      "launcher"
+    ],
+    "requiredLevel": 20,
+    "slot": "Патроны",
+    "buyPrice": {
+      "bonds": 30000000
+    },
+    "sellPrice": {
+      "bonds": 7500000
+    },
+    "description": "Снаряды для гранатомета +40 мощности",
+    "powerBonus": 40,
+    "stats": {
+      "rounds": 500,
+      "weight": 10
+    },
+    "iconPath": "ammo/granatomet_40_m2.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3661"
+  },
+  {
+    "key": "granatomet_enrg_10",
+    "name": "Гранатомет Энрг +10",
+    "model": "Гранатомет Энрг",
+    "family": "launcher-eng",
+    "compatibleCategories": [
+      "howitzer-eng",
+      "launcher-eng"
+    ],
+    "requiredLevel": 20,
+    "slot": "Патроны",
+    "buyPrice": {
+      "bonds": 15000
+    },
+    "sellPrice": {
+      "bonds": 3750
+    },
+    "description": "Снаряды для гранатомета энергетического +10 мощности",
+    "powerBonus": 10,
+    "stats": {
+      "rounds": 500,
+      "weight": 10
+    },
+    "iconPath": "ammo/granatomet_enrg_10.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3661"
+  },
+  {
+    "key": "granatomet_enrg_20",
+    "name": "Гранатомет Энрг +20",
+    "model": "Гранатомет Энрг",
+    "family": "launcher-eng",
+    "compatibleCategories": [
+      "howitzer-eng",
+      "launcher-eng"
+    ],
+    "requiredLevel": 20,
+    "slot": "Патроны",
+    "buyPrice": {
+      "bonds": 10000,
+      "regls": 10
+    },
+    "sellPrice": {
+      "bonds": 2500
+    },
+    "description": "Снаряды для гранатомета энергетического +20 мощности",
+    "powerBonus": 20,
+    "stats": {
+      "rounds": 500,
+      "weight": 10
+    },
+    "iconPath": "ammo/granatomet_enrg_20.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3661"
+  },
+  {
+    "key": "granatomet_enrg_40_m1",
+    "name": "Гранатомет Энрг +40 М1",
+    "model": "Гранатомет Энрг",
+    "family": "launcher-eng",
+    "compatibleCategories": [
+      "howitzer-eng",
+      "launcher-eng"
+    ],
+    "requiredLevel": 20,
+    "slot": "Патроны",
+    "buyPrice": {
+      "bonds": 10000,
+      "regls": 50
+    },
+    "sellPrice": {
+      "bonds": 2500
+    },
+    "description": "Снаряды для гранатомета энергетического +40 мощности",
+    "powerBonus": 40,
+    "stats": {
+      "rounds": 500,
+      "weight": 10
+    },
+    "iconPath": "ammo/granatomet_enrg_40_m1.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3661"
+  },
+  {
+    "key": "granatomet_enrg_40_m2",
+    "name": "Гранатомет Энрг +40 М2",
+    "model": "Гранатомет Энрг",
+    "family": "launcher-eng",
+    "compatibleCategories": [
+      "howitzer-eng",
+      "launcher-eng"
+    ],
+    "requiredLevel": 20,
+    "slot": "Патроны",
+    "buyPrice": {
+      "bonds": 30000000
+    },
+    "sellPrice": {
+      "bonds": 7500000
+    },
+    "description": "Снаряды для гранатомета энергетического +40 мощности",
+    "powerBonus": 40,
+    "stats": {
+      "rounds": 500,
+      "weight": 10
+    },
+    "iconPath": "ammo/granatomet_enrg_40_m2.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3661"
+  },
+  {
+    "key": "granatomet_enrg_standart",
+    "name": "Гранатомет Энрг Стандарт",
+    "model": "Гранатомет Энрг",
+    "family": "launcher-eng",
+    "compatibleCategories": [
+      "howitzer-eng",
+      "launcher-eng"
+    ],
+    "requiredLevel": 20,
+    "slot": "Патроны",
+    "buyPrice": {
+      "bonds": 3000
+    },
+    "sellPrice": {
+      "bonds": 750
+    },
+    "description": "Снаряды для гранатомета энергетического стандартной мощности",
+    "powerBonus": 0,
+    "stats": {
+      "rounds": 500,
+      "weight": 10
+    },
+    "iconPath": "ammo/granatomet_enrg_standart.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3661"
+  },
+  {
+    "key": "granatomet_standart",
+    "name": "Гранатомет Стандарт",
+    "model": "Гранатомет",
+    "family": "launcher",
+    "compatibleCategories": [
+      "howitzer",
+      "launcher"
+    ],
+    "requiredLevel": 20,
+    "slot": "Патроны",
+    "buyPrice": {
+      "bonds": 3000
+    },
+    "sellPrice": {
+      "bonds": 750
+    },
+    "description": "Снаряды для гранатомета стандартной мощности",
+    "powerBonus": 0,
+    "stats": {
+      "rounds": 500,
+      "weight": 10
+    },
+    "iconPath": "ammo/granatomet_standart.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3661"
+  },
+  {
+    "key": "mortira_10",
+    "name": "Мортира +10",
+    "model": "Мортира",
+    "family": "mortar",
+    "compatibleCategories": [
+      "mortar",
+      "bullet-heavy"
+    ],
+    "requiredLevel": 20,
+    "slot": "Патроны",
+    "buyPrice": {
+      "bonds": 25000
+    },
+    "sellPrice": {
+      "bonds": 6250
+    },
+    "description": "Снаряды для мортиры +10 мощности",
+    "powerBonus": 10,
+    "stats": {
+      "rounds": 400,
+      "weight": 10
+    },
+    "iconPath": "ammo/mortira_10.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3661"
+  },
+  {
+    "key": "mortira_20",
+    "name": "Мортира +20",
+    "model": "Мортира",
+    "family": "mortar",
+    "compatibleCategories": [
+      "mortar",
+      "bullet-heavy"
+    ],
+    "requiredLevel": 20,
+    "slot": "Патроны",
+    "buyPrice": {
+      "bonds": 10000,
+      "regls": 10
+    },
+    "sellPrice": {
+      "bonds": 2500
+    },
+    "description": "Снаряды для мортиры +20 мощности",
+    "powerBonus": 20,
+    "stats": {
+      "rounds": 600,
+      "weight": 10
+    },
+    "iconPath": "ammo/mortira_20.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3661"
+  },
+  {
+    "key": "mortira_30_m1",
+    "name": "Мортира +30 М1",
+    "model": "Мортира",
+    "family": "mortar",
+    "compatibleCategories": [
+      "mortar",
+      "bullet-heavy"
+    ],
+    "requiredLevel": 20,
+    "slot": "Патроны",
+    "buyPrice": {
+      "bonds": 1000000,
+      "regls": 30
+    },
+    "sellPrice": {
+      "bonds": 250000
+    },
+    "description": "Снаряды для мортиры +30 мощности",
+    "powerBonus": 30,
+    "stats": {
+      "rounds": 600,
+      "weight": 10
+    },
+    "iconPath": "ammo/mortira_30_m1.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3661"
+  },
+  {
+    "key": "mortira_30_m2",
+    "name": "Мортира +30 М2",
+    "model": "Мортира",
+    "family": "mortar",
+    "compatibleCategories": [
+      "mortar",
+      "bullet-heavy"
+    ],
+    "requiredLevel": 20,
+    "slot": "Патроны",
+    "buyPrice": {
+      "bonds": 18000000
+    },
+    "sellPrice": {
+      "bonds": 4500000
+    },
+    "description": "Снаряды для мортиры +30 мощности",
+    "powerBonus": 30,
+    "stats": {
+      "rounds": 600,
+      "weight": 10
+    },
+    "iconPath": "ammo/mortira_30_m2.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3661"
+  },
+  {
+    "key": "mortira_standart",
+    "name": "Мортира Стандарт",
+    "model": "Мортира",
+    "family": "mortar",
+    "compatibleCategories": [
+      "mortar",
+      "bullet-heavy"
+    ],
+    "requiredLevel": 20,
+    "slot": "Патроны",
+    "buyPrice": {
+      "bonds": 3000
+    },
+    "sellPrice": {
+      "bonds": 750
+    },
+    "description": "Снаряды для мортиры стандартной мощности",
+    "powerBonus": 0,
+    "stats": {
+      "rounds": 500,
+      "weight": 10
+    },
+    "iconPath": "ammo/mortira_standart.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3661"
+  },
+  {
+    "key": "pulemyot_15",
+    "name": "Пулемёт +15",
+    "model": "Пулемёт",
+    "family": "bullet",
+    "compatibleCategories": [
+      "bullet",
+      "missile"
+    ],
+    "requiredLevel": 20,
+    "slot": "Патроны",
+    "buyPrice": {
+      "bonds": 25000
+    },
+    "sellPrice": {
+      "bonds": 6250
+    },
+    "description": "Патроны для пулемета +15 мощности",
+    "powerBonus": 15,
+    "stats": {
+      "rounds": 400,
+      "weight": 10
+    },
+    "iconPath": "ammo/pulemyot_15.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3661"
+  },
+  {
+    "key": "pulemyot_25",
+    "name": "Пулемёт +25",
+    "model": "Пулемёт",
+    "family": "bullet",
+    "compatibleCategories": [
+      "bullet",
+      "missile"
+    ],
+    "requiredLevel": 20,
+    "slot": "Патроны",
+    "buyPrice": {
+      "bonds": 10000,
+      "regls": 10
+    },
+    "sellPrice": {
+      "bonds": 2500
+    },
+    "description": "Патроны для пулемета +25 мощности",
+    "powerBonus": 25,
+    "stats": {
+      "rounds": 600,
+      "weight": 10
+    },
+    "iconPath": "ammo/pulemyot_25.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3661"
+  },
+  {
+    "key": "pulemyot_enrg_15",
+    "name": "Пулемёт Энрг +15",
+    "model": "Пулемёт Энрг",
+    "family": "bullet-eng",
+    "compatibleCategories": [
+      "bullet-eng",
+      "missile-eng"
+    ],
+    "requiredLevel": 20,
+    "slot": "Патроны",
+    "buyPrice": {
+      "bonds": 25000
+    },
+    "sellPrice": {
+      "bonds": 6250
+    },
+    "description": "Патроны для энергетического пулемета +15 мощности",
+    "powerBonus": 15,
+    "stats": {
+      "rounds": 400,
+      "weight": 10
+    },
+    "iconPath": "ammo/pulemyot_enrg_15.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3661"
+  },
+  {
+    "key": "pulemyot_enrg_25",
+    "name": "Пулемёт Энрг +25",
+    "model": "Пулемёт Энрг",
+    "family": "bullet-eng",
+    "compatibleCategories": [
+      "bullet-eng",
+      "missile-eng"
+    ],
+    "requiredLevel": 20,
+    "slot": "Патроны",
+    "buyPrice": {
+      "bonds": 10000,
+      "regls": 10
+    },
+    "sellPrice": {
+      "bonds": 2500
+    },
+    "description": "Патроны для энергетического пулемета +25 мощности",
+    "powerBonus": 25,
+    "stats": {
+      "rounds": 500,
+      "weight": 10
+    },
+    "iconPath": "ammo/pulemyot_enrg_25.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3661"
+  },
+  {
+    "key": "pulemyot_enrg_standart",
+    "name": "Пулемёт Энрг Стандарт",
+    "model": "Пулемёт Энрг",
+    "family": "bullet-eng",
+    "compatibleCategories": [
+      "bullet-eng",
+      "missile-eng"
+    ],
+    "requiredLevel": 20,
+    "slot": "Патроны",
+    "buyPrice": {
+      "bonds": 3000
+    },
+    "sellPrice": {
+      "bonds": 750
+    },
+    "description": "Патроны для энергетического пулемета стандартной мощности",
+    "powerBonus": 0,
+    "stats": {
+      "rounds": 500,
+      "weight": 10
+    },
+    "iconPath": "ammo/pulemyot_enrg_standart.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3661"
+  },
+  {
+    "key": "pulemyot_krupnokalibernyy_15",
+    "name": "Пулемёт Крупнокалиберный +15",
+    "model": "Пулемёт Крупнокалиберный",
+    "family": "bullet-heavy",
+    "compatibleCategories": [
+      "mortar",
+      "bullet-heavy"
+    ],
+    "requiredLevel": 20,
+    "slot": "Патроны",
+    "buyPrice": {
+      "bonds": 25000
+    },
+    "sellPrice": {
+      "bonds": 6250
+    },
+    "description": "Патроны для пулемета крупнокалиберного +15 мощности",
+    "powerBonus": 15,
+    "stats": {
+      "rounds": 600,
+      "weight": 10
+    },
+    "iconPath": "ammo/pulemyot_krupnokalibernyy_15.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3661"
+  },
+  {
+    "key": "pulemyot_krupnokalibernyy_25",
+    "name": "Пулемёт Крупнокалиберный +25",
+    "model": "Пулемёт Крупнокалиберный",
+    "family": "bullet-heavy",
+    "compatibleCategories": [
+      "mortar",
+      "bullet-heavy"
+    ],
+    "requiredLevel": 20,
+    "slot": "Патроны",
+    "buyPrice": {
+      "bonds": 10000,
+      "regls": 10
+    },
+    "sellPrice": {
+      "bonds": 2500
+    },
+    "description": "Патроны для пулемета крупнокалиберного +25 мощности",
+    "powerBonus": 25,
+    "stats": {
+      "rounds": 700,
+      "weight": 10
+    },
+    "iconPath": "ammo/pulemyot_krupnokalibernyy_25.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3661"
+  },
+  {
+    "key": "pulemyot_krupnokalibernyy_standart",
+    "name": "Пулемёт Крупнокалиберный Стандарт",
+    "model": "Пулемёт Крупнокалиберный",
+    "family": "bullet-heavy",
+    "compatibleCategories": [
+      "mortar",
+      "bullet-heavy"
+    ],
+    "requiredLevel": 20,
+    "slot": "Патроны",
+    "buyPrice": {
+      "bonds": 3000
+    },
+    "sellPrice": {
+      "bonds": 750
+    },
+    "description": "Патроны для пулемета крупнокалиберного стандартной мощности",
+    "powerBonus": 0,
+    "stats": {
+      "rounds": 700,
+      "weight": 10
+    },
+    "iconPath": "ammo/pulemyot_krupnokalibernyy_standart.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3661"
+  },
+  {
+    "key": "pulemyot_standart",
+    "name": "Пулемёт Стандарт",
+    "model": "Пулемёт",
+    "family": "bullet",
+    "compatibleCategories": [
+      "bullet",
+      "missile"
+    ],
+    "requiredLevel": 20,
+    "slot": "Патроны",
+    "buyPrice": {
+      "bonds": 3000
+    },
+    "sellPrice": {
+      "bonds": 750
+    },
+    "description": "Патроны для пулемета стандартной мощности",
+    "powerBonus": 0,
+    "stats": {
+      "rounds": 700,
+      "weight": 10
+    },
+    "iconPath": "ammo/pulemyot_standart.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3661"
+  },
+  {
+    "key": "pushka_10",
+    "name": "Пушка +10",
+    "model": "Пушка",
+    "family": "missile",
+    "compatibleCategories": [
+      "bullet",
+      "missile"
+    ],
+    "requiredLevel": 20,
+    "slot": "Патроны",
+    "buyPrice": {
+      "bonds": 35000
+    },
+    "sellPrice": {
+      "bonds": 8750
+    },
+    "description": "Снаряды для пушки +10 мощности",
+    "powerBonus": 10,
+    "stats": {
+      "rounds": 400,
+      "weight": 10
+    },
+    "iconPath": "ammo/pushka_10.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3661"
+  },
+  {
+    "key": "pushka_20",
+    "name": "Пушка +20",
+    "model": "Пушка",
+    "family": "missile",
+    "compatibleCategories": [
+      "bullet",
+      "missile"
+    ],
+    "requiredLevel": 20,
+    "slot": "Патроны",
+    "buyPrice": {
+      "bonds": 15000,
+      "regls": 13
+    },
+    "sellPrice": {
+      "bonds": 3750
+    },
+    "description": "Снаряды для пушки +20 мощности",
+    "powerBonus": 20,
+    "stats": {
+      "rounds": 600,
+      "weight": 10
+    },
+    "iconPath": "ammo/pushka_20.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3661"
+  },
+  {
+    "key": "pushka_30_m1",
+    "name": "Пушка +30 М1",
+    "model": "Пушка",
+    "family": "missile",
+    "compatibleCategories": [
+      "bullet",
+      "missile"
+    ],
+    "requiredLevel": 20,
+    "slot": "Патроны",
+    "buyPrice": {
+      "bonds": 1500000,
+      "regls": 35
+    },
+    "sellPrice": {
+      "bonds": 375000
+    },
+    "description": "Снаряды для пушки +30 мощности",
+    "powerBonus": 30,
+    "stats": {
+      "rounds": 600,
+      "weight": 10
+    },
+    "iconPath": "ammo/pushka_30_m1.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3661"
+  },
+  {
+    "key": "pushka_30_m2",
+    "name": "Пушка +30 М2",
+    "model": "Пушка",
+    "family": "missile",
+    "compatibleCategories": [
+      "bullet",
+      "missile"
+    ],
+    "requiredLevel": 20,
+    "slot": "Патроны",
+    "buyPrice": {
+      "bonds": 21000000
+    },
+    "sellPrice": {
+      "bonds": 5250000
+    },
+    "description": "Снаряды для пушки +30 мощности",
+    "powerBonus": 30,
+    "stats": {
+      "rounds": 600,
+      "weight": 10
+    },
+    "iconPath": "ammo/pushka_30_m2.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3661"
+  },
+  {
+    "key": "pushka_enrg_10",
+    "name": "Пушка Энрг +10",
+    "model": "Пушка Энрг",
+    "family": "missile-eng",
+    "compatibleCategories": [
+      "bullet-eng",
+      "missile-eng"
+    ],
+    "requiredLevel": 20,
+    "slot": "Патроны",
+    "buyPrice": {
+      "bonds": 35000
+    },
+    "sellPrice": {
+      "bonds": 8750
+    },
+    "description": "Снаряды для пушки энергетической +10 мощности",
+    "powerBonus": 10,
+    "stats": {
+      "rounds": 400,
+      "weight": 10
+    },
+    "iconPath": "ammo/pushka_enrg_10.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3661"
+  },
+  {
+    "key": "pushka_enrg_20",
+    "name": "Пушка Энрг +20",
+    "model": "Пушка Энрг",
+    "family": "missile-eng",
+    "compatibleCategories": [
+      "bullet-eng",
+      "missile-eng"
+    ],
+    "requiredLevel": 20,
+    "slot": "Патроны",
+    "buyPrice": {
+      "bonds": 15000,
+      "regls": 13
+    },
+    "sellPrice": {
+      "bonds": 3750
+    },
+    "description": "Снаряды для пушки энергетической +20 мощности",
+    "powerBonus": 20,
+    "stats": {
+      "rounds": 600,
+      "weight": 10
+    },
+    "iconPath": "ammo/pushka_enrg_20.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3661"
+  },
+  {
+    "key": "pushka_enrg_30_m1",
+    "name": "Пушка Энрг +30 М1",
+    "model": "Пушка Энрг",
+    "family": "missile-eng",
+    "compatibleCategories": [
+      "bullet-eng",
+      "missile-eng"
+    ],
+    "requiredLevel": 20,
+    "slot": "Патроны",
+    "buyPrice": {
+      "bonds": 1500000,
+      "regls": 35
+    },
+    "sellPrice": {
+      "bonds": 375000
+    },
+    "description": "Снаряды для пушки энергетической +30 мощности",
+    "powerBonus": 30,
+    "stats": {
+      "rounds": 600,
+      "weight": 10
+    },
+    "iconPath": "ammo/pushka_enrg_30_m1.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3661"
+  },
+  {
+    "key": "pushka_enrg_30_m2",
+    "name": "Пушка Энрг +30 М2",
+    "model": "Пушка Энрг",
+    "family": "missile-eng",
+    "compatibleCategories": [
+      "bullet-eng",
+      "missile-eng"
+    ],
+    "requiredLevel": 20,
+    "slot": "Патроны",
+    "buyPrice": {
+      "bonds": 21000000
+    },
+    "sellPrice": {
+      "bonds": 5250000
+    },
+    "description": "Снаряды для пушки энергетической +30 мощности",
+    "powerBonus": 30,
+    "stats": {
+      "rounds": 600,
+      "weight": 10
+    },
+    "iconPath": "ammo/pushka_enrg_30_m2.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3661"
+  },
+  {
+    "key": "pushka_enrg_standart",
+    "name": "Пушка Энрг Стандарт",
+    "model": "Пушка Энрг",
+    "family": "missile-eng",
+    "compatibleCategories": [
+      "bullet-eng",
+      "missile-eng"
+    ],
+    "requiredLevel": 20,
+    "slot": "Патроны",
+    "buyPrice": {
+      "bonds": 4000
+    },
+    "sellPrice": {
+      "bonds": 1000
+    },
+    "description": "Снаряды для пушки энергетической стандартной мощности",
+    "powerBonus": 0,
+    "stats": {
+      "rounds": 500,
+      "weight": 10
+    },
+    "iconPath": "ammo/pushka_enrg_standart.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3661"
+  },
+  {
+    "key": "pushka_standart",
+    "name": "Пушка Стандарт",
+    "model": "Пушка",
+    "family": "missile",
+    "compatibleCategories": [
+      "bullet",
+      "missile"
+    ],
+    "requiredLevel": 20,
+    "slot": "Патроны",
+    "buyPrice": {
+      "bonds": 4000
+    },
+    "sellPrice": {
+      "bonds": 1000
+    },
+    "description": "Снаряды для пушки стандартной мощности",
+    "powerBonus": 0,
+    "stats": {
+      "rounds": 500,
+      "weight": 10
+    },
+    "iconPath": "ammo/pushka_standart.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3661"
+  },
+  {
+    "key": "rk_20",
+    "name": "Рк +20",
+    "model": "Рк",
+    "family": "rk",
+    "compatibleCategories": [
+      "rk",
+      "rk-eng"
+    ],
+    "requiredLevel": 20,
+    "slot": "Патроны",
+    "buyPrice": {
+      "bonds": 40000
+    },
+    "sellPrice": {
+      "bonds": 10000
+    },
+    "description": "Кассета для ударного ракетного оружия +20 мощности",
+    "powerBonus": 20,
+    "stats": {
+      "rounds": 500,
+      "weight": 10
+    },
+    "iconPath": "ammo/rk_20.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3661"
+  },
+  {
+    "key": "rk_30",
+    "name": "Рк +30",
+    "model": "Рк",
+    "family": "rk",
+    "compatibleCategories": [
+      "rk",
+      "rk-eng"
+    ],
+    "requiredLevel": 20,
+    "slot": "Патроны",
+    "buyPrice": {
+      "bonds": 25000,
+      "regls": 10
+    },
+    "sellPrice": {
+      "bonds": 6250
+    },
+    "description": "Кассета для ударного ракетного оружия +30 мощности",
+    "powerBonus": 30,
+    "stats": {
+      "rounds": 600,
+      "weight": 10
+    },
+    "iconPath": "ammo/rk_30.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3661"
+  },
+  {
+    "key": "rk_enrg_20",
+    "name": "Рк Энрг +20",
+    "model": "Рк Энрг",
+    "family": "rk-eng",
+    "compatibleCategories": [
+      "rk",
+      "rk-eng"
+    ],
+    "requiredLevel": 20,
+    "slot": "Патроны",
+    "buyPrice": {
+      "bonds": 70000
+    },
+    "sellPrice": {
+      "bonds": 17500
+    },
+    "description": "Кассета для энергетического ракетного оружия +20 мощности",
+    "powerBonus": 20,
+    "stats": {
+      "rounds": 500,
+      "weight": 10
+    },
+    "iconPath": "ammo/rk_enrg_20.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3661"
+  },
+  {
+    "key": "rk_enrg_30",
+    "name": "Рк Энрг +30",
+    "model": "Рк Энрг",
+    "family": "rk-eng",
+    "compatibleCategories": [
+      "rk",
+      "rk-eng"
+    ],
+    "requiredLevel": 20,
+    "slot": "Патроны",
+    "buyPrice": {
+      "bonds": 25000,
+      "regls": 20
+    },
+    "sellPrice": {
+      "bonds": 6250
+    },
+    "description": "Кассета для ударного ракетного оружия +30 мощности",
+    "powerBonus": 30,
+    "stats": {
+      "rounds": 600,
+      "weight": 10
+    },
+    "iconPath": "ammo/rk_enrg_30.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3661"
+  },
+  {
+    "key": "rk_obshchiy_40_m1",
+    "name": "Рк Общий +40 М1",
+    "model": "Рк Общий",
+    "family": "rk",
+    "compatibleCategories": [
+      "rk",
+      "rk-eng"
+    ],
+    "requiredLevel": 20,
+    "slot": "Патроны",
+    "buyPrice": {
+      "bonds": 1300000,
+      "regls": 40
+    },
+    "sellPrice": {
+      "bonds": 325000
+    },
+    "description": "Кассета для ударного ракетного оружия +40 мощности",
+    "powerBonus": 40,
+    "stats": {
+      "rounds": 600,
+      "weight": 10
+    },
+    "iconPath": "ammo/rk_obshchiy_40_m1.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3661"
+  },
+  {
+    "key": "rk_obshchiy_40_m2",
+    "name": "Рк Общий +40 М2",
+    "model": "Рк Общий",
+    "family": "rk",
+    "compatibleCategories": [
+      "rk",
+      "rk-eng"
+    ],
+    "requiredLevel": 20,
+    "slot": "Патроны",
+    "buyPrice": {
+      "bonds": 24000000
+    },
+    "sellPrice": {
+      "bonds": 6000000
+    },
+    "description": "Кассета для ударного ракетного оружия +40 мощности",
+    "powerBonus": 40,
+    "stats": {
+      "rounds": 600,
+      "weight": 10
+    },
+    "iconPath": "ammo/rk_obshchiy_40_m2.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3661"
+  },
+  {
+    "key": "rk_standart",
+    "name": "Рк Стандарт",
+    "model": "Рк",
+    "family": "rk",
+    "compatibleCategories": [
+      "rk",
+      "rk-eng"
+    ],
+    "requiredLevel": 20,
+    "slot": "Патроны",
+    "buyPrice": {
+      "bonds": 3000
+    },
+    "sellPrice": {
+      "bonds": 750
+    },
+    "description": "Кассета для ракетного оружия стандартной мощности",
+    "powerBonus": 0,
+    "stats": {
+      "rounds": 700,
+      "weight": 10
+    },
+    "iconPath": "ammo/rk_standart.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3661"
+  },
+  {
+    "key": "zapchasti_standart",
+    "name": "Запчасти Стандарт",
+    "model": "Запчасти",
+    "family": "repair",
+    "compatibleCategories": [
+      "repair"
+    ],
+    "requiredLevel": 20,
+    "slot": "Патроны",
+    "buyPrice": {
+      "bonds": 3000
+    },
+    "sellPrice": {
+      "bonds": 750
+    },
+    "description": "Рабочие модули для ремонтной пушки стандартной мощности",
+    "powerBonus": 0,
+    "stats": {
+      "rounds": 500,
+      "weight": 10
+    },
+    "iconPath": "ammo/zapchasti_standart.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3661"
+  },
+  {
+    "key": "zapchasti_uluchshennye_15",
+    "name": "Запчасти Улучшенные +15",
+    "model": "Запчасти Улучшенные",
+    "family": "repair",
+    "compatibleCategories": [
+      "repair"
+    ],
+    "requiredLevel": 20,
+    "slot": "Патроны",
+    "buyPrice": {
+      "bonds": 15000
+    },
+    "sellPrice": {
+      "bonds": 3750
+    },
+    "description": "Рабочие модули для ремонтной пушки +15 мощности",
+    "powerBonus": 15,
+    "stats": {
+      "rounds": 400,
+      "weight": 10
+    },
+    "iconPath": "ammo/zapchasti_uluchshennye_15.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3661"
+  },
+  {
+    "key": "zapchasti_uluchshennye_30",
+    "name": "Запчасти Улучшенные +30",
+    "model": "Запчасти Улучшенные",
+    "family": "repair",
+    "compatibleCategories": [
+      "repair"
+    ],
+    "requiredLevel": 20,
+    "slot": "Патроны",
+    "buyPrice": {
+      "bonds": 10000,
+      "regls": 10
+    },
+    "sellPrice": {
+      "bonds": 2500
+    },
+    "description": "Рабочие модули для ремонтной пушки +30 мощности",
+    "powerBonus": 30,
+    "stats": {
+      "rounds": 600,
+      "weight": 10
+    },
+    "iconPath": "ammo/zapchasti_uluchshennye_30.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3661"
+  }
+]

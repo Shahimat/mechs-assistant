@@ -1,0 +1,35 @@
+id: data--ammo-catalog-schema-typed
+kind: behavior
+namespace: catalog
+entities: [data--ammo-catalog]
+title: Каждая запись в ammo.json соответствует типу Ammo (TS strict)
+
+scenarios:
+  - given: 'TypeScript strict включён (`strict: true`) и `resolveJsonModule: true`'
+    when: файл `store.ts` импортирует `ammoData` из
+      `@build/data/ammo.json` и приводит его к `Ammo[]`
+    then: |
+      сборка проходит без ошибок типа, `Ammo`-типы из
+      `src/types/ammo.ts` применимы ко всем записям (`key`, `name`,
+      `model`, `family`, `compatibleCategories`, `stats.*`).
+
+  - given: в JSON появилась запись, у которой отсутствует обязательное
+      поле (`family` / `compatibleCategories` / `stats.rounds` / `stats.weight`)
+    when: разработчик пытается собрать проект (`npm run build`)
+    then: |
+      сборка/typecheck должны падать. На практике поле проверяется
+      через приведение `as Ammo[]`, поэтому явная валидация — задача
+      автора JSON. Оговорка та же, что для robots/weapons/equipment —
+      без runtime-валидации (zod и т.п.) проверка неполная.
+
+  - given: запись содержит необязательное поле `powerBonus`
+    when: TS-компиляция проверяет типы
+    then: |
+      `powerBonus?: number` — прирост мощности из description
+      («+N мощности» / «стандартной мощности» → 0). Для отсутствующих
+      записей undefined корректен.
+
+verified: true
+verified_at: 2026-07-13
+verified_note: |
+  Проверено: `npm run build` и `tsc --noEmit` проходят без ошибок типа. `Ammo.powerBonus?: number` описан в `src/types/ammo.ts`. Прогон `sync:wiki ammo` → 58/58 записей получили `powerBonus`: 14 «Стандарт» = 0, остальные +10/+15/+20/+25/+30/+35/+40. Оговорка про runtime-валидацию та же, что для robots/weapons/equipment (assert `as Ammo[]`, не zod).

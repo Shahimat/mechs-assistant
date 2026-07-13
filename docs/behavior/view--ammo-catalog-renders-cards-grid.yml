@@ -1,0 +1,42 @@
+id: view--ammo-catalog-renders-cards-grid
+kind: behavior
+namespace: ui
+entities: [view--ammo-catalog]
+title: view--ammo-catalog рендерит сетку карточек боезапасов из data--ammo-catalog
+
+scenarios:
+  - given: стор боезапасов гидратирован, `ammo` содержит записи
+    when: пользователь открыл `/catalogs/ammo-catalog`
+    then: |
+      view--ammo-catalog рендерит сетку `AmmoCard` — по одной карточке
+      на каждую запись. В карточке: название, требуемый уровень (chip,
+      если есть), chip'ы «Совместимо с: …» по `compatibleCategories`
+      (лейблы из `CATEGORY_LABELS`; справочная информация, не фильтр),
+      строка «Урон +N» / «Ремонт +N» (по `family === 'repair'`) из
+      `powerBonus` (для `powerBonus === 0` — прочерк «—»), базовые
+      характеристики (патроны/запчасти, вес) и звёздочка избранного.
+      Иллюстрация — из `iconPath`.
+
+      Панель фильтров: **только `PairToggleGroup` по `family`** (label
+      «Тип») — 8 капсул (7 пар + одиночка «Запчасти»; laser исключён).
+      Матч ammo — `activeCategories.has(a.family)`, одиночный CSS-slug
+      конкретного боеприпаса, не пересечение массива. Так «Пушка»
+      показывает пушечные патроны (`family='missile'`), а не пулемётные
+      (у которых `compatibleCategories` включает `missile`, но
+      `family='bullet'`). LevelRangeFilter снят — requiredLevel
+      одинаковый (=20) у всех записей.
+
+  - given: массив `ammo` пуст (данные ещё не загружены или JSON пустой)
+    when: пользователь открыл `/catalogs/ammo-catalog`
+    then: |
+      view--ammo-catalog показывает empty state (Alert аналогично
+      мехам/weapons/equipment).
+
+  - given: '`error` не null (ошибка загрузки данных)'
+    when: пользователь открыл `/catalogs/ammo-catalog`
+    then: view--ammo-catalog показывает error state (Alert severity=error).
+
+verified: true
+verified_at: 2026-07-13
+verified_note: |
+  Проверено чтением кода `AmmoCatalog.tsx` после правки: фильтрация теперь по `activeCategories.has(a.family)` (одиночный CSS-slug), `compatibleCategories` не участвует в матче. `LevelRangeFilter`/`useLevelRangeFilter` удалены — `requiredLevel` одинаковый (=20) у всех записей. `AmmoCard.tsx` показывает строку «Урон +N» / «Ремонт +N» (по `family === 'repair'`) из `powerBonus`, для 0/null — прочерк «—». Панель фильтров: `PairToggleGroup` с 8 капсулами (7 пар + одиночка «Запчасти»), label «Тип». chip'ы «Совместимо с: …» из `compatibleCategories` остались в карточке как справочная информация (не фильтр). Финальная визуальная проверка в браузере — пройдена юзером 2026-07-13.

@@ -1,28 +1,102 @@
 id: data--ammo-catalog
 kind: entity
 namespace: catalog
-version: "0.x"
+version: '1.x'
 
 description: |
-  Каталог боезапасов — расходники, используемые оружием мехов.
-  Первичный источник — вики `new.mechs.su/?page_id=3661` (Предметы →
-  Боезапасы). Наполнение — `parser--wiki`. Иконки — из парсера или
-  скриншотов автора, поле `iconPath`.
+  Каталог боезапасов — расходники, используемые оружием мехов. Четвёртый
+  каталог MVP1 после мехов, weapons и equipment. Тянется по обкатанному
+  конвейеру `parser--wiki` + `parser--google-sheets` + `build-data` merger.
 
-  Shell-entity MVP1.
+  В zustand-стор импортируется merged JSON (`@build/data/ammo.json`) —
+  массив объектов `Ammo`. Merged JSON генерируется build-time скриптом
+  `scripts/build-data`: parsed-данные `data/ammo.json` мержатся с overlay
+  `data/overrides/ammo.yml`, каждая запись получает `_meta.overlayFields`
+  / `_meta.overlayUpdatedAt` / `_meta.overlaySource`.
+
+  Первичный источник — единственная страница вики `?page_id=3661`
+  («Боезапас»). Дочерних страниц нет — контент лежит прямо на 3661.
+  Все карточки размечены одним CSS-классом
+  `h2.wiki-header.wiki-item-type-bullet` — subtype-разбивки на UI нет.
+
+  **Ключевая связь с weapons.** У каждой ammo-записи в вики есть поле
+  «Группа орудий» — список совместимых типов оружия
+  («ПулеметПушка», «ГаубицаГранатомет», «Пулемет энргПушка энрг»).
+  Резолвер собирает этот список по отдельным `<a>`-тегам (склеенный
+  `.text()` даёт «ПулеметПушка», как в weapons resolver), маппит
+  человекочитаемые метки на CSS-slug из `data--weapons-catalog.category`
+  и кладёт в `Ammo.compatibleCategories: string[]`. По этому полю
+  строятся кросс-каталоговые ссылки: `ammo.compatibleCategories`
+  ↔ `weapon.category`.
+
+  Из 16 CSS-категорий weapons ammo покрывает 15 — у `laser` расходников
+  нет (безлимитная энергия). Соответствие семей ammo (первый сегмент
+  `name`) → CSS-slug weapons:
+    Пулемёт=bullet, Пушка=missile, Пулемёт крупнокалиберный=bullet-heavy,
+    Пулемёт энрг=bullet-eng, Пушка энрг=missile-eng, Мортира=mortar,
+    Гаубица=howitzer, Гаубица энрг=howitzer-eng, Гранатомет=launcher,
+    Гранатомет энрг=launcher-eng, РК=rk, РК энрг=rk-eng, Фазер=faser,
+    Эмпп=empp, Запчасти=repair.
+
+  Overlay `data/overrides/ammo.yml` синкается из Google Sheets (лист
+  `ammo`) через `parser--google-sheets`. Схема — TS-типы в
+  `src/types/ammo.ts`.
+
+  **Прирост мощности** (`powerBonus`). Каждое описание боеприпаса на
+  вики оканчивается на «+N мощности» или «стандартной мощности».
+  Резолвер вытаскивает число через regex `/\+(\d+)\s*мощности/`;
+  «стандартной мощности» → `powerBonus = 0`. Семантически это прирост
+  урона у обычных боеприпасов и прирост эффективности у «Запчастей»
+  (`family === 'repair'`) — UI разводит через label «Урон +N» /
+  «Ремонт +N».
 
 source_files:
-  data: data/ammo.json
+  parsed: data/ammo.json
+  overlay: data/overrides/ammo.yml
+  merged: .build/data/ammo.json # build-time
+  merger: scripts/build-data/index.ts
+  parser: scripts/parser-wiki/resolvers/ammo.ts
   types: src/types/ammo.ts
 
 wiki_source:
   page_ids: [3661]
   section: Предметы → Боезапасы
   data_flow: auto-parsed
+  page_structure: |
+    Одна страница 3661, ~58 карточек прямо в контенте. Каждая карточка —
+    `h2.wiki-header.wiki-item-type-bullet` + рядом `table.wiki-item-table`.
+    Поле «Группа орудий» — список совместимых типов оружия, оформлен
+    несколькими `<a>` внутри одного td без разделителя (склеивается
+    `.text()`). Резолвер должен читать `<a>`-теги по-отдельности.
+
+schema:
+  ammo_key_fields:
+    - key # уникальный идентификатор (translit от name)
+    - name # полное название с моделью («Пулемёт +25», «Гаубица энрг Стандарт»)
+    - model # семейный префикс без варианта («Пулемёт», «Гаубица энрг»)
+    - family # CSS-slug основного типа: bullet / missile / mortar / howitzer / launcher / bullet-heavy / bullet-eng / missile-eng / howitzer-eng / launcher-eng / rk / rk-eng / faser / empp / repair
+    - compatibleCategories # массив CSS-slug'ов совместимых типов оружия — ключевая связь с data--weapons-catalog.category
+    - slot # «Патроны» или «Запчасти» (для ремпушек)
+    - stats # AmmoStats
+  stats_fields:
+    required: [rounds, weight]
+  optional_top_level:
+    - requiredLevel
+    - powerBonus # прирост мощности (урон / ремонт), из description по regex; 0 для «Стандарт»
+    - buyPrice # { bonds?, regls? }
+    - sellPrice # { bonds?, regls? }
+    - description
+    - iconPath # data/icons/ammo/<key>.webp
+    - wikiUrl
+
+features_enabled: [json-source, typed-schema, overlay-merge]
+features_disabled: [network-fetch, dynamic-schema]
 
 manuals: []
-behaviors: []
+behaviors:
+  - data--ammo-catalog-loaded-from-json
+  - data--ammo-catalog-schema-typed
+  - view--ammo-catalog-renders-cards-grid # кросс-ссылка
 
 verified_note: |
-  Shell-entity создана в фазе docs MVP1. Реализация — при подключении
-  каталога через пилот-цепочку.
+  Data-слой закрыт 2026-07-13, расширен `powerBonus?: number` (прирост мощности из description). 58 записей: 14 «Стандарт» = 0, остальные +10/+15/+20/+25/+30/+35/+40. Семантически: у боеприпасов — прирост урона, у family=repair — прирост эффективности ремонта. Все behaviors verified 2026-07-13.

@@ -1,0 +1,32 @@
+id: view--ammo-catalog-opens-detail-on-click
+kind: behavior
+namespace: ui
+entities: [view--ammo-catalog]
+title: Клик по карточке в view--ammo-catalog открывает детализацию (AmmoDetail)
+
+scenarios:
+  - given: сетка карточек отрисована, пользователь видит нужный боезапас
+    when: пользователь кликает по карточке (не по звёздочке избранного)
+    then: |
+      открывается `AmmoDetail` для этой записи — MUI Dialog, аналогично
+      `RobotDetail`/`WeaponDetail`/`EquipmentDetail`. В детализации
+      показаны все поля `Ammo`: `family`/`compatibleCategories` (как
+      chip'ы «Совместимо с: Пулемёт, Пушка»), `slot`, `requiredLevel`,
+      все `stats` (`rounds`, `weight`), `buyPrice`/`sellPrice`,
+      `description`.
+
+  - given: AmmoDetail открыт
+    when: пользователь закрывает его (крестик / Esc / клик по фону)
+    then: возврат к сетке карточек, состояние стора не меняется.
+
+  - given: пользователь кликает по звёздочке избранного внутри карточки
+    when: обработчик события звёздочки перехватывает клик
+    then: |
+      детализация НЕ открывается, срабатывает только
+      `other--favorites-toggle-on-star-click`. Избранное для ammo —
+      отдельный набор ключей в отдельной IndexedDB-базе.
+
+verified: true
+verified_at: 2026-07-13
+verified_note: |
+  Проверено чтением кода: клик по `<CardActionArea>` в `AmmoCard.tsx` вызывает `onClick(item)` → `AmmoCatalog.tsx` ставит `selectedItem`, `AmmoDetail` рендерится как MUI Dialog (`item !== null`). Закрытие — стандартный `onClose` Dialog (крестик, Esc, клик по фону). Клик по звёздочке использует `e.stopPropagation()`, детализация не открывается. `AmmoDetail.tsx` показывает compatibleCategories (chip'ы), slot, requiredLevel, все stats (rounds/weight), buyPrice/sellPrice, description, key для копирования. Финальная визуальная проверка в браузере — пройдена юзером 2026-07-13.

@@ -27,7 +27,12 @@ catalog: [weapons] прогнать sync:sheets и наполнить лист w
 # data-слой с раздробленным на 7 subtype UI, 7 роутов, 7 плиток, audit
 # 16 behaviors + tile-behavior выполнен. Sheets: канон EQUIPMENT_COLUMNS
 # заведён; наполнение overlay — за редакторами.
-catalog: остальные 8 каталогов (ammo, items, blueprints, ore, currencies, skills, loot, components) — накатываются по паттерну weapons/equipment → фаза feat → equipment раскатан
+# ammo закрыт 2026-07-13: parser (58 записей из wiki 3661), схема с
+# compatibleCategories: string[] — связь ammo ↔ weapons.category в
+# данных; UI с PairToggleGroup по пересечению (7 пар + одиночка «Запчасти»,
+# laser исключён); audit 4 behaviors выполнен.
+refactor: [weapons/ammo] вынести `CATEGORY_LABELS` + `LABEL_TO_CATEGORY` из `WeaponsCatalog.tsx` в общую утилиту `src/utils/weaponCategories.ts` (сейчас дублируется в WeaponsCatalog и AmmoCatalog) → фаза refactor → ammo раскатан
+catalog: остальные 7 каталогов (items, blueprints, ore, currencies, skills, loot, components) — накатываются по паттерну weapons/equipment → фаза feat → ammo раскатан
 catalog: parser--wiki расширить конфиг на 9 оставшихся каталогов → фаза feat → парсер обобщён
 catalog: parser--google-sheets расширить на 9 листов Sheets → фаза feat → лист под каталог настроен
 ui: подключить view для остальных каталогов через catalog-примитивы (equipment, ammo, items, loot, blueprints, ore, components, currencies, skills) — плитки на CatalogsHubPage + stub-роуты уже готовы (`CatalogStubPage`), нужно заменить stub на реальный view в `src/components/catalogs/<slug>/` по мере готовности парсера/overlay каждого каталога → фаза feat → catalog-shell выделен, данные каталога загружаются
