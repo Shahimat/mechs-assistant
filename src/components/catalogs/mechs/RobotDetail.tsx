@@ -1,11 +1,12 @@
 import { useEffect, useState, type ReactNode } from 'react';
 import { Dialog, DialogContent, IconButton, Typography, Divider, Chip } from '@mui/material';
 import { Close } from '@mui/icons-material';
-import type { Robot, RobotPrice } from '../../../types/robot';
-import { isOverlaidField, isOverlaidPathOrChildren } from '../../../utils/overlay';
-import { resolveIconUrl } from '../../../utils/icons';
-import { OverlayBadge } from './OverlayBadge';
-import { OverlayPill } from '../../../styles/overlay';
+import type { Robot } from '@/types/robot';
+import type { Price } from '@/types/common';
+import { isOverlaidField, isOverlaidPathOrChildren } from '@/utils/overlay';
+import { resolveIconUrl } from '@/utils/icons';
+import { OverlayBadge } from '@/components/catalog/OverlayBadge';
+import { OverlayPill } from '@/styles/overlay';
 import {
   Title,
   Spacer,
@@ -37,7 +38,7 @@ function PriceRow({
 }: {
   robot: Robot;
   label: string;
-  price?: RobotPrice;
+  price?: Price;
   basePath: string;
 }) {
   const bondsOverlaid = isOverlaidField(robot, `${basePath}.bonds`);
@@ -66,12 +67,7 @@ function PriceRow({
         {parts.length === 0
           ? '—'
           : parts.flatMap((p, i) =>
-              i === 0
-                ? [p]
-                : [
-                    <PriceSeparator key={`sep-${i}`}>/</PriceSeparator>,
-                    p,
-                  ]
+              i === 0 ? [p] : [<PriceSeparator key={`sep-${i}`}>/</PriceSeparator>, p]
             )}
       </PriceParts>
     </Row>
@@ -133,7 +129,7 @@ export function RobotDetail({ robot, onClose }: RobotDetailProps) {
               {robot.name}
             </OverlayPill>
             <Spacer />
-            <OverlayBadge robot={robot} size="medium" />
+            <OverlayBadge entity={robot} size="medium" />
             <IconButton aria-label="Закрыть" onClick={onClose} size="small">
               <Close />
             </IconButton>
@@ -184,17 +180,47 @@ export function RobotDetail({ robot, onClose }: RobotDetailProps) {
             <Typography variant="subtitle2" gutterBottom>
               Характеристики
             </Typography>
-            <ValueRow robot={robot} path="stats.durability" label="Прочность" value={robot.stats.durability} />
+            <ValueRow
+              robot={robot}
+              path="stats.durability"
+              label="Прочность"
+              value={robot.stats.durability}
+            />
             <ValueRow robot={robot} path="stats.armor" label="Броня" value={robot.stats.armor} />
             <ValueRow robot={robot} path="stats.speed" label="Скорость" value={robot.stats.speed} />
-            <ValueRow robot={robot} path="stats.maxSpeed" label="Макс. скорость" value={robot.stats.maxSpeed} />
-            <ValueRow robot={robot} path="stats.capacity" label="Вместимость" value={robot.stats.capacity} />
+            <ValueRow
+              robot={robot}
+              path="stats.maxSpeed"
+              label="Макс. скорость"
+              value={robot.stats.maxSpeed}
+            />
+            <ValueRow
+              robot={robot}
+              path="stats.capacity"
+              label="Вместимость"
+              value={robot.stats.capacity}
+            />
             {robot.stats.maxCapacity != null && (
-              <ValueRow robot={robot} path="stats.maxCapacity" label="Макс. вместимость" value={robot.stats.maxCapacity} />
+              <ValueRow
+                robot={robot}
+                path="stats.maxCapacity"
+                label="Макс. вместимость"
+                value={robot.stats.maxCapacity}
+              />
             )}
-            <ValueRow robot={robot} path="stats.energyFields" label="Энергополя" value={robot.stats.energyFields} />
+            <ValueRow
+              robot={robot}
+              path="stats.energyFields"
+              label="Энергополя"
+              value={robot.stats.energyFields}
+            />
             {robot.stats.regenerationPerMinute != null && (
-              <ValueRow robot={robot} path="stats.regenerationPerMinute" label="Восстановление/мин" value={robot.stats.regenerationPerMinute} />
+              <ValueRow
+                robot={robot}
+                path="stats.regenerationPerMinute"
+                label="Восстановление/мин"
+                value={robot.stats.regenerationPerMinute}
+              />
             )}
             {robot.stats.additionalInvulnerability != null && (
               <ValueRow
@@ -219,12 +245,27 @@ export function RobotDetail({ robot, onClose }: RobotDetailProps) {
             </Typography>
             <PriceRow robot={robot} label="Покупка" price={robot.buyPrice} basePath="buyPrice" />
             <PriceRow robot={robot} label="Продажа" price={robot.sellPrice} basePath="sellPrice" />
-            <PriceRow robot={robot} label="Прокачка" price={robot.upgradePrice} basePath="upgradePrice" />
+            <PriceRow
+              robot={robot}
+              label="Прокачка"
+              price={robot.upgradePrice}
+              basePath="upgradePrice"
+            />
             {robot.upgradeReglPercent != null && (
-              <ValueRow robot={robot} path="upgradeReglPercent" label="Прокачка (реглы %)" value={`${robot.upgradeReglPercent}%`} />
+              <ValueRow
+                robot={robot}
+                path="upgradeReglPercent"
+                label="Прокачка (реглы %)"
+                value={`${robot.upgradeReglPercent}%`}
+              />
             )}
             {robot.itemUpgradePercent != null && (
-              <ValueRow robot={robot} path="itemUpgradePercent" label="Прокачка предметов" value={`${robot.itemUpgradePercent}%`} />
+              <ValueRow
+                robot={robot}
+                path="itemUpgradePercent"
+                label="Прокачка предметов"
+                value={`${robot.itemUpgradePercent}%`}
+              />
             )}
 
             {(robot.backSideDamage != null ||
@@ -236,13 +277,28 @@ export function RobotDetail({ robot, onClose }: RobotDetailProps) {
                   Модификаторы урона
                 </Typography>
                 {robot.backSideDamage != null && (
-                  <ValueRow robot={robot} path="backSideDamage" label="Урон в спину/бок" value={`${robot.backSideDamage}%`} />
+                  <ValueRow
+                    robot={robot}
+                    path="backSideDamage"
+                    label="Урон в спину/бок"
+                    value={`${robot.backSideDamage}%`}
+                  />
                 )}
                 {robot.howitzerDamage != null && (
-                  <ValueRow robot={robot} path="howitzerDamage" label="Урон от гаубиц" value={`${robot.howitzerDamage}%`} />
+                  <ValueRow
+                    robot={robot}
+                    path="howitzerDamage"
+                    label="Урон от гаубиц"
+                    value={`${robot.howitzerDamage}%`}
+                  />
                 )}
                 {robot.missChance != null && (
-                  <ValueRow robot={robot} path="missChance" label="Вероятность промаха" value={`${robot.missChance}%`} />
+                  <ValueRow
+                    robot={robot}
+                    path="missChance"
+                    label="Вероятность промаха"
+                    value={`${robot.missChance}%`}
+                  />
                 )}
               </>
             )}
@@ -255,10 +311,20 @@ export function RobotDetail({ robot, onClose }: RobotDetailProps) {
                   Особенности
                 </Typography>
                 {robot.extraSlots && robot.extraSlots.length > 0 && (
-                  <ValueRow robot={robot} path="extraSlots" label="Доп. слоты" value={robot.extraSlots.join(', ')} />
+                  <ValueRow
+                    robot={robot}
+                    path="extraSlots"
+                    label="Доп. слоты"
+                    value={robot.extraSlots.join(', ')}
+                  />
                 )}
                 {robot.features && robot.features.length > 0 && (
-                  <ValueRow robot={robot} path="features" label="Особенности" value={robot.features.join(', ')} />
+                  <ValueRow
+                    robot={robot}
+                    path="features"
+                    label="Особенности"
+                    value={robot.features.join(', ')}
+                  />
                 )}
               </>
             )}

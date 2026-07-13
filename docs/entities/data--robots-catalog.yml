@@ -1,7 +1,7 @@
 id: data--robots-catalog
 kind: entity
 namespace: catalog
-version: "1.x"
+version: '1.x'
 
 description: |
   Каталог мехов (роботов) игры Мехи.Земля. Единый источник данных
@@ -30,27 +30,28 @@ description: |
 source_files:
   parsed: data/robots.json
   overlay: data/overrides/robots.yml
-  merged: .build/data/robots.json      # генерируется build-time, импортируется стором
+  merged: .build/data/robots.json # генерируется build-time, импортируется стором
   merger: scripts/build-data/index.ts
   types: src/types/robot.ts
 
 wiki_source:
   page_ids: [3301, 3088, 3099, 3102]
   section: Роботы
-  data_flow: auto-parsed          # без гибрида, всё из парсера + иконки
+  data_flow: auto-parsed # без гибрида, всё из парсера + иконки
 
 schema:
   robot_types: [боец, транспортник, добытчик, разведчик]
   robot_key_fields:
-    - key            # уникальный идентификатор
-    - name           # название с уровнем
-    - model          # модель робота
-    - type           # RobotType
-    - requiredLevel  # требуемый уровень персонажа
-    - stats          # RobotStats
+    - key # уникальный идентификатор
+    - name # название с уровнем
+    - model # модель робота
+    - type # RobotType
+    - requiredLevel # требуемый уровень персонажа
+    - stats # RobotStats
   stats_fields:
     required: [durability, capacity, speed, maxSpeed, armor, energyFields]
-    optional: [maxCapacity, regenerationPerMinute, additionalInvulnerability, additionalAcceleration]
+    optional:
+      [maxCapacity, regenerationPerMinute, additionalInvulnerability, additionalAcceleration]
   optional_top_level:
     - buyPrice
     - sellPrice
@@ -63,7 +64,7 @@ schema:
     - howitzerDamage
     - missChance
     - description
-    - imageUrl        # соответствует iconPath из convention data-overlay
+    - iconPath # data/icons/mechs/<key>.webp (пишет parser--wiki)
     - wikiUrl
 
 features_enabled: [json-source, typed-schema]
@@ -73,4 +74,4 @@ manuals: []
 behaviors:
   - data--robots-catalog-loaded-from-json
   - data--robots-catalog-schema-typed
-  - view--robots-catalog-renders-cards-grid   # кросс-ссылка: карточный view читает данные каталога
+  - view--robots-catalog-renders-cards-grid # кросс-ссылка: карточный view читает данные каталога

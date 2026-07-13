@@ -10,21 +10,21 @@ import oreIcon from '@img/catalog-icons/ore.webp';
 import componentsIcon from '@img/catalog-icons/components.webp';
 import currenciesIcon from '@img/catalog-icons/currencies.webp';
 import skillsIcon from '@img/catalog-icons/skills.webp';
-import { TileGrid } from '../components/tiles/TileGrid';
-import { Tile } from '../components/tiles/Tile';
+import { TileGrid } from '@/components/tiles/TileGrid';
+import { Tile } from '@/components/tiles/Tile';
 
 const CATALOGS: Array<{ to: string; title: string; icon: string }> = [
-  { to: '/catalogs/mechs-catalog',       title: 'Мехи',          icon: mechsIcon },
-  { to: '/catalogs/weapons-catalog',     title: 'Оружие',        icon: weaponsIcon },
-  { to: '/catalogs/equipment-catalog',   title: 'Оборудование',  icon: equipmentIcon },
-  { to: '/catalogs/ammo-catalog',        title: 'Боезапасы',     icon: ammoIcon },
-  { to: '/catalogs/items-catalog',       title: 'Предметы',      icon: itemsIcon },
-  { to: '/catalogs/loot-catalog',        title: 'Лут',           icon: lootIcon },
-  { to: '/catalogs/blueprints-catalog',  title: 'Чертежи',       icon: blueprintsIcon },
-  { to: '/catalogs/ore-catalog',         title: 'Ископаемое',    icon: oreIcon },
-  { to: '/catalogs/components-catalog',  title: 'Компоненты',    icon: componentsIcon },
-  { to: '/catalogs/currencies-catalog',  title: 'Валюта',        icon: currenciesIcon },
-  { to: '/catalogs/skills-catalog',      title: 'Навыки',        icon: skillsIcon },
+  { to: '/catalogs/mechs-catalog', title: 'Мехи', icon: mechsIcon },
+  { to: '/catalogs/weapons-catalog', title: 'Оружие', icon: weaponsIcon },
+  { to: '/catalogs/equipment-catalog', title: 'Оборудование', icon: equipmentIcon },
+  { to: '/catalogs/ammo-catalog', title: 'Боезапасы', icon: ammoIcon },
+  { to: '/catalogs/items-catalog', title: 'Предметы', icon: itemsIcon },
+  { to: '/catalogs/loot-catalog', title: 'Лут', icon: lootIcon },
+  { to: '/catalogs/blueprints-catalog', title: 'Чертежи', icon: blueprintsIcon },
+  { to: '/catalogs/ore-catalog', title: 'Ископаемое', icon: oreIcon },
+  { to: '/catalogs/components-catalog', title: 'Компоненты', icon: componentsIcon },
+  { to: '/catalogs/currencies-catalog', title: 'Валюта', icon: currenciesIcon },
+  { to: '/catalogs/skills-catalog', title: 'Навыки', icon: skillsIcon },
 ];
 
 export function CatalogsHubPage() {

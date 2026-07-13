@@ -1,30 +1,76 @@
 id: data--weapons-catalog
 kind: entity
 namespace: catalog
-version: "0.x"
+version: "1.x"
 
 description: |
   Каталог вооружения — оружие, устанавливаемое в основные слоты мехов.
-  Первичный источник — вики `new.mechs.su/?page_id=3341` (Предметы →
-  Вооружение). Наполнение — `parser--wiki`. Иконки — из парсера или
-  скриншотов автора, поле `iconPath` в схеме сущности.
+  Второй каталог MVP1 (после мехов) — первый реальный тест
+  переиспользуемого конвейера `parser--wiki` + `parser--google-sheets`
+  + `build-data` merger.
 
-  Shell-entity MVP1: файл заведён, схема/данные/UI появятся при
-  подключении каталога через пилот-цепочку (после обкатки на мехах).
+  В zustand-стор импортируется merged JSON (`@build/data/weapons.json`)
+  — массив объектов `Weapon` без сетевого слоя. Merged JSON генерируется
+  build-time скриптом `scripts/build-data` (общий для всех каталогов):
+  parsed-данные `data/weapons.json` мержатся с overlay
+  `data/overrides/weapons.yml`, каждая запись получает
+  `_meta.overlayFields`, `_meta.overlayUpdatedAt`, `_meta.overlaySource`
+  — на них UI строит подсветку уточнённых полей.
+
+  Первичный источник — вики `new.mechs.su/?page_id=3341`
+  («Вооружение»). Страница 3341 — оглавление, ссылается на подстраницы
+  категорий (Пушка = 3338, и т.д.). На каждой подстранице — таблицы
+  `wiki-item-table.wiki-item-type-weapon.wiki-item-weapon-<category>`
+  с полями оружия. Категория (`missile`, `cannon`, `machinegun`,
+  `railgun`, …) читается из CSS-класса таблицы.
+
+  Overlay `data/overrides/weapons.yml` синкается из Google Sheets
+  (лист `weapons`) через `parser--google-sheets`. Схема — TS-типы
+  в `src/types/weapon.ts`.
 
 source_files:
-  data: data/weapons.json                # появится после первого прогона parser--wiki
-  types: src/types/weapon.ts             # появится в фазе feat подключения каталога
+  parsed: data/weapons.json
+  overlay: data/overrides/weapons.yml
+  merged: .build/data/weapons.json      # build-time
+  merger: scripts/build-data/index.ts
+  parser: scripts/parser-wiki/resolvers/weapons.ts   # специфичный резолвер
+  types: src/types/weapon.ts
 
 wiki_source:
-  page_ids: [3341]
-  section: Предметы → Вооружение
-  data_flow: auto-parsed
+  root_page_id: 3341                    # оглавление «Вооружение»
+  root_section: Предметы → Вооружение
+  data_flow: auto-parsed                # чистый парсер, гибридным не является
+  page_structure: |
+    root(3341) — оглавление, только ссылки на подстраницы категорий.
+    Подстраницы (3338, 3347, 3349, ...) содержат таблицы
+    `wiki-item-table.wiki-item-type-weapon.wiki-item-weapon-<category>`,
+    по одной таблице на единицу оружия. Категория берётся из CSS-класса.
+
+schema:
+  weapon_key_fields:
+    - key            # уникальный идентификатор (translit от name)
+    - name           # полное название с моделью/уровнем
+    - model          # модель без уровня
+    - category       # missile / cannon / machinegun / railgun / ... (из CSS)
+    - group          # «Пулемет» / «Пушка» / ... (из поля таблицы)
+    - slot           # «Орудие» / другой слот (если найдётся)
+    - stats          # WeaponStats
+  stats_fields:
+    required: [damageMin, damageMax, range, energyConsumption, rateOfFire, durability, weight]
+    optional: [ammo]                    # у некоторого оружия боезапас может отсутствовать / быть бесконечным
+  optional_top_level:
+    - requiredLevel
+    - buyPrice                          # { bonds?, regls? }
+    - sellPrice                         # { bonds?, regls? }
+    - craftFromBlueprints               # список названий чертежей
+    - description
+    - iconPath                          # data/icons/weapons/<key>.webp
+    - wikiUrl
+
+features_enabled: [json-source, typed-schema, overlay-merge]
+features_disabled: [network-fetch, dynamic-schema]
 
 manuals: []
-behaviors: []                            # появятся при подключении сущности
-
-verified_note: |
-  Shell-entity создана в фазе docs MVP1 (расширение справочного слоя).
-  Схема, парсер-конфиг, типы и UI — при подключении каталога через
-  пилот-цепочку (см. context/roadmap.md, MVP1, подход C).
+behaviors:
+  - data--weapons-catalog-loaded-from-json
+  - view--weapons-catalog-renders-cards-grid   # кросс-ссылка: view читает данные каталога

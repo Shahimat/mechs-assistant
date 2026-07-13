@@ -19,9 +19,7 @@ async function main() {
     throw new Error('MECHS_OVERLAY_SPREADSHEET_ID не задан');
   }
   if (!SA_KEY_PATH && !SA_KEY_JSON) {
-    throw new Error(
-      'GSHEETS_SA_KEY_PATH (локально) или GSHEETS_SA_KEY (CI) не заданы'
-    );
+    throw new Error('GSHEETS_SA_KEY_PATH (локально) или GSHEETS_SA_KEY (CI) не заданы');
   }
 
   const auth = new google.auth.GoogleAuth({
@@ -35,9 +33,9 @@ async function main() {
     console.log(`syncing sheet: ${sheetName} → ${catalogId}`);
     const res = await sheets.spreadsheets.values.get({
       spreadsheetId: SPREADSHEET_ID,
-      // A:AZ — до 52 колонок. Для мехов сейчас ~33, запас на будущее.
+      // A:AZ — до 52 колонок. Для мехов сейчас ~32, запас на будущее.
       // Range A:Z обрезал бы колонки после Z (description, extraSlots,
-      // features, imageUrl попадают в AA+).
+      // features, wikiUrl попадают в AA+).
       range: `${sheetName}!A:AZ`,
     });
     const rows = (res.data.values ?? []) as string[][];
@@ -117,19 +115,14 @@ function parseValue(raw: string, fieldName?: string): unknown {
   return raw;
 }
 
-async function writeOverrides(
-  outPath: string,
-  sheetName: string,
-  data: Overrides
-): Promise<void> {
+async function writeOverrides(outPath: string, sheetName: string, data: Overrides): Promise<void> {
   await fs.mkdir(path.dirname(outPath), { recursive: true });
   const header =
     `# АВТО-СГЕНЕРИРОВАНО из Google Sheets (лист: ${sheetName})\n` +
     `# Правки — в Sheets, следующий синк перезапишет этот файл.\n` +
     `# См. context/conventions/data-overlay.yml.\n\n`;
-  const body = Object.keys(data).length > 0
-    ? yamlDump(data, { lineWidth: 100, noRefs: true })
-    : '{}\n';
+  const body =
+    Object.keys(data).length > 0 ? yamlDump(data, { lineWidth: 100, noRefs: true }) : '{}\n';
   await fs.writeFile(outPath, header + body, 'utf-8');
   console.log(`  → ${outPath} (${Object.keys(data).length} записей)`);
 }

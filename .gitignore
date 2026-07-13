@@ -41,6 +41,9 @@ lerna-debug.log*
 # Rspack
 .rspack
 
+# TypeScript incremental build cache (генерируется при tsc --build / composite)
+*.tsbuildinfo
+
 # Build-time merged JSON (генерируется scripts/build-data перед rspack build)
 .build
 

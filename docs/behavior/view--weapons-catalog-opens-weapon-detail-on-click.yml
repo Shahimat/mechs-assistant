@@ -1,0 +1,41 @@
+id: view--weapons-catalog-opens-weapon-detail-on-click
+kind: behavior
+namespace: ui
+entities: [view--weapons-catalog]
+title: Клик по карточке оружия открывает детализацию (WeaponDetail)
+
+scenarios:
+  - given: сетка карточек отрисована, пользователь видит нужное оружие
+    when: пользователь кликает по карточке (не по звёздочке избранного)
+    then: |
+      открывается WeaponDetail для этого оружия — MUI Dialog (модалка),
+      аналогично RobotDetail. В детализации отображаются: полный набор
+      полей Weapon (stats, buyPrice, sellPrice, craftFromBlueprints,
+      description и т.д.).
+
+  - given: WeaponDetail открыт
+    when: пользователь закрывает его (крестик / клавиша Esc / клик по фону)
+    then: возвращается к сетке карточек, состояние стора не меняется.
+
+  - given: пользователь кликает по звёздочке избранного внутри карточки
+    when: обработчик события звёздочки перехватывает клик
+    then: |
+      детализация НЕ открывается, срабатывает только
+      other--favorites-toggle-on-star-click (переиспользованный
+      механизм — тот же store, что и для мехов, но с другим ключом,
+      либо отдельная механика favorites для weapons).
+
+verified: true
+verified_at: 2026-07-12
+verified_note: |
+  Проверено чтением кода: клик по `<CardActionArea>` в `WeaponCard.tsx:63`
+  вызывает `onClick(weapon)` → `WeaponsCatalog.tsx:63` ставит
+  `selectedWeapon`, `WeaponDetail` рендерится как MUI Dialog
+  (`WeaponDetail.tsx:118-121` с `open={weapon !== null}`). Закрытие —
+  стандартный `onClose` Dialog (крестик, Esc, клик по фону). Клик по
+  звёздочке использует `e.stopPropagation()` (`WeaponCard.tsx:47-50`),
+  детализация не открывается. WeaponDetail показывает полный набор
+  Weapon: group/category/slot/уровень + все stats
+  (damageMin/damageMax/range/minRange/rateOfFire/energyConsumption/
+  ammo/durability/weight) + buyPrice/sellPrice + craftFromBlueprints
+  + description.

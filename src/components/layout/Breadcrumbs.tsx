@@ -1,22 +1,13 @@
 import { Fragment } from 'react';
-import { useMatches, Link as RouterLink } from 'react-router-dom';
+import { useMatches, Link as RouterLink, type UIMatch } from 'react-router-dom';
 import { Breadcrumbs as MuiBreadcrumbs, Typography, Link } from '@mui/material';
 import { NavigateNext } from '@mui/icons-material';
 
-type CrumbMatch = {
-  id: string;
-  pathname: string;
-  handle: { crumb: string };
-};
+type CrumbHandle = { crumb: string };
 
-function hasCrumbHandle(m: unknown): m is CrumbMatch {
-  return (
-    typeof m === 'object' &&
-    m !== null &&
-    typeof (m as { handle?: unknown }).handle === 'object' &&
-    (m as { handle?: { crumb?: unknown } }).handle !== null &&
-    typeof (m as { handle: { crumb?: unknown } }).handle.crumb === 'string'
-  );
+function hasCrumbHandle(m: UIMatch): m is UIMatch<unknown, CrumbHandle> {
+  const handle = m.handle as { crumb?: unknown } | null | undefined;
+  return typeof handle === 'object' && handle !== null && typeof handle.crumb === 'string';
 }
 
 export function Breadcrumbs() {
@@ -25,10 +16,7 @@ export function Breadcrumbs() {
   if (crumbs.length === 0) return null;
 
   return (
-    <MuiBreadcrumbs
-      separator={<NavigateNext fontSize="small" />}
-      aria-label="breadcrumbs"
-    >
+    <MuiBreadcrumbs separator={<NavigateNext fontSize="small" />} aria-label="breadcrumbs">
       {crumbs.map((crumb, i) => {
         const isLast = i === crumbs.length - 1;
         return (
@@ -38,12 +26,7 @@ export function Breadcrumbs() {
                 {crumb.handle.crumb}
               </Typography>
             ) : (
-              <Link
-                component={RouterLink}
-                to={crumb.pathname}
-                underline="hover"
-                color="inherit"
-              >
+              <Link component={RouterLink} to={crumb.pathname} underline="hover" color="inherit">
                 {crumb.handle.crumb}
               </Link>
             )}

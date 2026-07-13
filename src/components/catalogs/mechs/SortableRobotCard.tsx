@@ -2,7 +2,7 @@ import { memo } from 'react';
 import { useSortable } from '@dnd-kit/sortable';
 import { CSS } from '@dnd-kit/utilities';
 import { RobotCard } from './RobotCard';
-import type { Robot } from '../../../types/robot';
+import type { Robot } from '@/types/robot';
 import { SortableWrapper } from './SortableRobotCard.styles';
 
 interface SortableRobotCardProps {
@@ -11,13 +11,10 @@ interface SortableRobotCardProps {
   onClick: (robot: Robot) => void;
 }
 
-function SortableRobotCardImpl({
-  robot,
-  onToggleFavorite,
-  onClick,
-}: SortableRobotCardProps) {
-  const { attributes, listeners, setNodeRef, transform, transition, isDragging } =
-    useSortable({ id: robot.key });
+function SortableRobotCardImpl({ robot, onToggleFavorite, onClick }: SortableRobotCardProps) {
+  const { attributes, listeners, setNodeRef, transform, transition, isDragging } = useSortable({
+    id: robot.key,
+  });
 
   return (
     <SortableWrapper
@@ -30,12 +27,7 @@ function SortableRobotCardImpl({
       {...attributes}
       {...listeners}
     >
-      <RobotCard
-        robot={robot}
-        isFavorite
-        onToggleFavorite={onToggleFavorite}
-        onClick={onClick}
-      />
+      <RobotCard robot={robot} isFavorite onToggleFavorite={onToggleFavorite} onClick={onClick} />
     </SortableWrapper>
   );
 }

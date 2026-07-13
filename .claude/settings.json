@@ -1,0 +1,30 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-settings.json",
+  "hooks": {
+    "PostToolUse": [
+      {
+        "matcher": "Write|Edit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "f=$(jq -r '.tool_input.file_path // .tool_response.filePath // empty'); [ -n \"$f\" ] && npx prettier --write --ignore-unknown \"$f\" >/dev/null 2>&1 || true",
+            "statusMessage": "prettier --write",
+            "timeout": 15
+          },
+          {
+            "type": "command",
+            "command": "f=$(jq -r '.tool_input.file_path // .tool_response.filePath // empty'); case \"$f\" in *.ts|*.tsx) npx tsc --noEmit -p tsconfig.json ;; esac",
+            "statusMessage": "tsc --noEmit",
+            "timeout": 60
+          },
+          {
+            "type": "command",
+            "command": "f=$(jq -r '.tool_input.file_path // .tool_response.filePath // empty'); case \"$f\" in *.ts|*.tsx) npx eslint \"$f\" ;; esac",
+            "statusMessage": "eslint",
+            "timeout": 30
+          }
+        ]
+      }
+    ]
+  }
+}

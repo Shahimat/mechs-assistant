@@ -1,30 +1,40 @@
-import type { Robot } from '../types/robot';
+/**
+ * Утилиты работы с overlay-мета-полями сущностей каталогов.
+ * Работают для любой сущности с `_meta.overlayFields` (Robot, Weapon, …).
+ */
 
-export function hasAnyOverlay(robot: Robot): boolean {
-  return (robot._meta?.overlayFields?.length ?? 0) > 0;
+interface EntityWithMeta {
+  _meta?: {
+    overlayFields?: string[];
+    overlayUpdatedAt?: string;
+    overlaySource?: string;
+  };
 }
 
-export function isOverlaidField(robot: Robot, fieldPath: string): boolean {
-  return robot._meta?.overlayFields?.includes(fieldPath) ?? false;
+export function hasAnyOverlay(entity: EntityWithMeta): boolean {
+  return (entity._meta?.overlayFields?.length ?? 0) > 0;
+}
+
+export function isOverlaidField(entity: EntityWithMeta, fieldPath: string): boolean {
+  return entity._meta?.overlayFields?.includes(fieldPath) ?? false;
 }
 
 /**
  * Проверяет, что путь или любой его дочерний путь переопределён.
- * Пример: `isOverlaidPathOrChildren(robot, 'buyPrice')` вернёт true,
+ * Пример: `isOverlaidPathOrChildren(entity, 'buyPrice')` вернёт true,
  * если в overlayFields есть `buyPrice.bonds`, `buyPrice.regls` или сам
  * `buyPrice`.
  */
-export function isOverlaidPathOrChildren(robot: Robot, fieldPath: string): boolean {
+export function isOverlaidPathOrChildren(entity: EntityWithMeta, fieldPath: string): boolean {
   return (
-    robot._meta?.overlayFields?.some(
-      (f) => f === fieldPath || f.startsWith(`${fieldPath}.`)
-    ) ?? false
+    entity._meta?.overlayFields?.some((f) => f === fieldPath || f.startsWith(`${fieldPath}.`)) ??
+    false
   );
 }
 
 /** Форматирует дату overlay в русский вид. Пустая строка если даты нет. */
-export function formatOverlayDate(robot: Robot): string {
-  const iso = robot._meta?.overlayUpdatedAt;
+export function formatOverlayDate(entity: EntityWithMeta): string {
+  const iso = entity._meta?.overlayUpdatedAt;
   if (!iso) return '';
   const date = new Date(iso);
   if (Number.isNaN(date.getTime())) return '';
@@ -40,6 +50,6 @@ export function formatOverlayDate(robot: Robot): string {
  * По решению юзера — только дата, без пояснений.
  * Если даты нет — пустая строка (Tooltip не появится).
  */
-export function overlayTooltip(robot: Robot): string {
-  return formatOverlayDate(robot);
+export function overlayTooltip(entity: EntityWithMeta): string {
+  return formatOverlayDate(entity);
 }

@@ -15,7 +15,7 @@ namespaces:
       - id: data--robots-catalog
         one_liner: Каталог мехов (parsed data/robots.json + overlay data/overrides/robots.yml → merged .build/data/robots.json → типы Robot). Пилот-каталог MVP1 — закрыт 2026-07-12.
       - id: data--weapons-catalog
-        one_liner: Каталог вооружения — оружие в основные слоты мехов (wiki 3341). Shell-entity MVP1.
+        one_liner: Каталог вооружения (parsed data/weapons.json + overlay data/overrides/weapons.yml → merged .build/data/weapons.json). Второй каталог MVP1, стартует 2026-07-12.
       - id: data--equipment-catalog
         one_liner: Каталог оборудования — Доп. оборудование + Чипы + Энергоснабжение + Защита (wiki 3682/3657/3106/3108). Shell-entity MVP1.
       - id: data--ammo-catalog
@@ -43,6 +43,8 @@ namespaces:
         one_liner: Каталог мехов загружается из data/robots.json при инициализации стора.
       - id: data--robots-catalog-schema-typed
         one_liner: Каждая запись robots.json соответствует типу Robot (TS strict).
+      - id: data--weapons-catalog-loaded-from-json
+        one_liner: Каталог оружия загружается из merged .build/data/weapons.json при инициализации стора.
 
   ui:
     description: Компоненты интерфейса — app shell, роутинг, плитки, страницы-хабы, каталоги.
@@ -55,6 +57,8 @@ namespaces:
         one_liner: Хаб каталогов `/catalogs` — сетка плиток по одной на каталог (пока «Мехи»).
       - id: view--robots-catalog
         one_liner: Карточный каталог мехов `/catalogs/mechs-catalog` — собран из примитивов other--catalog-shell.
+      - id: view--weapons-catalog
+        one_liner: Карточный каталог оружия `/catalogs/weapons-catalog` — второй view MVP1, все оружие без фильтров на первый заход.
       - id: other--tile
         one_liner: Квадратная плитка навигации с hover-scale, active-press, focus-ring, слотом для иконки.
       - id: other--catalog-shell
@@ -72,6 +76,10 @@ namespaces:
         one_liner: view--robots-catalog рендерит сетку RobotCard из data--robots-catalog.
       - id: view--robots-catalog-opens-mech-detail-on-click
         one_liner: Клик по карточке меха открывает детализацию (RobotDetail).
+      - id: view--weapons-catalog-renders-cards-grid
+        one_liner: view--weapons-catalog рендерит сетку WeaponCard из data--weapons-catalog (без фильтров на первый заход).
+      - id: view--weapons-catalog-opens-weapon-detail-on-click
+        one_liner: Клик по карточке оружия открывает детализацию (WeaponDetail).
 
   comparison:
     description: Механики сравнения и приоритизации мехов (избранное, будущий боевой калькулятор).

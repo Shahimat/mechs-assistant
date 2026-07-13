@@ -17,9 +17,7 @@ export function useLevelRangeFilter<T>({
     if (items.length === 0) {
       return { min: defaultRange[0], max: defaultRange[1] };
     }
-    const levels = items
-      .map(getLevel)
-      .filter((l): l is number => typeof l === 'number');
+    const levels = items.map(getLevel).filter((l): l is number => typeof l === 'number');
     if (levels.length === 0) {
       return { min: defaultRange[0], max: defaultRange[1] };
     }
@@ -32,10 +30,7 @@ export function useLevelRangeFilter<T>({
     }
   }, [items.length, min, max, range]);
 
-  const applied = useMemo<[number, number]>(
-    () => range ?? [min, max],
-    [range, min, max]
-  );
+  const applied = useMemo<[number, number]>(() => range ?? [min, max], [range, min, max]);
   const isActive = applied[0] !== min || applied[1] !== max;
   const reset = useCallback(() => setRange([min, max]), [min, max]);
 

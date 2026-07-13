@@ -126,8 +126,8 @@ jobs:
   sync-wiki:
     runs-on: ubuntu-latest
     permissions:
-      contents: write        # для создания branch
-      pull-requests: write   # для открытия PR
+      contents: write # для создания branch
+      pull-requests: write # для открытия PR
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4

@@ -1,0 +1,56 @@
+id: view--weapons-catalog
+kind: entity
+namespace: ui
+version: '0.x'
+
+description: |
+  Карточный каталог оружия — второй view MVP1 после мехов. Сетка
+  карточек с иллюстрацией, ключевыми параметрами и звёздочкой
+  избранного. По клику на карточке открывается детализация
+  (MUI Dialog).
+
+  Монтируется по маршруту `/catalogs/weapons-catalog` через
+  `WeaponsCatalogPage` — тонкая обёртка-страница поверх `WeaponsCatalog`.
+  Собирается из примитивов `other--catalog-shell` (`CatalogHeader`,
+  `CatalogSection`, `CatalogGrid`, `FavoritesDnDSection`, `SearchField`)
+  плюс weapons-специфичные компоненты (`WeaponCard`, `WeaponDetail`,
+  `SortableWeaponCard`).
+
+  Фильтры (2026-07-12): по группе орудий (multi-select ToggleButtonGroup
+  — «Пулемет», «Пушка», «Гаубица», «Гранатомет», «Мортира»,
+  «Ракетница» и т.д.; одно оружие может входить в несколько групп —
+  используется `useTypeFilter.matchesAny`) и по требуемому уровню
+  (Slider через `useLevelRangeFilter`). Дальнейшие фильтры (категория
+  из CSS, слот, дальность, урон) можно расширить, когда станет ясно,
+  какая гранулярность действительно нужна.
+
+  Читает данные каталога из `data--weapons-catalog` через
+  `useWeaponsStore` (параллель `useRobotsStore`), использует общую
+  механику избранного `other--favorites` (список ключей + IndexedDB).
+
+source_files:
+  page: src/pages/catalogs/WeaponsCatalogPage.tsx # роутовая обёртка (/catalogs/weapons-catalog)
+  view: src/components/catalogs/weapons/WeaponsCatalog.tsx
+  card: src/components/catalogs/weapons/WeaponCard.tsx
+  detail: src/components/catalogs/weapons/WeaponDetail.tsx
+  sortable_card: src/components/catalogs/weapons/SortableWeaponCard.tsx
+
+features_enabled:
+  - cards-grid
+  - weapon-detail-view
+  - favorites-star
+  - favorites-dnd
+  - overlay-highlight # общий OverlayBadge
+  - search-in-section
+  - filter-group # multi-select по группе орудий (matchesAny)
+  - filter-level-range # Slider по requiredLevel
+
+features_disabled:
+  - filter-category # CSS-slug (missile/cannon/…); группа юзер-понятнее, оставили её
+  - filter-slot # у всех оружий сейчас один слот «Орудие», не даёт разделения
+
+manuals: []
+behaviors:
+  - view--weapons-catalog-renders-cards-grid
+  - view--weapons-catalog-opens-weapon-detail-on-click
+  - other--favorites-toggle-on-star-click # кросс-ссылка: звёздочка живёт внутри карточки оружия

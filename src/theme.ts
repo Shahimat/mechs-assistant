@@ -17,7 +17,6 @@ export const theme = extendTheme({
       },
     },
   },
-  defaultColorScheme: 'dark',
   typography: {
     fontFamily: [
       '-apple-system',

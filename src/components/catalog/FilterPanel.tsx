@@ -14,12 +14,7 @@ export function FilterPanel({ children, filtersActive, onReset }: FilterPanelPro
     <Panel>
       {children}
       <ResetButtonSlot active={filtersActive}>
-        <Button
-          size="small"
-          variant="text"
-          startIcon={<FilterAltOff />}
-          onClick={onReset}
-        >
+        <Button size="small" variant="text" startIcon={<FilterAltOff />} onClick={onReset}>
           Сбросить
         </Button>
       </ResetButtonSlot>

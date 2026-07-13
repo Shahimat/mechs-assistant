@@ -3,6 +3,7 @@ import { AppLayout } from './components/layout/AppLayout';
 import { HomePage } from './pages/HomePage';
 import { CatalogsHubPage } from './pages/CatalogsHubPage';
 import { MechsCatalogPage } from './pages/catalogs/MechsCatalogPage';
+import { WeaponsCatalogPage } from './pages/catalogs/WeaponsCatalogPage';
 import { CatalogStubPage } from './pages/catalogs/CatalogStubPage';
 
 const basename = process.env.NODE_ENV === 'production' ? '/mechs-assistant' : undefined;
@@ -14,16 +15,15 @@ interface CatalogStub {
 }
 
 const STUB_CATALOGS: CatalogStub[] = [
-  { path: 'weapons-catalog',    crumb: 'Оружие',      title: 'Каталог оружия' },
-  { path: 'equipment-catalog',  crumb: 'Оборудование', title: 'Каталог оборудования' },
-  { path: 'ammo-catalog',       crumb: 'Боезапасы',   title: 'Каталог боезапасов' },
-  { path: 'items-catalog',      crumb: 'Предметы',    title: 'Каталог используемых предметов' },
-  { path: 'loot-catalog',       crumb: 'Лут',         title: 'Каталог лута' },
-  { path: 'blueprints-catalog', crumb: 'Чертежи',     title: 'Каталог чертежей' },
-  { path: 'ore-catalog',        crumb: 'Ископаемое',  title: 'Каталог полезных ископаемых' },
-  { path: 'components-catalog', crumb: 'Компоненты',  title: 'Каталог компонентов' },
-  { path: 'currencies-catalog', crumb: 'Валюта',      title: 'Справочник валют' },
-  { path: 'skills-catalog',     crumb: 'Навыки',      title: 'Каталог навыков' },
+  { path: 'equipment-catalog', crumb: 'Оборудование', title: 'Каталог оборудования' },
+  { path: 'ammo-catalog', crumb: 'Боезапасы', title: 'Каталог боезапасов' },
+  { path: 'items-catalog', crumb: 'Предметы', title: 'Каталог используемых предметов' },
+  { path: 'loot-catalog', crumb: 'Лут', title: 'Каталог лута' },
+  { path: 'blueprints-catalog', crumb: 'Чертежи', title: 'Каталог чертежей' },
+  { path: 'ore-catalog', crumb: 'Ископаемое', title: 'Каталог полезных ископаемых' },
+  { path: 'components-catalog', crumb: 'Компоненты', title: 'Каталог компонентов' },
+  { path: 'currencies-catalog', crumb: 'Валюта', title: 'Справочник валют' },
+  { path: 'skills-catalog', crumb: 'Навыки', title: 'Каталог навыков' },
 ];
 
 export const router = createBrowserRouter(
@@ -42,6 +42,11 @@ export const router = createBrowserRouter(
               path: 'mechs-catalog',
               element: <MechsCatalogPage />,
               handle: { crumb: 'Мехи' },
+            },
+            {
+              path: 'weapons-catalog',
+              element: <WeaponsCatalogPage />,
+              handle: { crumb: 'Оружие' },
             },
             ...STUB_CATALOGS.map((c) => ({
               path: c.path,

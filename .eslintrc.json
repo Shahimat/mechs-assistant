@@ -24,8 +24,27 @@
     "react/react-in-jsx-scope": "off",
     "react/prop-types": "off",
     "@typescript-eslint/no-explicit-any": "error",
-    "@typescript-eslint/explicit-module-boundary-types": "off"
+    "@typescript-eslint/explicit-module-boundary-types": "off",
+    "no-restricted-imports": [
+      "error",
+      {
+        "patterns": [
+          {
+            "group": ["../*"],
+            "message": "Импорты, поднимающиеся на 1+ уровня вверх, запрещены. Используй alias: @/ → src/, @build/ → .build/, @raw/ → assets/raw/, @img/ → assets/images/."
+          }
+        ]
+      }
+    ]
   },
+  "overrides": [
+    {
+      "files": ["scripts/**/*"],
+      "rules": {
+        "no-restricted-imports": "off"
+      }
+    }
+  ],
   "settings": {
     "react": {
       "version": "detect"

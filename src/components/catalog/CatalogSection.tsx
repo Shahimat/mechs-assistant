@@ -1,9 +1,5 @@
 import type { ReactNode } from 'react';
-import {
-  SectionHeader,
-  SectionTitle,
-  SectionSearch,
-} from './CatalogSection.styles';
+import { SectionHeader, SectionTitle, SectionSearch } from './CatalogSection.styles';
 
 interface CatalogSectionProps {
   title: string;

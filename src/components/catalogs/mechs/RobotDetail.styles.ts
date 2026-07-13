@@ -26,7 +26,6 @@ export const IconImage = styled('img')({
   width: '100%',
   height: '100%',
   objectFit: 'contain',
-  imageRendering: 'high-quality',
 });
 
 export const IconPlaceholder = styled(SmartToy)(({ theme }) => ({

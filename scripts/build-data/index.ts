@@ -1,13 +1,9 @@
 import { promises as fs } from 'node:fs';
 import path from 'node:path';
 import { load as yamlLoad } from 'js-yaml';
+import { CATALOGS, type CatalogConfig } from '../catalogs.config.js';
 
-const PARSED_JSON = 'data/robots.json';
-const OVERRIDES_YAML = 'data/overrides/mechs.yml';
-const OUTPUT_JSON = '.build/data/robots.json';
-const OVERLAY_SHEET = 'mechs';
-
-interface RobotMeta {
+interface EntryMeta {
   overlayFields: string[];
   overlayUpdatedAt?: string;
   overlaySource?: string;
@@ -16,26 +12,61 @@ interface RobotMeta {
 type Jsonish = Record<string, unknown>;
 
 async function main() {
-  const parsedRaw = await fs.readFile(PARSED_JSON, 'utf-8');
-  const parsed = JSON.parse(parsedRaw) as Jsonish[];
-  const overrides = await loadOverrides();
-  const merged = parsed.map((robot) => {
-    const key = String(robot.key);
-    return mergeRobot(robot, overrides[key]);
+  for (const cfg of CATALOGS) {
+    await mergeCatalog(cfg);
+  }
+}
+
+async function mergeCatalog(cfg: CatalogConfig): Promise<void> {
+  const parsed = (await loadParsed(cfg.parsedJsonPath)) ?? [];
+  const overrides = await loadOverrides(cfg.overlayYamlPath);
+
+  if (parsed.length === 0 && Object.keys(overrides).length === 0) {
+    console.log(`⋯ ${cfg.slug}: ни parsed-JSON, ни overlay — пропускаем`);
+    return;
+  }
+
+  const merged: Jsonish[] = parsed.map((entry) => {
+    const key = String(entry.key);
+    return mergeEntry(entry, overrides[key], cfg.overlaySheetName);
   });
 
-  await fs.mkdir(path.dirname(OUTPUT_JSON), { recursive: true });
-  await fs.writeFile(OUTPUT_JSON, JSON.stringify(merged, null, 2) + '\n', 'utf-8');
+  // Записи, существующие только в overlay (нет в parsed) — добавляем как новые
+  // сущности. Так через Google Sheets можно ввести полностью новое оружие/меха
+  // без обновления парсера или ручной правки JSON.
+  const parsedKeys = new Set(parsed.map((entry) => String(entry.key)));
+  let overlayOnlyCount = 0;
+  for (const [key, override] of Object.entries(overrides)) {
+    if (parsedKeys.has(key)) continue;
+    const entry = mergeEntry({ key }, override, cfg.overlaySheetName);
+    if (entry._meta) overlayOnlyCount++;
+    merged.push(entry);
+  }
+
+  await fs.mkdir(path.dirname(cfg.mergedJsonPath), { recursive: true });
+  await fs.writeFile(cfg.mergedJsonPath, JSON.stringify(merged, null, 2) + '\n', 'utf-8');
 
   const overriddenCount = merged.filter((r) => r._meta).length;
   console.log(
-    `✓ merged ${merged.length} robots (${overriddenCount} with overlay) → ${OUTPUT_JSON}`
+    `✓ ${cfg.slug}: merged ${merged.length} entries (${overriddenCount} with overlay${
+      overlayOnlyCount > 0 ? `, ${overlayOnlyCount} overlay-only` : ''
+    }) → ${cfg.mergedJsonPath}`
   );
 }
 
-async function loadOverrides(): Promise<Record<string, Jsonish>> {
+async function loadParsed(pathToJson: string): Promise<Jsonish[] | null> {
   try {
-    const raw = await fs.readFile(OVERRIDES_YAML, 'utf-8');
+    const raw = await fs.readFile(pathToJson, 'utf-8');
+    return JSON.parse(raw) as Jsonish[];
+  } catch (err) {
+    if ((err as NodeJS.ErrnoException).code === 'ENOENT') return null;
+    throw err;
+  }
+}
+
+async function loadOverrides(pathToYaml: string): Promise<Record<string, Jsonish>> {
+  try {
+    const raw = await fs.readFile(pathToYaml, 'utf-8');
     const parsed = (yamlLoad(raw) as Record<string, Jsonish>) || {};
     return parsed;
   } catch (err) {
@@ -44,7 +75,7 @@ async function loadOverrides(): Promise<Record<string, Jsonish>> {
   }
 }
 
-function mergeRobot(base: Jsonish, override: Jsonish | undefined): Jsonish {
+function mergeEntry(base: Jsonish, override: Jsonish | undefined, overlaySheet: string): Jsonish {
   if (!override) return base;
 
   const overrideCopy = { ...override };
@@ -57,13 +88,13 @@ function mergeRobot(base: Jsonish, override: Jsonish | undefined): Jsonish {
   if (overlayFields.length === 0) return base;
 
   const merged = deepMerge(base, overrideCopy);
-  const meta: RobotMeta = {
+  const meta: EntryMeta = {
     overlayFields,
     overlayUpdatedAt: updatedAt,
     overlaySource:
       sourceRow != null
-        ? `google-sheets:${OVERLAY_SHEET}!row-${sourceRow}`
-        : `google-sheets:${OVERLAY_SHEET}`,
+        ? `google-sheets:${overlaySheet}!row-${sourceRow}`
+        : `google-sheets:${overlaySheet}`,
   };
   merged._meta = meta;
   return merged;

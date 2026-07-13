@@ -12,8 +12,9 @@ description: |
   своя реализация с явным контролем ключей и гидратации.
 
 source_files:
-  middleware: src/stores/robots/indexedDBMiddleware.ts
-  usage: src/stores/robots/store.ts
+  middleware: src/stores/indexedDBMiddleware.ts     # общий (перенесён из stores/robots/ в Этапе 5 подключения weapons)
+  usage_robots: src/stores/robots/store.ts          # dbName='mechs-assistant', storeName='robots-store'
+  usage_weapons: src/stores/weapons/store.ts        # dbName='mechs-assistant-weapons', storeName='weapons-store' (отдельная БД)
 
 config:
   db_name: mechs-assistant

@@ -1,11 +1,11 @@
 import { memo, useState, type MouseEvent } from 'react';
 import { CardActionArea, CardContent, Typography, Chip } from '@mui/material';
 import { StarBorder } from '@mui/icons-material';
-import type { Robot } from '../../../types/robot';
-import { isOverlaidField } from '../../../utils/overlay';
-import { resolveIconUrl } from '../../../utils/icons';
-import { OverlayBadge } from './OverlayBadge';
-import { OverlayPill } from '../../../styles/overlay';
+import type { Robot } from '@/types/robot';
+import { isOverlaidField } from '@/utils/overlay';
+import { resolveIconUrl } from '@/utils/icons';
+import { OverlayBadge } from '@/components/catalog/OverlayBadge';
+import { OverlayPill } from '@/styles/overlay';
 import {
   StyledCard,
   FavoriteButton,
@@ -75,13 +75,13 @@ function RobotCardImpl({ robot, isFavorite, onToggleFavorite, onClick }: RobotCa
         </IconBox>
         <CardContent>
           <Header>
-            <Name variant="h6" component="span" noWrap>
+            <Name>
               <OverlayPill as="span" overlaid={nameOverlaid} size="medium">
                 {robot.name}
               </OverlayPill>
             </Name>
             <Spacer />
-            <OverlayBadge robot={robot} />
+            <OverlayBadge entity={robot} />
           </Header>
           <ChipRow>
             <Chip

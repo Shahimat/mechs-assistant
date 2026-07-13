@@ -86,9 +86,7 @@ export async function convertToWebp(
           withoutEnlargement: false,
         });
       }
-      pipeline = pipeline.webp(
-        opts.lossless ? { lossless: true } : { quality: opts.quality }
-      );
+      pipeline = pipeline.webp(opts.lossless ? { lossless: true } : { quality: opts.quality });
       await pipeline.toFile(output);
 
       const outStat = await fs.stat(output);
@@ -190,8 +188,7 @@ async function cli(): Promise<void> {
   );
 }
 
-const isMain =
-  process.argv[1] && fileURLToPath(import.meta.url) === path.resolve(process.argv[1]);
+const isMain = process.argv[1] && fileURLToPath(import.meta.url) === path.resolve(process.argv[1]);
 if (isMain) {
   cli().catch((err) => {
     console.error(err);

@@ -4,7 +4,7 @@
  */
 export const SHEETS_MAP: Record<string, string> = {
   mechs: 'data--robots-catalog',
-  // weapons: 'data--weapons-catalog',
+  weapons: 'data--weapons-catalog',
   // equipment: 'data--equipment-catalog',
   // ammo: 'data--ammo-catalog',
   // items: 'data--items-catalog',

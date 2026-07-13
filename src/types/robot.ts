@@ -2,14 +2,9 @@
  * Типы данных для роботов игры Мехи.Земля
  */
 
-export type RobotType = 'боец' | 'транспортник' | 'добытчик' | 'разведчик';
+import type { Price, OverlayMeta } from './common';
 
-export interface RobotPrice {
-  /** Цена в бонах */
-  bonds?: number;
-  /** Цена в реглах */
-  regls?: number;
-}
+export type RobotType = 'боец' | 'транспортник' | 'добытчик' | 'разведчик';
 
 export interface RobotStats {
   /** Прочность (HP) */
@@ -48,11 +43,11 @@ export interface Robot {
   /** Характеристики робота */
   stats: RobotStats;
   /** Цена покупки */
-  buyPrice?: RobotPrice;
+  buyPrice?: Price;
   /** Цена продажи */
-  sellPrice?: RobotPrice;
+  sellPrice?: Price;
   /** Цена для прокачки */
-  upgradePrice?: RobotPrice;
+  upgradePrice?: Price;
   /** Процент прокачки в реглах */
   upgradeReglPercent?: number;
   /** Процент прокачки предметов */
@@ -69,19 +64,10 @@ export interface Robot {
   missChance?: number;
   /** Описание робота (если есть) */
   description?: string;
-  /** URL изображения (если есть) */
-  imageUrl?: string;
+  /** Путь к иконке (относительно data/icons/, пишет parser--wiki). */
+  iconPath?: string;
   /** URL страницы на вики */
   wikiUrl?: string;
   /** Метаинформация об overlay-полях (заполняется build-time merger). */
-  _meta?: RobotMeta;
-}
-
-export interface RobotMeta {
-  /** Пути полей, переопределённых через overlay (пример: "buyPrice.bonds", "weight"). */
-  overlayFields: string[];
-  /** Момент последнего изменения overlay-строки в Sheets (ISO). */
-  overlayUpdatedAt?: string;
-  /** Ссылка на источник — например "google-sheets:mechs!row-42". */
-  overlaySource?: string;
+  _meta?: OverlayMeta;
 }

@@ -11,9 +11,8 @@ export function CatalogStubPage({ title }: CatalogStubPageProps) {
         {title}
       </Typography>
       <Alert severity="info">
-        Каталог в разработке. Данные и view появятся, когда парсер вики
-        и overlay из Google Sheets будут расширены на этот каталог
-        (см. `context/roadmap.md`, MVP1).
+        Каталог в разработке. Данные и view появятся, когда парсер вики и overlay из Google Sheets
+        будут расширены на этот каталог (см. `context/roadmap.md`, MVP1).
       </Alert>
     </Container>
   );

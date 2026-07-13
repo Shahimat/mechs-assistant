@@ -1,5 +1,5 @@
 import { styled } from '@mui/material/styles';
-import { Card, IconButton, Typography } from '@mui/material';
+import { Card, IconButton } from '@mui/material';
 import { Star, SmartToy } from '@mui/icons-material';
 
 export const StyledCard = styled(Card)({
@@ -30,7 +30,6 @@ export const IconImage = styled('img')({
   width: '85%',
   height: '85%',
   objectFit: 'contain',
-  imageRendering: 'high-quality',
 });
 
 export const IconPlaceholder = styled(SmartToy)(({ theme }) => ({
@@ -46,10 +45,14 @@ export const Header = styled('div')(({ theme }) => ({
   minWidth: 0,
 }));
 
-export const Name = styled(Typography)({
+export const Name = styled('span')(({ theme }) => ({
+  ...theme.typography.h6,
   display: 'inline-block',
   minWidth: 0,
-});
+  overflow: 'hidden',
+  textOverflow: 'ellipsis',
+  whiteSpace: 'nowrap',
+}));
 
 export const Spacer = styled('div')({
   flexGrow: 1,

@@ -29,8 +29,7 @@
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true,
 
-    /* Paths */
-    "baseUrl": ".",
+    /* Paths — с TS 5.5+ baseUrl больше не требуется, paths относятся к директории tsconfig */
     "paths": {
       "@/*": ["./src/*"],
       "@build/*": ["./.build/*"],
@@ -38,6 +37,5 @@
       "@img/*": ["./assets/images/*"]
     }
   },
-  "include": ["src"],
-  "references": [{ "path": "./tsconfig.node.json" }]
+  "include": ["src"]
 }

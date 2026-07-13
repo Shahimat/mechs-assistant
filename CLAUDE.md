@@ -71,9 +71,10 @@
 - `src/App.tsx` — рендерит `RobotsCatalog`.
 - `src/components/RobotsCatalog.tsx` — карточный каталог мехов (пилот-view MVP1).
 - `src/components/RobotCard.tsx` / `RobotDetail.tsx` — карточка и модалка детализации.
-- `src/components/OverlayBadge.tsx` + `src/utils/overlay.ts` — маркеры overlay-полей.
+- `src/components/catalog/OverlayBadge.tsx` + `src/utils/overlay.ts` — общий маркер overlay-полей (принимает любую сущность с `_meta`).
 - `src/stores/robots/store.ts` — Zustand-стор роботов.
-- `src/stores/robots/indexedDBMiddleware.ts` — middleware персистенции.
+- `src/stores/indexedDBMiddleware.ts` — общий middleware персистенции (используют robots и weapons сторы).
+- `src/stores/robots/store.ts` — стор мехов; `src/stores/weapons/store.ts` — стор оружия (отдельные БД, паттерн копипаста).
 - `data/robots.json` (parsed) + `data/overrides/robots.yml` (overlay) — источники данных.
 - `scripts/build-data/index.ts` — build-time merger → `.build/data/robots.json`.
 - `scripts/parser-wiki/index.ts` — парсер вики `new.mechs.su`.

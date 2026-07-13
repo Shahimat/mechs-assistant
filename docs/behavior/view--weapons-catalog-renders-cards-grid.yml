@@ -1,0 +1,39 @@
+id: view--weapons-catalog-renders-cards-grid
+kind: behavior
+namespace: ui
+entities: [view--weapons-catalog]
+title: view--weapons-catalog рендерит сетку карточек оружия из data--weapons-catalog
+
+scenarios:
+  - given: стор оружия гидратирован, `weapons` содержит массив оружия
+    when: пользователь открыл `/catalogs/weapons-catalog`
+    then: |
+      view--weapons-catalog рендерит сетку WeaponCard — по одной
+      карточке на каждый экземпляр оружия из стора. В карточке
+      отображаются: название, категория/группа, требуемый уровень
+      (если есть), ключевые характеристики (урон, дальность,
+      скорострельность) и звёздочка избранного. Иллюстрация — из
+      `iconPath` (или placeholder, если нет). Первый заход — без
+      фильтров, показываем всё.
+
+  - given: массив `weapons` пуст (данные ещё не загружены или JSON пустой)
+    when: пользователь открыл `/catalogs/weapons-catalog`
+    then: |
+      view--weapons-catalog показывает empty state (Alert
+      «Нет данных для отображения» аналогично мехам).
+
+  - given: `error` не null (ошибка загрузки данных)
+    when: пользователь открыл `/catalogs/weapons-catalog`
+    then: view--weapons-catalog показывает error state (Alert severity=error).
+
+verified: true
+verified_at: 2026-07-12
+verified_note: |
+  Проверено чтением кода: `WeaponsCatalog.tsx:106-131` рендерит
+  `<CatalogGrid>` из `WeaponCard` по массиву `otherSearch.filtered`;
+  избранные — в отдельной `<FavoritesDnDSection>` через
+  `SortableWeaponCard`. Карточка (`WeaponCard.tsx`) отображает
+  название, группу (chip), уровень (chip), damage-диапазон,
+  дальность, скорострельность, прочность. Empty/error state — Alert
+  через тот же `Page`/`CenteredPage` шаблон (`WeaponsCatalog.tsx:70-92`).
+  Финальная визуальная проверка в браузере — за юзером после деплоя.

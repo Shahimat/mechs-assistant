@@ -1,31 +1,23 @@
 import { useCallback, useEffect, useMemo, useState } from 'react';
-import {
-  Alert,
-  CircularProgress,
-  ToggleButton,
-  ToggleButtonGroup,
-} from '@mui/material';
-import { useRobotsStore } from '../../../stores/robots/store';
-import type { Robot } from '../../../types/robot';
-import { CatalogHeader } from '../../catalog/CatalogHeader';
-import { CatalogSection } from '../../catalog/CatalogSection';
-import { CatalogGrid } from '../../catalog/CatalogGrid';
-import { FavoritesDnDSection } from '../../catalog/FavoritesDnDSection';
-import { FilterPanel } from '../../catalog/FilterPanel';
-import { SearchField } from '../../catalog/SearchField';
-import { Page, CenteredPage } from '../../catalog/CatalogPage.styles';
-import {
-  FilterGroup,
-  FilterLabel,
-} from '../../catalog/FilterPanel.styles';
-import { SectionDivider } from '../../catalog/CatalogSection.styles';
-import { useSearchFilter } from '../../catalog/hooks/useSearchFilter';
-import { useLevelRangeFilter } from '../../catalog/hooks/useLevelRangeFilter';
-import { useTypeFilter } from '../../catalog/hooks/useTypeFilter';
+import { Alert, CircularProgress, ToggleButton, ToggleButtonGroup } from '@mui/material';
+import { useRobotsStore } from '@/stores/robots/store';
+import type { Robot } from '@/types/robot';
+import { CatalogHeader } from '@/components/catalog/CatalogHeader';
+import { CatalogSection } from '@/components/catalog/CatalogSection';
+import { CatalogGrid } from '@/components/catalog/CatalogGrid';
+import { FavoritesDnDSection } from '@/components/catalog/FavoritesDnDSection';
+import { FilterPanel } from '@/components/catalog/FilterPanel';
+import { SearchField } from '@/components/catalog/SearchField';
+import { Page, CenteredPage } from '@/components/catalog/CatalogPage.styles';
+import { FilterGroup, FilterLabel } from '@/components/catalog/FilterPanel.styles';
+import { SectionDivider } from '@/components/catalog/CatalogSection.styles';
+import { useSearchFilter } from '@/components/catalog/hooks/useSearchFilter';
+import { useLevelRangeFilter } from '@/components/catalog/hooks/useLevelRangeFilter';
+import { useTypeFilter } from '@/components/catalog/hooks/useTypeFilter';
+import { LevelRangeFilter } from '@/components/catalog/LevelRangeFilter';
 import { RobotCard } from './RobotCard';
 import { RobotDetail } from './RobotDetail';
 import { SortableRobotCard } from './SortableRobotCard';
-import { LevelRangeFilter } from './LevelRangeFilter';
 
 type MechType = 'боец' | 'транспортник' | 'добытчик' | 'разведчик';
 
@@ -62,9 +54,7 @@ export function MechsCatalog() {
   const favoritesSet = useMemo(() => new Set(favorites), [favorites]);
 
   const commonlyFiltered = useMemo(() => {
-    return robots.filter(
-      (r) => typeFilter.matches(r.type as MechType) && level.matches(r)
-    );
+    return robots.filter((r) => typeFilter.matches(r.type as MechType) && level.matches(r));
   }, [robots, typeFilter, level]);
 
   const { favoriteRobots, otherRobots } = useMemo(() => {
@@ -86,10 +76,7 @@ export function MechsCatalog() {
 
   const filteredCount = favSearch.filtered.length + otherSearch.filtered.length;
   const filtersActive =
-    typeFilter.isActive ||
-    level.isActive ||
-    favSearch.isActive ||
-    otherSearch.isActive;
+    typeFilter.isActive || level.isActive || favSearch.isActive || otherSearch.isActive;
 
   const resetFilters = useCallback(() => {
     typeFilter.reset();
@@ -98,10 +85,7 @@ export function MechsCatalog() {
     otherSearch.reset();
   }, [typeFilter, level, favSearch, otherSearch]);
 
-  const handleToggleFavorite = useCallback(
-    (key: string) => toggleFavorite(key),
-    [toggleFavorite]
-  );
+  const handleToggleFavorite = useCallback((key: string) => toggleFavorite(key), [toggleFavorite]);
   const handleCardClick = useCallback((robot: Robot) => setSelectedRobot(robot), []);
 
   if (isLoading) {
@@ -201,17 +185,13 @@ export function MechsCatalog() {
           <SearchField
             value={otherSearch.query}
             onChange={otherSearch.setQuery}
-            placeholder={
-              favoriteRobots.length > 0 ? 'Поиск по остальным' : 'Поиск по названию'
-            }
+            placeholder={favoriteRobots.length > 0 ? 'Поиск по остальным' : 'Поиск по названию'}
           />
         }
       >
         {otherSearch.filtered.length === 0 ? (
           <Alert severity="info">
-            {filtersActive
-              ? 'Ничего не найдено по фильтрам'
-              : 'Нет мехов для отображения'}
+            {filtersActive ? 'Ничего не найдено по фильтрам' : 'Нет мехов для отображения'}
           </Alert>
         ) : (
           <CatalogGrid>
