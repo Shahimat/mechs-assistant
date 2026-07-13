@@ -1,7 +1,7 @@
 id: data--weapons-catalog
 kind: entity
 namespace: catalog
-version: "1.x"
+version: '1.x'
 
 description: |
   Каталог вооружения — оружие, устанавливаемое в основные слоты мехов.
@@ -19,27 +19,40 @@ description: |
 
   Первичный источник — вики `new.mechs.su/?page_id=3341`
   («Вооружение»). Страница 3341 — оглавление, ссылается на подстраницы
-  категорий (Пушка = 3338, и т.д.). На каждой подстранице — таблицы
-  `wiki-item-table.wiki-item-type-weapon.wiki-item-weapon-<category>`
-  с полями оружия. Категория (`missile`, `cannon`, `machinegun`,
-  `railgun`, …) читается из CSS-класса таблицы.
+  категорий (Пушка = 3338, Пулемет = 3347, Мортира = 3349, …, Лазер =
+  3389, Ремпушки для транспортников = 3391, для добытчиков = 3393).
+  На каждой подстранице — таблицы
+  `wiki-item-table.wiki-item-type-weapon.wiki-item-weapon-<category>`,
+  где `<category>` — CSS-slug. На 2026-07-13 обнаружено 16 категорий:
+  `bullet, bullet-eng, bullet-heavy, missile, missile-eng, mortar,
+  howitzer, howitzer-eng, launcher, launcher-eng, rk, rk-eng, laser,
+  repair, faser, empp`.
+
+  Поле `group` в таблице (например «Мортира, Пулемет крупнокалиберный»)
+  склеенное и одинаково у обеих категорий пары — семантически не
+  различает оружие. **UI-фильтр строится на `category`**, не на
+  `group`; русские подписи капсул — из hardcoded таблицы в
+  `WeaponsCatalog.tsx`.
 
   Overlay `data/overrides/weapons.yml` синкается из Google Sheets
-  (лист `weapons`) через `parser--google-sheets`. Схема — TS-типы
+  (лист `weapons`) через `parser--google-sheets`. Через overlay можно
+  добавлять и полностью новые сущности — merger заводит запись, даже
+  если ключа нет в parsed (см. convention `data-overlay`, раздел
+  «Что живёт в overlay», пункт про новые сущности). Схема — TS-типы
   в `src/types/weapon.ts`.
 
 source_files:
   parsed: data/weapons.json
   overlay: data/overrides/weapons.yml
-  merged: .build/data/weapons.json      # build-time
+  merged: .build/data/weapons.json # build-time
   merger: scripts/build-data/index.ts
-  parser: scripts/parser-wiki/resolvers/weapons.ts   # специфичный резолвер
+  parser: scripts/parser-wiki/resolvers/weapons.ts # специфичный резолвер
   types: src/types/weapon.ts
 
 wiki_source:
-  root_page_id: 3341                    # оглавление «Вооружение»
+  root_page_id: 3341 # оглавление «Вооружение»
   root_section: Предметы → Вооружение
-  data_flow: auto-parsed                # чистый парсер, гибридным не является
+  data_flow: auto-parsed # чистый парсер, гибридным не является
   page_structure: |
     root(3341) — оглавление, только ссылки на подстраницы категорий.
     Подстраницы (3338, 3347, 3349, ...) содержат таблицы
@@ -48,23 +61,25 @@ wiki_source:
 
 schema:
   weapon_key_fields:
-    - key            # уникальный идентификатор (translit от name)
-    - name           # полное название с моделью/уровнем
-    - model          # модель без уровня
-    - category       # missile / cannon / machinegun / railgun / ... (из CSS)
-    - group          # «Пулемет» / «Пушка» / ... (из поля таблицы)
-    - slot           # «Орудие» / другой слот (если найдётся)
-    - stats          # WeaponStats
+    - key # уникальный идентификатор (translit от name)
+    - name # полное название с моделью/уровнем
+    - model # модель без уровня
+    - category # CSS-slug из wiki-item-weapon-<slug>: bullet/missile/mortar/... 16 категорий (см. description)
+    - group # склеенное поле вики («Мортира, Пулемет крупнокалиберный»); одинаково у пары категорий, для фильтрации не использовать
+    - slot # «Орудие» / «Ремонтная пушка» (у ремпушек)
+    - stats # WeaponStats
   stats_fields:
     required: [damageMin, damageMax, range, energyConsumption, rateOfFire, durability, weight]
-    optional: [ammo]                    # у некоторого оружия боезапас может отсутствовать / быть бесконечным
+    optional:
+      - ammo # у лазеров и энергетики отсутствует (бесконечно); у ремпушек = «Запчасти»
+      - minRange # мёртвая зона у пушек, гаубиц, мортир
   optional_top_level:
     - requiredLevel
-    - buyPrice                          # { bonds?, regls? }
-    - sellPrice                         # { bonds?, regls? }
-    - craftFromBlueprints               # список названий чертежей
+    - buyPrice # { bonds?, regls? }
+    - sellPrice # { bonds?, regls? }
+    - craftFromBlueprints # список названий чертежей
     - description
-    - iconPath                          # data/icons/weapons/<key>.webp
+    - iconPath # data/icons/weapons/<key>.webp
     - wikiUrl
 
 features_enabled: [json-source, typed-schema, overlay-merge]
@@ -73,4 +88,4 @@ features_disabled: [network-fetch, dynamic-schema]
 manuals: []
 behaviors:
   - data--weapons-catalog-loaded-from-json
-  - view--weapons-catalog-renders-cards-grid   # кросс-ссылка: view читает данные каталога
+  - view--weapons-catalog-renders-cards-grid # кросс-ссылка: view читает данные каталога

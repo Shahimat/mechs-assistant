@@ -67,15 +67,30 @@
 
 ## Точки входа кода
 
-- `src/index.tsx` — bootstrap (React, ThemeProvider, QueryClientProvider).
-- `src/App.tsx` — рендерит `RobotsCatalog`.
-- `src/components/RobotsCatalog.tsx` — карточный каталог мехов (пилот-view MVP1).
-- `src/components/RobotCard.tsx` / `RobotDetail.tsx` — карточка и модалка детализации.
-- `src/components/catalog/OverlayBadge.tsx` + `src/utils/overlay.ts` — общий маркер overlay-полей (принимает любую сущность с `_meta`).
-- `src/stores/robots/store.ts` — Zustand-стор роботов.
-- `src/stores/indexedDBMiddleware.ts` — общий middleware персистенции (используют robots и weapons сторы).
-- `src/stores/robots/store.ts` — стор мехов; `src/stores/weapons/store.ts` — стор оружия (отдельные БД, паттерн копипаста).
-- `data/robots.json` (parsed) + `data/overrides/robots.yml` (overlay) — источники данных.
-- `scripts/build-data/index.ts` — build-time merger → `.build/data/robots.json`.
-- `scripts/parser-wiki/index.ts` — парсер вики `new.mechs.su`.
-- `scripts/parser-google-sheets/index.ts` — синк overlay из Google Sheets.
+- `src/index.tsx` — bootstrap (React, CssVarsProvider, QueryClientProvider).
+- `src/App.tsx` — `<RouterProvider router={router} />`.
+- `src/router.tsx` — createBrowserRouter, basename `/mechs-assistant` в prod.
+- `src/components/layout/` — AppLayout, AppHeader, Breadcrumbs.
+- `src/pages/` — HomePage, CatalogsHubPage, `catalogs/{Mechs,Weapons}CatalogPage`, `CatalogStubPage`.
+- `src/components/catalog/` — общие примитивы каталога (Header, Section, Grid, FilterPanel, SearchField, LevelRangeFilter, PairToggleGroup, FavoritesDnDSection, OverlayBadge) + hook'и (`hooks/useSearchFilter`, `useLevelRangeFilter`, `useTypeFilter`, `usePairFilter`).
+- `src/components/catalogs/mechs/` — MechsCatalog + RobotCard/RobotDetail/SortableRobotCard.
+- `src/components/catalogs/weapons/` — WeaponsCatalog + WeaponCard/WeaponDetail/SortableWeaponCard.
+- `src/components/tiles/` — Tile, TileGrid (плитки навигации).
+- `src/stores/indexedDBMiddleware.ts` — общий middleware Zustand.
+- `src/stores/robots/store.ts` — стор мехов; `src/stores/weapons/store.ts` — стор оружия (отдельные IndexedDB базы).
+- `src/utils/overlay.ts` — helpers для `_meta.overlayFields` (принимает любую сущность с `_meta`).
+- `src/types/{common,robot,weapon}.ts` — общий Price/OverlayMeta + типы каталогов.
+- `data/*.json` (parsed) + `data/overrides/*.yml` (overlay) — источники данных.
+- `scripts/catalogs.config.ts` — единый конфиг каталогов (пути, лист Sheets, папки иконок).
+- `scripts/build-data/index.ts` — build-time merger (умеет overlay-only записи для новых сущностей).
+- `scripts/parser-wiki/` — lib/ (общая инфра) + resolvers/{robots,weapons}.ts + диспетчер index.ts.
+- `scripts/parser-google-sheets/index.ts` — синк overlay из Sheets.
+- `scripts/setup-sheets-columns/` — идемпотентная настройка колонок листа (columns.ts + index.ts).
+
+## Импорты в src/
+
+- Алиасы: `@/` → `src/`, `@build/` → `.build/`, `@img/` → `assets/images/`, `@raw/` → `assets/raw/`.
+- **Относительные импорты `../` в `src/**/*.{ts,tsx}` запрещены** правилом
+  `no-restricted-imports` в `.eslintrc.json`. Соседние импорты через `./`
+  разрешены. Для сущностей уровня повыше — только через `@/…`.
+- Правило не применяется к `scripts/**/*` (там нет alias-инфраструктуры, локальные `../` работают штатно).

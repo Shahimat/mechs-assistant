@@ -15,7 +15,7 @@ namespaces:
       - id: data--robots-catalog
         one_liner: Каталог мехов (parsed data/robots.json + overlay data/overrides/robots.yml → merged .build/data/robots.json → типы Robot). Пилот-каталог MVP1 — закрыт 2026-07-12.
       - id: data--weapons-catalog
-        one_liner: Каталог вооружения (parsed data/weapons.json + overlay data/overrides/weapons.yml → merged .build/data/weapons.json). Второй каталог MVP1, стартует 2026-07-12.
+        one_liner: Каталог вооружения — 323 записи, 16 CSS-категорий (bullet/missile/mortar/…/laser/repair/faser/empp). Раскатан 2026-07-13; фильтр по category, не по склеенному group.
       - id: data--equipment-catalog
         one_liner: Каталог оборудования — Доп. оборудование + Чипы + Энергоснабжение + Защита (wiki 3682/3657/3106/3108). Shell-entity MVP1.
       - id: data--ammo-catalog
@@ -58,11 +58,11 @@ namespaces:
       - id: view--robots-catalog
         one_liner: Карточный каталог мехов `/catalogs/mechs-catalog` — собран из примитивов other--catalog-shell.
       - id: view--weapons-catalog
-        one_liner: Карточный каталог оружия `/catalogs/weapons-catalog` — второй view MVP1, все оружие без фильтров на первый заход.
+        one_liner: Карточный каталог оружия `/catalogs/weapons-catalog` — 323 записи, PairToggleGroup по CSS-category с русскими подписями + LevelRangeFilter.
       - id: other--tile
         one_liner: Квадратная плитка навигации с hover-scale, active-press, focus-ring, слотом для иконки.
       - id: other--catalog-shell
-        one_liner: Набор примитивов и hook'ов для сборки страницы каталога (не комбайн-компонент, а lightweight-generic).
+        one_liner: Набор примитивов (Header/Section/Grid/FilterPanel/SearchField/LevelRangeFilter/PairToggleGroup/OverlayBadge) и hook'ов (useSearchFilter/useTypeFilter/useLevelRangeFilter/usePairFilter) для сборки страницы каталога.
     behaviors:
       - id: layout--app-shell-renders-header-and-outlet
         one_liner: AppLayout рендерит AppHeader (logo/title/breadcrumbs) и вложенную страницу через Outlet.
@@ -146,13 +146,13 @@ conventions:
   - key: rspack
     one_liner: Rspack — сборщик и dev-сервер, конфиг ESM, порт 3000, swc-loader.
   - key: stack
-    one_liner: "Фиксированный стек — React 18, MUI v5, Zustand, TanStack Query, Rspack, Jest+RTL."
+    one_liner: 'Фиксированный стек — React 18, MUI v5, Zustand, TanStack Query, Rspack, Jest+RTL.'
   - key: tanstack-query
     one_liner: TanStack Query v5 подключён в bootstrap; реальных queries пока нет.
   - key: testing
     one_liner: Jest + React Testing Library; компоненты оборачивать в ThemeProvider с проектной темой.
   - key: typescript
-    one_liner: "Строгий TypeScript (strict: true) с активными noImplicit* флагами."
+    one_liner: 'Строгий TypeScript (strict: true) с активными noImplicit* флагами.'
   - key: verification
     one_liner: Механика verified в docs/behavior/*.yml — ставить/сбрасывать по правилам контракта.
   - key: zustand

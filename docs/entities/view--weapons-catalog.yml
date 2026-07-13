@@ -12,17 +12,28 @@ description: |
   Монтируется по маршруту `/catalogs/weapons-catalog` через
   `WeaponsCatalogPage` — тонкая обёртка-страница поверх `WeaponsCatalog`.
   Собирается из примитивов `other--catalog-shell` (`CatalogHeader`,
-  `CatalogSection`, `CatalogGrid`, `FavoritesDnDSection`, `SearchField`)
-  плюс weapons-специфичные компоненты (`WeaponCard`, `WeaponDetail`,
-  `SortableWeaponCard`).
+  `CatalogSection`, `CatalogGrid`, `FavoritesDnDSection`, `SearchField`,
+  `PairToggleGroup`, `LevelRangeFilter`) плюс weapons-специфичные
+  компоненты (`WeaponCard`, `WeaponDetail`, `SortableWeaponCard`).
 
-  Фильтры (2026-07-12): по группе орудий (multi-select ToggleButtonGroup
-  — «Пулемет», «Пушка», «Гаубица», «Гранатомет», «Мортира»,
-  «Ракетница» и т.д.; одно оружие может входить в несколько групп —
-  используется `useTypeFilter.matchesAny`) и по требуемому уровню
-  (Slider через `useLevelRangeFilter`). Дальнейшие фильтры (категория
-  из CSS, слот, дальность, урон) можно расширить, когда станет ясно,
-  какая гранулярность действительно нужна.
+  Фильтры:
+    - **Группа** — `PairToggleGroup` (split-капсула + одиночные) через
+      `usePairFilter`. **Значения фильтра — CSS-категории оружия**
+      (`w.category`, из `wiki-item-weapon-<slug>`), а не поле `group`
+      из таблицы вики. Причина: у большинства оружий поле `group`
+      склеенное («Мортира, Пулемет крупнокалиберный») и одинаково для
+      обеих категорий пары — фильтровать по нему бесполезно
+      (`only-a` и `only-b` давали одинаковый результат). CSS-категория
+      уникальна для каждого экземпляра — соответствует странице вики.
+      Русские подписи кнопок — из hardcoded таблицы в
+      `WeaponsCatalog.tsx` (16 категорий: Пулемет/Пушка, Мортира,
+      Гаубица, Гранатомет, Лазер, Ремонтная пушка и т.д.).
+    - **Уровень** — `LevelRangeFilter` (Slider через
+      `useLevelRangeFilter`).
+
+  Дальнейшие фильтры (слот, дальность, урон, наличие боезапаса) можно
+  расширить, когда станет ясно, какая гранулярность действительно
+  нужна.
 
   Читает данные каталога из `data--weapons-catalog` через
   `useWeaponsStore` (параллель `useRobotsStore`), использует общую
@@ -42,11 +53,11 @@ features_enabled:
   - favorites-dnd
   - overlay-highlight # общий OverlayBadge
   - search-in-section
-  - filter-group # multi-select по группе орудий (matchesAny)
+  - filter-category # split-капсулы по CSS-category с русскими подписями
   - filter-level-range # Slider по requiredLevel
 
 features_disabled:
-  - filter-category # CSS-slug (missile/cannon/…); группа юзер-понятнее, оставили её
+  - filter-group # поле group в вики склеенное, семантически неразличимо между парами — заменено на filter-category
   - filter-slot # у всех оружий сейчас один слот «Орудие», не даёт разделения
 
 manuals: []

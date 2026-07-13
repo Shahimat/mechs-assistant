@@ -1,7 +1,7 @@
 id: other--catalog-shell
 kind: entity
 namespace: ui
-version: "0.x"
+version: '0.x'
 
 description: |
   Набор переиспользуемых примитивов и hook'ов для сборки страницы
@@ -27,23 +27,31 @@ source_files:
   favorites: src/components/catalog/FavoritesDnDSection.tsx
   filter_panel: src/components/catalog/FilterPanel.tsx
   search_field: src/components/catalog/SearchField.tsx
+  level_range: src/components/catalog/LevelRangeFilter.tsx # Slider-фильтр по requiredLevel, вынесен из mechs
+  pair_toggle: src/components/catalog/PairToggleGroup.tsx # split-капсулы для парных и одиночных значений
+  overlay_badge: src/components/catalog/OverlayBadge.tsx # индикатор overlay-полей на карточке/детали
+  page_styles: src/components/catalog/CatalogPage.styles.ts
   hook_search: src/components/catalog/hooks/useSearchFilter.ts
   hook_level: src/components/catalog/hooks/useLevelRangeFilter.ts
   hook_type: src/components/catalog/hooks/useTypeFilter.ts
-  types: src/components/catalog/types.ts
+  hook_pair: src/components/catalog/hooks/usePairFilter.ts # трёх-стадийные пары (none/both/only-a/only-b) + одиночные
 
 api_shape:
   primitives:
     - CatalogHeader({ title, summary })
-    - CatalogSection({ title, search, children })     # search — необязательный слот (не у всех секций)
-    - CatalogGrid({ children })                        # адаптивная сетка карточек
+    - CatalogSection({ title, search, children }) # search — необязательный слот
+    - CatalogGrid({ children }) # адаптивная сетка карточек
     - FavoritesDnDSection({ items, getKey, onReorder, renderCard })
     - FilterPanel({ children, filtersActive, onReset })
     - SearchField({ value, onChange, placeholder })
+    - LevelRangeFilter({ min, max, applied, onCommit })
+    - PairToggleGroup({ pairs, state, onToggleValue }) # рендерит FilterPair<T>[] как split-капсулы или одиночные кнопки
+    - OverlayBadge({ entity, size })
   hooks:
-    - useSearchFilter(items, getName)                  # → { query, setQuery, filtered }
-    - useLevelRangeFilter(items, getLevel)             # → { range, setRange, min, max, filter }
-    - useTypeFilter(options)                           # → { selected, setSelected, filter }
+    - useSearchFilter(items, getName) # → { query, setQuery, filtered, isActive, reset }
+    - useLevelRangeFilter({ items, getLevel }) # → { min, max, applied, isActive, matches, commit, reset }
+    - useTypeFilter<Value>() # → { selected, setSelected, isActive, reset, matches, matchesAny }
+    - usePairFilter<Value>(pairs) # → { state, toggleValue, activeValues, isActive, matchesAny, reset }
 
 features_enabled:
   - layout-primitives
@@ -51,7 +59,7 @@ features_enabled:
   - favorites-dnd-section
 
 features_disabled:
-  - one-size-fits-all-catalog-page   # сознательно НЕ делаем
+  - one-size-fits-all-catalog-page # сознательно НЕ делаем
 
 manuals: []
-behaviors: []                        # поведение проверяется через каталог-потребитель (view--robots-catalog)
+behaviors: [] # поведение проверяется через каталог-потребитель (view--robots-catalog)
