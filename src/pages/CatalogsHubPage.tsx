@@ -14,7 +14,6 @@ import lootIcon from '@img/catalog-icons/loot.webp';
 import blueprintsIcon from '@img/catalog-icons/blueprints.webp';
 import oreIcon from '@img/catalog-icons/ore.webp';
 import componentsIcon from '@img/catalog-icons/components.webp';
-import currenciesIcon from '@img/catalog-icons/currencies.webp';
 import skillsIcon from '@img/catalog-icons/skills.webp';
 import { TileGrid } from '@/components/tiles/TileGrid';
 import { Tile } from '@/components/tiles/Tile';
@@ -40,7 +39,6 @@ const CATALOGS: Array<{ to: string; title: string; icon: string }> = [
   { to: '/catalogs/components-catalog', title: 'Компоненты', icon: componentsIcon },
   { to: '/catalogs/ore-catalog', title: 'Руды', icon: oreIcon },
   { to: '/catalogs/loot-catalog', title: 'Лут', icon: lootIcon },
-  { to: '/catalogs/currencies-catalog', title: 'Валюта', icon: currenciesIcon },
 ];
 
 export function CatalogsHubPage() {

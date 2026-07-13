@@ -31,7 +31,7 @@ namespaces:
       - id: data--components-catalog
         one_liner: Каталог компонентов — базовые + составные, крафтятся из лута/чертежей (wiki 3955). Гибридный (парсер + overlay рецептов).
       - id: data--currencies
-        one_liner: Справочник валют — Боны + Реглы (wiki 3017/3020). Без своего view.
+        one_liner: Справочник валют — Боны + Реглы (wiki 3017/3020). Без своего view, без плитки (2026-07-13). Понятия используются как `Price { bonds?, regls? }` в других каталогах.
       - id: data--skills-catalog
         one_liner: Каталог навыков и умений персонажа (wiki 2902/2905). В MVP1 — только факты, модификаторы позже.
       - id: parser--wiki
@@ -163,6 +163,8 @@ namespaces:
 conventions:
   - key: assets-layout
     one_liner: Разделение assets/ на raw (исходники png/jpg/svg) и images (готовые webp для прода) — webp не хранить в raw.
+  - key: assets-preservation
+    one_liner: Ассеты не удаляем даже при снятии UI-компонента; неиспользуемые файлы в бандл не попадают, но на диске сохраняются для повторного использования.
   - key: blocking-question
     one_liner: Формат блокирующего вопроса — нумерованные вопросы и варианты, дефолт с обоснованием, стоп после отправки.
   - key: changelog

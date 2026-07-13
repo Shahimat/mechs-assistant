@@ -1,7 +1,7 @@
 id: data--currencies
 kind: entity
 namespace: catalog
-version: "0.x"
+version: '0.x'
 
 description: |
   Справочник валют игры — Боны (page_id=3017) и Реглы (3020).
@@ -29,4 +29,12 @@ behaviors: []
 
 verified_note: |
   Shell-entity создана в фазе docs MVP1. Своего view не заводим — валюты
-  используются в схемах других сущностей как поле цены.
+  используются в схемах других сущностей как поле цены (тип `Price
+  { bonds?, regls? }` в `src/types/common.ts`, поля `buyPrice`/`sellPrice`
+  у Weapon/Ammo/Equipment/Robot).
+
+  2026-07-13: плитка «Валюта» снята с `CatalogsHubPage`, stub-роут
+  `/catalogs/currencies-catalog` удалён из `router.tsx`. Обоснование:
+  боны и реглы очевидны из контекста игры, тривиальный справочник не
+  оправдывает отдельного view. Data-entity сохранена как ссылочная —
+  документирует источник понятий Bonds/Regls для схем.

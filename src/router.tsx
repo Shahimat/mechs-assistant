@@ -28,7 +28,6 @@ const STUB_CATALOGS: CatalogStub[] = [
   { path: 'blueprints-catalog', crumb: 'Чертежи', title: 'Каталог чертежей' },
   { path: 'ore-catalog', crumb: 'Руды', title: 'Каталог руд' },
   { path: 'components-catalog', crumb: 'Компоненты', title: 'Каталог компонентов' },
-  { path: 'currencies-catalog', crumb: 'Валюта', title: 'Справочник валют' },
   { path: 'skills-catalog', crumb: 'Навыки', title: 'Каталог навыков' },
 ];
 
