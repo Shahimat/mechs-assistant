@@ -1,0 +1,34 @@
+id: view--items-catalog-renders-cards-grid
+kind: behavior
+namespace: ui
+entities: [view--items-catalog]
+title: view--items-catalog рендерит сетку карточек предметов из data--items-catalog
+
+scenarios:
+  - given: стор предметов гидратирован, `items` содержит записи
+    when: пользователь открыл `/catalogs/items-catalog`
+    then: |
+      view--items-catalog рендерит сетку `ItemCard` — по одной карточке
+      на запись. В карточке: название, chip subtype, chip уровня (если
+      есть), chip requiredRobotType (у scanner), «главный» stat по
+      subtype (`creates` для pack/gift, `energyRestored` для energy,
+      `energyConsumption` для invis, `healing` для repair,
+      `scanRadius` для scanner, у teleport — только вес), базовые
+      (`weight`) и звёздочка избранного.
+
+      Панель фильтров: `PairToggleGroup` по `subtype` (4 капсулы:
+      «Паки+Подарки», «Ремкомплект+Шокеры», «Невидимость+Сканер»,
+      «Телепортатор»). Матч — `activeCategories.has(i.subtype)`.
+
+  - given: массив `items` пуст (данные ещё не загружены или JSON пустой)
+    when: пользователь открыл `/catalogs/items-catalog`
+    then: view--items-catalog показывает empty state.
+
+  - given: "`error` не null (ошибка загрузки данных)"
+    when: пользователь открыл `/catalogs/items-catalog`
+    then: view--items-catalog показывает error state (Alert severity=error).
+
+verified: true
+verified_at: 2026-07-13
+verified_note: |
+  Проверено чтением кода `ItemsCatalog.tsx`/`ItemCard.tsx`/`subtypeLabels.ts`: `PRIMARY_STAT.pack = null` и `PRIMARY_STAT.gift = null` — в карточке этих subtype primary stat не рендерится (только имя, chip subtype/уровня, вес). `ItemDetail.tsx` для creates/createdIn использует `<LootDropSection>` — flex-wrap список chip'ов «Название ×N (M%)» (без шанса — если поле отсутствует). PairToggleGroup, favorites, search — без изменений. Финальная визуальная проверка в браузере — пройдена юзером 2026-07-13.

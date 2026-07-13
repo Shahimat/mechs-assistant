@@ -1,29 +1,139 @@
 id: data--items-catalog
 kind: entity
 namespace: catalog
-version: "0.x"
+version: '1.x'
 
 description: |
-  Каталог используемых предметов — расходники, активируемые игроком
-  (аптечки, ускорители и т.п.). Первичный источник — вики
-  `new.mechs.su/?page_id=3111` (Предметы → Используемые предметы).
-  Наполнение — `parser--wiki`. Иконки — из парсера или скриншотов,
-  поле `iconPath`.
+  Каталог используемых предметов — расходники, активируемые игроком:
+  паки, подарки, шокеры, невидимость, ремкомплекты, сканеры,
+  телепортаторы. Пятый каталог MVP1 после мехов, weapons, equipment,
+  ammo. Тянется по обкатанному конвейеру `parser--wiki` +
+  `parser--google-sheets` + `build-data` merger.
 
-  Shell-entity MVP1.
+  В zustand-стор импортируется merged JSON (`@build/data/items.json`)
+  — массив объектов `Item`. Merged JSON генерируется build-time
+  скриптом `scripts/build-data`.
+
+  Первичный источник — корневая страница вики `?page_id=3111`
+  («Используемые»), которая ссылается на 7 подстраниц-категорий (одна
+  из ссылок — 3765 «Устанавливаемые» — оказалась не relevant этому
+  каталогу, скипаем). BFS проходит по 7 seed'ам с зашитым `subtype`
+  в контексте (тот же паттерн, что у `robots resolver` с `MechType`):
+
+    - 3704 «Паки» → subtype='pack' (12 записей)
+    - 3719 «Подарки» → subtype='gift' (11)
+    - 3779 «Шокеры» → subtype='energy' (4)
+    - 3786 «Невидимость» → subtype='invis' (3)
+    - 3788 «Ремкомплект» → subtype='repair' (5)
+    - 3792 «Сканер» → subtype='scanner' (5)
+    - 3796 «Телепортатор» → subtype='teleport' (14)
+
+  Итого ~54 записи. `subtype` определяется через контекст парсера, не
+  через CSS-класс: пакИ и подаркИ имеют один CSS
+  `wiki-item-type-used-set-object`, различаем по seed page.
+
+  Схема плоская: общий тип `Item` со всеми subtype-specific полями
+  как optional. У части subtype есть уникальные поля (см. schema),
+  UI-карточка показывает «главный» stat по subtype, детализация —
+  все имеющиеся.
+
+  Overlay `data/overrides/items.yml` синкается из Google Sheets (лист
+  `items`) через `parser--google-sheets`. Схема — TS-типы в
+  `src/types/item.ts`.
 
 source_files:
-  data: data/items.json
+  parsed: data/items.json
+  overlay: data/overrides/items.yml
+  merged: .build/data/items.json # build-time
+  merger: scripts/build-data/index.ts
+  parser: scripts/parser-wiki/resolvers/items.ts
   types: src/types/item.ts
 
 wiki_source:
-  page_ids: [3111]
-  section: Предметы → Используемые предметы
+  root_page_id: 3111 # оглавление «Используемые»
+  root_page_ids: [3704, 3719, 3779, 3786, 3788, 3792, 3796] # прямые seeds для BFS
+  section: Предметы → Используемые
   data_flow: auto-parsed
+  page_structure: |
+    3111 — оглавление, 0 карточек. BFS стартует не с 3111, а сразу с 7
+    подстраниц напрямую (с ctx.subtype). CSS-класс карточек
+    `wiki-item-type-used-<slug>` — не источник subtype, потому что pack
+    и gift разделяют один класс `used-set-object`; subtype приходит
+    из ctx.
+
+schema:
+  item_key_fields:
+    - key # уникальный идентификатор (translit от name)
+    - name # полное название с моделью
+    - model # префикс без варианта
+    - subtype # `pack` | `gift` | `energy` | `invis` | `repair` | `scanner` | `teleport`
+    - stats # ItemStats — плоский набор subtype-specific опциональных полей
+  stats_fields:
+    required: [weight]
+    optional:
+      - creates # pack/gift — массив `LootDrop[]`: разметка вики `<span class="wiki-inline-block">` с иконкой (`<img alt="Иконка …">` или `data-description`), `<sub>N</sub>` (количество) и опциональным `<sup>M%</sup>` (шанс). `.text()` в вики склеивает всё в кашу, поэтому парсер разбирает по элементам.
+      - createdIn # gift — тот же формат `LootDrop[]` (где выпадает подарок)
+      - energyRestored # energy — «Восстанавливает энергии»
+      - energyConsumption # invis / scanner — «Энергопотребление»
+      - healing # repair — «Восстанавливает» (прочность)
+      - repairPause # repair — «Пауза ремонта»
+      - repairPauseIfNotAttacked # repair — «Пауза ремонта, если не был атакован»
+      - scanRadius # scanner — «Радиус сканирования»
+      - duration # scanner — «Время действия»
+  optional_top_level:
+    - requiredLevel
+    - requiredRobotType # scanner
+    - buyPrice # { bonds?, regls? }
+    - sellPrice # { bonds?, regls? } — у части паков может отсутствовать
+    - craftFromBlueprints # список названий чертежей
+    - description
+    - iconPath # data/icons/items/<key>.webp
+    - wikiUrl
+  subtypes:
+    - key: pack
+      seed_page_id: 3704
+      label_ru: Паки
+      approx_count: 12
+      primary_stat: creates
+    - key: gift
+      seed_page_id: 3719
+      label_ru: Подарки
+      approx_count: 11
+      primary_stat: creates
+    - key: energy
+      seed_page_id: 3779
+      label_ru: Шокеры
+      approx_count: 4
+      primary_stat: energyRestored
+    - key: invis
+      seed_page_id: 3786
+      label_ru: Невидимость
+      approx_count: 3
+      primary_stat: energyConsumption
+    - key: repair
+      seed_page_id: 3788
+      label_ru: Ремкомплект
+      approx_count: 5
+      primary_stat: healing
+    - key: scanner
+      seed_page_id: 3792
+      label_ru: Сканер
+      approx_count: 5
+      primary_stat: scanRadius
+    - key: teleport
+      seed_page_id: 3796
+      label_ru: Телепортатор
+      approx_count: 14
+      primary_stat: null # у телепортаторов нет числового стата, только вес/цены
+
+features_enabled: [json-source, typed-schema, overlay-merge]
+features_disabled: [network-fetch, dynamic-schema]
 
 manuals: []
-behaviors: []
+behaviors:
+  - data--items-catalog-loaded-from-json
+  - data--items-catalog-schema-typed
+  - view--items-catalog-renders-cards-grid # кросс-ссылка
 
 verified_note: |
-  Shell-entity создана в фазе docs MVP1. Реализация — при подключении
-  каталога через пилот-цепочку.
+  Data-слой закрыт 2026-07-13: 7 seed'ов, 52 записи. `stats.creates`/`createdIn` — структурированные `LootDrop[]` вместо склеенной каши `.text()` (парсер `extractLootDrops` разбирает `<span class="wiki-inline-block">` по элементам). У Кольца/Мишки — 12 дропов каждый, у Контейнера Удачи — 22, у Паков и Наборов Апов — от 1 до 8. Все behaviors verified 2026-07-13.

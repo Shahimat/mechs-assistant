@@ -21,7 +21,7 @@ namespaces:
       - id: data--ammo-catalog
         one_liner: "Каталог боезапасов — ~58 записей из wiki 3661, поле `compatibleCategories: string[]` — массив CSS-slug'ов совместимого оружия (ключевая связь с data--weapons-catalog.category). Стор+view — в фазе feat."
       - id: data--items-catalog
-        one_liner: Каталог используемых предметов — аптечки, ускорители и прочие расходники (wiki 3111). Shell-entity MVP1.
+        one_liner: Каталог используемых предметов — ~54 записи, 7 subtype (pack/gift/energy/invis/repair/scanner/teleport), BFS с зашитым в ctx subtype (pack и gift разделяют CSS-класс). Стор+view — в фазе feat.
       - id: data--loot-catalog
         one_liner: Каталог лута — выпадает с монстров/кротов/пиратов (wiki 3023/3027/20118). Гибридный (парсер + overlay).
       - id: data--blueprints-catalog
@@ -79,6 +79,8 @@ namespaces:
         one_liner: Карточный каталог `/catalogs/cargos-catalog` — subtype='cargo' (13 записей, primary=«Трюм»). LevelRangeFilter.
       - id: view--ammo-catalog
         one_liner: Карточный каталог `/catalogs/ammo-catalog` — ~58 боезапасов, PairToggleGroup по `compatibleCategories` (CSS-slug'ам weapons) + LevelRangeFilter. Спецификация есть, реализация — в фазе feat.
+      - id: view--items-catalog
+        one_liner: 'Карточный каталог `/catalogs/items-catalog` — ~54 предметов, PairToggleGroup по subtype (4 капсулы: паки+подарки/ремкомплект+шокеры/невидимость+сканер/телепортатор), «главный» stat по subtype в карточке. Спецификация есть, реализация — в фазе feat.'
       - id: other--tile
         one_liner: Квадратная плитка навигации с hover-scale, active-press, focus-ring, слотом для иконки.
       - id: other--catalog-shell
@@ -136,6 +138,14 @@ namespaces:
         one_liner: view--ammo-catalog рендерит сетку AmmoCard из data--ammo-catalog, фильтр по compatibleCategories + LevelRangeFilter.
       - id: view--ammo-catalog-opens-detail-on-click
         one_liner: Клик по карточке боезапаса открывает детализацию (AmmoDetail).
+      - id: data--items-catalog-loaded-from-json
+        one_liner: Каталог предметов загружается из merged .build/data/items.json при инициализации стора.
+      - id: data--items-catalog-schema-typed
+        one_liner: Каждая запись items.json соответствует типу Item (TS strict).
+      - id: view--items-catalog-renders-cards-grid
+        one_liner: view--items-catalog рендерит сетку ItemCard из data--items-catalog, фильтр PairToggleGroup по subtype.
+      - id: view--items-catalog-opens-detail-on-click
+        one_liner: Клик по карточке предмета открывает детализацию (ItemDetail).
 
   comparison:
     description: Механики сравнения и приоритизации мехов (избранное, будущий боевой калькулятор).

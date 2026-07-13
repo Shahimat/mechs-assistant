@@ -1,0 +1,81 @@
+id: view--items-catalog
+kind: entity
+namespace: ui
+version: '0.x'
+
+description: |
+  Карточный каталог используемых предметов — пятый view MVP1. Сетка
+  карточек с иллюстрацией, «главным» stat'ом по subtype и звёздочкой
+  избранного. По клику на карточке открывается детализация (MUI
+  Dialog) со всеми полями Item.
+
+  Монтируется по маршруту `/catalogs/items-catalog` через
+  `ItemsCatalogPage` — тонкая обёртка-страница поверх `ItemsCatalog`.
+  Собирается из примитивов `other--catalog-shell` (`CatalogHeader`,
+  `CatalogSection`, `CatalogGrid`, `FavoritesDnDSection`, `SearchField`,
+  `PairToggleGroup`) плюс items-специфичные компоненты (`ItemCard`,
+  `ItemDetail`, `SortableItemCard`).
+
+  Фильтры:
+    - **Тип** — `PairToggleGroup` (4 капсулы) через `usePairFilter`.
+      Матч по `item.subtype` (одиночный slug). Раскладка:
+        - «Паки + Подарки» (pack + gift) — наборы
+        - «Ремкомплект + Шокеры» (repair + energy) — восстановление
+        - «Невидимость + Сканер» (invis + scanner) — тактика
+        - «Телепортатор» (teleport) — перемещение (одиночная)
+
+  Фильтр по уровню не заводится: у items нет одинаково значимого
+  `requiredLevel` (у части subtype пусто, у части одинаковый).
+
+  Карточка показывает **один «главный» stat по subtype**:
+    - pack/gift → нет (`creates` — массив LootDrop, в узкой карточке
+      3-25 позиций не рендерятся; полный список — в детализации)
+    - energy → `energyRestored`
+    - invis → `energyConsumption`
+    - repair → `healing`
+    - scanner → `scanRadius`
+    - teleport → нет (только вес/цены)
+  Плюс базовые (`weight`), `requiredLevel` (если есть) — как chip,
+  `requiredRobotType` (у scanner) — как chip. Все остальные поля —
+  в детализации.
+
+  `stats.creates` / `stats.createdIn` (у pack/gift) рендерятся ТОЛЬКО
+  в детализации — списком чипов «Название ×N (M%)», по одной на
+  дроп-позицию.
+
+  Читает данные из `data--items-catalog` через `useItemsStore`
+  (параллель `useAmmoStore`), использует общую механику избранного
+  `other--favorites` (отдельная IndexedDB-база).
+
+  Плитка на `CatalogsHubPage` — `@img/catalog-icons/items.webp` (уже
+  на месте, добавлять не нужно).
+
+source_files:
+  page: src/pages/catalogs/ItemsCatalogPage.tsx # роутовая обёртка (/catalogs/items-catalog)
+  view: src/components/catalogs/items/ItemsCatalog.tsx
+  card: src/components/catalogs/items/ItemCard.tsx
+  detail: src/components/catalogs/items/ItemDetail.tsx
+  sortable_card: src/components/catalogs/items/SortableItemCard.tsx
+
+features_enabled:
+  - cards-grid
+  - item-detail-view
+  - favorites-star
+  - favorites-dnd
+  - overlay-highlight # общий OverlayBadge
+  - search-in-section
+  - filter-subtype # split-капсулы по item.subtype (4 капсулы)
+  - primary-stat-row # subtype-specific главный stat в карточке
+
+features_disabled:
+  - filter-level-range # у items нет однородного requiredLevel
+  - filter-family # subtype один в матче, family нет
+
+manuals: []
+behaviors:
+  - view--items-catalog-renders-cards-grid
+  - view--items-catalog-opens-detail-on-click
+  - other--favorites-toggle-on-star-click # кросс-ссылка
+
+verified_note: |
+  Реализация закрыта 2026-07-13. У pack/gift primary stat в карточке снят (`stats.creates` не влезает в узкий формат); полный список дропов рендерится в детализации `<LootDropSection>` — flex-wrap chip'ов «Название ×N (M%)». Behaviors verified 2026-07-13.

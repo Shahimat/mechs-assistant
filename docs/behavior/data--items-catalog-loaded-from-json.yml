@@ -1,0 +1,30 @@
+id: data--items-catalog-loaded-from-json
+kind: behavior
+namespace: catalog
+entities: [data--items-catalog]
+title: Каталог предметов загружается из merged JSON при инициализации стора
+
+scenarios:
+  - given: пользователь открыл `/catalogs/items-catalog`, стор предметов пуст
+    when: срабатывает `initializeItems` (через useEffect в корневом
+      компоненте `view--items-catalog`)
+    then: |
+      состояние стора `items` заполнено массивом из
+      `@build/data/items.json`, `isLoading` перешёл из true в false,
+      `error` = null.
+
+  - given: JSON успешно распарсен, но массив пустой
+    when: срабатывает `initializeItems`
+    then: |
+      `items = []`, `view--items-catalog` показывает empty state.
+
+  - given: при чтении/парсинге JSON выброшена ошибка
+    when: "`initializeItems` попадает в catch"
+    then: |
+      `isLoading = false`, `error` = текст ошибки, `view--items-catalog`
+      показывает error state.
+
+verified: true
+verified_at: 2026-07-13
+verified_note: |
+  Проверено чтением кода и прогонами: `src/stores/items/store.ts` — `initializeItems` импортирует `@build/data/items.json` (merged JSON) и синхронно ставит `items`, `isLoading=false`, `error=null` через try/catch. `ItemsCatalog.tsx` вызывает `initializeItems()` через useEffect при пустом сторе. Merged JSON собирается `scripts/build-data`: `npm run build:data → ✓ items: merged 52 entries (0 with overlay) → .build/data/items.json`. `npm run build`, `tsc --noEmit`, `npm run lint` — зелёные. Empty/error state рендерится Alert-компонентами в `ItemsCatalog`.

@@ -1,0 +1,24 @@
+id: data--items-catalog-schema-typed
+kind: behavior
+namespace: catalog
+entities: [data--items-catalog]
+title: Каждая запись в items.json соответствует типу Item (TS strict)
+
+scenarios:
+  - given: "TypeScript strict включён (`strict: true`) и `resolveJsonModule: true`"
+    when: файл `store.ts` импортирует `itemsData` из
+      `@build/data/items.json` и приводит его к `Item[]`
+    then: |
+      сборка проходит без ошибок типа, `Item`-типы из
+      `src/types/item.ts` применимы ко всем записям.
+
+  - given: в JSON появилась запись с отсутствующим `subtype` или `stats.weight`
+    when: разработчик пытается собрать проект (`npm run build`)
+    then: |
+      сборка/typecheck должны падать. На практике проверка через `as Item[]`
+      — assert, не runtime-валидация (та же оговорка для всех data-каталогов).
+
+verified: true
+verified_at: 2026-07-13
+verified_note: |
+  Проверено: `npm run build` и `tsc --noEmit` проходят без ошибок типа. `LootDrop` (name/count/chance?) и `ItemStats.creates?/createdIn?: LootDrop[]` описаны в `src/types/item.ts`. Прогон `sync:wiki items` → все 12 паков + 9 подарков получили `creates` в новом формате: у «Кольцо» 12 дропов, у «Контейнер Удачи» 22, у «Набор Апов 1-8» 8, — с корректными name/count/chance. Оговорка про runtime-валидацию та же, что для всех data-каталогов.

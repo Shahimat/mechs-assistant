@@ -1,0 +1,1816 @@
+[
+  {
+    "key": "koltso",
+    "name": "Кольцо",
+    "model": "Кольцо",
+    "subtype": "gift",
+    "buyPrice": {
+      "regls": 100
+    },
+    "description": "Кольцо можно купить в магазине или получить во время эвента. Содержит кротолут, ресурсы, апгрейды или оружие",
+    "stats": {
+      "weight": 1,
+      "creates": [
+        {
+          "name": "Апгрейд уровень 4",
+          "count": 3,
+          "chance": "0.1%"
+        },
+        {
+          "name": "РЕМПАК 20000",
+          "count": 1,
+          "chance": "0.1%"
+        },
+        {
+          "name": "Апгрейд уровень 2",
+          "count": 4,
+          "chance": "0.1%"
+        },
+        {
+          "name": "Неуязвимость",
+          "count": 4,
+          "chance": "0.1%"
+        },
+        {
+          "name": "Апгрейд уровень 1",
+          "count": 5,
+          "chance": "0.1%"
+        },
+        {
+          "name": "Ускорение",
+          "count": 4,
+          "chance": "0.1%"
+        },
+        {
+          "name": "КРИСТАЛЛ КРАСНЫЙ",
+          "count": 1500,
+          "chance": "0.01%"
+        },
+        {
+          "name": "Апгрейд уровень 5",
+          "count": 2,
+          "chance": "0.0010%"
+        },
+        {
+          "name": "Сертификат 90 орудия и ниже",
+          "count": 1,
+          "chance": "0.0010%"
+        },
+        {
+          "name": "Апгрейд уровень 6",
+          "count": 1,
+          "chance": "0.0001%"
+        },
+        {
+          "name": "ПАК РЕСУРСЫ",
+          "count": 1,
+          "chance": "0.0001%"
+        },
+        {
+          "name": "Подарок Большой",
+          "count": 1,
+          "chance": "0.0001%"
+        }
+      ]
+    },
+    "iconPath": "items/koltso.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3719"
+  },
+  {
+    "key": "konteyner_udachi",
+    "name": "Контейнер Удачи",
+    "model": "Контейнер Удачи",
+    "subtype": "gift",
+    "buyPrice": {
+      "regls": 50
+    },
+    "description": "Можно купить в магазине или получить во время эвента. Выпадает 1 слот чего то ценного.",
+    "stats": {
+      "weight": 50,
+      "creates": [
+        {
+          "name": "Апгрейд уровень 4",
+          "count": 7,
+          "chance": "10%"
+        },
+        {
+          "name": "Неуязвимость",
+          "count": 10,
+          "chance": "10%"
+        },
+        {
+          "name": "Ускорение",
+          "count": 10,
+          "chance": "10%"
+        },
+        {
+          "name": "РЕМПАК 20000",
+          "count": 1,
+          "chance": "10%"
+        },
+        {
+          "name": "Контейнер удачи",
+          "count": 1,
+          "chance": "10%"
+        },
+        {
+          "name": "Апгрейд уровень 1",
+          "count": 10,
+          "chance": "1%"
+        },
+        {
+          "name": "Апгрейд уровень 3",
+          "count": 7,
+          "chance": "1%"
+        },
+        {
+          "name": "Апгрейд уровень 5",
+          "count": 3,
+          "chance": "1%"
+        },
+        {
+          "name": "Апгрейд уровень 2",
+          "count": 7,
+          "chance": "1%"
+        },
+        {
+          "name": "Сертификат 90 орудия и ниже",
+          "count": 1,
+          "chance": "0.1%"
+        },
+        {
+          "name": "ПАК РЕСУРСЫ",
+          "count": 1,
+          "chance": "0.1%"
+        },
+        {
+          "name": "Апгрейд уровень 6",
+          "count": 1,
+          "chance": "0.01%"
+        },
+        {
+          "name": "Сертификат 95 орудия",
+          "count": 1,
+          "chance": "0.01%"
+        },
+        {
+          "name": "Подарок Большой",
+          "count": 1,
+          "chance": "0.01%"
+        },
+        {
+          "name": "Набор апов 1-5",
+          "count": 1,
+          "chance": "0.01%"
+        },
+        {
+          "name": "Максимальные параметры 24",
+          "count": 1,
+          "chance": "0.01%"
+        },
+        {
+          "name": "Поцелуй",
+          "count": 1,
+          "chance": "0.01%"
+        },
+        {
+          "name": "Сердечко",
+          "count": 1,
+          "chance": "0.01%"
+        },
+        {
+          "name": "Апгрейд уровень 7",
+          "count": 1,
+          "chance": "0.0010%"
+        },
+        {
+          "name": "Набор апов 1-7",
+          "count": 1,
+          "chance": "0.0010%"
+        },
+        {
+          "name": "Набор апов 1-8",
+          "count": 1,
+          "chance": "0.0001%"
+        },
+        {
+          "name": "Апгрейд уровень 8",
+          "count": 1,
+          "chance": "0.0001%"
+        }
+      ]
+    },
+    "iconPath": "items/konteyner_udachi.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3719"
+  },
+  {
+    "key": "mishka",
+    "name": "Мишка",
+    "model": "Мишка",
+    "subtype": "gift",
+    "buyPrice": {
+      "regls": 100
+    },
+    "description": "Мишку можно купить в магазине или получить во время эвента. Содержит кротолут, ресурсы, апгрейды или оружие",
+    "stats": {
+      "weight": 1,
+      "creates": [
+        {
+          "name": "Апгрейд уровень 3",
+          "count": 4,
+          "chance": "0.1%"
+        },
+        {
+          "name": "Ускорение",
+          "count": 4,
+          "chance": "0.1%"
+        },
+        {
+          "name": "Апгрейд уровень 4",
+          "count": 3,
+          "chance": "0.1%"
+        },
+        {
+          "name": "Апгрейд уровень 1",
+          "count": 5,
+          "chance": "0.1%"
+        },
+        {
+          "name": "Апгрейд уровень 2",
+          "count": 4,
+          "chance": "0.1%"
+        },
+        {
+          "name": "Неуязвимость",
+          "count": 4,
+          "chance": "0.1%"
+        },
+        {
+          "name": "РЕМПАК 20000",
+          "count": 1,
+          "chance": "0.1%"
+        },
+        {
+          "name": "КРИСТАЛЛ КРАСНЫЙ",
+          "count": 1500,
+          "chance": "0.01%"
+        },
+        {
+          "name": "Апгрейд уровень 5",
+          "count": 2,
+          "chance": "0.0010%"
+        },
+        {
+          "name": "Апгрейд уровень 6",
+          "count": 1,
+          "chance": "0.0001%"
+        },
+        {
+          "name": "Подарок Большой",
+          "count": 1,
+          "chance": "0.0001%"
+        },
+        {
+          "name": "ПАК РЕСУРСЫ",
+          "count": 1,
+          "chance": "0.0001%"
+        }
+      ]
+    },
+    "iconPath": "items/mishka.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3719"
+  },
+  {
+    "key": "nabor_apov_15",
+    "name": "Набор Апов 1-5",
+    "model": "Набор Апов",
+    "subtype": "pack",
+    "buyPrice": {
+      "bonds": 2000000,
+      "regls": 69
+    },
+    "sellPrice": {
+      "bonds": 500000
+    },
+    "description": "Внутри апгрейды 1-5 по 1шт",
+    "stats": {
+      "weight": 100,
+      "creates": [
+        {
+          "name": "Апгрейд уровень 1",
+          "count": 1
+        },
+        {
+          "name": "Апгрейд уровень 2",
+          "count": 1
+        },
+        {
+          "name": "Апгрейд уровень 3",
+          "count": 1
+        },
+        {
+          "name": "Апгрейд уровень 4",
+          "count": 1
+        },
+        {
+          "name": "Апгрейд уровень 5",
+          "count": 1
+        }
+      ]
+    },
+    "iconPath": "items/nabor_apov_15.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3704"
+  },
+  {
+    "key": "nabor_apov_17",
+    "name": "Набор Апов 1-7",
+    "model": "Набор Апов",
+    "subtype": "pack",
+    "buyPrice": {
+      "bonds": 5000000,
+      "regls": 269
+    },
+    "sellPrice": {
+      "bonds": 1250000
+    },
+    "description": "Внутри апгрейды 1-7 по 1шт",
+    "stats": {
+      "weight": 150,
+      "creates": [
+        {
+          "name": "Апгрейд уровень 1",
+          "count": 1
+        },
+        {
+          "name": "Апгрейд уровень 2",
+          "count": 1
+        },
+        {
+          "name": "Апгрейд уровень 3",
+          "count": 1
+        },
+        {
+          "name": "Апгрейд уровень 4",
+          "count": 1
+        },
+        {
+          "name": "Апгрейд уровень 5",
+          "count": 1
+        },
+        {
+          "name": "Апгрейд уровень 6",
+          "count": 1
+        },
+        {
+          "name": "Апгрейд уровень 7",
+          "count": 1
+        }
+      ]
+    },
+    "iconPath": "items/nabor_apov_17.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3704"
+  },
+  {
+    "key": "nabor_apov_18",
+    "name": "Набор Апов 1-8",
+    "model": "Набор Апов",
+    "subtype": "pack",
+    "buyPrice": {
+      "bonds": 8000000,
+      "regls": 1069
+    },
+    "sellPrice": {
+      "bonds": 2000000
+    },
+    "description": "Внутри апгрейды 1-8 по 1шт",
+    "stats": {
+      "weight": 200,
+      "creates": [
+        {
+          "name": "Апгрейд уровень 1",
+          "count": 1
+        },
+        {
+          "name": "Апгрейд уровень 2",
+          "count": 1
+        },
+        {
+          "name": "Апгрейд уровень 3",
+          "count": 1
+        },
+        {
+          "name": "Апгрейд уровень 4",
+          "count": 1
+        },
+        {
+          "name": "Апгрейд уровень 5",
+          "count": 1
+        },
+        {
+          "name": "Апгрейд уровень 6",
+          "count": 1
+        },
+        {
+          "name": "Апгрейд уровень 7",
+          "count": 1
+        },
+        {
+          "name": "Апгрейд уровень 8",
+          "count": 1
+        }
+      ]
+    },
+    "iconPath": "items/nabor_apov_18.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3704"
+  },
+  {
+    "key": "nevidimost_1_min",
+    "name": "Невидимость 1 Мин",
+    "model": "Невидимость",
+    "subtype": "invis",
+    "buyPrice": {
+      "bonds": 150000
+    },
+    "sellPrice": {
+      "bonds": 37500
+    },
+    "description": "Делает тебя невидимкой для других игроков, если стоять на месте или если враг не использует меха-разведчика. В бою невидимость заставляет врага чаще промахиваться",
+    "stats": {
+      "energyConsumption": 100010,
+      "weight": 200
+    },
+    "iconPath": "items/nevidimost_1_min.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3786"
+  },
+  {
+    "key": "nevidimost_30_min",
+    "name": "Невидимость 30 Мин",
+    "model": "Невидимость",
+    "subtype": "invis",
+    "buyPrice": {
+      "bonds": 30000,
+      "regls": 10
+    },
+    "sellPrice": {
+      "bonds": 7500
+    },
+    "description": "Делает тебя невидимкой для других игроков, если стоять на месте или если враг не использует меха-разведчика. В бою невидимость заставляет врага чаще промахиваться",
+    "stats": {
+      "energyConsumption": 200010,
+      "weight": 200
+    },
+    "iconPath": "items/nevidimost_30_min.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3786"
+  },
+  {
+    "key": "nevidimost_5_min",
+    "name": "Невидимость 5 Мин",
+    "model": "Невидимость",
+    "subtype": "invis",
+    "buyPrice": {
+      "bonds": 30000,
+      "regls": 2
+    },
+    "sellPrice": {
+      "bonds": 7500
+    },
+    "description": "Делает тебя невидимкой для других игроков, если стоять на месте или если враг не использует меха-разведчика. В бою невидимость заставляет врага чаще промахиваться",
+    "stats": {
+      "energyConsumption": 150010,
+      "weight": 200
+    },
+    "iconPath": "items/nevidimost_5_min.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3786"
+  },
+  {
+    "key": "pak_bronya_100",
+    "name": "Пак Броня 100",
+    "model": "Пак Броня",
+    "subtype": "pack",
+    "buyPrice": {
+      "regls": 20
+    },
+    "craftFromBlueprints": [],
+    "description": "На 10 минут увеличивает статы брони",
+    "stats": {
+      "weight": 1000,
+      "creates": [
+        {
+          "name": "Временный апгрейд БРОНЯ",
+          "count": 100
+        }
+      ]
+    },
+    "iconPath": "items/pak_bronya_100.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3704"
+  },
+  {
+    "key": "pak_polya_100",
+    "name": "Пак Поля 100",
+    "model": "Пак Поля",
+    "subtype": "pack",
+    "buyPrice": {
+      "regls": 20
+    },
+    "craftFromBlueprints": [],
+    "description": "На 10 минут увеличивает статы полей",
+    "stats": {
+      "weight": 1000,
+      "creates": [
+        {
+          "name": "Временный апгрейд ПОЛЯ",
+          "count": 100
+        }
+      ]
+    },
+    "iconPath": "items/pak_polya_100.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3704"
+  },
+  {
+    "key": "pak_prochnost_100",
+    "name": "Пак Прочность 100",
+    "model": "Пак Прочность",
+    "subtype": "pack",
+    "buyPrice": {
+      "regls": 20
+    },
+    "craftFromBlueprints": [],
+    "description": "На 10 минут увеличивает прочность робота",
+    "stats": {
+      "weight": 1000,
+      "creates": [
+        {
+          "name": "Временный апгрейд ПРОЧНОСТЬ",
+          "count": 100
+        }
+      ]
+    },
+    "iconPath": "items/pak_prochnost_100.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3704"
+  },
+  {
+    "key": "pak_resursy",
+    "name": "Пак Ресурсы",
+    "model": "Пак Ресурсы",
+    "subtype": "pack",
+    "buyPrice": {
+      "bonds": 100000,
+      "regls": 100
+    },
+    "sellPrice": {
+      "bonds": 25000
+    },
+    "craftFromBlueprints": [],
+    "description": "Внутри 70 гафния, 1000 руды и по 2000 кристаллов каждого вида",
+    "stats": {
+      "weight": 10000,
+      "creates": [
+        {
+          "name": "ГАФНИЙ",
+          "count": 70
+        },
+        {
+          "name": "ЖЕЛЕЗНАЯ РУДА",
+          "count": 1000
+        },
+        {
+          "name": "КРИСТАЛЛ ЗЕЛЕНЫЙ",
+          "count": 2000
+        },
+        {
+          "name": "КРИСТАЛЛ КРАСНЫЙ",
+          "count": 2000
+        },
+        {
+          "name": "КРИСТАЛЛ СИНИЙ",
+          "count": 2000
+        }
+      ]
+    },
+    "iconPath": "items/pak_resursy.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3704"
+  },
+  {
+    "key": "pak_skorost_100",
+    "name": "Пак Скорость 100",
+    "model": "Пак Скорость",
+    "subtype": "pack",
+    "buyPrice": {
+      "regls": 30
+    },
+    "craftFromBlueprints": [],
+    "description": "На 10 минут увеличивает скорость робота",
+    "stats": {
+      "weight": 1000,
+      "creates": [
+        {
+          "name": "Временный апгрейд СКОРОСТЬ",
+          "count": 100
+        }
+      ]
+    },
+    "iconPath": "items/pak_skorost_100.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3704"
+  },
+  {
+    "key": "pak_zashchita_100",
+    "name": "Пак Защита 100",
+    "model": "Пак Защита",
+    "subtype": "pack",
+    "buyPrice": {
+      "regls": 20
+    },
+    "craftFromBlueprints": [],
+    "description": "На 10 минут увеличивает статы брони и полей",
+    "stats": {
+      "weight": 1000,
+      "creates": [
+        {
+          "name": "Временное увеличение стат брони и полей",
+          "count": 100
+        }
+      ]
+    },
+    "iconPath": "items/pak_zashchita_100.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3704"
+  },
+  {
+    "key": "podarok",
+    "name": "Подарок",
+    "model": "Подарок",
+    "subtype": "gift",
+    "buyPrice": {
+      "regls": 10
+    },
+    "craftFromBlueprints": [],
+    "description": "Подарок можно купить в магазине, получить или скрафтить во время эвента. Содержит лут, ресурсы или оружие",
+    "stats": {
+      "weight": 10,
+      "creates": [
+        {
+          "name": "Снежный ком",
+          "count": 40,
+          "chance": "3%"
+        },
+        {
+          "name": "КРИСТАЛЛ ЗЕЛЕНЫЙ",
+          "count": 10,
+          "chance": "3%"
+        },
+        {
+          "name": "КРИСТАЛЛ КРАСНЫЙ",
+          "count": 10,
+          "chance": "3%"
+        },
+        {
+          "name": "КРИСТАЛЛ СИНИЙ",
+          "count": 10,
+          "chance": "3%"
+        },
+        {
+          "name": "ЖЕЛЕЗНАЯ РУДА",
+          "count": 10,
+          "chance": "3%"
+        },
+        {
+          "name": "ЖЕЛЕЗО",
+          "count": 5,
+          "chance": "3%"
+        },
+        {
+          "name": "ГАФНИЙ",
+          "count": 2,
+          "chance": "3%"
+        },
+        {
+          "name": "Апгрейд уровень 1",
+          "count": 1,
+          "chance": "3%"
+        },
+        {
+          "name": "Подарок",
+          "count": 1,
+          "chance": "0.3%"
+        },
+        {
+          "name": "Апгрейд уровень 2",
+          "count": 1,
+          "chance": "0.3%"
+        },
+        {
+          "name": "Комплект З/П кротов",
+          "count": 2,
+          "chance": "0.1%"
+        },
+        {
+          "name": "Апгрейд уровень 3",
+          "count": 1,
+          "chance": "0.03%"
+        },
+        {
+          "name": "КРИСТАЛЛ ЗЕЛЕНЫЙ",
+          "count": 120,
+          "chance": "0.01%"
+        },
+        {
+          "name": "КРИСТАЛЛ КРАСНЫЙ",
+          "count": 120,
+          "chance": "0.01%"
+        },
+        {
+          "name": "ГАФНИЙ",
+          "count": 4,
+          "chance": "0.01%"
+        },
+        {
+          "name": "Подарок Большой",
+          "count": 1,
+          "chance": "0.0001%"
+        },
+        {
+          "name": "РЕМПАК 20000",
+          "count": 1,
+          "chance": "0.0001%"
+        }
+      ]
+    },
+    "iconPath": "items/podarok.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3719"
+  },
+  {
+    "key": "podarok_bolshoy",
+    "name": "Подарок Большой",
+    "model": "Подарок Большой",
+    "subtype": "gift",
+    "buyPrice": {
+      "regls": 100
+    },
+    "craftFromBlueprints": [],
+    "description": "Подарок можно купить в магазине, получить или скрафтить во время эвента. Содержит лут, ресурсы или оружие",
+    "stats": {
+      "weight": 10,
+      "creates": [
+        {
+          "name": "Апгрейд уровень 4",
+          "count": 5,
+          "chance": "1%"
+        },
+        {
+          "name": "Апгрейд уровень 3",
+          "count": 6,
+          "chance": "1%"
+        },
+        {
+          "name": "Апгрейд уровень 2",
+          "count": 7,
+          "chance": "1%"
+        },
+        {
+          "name": "Апгрейд уровень 1",
+          "count": 9,
+          "chance": "1%"
+        },
+        {
+          "name": "Неуязвимость",
+          "count": 2,
+          "chance": "1%"
+        },
+        {
+          "name": "Ускорение",
+          "count": 2,
+          "chance": "1%"
+        },
+        {
+          "name": "РЕМПАК 20000",
+          "count": 1,
+          "chance": "1%"
+        },
+        {
+          "name": "Сертификат 90 орудия и ниже",
+          "count": 1,
+          "chance": "0.1%"
+        },
+        {
+          "name": "Апгрейд уровень 6",
+          "count": 1,
+          "chance": "0.1%"
+        },
+        {
+          "name": "Апгрейд уровень 5",
+          "count": 4,
+          "chance": "0.1%"
+        },
+        {
+          "name": "Подарок Большой",
+          "count": 1,
+          "chance": "0.05%"
+        },
+        {
+          "name": "ПАК РЕСУРСЫ",
+          "count": 1,
+          "chance": "0.0010%"
+        },
+        {
+          "name": "Сертификат 95 орудия",
+          "count": 1,
+          "chance": "0.0010%"
+        }
+      ]
+    },
+    "iconPath": "items/podarok_bolshoy.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3719"
+  },
+  {
+    "key": "podarok_ogromnyy",
+    "name": "Подарок Огромный",
+    "model": "Подарок Огромный",
+    "subtype": "gift",
+    "buyPrice": {
+      "regls": 2000
+    },
+    "description": "Подарок можно купить в магазине, получить или скрафтить во время эвента. Содержит лут, ресурсы или оружие",
+    "stats": {
+      "weight": 10,
+      "creates": [
+        {
+          "name": "Сертификат розыгрыш",
+          "count": 1
+        },
+        {
+          "name": "Апгрейд уровень 8",
+          "count": 1,
+          "chance": "15%"
+        },
+        {
+          "name": "Подарок Большой",
+          "count": 6,
+          "chance": "10%"
+        },
+        {
+          "name": "Апгрейд уровень 7",
+          "count": 7,
+          "chance": "10%"
+        },
+        {
+          "name": "Апгрейд уровень 6",
+          "count": 14,
+          "chance": "10%"
+        },
+        {
+          "name": "Апгрейд уровень 5",
+          "count": 30,
+          "chance": "10%"
+        },
+        {
+          "name": "Сертификат 95 орудия",
+          "count": 4,
+          "chance": "10%"
+        },
+        {
+          "name": "ПАК РЕСУРСЫ",
+          "count": 6,
+          "chance": "10%"
+        },
+        {
+          "name": "Контейнер удачи",
+          "count": 12,
+          "chance": "10%"
+        },
+        {
+          "name": "Набор апов 1-5",
+          "count": 20,
+          "chance": "10%"
+        },
+        {
+          "name": "Набор апов 1-7",
+          "count": 4,
+          "chance": "10%"
+        },
+        {
+          "name": "100 млн бон",
+          "count": 2,
+          "chance": "10%"
+        },
+        {
+          "name": "РЕМПАК 20000",
+          "count": 15,
+          "chance": "8%"
+        },
+        {
+          "name": "Апгрейд уровень 8",
+          "count": 2,
+          "chance": "2%"
+        },
+        {
+          "name": "Подарок Большой",
+          "count": 8,
+          "chance": "1%"
+        },
+        {
+          "name": "Апгрейд уровень 7",
+          "count": 10,
+          "chance": "1%"
+        },
+        {
+          "name": "Апгрейд уровень 6",
+          "count": 18,
+          "chance": "1%"
+        },
+        {
+          "name": "Апгрейд уровень 5",
+          "count": 40,
+          "chance": "1%"
+        },
+        {
+          "name": "Сертификат 95 орудия",
+          "count": 6,
+          "chance": "1%"
+        },
+        {
+          "name": "ПАК РЕСУРСЫ",
+          "count": 8,
+          "chance": "1%"
+        },
+        {
+          "name": "Контейнер удачи",
+          "count": 16,
+          "chance": "1%"
+        },
+        {
+          "name": "Набор апов 1-5",
+          "count": 30,
+          "chance": "1%"
+        },
+        {
+          "name": "Набор апов 1-7",
+          "count": 6,
+          "chance": "1%"
+        },
+        {
+          "name": "100 млн бон",
+          "count": 3,
+          "chance": "1%"
+        },
+        {
+          "name": "РЕМПАК 20000",
+          "count": 20,
+          "chance": "0.8%"
+        }
+      ]
+    },
+    "iconPath": "items/podarok_ogromnyy.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3719"
+  },
+  {
+    "key": "potseluy",
+    "name": "Поцелуй",
+    "model": "Поцелуй",
+    "subtype": "gift",
+    "buyPrice": {
+      "regls": 100
+    },
+    "description": "Этот предмет можно купить в магазине или получить во время эвента. Содержит кротолут, ресурсы, апгрейды или оружие",
+    "stats": {
+      "weight": 1,
+      "creates": [
+        {
+          "name": "Комплект З/П кротов",
+          "count": 19,
+          "chance": "0.1%"
+        },
+        {
+          "name": "Демультиплексатор",
+          "count": 39,
+          "chance": "0.1%"
+        },
+        {
+          "name": "Блокиратор",
+          "count": 39,
+          "chance": "0.1%"
+        },
+        {
+          "name": "КРИСТАЛЛ ЗЕЛЕНЫЙ",
+          "count": 1500,
+          "chance": "0.01%"
+        },
+        {
+          "name": "КРИСТАЛЛ КРАСНЫЙ",
+          "count": 1500,
+          "chance": "0.01%"
+        },
+        {
+          "name": "ГАФНИЙ",
+          "count": 49,
+          "chance": "0.01%"
+        },
+        {
+          "name": "Апгрейд уровень 1",
+          "count": 4,
+          "chance": "0.01%"
+        },
+        {
+          "name": "Апгрейд уровень 2",
+          "count": 3,
+          "chance": "0.01%"
+        },
+        {
+          "name": "Апгрейд уровень 3",
+          "count": 3,
+          "chance": "0.01%"
+        },
+        {
+          "name": "КРИСТАЛЛ СИНИЙ",
+          "count": 1500,
+          "chance": "0.01%"
+        },
+        {
+          "name": "Невидимость 30 мин",
+          "count": 4,
+          "chance": "0.0010%"
+        },
+        {
+          "name": "Апгрейд уровень 4",
+          "count": 3,
+          "chance": "0.0010%"
+        },
+        {
+          "name": "Сертификат 90 орудия и ниже",
+          "count": 1,
+          "chance": "0.0010%"
+        },
+        {
+          "name": "Подарок Большой",
+          "count": 1,
+          "chance": "0.0001%"
+        }
+      ]
+    },
+    "iconPath": "items/potseluy.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3719"
+  },
+  {
+    "key": "remkomplekt_1800",
+    "name": "Ремкомплект 1800",
+    "model": "Ремкомплект",
+    "subtype": "repair",
+    "buyPrice": {
+      "bonds": 150
+    },
+    "sellPrice": {
+      "bonds": 37
+    },
+    "craftFromBlueprints": [],
+    "description": "Продается в магазине или выбивается из мобов и кротов. Бывает необходим для крафта или апгрейда робота.",
+    "stats": {
+      "healing": 1800,
+      "repairPause": 400,
+      "repairPauseIfNotAttacked": 350,
+      "weight": 120
+    },
+    "iconPath": "items/remkomplekt_1800.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3788"
+  },
+  {
+    "key": "remkomplekt_20000",
+    "name": "Ремкомплект 20000",
+    "model": "Ремкомплект",
+    "subtype": "repair",
+    "sellPrice": {
+      "bonds": 1725
+    },
+    "craftFromBlueprints": [],
+    "description": "Продается в магазине в виде пака, создается крафтом на Заводе или выбивается из мобов и кротов. Бывает необходим для крафта или апгрейда робота.Самый эффективный.",
+    "stats": {
+      "healing": 20000,
+      "repairPause": 650,
+      "repairPauseIfNotAttacked": 600,
+      "weight": 1200
+    },
+    "iconPath": "items/remkomplekt_20000.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3788"
+  },
+  {
+    "key": "remkomplekt_3900",
+    "name": "Ремкомплект 3900",
+    "model": "Ремкомплект",
+    "subtype": "repair",
+    "buyPrice": {
+      "bonds": 300
+    },
+    "sellPrice": {
+      "bonds": 75
+    },
+    "craftFromBlueprints": [],
+    "description": "Продается в магазине или выбивается из мобов и кротов. Бывает необходим для крафта или апгрейда робота.",
+    "stats": {
+      "healing": 3900,
+      "repairPause": 650,
+      "repairPauseIfNotAttacked": 600,
+      "weight": 270
+    },
+    "iconPath": "items/remkomplekt_3900.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3788"
+  },
+  {
+    "key": "remkomplekt_900",
+    "name": "Ремкомплект 900",
+    "model": "Ремкомплект",
+    "subtype": "repair",
+    "buyPrice": {
+      "bonds": 90
+    },
+    "sellPrice": {
+      "bonds": 22
+    },
+    "craftFromBlueprints": [],
+    "description": "Восстанавливает прочность роботаПравый клик мыши для ремонта",
+    "stats": {
+      "healing": 900,
+      "repairPause": 250,
+      "repairPauseIfNotAttacked": 200,
+      "weight": 45
+    },
+    "iconPath": "items/remkomplekt_900.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3788"
+  },
+  {
+    "key": "remkomplekt_9000",
+    "name": "Ремкомплект 9000",
+    "model": "Ремкомплект",
+    "subtype": "repair",
+    "sellPrice": {
+      "bonds": 1725
+    },
+    "description": "Продается в магазине в виде пака, создается крафтом на Заводе или выбивается из мобов и кротов. Бывает необходим для крафта или апгрейда робота.",
+    "stats": {
+      "healing": 9000,
+      "repairPause": 650,
+      "repairPauseIfNotAttacked": 600,
+      "weight": 540
+    },
+    "iconPath": "items/remkomplekt_9000.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3788"
+  },
+  {
+    "key": "rempak_20000",
+    "name": "Ремпак 20000",
+    "model": "Ремпак",
+    "subtype": "pack",
+    "buyPrice": {
+      "bonds": 50000,
+      "regls": 20
+    },
+    "sellPrice": {
+      "bonds": 12500
+    },
+    "description": "При распаковке получаешь 200шт запчастей, восстанавливающих 20000 хп каждая, вес после распаковки - 240 000. Осторожнее.",
+    "stats": {
+      "weight": 6000,
+      "creates": [
+        {
+          "name": "Ремкомплект 20000",
+          "count": 200
+        }
+      ]
+    },
+    "iconPath": "items/rempak_20000.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3704"
+  },
+  {
+    "key": "rempak_3900",
+    "name": "Ремпак 3900",
+    "model": "Ремпак",
+    "subtype": "pack",
+    "buyPrice": {
+      "bonds": 100000
+    },
+    "sellPrice": {
+      "bonds": 25000
+    },
+    "description": "При распаковке получаешь 400шт запчастей, восстанавливающих 3900 хп каждая, вес после распаковки - 108 000. Осторожнее.",
+    "stats": {
+      "weight": 5000,
+      "creates": [
+        {
+          "name": "Ремкомплект 3900",
+          "count": 400
+        }
+      ]
+    },
+    "iconPath": "items/rempak_3900.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3704"
+  },
+  {
+    "key": "rempak_9000",
+    "name": "Ремпак 9000",
+    "model": "Ремпак",
+    "subtype": "pack",
+    "buyPrice": {
+      "bonds": 50000,
+      "regls": 40
+    },
+    "sellPrice": {
+      "bonds": 12500
+    },
+    "craftFromBlueprints": [],
+    "description": "При распаковке получаешь 400шт запчастей, восстанавливающих 9000 хп каждая, вес после распаковки - 216 000. Осторожнее.",
+    "stats": {
+      "weight": 5000,
+      "creates": [
+        {
+          "name": "Ремкомплект 9000",
+          "count": 400
+        }
+      ]
+    },
+    "iconPath": "items/rempak_9000.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3704"
+  },
+  {
+    "key": "serdechko",
+    "name": "Сердечко",
+    "model": "Сердечко",
+    "subtype": "gift",
+    "buyPrice": {
+      "regls": 100
+    },
+    "description": "Сердечко можно купить в магазине или получить во время эвента. Содержит кротолут, ресурсы, апгрейды или оружие",
+    "stats": {
+      "weight": 1,
+      "creates": [
+        {
+          "name": "Апгрейд уровень 3",
+          "count": 4,
+          "chance": "0.1%"
+        },
+        {
+          "name": "Ускорение",
+          "count": 4,
+          "chance": "0.1%"
+        },
+        {
+          "name": "РЕМПАК 20000",
+          "count": 1,
+          "chance": "0.1%"
+        },
+        {
+          "name": "Апгрейд уровень 4",
+          "count": 3,
+          "chance": "0.1%"
+        },
+        {
+          "name": "Неуязвимость",
+          "count": 4,
+          "chance": "0.1%"
+        },
+        {
+          "name": "Апгрейд уровень 2",
+          "count": 4,
+          "chance": "0.1%"
+        },
+        {
+          "name": "КРИСТАЛЛ КРАСНЫЙ",
+          "count": 1500,
+          "chance": "0.01%"
+        },
+        {
+          "name": "Апгрейд уровень 5",
+          "count": 2,
+          "chance": "0.0010%"
+        },
+        {
+          "name": "Сертификат 90 орудия и ниже",
+          "count": 1,
+          "chance": "0.0010%"
+        },
+        {
+          "name": "Апгрейд уровень 6",
+          "count": 1,
+          "chance": "0.0001%"
+        },
+        {
+          "name": "ПАК РЕСУРСЫ",
+          "count": 1,
+          "chance": "0.0001%"
+        },
+        {
+          "name": "Подарок Большой",
+          "count": 1,
+          "chance": "0.0001%"
+        }
+      ]
+    },
+    "iconPath": "items/serdechko.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3719"
+  },
+  {
+    "key": "shoker_bolshoy",
+    "name": "Шокер Большой",
+    "model": "Шокер Большой",
+    "subtype": "energy",
+    "buyPrice": {
+      "bonds": 30
+    },
+    "sellPrice": {
+      "bonds": 7
+    },
+    "craftFromBlueprints": [],
+    "description": "Аварийный восстановитель уровня энергии",
+    "stats": {
+      "energyRestored": 500,
+      "weight": 10
+    },
+    "iconPath": "items/shoker_bolshoy.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3779"
+  },
+  {
+    "key": "shoker_malyy",
+    "name": "Шокер Малый",
+    "model": "Шокер Малый",
+    "subtype": "energy",
+    "buyPrice": {
+      "bonds": 4
+    },
+    "sellPrice": {
+      "bonds": 1
+    },
+    "craftFromBlueprints": [],
+    "description": "Аварийный восстановитель уровня энергии",
+    "stats": {
+      "energyRestored": 100,
+      "weight": 10
+    },
+    "iconPath": "items/shoker_malyy.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3779"
+  },
+  {
+    "key": "shoker_sredniy",
+    "name": "Шокер Средний",
+    "model": "Шокер Средний",
+    "subtype": "energy",
+    "buyPrice": {
+      "bonds": 12
+    },
+    "sellPrice": {
+      "bonds": 3
+    },
+    "craftFromBlueprints": [],
+    "description": "Аварийный восстановитель уровня энергии",
+    "stats": {
+      "energyRestored": 250,
+      "weight": 10
+    },
+    "iconPath": "items/shoker_sredniy.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3779"
+  },
+  {
+    "key": "skaner_20000",
+    "name": "Сканер 20000",
+    "model": "Сканер",
+    "subtype": "scanner",
+    "requiredRobotType": "Разведчик",
+    "buyPrice": {
+      "bonds": 1000000
+    },
+    "sellPrice": {
+      "bonds": 250000
+    },
+    "description": "В течении 5 минут показывает все передвижения противника в области карты 5*5 квадратов при нахождении сканирующего робота-разведчика в его середине. Результат сканирования виден всем членам твоей нации",
+    "stats": {
+      "energyConsumption": 2000,
+      "scanRadius": 20000,
+      "duration": 5,
+      "weight": 100
+    },
+    "iconPath": "items/skaner_20000.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3792"
+  },
+  {
+    "key": "skaner_6000",
+    "name": "Сканер 6000",
+    "model": "Сканер",
+    "subtype": "scanner",
+    "requiredRobotType": "Разведчик",
+    "buyPrice": {
+      "bonds": 300000
+    },
+    "sellPrice": {
+      "bonds": 75000
+    },
+    "description": "В течении 5 минут показывает все передвижения противника в области карты 3*3 квадрата при нахождении сканирующего робота-разведчика в его середине. Результат сканирования виден всем членам твоей нации",
+    "stats": {
+      "energyConsumption": 1000,
+      "scanRadius": 6000,
+      "duration": 5,
+      "weight": 100
+    },
+    "iconPath": "items/skaner_6000.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3792"
+  },
+  {
+    "key": "skaner_karty",
+    "name": "Сканер Карты",
+    "model": "Сканер Карты",
+    "subtype": "scanner",
+    "requiredRobotType": "Разведчик",
+    "buyPrice": {
+      "regls": 90
+    },
+    "description": "В течении 5 минут показывает все передвижения противника по всей карте. Результат сканирования виден всем членам твоей нации",
+    "stats": {
+      "energyConsumption": 500,
+      "duration": 5,
+      "weight": 100
+    },
+    "iconPath": "items/skaner_karty.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3792"
+  },
+  {
+    "key": "skaner_karty_1_chas",
+    "name": "Сканер Карты 1 Час",
+    "model": "Сканер Карты",
+    "subtype": "scanner",
+    "requiredRobotType": "Разведчик",
+    "description": "В течении 1 часа показывает все передвижения противника по всей карте. Результат сканирования виден всем членам твоей нации",
+    "stats": {
+      "energyConsumption": 500,
+      "duration": 60,
+      "weight": 100
+    },
+    "iconPath": "items/skaner_karty_1_chas.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3792"
+  },
+  {
+    "key": "skaner_karty_individualnyy",
+    "name": "Сканер Карты Индивидуальный",
+    "model": "Сканер Карты Индивидуальный",
+    "subtype": "scanner",
+    "requiredRobotType": "Разведчик",
+    "buyPrice": {
+      "regls": 100
+    },
+    "description": "В течении 5 минут показывает все передвижения противника, а также монстров-боссов по всей карте. Результат сканирования виден только тебе",
+    "stats": {
+      "energyConsumption": 500,
+      "duration": 5,
+      "weight": 100
+    },
+    "iconPath": "items/skaner_karty_individualnyy.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3792"
+  },
+  {
+    "key": "teleportator",
+    "name": "Телепортатор",
+    "model": "Телепортатор",
+    "subtype": "teleport",
+    "buyPrice": {
+      "bonds": 100
+    },
+    "sellPrice": {
+      "bonds": 25
+    },
+    "craftFromBlueprints": [],
+    "description": "Переносит в последнее посещенное здание, исключая бункеры Базы кротов. Органический лут, кристаллы, руду и гафний не переносит",
+    "stats": {
+      "weight": 10
+    },
+    "iconPath": "items/teleportator.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3796"
+  },
+  {
+    "key": "tp_bunker_chervey",
+    "name": "Тп Бункер Червей",
+    "model": "Тп Бункер Червей",
+    "subtype": "teleport",
+    "requiredLevel": 31,
+    "buyPrice": {
+      "bonds": 100000
+    },
+    "sellPrice": {
+      "bonds": 25000
+    },
+    "description": "Переносит к бункеру на карте Черви",
+    "stats": {
+      "weight": 10
+    },
+    "iconPath": "items/tp_bunker_chervey.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3796"
+  },
+  {
+    "key": "tp_gruppa",
+    "name": "Тп Группа",
+    "model": "Тп Группа",
+    "subtype": "teleport",
+    "requiredLevel": 31,
+    "requiredRobotType": "Разведчик",
+    "buyPrice": {
+      "bonds": 100000,
+      "regls": 200
+    },
+    "sellPrice": {
+      "bonds": 25000
+    },
+    "craftFromBlueprints": [],
+    "description": "При его активации роботом-разведчиком к месту его нахождения переносится состав его группы.",
+    "stats": {
+      "weight": 100
+    },
+    "iconPath": "items/tp_gruppa.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3796"
+  },
+  {
+    "key": "tp_istochnik_energii",
+    "name": "Тп Источник Энергии",
+    "model": "Тп Источник Энергии",
+    "subtype": "teleport",
+    "requiredLevel": 31,
+    "buyPrice": {
+      "bonds": 50000,
+      "regls": 150
+    },
+    "sellPrice": {
+      "bonds": 12500
+    },
+    "stats": {
+      "weight": 10
+    },
+    "iconPath": "items/tp_istochnik_energii.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3796"
+  },
+  {
+    "key": "tp_katorga",
+    "name": "Тп Каторга",
+    "model": "Тп Каторга",
+    "subtype": "teleport",
+    "buyPrice": {
+      "bonds": 50000,
+      "regls": 50
+    },
+    "sellPrice": {
+      "bonds": 12500
+    },
+    "description": "Переносит на локацию Каторга",
+    "stats": {
+      "weight": 10
+    },
+    "iconPath": "items/tp_katorga.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3796"
+  },
+  {
+    "key": "tp_magazin_krada",
+    "name": "Тп Магазин Крада",
+    "model": "Тп Магазин Крада",
+    "subtype": "teleport",
+    "requiredLevel": 31,
+    "buyPrice": {
+      "bonds": 50000
+    },
+    "sellPrice": {
+      "bonds": 12500
+    },
+    "description": "Переносит на карту нации Крада",
+    "stats": {
+      "weight": 10
+    },
+    "iconPath": "items/tp_magazin_krada.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3796"
+  },
+  {
+    "key": "tp_magazin_opora",
+    "name": "Тп Магазин Опора",
+    "model": "Тп Магазин Опора",
+    "subtype": "teleport",
+    "requiredLevel": 31,
+    "buyPrice": {
+      "bonds": 50000
+    },
+    "sellPrice": {
+      "bonds": 12500
+    },
+    "description": "Переносит на карту нации Опора",
+    "stats": {
+      "weight": 10
+    },
+    "iconPath": "items/tp_magazin_opora.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3796"
+  },
+  {
+    "key": "tp_magazin_treba",
+    "name": "Тп Магазин Треба",
+    "model": "Тп Магазин Треба",
+    "subtype": "teleport",
+    "requiredLevel": 31,
+    "buyPrice": {
+      "bonds": 50000
+    },
+    "sellPrice": {
+      "bonds": 12500
+    },
+    "description": "Переносит на карту нации Треба",
+    "stats": {
+      "weight": 10
+    },
+    "iconPath": "items/tp_magazin_treba.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3796"
+  },
+  {
+    "key": "tp_obuchayushchiy_kroty",
+    "name": "Тп Обучающий Кроты",
+    "model": "Тп Обучающий Кроты",
+    "subtype": "teleport",
+    "description": "Переносит на локацию, заселенную на 99слабыми видами кротов. Обычный вход туда - телепорт на юге Полигона",
+    "stats": {
+      "weight": 10
+    },
+    "iconPath": "items/tp_obuchayushchiy_kroty.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3796"
+  },
+  {
+    "key": "tp_otryad",
+    "name": "Тп Отряд",
+    "model": "Тп Отряд",
+    "subtype": "teleport",
+    "requiredLevel": 31,
+    "requiredRobotType": "Разведчик",
+    "buyPrice": {
+      "bonds": 150000,
+      "regls": 100
+    },
+    "sellPrice": {
+      "bonds": 37500
+    },
+    "craftFromBlueprints": [],
+    "description": "При его активации роботом-разведчиком к месту его нахождения переносятся все онлайн члены его клана.",
+    "stats": {
+      "weight": 150
+    },
+    "iconPath": "items/tp_otryad.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3796"
+  },
+  {
+    "key": "tp_pervaya_baza",
+    "name": "Тп Первая База",
+    "model": "Тп Первая База",
+    "subtype": "teleport",
+    "requiredLevel": 31,
+    "buyPrice": {
+      "bonds": 50000
+    },
+    "sellPrice": {
+      "bonds": 12500
+    },
+    "description": "Переносит на базу новобранцев",
+    "stats": {
+      "weight": 10
+    },
+    "iconPath": "items/tp_pervaya_baza.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3796"
+  },
+  {
+    "key": "tp_prokhod_k_baze_krotov",
+    "name": "Тп Проход К Базе Кротов",
+    "model": "Тп Проход К Базе Кротов",
+    "subtype": "teleport",
+    "requiredLevel": 31,
+    "sellPrice": {
+      "bonds": 12500
+    },
+    "description": "Переносит к началу карты Проход к базе кротов",
+    "stats": {
+      "weight": 10
+    },
+    "iconPath": "items/tp_prokhod_k_baze_krotov.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3796"
+  },
+  {
+    "key": "tp_soyuz",
+    "name": "Тп Союз",
+    "model": "Тп Союз",
+    "subtype": "teleport",
+    "requiredLevel": 31,
+    "requiredRobotType": "Разведчик",
+    "buyPrice": {
+      "bonds": 200000,
+      "regls": 300
+    },
+    "sellPrice": {
+      "bonds": 50000
+    },
+    "craftFromBlueprints": [],
+    "description": "При его активации роботом-разведчиком к месту его нахождения переносятся все онлайн игроки союзных кланов.",
+    "stats": {
+      "weight": 200
+    },
+    "iconPath": "items/tp_soyuz.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3796"
+  },
+  {
+    "key": "tp_ukreplenie_krotov",
+    "name": "Тп Укрепление Кротов",
+    "model": "Тп Укрепление Кротов",
+    "subtype": "teleport",
+    "requiredLevel": 31,
+    "sellPrice": {
+      "bonds": 12500
+    },
+    "description": "Переносит на карту Укрепление кротов",
+    "stats": {
+      "weight": 10
+    },
+    "iconPath": "items/tp_ukreplenie_krotov.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3796"
+  },
+  {
+    "key": "tsvety",
+    "name": "Цветы",
+    "model": "Цветы",
+    "subtype": "gift",
+    "buyPrice": {
+      "regls": 100
+    },
+    "description": "Цветы можно купить в магазине или получить во время эвента. Содержит кротолут, ресурсы, апгрейды или оружие",
+    "stats": {
+      "weight": 1,
+      "creates": [
+        {
+          "name": "Апгрейд уровень 4",
+          "count": 3,
+          "chance": "0.1%"
+        },
+        {
+          "name": "Неуязвимость",
+          "count": 4,
+          "chance": "0.1%"
+        },
+        {
+          "name": "Апгрейд уровень 3",
+          "count": 4,
+          "chance": "0.1%"
+        },
+        {
+          "name": "РЕМПАК 20000",
+          "count": 1,
+          "chance": "0.1%"
+        },
+        {
+          "name": "Ускорение",
+          "count": 4,
+          "chance": "0.1%"
+        },
+        {
+          "name": "Апгрейд уровень 1",
+          "count": 5,
+          "chance": "0.1%"
+        },
+        {
+          "name": "КРИСТАЛЛ КРАСНЫЙ",
+          "count": 1500,
+          "chance": "0.01%"
+        },
+        {
+          "name": "Сертификат 90 орудия и ниже",
+          "count": 1,
+          "chance": "0.0010%"
+        },
+        {
+          "name": "Апгрейд уровень 5",
+          "count": 2,
+          "chance": "0.0010%"
+        },
+        {
+          "name": "Подарок Большой",
+          "count": 1,
+          "chance": "0.0001%"
+        },
+        {
+          "name": "Апгрейд уровень 6",
+          "count": 1,
+          "chance": "0.0001%"
+        },
+        {
+          "name": "ПАК РЕСУРСЫ",
+          "count": 1,
+          "chance": "0.0001%"
+        }
+      ]
+    },
+    "iconPath": "items/tsvety.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3719"
+  },
+  {
+    "key": "zbatareyki_nuc100",
+    "name": "Z_батарейки Nuc-100",
+    "model": "Z_батарейки Nuc-100",
+    "subtype": "energy",
+    "sellPrice": {
+      "bonds": 12
+    },
+    "description": "Мощный источник энергии",
+    "stats": {
+      "energyRestored": 100,
+      "weight": 10
+    },
+    "iconPath": "items/zbatareyki_nuc100.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3779"
+  }
+]

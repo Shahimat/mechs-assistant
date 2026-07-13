@@ -182,10 +182,49 @@ export const AMMO_COLUMNS: ColumnSpec[] = [
   { name: 'source_note', description: 'Комментарий редактора (не идёт в JSON)' },
 ];
 
+export const ITEMS_COLUMNS: ColumnSpec[] = [
+  { name: 'key', description: 'Ключ предмета (translit от имени). Копируется из детали в UI' },
+  { name: 'name', description: 'Полное название предмета с вариантом' },
+  { name: 'model', description: 'Префикс без варианта' },
+  {
+    name: 'subtype',
+    description:
+      'pack (паки) / gift (подарки) / energy (шокеры) / invis (невидимость) / repair (ремкомплект) / scanner (сканер) / teleport (телепортатор)',
+  },
+  { name: 'requiredLevel', description: 'Требуемый уровень персонажа' },
+  {
+    name: 'requiredRobotType',
+    description: 'Ограничение по классу меха (у сканеров — «Добытчик» / «Разведчик»)',
+  },
+  { name: 'stats.weight', description: 'Вес' },
+  { name: 'stats.creates', description: 'pack/gift: «Создает» — что даёт при активации' },
+  { name: 'stats.createdIn', description: 'gift: «Находится в» — где выпадает подарок' },
+  { name: 'stats.energyRestored', description: 'energy (шокеры): «Восстанавливает энергии»' },
+  { name: 'stats.energyConsumption', description: 'invis / scanner: «Энергопотребление»' },
+  { name: 'stats.healing', description: 'repair (ремкомплект): «Восстанавливает» (прочность)' },
+  { name: 'stats.repairPause', description: 'repair: «Пауза ремонта»' },
+  {
+    name: 'stats.repairPauseIfNotAttacked',
+    description: 'repair: «Пауза ремонта, если не был атакован»',
+  },
+  { name: 'stats.scanRadius', description: 'scanner: «Радиус сканирования»' },
+  { name: 'stats.duration', description: 'scanner: «Время действия»' },
+  { name: 'buyPrice.bonds', description: 'Цена покупки в бонах' },
+  { name: 'buyPrice.regls', description: 'Цена покупки в реглах' },
+  { name: 'sellPrice.bonds', description: 'Цена продажи в бонах (базовая, без «Торговли»)' },
+  { name: 'sellPrice.regls', description: 'Цена продажи в реглах' },
+  { name: 'craftFromBlueprints', description: 'Крафтится из чертежей — список через ;' },
+  { name: 'description', description: 'Свободное описание предмета' },
+  { name: 'iconPath', description: 'Путь к иконке (например data/icons/items/…)' },
+  { name: 'wikiUrl', description: 'URL детальной страницы вики' },
+  { name: 'source_note', description: 'Комментарий редактора (не идёт в JSON)' },
+];
+
 /** Регистр колонок по slug каталога. */
 export const COLUMNS_BY_SLUG: Record<string, ColumnSpec[]> = {
   robots: MECHS_COLUMNS, // slug=robots, но лист=mechs (см. catalogs.config)
   weapons: WEAPONS_COLUMNS,
   equipment: EQUIPMENT_COLUMNS,
   ammo: AMMO_COLUMNS,
+  items: ITEMS_COLUMNS,
 };

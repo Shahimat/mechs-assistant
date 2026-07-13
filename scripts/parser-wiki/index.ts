@@ -6,6 +6,7 @@ import { robotsResolver, robotsSeeds } from './resolvers/robots.js';
 import { weaponsResolver, weaponsSeeds } from './resolvers/weapons.js';
 import { equipmentResolver, equipmentSeeds } from './resolvers/equipment.js';
 import { ammoResolver, ammoSeeds } from './resolvers/ammo.js';
+import { itemsResolver, itemsSeeds } from './resolvers/items.js';
 
 const FETCH_DELAY_MS = 150; // вежливость к серверу
 
@@ -37,6 +38,10 @@ const RESOLVERS: Record<string, () => ResolverEntry> = {
   ammo: () => ({
     resolver: ammoResolver,
     seeds: ammoSeeds(),
+  }),
+  items: () => ({
+    resolver: itemsResolver,
+    seeds: itemsSeeds(),
   }),
 };
 

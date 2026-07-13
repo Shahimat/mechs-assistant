@@ -1,0 +1,30 @@
+id: view--items-catalog-opens-detail-on-click
+kind: behavior
+namespace: ui
+entities: [view--items-catalog]
+title: Клик по карточке в view--items-catalog открывает детализацию (ItemDetail)
+
+scenarios:
+  - given: сетка карточек отрисована
+    when: пользователь кликает по карточке (не по звёздочке избранного)
+    then: |
+      открывается `ItemDetail` — MUI Dialog со всеми полями Item:
+      subtype, requiredLevel, requiredRobotType, все subtype-specific
+      stats (creates/createdIn/energyRestored/energyConsumption/
+      healing/repairPause/repairPauseIfNotAttacked/scanRadius/duration),
+      weight, buyPrice/sellPrice, craftFromBlueprints, description.
+
+  - given: ItemDetail открыт
+    when: пользователь закрывает его (крестик / Esc / клик по фону)
+    then: возврат к сетке, состояние стора не меняется.
+
+  - given: пользователь кликает по звёздочке избранного внутри карточки
+    when: обработчик события звёздочки перехватывает клик
+    then: |
+      детализация НЕ открывается, срабатывает только
+      `other--favorites-toggle-on-star-click`.
+
+verified: true
+verified_at: 2026-07-13
+verified_note: |
+  Проверено чтением кода: клик по `<CardActionArea>` в `ItemCard.tsx` вызывает `onClick(item)` → `ItemsCatalog.tsx` ставит `selectedItem`, `ItemDetail` рендерится как MUI Dialog (`item !== null`). Закрытие — стандартный `onClose` Dialog. Клик по звёздочке использует `e.stopPropagation()`, детализация не открывается. `ItemDetail.tsx` показывает все имеющиеся subtype-specific stats через ValueRow (creates/createdIn/energyRestored/energyConsumption/healing/repairPause/repairPauseIfNotAttacked/scanRadius/duration/weight), buyPrice/sellPrice, craftFromBlueprints, description, key для копирования. Финальная визуальная проверка в браузере — пройдена юзером 2026-07-13.
