@@ -1,0 +1,64 @@
+id: view--components-catalog
+kind: entity
+namespace: ui
+version: '0.x'
+
+description: |
+  Карточный каталог компонентов — седьмой view MVP1. Сетка карточек
+  со звёздочкой избранного. По клику — детализация (MUI Dialog).
+
+  Монтируется по маршруту `/catalogs/components-catalog` через
+  `ComponentsCatalogPage` — тонкая обёртка поверх `ComponentsCatalog`.
+  Собирается из примитивов `other--catalog-shell` (`CatalogHeader`,
+  `CatalogSection`, `CatalogGrid`, `FavoritesDnDSection`, `SearchField`,
+  `PairToggleGroup`) плюс components-специфичные компоненты
+  (`ComponentCard`, `ComponentDetail`, `SortableComponentCard`).
+
+  **Фильтры (умеренный набор для 32 записей):**
+    - **Поиск** — `SearchField` по имени.
+    - **Тип** — `PairToggleGroup` по `kind` (2 капсулы: «Базовый» +
+      «Составной»). **Панель фильтра автоматически скрывается**, если
+      ни у одной записи `kind` не заполнен (overlay пустой на старте
+      MVP1). Так UI не шумит пустыми фильтрами до наполнения.
+
+  Карточка показывает: имя, вес, цену продажи (Боны). Списки чертежей
+  и рецепт — только в детализации.
+
+  Детализация показывает: `stats.weight`, chip `kind` (если есть),
+  `sellPrice`, `craftFromBlueprints` (chip'ы), `recipe` (chip'ы
+  «Название ×N», если overlay заполнен), `description`.
+
+  Читает данные из `data--components-catalog` через `useComponentsStore`,
+  общая механика избранного `other--favorites` (отдельная IndexedDB-база).
+
+  Плитка на `CatalogsHubPage` — `@img/catalog-icons/components.webp`
+  (уже на месте).
+
+source_files:
+  page: src/pages/catalogs/ComponentsCatalogPage.tsx
+  view: src/components/catalogs/components/ComponentsCatalog.tsx
+  card: src/components/catalogs/components/ComponentCard.tsx
+  detail: src/components/catalogs/components/ComponentDetail.tsx
+  sortable_card: src/components/catalogs/components/SortableComponentCard.tsx
+
+features_enabled:
+  - cards-grid
+  - component-detail-view
+  - favorites-star
+  - favorites-dnd
+  - overlay-highlight
+  - search-in-section
+  - filter-kind-auto-hide # PairToggleGroup появляется, только если overlay заполнил `kind`
+
+features_disabled:
+  - filter-level-range # у компонентов нет requiredLevel
+  - filter-subtype # `kind` — единственная классификация
+
+manuals: []
+behaviors:
+  - view--components-catalog-renders-cards-grid
+  - view--components-catalog-opens-detail-on-click
+  - other--favorites-toggle-on-star-click
+
+verified_note: |
+  Реализация закрыта 2026-07-14. View с SearchField и auto-hide фильтром по `kind` (`hasKind = components.some(c => c.kind != null)`). На старте MVP1 панель фильтра не рендерится — overlay пуст. Карточка минимальна, детали показывают все поля включая секции «Рецепт»/«Крафт». Behaviors verified 2026-07-14.

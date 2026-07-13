@@ -29,7 +29,7 @@ namespaces:
       - id: data--ore-catalog
         one_liner: 'Каталог руды и полезных ископаемых — 8 записей из wiki 3036 (три кристалла, гафний, магма, железная руда, железо, цезий); поле `foundIn: string[]` — простой список источников (без count/chance, в отличие от items.stats.creates). Стор+view — в фазе feat.'
       - id: data--components-catalog
-        one_liner: Каталог компонентов — базовые + составные, крафтятся из лута/чертежей (wiki 3955). Гибридный (парсер + overlay рецептов).
+        one_liner: 'Каталог компонентов — 32 записи из wiki 3955, гибридный (parsed: name/weight/sellPrice/description/craftFromBlueprints; overlay: kind base|composite + recipe). Overlay пустой на старте — заполняется по мере необходимости.'
       - id: data--currencies
         one_liner: Справочник валют — Боны + Реглы (wiki 3017/3020). Без своего view, без плитки (2026-07-13). Понятия используются как `Price { bonds?, regls? }` в других каталогах.
       - id: data--skills-catalog
@@ -83,6 +83,8 @@ namespaces:
         one_liner: 'Карточный каталог `/catalogs/items-catalog` — ~54 предметов, PairToggleGroup по subtype (4 капсулы: паки+подарки/ремкомплект+шокеры/невидимость+сканер/телепортатор), «главный» stat по subtype в карточке. Спецификация есть, реализация — в фазе feat.'
       - id: view--ore-catalog
         one_liner: Карточный каталог `/catalogs/ore-catalog` — 8 руд, без фильтров и без поиска (мало записей), foundIn показан только в детализации. Спецификация есть, реализация — в фазе feat.
+      - id: view--components-catalog
+        one_liner: Карточный каталог `/catalogs/components-catalog` — 32 компонента, SearchField + PairToggleGroup по kind (auto-hide при пустом overlay). Спецификация есть, реализация — в фазе feat.
       - id: other--tile
         one_liner: Квадратная плитка навигации с hover-scale, active-press, focus-ring, слотом для иконки.
       - id: other--catalog-shell
@@ -156,6 +158,14 @@ namespaces:
         one_liner: view--ore-catalog рендерит сетку OreCard из data--ore-catalog, без фильтров и поиска.
       - id: view--ore-catalog-opens-detail-on-click
         one_liner: Клик по карточке руды открывает детализацию (OreDetail).
+      - id: data--components-catalog-loaded-from-json
+        one_liner: Каталог компонентов загружается из merged .build/data/components.json при инициализации стора.
+      - id: data--components-catalog-schema-typed
+        one_liner: Каждая запись components.json соответствует типу Component (TS strict).
+      - id: view--components-catalog-renders-cards-grid
+        one_liner: view--components-catalog рендерит сетку ComponentCard, SearchField + PairToggleGroup по kind (auto-hide).
+      - id: view--components-catalog-opens-detail-on-click
+        one_liner: Клик по карточке компонента открывает детализацию (ComponentDetail).
 
   comparison:
     description: Механики сравнения и приоритизации мехов (избранное, будущий боевой калькулятор).

@@ -1,47 +1,83 @@
 id: data--components-catalog
 kind: entity
 namespace: catalog
-version: "0.x"
+version: '1.x'
 
 description: |
-  Каталог компонентов — материалы для крафта / прокачки. Делятся на:
+  Каталог компонентов — материалы для крафта и прокачки: Плата, Конденсатор,
+  Корпус, Броня, Турбина, Ионизатор и т.д. Седьмой каталог MVP1 после
+  мехов, weapons, equipment, ammo, items, ore. Гибридный (parsed + overlay
+  рецептов).
 
-    - **Базовые** — крафтятся только из лута.
-    - **Составные** — крафтятся из лута + других компонентов, либо
-      только из других компонентов.
+  В zustand-стор импортируется merged JSON (`@build/data/components.json`)
+  — массив объектов `Component`. Merged JSON генерируется build-time
+  скриптом `scripts/build-data`.
 
-  Первичный источник — вики `new.mechs.su/?page_id=3955` (Экономика →
-  Компоненты).
+  Первичный источник — единственная страница вики `?page_id=3955`
+  («Компоненты»). ~32 карточки, все с CSS `wiki-item-type-cargo`
+  (тот же класс, что у ore — «cargo» универсально для товаров).
+  Разметка минимальна: Вес, Цена продажи (Боны), Описание, «Крафтится
+  из чертежей» (список названий чертежей через `<a data-description>`,
+  как в ore-`foundIn` — без count/chance).
 
-  **Гибридный каталог.** Парсер вытаскивает список компонентов и их
-  названия/описания. **Рецепты крафта** (какой чертёж какой компонент
-  создаёт, из чего состоит) вводятся автором вручную через overlay
-  (`data/overrides/components.yml`) — эта информация в вики
-  практически отсутствует. См. convention `data-overlay`.
+  **Гибридная модель.** Парсер тянет базовые поля (name, weight,
+  sellPrice, description, craftFromBlueprints, iconPath). Классификация
+  (`kind`) и **рецепты** (`recipe`) — приходят через overlay
+  (`data/overrides/components.yml`), потому что на вики этой информации
+  практически нет. Overlay-колонки в Sheets заведены, но пустые до
+  ручного наполнения. Рецепты нужны для MVP2 (калькулятор прокачки
+  разворачивает целевой уровень меха в дерево ресурсов через связку
+  компонентов). Для MVP1 UI работает без рецептов.
 
-  Данные каталога критичны для MVP2 (калькулятор прокачки) — калькулятор
-  разворачивает целевой уровень меха в дерево дефицитных ресурсов
-  через рецепты компонентов.
-
-  Shell-entity MVP1.
+  Overlay `data/overrides/components.yml` синкается из Google Sheets
+  (лист `components`) через `parser--google-sheets`. Схема — TS-типы
+  в `src/types/component.ts`.
 
 source_files:
-  data: data/components.json                       # результат merge(parsed, overlay)
-  overlay: data/overrides/components.yml           # ручной ввод рецептов
+  parsed: data/components.json
+  overlay: data/overrides/components.yml
+  merged: .build/data/components.json # build-time
+  merger: scripts/build-data/index.ts
+  parser: scripts/parser-wiki/resolvers/components.ts
   types: src/types/component.ts
 
 wiki_source:
   page_ids: [3955]
   section: Экономика → Компоненты
   data_flow: hybrid
-  overlay_fields: [kind, recipe, iconPath]         # kind: base|composite; recipe: список входов
+  overlay_fields: [kind, recipe] # заполняются вручную через Sheets
+  page_structure: |
+    Одна страница, ~32 h2.wiki-header с классом `wiki-item-type-cargo`.
+    Разметка минимальна: только Вес, Цена продажи (только Боны),
+    Описание, «Крафтится из чертежей» (список <a data-description>).
+    Список чертежей парсится через `extractSourceNames` (по образцу
+    ore.foundIn).
+
+schema:
+  component_key_fields:
+    - key
+    - name
+    - model
+    - stats # ComponentStats — только вес
+  stats_fields:
+    required: [weight]
+  optional_top_level:
+    - kind # 'base' | 'composite' — overlay, из Sheets вручную
+    - craftFromBlueprints # `string[]` — parsed, список названий чертежей
+    - recipe # `RecipeItem[]` — overlay: из чего собирается (name + count); формат Sheets `Плата|2; Кислота|1`
+    - sellPrice # { bonds?, regls? } — parsed, у компонентов встречены только Боны
+    - description # parsed
+    - iconPath # data/icons/components/<key>.webp
+    - wikiUrl
+
+features_enabled: [json-source, typed-schema, overlay-merge, hybrid-overlay]
+features_disabled: [network-fetch, dynamic-schema]
 
 manuals: []
-behaviors: []
+behaviors:
+  - data--components-catalog-loaded-from-json
+  - data--components-catalog-schema-typed
+  - view--components-catalog-renders-cards-grid # кросс-ссылка
 
 verified_note: |
-  Shell-entity создана в фазе docs MVP1. Гибридная модель: парсер +
-  ручной ввод рецептов через `data/overrides/components.yml`.
-  Реализация — при подключении каталога через пилот-цепочку.
-  Модель рецептов (структура `recipe`, связка с blueprints и loot) —
-  уточняется при первом наполнении.
+  Data-слой закрыт 2026-07-14: 32 записи из wiki 3955, все с `stats.weight`. 31 из 32 получили `craftFromBlueprints` через `extractSourceNames` по `<a data-description>` (у одной карточки поле пустое). Overlay-поля `kind`/`recipe` в схеме и в Sheets заведены, но пусты — заполняются вручную. Все behaviors verified 2026-07-14.

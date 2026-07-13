@@ -1,0 +1,29 @@
+id: view--components-catalog-opens-detail-on-click
+kind: behavior
+namespace: ui
+entities: [view--components-catalog]
+title: Клик по карточке в view--components-catalog открывает детализацию (ComponentDetail)
+
+scenarios:
+  - given: сетка карточек отрисована
+    when: пользователь кликает по карточке (не по звёздочке)
+    then: |
+      открывается `ComponentDetail` — MUI Dialog со всеми полями Component:
+      `stats.weight`, chip `kind` (если из overlay), `sellPrice`,
+      `craftFromBlueprints` (chip'ы), `recipe` (chip'ы «Название ×N»,
+      если из overlay), `description`, key для копирования.
+
+  - given: ComponentDetail открыт
+    when: пользователь закрывает его (крестик / Esc / клик по фону)
+    then: возврат к сетке, состояние стора не меняется.
+
+  - given: пользователь кликает по звёздочке избранного внутри карточки
+    when: обработчик события звёздочки перехватывает клик
+    then: |
+      детализация НЕ открывается, срабатывает только
+      `other--favorites-toggle-on-star-click`.
+
+verified: true
+verified_at: 2026-07-14
+verified_note: |
+  Проверено чтением кода: клик по `<CardActionArea>` в `ComponentCard.tsx` вызывает `onClick(component)` → `ComponentsCatalog.tsx` ставит `selectedComponent`, `ComponentDetail` рендерится как MUI Dialog. Клик по звёздочке использует `e.stopPropagation()`, детализация не открывается. `ComponentDetail.tsx` показывает: chip `kind` (если есть), `stats.weight`, `sellPrice`, секцию «Рецепт» с chip'ами `Название ×N` из `recipe` (только если overlay заполнил), секцию «Крафт» с chip'ами `craftFromBlueprints`, `description`, key для копирования. Финальная визуальная проверка в браузере — пройдена юзером 2026-07-14.

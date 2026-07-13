@@ -1,0 +1,543 @@
+[
+  {
+    "key": "blok",
+    "name": "Блок",
+    "model": "Блок",
+    "sellPrice": {
+      "bonds": 82
+    },
+    "description": "Компонент, используемый для крафта оружия и оборудования",
+    "craftFromBlueprints": [
+      "Чертеж Блок"
+    ],
+    "stats": {
+      "weight": 10
+    },
+    "iconPath": "components/blok.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3955"
+  },
+  {
+    "key": "blok_slezheniya",
+    "name": "Блок Слежения",
+    "model": "Блок Слежения",
+    "sellPrice": {
+      "bonds": 142
+    },
+    "description": "Компонент, используемый для крафта оружия и оборудования",
+    "craftFromBlueprints": [
+      "Чертеж Блок Слежения"
+    ],
+    "stats": {
+      "weight": 10
+    },
+    "iconPath": "components/blok_slezheniya.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3955"
+  },
+  {
+    "key": "blok_slezheniya_rasshirennyy",
+    "name": "Блок Слежения Расширенный",
+    "model": "Блок Слежения Расширенный",
+    "sellPrice": {
+      "bonds": 633
+    },
+    "description": "Компонент, используемый для крафта оружия и оборудования",
+    "craftFromBlueprints": [
+      "Чертеж Блок слежения расширенный"
+    ],
+    "stats": {
+      "weight": 10
+    },
+    "iconPath": "components/blok_slezheniya_rasshirennyy.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3955"
+  },
+  {
+    "key": "bronya",
+    "name": "Броня",
+    "model": "Броня",
+    "sellPrice": {
+      "bonds": 29
+    },
+    "description": "Компонент, используемый для крафта оружия и оборудования",
+    "stats": {
+      "weight": 10
+    },
+    "iconPath": "components/bronya.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3955"
+  },
+  {
+    "key": "bronya_splav_v13",
+    "name": "Броня Сплав V.13",
+    "model": "Броня Сплав V.13",
+    "sellPrice": {
+      "bonds": 142
+    },
+    "description": "Компонент, используемый для крафта оружия и оборудования",
+    "craftFromBlueprints": [
+      "Чертеж Броня СПЛАВ v.13"
+    ],
+    "stats": {
+      "weight": 10
+    },
+    "iconPath": "components/bronya_splav_v13.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3955"
+  },
+  {
+    "key": "derzhatel",
+    "name": "Держатель",
+    "model": "Держатель",
+    "sellPrice": {
+      "bonds": 85
+    },
+    "description": "Компонент, используемый для крафта оружия и оборудования",
+    "craftFromBlueprints": [
+      "Чертеж Держатель"
+    ],
+    "stats": {
+      "weight": 10
+    },
+    "iconPath": "components/derzhatel.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3955"
+  },
+  {
+    "key": "detal",
+    "name": "Деталь",
+    "model": "Деталь",
+    "sellPrice": {
+      "bonds": 47
+    },
+    "description": "Компонент, используемый для крафта оружия и оборудования",
+    "craftFromBlueprints": [
+      "Чертеж Деталь"
+    ],
+    "stats": {
+      "weight": 10
+    },
+    "iconPath": "components/detal.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3955"
+  },
+  {
+    "key": "forsunka",
+    "name": "Форсунка",
+    "model": "Форсунка",
+    "sellPrice": {
+      "bonds": 142
+    },
+    "description": "Компонент, используемый для крафта оружия и оборудования",
+    "craftFromBlueprints": [
+      "Чертеж форсунка"
+    ],
+    "stats": {
+      "weight": 10
+    },
+    "iconPath": "components/forsunka.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3955"
+  },
+  {
+    "key": "ionizator",
+    "name": "Ионизатор",
+    "model": "Ионизатор",
+    "sellPrice": {
+      "bonds": 142
+    },
+    "description": "Компонент, используемый для крафта оружия и оборудования",
+    "craftFromBlueprints": [
+      "Чертеж Ионизатор"
+    ],
+    "stats": {
+      "weight": 10
+    },
+    "iconPath": "components/ionizator.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3955"
+  },
+  {
+    "key": "khim_rastvor",
+    "name": "Хим Раствор",
+    "model": "Хим Раствор",
+    "sellPrice": {
+      "bonds": 181
+    },
+    "description": "Компонент, используемый для крафта оружия и оборудования",
+    "craftFromBlueprints": [
+      "Чертеж Хим раствор"
+    ],
+    "stats": {
+      "weight": 10
+    },
+    "iconPath": "components/khim_rastvor.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3955"
+  },
+  {
+    "key": "khimicheskoe_soedinenie",
+    "name": "Химическое Соединение",
+    "model": "Химическое Соединение",
+    "sellPrice": {
+      "bonds": 47
+    },
+    "description": "Компонент, используемый для крафта оружия и оборудования",
+    "craftFromBlueprints": [
+      "Чертеж Химическое соединение"
+    ],
+    "stats": {
+      "weight": 10
+    },
+    "iconPath": "components/khimicheskoe_soedinenie.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3955"
+  },
+  {
+    "key": "khranilishche_patronov",
+    "name": "Хранилище Патронов",
+    "model": "Хранилище Патронов",
+    "sellPrice": {
+      "bonds": 142
+    },
+    "description": "Компонент, используемый для крафта оружия и оборудования",
+    "craftFromBlueprints": [
+      "Чертеж Хранилище патронов"
+    ],
+    "stats": {
+      "weight": 10
+    },
+    "iconPath": "components/khranilishche_patronov.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3955"
+  },
+  {
+    "key": "kislota",
+    "name": "Кислота",
+    "model": "Кислота",
+    "sellPrice": {
+      "bonds": 153
+    },
+    "description": "Компонент, используемый для крафта оружия и оборудования",
+    "craftFromBlueprints": [
+      "Чертеж Кислота"
+    ],
+    "stats": {
+      "weight": 10
+    },
+    "iconPath": "components/kislota.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3955"
+  },
+  {
+    "key": "kolpograf",
+    "name": "Кольпограф",
+    "model": "Кольпограф",
+    "sellPrice": {
+      "bonds": 142
+    },
+    "description": "Компонент, используемый для крафта оружия и оборудования",
+    "craftFromBlueprints": [
+      "Чертеж Кольпограф"
+    ],
+    "stats": {
+      "weight": 10
+    },
+    "iconPath": "components/kolpograf.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3955"
+  },
+  {
+    "key": "kondensator",
+    "name": "Конденсатор",
+    "model": "Конденсатор",
+    "sellPrice": {
+      "bonds": 142
+    },
+    "description": "Компонент, используемый для крафта оружия и оборудования",
+    "craftFromBlueprints": [
+      "Чертеж Конденсатор"
+    ],
+    "stats": {
+      "weight": 10
+    },
+    "iconPath": "components/kondensator.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3955"
+  },
+  {
+    "key": "korpus",
+    "name": "Корпус",
+    "model": "Корпус",
+    "sellPrice": {
+      "bonds": 142
+    },
+    "description": "Компонент, используемый для крафта оружия и оборудования",
+    "craftFromBlueprints": [
+      "Чертеж Корпус"
+    ],
+    "stats": {
+      "weight": 10
+    },
+    "iconPath": "components/korpus.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3955"
+  },
+  {
+    "key": "korpus_stvola",
+    "name": "Корпус Ствола",
+    "model": "Корпус Ствола",
+    "sellPrice": {
+      "bonds": 142
+    },
+    "description": "Компонент, используемый для крафта оружия и оборудования",
+    "craftFromBlueprints": [
+      "Чертеж Корпус ствола"
+    ],
+    "stats": {
+      "weight": 10
+    },
+    "iconPath": "components/korpus_stvola.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3955"
+  },
+  {
+    "key": "kreptoydy",
+    "name": "Крептойды",
+    "model": "Крептойды",
+    "sellPrice": {
+      "bonds": 298
+    },
+    "description": "Компонент, используемый для крафта оружия и оборудования",
+    "craftFromBlueprints": [
+      "Чертеж Крептойды"
+    ],
+    "stats": {
+      "weight": 10
+    },
+    "iconPath": "components/kreptoydy.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3955"
+  },
+  {
+    "key": "kronshteyn",
+    "name": "Кронштейн",
+    "model": "Кронштейн",
+    "sellPrice": {
+      "bonds": 51
+    },
+    "description": "Компонент, используемый для крафта оружия и оборудования",
+    "craftFromBlueprints": [
+      "Чертеж Кронштейн"
+    ],
+    "stats": {
+      "weight": 10
+    },
+    "iconPath": "components/kronshteyn.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3955"
+  },
+  {
+    "key": "mekhanizm_podachi",
+    "name": "Механизм Подачи",
+    "model": "Механизм Подачи",
+    "sellPrice": {
+      "bonds": 139
+    },
+    "description": "Компонент, используемый для крафта оружия и оборудования",
+    "craftFromBlueprints": [
+      "Чертеж Механизм Подачи"
+    ],
+    "stats": {
+      "weight": 10
+    },
+    "iconPath": "components/mekhanizm_podachi.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3955"
+  },
+  {
+    "key": "obektiv",
+    "name": "Объектив",
+    "model": "Объектив",
+    "sellPrice": {
+      "bonds": 14
+    },
+    "description": "Компонент, используемый для крафта оружия и оборудования",
+    "craftFromBlueprints": [
+      "Чертеж Объектив"
+    ],
+    "stats": {
+      "weight": 10
+    },
+    "iconPath": "components/obektiv.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3955"
+  },
+  {
+    "key": "opticheskoe_ustroystvo",
+    "name": "Оптическое Устройство",
+    "model": "Оптическое Устройство",
+    "sellPrice": {
+      "bonds": 142
+    },
+    "description": "Компонент, используемый для крафта оружия и оборудования",
+    "craftFromBlueprints": [
+      "Чертеж Оптическое устройство"
+    ],
+    "stats": {
+      "weight": 10
+    },
+    "iconPath": "components/opticheskoe_ustroystvo.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3955"
+  },
+  {
+    "key": "peredatchik",
+    "name": "Передатчик",
+    "model": "Передатчик",
+    "sellPrice": {
+      "bonds": 142
+    },
+    "description": "Компонент, используемый для крафта оружия и оборудования",
+    "craftFromBlueprints": [
+      "Чертеж Передатчик"
+    ],
+    "stats": {
+      "weight": 10
+    },
+    "iconPath": "components/peredatchik.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3955"
+  },
+  {
+    "key": "plata",
+    "name": "Плата",
+    "model": "Плата",
+    "sellPrice": {
+      "bonds": 281
+    },
+    "description": "Компонент, используемый для крафта оружия и оборудования",
+    "craftFromBlueprints": [
+      "Чертеж Плата"
+    ],
+    "stats": {
+      "weight": 10
+    },
+    "iconPath": "components/plata.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3955"
+  },
+  {
+    "key": "shnek",
+    "name": "Шнек",
+    "model": "Шнек",
+    "sellPrice": {
+      "bonds": 142
+    },
+    "description": "Компонент, используемый для крафта оружия и оборудования",
+    "craftFromBlueprints": [
+      "Чертеж Шнек"
+    ],
+    "stats": {
+      "weight": 10
+    },
+    "iconPath": "components/shnek.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3955"
+  },
+  {
+    "key": "skhema_navedeniya",
+    "name": "Схема Наведения",
+    "model": "Схема Наведения",
+    "sellPrice": {
+      "bonds": 618
+    },
+    "description": "Компонент, используемый для крафта оружия и оборудования",
+    "craftFromBlueprints": [
+      "Чертеж Схема наведения"
+    ],
+    "stats": {
+      "weight": 10
+    },
+    "iconPath": "components/skhema_navedeniya.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3955"
+  },
+  {
+    "key": "stoktor",
+    "name": "Стоктор",
+    "model": "Стоктор",
+    "sellPrice": {
+      "bonds": 22
+    },
+    "description": "Компонент, используемый для крафта оружия и оборудования",
+    "craftFromBlueprints": [
+      "Чертеж Стоктор"
+    ],
+    "stats": {
+      "weight": 10
+    },
+    "iconPath": "components/stoktor.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3955"
+  },
+  {
+    "key": "turbina",
+    "name": "Турбина",
+    "model": "Турбина",
+    "sellPrice": {
+      "bonds": 142
+    },
+    "description": "Компонент, используемый для крафта оружия и оборудования",
+    "craftFromBlueprints": [
+      "Чертеж Турбина"
+    ],
+    "stats": {
+      "weight": 10
+    },
+    "iconPath": "components/turbina.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3955"
+  },
+  {
+    "key": "vidiofon",
+    "name": "Видиофон",
+    "model": "Видиофон",
+    "sellPrice": {
+      "bonds": 142
+    },
+    "description": "Компонент, используемый для крафта оружия и оборудования",
+    "craftFromBlueprints": [
+      "Чертеж Видиофон"
+    ],
+    "stats": {
+      "weight": 10
+    },
+    "iconPath": "components/vidiofon.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3955"
+  },
+  {
+    "key": "vizor_krotov",
+    "name": "Визор Кротов",
+    "model": "Визор Кротов",
+    "sellPrice": {
+      "bonds": 116
+    },
+    "description": "Компонент, используемый для крафта оружия и оборудования",
+    "craftFromBlueprints": [
+      "Чертеж Визор кротов"
+    ],
+    "stats": {
+      "weight": 10
+    },
+    "iconPath": "components/vizor_krotov.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3955"
+  },
+  {
+    "key": "yadokhimikat",
+    "name": "Ядохимикат",
+    "model": "Ядохимикат",
+    "sellPrice": {
+      "bonds": 12
+    },
+    "description": "Компонент, используемый для крафта оружия и оборудования",
+    "craftFromBlueprints": [
+      "Чертеж Ядохимикат"
+    ],
+    "stats": {
+      "weight": 10
+    },
+    "iconPath": "components/yadokhimikat.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3955"
+  },
+  {
+    "key": "zatvor",
+    "name": "Затвор",
+    "model": "Затвор",
+    "sellPrice": {
+      "bonds": 142
+    },
+    "description": "Компонент, используемый для крафта оружия и оборудования",
+    "craftFromBlueprints": [
+      "Чертеж Затвор"
+    ],
+    "stats": {
+      "weight": 10
+    },
+    "iconPath": "components/zatvor.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3955"
+  }
+]

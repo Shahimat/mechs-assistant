@@ -1,0 +1,30 @@
+id: data--components-catalog-schema-typed
+kind: behavior
+namespace: catalog
+entities: [data--components-catalog]
+title: Каждая запись в components.json соответствует типу Component (TS strict)
+
+scenarios:
+  - given: "TypeScript strict включён (`strict: true`) и `resolveJsonModule: true`"
+    when: файл `store.ts` импортирует `componentsData` из
+      `@build/data/components.json` и приводит его к `Component[]`
+    then: |
+      сборка проходит без ошибок типа, `Component`-типы из
+      `src/types/component.ts` применимы ко всем записям.
+
+  - given: в JSON появилась запись без `stats.weight`
+    when: разработчик пытается собрать проект (`npm run build`)
+    then: |
+      сборка/typecheck должны падать. Оговорка про runtime-валидацию та же,
+      что для всех data-каталогов.
+
+  - given: overlay заполнил `kind` = 'base' | 'composite' и `recipe` для части записей
+    when: TS-компиляция проверяет типы
+    then: |
+      `kind?: 'base' | 'composite'` и `recipe?: RecipeItem[]` описаны как
+      опциональные. Записи без overlay продолжают проходить typecheck.
+
+verified: true
+verified_at: 2026-07-14
+verified_note: |
+  Проверено: `npm run build` и `tsc --noEmit` проходят без ошибок типа. `Component`/`ComponentStats`/`RecipeItem`/`ComponentKind` описаны в `src/types/component.ts`. Все 32 записи содержат `stats.weight` (валидация в parsePage). Overlay-поля `kind?: 'base' | 'composite'` и `recipe?: RecipeItem[]` описаны как опциональные — записи без overlay проходят typecheck. Оговорка про runtime-валидацию та же, что для всех data-каталогов.

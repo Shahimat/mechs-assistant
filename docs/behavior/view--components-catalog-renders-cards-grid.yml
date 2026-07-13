@@ -1,0 +1,32 @@
+id: view--components-catalog-renders-cards-grid
+kind: behavior
+namespace: ui
+entities: [view--components-catalog]
+title: view--components-catalog рендерит сетку карточек компонентов из data--components-catalog
+
+scenarios:
+  - given: стор компонентов гидратирован, `components` содержит записи
+    when: пользователь открыл `/catalogs/components-catalog`
+    then: |
+      view--components-catalog рендерит сетку `ComponentCard` — по одной
+      карточке на запись. В карточке: имя, вес, цена продажи (Боны),
+      звёздочка избранного. `craftFromBlueprints` и `recipe` — не в
+      карточке, только в детализации.
+
+      Панель фильтров: `SearchField` (всегда) + `PairToggleGroup` по
+      `kind` (2 капсулы: «Базовый», «Составной»). Капсулы автоматически
+      скрываются, если ни у одной записи `kind` не заполнен (пустой
+      overlay). Матч: `activeKinds.has(c.kind)`.
+
+  - given: массив `components` пуст
+    when: пользователь открыл `/catalogs/components-catalog`
+    then: view показывает empty state.
+
+  - given: "`error` не null (ошибка загрузки данных)"
+    when: пользователь открыл `/catalogs/components-catalog`
+    then: view показывает error state (Alert severity=error).
+
+verified: true
+verified_at: 2026-07-14
+verified_note: |
+  Проверено чтением кода: `ComponentsCatalog.tsx` — SearchField (fav/other) + auto-hide FilterPanel по `hasKind = components.some(c => c.kind != null)`. На старте MVP1 overlay пуст → панель не рендерится. Матч фильтра при активном kind: `activeKinds.has(c.kind)`. `ComponentCard.tsx` показывает имя, chip `kind` (только если есть), вес, цену продажи в бонах. Empty/error state — Alert через `Page`/`CenteredPage`. Финальная визуальная проверка в браузере — пройдена юзером 2026-07-14.

@@ -239,6 +239,33 @@ export const ORE_COLUMNS: ColumnSpec[] = [
   { name: 'source_note', description: 'Комментарий редактора (не идёт в JSON)' },
 ];
 
+export const COMPONENTS_COLUMNS: ColumnSpec[] = [
+  { name: 'key', description: 'Ключ компонента (translit от имени). Копируется из детали в UI' },
+  { name: 'name', description: 'Полное название' },
+  { name: 'model', description: 'Модель (обычно = name у компонентов)' },
+  { name: 'stats.weight', description: 'Вес единицы' },
+  {
+    name: 'kind',
+    description:
+      'Классификация вручную (overlay): `base` — крафтится только из лута; `composite` — из лута + других компонентов, либо только из компонентов',
+  },
+  {
+    name: 'recipe',
+    description:
+      'Рецепт (overlay): из чего собирается компонент. Формат «Плата|2; Кислота|1» — список входов через ;, каждый вход как «Название|Кол-во»',
+  },
+  {
+    name: 'craftFromBlueprints',
+    description: 'Список названий чертежей (parsed из вики) через ;',
+  },
+  { name: 'sellPrice.bonds', description: 'Цена продажи в бонах' },
+  { name: 'sellPrice.regls', description: 'Цена продажи в реглах' },
+  { name: 'description', description: 'Свободное описание компонента' },
+  { name: 'iconPath', description: 'Путь к иконке (например data/icons/components/…)' },
+  { name: 'wikiUrl', description: 'URL детальной страницы вики' },
+  { name: 'source_note', description: 'Комментарий редактора (не идёт в JSON)' },
+];
+
 /** Регистр колонок по slug каталога. */
 export const COLUMNS_BY_SLUG: Record<string, ColumnSpec[]> = {
   robots: MECHS_COLUMNS, // slug=robots, но лист=mechs (см. catalogs.config)
@@ -247,4 +274,5 @@ export const COLUMNS_BY_SLUG: Record<string, ColumnSpec[]> = {
   ammo: AMMO_COLUMNS,
   items: ITEMS_COLUMNS,
   ore: ORE_COLUMNS,
+  components: COMPONENTS_COLUMNS,
 };
