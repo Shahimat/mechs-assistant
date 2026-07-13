@@ -1,0 +1,33 @@
+id: view--chips-catalog-renders-cards-grid
+kind: behavior
+namespace: ui
+entities: [view--chips-catalog]
+title: view--chips-catalog рендерит сетку карточек чипов из data--equipment-catalog
+
+scenarios:
+  - given: стор оборудования гидратирован, `equipment` содержит записи
+    when: пользователь открыл `/catalogs/chips-catalog`
+    then: |
+      view--chips-catalog фильтрует `equipment` по
+      `subtype === 'computer'` и рендерит сетку `EquipmentCard` — по
+      одной карточке на каждую запись. В карточке: название, требуемый
+      уровень (chip, если есть), у чипов ключевого числового параметра нет (эффект в description), прочность/вес, звёздочка
+      избранного. Иллюстрация — из `iconPath` (или placeholder).
+
+      Панель фильтров: `LevelRangeFilter` (Slider по `requiredLevel`).
+      Записи без `requiredLevel` не отсекаются level-фильтром.
+
+  - given: "после фильтрации по `subtype='computer'` массив пуст (данные ещё не загружены или в JSON нет записей нужного subtype)"
+    when: пользователь открыл `/catalogs/chips-catalog`
+    then: |
+      view--chips-catalog показывает empty state (Alert аналогично
+      мехам и weapons).
+
+  - given: "`error` не null (ошибка загрузки данных)"
+    when: пользователь открыл `/catalogs/chips-catalog`
+    then: view--chips-catalog показывает error state (Alert severity=error).
+
+verified: true
+verified_at: 2026-07-13
+verified_note: |
+  Проверено чтением кода: `ChipsCatalog.tsx` — тонкая обёртка над `EquipmentSubCatalog subtype="computer"`. `EquipmentSubCatalog.tsx` фильтрует `equipment` по `subtype === 'computer'` (строка 63-66) и рендерит `CatalogGrid` из `EquipmentCard`. Панель фильтров: `LevelRangeFilter` (Slider по requiredLevel) через `useLevelRangeFilter`. Записи без requiredLevel не отсекаются (см. `useLevelRangeFilter.matches` — `if (level == null) return true`). Empty/error state — Alert через `Page`/`CenteredPage`. Финальная визуальная проверка в браузере — пройдена юзером 2026-07-13.

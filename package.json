@@ -22,7 +22,7 @@
     "test": "npm run build:data && jest",
     "test:watch": "npm run build:data && jest --watch",
     "test:coverage": "npm run build:data && jest --coverage",
-    "lint": "eslint . --ext .ts,.tsx",
+    "lint": "eslint .",
     "format": "prettier --write \"**/*.{ts,tsx,js,jsx,json,css,md}\"",
     "format:check": "prettier --check \"**/*.{ts,tsx,js,jsx,json,css,md}\"",
     "sync:sheets": "tsx scripts/parser-google-sheets/index.ts",
@@ -57,13 +57,13 @@
     "@types/node": "^26.1.1",
     "@types/react": "^18.3.3",
     "@types/react-dom": "^18.3.0",
-    "@typescript-eslint/eslint-plugin": "^7.18.0",
-    "@typescript-eslint/parser": "^7.18.0",
+    "@eslint/js": "^9.39.0",
     "cheerio": "^1.2.0",
     "dotenv": "^17.4.2",
-    "eslint": "^8.57.0",
-    "eslint-plugin-react": "^7.35.0",
-    "eslint-plugin-react-hooks": "^4.6.2",
+    "eslint": "^9.39.5",
+    "eslint-plugin-react": "^7.37.5",
+    "eslint-plugin-react-hooks": "^7.1.1",
+    "globals": "^17.7.0",
     "googleapis": "^173.0.0",
     "html-webpack-plugin": "^5.6.0",
     "identity-obj-proxy": "^3.0.0",
@@ -74,6 +74,7 @@
     "sharp": "^0.35.2",
     "ts-jest": "^29.2.5",
     "tsx": "^4.23.0",
-    "typescript": "^5.5.4"
+    "typescript": "^5.5.4",
+    "typescript-eslint": "^8.63.0"
   }
 }

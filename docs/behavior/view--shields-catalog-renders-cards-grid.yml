@@ -1,0 +1,33 @@
+id: view--shields-catalog-renders-cards-grid
+kind: behavior
+namespace: ui
+entities: [view--shields-catalog]
+title: view--shields-catalog рендерит сетку карточек энергощитов из data--equipment-catalog
+
+scenarios:
+  - given: стор оборудования гидратирован, `equipment` содержит записи
+    when: пользователь открыл `/catalogs/shields-catalog`
+    then: |
+      view--shields-catalog фильтрует `equipment` по
+      `subtype === 'shield'` и рендерит сетку `EquipmentCard` — по
+      одной карточке на каждую запись. В карточке: название, требуемый
+      уровень (chip, если есть), ключевой параметр (`stats.primary` = «Мощность поля»), прочность/вес, звёздочка
+      избранного. Иллюстрация — из `iconPath` (или placeholder).
+
+      Панель фильтров: `LevelRangeFilter` (Slider по `requiredLevel`).
+      Записи без `requiredLevel` не отсекаются level-фильтром.
+
+  - given: "после фильтрации по `subtype='shield'` массив пуст (данные ещё не загружены или в JSON нет записей нужного subtype)"
+    when: пользователь открыл `/catalogs/shields-catalog`
+    then: |
+      view--shields-catalog показывает empty state (Alert аналогично
+      мехам и weapons).
+
+  - given: "`error` не null (ошибка загрузки данных)"
+    when: пользователь открыл `/catalogs/shields-catalog`
+    then: view--shields-catalog показывает error state (Alert severity=error).
+
+verified: true
+verified_at: 2026-07-13
+verified_note: |
+  Проверено чтением кода: `ShieldsCatalog.tsx` — тонкая обёртка над `EquipmentSubCatalog subtype="shield"`. `EquipmentSubCatalog.tsx` фильтрует `equipment` по `subtype === 'shield'` (строка 63-66) и рендерит `CatalogGrid` из `EquipmentCard`. Панель фильтров: `LevelRangeFilter` (Slider по requiredLevel) через `useLevelRangeFilter`. Записи без requiredLevel не отсекаются (см. `useLevelRangeFilter.matches` — `if (level == null) return true`). Empty/error state — Alert через `Page`/`CenteredPage`. Финальная визуальная проверка в браузере — пройдена юзером 2026-07-13.

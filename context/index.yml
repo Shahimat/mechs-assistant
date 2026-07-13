@@ -17,7 +17,7 @@ namespaces:
       - id: data--weapons-catalog
         one_liner: Каталог вооружения — 323 записи, 16 CSS-категорий (bullet/missile/mortar/…/laser/repair/faser/empp). Раскатан 2026-07-13; фильтр по category, не по склеенному group.
       - id: data--equipment-catalog
-        one_liner: Каталог оборудования — Доп. оборудование + Чипы + Энергоснабжение + Защита (wiki 3682/3657/3106/3108). Shell-entity MVP1.
+        one_liner: Каталог оборудования — 173 записи из wiki 3682/3657/3106/3108, family+subtype из CSS-класса. Единая data-сущность обслуживает 7 UI-каталогов (chips/shields/armour/accumulators/reactors/drills/cargos).
       - id: data--ammo-catalog
         one_liner: Каталог боезапасов — расходники для оружия (wiki 3661). Shell-entity MVP1.
       - id: data--items-catalog
@@ -45,6 +45,10 @@ namespaces:
         one_liner: Каждая запись robots.json соответствует типу Robot (TS strict).
       - id: data--weapons-catalog-loaded-from-json
         one_liner: Каталог оружия загружается из merged .build/data/weapons.json при инициализации стора.
+      - id: data--equipment-catalog-loaded-from-json
+        one_liner: Каталог оборудования загружается из merged .build/data/equipment.json при инициализации стора.
+      - id: data--equipment-catalog-schema-typed
+        one_liner: Каждая запись equipment.json соответствует типу Equipment (TS strict).
 
   ui:
     description: Компоненты интерфейса — app shell, роутинг, плитки, страницы-хабы, каталоги.
@@ -59,6 +63,20 @@ namespaces:
         one_liner: Карточный каталог мехов `/catalogs/mechs-catalog` — собран из примитивов other--catalog-shell.
       - id: view--weapons-catalog
         one_liner: Карточный каталог оружия `/catalogs/weapons-catalog` — 323 записи, PairToggleGroup по CSS-category с русскими подписями + LevelRangeFilter.
+      - id: view--chips-catalog
+        one_liner: Карточный каталог `/catalogs/chips-catalog` — узкий срез data--equipment-catalog по subtype='computer' (42 записи). LevelRangeFilter.
+      - id: view--shields-catalog
+        one_liner: Карточный каталог `/catalogs/shields-catalog` — subtype='shield' (31 запись, primary=«Мощность поля»). LevelRangeFilter.
+      - id: view--armour-catalog
+        one_liner: Карточный каталог `/catalogs/armour-catalog` — subtype='armour' (29 записей, primary=«Броня»). LevelRangeFilter.
+      - id: view--accumulators-catalog
+        one_liner: Карточный каталог `/catalogs/accumulators-catalog` — subtype='accumulator' (25 записей, primary=«Емкость»). LevelRangeFilter.
+      - id: view--reactors-catalog
+        one_liner: Карточный каталог `/catalogs/reactors-catalog` — subtype='generator' (26 записей, primary=«Мощность»). LevelRangeFilter.
+      - id: view--drills-catalog
+        one_liner: Карточный каталог `/catalogs/drills-catalog` — subtype='extractor' (7 записей, primary=«Мощность подъема»). LevelRangeFilter.
+      - id: view--cargos-catalog
+        one_liner: Карточный каталог `/catalogs/cargos-catalog` — subtype='cargo' (13 записей, primary=«Трюм»). LevelRangeFilter.
       - id: other--tile
         one_liner: Квадратная плитка навигации с hover-scale, active-press, focus-ring, слотом для иконки.
       - id: other--catalog-shell
@@ -80,6 +98,34 @@ namespaces:
         one_liner: view--weapons-catalog рендерит сетку WeaponCard из data--weapons-catalog (без фильтров на первый заход).
       - id: view--weapons-catalog-opens-weapon-detail-on-click
         one_liner: Клик по карточке оружия открывает детализацию (WeaponDetail).
+      - id: view--chips-catalog-renders-cards-grid
+        one_liner: view--chips-catalog фильтрует data--equipment-catalog по subtype='computer' и рендерит сетку EquipmentCard.
+      - id: view--chips-catalog-opens-detail-on-click
+        one_liner: Клик по карточке чипа открывает EquipmentDetail.
+      - id: view--shields-catalog-renders-cards-grid
+        one_liner: view--shields-catalog фильтрует по subtype='shield' и рендерит сетку EquipmentCard.
+      - id: view--shields-catalog-opens-detail-on-click
+        one_liner: Клик по карточке энергощита открывает EquipmentDetail.
+      - id: view--armour-catalog-renders-cards-grid
+        one_liner: view--armour-catalog фильтрует по subtype='armour' и рендерит сетку EquipmentCard.
+      - id: view--armour-catalog-opens-detail-on-click
+        one_liner: Клик по карточке брони открывает EquipmentDetail.
+      - id: view--accumulators-catalog-renders-cards-grid
+        one_liner: view--accumulators-catalog фильтрует по subtype='accumulator' и рендерит сетку EquipmentCard.
+      - id: view--accumulators-catalog-opens-detail-on-click
+        one_liner: Клик по карточке накопителя открывает EquipmentDetail.
+      - id: view--reactors-catalog-renders-cards-grid
+        one_liner: view--reactors-catalog фильтрует по subtype='generator' и рендерит сетку EquipmentCard.
+      - id: view--reactors-catalog-opens-detail-on-click
+        one_liner: Клик по карточке реактора открывает EquipmentDetail.
+      - id: view--drills-catalog-renders-cards-grid
+        one_liner: view--drills-catalog фильтрует по subtype='extractor' и рендерит сетку EquipmentCard.
+      - id: view--drills-catalog-opens-detail-on-click
+        one_liner: Клик по карточке бура открывает EquipmentDetail.
+      - id: view--cargos-catalog-renders-cards-grid
+        one_liner: view--cargos-catalog фильтрует по subtype='cargo' и рендерит сетку EquipmentCard.
+      - id: view--cargos-catalog-opens-detail-on-click
+        one_liner: Клик по карточке трюма открывает EquipmentDetail.
 
   comparison:
     description: Механики сравнения и приоритизации мехов (избранное, будущий боевой калькулятор).

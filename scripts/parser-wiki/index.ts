@@ -4,6 +4,7 @@ import { runBfs, type Resolver, type QueueItem } from './lib/bfs.js';
 import { downloadAndConvertIcons } from './lib/icons.js';
 import { robotsResolver, robotsSeeds } from './resolvers/robots.js';
 import { weaponsResolver, weaponsSeeds } from './resolvers/weapons.js';
+import { equipmentResolver, equipmentSeeds } from './resolvers/equipment.js';
 
 const FETCH_DELAY_MS = 150; // вежливость к серверу
 
@@ -27,6 +28,10 @@ const RESOLVERS: Record<string, () => ResolverEntry> = {
   weapons: () => ({
     resolver: weaponsResolver,
     seeds: weaponsSeeds(),
+  }),
+  equipment: () => ({
+    resolver: equipmentResolver,
+    seeds: equipmentSeeds(),
   }),
 };
 

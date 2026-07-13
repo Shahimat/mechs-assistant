@@ -1,0 +1,3969 @@
+[
+  {
+    "key": "bronya",
+    "name": "Броня",
+    "model": "Броня",
+    "family": "defence",
+    "subtype": "armour",
+    "slot": "",
+    "buyPrice": {
+      "bonds": 12
+    },
+    "sellPrice": {
+      "bonds": 3
+    },
+    "craftFromBlueprints": [],
+    "description": "Защита роботаПоглащает огнестрельный уронМожно установить 2 и 2",
+    "stats": {
+      "primary": 14,
+      "primaryLabel": "Броня",
+      "durability": 1000,
+      "weight": 43
+    },
+    "iconPath": "equipment/bronya.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3330"
+  },
+  {
+    "key": "bronya_100_m1",
+    "name": "Броня 100 М1",
+    "model": "Броня",
+    "family": "defence",
+    "subtype": "armour",
+    "requiredLevel": 100,
+    "slot": "",
+    "sellPrice": {
+      "bonds": 11148
+    },
+    "stats": {
+      "primary": 273,
+      "primaryLabel": "Броня",
+      "durability": 1500,
+      "weight": 217
+    },
+    "iconPath": "equipment/bronya_100_m1.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3330"
+  },
+  {
+    "key": "bronya_100_m2",
+    "name": "Броня 100 М2",
+    "model": "Броня",
+    "family": "defence",
+    "subtype": "armour",
+    "requiredLevel": 100,
+    "slot": "",
+    "sellPrice": {
+      "bonds": 300000
+    },
+    "stats": {
+      "primary": 300,
+      "primaryLabel": "Броня",
+      "durability": 1500,
+      "weight": 1085
+    },
+    "iconPath": "equipment/bronya_100_m2.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3330"
+  },
+  {
+    "key": "bronya_13",
+    "name": "Броня 13",
+    "model": "Броня",
+    "family": "defence",
+    "subtype": "armour",
+    "requiredLevel": 13,
+    "slot": "",
+    "buyPrice": {
+      "bonds": 564
+    },
+    "sellPrice": {
+      "bonds": 141
+    },
+    "craftFromBlueprints": [],
+    "description": "Броневая защита. Подходит для любого робота",
+    "stats": {
+      "primary": 36,
+      "primaryLabel": "Броня",
+      "durability": 1000,
+      "weight": 79
+    },
+    "iconPath": "equipment/bronya_13.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3330"
+  },
+  {
+    "key": "bronya_18",
+    "name": "Броня 18",
+    "model": "Броня",
+    "family": "defence",
+    "subtype": "armour",
+    "requiredLevel": 18,
+    "slot": "",
+    "sellPrice": {
+      "bonds": 219
+    },
+    "craftFromBlueprints": [],
+    "description": "Броневая защита. Подходит для любого робота",
+    "stats": {
+      "primary": 47,
+      "primaryLabel": "Броня",
+      "durability": 1000,
+      "weight": 83
+    },
+    "iconPath": "equipment/bronya_18.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3330"
+  },
+  {
+    "key": "bronya_22",
+    "name": "Броня 22",
+    "model": "Броня",
+    "family": "defence",
+    "subtype": "armour",
+    "requiredLevel": 22,
+    "slot": "",
+    "sellPrice": {
+      "bonds": 333
+    },
+    "craftFromBlueprints": [],
+    "description": "Броневая защита. Подходит для любого робота",
+    "stats": {
+      "primary": 56,
+      "primaryLabel": "Броня",
+      "durability": 1000,
+      "weight": 87
+    },
+    "iconPath": "equipment/bronya_22.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3330"
+  },
+  {
+    "key": "bronya_22m1",
+    "name": "Броня 22м1",
+    "model": "Броня",
+    "family": "defence",
+    "subtype": "armour",
+    "requiredLevel": 22,
+    "slot": "",
+    "sellPrice": {
+      "bonds": 325
+    },
+    "description": "Броневая защита. Подходит для любого робота",
+    "stats": {
+      "primary": 66,
+      "primaryLabel": "Броня",
+      "durability": 1500,
+      "weight": 70
+    },
+    "iconPath": "equipment/bronya_22m1.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3330"
+  },
+  {
+    "key": "bronya_26",
+    "name": "Броня 26",
+    "model": "Броня",
+    "family": "defence",
+    "subtype": "armour",
+    "requiredLevel": 26,
+    "slot": "",
+    "sellPrice": {
+      "bonds": 456
+    },
+    "craftFromBlueprints": [],
+    "description": "Броневая защита. Подходит для любого робота",
+    "stats": {
+      "primary": 66,
+      "primaryLabel": "Броня",
+      "durability": 1000,
+      "weight": 92
+    },
+    "iconPath": "equipment/bronya_26.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3330"
+  },
+  {
+    "key": "bronya_29",
+    "name": "Броня 29",
+    "model": "Броня",
+    "family": "defence",
+    "subtype": "armour",
+    "requiredLevel": 29,
+    "slot": "",
+    "buyPrice": {
+      "bonds": 2200
+    },
+    "sellPrice": {
+      "bonds": 550
+    },
+    "craftFromBlueprints": [],
+    "description": "Броневая защита. Подходит для любого робота",
+    "stats": {
+      "primary": 73,
+      "primaryLabel": "Броня",
+      "durability": 1000,
+      "weight": 95
+    },
+    "iconPath": "equipment/bronya_29.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3330"
+  },
+  {
+    "key": "bronya_29m1",
+    "name": "Броня 29м1",
+    "model": "Броня",
+    "family": "defence",
+    "subtype": "armour",
+    "requiredLevel": 29,
+    "slot": "",
+    "sellPrice": {
+      "bonds": 460
+    },
+    "description": "Броневая защита. Подходит для любого робота",
+    "stats": {
+      "primary": 89,
+      "primaryLabel": "Броня",
+      "durability": 1500,
+      "weight": 76
+    },
+    "iconPath": "equipment/bronya_29m1.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3330"
+  },
+  {
+    "key": "bronya_33",
+    "name": "Броня 33",
+    "model": "Броня",
+    "family": "defence",
+    "subtype": "armour",
+    "requiredLevel": 33,
+    "slot": "",
+    "sellPrice": {
+      "bonds": 565
+    },
+    "craftFromBlueprints": [],
+    "description": "Броневая защита. Подходит для любого робота",
+    "stats": {
+      "primary": 79,
+      "primaryLabel": "Броня",
+      "durability": 1000,
+      "weight": 100
+    },
+    "iconPath": "equipment/bronya_33.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3330"
+  },
+  {
+    "key": "bronya_35",
+    "name": "Броня 35",
+    "model": "Броня",
+    "family": "defence",
+    "subtype": "armour",
+    "requiredLevel": 35,
+    "slot": "",
+    "sellPrice": {
+      "bonds": 1142
+    },
+    "craftFromBlueprints": [],
+    "description": "Броневая защита. Подходит для любого робота",
+    "stats": {
+      "primary": 83,
+      "primaryLabel": "Броня",
+      "durability": 1000,
+      "weight": 101
+    },
+    "iconPath": "equipment/bronya_35.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3330"
+  },
+  {
+    "key": "bronya_38",
+    "name": "Броня 38",
+    "model": "Броня",
+    "family": "defence",
+    "subtype": "armour",
+    "requiredLevel": 38,
+    "slot": "",
+    "sellPrice": {
+      "bonds": 1152
+    },
+    "craftFromBlueprints": [],
+    "description": "Броневая защита. Подходит для любого робота",
+    "stats": {
+      "primary": 88,
+      "primaryLabel": "Броня",
+      "durability": 1000,
+      "weight": 102
+    },
+    "iconPath": "equipment/bronya_38.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3330"
+  },
+  {
+    "key": "bronya_4",
+    "name": "Броня 4",
+    "model": "Броня",
+    "family": "defence",
+    "subtype": "armour",
+    "requiredLevel": 4,
+    "slot": "",
+    "buyPrice": {
+      "bonds": 92
+    },
+    "sellPrice": {
+      "bonds": 23
+    },
+    "craftFromBlueprints": [],
+    "description": "Защита роботаПоглащает огнестрельный уронМожно установить 2 и 2",
+    "stats": {
+      "primary": 20,
+      "primaryLabel": "Броня",
+      "durability": 1000,
+      "weight": 55
+    },
+    "iconPath": "equipment/bronya_4.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3330"
+  },
+  {
+    "key": "bronya_40",
+    "name": "Броня 40",
+    "model": "Броня",
+    "family": "defence",
+    "subtype": "armour",
+    "requiredLevel": 40,
+    "slot": "",
+    "sellPrice": {
+      "bonds": 1454
+    },
+    "craftFromBlueprints": [],
+    "description": "Броневая защита. Подходит для любого робота",
+    "stats": {
+      "primary": 92,
+      "primaryLabel": "Броня",
+      "durability": 1000,
+      "weight": 102
+    },
+    "iconPath": "equipment/bronya_40.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3330"
+  },
+  {
+    "key": "bronya_40m1",
+    "name": "Броня 40м1",
+    "model": "Броня",
+    "family": "defence",
+    "subtype": "armour",
+    "requiredLevel": 40,
+    "slot": "",
+    "sellPrice": {
+      "bonds": 1414
+    },
+    "description": "Броневая защита. Подходит для любого робота",
+    "stats": {
+      "primary": 115,
+      "primaryLabel": "Броня",
+      "durability": 1500,
+      "weight": 82
+    },
+    "iconPath": "equipment/bronya_40m1.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3330"
+  },
+  {
+    "key": "bronya_42",
+    "name": "Броня 42",
+    "model": "Броня",
+    "family": "defence",
+    "subtype": "armour",
+    "requiredLevel": 42,
+    "slot": "",
+    "sellPrice": {
+      "bonds": 1390
+    },
+    "craftFromBlueprints": [],
+    "description": "Броневая защита. Подходит для любого робота",
+    "stats": {
+      "primary": 96,
+      "primaryLabel": "Броня",
+      "durability": 1000,
+      "weight": 103
+    },
+    "iconPath": "equipment/bronya_42.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3330"
+  },
+  {
+    "key": "bronya_45",
+    "name": "Броня 45",
+    "model": "Броня",
+    "family": "defence",
+    "subtype": "armour",
+    "requiredLevel": 45,
+    "slot": "",
+    "sellPrice": {
+      "bonds": 1577
+    },
+    "craftFromBlueprints": [],
+    "description": "Броневая защита. Подходит для любого робота",
+    "stats": {
+      "primary": 101,
+      "primaryLabel": "Броня",
+      "durability": 1000,
+      "weight": 104
+    },
+    "iconPath": "equipment/bronya_45.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3330"
+  },
+  {
+    "key": "bronya_47",
+    "name": "Броня 47",
+    "model": "Броня",
+    "family": "defence",
+    "subtype": "armour",
+    "requiredLevel": 47,
+    "slot": "",
+    "sellPrice": {
+      "bonds": 1700
+    },
+    "craftFromBlueprints": [],
+    "description": "Броневая защита. Подходит для любого робота",
+    "stats": {
+      "primary": 104,
+      "primaryLabel": "Броня",
+      "durability": 1000,
+      "weight": 104
+    },
+    "iconPath": "equipment/bronya_47.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3330"
+  },
+  {
+    "key": "bronya_50",
+    "name": "Броня 50",
+    "model": "Броня",
+    "family": "defence",
+    "subtype": "armour",
+    "requiredLevel": 50,
+    "slot": "",
+    "buyPrice": {
+      "bonds": 7060
+    },
+    "sellPrice": {
+      "bonds": 1765
+    },
+    "craftFromBlueprints": [],
+    "description": "Броневая защита. Подходит для любого робота",
+    "stats": {
+      "primary": 106,
+      "primaryLabel": "Броня",
+      "durability": 1000,
+      "weight": 105
+    },
+    "iconPath": "equipment/bronya_50.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3330"
+  },
+  {
+    "key": "bronya_50m1",
+    "name": "Броня 50м1",
+    "model": "Броня",
+    "family": "defence",
+    "subtype": "armour",
+    "requiredLevel": 50,
+    "slot": "",
+    "buyPrice": {
+      "bonds": 7182,
+      "regls": 131
+    },
+    "sellPrice": {
+      "bonds": 1795
+    },
+    "description": "Броневая защита. Подходит для любого робота",
+    "stats": {
+      "primary": 132,
+      "primaryLabel": "Броня",
+      "durability": 1500,
+      "weight": 91
+    },
+    "iconPath": "equipment/bronya_50m1.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3330"
+  },
+  {
+    "key": "bronya_60",
+    "name": "Броня 60",
+    "model": "Броня",
+    "family": "defence",
+    "subtype": "armour",
+    "requiredLevel": 60,
+    "slot": "",
+    "buyPrice": {
+      "bonds": 14564
+    },
+    "sellPrice": {
+      "bonds": 3641
+    },
+    "description": "Броневая защита. Подходит для любого робота",
+    "stats": {
+      "primary": 118,
+      "primaryLabel": "Броня",
+      "durability": 1000,
+      "weight": 114
+    },
+    "iconPath": "equipment/bronya_60.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3330"
+  },
+  {
+    "key": "bronya_60m1",
+    "name": "Броня 60м1",
+    "model": "Броня",
+    "family": "defence",
+    "subtype": "armour",
+    "requiredLevel": 60,
+    "slot": "",
+    "buyPrice": {
+      "bonds": 14976,
+      "regls": 130
+    },
+    "sellPrice": {
+      "bonds": 3744
+    },
+    "description": "Броневая защита. Подходит для любого робота",
+    "stats": {
+      "primary": 147,
+      "primaryLabel": "Броня",
+      "durability": 1500,
+      "weight": 96
+    },
+    "iconPath": "equipment/bronya_60m1.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3330"
+  },
+  {
+    "key": "bronya_71",
+    "name": "Броня 71",
+    "model": "Броня",
+    "family": "defence",
+    "subtype": "armour",
+    "requiredLevel": 71,
+    "slot": "",
+    "buyPrice": {
+      "bonds": 23195
+    },
+    "sellPrice": {
+      "bonds": 5798
+    },
+    "description": "Броневая защита. Подходит для любого робота",
+    "stats": {
+      "primary": 127,
+      "primaryLabel": "Броня",
+      "durability": 1000,
+      "weight": 122
+    },
+    "iconPath": "equipment/bronya_71.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3330"
+  },
+  {
+    "key": "bronya_71m1",
+    "name": "Броня 71м1",
+    "model": "Броня",
+    "family": "defence",
+    "subtype": "armour",
+    "requiredLevel": 71,
+    "slot": "",
+    "buyPrice": {
+      "bonds": 22833,
+      "regls": 152
+    },
+    "sellPrice": {
+      "bonds": 5708
+    },
+    "description": "Броневая защита. Подходит для любого робота",
+    "stats": {
+      "primary": 159,
+      "primaryLabel": "Броня",
+      "durability": 1500,
+      "weight": 100
+    },
+    "iconPath": "equipment/bronya_71m1.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3330"
+  },
+  {
+    "key": "bronya_8",
+    "name": "Броня 8",
+    "model": "Броня",
+    "family": "defence",
+    "subtype": "armour",
+    "requiredLevel": 8,
+    "slot": "",
+    "buyPrice": {
+      "bonds": 280
+    },
+    "sellPrice": {
+      "bonds": 70
+    },
+    "craftFromBlueprints": [],
+    "description": "Броневая защита. Подходит для любого робота",
+    "stats": {
+      "primary": 28,
+      "primaryLabel": "Броня",
+      "durability": 1000,
+      "weight": 73
+    },
+    "iconPath": "equipment/bronya_8.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3330"
+  },
+  {
+    "key": "bronya_81",
+    "name": "Броня 81",
+    "model": "Броня",
+    "family": "defence",
+    "subtype": "armour",
+    "requiredLevel": 81,
+    "slot": "",
+    "sellPrice": {
+      "bonds": 7248
+    },
+    "description": "Броневая защита. Подходит для любого робота",
+    "stats": {
+      "primary": 146,
+      "primaryLabel": "Броня",
+      "durability": 1000,
+      "weight": 158
+    },
+    "iconPath": "equipment/bronya_81.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3330"
+  },
+  {
+    "key": "bronya_81m1",
+    "name": "Броня 81м1",
+    "model": "Броня",
+    "family": "defence",
+    "subtype": "armour",
+    "requiredLevel": 81,
+    "slot": "",
+    "sellPrice": {
+      "bonds": 7135
+    },
+    "description": "Броневая защита. Подходит для любого робота",
+    "stats": {
+      "primary": 182,
+      "primaryLabel": "Броня",
+      "durability": 1500,
+      "weight": 129
+    },
+    "iconPath": "equipment/bronya_81m1.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3330"
+  },
+  {
+    "key": "bronya_91_m1",
+    "name": "Броня 91 М1",
+    "model": "Броня",
+    "family": "defence",
+    "subtype": "armour",
+    "requiredLevel": 91,
+    "slot": "",
+    "sellPrice": {
+      "bonds": 8919
+    },
+    "description": "Броневая защита. Подходит для любого робота",
+    "stats": {
+      "primary": 227,
+      "primaryLabel": "Броня",
+      "durability": 1500,
+      "weight": 167
+    },
+    "iconPath": "equipment/bronya_91_m1.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3330"
+  },
+  {
+    "key": "chip_bronya_15",
+    "name": "Чип Броня 15",
+    "model": "Чип Броня",
+    "family": "electronic",
+    "subtype": "computer",
+    "requiredLevel": 15,
+    "slot": "Чип",
+    "buyPrice": {
+      "bonds": 1024
+    },
+    "sellPrice": {
+      "bonds": 256
+    },
+    "craftFromBlueprints": [],
+    "description": "Чип для увеличения броневой защиты робота",
+    "stats": {
+      "durability": 1000,
+      "weight": 200
+    },
+    "iconPath": "equipment/chip_bronya_15.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3657"
+  },
+  {
+    "key": "chip_bronya_25",
+    "name": "Чип Броня 25",
+    "model": "Чип Броня",
+    "family": "electronic",
+    "subtype": "computer",
+    "requiredLevel": 25,
+    "slot": "Чип",
+    "buyPrice": {
+      "bonds": 7680
+    },
+    "sellPrice": {
+      "bonds": 1920
+    },
+    "craftFromBlueprints": [],
+    "description": "Чип для увеличения броневой защиты робота",
+    "stats": {
+      "durability": 1000,
+      "weight": 500
+    },
+    "iconPath": "equipment/chip_bronya_25.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3657"
+  },
+  {
+    "key": "chip_bronya_35",
+    "name": "Чип Броня 35",
+    "model": "Чип Броня",
+    "family": "electronic",
+    "subtype": "computer",
+    "requiredLevel": 35,
+    "slot": "Чип",
+    "buyPrice": {
+      "bonds": 15360
+    },
+    "sellPrice": {
+      "bonds": 3840
+    },
+    "craftFromBlueprints": [],
+    "description": "Чип для увеличения броневой защиты робота",
+    "stats": {
+      "durability": 1000,
+      "weight": 900
+    },
+    "iconPath": "equipment/chip_bronya_35.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3657"
+  },
+  {
+    "key": "chip_bronya_45",
+    "name": "Чип Броня 45",
+    "model": "Чип Броня",
+    "family": "electronic",
+    "subtype": "computer",
+    "requiredLevel": 45,
+    "slot": "Чип",
+    "buyPrice": {
+      "bonds": 28160
+    },
+    "sellPrice": {
+      "bonds": 7040
+    },
+    "description": "Чип для увеличения броневой защиты робота",
+    "stats": {
+      "durability": 1000,
+      "weight": 1200
+    },
+    "iconPath": "equipment/chip_bronya_45.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3657"
+  },
+  {
+    "key": "chip_bronya_5",
+    "name": "Чип Броня 5",
+    "model": "Чип Броня",
+    "family": "electronic",
+    "subtype": "computer",
+    "requiredLevel": 5,
+    "slot": "Чип",
+    "buyPrice": {
+      "bonds": 256
+    },
+    "sellPrice": {
+      "bonds": 64
+    },
+    "craftFromBlueprints": [],
+    "description": "Чип для увеличения броневой защиты робота",
+    "stats": {
+      "durability": 1000,
+      "weight": 60
+    },
+    "iconPath": "equipment/chip_bronya_5.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3657"
+  },
+  {
+    "key": "chip_bronya_50",
+    "name": "Чип Броня 50",
+    "model": "Чип Броня",
+    "family": "electronic",
+    "subtype": "computer",
+    "requiredLevel": 50,
+    "slot": "Чип",
+    "buyPrice": {
+      "bonds": 51200
+    },
+    "sellPrice": {
+      "bonds": 12800
+    },
+    "description": "Чип для увеличения броневой защиты робота",
+    "stats": {
+      "durability": 1000,
+      "weight": 1500
+    },
+    "iconPath": "equipment/chip_bronya_50.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3657"
+  },
+  {
+    "key": "chip_bronya_55",
+    "name": "Чип Броня 55",
+    "model": "Чип Броня",
+    "family": "electronic",
+    "subtype": "computer",
+    "requiredLevel": 55,
+    "slot": "Чип",
+    "buyPrice": {
+      "bonds": 76800
+    },
+    "sellPrice": {
+      "bonds": 19200
+    },
+    "description": "Чип для увеличения броневой защиты робота",
+    "stats": {
+      "durability": 1000,
+      "weight": 1800
+    },
+    "iconPath": "equipment/chip_bronya_55.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3657"
+  },
+  {
+    "key": "chip_bronya_60",
+    "name": "Чип Броня 60",
+    "model": "Чип Броня",
+    "family": "electronic",
+    "subtype": "computer",
+    "requiredLevel": 60,
+    "slot": "Чип",
+    "buyPrice": {
+      "bonds": 108800
+    },
+    "sellPrice": {
+      "bonds": 27200
+    },
+    "description": "Чип для увеличения броневой защиты робота",
+    "stats": {
+      "durability": 1000,
+      "weight": 2000
+    },
+    "iconPath": "equipment/chip_bronya_60.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3657"
+  },
+  {
+    "key": "chip_dobycha_15",
+    "name": "Чип Добыча 15",
+    "model": "Чип Добыча",
+    "family": "electronic",
+    "subtype": "computer",
+    "requiredLevel": 15,
+    "slot": "Чип",
+    "buyPrice": {
+      "bonds": 1024
+    },
+    "sellPrice": {
+      "bonds": 256
+    },
+    "craftFromBlueprints": [],
+    "description": "Чип ускорения процесса добычи",
+    "stats": {
+      "durability": 1000,
+      "weight": 70
+    },
+    "iconPath": "equipment/chip_dobycha_15.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3657"
+  },
+  {
+    "key": "chip_dobycha_25",
+    "name": "Чип Добыча 25",
+    "model": "Чип Добыча",
+    "family": "electronic",
+    "subtype": "computer",
+    "requiredLevel": 25,
+    "slot": "Чип",
+    "buyPrice": {
+      "bonds": 7680
+    },
+    "sellPrice": {
+      "bonds": 1920
+    },
+    "craftFromBlueprints": [],
+    "description": "Чип ускорения процесса добычи",
+    "stats": {
+      "durability": 1000,
+      "weight": 80
+    },
+    "iconPath": "equipment/chip_dobycha_25.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3657"
+  },
+  {
+    "key": "chip_dobycha_35",
+    "name": "Чип Добыча 35",
+    "model": "Чип Добыча",
+    "family": "electronic",
+    "subtype": "computer",
+    "requiredLevel": 35,
+    "slot": "Чип",
+    "buyPrice": {
+      "bonds": 15360
+    },
+    "sellPrice": {
+      "bonds": 3840
+    },
+    "craftFromBlueprints": [],
+    "description": "Чип ускорения процесса добычи",
+    "stats": {
+      "durability": 1000,
+      "weight": 90
+    },
+    "iconPath": "equipment/chip_dobycha_35.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3657"
+  },
+  {
+    "key": "chip_dobycha_45",
+    "name": "Чип Добыча 45",
+    "model": "Чип Добыча",
+    "family": "electronic",
+    "subtype": "computer",
+    "requiredLevel": 45,
+    "slot": "Чип",
+    "buyPrice": {
+      "bonds": 28160
+    },
+    "sellPrice": {
+      "bonds": 7040
+    },
+    "description": "Чип ускорения процесса добычи",
+    "stats": {
+      "durability": 1000,
+      "weight": 120
+    },
+    "iconPath": "equipment/chip_dobycha_45.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3657"
+  },
+  {
+    "key": "chip_dobycha_5",
+    "name": "Чип Добыча 5",
+    "model": "Чип Добыча",
+    "family": "electronic",
+    "subtype": "computer",
+    "requiredLevel": 5,
+    "slot": "Чип",
+    "buyPrice": {
+      "bonds": 256
+    },
+    "sellPrice": {
+      "bonds": 64
+    },
+    "craftFromBlueprints": [],
+    "description": "Чип ускорения процесса добычи",
+    "stats": {
+      "durability": 1000,
+      "weight": 60
+    },
+    "iconPath": "equipment/chip_dobycha_5.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3657"
+  },
+  {
+    "key": "chip_energeticheskoe_30",
+    "name": "Чип Энергетическое 30",
+    "model": "Чип Энергетическое",
+    "family": "electronic",
+    "subtype": "computer",
+    "requiredLevel": 30,
+    "slot": "Чип",
+    "buyPrice": {
+      "bonds": 25600
+    },
+    "sellPrice": {
+      "bonds": 6400
+    },
+    "description": "Чип увеличения мощности для энергетического оружия",
+    "stats": {
+      "durability": 1500,
+      "weight": 100
+    },
+    "iconPath": "equipment/chip_energeticheskoe_30.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3657"
+  },
+  {
+    "key": "chip_energosnabzhenie_15",
+    "name": "Чип Энергоснабжение 15",
+    "model": "Чип Энергоснабжение",
+    "family": "electronic",
+    "subtype": "computer",
+    "requiredLevel": 15,
+    "slot": "Чип",
+    "buyPrice": {
+      "bonds": 1024
+    },
+    "sellPrice": {
+      "bonds": 256
+    },
+    "craftFromBlueprints": [],
+    "description": "Чип увеличения мощности энергоустановки робота",
+    "stats": {
+      "durability": 1000,
+      "weight": 70
+    },
+    "iconPath": "equipment/chip_energosnabzhenie_15.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3657"
+  },
+  {
+    "key": "chip_energosnabzhenie_25",
+    "name": "Чип Энергоснабжение 25",
+    "model": "Чип Энергоснабжение",
+    "family": "electronic",
+    "subtype": "computer",
+    "requiredLevel": 25,
+    "slot": "Чип",
+    "buyPrice": {
+      "bonds": 7680
+    },
+    "sellPrice": {
+      "bonds": 1920
+    },
+    "craftFromBlueprints": [],
+    "description": "Чип увеличения мощности энергоустановки робота",
+    "stats": {
+      "durability": 1000,
+      "weight": 80
+    },
+    "iconPath": "equipment/chip_energosnabzhenie_25.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3657"
+  },
+  {
+    "key": "chip_energosnabzhenie_35",
+    "name": "Чип Энергоснабжение 35",
+    "model": "Чип Энергоснабжение",
+    "family": "electronic",
+    "subtype": "computer",
+    "requiredLevel": 35,
+    "slot": "Чип",
+    "buyPrice": {
+      "bonds": 15360
+    },
+    "sellPrice": {
+      "bonds": 3840
+    },
+    "craftFromBlueprints": [],
+    "description": "Чип увеличения мощности энергоустановки робота",
+    "stats": {
+      "durability": 1000,
+      "weight": 90
+    },
+    "iconPath": "equipment/chip_energosnabzhenie_35.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3657"
+  },
+  {
+    "key": "chip_energosnabzhenie_45",
+    "name": "Чип Энергоснабжение 45",
+    "model": "Чип Энергоснабжение",
+    "family": "electronic",
+    "subtype": "computer",
+    "requiredLevel": 45,
+    "slot": "Чип",
+    "buyPrice": {
+      "bonds": 28160
+    },
+    "sellPrice": {
+      "bonds": 7040
+    },
+    "description": "Чип увеличения мощности энергоустановки робота",
+    "stats": {
+      "durability": 1000,
+      "weight": 100
+    },
+    "iconPath": "equipment/chip_energosnabzhenie_45.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3657"
+  },
+  {
+    "key": "chip_energosnabzhenie_5",
+    "name": "Чип Энергоснабжение 5",
+    "model": "Чип Энергоснабжение",
+    "family": "electronic",
+    "subtype": "computer",
+    "requiredLevel": 5,
+    "slot": "Чип",
+    "buyPrice": {
+      "bonds": 256
+    },
+    "sellPrice": {
+      "bonds": 64
+    },
+    "craftFromBlueprints": [],
+    "description": "Чип увеличения мощности энергоустановки робота",
+    "stats": {
+      "durability": 1000,
+      "weight": 60
+    },
+    "iconPath": "equipment/chip_energosnabzhenie_5.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3657"
+  },
+  {
+    "key": "chip_energosnabzhenie_50",
+    "name": "Чип Энергоснабжение 50",
+    "model": "Чип Энергоснабжение",
+    "family": "electronic",
+    "subtype": "computer",
+    "requiredLevel": 50,
+    "slot": "Чип",
+    "buyPrice": {
+      "bonds": 76800
+    },
+    "sellPrice": {
+      "bonds": 19200
+    },
+    "description": "Чип увеличения мощности энергоустановки робота",
+    "stats": {
+      "durability": 1000,
+      "weight": 110
+    },
+    "iconPath": "equipment/chip_energosnabzhenie_50.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3657"
+  },
+  {
+    "key": "chip_energosnabzhenie_55",
+    "name": "Чип Энергоснабжение 55",
+    "model": "Чип Энергоснабжение",
+    "family": "electronic",
+    "subtype": "computer",
+    "requiredLevel": 55,
+    "slot": "Чип",
+    "buyPrice": {
+      "bonds": 60000
+    },
+    "sellPrice": {
+      "bonds": 15000
+    },
+    "description": "Чип увеличения мощности энергоустановки робота",
+    "stats": {
+      "durability": 1000,
+      "weight": 120
+    },
+    "iconPath": "equipment/chip_energosnabzhenie_55.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3657"
+  },
+  {
+    "key": "chip_energosnabzhenie_60",
+    "name": "Чип Энергоснабжение 60",
+    "model": "Чип Энергоснабжение",
+    "family": "electronic",
+    "subtype": "computer",
+    "requiredLevel": 60,
+    "slot": "Чип",
+    "buyPrice": {
+      "bonds": 108800
+    },
+    "sellPrice": {
+      "bonds": 27200
+    },
+    "description": "Чип увеличения мощности энергоустановки робота",
+    "stats": {
+      "durability": 1000,
+      "weight": 130
+    },
+    "iconPath": "equipment/chip_energosnabzhenie_60.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3657"
+  },
+  {
+    "key": "chip_ognestrelnoe_30",
+    "name": "Чип Огнестрельное 30",
+    "model": "Чип Огнестрельное",
+    "family": "electronic",
+    "subtype": "computer",
+    "requiredLevel": 30,
+    "slot": "Чип",
+    "buyPrice": {
+      "bonds": 25600
+    },
+    "sellPrice": {
+      "bonds": 6400
+    },
+    "description": "Чип увеличения мощности для огнестрельного оружия",
+    "stats": {
+      "durability": 1500,
+      "weight": 100
+    },
+    "iconPath": "equipment/chip_ognestrelnoe_30.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3657"
+  },
+  {
+    "key": "chip_pole_15",
+    "name": "Чип Поле 15",
+    "model": "Чип Поле",
+    "family": "electronic",
+    "subtype": "computer",
+    "requiredLevel": 15,
+    "slot": "Чип",
+    "buyPrice": {
+      "bonds": 1024
+    },
+    "sellPrice": {
+      "bonds": 256
+    },
+    "craftFromBlueprints": [],
+    "description": "Чип для усиления защитных полей робота",
+    "stats": {
+      "durability": 1000,
+      "weight": 200
+    },
+    "iconPath": "equipment/chip_pole_15.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3657"
+  },
+  {
+    "key": "chip_pole_25",
+    "name": "Чип Поле 25",
+    "model": "Чип Поле",
+    "family": "electronic",
+    "subtype": "computer",
+    "requiredLevel": 25,
+    "slot": "Чип",
+    "buyPrice": {
+      "bonds": 7680
+    },
+    "sellPrice": {
+      "bonds": 1920
+    },
+    "craftFromBlueprints": [],
+    "description": "Чип для усиления защитных полей робота",
+    "stats": {
+      "durability": 1000,
+      "weight": 500
+    },
+    "iconPath": "equipment/chip_pole_25.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3657"
+  },
+  {
+    "key": "chip_pole_35",
+    "name": "Чип Поле 35",
+    "model": "Чип Поле",
+    "family": "electronic",
+    "subtype": "computer",
+    "requiredLevel": 35,
+    "slot": "Чип",
+    "buyPrice": {
+      "bonds": 15360
+    },
+    "sellPrice": {
+      "bonds": 3840
+    },
+    "craftFromBlueprints": [],
+    "description": "Чип для усиления защитных полей робота",
+    "stats": {
+      "durability": 1000,
+      "weight": 900
+    },
+    "iconPath": "equipment/chip_pole_35.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3657"
+  },
+  {
+    "key": "chip_pole_45",
+    "name": "Чип Поле 45",
+    "model": "Чип Поле",
+    "family": "electronic",
+    "subtype": "computer",
+    "requiredLevel": 45,
+    "slot": "Чип",
+    "buyPrice": {
+      "bonds": 28160
+    },
+    "sellPrice": {
+      "bonds": 7040
+    },
+    "description": "Чип для усиления защитных полей робота",
+    "stats": {
+      "durability": 1000,
+      "weight": 1200
+    },
+    "iconPath": "equipment/chip_pole_45.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3657"
+  },
+  {
+    "key": "chip_pole_5",
+    "name": "Чип Поле 5",
+    "model": "Чип Поле",
+    "family": "electronic",
+    "subtype": "computer",
+    "requiredLevel": 5,
+    "slot": "Чип",
+    "buyPrice": {
+      "bonds": 256
+    },
+    "sellPrice": {
+      "bonds": 64
+    },
+    "craftFromBlueprints": [],
+    "description": "Чип для усиления защитных полей робота",
+    "stats": {
+      "durability": 1000,
+      "weight": 60
+    },
+    "iconPath": "equipment/chip_pole_5.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3657"
+  },
+  {
+    "key": "chip_pole_50",
+    "name": "Чип Поле 50",
+    "model": "Чип Поле",
+    "family": "electronic",
+    "subtype": "computer",
+    "requiredLevel": 50,
+    "slot": "Чип",
+    "buyPrice": {
+      "bonds": 51200
+    },
+    "sellPrice": {
+      "bonds": 12800
+    },
+    "description": "Чип для усиления защитных полей робота",
+    "stats": {
+      "durability": 1000,
+      "weight": 1500
+    },
+    "iconPath": "equipment/chip_pole_50.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3657"
+  },
+  {
+    "key": "chip_pole_55",
+    "name": "Чип Поле 55",
+    "model": "Чип Поле",
+    "family": "electronic",
+    "subtype": "computer",
+    "requiredLevel": 55,
+    "slot": "Чип",
+    "buyPrice": {
+      "bonds": 76800
+    },
+    "sellPrice": {
+      "bonds": 19200
+    },
+    "description": "Чип для усиления защитных полей робота",
+    "stats": {
+      "durability": 1000,
+      "weight": 1800
+    },
+    "iconPath": "equipment/chip_pole_55.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3657"
+  },
+  {
+    "key": "chip_pole_60",
+    "name": "Чип Поле 60",
+    "model": "Чип Поле",
+    "family": "electronic",
+    "subtype": "computer",
+    "requiredLevel": 60,
+    "slot": "Чип",
+    "buyPrice": {
+      "bonds": 108800
+    },
+    "sellPrice": {
+      "bonds": 27200
+    },
+    "description": "Чип для усиления защитных полей робота",
+    "stats": {
+      "durability": 1000,
+      "weight": 2000
+    },
+    "iconPath": "equipment/chip_pole_60.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3657"
+  },
+  {
+    "key": "chip_prochnost",
+    "name": "Чип Прочность",
+    "model": "Чип Прочность",
+    "family": "electronic",
+    "subtype": "computer",
+    "requiredLevel": 50,
+    "requiredRobotType": "Боец",
+    "slot": "Чип",
+    "buyPrice": {
+      "bonds": 51200,
+      "regls": 100
+    },
+    "sellPrice": {
+      "bonds": 12800
+    },
+    "craftFromBlueprints": [],
+    "description": "Чип увеличения прочности робота",
+    "stats": {
+      "durability": 900,
+      "weight": 2000
+    },
+    "iconPath": "equipment/chip_prochnost.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3657"
+  },
+  {
+    "key": "chip_prochnost_v2",
+    "name": "Чип Прочность V.2",
+    "model": "Чип Прочность V.2",
+    "family": "electronic",
+    "subtype": "computer",
+    "requiredLevel": 55,
+    "requiredRobotType": "Боец",
+    "slot": "Чип",
+    "sellPrice": {
+      "bonds": 12800
+    },
+    "description": "Чип увеличения прочности робота",
+    "stats": {
+      "durability": 900,
+      "weight": 2500
+    },
+    "iconPath": "equipment/chip_prochnost_v2.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3657"
+  },
+  {
+    "key": "chip_programmiruemyy",
+    "name": "Чип Программируемый",
+    "model": "Чип Программируемый",
+    "family": "electronic",
+    "subtype": "computer",
+    "requiredLevel": 20,
+    "slot": "Чип",
+    "sellPrice": {
+      "bonds": 200
+    },
+    "description": "Выдается за победу в ТОК боях. Имеет настраиваемые параметры",
+    "stats": {
+      "durability": 1000,
+      "weight": 10
+    },
+    "iconPath": "equipment/chip_programmiruemyy.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3657"
+  },
+  {
+    "key": "chip_raketnyy_kompleks_30",
+    "name": "Чип Ракетный Комплекс 30",
+    "model": "Чип Ракетный Комплекс",
+    "family": "electronic",
+    "subtype": "computer",
+    "requiredLevel": 30,
+    "slot": "Чип",
+    "buyPrice": {
+      "bonds": 25600
+    },
+    "sellPrice": {
+      "bonds": 6400
+    },
+    "description": "Чип увеличения мощности для ракетного оружия",
+    "stats": {
+      "durability": 1500,
+      "weight": 100
+    },
+    "iconPath": "equipment/chip_raketnyy_kompleks_30.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3657"
+  },
+  {
+    "key": "chip_skorost",
+    "name": "Чип Скорость",
+    "model": "Чип Скорость",
+    "family": "electronic",
+    "subtype": "computer",
+    "requiredLevel": 50,
+    "requiredRobotType": "Боец",
+    "slot": "Чип",
+    "buyPrice": {
+      "bonds": 45616,
+      "regls": 10
+    },
+    "sellPrice": {
+      "bonds": 11404
+    },
+    "craftFromBlueprints": [],
+    "description": "Чип увеличения скорости робота",
+    "stats": {
+      "durability": 900,
+      "weight": 3000
+    },
+    "iconPath": "equipment/chip_skorost.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3657"
+  },
+  {
+    "key": "chip_tryum_15",
+    "name": "Чип Трюм 15",
+    "model": "Чип Трюм",
+    "family": "electronic",
+    "subtype": "computer",
+    "requiredLevel": 15,
+    "slot": "Чип",
+    "buyPrice": {
+      "bonds": 1024
+    },
+    "sellPrice": {
+      "bonds": 256
+    },
+    "craftFromBlueprints": [],
+    "description": "Чип для увеличения емкости трюма",
+    "stats": {
+      "durability": 1000,
+      "weight": 70
+    },
+    "iconPath": "equipment/chip_tryum_15.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3657"
+  },
+  {
+    "key": "chip_tryum_25",
+    "name": "Чип Трюм 25",
+    "model": "Чип Трюм",
+    "family": "electronic",
+    "subtype": "computer",
+    "requiredLevel": 25,
+    "slot": "Чип",
+    "buyPrice": {
+      "bonds": 7680
+    },
+    "sellPrice": {
+      "bonds": 1920
+    },
+    "craftFromBlueprints": [],
+    "description": "Чип для увеличения емкости трюма",
+    "stats": {
+      "durability": 1000,
+      "weight": 80
+    },
+    "iconPath": "equipment/chip_tryum_25.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3657"
+  },
+  {
+    "key": "chip_tryum_35",
+    "name": "Чип Трюм 35",
+    "model": "Чип Трюм",
+    "family": "electronic",
+    "subtype": "computer",
+    "requiredLevel": 35,
+    "requiredRobotType": "Транспортник",
+    "slot": "Чип",
+    "buyPrice": {
+      "bonds": 32000
+    },
+    "sellPrice": {
+      "bonds": 8000
+    },
+    "craftFromBlueprints": [],
+    "description": "Чип для увеличения емкости трюма",
+    "stats": {
+      "durability": 1000,
+      "weight": 90
+    },
+    "iconPath": "equipment/chip_tryum_35.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3657"
+  },
+  {
+    "key": "chip_tryum_45",
+    "name": "Чип Трюм 45",
+    "model": "Чип Трюм",
+    "family": "electronic",
+    "subtype": "computer",
+    "requiredLevel": 45,
+    "requiredRobotType": "Транспортник",
+    "slot": "Чип",
+    "buyPrice": {
+      "bonds": 64000
+    },
+    "sellPrice": {
+      "bonds": 16000
+    },
+    "description": "Чип для увеличения емкости трюма",
+    "stats": {
+      "durability": 1000,
+      "weight": 100
+    },
+    "iconPath": "equipment/chip_tryum_45.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3657"
+  },
+  {
+    "key": "chip_tryum_5",
+    "name": "Чип Трюм 5",
+    "model": "Чип Трюм",
+    "family": "electronic",
+    "subtype": "computer",
+    "requiredLevel": 5,
+    "slot": "Чип",
+    "buyPrice": {
+      "bonds": 256
+    },
+    "sellPrice": {
+      "bonds": 64
+    },
+    "craftFromBlueprints": [],
+    "description": "Чип для увеличения емкости трюма",
+    "stats": {
+      "durability": 1000,
+      "weight": 60
+    },
+    "iconPath": "equipment/chip_tryum_5.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3657"
+  },
+  {
+    "key": "dob_modul_bur",
+    "name": "Доб. Модуль Бур",
+    "model": "Доб. Модуль Бур",
+    "family": "special",
+    "subtype": "extractor",
+    "requiredLevel": 20,
+    "requiredRobotType": "Добытчик",
+    "slot": "Доп",
+    "buyPrice": {
+      "bonds": 2519
+    },
+    "sellPrice": {
+      "bonds": 629
+    },
+    "description": "Буровое оборудование. Без его установки на мех-добытчик бурение невозможно",
+    "stats": {
+      "primary": 3,
+      "primaryLabel": "Мощность подъема",
+      "durability": 1000,
+      "weight": 480
+    },
+    "iconPath": "equipment/dob_modul_bur.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3687"
+  },
+  {
+    "key": "dob_modul_bur_v2",
+    "name": "Доб. Модуль Бур V.2",
+    "model": "Доб. Модуль Бур V.2",
+    "family": "special",
+    "subtype": "extractor",
+    "requiredLevel": 35,
+    "requiredRobotType": "Добытчик",
+    "slot": "Доп",
+    "buyPrice": {
+      "bonds": 5099
+    },
+    "sellPrice": {
+      "bonds": 1274
+    },
+    "description": "Буровое оборудование. Без его установки на мех-добытчик бурение невозможно",
+    "stats": {
+      "primary": 6,
+      "primaryLabel": "Мощность подъема",
+      "durability": 1000,
+      "weight": 660
+    },
+    "iconPath": "equipment/dob_modul_bur_v2.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3687"
+  },
+  {
+    "key": "dob_modul_nasos",
+    "name": "Доб. Модуль Насос",
+    "model": "Доб. Модуль Насос",
+    "family": "special",
+    "subtype": "extractor",
+    "requiredLevel": 21,
+    "requiredRobotType": "Добытчик",
+    "slot": "Доп",
+    "buyPrice": {
+      "bonds": 4311,
+      "regls": 30
+    },
+    "sellPrice": {
+      "bonds": 1077
+    },
+    "description": "Буровое оборудование. Без его установки на мех-добытчик бурение невозможно",
+    "stats": {
+      "primary": 5,
+      "primaryLabel": "Мощность подъема",
+      "durability": 1000,
+      "weight": 425
+    },
+    "iconPath": "equipment/dob_modul_nasos.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3687"
+  },
+  {
+    "key": "dob_modul_nasos_v2",
+    "name": "Доб. Модуль Насос V.2",
+    "model": "Доб. Модуль Насос V.2",
+    "family": "special",
+    "subtype": "extractor",
+    "requiredLevel": 40,
+    "requiredRobotType": "Добытчик",
+    "slot": "Доп",
+    "buyPrice": {
+      "bonds": 13440
+    },
+    "sellPrice": {
+      "bonds": 3360
+    },
+    "description": "Буровое оборудование. Без его установки на мех-добытчик бурение невозможно",
+    "stats": {
+      "primary": 7,
+      "primaryLabel": "Мощность подъема",
+      "durability": 1000,
+      "weight": 760
+    },
+    "iconPath": "equipment/dob_modul_nasos_v2.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3687"
+  },
+  {
+    "key": "dob_modul_shakhta",
+    "name": "Доб. Модуль Шахта",
+    "model": "Доб. Модуль Шахта",
+    "family": "special",
+    "subtype": "extractor",
+    "requiredLevel": 8,
+    "requiredRobotType": "Добытчик",
+    "slot": "Доп",
+    "buyPrice": {
+      "bonds": 819
+    },
+    "sellPrice": {
+      "bonds": 204
+    },
+    "description": "Буровое оборудование.Без его установки на мех-добытчикбурение невозможноДля добычи кристаллов и других ресурсов",
+    "stats": {
+      "primary": 1,
+      "primaryLabel": "Мощность подъема",
+      "durability": 1000,
+      "weight": 85
+    },
+    "iconPath": "equipment/dob_modul_shakhta.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3687"
+  },
+  {
+    "key": "dob_modul_shnek",
+    "name": "Доб. Модуль Шнек",
+    "model": "Доб. Модуль Шнек",
+    "family": "special",
+    "subtype": "extractor",
+    "requiredLevel": 12,
+    "requiredRobotType": "Добытчик",
+    "slot": "Доп",
+    "buyPrice": {
+      "bonds": 1638
+    },
+    "sellPrice": {
+      "bonds": 409
+    },
+    "description": "Буровое оборудование. Без его установки на мех-добытчик бурение невозможно",
+    "stats": {
+      "primary": 2,
+      "primaryLabel": "Мощность подъема",
+      "durability": 1000,
+      "weight": 170
+    },
+    "iconPath": "equipment/dob_modul_shnek.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3687"
+  },
+  {
+    "key": "dob_modul_shnek_v2",
+    "name": "Доб. Модуль Шнек V.2",
+    "model": "Доб. Модуль Шнек V.2",
+    "family": "special",
+    "subtype": "extractor",
+    "requiredLevel": 28,
+    "requiredRobotType": "Добытчик",
+    "slot": "Доп",
+    "buyPrice": {
+      "bonds": 3358
+    },
+    "sellPrice": {
+      "bonds": 839
+    },
+    "description": "Буровое оборудование. Без его установки на мех-добытчик бурение невозможно",
+    "stats": {
+      "primary": 4,
+      "primaryLabel": "Мощность подъема",
+      "durability": 1000,
+      "weight": 620
+    },
+    "iconPath": "equipment/dob_modul_shnek_v2.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3687"
+  },
+  {
+    "key": "nakopitel",
+    "name": "Накопитель",
+    "model": "Накопитель",
+    "family": "energy",
+    "subtype": "accumulator",
+    "slot": "Энерго",
+    "buyPrice": {
+      "bonds": 10
+    },
+    "sellPrice": {
+      "bonds": 2
+    },
+    "description": "Накапливает энергию генерируемую реакторомЧем больше емкость, тем дольше можно будетстрелять, не дожидаясь пополнения энергии",
+    "stats": {
+      "primary": 300,
+      "primaryLabel": "Емкость",
+      "durability": 1000,
+      "weight": 33
+    },
+    "iconPath": "equipment/nakopitel.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3334"
+  },
+  {
+    "key": "nakopitel_100_m1",
+    "name": "Накопитель 100 М1",
+    "model": "Накопитель",
+    "family": "energy",
+    "subtype": "accumulator",
+    "requiredLevel": 100,
+    "slot": "Энерго",
+    "sellPrice": {
+      "bonds": 30000
+    },
+    "stats": {
+      "primary": 2925,
+      "primaryLabel": "Емкость",
+      "durability": 1500,
+      "weight": 161
+    },
+    "iconPath": "equipment/nakopitel_100_m1.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3334"
+  },
+  {
+    "key": "nakopitel_12",
+    "name": "Накопитель 12",
+    "model": "Накопитель",
+    "family": "energy",
+    "subtype": "accumulator",
+    "requiredLevel": 12,
+    "slot": "Энерго",
+    "buyPrice": {
+      "bonds": 351
+    },
+    "sellPrice": {
+      "bonds": 87
+    },
+    "craftFromBlueprints": [],
+    "description": "Накопитель энергии, производимой реактором. Подходит для любого робота",
+    "stats": {
+      "primary": 440,
+      "primaryLabel": "Емкость",
+      "durability": 1000,
+      "weight": 38
+    },
+    "iconPath": "equipment/nakopitel_12.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3334"
+  },
+  {
+    "key": "nakopitel_16",
+    "name": "Накопитель 16",
+    "model": "Накопитель",
+    "family": "energy",
+    "subtype": "accumulator",
+    "requiredLevel": 16,
+    "slot": "Энерго",
+    "buyPrice": {
+      "bonds": 578
+    },
+    "sellPrice": {
+      "bonds": 144
+    },
+    "craftFromBlueprints": [],
+    "description": "Накопитель энергии, производимой реактором. Подходит для любого робота",
+    "stats": {
+      "primary": 500,
+      "primaryLabel": "Емкость",
+      "durability": 1000,
+      "weight": 40
+    },
+    "iconPath": "equipment/nakopitel_16.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3334"
+  },
+  {
+    "key": "nakopitel_20m1",
+    "name": "Накопитель 20м1",
+    "model": "Накопитель",
+    "family": "energy",
+    "subtype": "accumulator",
+    "requiredLevel": 20,
+    "slot": "Энерго",
+    "sellPrice": {
+      "bonds": 203
+    },
+    "description": "Накопитель энергии, производимой реактором. Подходит для любого робота",
+    "stats": {
+      "primary": 655,
+      "primaryLabel": "Емкость",
+      "durability": 1500,
+      "weight": 34
+    },
+    "iconPath": "equipment/nakopitel_20m1.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3334"
+  },
+  {
+    "key": "nakopitel_24",
+    "name": "Накопитель 24",
+    "model": "Накопитель",
+    "family": "energy",
+    "subtype": "accumulator",
+    "requiredLevel": 24,
+    "slot": "Энерго",
+    "buyPrice": {
+      "bonds": 800
+    },
+    "sellPrice": {
+      "bonds": 200
+    },
+    "craftFromBlueprints": [],
+    "description": "Накопитель энергии, производимой реактором. Подходит для любого робота",
+    "stats": {
+      "primary": 628,
+      "primaryLabel": "Емкость",
+      "durability": 1000,
+      "weight": 44
+    },
+    "iconPath": "equipment/nakopitel_24.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3334"
+  },
+  {
+    "key": "nakopitel_27",
+    "name": "Накопитель 27",
+    "model": "Накопитель",
+    "family": "energy",
+    "subtype": "accumulator",
+    "requiredLevel": 27,
+    "slot": "Энерго",
+    "buyPrice": {
+      "bonds": 1189
+    },
+    "sellPrice": {
+      "bonds": 297
+    },
+    "craftFromBlueprints": [],
+    "description": "Накопитель энергии, производимой реактором. Подходит для любого робота",
+    "stats": {
+      "primary": 718,
+      "primaryLabel": "Емкость",
+      "durability": 1000,
+      "weight": 46
+    },
+    "iconPath": "equipment/nakopitel_27.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3334"
+  },
+  {
+    "key": "nakopitel_27m1",
+    "name": "Накопитель 27м1",
+    "model": "Накопитель",
+    "family": "energy",
+    "subtype": "accumulator",
+    "requiredLevel": 27,
+    "slot": "Энерго",
+    "sellPrice": {
+      "bonds": 340
+    },
+    "description": "Накопитель энергии, производимой реактором. Подходит для любого робота",
+    "stats": {
+      "primary": 898,
+      "primaryLabel": "Емкость",
+      "durability": 1500,
+      "weight": 37
+    },
+    "iconPath": "equipment/nakopitel_27m1.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3334"
+  },
+  {
+    "key": "nakopitel_30",
+    "name": "Накопитель 30",
+    "model": "Накопитель",
+    "family": "energy",
+    "subtype": "accumulator",
+    "requiredLevel": 30,
+    "slot": "Энерго",
+    "buyPrice": {
+      "bonds": 1442
+    },
+    "sellPrice": {
+      "bonds": 360
+    },
+    "craftFromBlueprints": [],
+    "description": "Накопитель энергии, производимой реактором. Подходит для любого робота",
+    "stats": {
+      "primary": 831,
+      "primaryLabel": "Емкость",
+      "durability": 1000,
+      "weight": 47
+    },
+    "iconPath": "equipment/nakopitel_30.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3334"
+  },
+  {
+    "key": "nakopitel_34",
+    "name": "Накопитель 34",
+    "model": "Накопитель",
+    "family": "energy",
+    "subtype": "accumulator",
+    "requiredLevel": 34,
+    "slot": "Энерго",
+    "buyPrice": {
+      "bonds": 1672
+    },
+    "sellPrice": {
+      "bonds": 418
+    },
+    "craftFromBlueprints": [],
+    "description": "Накопитель энергии, производимой реактором. Подходит для любого робота",
+    "stats": {
+      "primary": 996,
+      "primaryLabel": "Емкость",
+      "durability": 1000,
+      "weight": 50
+    },
+    "iconPath": "equipment/nakopitel_34.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3334"
+  },
+  {
+    "key": "nakopitel_34m1",
+    "name": "Накопитель 34м1",
+    "model": "Накопитель",
+    "family": "energy",
+    "subtype": "accumulator",
+    "requiredLevel": 34,
+    "slot": "Энерго",
+    "sellPrice": {
+      "bonds": 478
+    },
+    "description": "Накопитель энергии, производимой реактором. Подходит для любого робота",
+    "stats": {
+      "primary": 1245,
+      "primaryLabel": "Емкость",
+      "durability": 1500,
+      "weight": 40
+    },
+    "iconPath": "equipment/nakopitel_34m1.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3334"
+  },
+  {
+    "key": "nakopitel_4",
+    "name": "Накопитель 4",
+    "model": "Накопитель",
+    "family": "energy",
+    "subtype": "accumulator",
+    "requiredLevel": 4,
+    "slot": "Энерго",
+    "buyPrice": {
+      "bonds": 63
+    },
+    "sellPrice": {
+      "bonds": 15
+    },
+    "craftFromBlueprints": [],
+    "description": "Накопитель энергии, производимой реактором. Подходит для любого робота",
+    "stats": {
+      "primary": 320,
+      "primaryLabel": "Емкость",
+      "durability": 1000,
+      "weight": 34
+    },
+    "iconPath": "equipment/nakopitel_4.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3334"
+  },
+  {
+    "key": "nakopitel_44",
+    "name": "Накопитель 44",
+    "model": "Накопитель",
+    "family": "energy",
+    "subtype": "accumulator",
+    "requiredLevel": 44,
+    "slot": "Энерго",
+    "sellPrice": {
+      "bonds": 600
+    },
+    "description": "Накопитель энергии, производимой реактором. Подходит для любого робота",
+    "stats": {
+      "primary": 1220,
+      "primaryLabel": "Емкость",
+      "durability": 1000,
+      "weight": 56
+    },
+    "iconPath": "equipment/nakopitel_44.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3334"
+  },
+  {
+    "key": "nakopitel_44m1",
+    "name": "Накопитель 44м1",
+    "model": "Накопитель",
+    "family": "energy",
+    "subtype": "accumulator",
+    "requiredLevel": 44,
+    "slot": "Энерго",
+    "sellPrice": {
+      "bonds": 650
+    },
+    "description": "Накопитель энергии, производимой реактором. Подходит для любого робота",
+    "stats": {
+      "primary": 1525,
+      "primaryLabel": "Емкость",
+      "durability": 1500,
+      "weight": 52
+    },
+    "iconPath": "equipment/nakopitel_44m1.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3334"
+  },
+  {
+    "key": "nakopitel_54",
+    "name": "Накопитель 54",
+    "model": "Накопитель",
+    "family": "energy",
+    "subtype": "accumulator",
+    "requiredLevel": 54,
+    "slot": "Энерго",
+    "buyPrice": {
+      "bonds": 3392
+    },
+    "sellPrice": {
+      "bonds": 848
+    },
+    "description": "Накопитель энергии, производимой реактором. Подходит для любого робота",
+    "stats": {
+      "primary": 1240,
+      "primaryLabel": "Емкость",
+      "durability": 1000,
+      "weight": 62
+    },
+    "iconPath": "equipment/nakopitel_54.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3334"
+  },
+  {
+    "key": "nakopitel_54m1",
+    "name": "Накопитель 54м1",
+    "model": "Накопитель",
+    "family": "energy",
+    "subtype": "accumulator",
+    "requiredLevel": 54,
+    "slot": "Энерго",
+    "buyPrice": {
+      "bonds": 3600,
+      "regls": 92
+    },
+    "sellPrice": {
+      "bonds": 900
+    },
+    "description": "Накопитель энергии, производимой реактором. Подходит для любого робота",
+    "stats": {
+      "primary": 1575,
+      "primaryLabel": "Емкость",
+      "durability": 1500,
+      "weight": 58
+    },
+    "iconPath": "equipment/nakopitel_54m1.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3334"
+  },
+  {
+    "key": "nakopitel_64",
+    "name": "Накопитель 64",
+    "model": "Накопитель",
+    "family": "energy",
+    "subtype": "accumulator",
+    "requiredLevel": 64,
+    "slot": "Энерго",
+    "buyPrice": {
+      "bonds": 4751
+    },
+    "sellPrice": {
+      "bonds": 1187
+    },
+    "description": "Накопитель энергии, производимой реактором. Подходит для любого робота",
+    "stats": {
+      "primary": 1400,
+      "primaryLabel": "Емкость",
+      "durability": 1000,
+      "weight": 70
+    },
+    "iconPath": "equipment/nakopitel_64.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3334"
+  },
+  {
+    "key": "nakopitel_64m1",
+    "name": "Накопитель 64м1",
+    "model": "Накопитель",
+    "family": "energy",
+    "subtype": "accumulator",
+    "requiredLevel": 64,
+    "slot": "Энерго",
+    "buyPrice": {
+      "bonds": 4154,
+      "regls": 117
+    },
+    "sellPrice": {
+      "bonds": 1038
+    },
+    "description": "Накопитель энергии, производимой реактором. Подходит для любого робота",
+    "stats": {
+      "primary": 1775,
+      "primaryLabel": "Емкость",
+      "durability": 1500,
+      "weight": 62
+    },
+    "iconPath": "equipment/nakopitel_64m1.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3334"
+  },
+  {
+    "key": "nakopitel_7",
+    "name": "Накопитель 7",
+    "model": "Накопитель",
+    "family": "energy",
+    "subtype": "accumulator",
+    "requiredLevel": 7,
+    "slot": "Энерго",
+    "buyPrice": {
+      "bonds": 168
+    },
+    "sellPrice": {
+      "bonds": 42
+    },
+    "craftFromBlueprints": [],
+    "description": "Накопитель энергии, производимой реактором. Подходит для любого робота",
+    "stats": {
+      "primary": 350,
+      "primaryLabel": "Емкость",
+      "durability": 1000,
+      "weight": 36
+    },
+    "iconPath": "equipment/nakopitel_7.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3334"
+  },
+  {
+    "key": "nakopitel_74",
+    "name": "Накопитель 74",
+    "model": "Накопитель",
+    "family": "energy",
+    "subtype": "accumulator",
+    "requiredLevel": 74,
+    "slot": "Энерго",
+    "buyPrice": {
+      "bonds": 5255
+    },
+    "sellPrice": {
+      "bonds": 1313
+    },
+    "description": "Накопитель энергии, производимой реактором. Подходит для любого робота",
+    "stats": {
+      "primary": 1520,
+      "primaryLabel": "Емкость",
+      "durability": 1000,
+      "weight": 92
+    },
+    "iconPath": "equipment/nakopitel_74.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3334"
+  },
+  {
+    "key": "nakopitel_74m1",
+    "name": "Накопитель 74м1",
+    "model": "Накопитель",
+    "family": "energy",
+    "subtype": "accumulator",
+    "requiredLevel": 74,
+    "slot": "Энерго",
+    "buyPrice": {
+      "bonds": 6145,
+      "regls": 145
+    },
+    "sellPrice": {
+      "bonds": 1536
+    },
+    "description": "Накопитель энергии, производимой реактором. Подходит для любого робота",
+    "stats": {
+      "primary": 1925,
+      "primaryLabel": "Емкость",
+      "durability": 1500,
+      "weight": 74
+    },
+    "iconPath": "equipment/nakopitel_74m1.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3334"
+  },
+  {
+    "key": "nakopitel_84",
+    "name": "Накопитель 84",
+    "model": "Накопитель",
+    "family": "energy",
+    "subtype": "accumulator",
+    "requiredLevel": 84,
+    "slot": "Энерго",
+    "sellPrice": {
+      "bonds": 1642
+    },
+    "description": "Накопитель энергии, производимой реактором. Подходит для любого робота",
+    "stats": {
+      "primary": 1747,
+      "primaryLabel": "Емкость",
+      "durability": 1000,
+      "weight": 119
+    },
+    "iconPath": "equipment/nakopitel_84.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3334"
+  },
+  {
+    "key": "nakopitel_84m1",
+    "name": "Накопитель 84м1",
+    "model": "Накопитель",
+    "family": "energy",
+    "subtype": "accumulator",
+    "requiredLevel": 84,
+    "slot": "Энерго",
+    "sellPrice": {
+      "bonds": 1920
+    },
+    "description": "Накопитель энергии, производимой реактором. Подходит для любого робота",
+    "stats": {
+      "primary": 2213,
+      "primaryLabel": "Емкость",
+      "durability": 1500,
+      "weight": 96
+    },
+    "iconPath": "equipment/nakopitel_84m1.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3334"
+  },
+  {
+    "key": "nakopitel_9",
+    "name": "Накопитель 9",
+    "model": "Накопитель",
+    "family": "energy",
+    "subtype": "accumulator",
+    "requiredLevel": 9,
+    "slot": "Энерго",
+    "sellPrice": {
+      "bonds": 60
+    },
+    "craftFromBlueprints": [],
+    "description": "Более емкий накопительМожно делать несколько выстреловИз орудий около 10 уровня",
+    "stats": {
+      "primary": 380,
+      "primaryLabel": "Емкость",
+      "durability": 1000,
+      "weight": 37
+    },
+    "iconPath": "equipment/nakopitel_9.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3334"
+  },
+  {
+    "key": "nakopitel_94_m1",
+    "name": "Накопитель 94 М1",
+    "model": "Накопитель",
+    "family": "energy",
+    "subtype": "accumulator",
+    "requiredLevel": 94,
+    "slot": "Энерго",
+    "sellPrice": {
+      "bonds": 24000
+    },
+    "description": "Накопитель энергии, производимой реактором. Подходит для любого робота",
+    "stats": {
+      "primary": 2544,
+      "primaryLabel": "Емкость",
+      "durability": 1500,
+      "weight": 124
+    },
+    "iconPath": "equipment/nakopitel_94_m1.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3334"
+  },
+  {
+    "key": "reaktor",
+    "name": "Реактор",
+    "model": "Реактор",
+    "family": "energy",
+    "subtype": "generator",
+    "slot": "Энерго",
+    "buyPrice": {
+      "bonds": 11
+    },
+    "sellPrice": {
+      "bonds": 2
+    },
+    "description": "Выробатывает энергию, которая накапливается в накопителяхРасходуется на выстрелы/добычу и другоеПравый клик мыши для быстрой установки в модули",
+    "stats": {
+      "primary": 32,
+      "primaryLabel": "Мощность",
+      "durability": 1000,
+      "weight": 26
+    },
+    "iconPath": "equipment/reaktor.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3336"
+  },
+  {
+    "key": "reaktor_100_m1",
+    "name": "Реактор 100 М1",
+    "model": "Реактор",
+    "family": "energy",
+    "subtype": "generator",
+    "requiredLevel": 100,
+    "slot": "Энерго",
+    "sellPrice": {
+      "bonds": 7873
+    },
+    "stats": {
+      "primary": 294,
+      "primaryLabel": "Мощность",
+      "durability": 1500,
+      "weight": 156
+    },
+    "iconPath": "equipment/reaktor_100_m1.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3336"
+  },
+  {
+    "key": "reaktor_12",
+    "name": "Реактор 12",
+    "model": "Реактор",
+    "family": "energy",
+    "subtype": "generator",
+    "requiredLevel": 12,
+    "slot": "Энерго",
+    "buyPrice": {
+      "bonds": 483
+    },
+    "sellPrice": {
+      "bonds": 120
+    },
+    "description": "Энергетическая силовая установка. Подходит для любого робота",
+    "stats": {
+      "primary": 55,
+      "primaryLabel": "Мощность",
+      "durability": 1000,
+      "weight": 48
+    },
+    "iconPath": "equipment/reaktor_12.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3336"
+  },
+  {
+    "key": "reaktor_16",
+    "name": "Реактор 16",
+    "model": "Реактор",
+    "family": "energy",
+    "subtype": "generator",
+    "requiredLevel": 16,
+    "slot": "Энерго",
+    "buyPrice": {
+      "bonds": 688
+    },
+    "sellPrice": {
+      "bonds": 172
+    },
+    "description": "Энергетическая силовая установка. Подходит для любого робота",
+    "stats": {
+      "primary": 61,
+      "primaryLabel": "Мощность",
+      "durability": 1000,
+      "weight": 50
+    },
+    "iconPath": "equipment/reaktor_16.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3336"
+  },
+  {
+    "key": "reaktor_20m1",
+    "name": "Реактор 20м1",
+    "model": "Реактор",
+    "family": "energy",
+    "subtype": "generator",
+    "requiredLevel": 20,
+    "slot": "Энерго",
+    "sellPrice": {
+      "bonds": 241
+    },
+    "description": "Энергетическая силовая установка. Подходит для любого робота",
+    "stats": {
+      "primary": 73,
+      "primaryLabel": "Мощность",
+      "durability": 1500,
+      "weight": 42
+    },
+    "iconPath": "equipment/reaktor_20m1.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3336"
+  },
+  {
+    "key": "reaktor_24",
+    "name": "Реактор 24",
+    "model": "Реактор",
+    "family": "energy",
+    "subtype": "generator",
+    "requiredLevel": 24,
+    "slot": "Энерго",
+    "buyPrice": {
+      "bonds": 1209
+    },
+    "sellPrice": {
+      "bonds": 302
+    },
+    "description": "Энергетическая силовая установка. Подходит для любого робота",
+    "stats": {
+      "primary": 71,
+      "primaryLabel": "Мощность",
+      "durability": 1000,
+      "weight": 55
+    },
+    "iconPath": "equipment/reaktor_24.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3336"
+  },
+  {
+    "key": "reaktor_27",
+    "name": "Реактор 27",
+    "model": "Реактор",
+    "family": "energy",
+    "subtype": "generator",
+    "requiredLevel": 27,
+    "slot": "Энерго",
+    "buyPrice": {
+      "bonds": 1596
+    },
+    "sellPrice": {
+      "bonds": 399
+    },
+    "description": "Энергетическая силовая установка. Подходит для любого робота",
+    "stats": {
+      "primary": 82,
+      "primaryLabel": "Мощность",
+      "durability": 1000,
+      "weight": 57
+    },
+    "iconPath": "equipment/reaktor_27.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3336"
+  },
+  {
+    "key": "reaktor_30",
+    "name": "Реактор 30",
+    "model": "Реактор",
+    "family": "energy",
+    "subtype": "generator",
+    "requiredLevel": 30,
+    "slot": "Энерго",
+    "buyPrice": {
+      "bonds": 1760
+    },
+    "sellPrice": {
+      "bonds": 440
+    },
+    "description": "Энергетическая силовая установка. Подходит для любого робота",
+    "stats": {
+      "primary": 95,
+      "primaryLabel": "Мощность",
+      "durability": 1000,
+      "weight": 60
+    },
+    "iconPath": "equipment/reaktor_30.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3336"
+  },
+  {
+    "key": "reaktor_30m1",
+    "name": "Реактор 30м1",
+    "model": "Реактор",
+    "family": "energy",
+    "subtype": "generator",
+    "requiredLevel": 30,
+    "slot": "Энерго",
+    "sellPrice": {
+      "bonds": 472
+    },
+    "description": "Энергетическая силовая установка. Подходит для любого робота",
+    "stats": {
+      "primary": 119,
+      "primaryLabel": "Мощность",
+      "durability": 1500,
+      "weight": 48
+    },
+    "iconPath": "equipment/reaktor_30m1.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3336"
+  },
+  {
+    "key": "reaktor_34",
+    "name": "Реактор 34",
+    "model": "Реактор",
+    "family": "energy",
+    "subtype": "generator",
+    "requiredLevel": 34,
+    "slot": "Энерго",
+    "buyPrice": {
+      "bonds": 1955
+    },
+    "sellPrice": {
+      "bonds": 488
+    },
+    "description": "Энергетическая силовая установка. Подходит для любого робота",
+    "stats": {
+      "primary": 115,
+      "primaryLabel": "Мощность",
+      "durability": 1000,
+      "weight": 63
+    },
+    "iconPath": "equipment/reaktor_34.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3336"
+  },
+  {
+    "key": "reaktor_38",
+    "name": "Реактор 38",
+    "model": "Реактор",
+    "family": "energy",
+    "subtype": "generator",
+    "requiredLevel": 38,
+    "slot": "Энерго",
+    "buyPrice": {
+      "bonds": 4472
+    },
+    "sellPrice": {
+      "bonds": 1118
+    },
+    "description": "Энергетическая силовая установка. Подходит для любого робота",
+    "stats": {
+      "primary": 121,
+      "primaryLabel": "Мощность",
+      "durability": 1000,
+      "weight": 64
+    },
+    "iconPath": "equipment/reaktor_38.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3336"
+  },
+  {
+    "key": "reaktor_4",
+    "name": "Реактор 4",
+    "model": "Реактор",
+    "family": "energy",
+    "subtype": "generator",
+    "requiredLevel": 4,
+    "slot": "Энерго",
+    "buyPrice": {
+      "bonds": 76
+    },
+    "sellPrice": {
+      "bonds": 19
+    },
+    "description": "Более мощный реакторЗанимает больше места",
+    "stats": {
+      "primary": 41,
+      "primaryLabel": "Мощность",
+      "durability": 1000,
+      "weight": 34
+    },
+    "iconPath": "equipment/reaktor_4.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3336"
+  },
+  {
+    "key": "reaktor_41",
+    "name": "Реактор 41",
+    "model": "Реактор",
+    "family": "energy",
+    "subtype": "generator",
+    "requiredLevel": 41,
+    "slot": "Энерго",
+    "buyPrice": {
+      "bonds": 5498
+    },
+    "sellPrice": {
+      "bonds": 1374
+    },
+    "description": "Энергетическая силовая установка. Подходит для любого робота",
+    "stats": {
+      "primary": 125,
+      "primaryLabel": "Мощность",
+      "durability": 1000,
+      "weight": 64
+    },
+    "iconPath": "equipment/reaktor_41.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3336"
+  },
+  {
+    "key": "reaktor_41m1",
+    "name": "Реактор 41м1",
+    "model": "Реактор",
+    "family": "energy",
+    "subtype": "generator",
+    "requiredLevel": 41,
+    "slot": "Энерго",
+    "sellPrice": {
+      "bonds": 1296
+    },
+    "description": "Энергетическая силовая установка. Подходит для любого робота",
+    "stats": {
+      "primary": 156,
+      "primaryLabel": "Мощность",
+      "durability": 1500,
+      "weight": 51
+    },
+    "iconPath": "equipment/reaktor_41m1.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3336"
+  },
+  {
+    "key": "reaktor_44",
+    "name": "Реактор 44",
+    "model": "Реактор",
+    "family": "energy",
+    "subtype": "generator",
+    "requiredLevel": 44,
+    "slot": "Энерго",
+    "buyPrice": {
+      "bonds": 6200
+    },
+    "sellPrice": {
+      "bonds": 1550
+    },
+    "description": "Энергетическая силовая установка. Подходит для любого робота",
+    "stats": {
+      "primary": 129,
+      "primaryLabel": "Мощность",
+      "durability": 1000,
+      "weight": 65
+    },
+    "iconPath": "equipment/reaktor_44.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3336"
+  },
+  {
+    "key": "reaktor_47",
+    "name": "Реактор 47",
+    "model": "Реактор",
+    "family": "energy",
+    "subtype": "generator",
+    "requiredLevel": 47,
+    "slot": "Энерго",
+    "sellPrice": {
+      "bonds": 1723
+    },
+    "description": "Энергетическая силовая установка. Подходит для любого робота",
+    "stats": {
+      "primary": 133,
+      "primaryLabel": "Мощность",
+      "durability": 1000,
+      "weight": 65
+    },
+    "iconPath": "equipment/reaktor_47.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3336"
+  },
+  {
+    "key": "reaktor_50",
+    "name": "Реактор 50",
+    "model": "Реактор",
+    "family": "energy",
+    "subtype": "generator",
+    "requiredLevel": 50,
+    "slot": "Энерго",
+    "buyPrice": {
+      "bonds": 6893
+    },
+    "sellPrice": {
+      "bonds": 1723
+    },
+    "description": "Энергетическая силовая установка. Подходит для любого робота",
+    "stats": {
+      "primary": 135,
+      "primaryLabel": "Мощность",
+      "durability": 1000,
+      "weight": 66
+    },
+    "iconPath": "equipment/reaktor_50.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3336"
+  },
+  {
+    "key": "reaktor_63",
+    "name": "Реактор 63",
+    "model": "Реактор",
+    "family": "energy",
+    "subtype": "generator",
+    "requiredLevel": 63,
+    "slot": "Энерго",
+    "buyPrice": {
+      "bonds": 9971
+    },
+    "sellPrice": {
+      "bonds": 2492
+    },
+    "description": "Энергетическая силовая установка. Подходит для любого робота",
+    "stats": {
+      "primary": 143,
+      "primaryLabel": "Мощность",
+      "durability": 1000,
+      "weight": 70
+    },
+    "iconPath": "equipment/reaktor_63.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3336"
+  },
+  {
+    "key": "reaktor_63m1",
+    "name": "Реактор 63м1",
+    "model": "Реактор",
+    "family": "energy",
+    "subtype": "generator",
+    "requiredLevel": 63,
+    "slot": "Энерго",
+    "buyPrice": {
+      "bonds": 11051,
+      "regls": 141
+    },
+    "sellPrice": {
+      "bonds": 2762
+    },
+    "description": "Энергетическая силовая установка. Подходит для любого робота",
+    "stats": {
+      "primary": 178,
+      "primaryLabel": "Мощность",
+      "durability": 1500,
+      "weight": 61
+    },
+    "iconPath": "equipment/reaktor_63m1.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3336"
+  },
+  {
+    "key": "reaktor_7",
+    "name": "Реактор 7",
+    "model": "Реактор",
+    "family": "energy",
+    "subtype": "generator",
+    "requiredLevel": 7,
+    "slot": "Энерго",
+    "buyPrice": {
+      "bonds": 193
+    },
+    "sellPrice": {
+      "bonds": 48
+    },
+    "description": "Энергетическая силовая установка. Подходит для любого робота",
+    "stats": {
+      "primary": 45,
+      "primaryLabel": "Мощность",
+      "durability": 1000,
+      "weight": 45
+    },
+    "iconPath": "equipment/reaktor_7.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3336"
+  },
+  {
+    "key": "reaktor_73",
+    "name": "Реактор 73",
+    "model": "Реактор",
+    "family": "energy",
+    "subtype": "generator",
+    "requiredLevel": 73,
+    "slot": "Энерго",
+    "buyPrice": {
+      "bonds": 16640
+    },
+    "sellPrice": {
+      "bonds": 4160
+    },
+    "description": "Энергетическая силовая установка. Подходит для любого робота",
+    "stats": {
+      "primary": 155,
+      "primaryLabel": "Мощность",
+      "durability": 1000,
+      "weight": 80
+    },
+    "iconPath": "equipment/reaktor_73.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3336"
+  },
+  {
+    "key": "reaktor_73m1",
+    "name": "Реактор 73м1",
+    "model": "Реактор",
+    "family": "energy",
+    "subtype": "generator",
+    "requiredLevel": 73,
+    "slot": "Энерго",
+    "buyPrice": {
+      "bonds": 16125,
+      "regls": 183
+    },
+    "sellPrice": {
+      "bonds": 4031
+    },
+    "description": "Энергетическая силовая установка. Подходит для любого робота",
+    "stats": {
+      "primary": 194,
+      "primaryLabel": "Мощность",
+      "durability": 1500,
+      "weight": 72
+    },
+    "iconPath": "equipment/reaktor_73m1.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3336"
+  },
+  {
+    "key": "reaktor_83",
+    "name": "Реактор 83",
+    "model": "Реактор",
+    "family": "energy",
+    "subtype": "generator",
+    "requiredLevel": 83,
+    "slot": "Энерго",
+    "sellPrice": {
+      "bonds": 5200
+    },
+    "description": "Энергетическая силовая установка. Подходит для любого робота",
+    "stats": {
+      "primary": 178,
+      "primaryLabel": "Мощность",
+      "durability": 1000,
+      "weight": 103
+    },
+    "iconPath": "equipment/reaktor_83.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3336"
+  },
+  {
+    "key": "reaktor_83m1",
+    "name": "Реактор 83м1",
+    "model": "Реактор",
+    "family": "energy",
+    "subtype": "generator",
+    "requiredLevel": 83,
+    "slot": "Энерго",
+    "sellPrice": {
+      "bonds": 5039
+    },
+    "description": "Энергетическая силовая установка. Подходит для любого робота",
+    "stats": {
+      "primary": 223,
+      "primaryLabel": "Мощность",
+      "durability": 1500,
+      "weight": 93
+    },
+    "iconPath": "equipment/reaktor_83m1.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3336"
+  },
+  {
+    "key": "reaktor_9",
+    "name": "Реактор 9",
+    "model": "Реактор",
+    "family": "energy",
+    "subtype": "generator",
+    "requiredLevel": 9,
+    "slot": "Энерго",
+    "sellPrice": {
+      "bonds": 77
+    },
+    "description": "Энергетическая силовая установка. Подходит для любого робота",
+    "stats": {
+      "primary": 49,
+      "primaryLabel": "Мощность",
+      "durability": 1000,
+      "weight": 45
+    },
+    "iconPath": "equipment/reaktor_9.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3336"
+  },
+  {
+    "key": "reaktor_93_m1",
+    "name": "Реактор 93 М1",
+    "model": "Реактор",
+    "family": "energy",
+    "subtype": "generator",
+    "requiredLevel": 93,
+    "slot": "Энерго",
+    "sellPrice": {
+      "bonds": 6298
+    },
+    "description": "Энергетическая силовая установка. Подходит для любого робота",
+    "stats": {
+      "primary": 256,
+      "primaryLabel": "Мощность",
+      "durability": 1500,
+      "weight": 120
+    },
+    "iconPath": "equipment/reaktor_93_m1.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3336"
+  },
+  {
+    "key": "tryum_1",
+    "name": "Трюм 1",
+    "model": "Трюм",
+    "family": "special",
+    "subtype": "cargo",
+    "slot": "Доп",
+    "sellPrice": {
+      "bonds": 400
+    },
+    "description": "При установке в модулиУвеличивает вместимость трюма",
+    "requiredLevel": 1,
+    "stats": {
+      "primary": 100,
+      "primaryLabel": "Трюм",
+      "durability": 1000,
+      "weight": 40
+    },
+    "iconPath": "equipment/tryum_1.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3693"
+  },
+  {
+    "key": "tryum_17t",
+    "name": "Трюм 17т",
+    "model": "Трюм",
+    "family": "special",
+    "subtype": "cargo",
+    "requiredLevel": 17,
+    "requiredRobotType": "Транспортник",
+    "slot": "Доп",
+    "buyPrice": {
+      "bonds": 12381
+    },
+    "sellPrice": {
+      "bonds": 3095
+    },
+    "craftFromBlueprints": [],
+    "description": "Дополнительный трюм для транспортного робота",
+    "stats": {
+      "primary": 600,
+      "primaryLabel": "Трюм",
+      "durability": 1000,
+      "weight": 100
+    },
+    "iconPath": "equipment/tryum_17t.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3693"
+  },
+  {
+    "key": "tryum_24",
+    "name": "Трюм 24",
+    "model": "Трюм",
+    "family": "special",
+    "subtype": "cargo",
+    "requiredLevel": 24,
+    "slot": "Доп",
+    "buyPrice": {
+      "bonds": 15000
+    },
+    "sellPrice": {
+      "bonds": 3750
+    },
+    "description": "Дополнительный трюм, для любого робота",
+    "stats": {
+      "primary": 400,
+      "primaryLabel": "Трюм",
+      "durability": 1000,
+      "weight": 100
+    },
+    "iconPath": "equipment/tryum_24.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3693"
+  },
+  {
+    "key": "tryum_25t",
+    "name": "Трюм 25т",
+    "model": "Трюм",
+    "family": "special",
+    "subtype": "cargo",
+    "requiredLevel": 25,
+    "requiredRobotType": "Транспортник",
+    "slot": "Доп",
+    "buyPrice": {
+      "bonds": 22080
+    },
+    "sellPrice": {
+      "bonds": 5520
+    },
+    "craftFromBlueprints": [],
+    "description": "Дополнительный трюм для транспортного робота",
+    "stats": {
+      "primary": 1000,
+      "primaryLabel": "Трюм",
+      "durability": 1000,
+      "weight": 100
+    },
+    "iconPath": "equipment/tryum_25t.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3693"
+  },
+  {
+    "key": "tryum_32t",
+    "name": "Трюм 32т",
+    "model": "Трюм",
+    "family": "special",
+    "subtype": "cargo",
+    "requiredLevel": 32,
+    "requiredRobotType": "Транспортник",
+    "slot": "Доп",
+    "buyPrice": {
+      "bonds": 31975
+    },
+    "sellPrice": {
+      "bonds": 7993
+    },
+    "craftFromBlueprints": [],
+    "description": "Дополнительный трюмдля транспортного робота",
+    "stats": {
+      "primary": 1600,
+      "primaryLabel": "Трюм",
+      "durability": 1000,
+      "weight": 100
+    },
+    "iconPath": "equipment/tryum_32t.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3693"
+  },
+  {
+    "key": "tryum_40tm1",
+    "name": "Трюм 40тм1",
+    "model": "Трюм",
+    "family": "special",
+    "subtype": "cargo",
+    "requiredLevel": 40,
+    "requiredRobotType": "Транспортник",
+    "slot": "Доп",
+    "buyPrice": {
+      "bonds": 46921,
+      "regls": 17
+    },
+    "sellPrice": {
+      "bonds": 11730
+    },
+    "craftFromBlueprints": [],
+    "description": "Дополнительный трюм для транспортного робота",
+    "stats": {
+      "primary": 2100,
+      "primaryLabel": "Трюм",
+      "durability": 900,
+      "weight": 100
+    },
+    "iconPath": "equipment/tryum_40tm1.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3693"
+  },
+  {
+    "key": "tryum_48",
+    "name": "Трюм 48",
+    "model": "Трюм",
+    "family": "special",
+    "subtype": "cargo",
+    "requiredLevel": 48,
+    "slot": "Доп",
+    "sellPrice": {
+      "bonds": 12500
+    },
+    "description": "Дополнительный трюм для любого робота",
+    "stats": {
+      "primary": 500,
+      "primaryLabel": "Трюм",
+      "durability": 1000,
+      "weight": 100
+    },
+    "iconPath": "equipment/tryum_48.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3693"
+  },
+  {
+    "key": "tryum_50tm1",
+    "name": "Трюм 50тм1",
+    "model": "Трюм",
+    "family": "special",
+    "subtype": "cargo",
+    "requiredLevel": 50,
+    "requiredRobotType": "Транспортник",
+    "slot": "Доп",
+    "buyPrice": {
+      "bonds": 69945,
+      "regls": 17
+    },
+    "sellPrice": {
+      "bonds": 17486
+    },
+    "craftFromBlueprints": [],
+    "description": "Дополнительный трюм для транспортного робота",
+    "stats": {
+      "primary": 2500,
+      "primaryLabel": "Трюм",
+      "durability": 900,
+      "weight": 100
+    },
+    "iconPath": "equipment/tryum_50tm1.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3693"
+  },
+  {
+    "key": "tryum_6",
+    "name": "Трюм 6",
+    "model": "Трюм",
+    "family": "special",
+    "subtype": "cargo",
+    "requiredLevel": 6,
+    "slot": "Доп",
+    "buyPrice": {
+      "bonds": 2596
+    },
+    "sellPrice": {
+      "bonds": 649
+    },
+    "craftFromBlueprints": [],
+    "description": "При установке в модулиУвеличивает вместимость трюма",
+    "stats": {
+      "primary": 200,
+      "primaryLabel": "Трюм",
+      "durability": 1000,
+      "weight": 70
+    },
+    "iconPath": "equipment/tryum_6.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3693"
+  },
+  {
+    "key": "tryum_60",
+    "name": "Трюм 60",
+    "model": "Трюм",
+    "family": "special",
+    "subtype": "cargo",
+    "requiredLevel": 60,
+    "slot": "Доп",
+    "sellPrice": {
+      "bonds": 12500
+    },
+    "stats": {
+      "primary": 600,
+      "primaryLabel": "Трюм",
+      "durability": 1000,
+      "weight": 100
+    },
+    "iconPath": "equipment/tryum_60.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3693"
+  },
+  {
+    "key": "tryum_60tm1",
+    "name": "Трюм 60тм1",
+    "model": "Трюм",
+    "family": "special",
+    "subtype": "cargo",
+    "requiredLevel": 60,
+    "requiredRobotType": "Транспортник",
+    "slot": "Доп",
+    "sellPrice": {
+      "bonds": 24902
+    },
+    "craftFromBlueprints": [],
+    "description": "Дополнительный трюм для транспортного робота",
+    "stats": {
+      "primary": 3200,
+      "primaryLabel": "Трюм",
+      "durability": 900,
+      "weight": 100
+    },
+    "iconPath": "equipment/tryum_60tm1.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3693"
+  },
+  {
+    "key": "tryum_70tm1",
+    "name": "Трюм 70тм1",
+    "model": "Трюм",
+    "family": "special",
+    "subtype": "cargo",
+    "requiredLevel": 70,
+    "requiredRobotType": "Транспортник",
+    "slot": "Доп",
+    "buyPrice": {
+      "bonds": 1500000,
+      "regls": 2900
+    },
+    "sellPrice": {
+      "bonds": 375000
+    },
+    "description": "Дополнительный трюм для транспортного робота",
+    "stats": {
+      "primary": 4000,
+      "primaryLabel": "Трюм",
+      "durability": 900,
+      "weight": 100
+    },
+    "iconPath": "equipment/tryum_70tm1.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3693"
+  },
+  {
+    "key": "tryum_9",
+    "name": "Трюм 9",
+    "model": "Трюм",
+    "family": "special",
+    "subtype": "cargo",
+    "requiredLevel": 9,
+    "slot": "Доп",
+    "buyPrice": {
+      "bonds": 7342
+    },
+    "sellPrice": {
+      "bonds": 1835
+    },
+    "craftFromBlueprints": [],
+    "description": "При установке в модулиУвеличивает вместимость трюма",
+    "stats": {
+      "primary": 300,
+      "primaryLabel": "Трюм",
+      "durability": 1000,
+      "weight": 100
+    },
+    "iconPath": "equipment/tryum_9.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3693"
+  },
+  {
+    "key": "zashchitnoe_pole",
+    "name": "Защитное Поле",
+    "model": "Защитное Поле",
+    "family": "defence",
+    "subtype": "shield",
+    "slot": "Поле",
+    "sellPrice": {
+      "bonds": 2
+    },
+    "craftFromBlueprints": [],
+    "description": "Энергетическая силовая защита. Подходит для любого робота",
+    "stats": {
+      "primary": 20,
+      "primaryLabel": "Мощность поля",
+      "durability": 1000,
+      "weight": 20
+    },
+    "iconPath": "equipment/zashchitnoe_pole.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3364"
+  },
+  {
+    "key": "zashchitnoe_pole_100_m1",
+    "name": "Защитное Поле 100 М1",
+    "model": "Защитное Поле",
+    "family": "defence",
+    "subtype": "shield",
+    "requiredLevel": 100,
+    "slot": "Поле",
+    "sellPrice": {
+      "bonds": 5419
+    },
+    "stats": {
+      "primary": 180,
+      "primaryLabel": "Мощность поля",
+      "durability": 1500,
+      "weight": 156
+    },
+    "iconPath": "equipment/zashchitnoe_pole_100_m1.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3364"
+  },
+  {
+    "key": "zashchitnoe_pole_100_m2",
+    "name": "Защитное Поле 100 М2",
+    "model": "Защитное Поле",
+    "family": "defence",
+    "subtype": "shield",
+    "requiredLevel": 100,
+    "slot": "Поле",
+    "sellPrice": {
+      "bonds": 262500
+    },
+    "stats": {
+      "primary": 200,
+      "primaryLabel": "Мощность поля",
+      "durability": 1500,
+      "weight": 780
+    },
+    "iconPath": "equipment/zashchitnoe_pole_100_m2.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3364"
+  },
+  {
+    "key": "zashchitnoe_pole_12",
+    "name": "Защитное Поле 12",
+    "model": "Защитное Поле",
+    "family": "defence",
+    "subtype": "shield",
+    "requiredLevel": 12,
+    "slot": "Поле",
+    "sellPrice": {
+      "bonds": 103
+    },
+    "craftFromBlueprints": [],
+    "description": "Энергетическая силовая защита. Подходит для любого робота",
+    "stats": {
+      "primary": 36,
+      "primaryLabel": "Мощность поля",
+      "durability": 1000,
+      "weight": 44
+    },
+    "iconPath": "equipment/zashchitnoe_pole_12.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3364"
+  },
+  {
+    "key": "zashchitnoe_pole_16",
+    "name": "Защитное Поле 16",
+    "model": "Защитное Поле",
+    "family": "defence",
+    "subtype": "shield",
+    "requiredLevel": 16,
+    "slot": "Поле",
+    "sellPrice": {
+      "bonds": 180
+    },
+    "craftFromBlueprints": [],
+    "description": "Энергетическая силовая защита. Подходит для любого робота",
+    "stats": {
+      "primary": 40,
+      "primaryLabel": "Мощность поля",
+      "durability": 1000,
+      "weight": 46
+    },
+    "iconPath": "equipment/zashchitnoe_pole_16.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3364"
+  },
+  {
+    "key": "zashchitnoe_pole_20",
+    "name": "Защитное Поле 20",
+    "model": "Защитное Поле",
+    "family": "defence",
+    "subtype": "shield",
+    "requiredLevel": 20,
+    "slot": "Поле",
+    "sellPrice": {
+      "bonds": 231
+    },
+    "craftFromBlueprints": [],
+    "description": "Энергетическая силовая защита. Подходит для любого робота",
+    "stats": {
+      "primary": 44,
+      "primaryLabel": "Мощность поля",
+      "durability": 1000,
+      "weight": 49
+    },
+    "iconPath": "equipment/zashchitnoe_pole_20.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3364"
+  },
+  {
+    "key": "zashchitnoe_pole_20m1",
+    "name": "Защитное Поле 20м1",
+    "model": "Защитное Поле",
+    "family": "defence",
+    "subtype": "shield",
+    "requiredLevel": 20,
+    "slot": "Поле",
+    "sellPrice": {
+      "bonds": 233
+    },
+    "description": "Энергетическая силовая защита. Подходит для любого робота",
+    "stats": {
+      "primary": 49,
+      "primaryLabel": "Мощность поля",
+      "durability": 1500,
+      "weight": 39
+    },
+    "iconPath": "equipment/zashchitnoe_pole_20m1.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3364"
+  },
+  {
+    "key": "zashchitnoe_pole_24",
+    "name": "Защитное Поле 24",
+    "model": "Защитное Поле",
+    "family": "defence",
+    "subtype": "shield",
+    "requiredLevel": 24,
+    "slot": "Поле",
+    "sellPrice": {
+      "bonds": 303
+    },
+    "craftFromBlueprints": [],
+    "description": "Энергетическая силовая защита. Подходит для любого робота",
+    "stats": {
+      "primary": 47,
+      "primaryLabel": "Мощность поля",
+      "durability": 1000,
+      "weight": 51
+    },
+    "iconPath": "equipment/zashchitnoe_pole_24.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3364"
+  },
+  {
+    "key": "zashchitnoe_pole_27",
+    "name": "Защитное Поле 27",
+    "model": "Защитное Поле",
+    "family": "defence",
+    "subtype": "shield",
+    "requiredLevel": 27,
+    "slot": "Поле",
+    "sellPrice": {
+      "bonds": 361
+    },
+    "craftFromBlueprints": [],
+    "description": "Энергетическая силовая защита. Подходит для любого робота",
+    "stats": {
+      "primary": 50,
+      "primaryLabel": "Мощность поля",
+      "durability": 1000,
+      "weight": 54
+    },
+    "iconPath": "equipment/zashchitnoe_pole_27.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3364"
+  },
+  {
+    "key": "zashchitnoe_pole_30",
+    "name": "Защитное Поле 30",
+    "model": "Защитное Поле",
+    "family": "defence",
+    "subtype": "shield",
+    "requiredLevel": 30,
+    "slot": "Поле",
+    "buyPrice": {
+      "bonds": 1640
+    },
+    "sellPrice": {
+      "bonds": 410
+    },
+    "craftFromBlueprints": [],
+    "description": "Энергетическая силовая защита. Подходит для любого робота",
+    "stats": {
+      "primary": 53,
+      "primaryLabel": "Мощность поля",
+      "durability": 1000,
+      "weight": 55
+    },
+    "iconPath": "equipment/zashchitnoe_pole_30.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3364"
+  },
+  {
+    "key": "zashchitnoe_pole_30m1",
+    "name": "Защитное Поле 30м1",
+    "model": "Защитное Поле",
+    "family": "defence",
+    "subtype": "shield",
+    "requiredLevel": 30,
+    "slot": "Поле",
+    "sellPrice": {
+      "bonds": 427
+    },
+    "description": "Энергетическая силовая защита. Подходит для любого робота",
+    "stats": {
+      "primary": 65,
+      "primaryLabel": "Мощность поля",
+      "durability": 1500,
+      "weight": 44
+    },
+    "iconPath": "equipment/zashchitnoe_pole_30m1.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3364"
+  },
+  {
+    "key": "zashchitnoe_pole_34",
+    "name": "Защитное Поле 34",
+    "model": "Защитное Поле",
+    "family": "defence",
+    "subtype": "shield",
+    "requiredLevel": 34,
+    "slot": "Поле",
+    "sellPrice": {
+      "bonds": 525
+    },
+    "craftFromBlueprints": [],
+    "description": "Энергетическая силовая защита. Подходит для любого робота",
+    "stats": {
+      "primary": 57,
+      "primaryLabel": "Мощность поля",
+      "durability": 1000,
+      "weight": 58
+    },
+    "iconPath": "equipment/zashchitnoe_pole_34.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3364"
+  },
+  {
+    "key": "zashchitnoe_pole_37",
+    "name": "Защитное Поле 37",
+    "model": "Защитное Поле",
+    "family": "defence",
+    "subtype": "shield",
+    "requiredLevel": 37,
+    "slot": "Поле",
+    "sellPrice": {
+      "bonds": 928
+    },
+    "craftFromBlueprints": [],
+    "description": "Энергетическая силовая защита. Подходит для любого робота",
+    "stats": {
+      "primary": 59,
+      "primaryLabel": "Мощность поля",
+      "durability": 1000,
+      "weight": 59
+    },
+    "iconPath": "equipment/zashchitnoe_pole_37.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3364"
+  },
+  {
+    "key": "zashchitnoe_pole_4",
+    "name": "Защитное Поле 4",
+    "model": "Защитное Поле",
+    "family": "defence",
+    "subtype": "shield",
+    "requiredLevel": 4,
+    "slot": "Поле",
+    "sellPrice": {
+      "bonds": 20
+    },
+    "craftFromBlueprints": [],
+    "description": "Защита роботаПоглащает энергетический уронМожно установить 3 и 2",
+    "stats": {
+      "primary": 24,
+      "primaryLabel": "Мощность поля",
+      "durability": 1000,
+      "weight": 26
+    },
+    "iconPath": "equipment/zashchitnoe_pole_4.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3364"
+  },
+  {
+    "key": "zashchitnoe_pole_40",
+    "name": "Защитное Поле 40",
+    "model": "Защитное Поле",
+    "family": "defence",
+    "subtype": "shield",
+    "requiredLevel": 40,
+    "slot": "Поле",
+    "sellPrice": {
+      "bonds": 1017
+    },
+    "craftFromBlueprints": [],
+    "description": "Энергетическая силовая защита. Подходит для любого робота",
+    "stats": {
+      "primary": 61,
+      "primaryLabel": "Мощность поля",
+      "durability": 1000,
+      "weight": 59
+    },
+    "iconPath": "equipment/zashchitnoe_pole_40.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3364"
+  },
+  {
+    "key": "zashchitnoe_pole_40m1",
+    "name": "Защитное Поле 40м1",
+    "model": "Защитное Поле",
+    "family": "defence",
+    "subtype": "shield",
+    "requiredLevel": 40,
+    "slot": "Поле",
+    "sellPrice": {
+      "bonds": 743
+    },
+    "description": "Энергетическая силовая защита. Подходит для любого робота",
+    "stats": {
+      "primary": 76,
+      "primaryLabel": "Мощность поля",
+      "durability": 1500,
+      "weight": 47
+    },
+    "iconPath": "equipment/zashchitnoe_pole_40m1.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3364"
+  },
+  {
+    "key": "zashchitnoe_pole_43",
+    "name": "Защитное Поле 43",
+    "model": "Защитное Поле",
+    "family": "defence",
+    "subtype": "shield",
+    "requiredLevel": 43,
+    "slot": "Поле",
+    "sellPrice": {
+      "bonds": 1476
+    },
+    "craftFromBlueprints": [],
+    "description": "Энергетическая силовая защита. Подходит для любого робота",
+    "stats": {
+      "primary": 64,
+      "primaryLabel": "Мощность поля",
+      "durability": 1000,
+      "weight": 60
+    },
+    "iconPath": "equipment/zashchitnoe_pole_43.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3364"
+  },
+  {
+    "key": "zashchitnoe_pole_46",
+    "name": "Защитное Поле 46",
+    "model": "Защитное Поле",
+    "family": "defence",
+    "subtype": "shield",
+    "requiredLevel": 46,
+    "slot": "Поле",
+    "sellPrice": {
+      "bonds": 1543
+    },
+    "craftFromBlueprints": [],
+    "description": "Энергетическая силовая защита. Подходит для любого робота",
+    "stats": {
+      "primary": 67,
+      "primaryLabel": "Мощность поля",
+      "durability": 1000,
+      "weight": 60
+    },
+    "iconPath": "equipment/zashchitnoe_pole_46.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3364"
+  },
+  {
+    "key": "zashchitnoe_pole_50",
+    "name": "Защитное Поле 50",
+    "model": "Защитное Поле",
+    "family": "defence",
+    "subtype": "shield",
+    "requiredLevel": 50,
+    "slot": "Поле",
+    "buyPrice": {
+      "bonds": 6988
+    },
+    "sellPrice": {
+      "bonds": 1747
+    },
+    "craftFromBlueprints": [],
+    "description": "Энергетическая силовая защита. Подходит для любого робота",
+    "stats": {
+      "primary": 69,
+      "primaryLabel": "Мощность поля",
+      "durability": 1000,
+      "weight": 61
+    },
+    "iconPath": "equipment/zashchitnoe_pole_50.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3364"
+  },
+  {
+    "key": "zashchitnoe_pole_55",
+    "name": "Защитное Поле 55",
+    "model": "Защитное Поле",
+    "family": "defence",
+    "subtype": "shield",
+    "requiredLevel": 55,
+    "slot": "Поле",
+    "buyPrice": {
+      "bonds": 7200
+    },
+    "sellPrice": {
+      "bonds": 1800
+    },
+    "craftFromBlueprints": [],
+    "description": "Энергетическая силовая защита. Подходит для любого робота",
+    "stats": {
+      "primary": 70,
+      "primaryLabel": "Мощность поля",
+      "durability": 1000,
+      "weight": 68
+    },
+    "iconPath": "equipment/zashchitnoe_pole_55.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3364"
+  },
+  {
+    "key": "zashchitnoe_pole_55m1",
+    "name": "Защитное Поле 55м1",
+    "model": "Защитное Поле",
+    "family": "defence",
+    "subtype": "shield",
+    "requiredLevel": 55,
+    "slot": "Поле",
+    "buyPrice": {
+      "bonds": 7200,
+      "regls": 87
+    },
+    "sellPrice": {
+      "bonds": 1800
+    },
+    "description": "Энергетическая силовая защита. Подходит для любого робота",
+    "stats": {
+      "primary": 88,
+      "primaryLabel": "Мощность поля",
+      "durability": 1500,
+      "weight": 58
+    },
+    "iconPath": "equipment/zashchitnoe_pole_55m1.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3364"
+  },
+  {
+    "key": "zashchitnoe_pole_60",
+    "name": "Защитное Поле 60",
+    "model": "Защитное Поле",
+    "family": "defence",
+    "subtype": "shield",
+    "requiredLevel": 60,
+    "slot": "Поле",
+    "sellPrice": {
+      "bonds": 2025
+    },
+    "craftFromBlueprints": [],
+    "description": "Энергетическая силовая защита. Подходит для любого робота",
+    "stats": {
+      "primary": 74,
+      "primaryLabel": "Мощность поля",
+      "durability": 1500,
+      "weight": 77
+    },
+    "iconPath": "equipment/zashchitnoe_pole_60.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3364"
+  },
+  {
+    "key": "zashchitnoe_pole_65",
+    "name": "Защитное Поле 65",
+    "model": "Защитное Поле",
+    "family": "defence",
+    "subtype": "shield",
+    "requiredLevel": 65,
+    "slot": "Поле",
+    "buyPrice": {
+      "bonds": 9200
+    },
+    "sellPrice": {
+      "bonds": 2300
+    },
+    "description": "Энергетическая силовая защита. Подходит для любого робота",
+    "stats": {
+      "primary": 78,
+      "primaryLabel": "Мощность поля",
+      "durability": 1000,
+      "weight": 74
+    },
+    "iconPath": "equipment/zashchitnoe_pole_65.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3364"
+  },
+  {
+    "key": "zashchitnoe_pole_65m1",
+    "name": "Защитное Поле 65м1",
+    "model": "Защитное Поле",
+    "family": "defence",
+    "subtype": "shield",
+    "requiredLevel": 65,
+    "slot": "Поле",
+    "buyPrice": {
+      "bonds": 9500,
+      "regls": 86
+    },
+    "sellPrice": {
+      "bonds": 2375
+    },
+    "description": "Энергетическая силовая защита. Подходит для любого робота",
+    "stats": {
+      "primary": 98,
+      "primaryLabel": "Мощность поля",
+      "durability": 1500,
+      "weight": 66
+    },
+    "iconPath": "equipment/zashchitnoe_pole_65m1.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3364"
+  },
+  {
+    "key": "zashchitnoe_pole_7",
+    "name": "Защитное Поле 7",
+    "model": "Защитное Поле",
+    "family": "defence",
+    "subtype": "shield",
+    "requiredLevel": 7,
+    "slot": "Поле",
+    "sellPrice": {
+      "bonds": 46
+    },
+    "craftFromBlueprints": [],
+    "description": "Энергетическая силовая защита. Подходит для любого робота",
+    "stats": {
+      "primary": 28,
+      "primaryLabel": "Мощность поля",
+      "durability": 1000,
+      "weight": 33
+    },
+    "iconPath": "equipment/zashchitnoe_pole_7.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3364"
+  },
+  {
+    "key": "zashchitnoe_pole_75",
+    "name": "Защитное Поле 75",
+    "model": "Защитное Поле",
+    "family": "defence",
+    "subtype": "shield",
+    "requiredLevel": 75,
+    "slot": "Поле",
+    "buyPrice": {
+      "bonds": 11000
+    },
+    "sellPrice": {
+      "bonds": 2750
+    },
+    "description": "Энергетическая силовая защита. Подходит для любого робота",
+    "stats": {
+      "primary": 84,
+      "primaryLabel": "Мощность поля",
+      "durability": 1000,
+      "weight": 82
+    },
+    "iconPath": "equipment/zashchitnoe_pole_75.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3364"
+  },
+  {
+    "key": "zashchitnoe_pole_75m1",
+    "name": "Защитное Поле 75м1",
+    "model": "Защитное Поле",
+    "family": "defence",
+    "subtype": "shield",
+    "requiredLevel": 75,
+    "slot": "Поле",
+    "buyPrice": {
+      "bonds": 11100,
+      "regls": 101
+    },
+    "sellPrice": {
+      "bonds": 2775
+    },
+    "description": "Энергетическая силовая защита. Подходит для любого робота",
+    "stats": {
+      "primary": 106,
+      "primaryLabel": "Мощность поля",
+      "durability": 1500,
+      "weight": 72
+    },
+    "iconPath": "equipment/zashchitnoe_pole_75m1.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3364"
+  },
+  {
+    "key": "zashchitnoe_pole_85",
+    "name": "Защитное Поле 85",
+    "model": "Защитное Поле",
+    "family": "defence",
+    "subtype": "shield",
+    "requiredLevel": 85,
+    "slot": "Поле",
+    "sellPrice": {
+      "bonds": 3437
+    },
+    "description": "Энергетическая силовая защита. Подходит для любого робота",
+    "stats": {
+      "primary": 96,
+      "primaryLabel": "Мощность поля",
+      "durability": 1000,
+      "weight": 106
+    },
+    "iconPath": "equipment/zashchitnoe_pole_85.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3364"
+  },
+  {
+    "key": "zashchitnoe_pole_85m1",
+    "name": "Защитное Поле 85м1",
+    "model": "Защитное Поле",
+    "family": "defence",
+    "subtype": "shield",
+    "requiredLevel": 85,
+    "slot": "Поле",
+    "sellPrice": {
+      "bonds": 3468
+    },
+    "description": "Энергетическая силовая защита. Подходит для любого робота",
+    "stats": {
+      "primary": 121,
+      "primaryLabel": "Мощность поля",
+      "durability": 1500,
+      "weight": 93
+    },
+    "iconPath": "equipment/zashchitnoe_pole_85m1.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3364"
+  },
+  {
+    "key": "zashchitnoe_pole_9",
+    "name": "Защитное Поле 9",
+    "model": "Защитное Поле",
+    "family": "defence",
+    "subtype": "shield",
+    "requiredLevel": 9,
+    "slot": "Поле",
+    "sellPrice": {
+      "bonds": 80
+    },
+    "craftFromBlueprints": [],
+    "description": "Энергетическая силовая защита. Подходит для любого робота",
+    "stats": {
+      "primary": 32,
+      "primaryLabel": "Мощность поля",
+      "durability": 1000,
+      "weight": 43
+    },
+    "iconPath": "equipment/zashchitnoe_pole_9.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3364"
+  },
+  {
+    "key": "zashchitnoe_pole_95_m1",
+    "name": "Защитное Поле 95 М1",
+    "model": "Защитное Поле",
+    "family": "defence",
+    "subtype": "shield",
+    "requiredLevel": 95,
+    "slot": "Поле",
+    "sellPrice": {
+      "bonds": 4335
+    },
+    "description": "Энергетическая силовая защита. Подходит для любого робота",
+    "stats": {
+      "primary": 150,
+      "primaryLabel": "Мощность поля",
+      "durability": 1500,
+      "weight": 120
+    },
+    "iconPath": "equipment/zashchitnoe_pole_95_m1.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3364"
+  },
+  {
+    "key": "zchip_gdis",
+    "name": "Z_чип Гдис",
+    "model": "Z_чип Гдис",
+    "family": "electronic",
+    "subtype": "computer",
+    "requiredLevel": 50,
+    "requiredRobotType": "Боец",
+    "slot": "Чип",
+    "sellPrice": {
+      "bonds": 12800
+    },
+    "craftFromBlueprints": [],
+    "description": "Чип увеличения брони робота",
+    "stats": {
+      "durability": 900,
+      "weight": 545
+    },
+    "iconPath": "equipment/zchip_gdis.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3657"
+  }
+]

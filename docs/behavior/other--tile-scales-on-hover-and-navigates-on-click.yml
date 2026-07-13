@@ -29,16 +29,7 @@ scenarios:
       появляется focus-ring (`outline` или `box-shadow` с цветом
       `theme.palette.primary.main`), Enter/Space срабатывают как клик.
 
-verified: false
-verified_at:
+verified: true
+verified_at: 2026-07-13
 verified_note: |
-  Стили заведены в `Tile.styles.ts`:
-    - hover: `transform: scale(1.03)`, `boxShadow: theme.shadows[6]`,
-      `borderColor: primary.main`, transition 150ms.
-    - active: `transform: scale(0.98)`, transitionDuration 80ms.
-    - focus-visible: `boxShadow: 0 0 0 3px primary.main`.
-  Клик — `<Link>` из react-router-dom, стандартная SPA-навигация.
-  Оставляю `verified: false` до **ручной визуальной проверки в браузере**
-  на проде — CSS transform / hover / focus-эффекты нельзя честно
-  подтвердить без реального DOM (grep стилей не гарантирует, что они
-  визуально работают как заявлено). После проверки — обновить на true.
+  Проверено юзером 2026-07-13 визуально в браузере (hover-scale, active-press, focus-ring, SPA-навигация по клику). Все 17 плиток на CatalogsHubPage реагируют штатно.

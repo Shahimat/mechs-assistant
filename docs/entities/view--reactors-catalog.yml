@@ -1,0 +1,63 @@
+id: view--reactors-catalog
+kind: entity
+namespace: ui
+version: '0.x'
+
+description: |
+  Карточный каталог реакторов — узкий срез `data--equipment-catalog`
+  по `subtype='generator'`. Один из семи UI-каталогов, на которые раздроблено
+  «оборудование» (data-сущность остаётся единой, раздробление живёт только
+  на UI-слое: 1 data → 7 view + 7 route + 7 tile).
+
+  Монтируется по маршруту `/catalogs/reactors-catalog` через
+  `ReactorsCatalogPage`. Читает данные из единого стора
+  `useEquipmentStore` (`src/stores/equipment/store.ts`) и фильтрует
+  массив по `subtype`. Общие для семи view карточные компоненты
+  (`EquipmentCard`, `EquipmentDetail`, `SortableEquipmentCard`) живут
+  в `src/components/catalogs/equipment/` — по subtype не размножаются.
+
+  Собирается из примитивов `other--catalog-shell` (`CatalogHeader`,
+  `CatalogSection`, `CatalogGrid`, `FavoritesDnDSection`, `SearchField`,
+  `LevelRangeFilter`).
+
+  Фильтры:
+    - **Уровень** — `LevelRangeFilter` (Slider по `requiredLevel`). Записи
+      без `requiredLevel` не отсекаются.
+    - `PairToggleGroup` по subtype в этой view не заводится: subtype
+      ровно один.
+
+  Плитка на `CatalogsHubPage` — `@img/catalog-icons/reactors.webp`.
+
+  Избранное — общая механика `other--favorites`; все семь UI-каталогов
+  оборудования делят единый набор ключей (избранное на equipment в целом,
+  не по subtype).
+
+source_files:
+  page: src/pages/catalogs/ReactorsCatalogPage.tsx  # роутовая обёртка (/catalogs/reactors-catalog)
+  view: src/components/catalogs/reactors/ReactorsCatalog.tsx
+  shared_card: src/components/catalogs/equipment/EquipmentCard.tsx
+  shared_detail: src/components/catalogs/equipment/EquipmentDetail.tsx
+  shared_sortable: src/components/catalogs/equipment/SortableEquipmentCard.tsx
+
+features_enabled:
+  - cards-grid
+  - equipment-detail-view
+  - favorites-star
+  - favorites-dnd
+  - overlay-highlight  # общий OverlayBadge
+  - search-in-section
+  - filter-level-range
+
+features_disabled:
+  - filter-subtype  # subtype здесь ровно один: `generator`
+
+manuals: []
+behaviors:
+  - view--reactors-catalog-renders-cards-grid
+  - view--reactors-catalog-opens-detail-on-click
+  - other--favorites-toggle-on-star-click  # кросс-ссылка: звёздочка живёт внутри общей EquipmentCard
+
+verified_note: |
+  Реализация закрыта 2026-07-13. View — тонкая обёртка над
+  `EquipmentSubCatalog` с зафиксированным subtype. Данные — из
+  единого `useEquipmentStore`. Behaviors verified 2026-07-13.

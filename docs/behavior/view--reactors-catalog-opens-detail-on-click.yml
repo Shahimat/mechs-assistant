@@ -1,0 +1,32 @@
+id: view--reactors-catalog-opens-detail-on-click
+kind: behavior
+namespace: ui
+entities: [view--reactors-catalog]
+title: Клик по карточке в view--reactors-catalog открывает детализацию (EquipmentDetail)
+
+scenarios:
+  - given: сетка карточек отрисована, пользователь видит нужную запись
+    when: пользователь кликает по карточке (не по звёздочке избранного)
+    then: |
+      открывается `EquipmentDetail` для этой записи — MUI Dialog,
+      аналогично `RobotDetail`/`WeaponDetail`. В детализации показаны
+      все поля `Equipment`: `family`/`subtype`/`slot`/`requiredLevel`
+      + все `stats` (`durability`, `weight`, `primary`, `primaryLabel`)
+      + `buyPrice`/`sellPrice` + `craftFromBlueprints` + `description`
+      + `requiredRobotType` (у буров).
+
+  - given: EquipmentDetail открыт
+    when: пользователь закрывает его (крестик / Esc / клик по фону)
+    then: возврат к сетке карточек, состояние стора не меняется.
+
+  - given: пользователь кликает по звёздочке избранного внутри карточки
+    when: обработчик события звёздочки перехватывает клик
+    then: |
+      детализация НЕ открывается, срабатывает только
+      `other--favorites-toggle-on-star-click`. Избранное для equipment —
+      общий набор ключей на все семь UI-каталогов оборудования.
+
+verified: true
+verified_at: 2026-07-13
+verified_note: |
+  Проверено чтением кода: клик по `<CardActionArea>` в `EquipmentCard.tsx` вызывает `onClick(item)` → `EquipmentSubCatalog.tsx` ставит `selectedItem`, `EquipmentDetail` рендерится как MUI Dialog (`item !== null`). Закрытие — стандартный `onClose` Dialog (крестик, Esc, клик по фону). Клик по звёздочке использует `e.stopPropagation()` в `EquipmentCard.tsx:36-39`, детализация не открывается. `EquipmentDetail.tsx` показывает family/subtype/slot/уровень + все stats (primary/primaryLabel/durability/weight) + buyPrice/sellPrice + craftFromBlueprints + description + requiredRobotType. Финальная визуальная проверка в браузере — пройдена юзером 2026-07-13.

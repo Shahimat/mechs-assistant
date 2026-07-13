@@ -1,0 +1,28 @@
+id: data--equipment-catalog-schema-typed
+kind: behavior
+namespace: catalog
+entities: [data--equipment-catalog]
+title: Каждая запись в equipment.json соответствует типу Equipment (TS strict)
+
+scenarios:
+  - given: 'TypeScript strict включён (`strict: true`) и `resolveJsonModule: true`'
+    when: файл `store.ts` импортирует `equipmentData` из
+      `@build/data/equipment.json` и приводит его к `Equipment[]`
+    then: |
+      сборка проходит без ошибок типа, `Equipment`-типы из
+      `src/types/equipment.ts` применимы ко всем записям (`key`, `name`,
+      `model`, `family`, `subtype`, `stats.*`).
+
+  - given: в JSON появилась запись, у которой отсутствует обязательное поле
+      (`family` / `subtype` / `stats.durability` / `stats.weight`)
+    when: разработчик пытается собрать проект (`npm run build`)
+    then: |
+      сборка/typecheck должны падать. На практике поле проверяется
+      через приведение `as Equipment[]`, поэтому явная валидация —
+      задача автора JSON. Оговорка та же, что для robots/weapons —
+      без runtime-валидации (zod и т.п.) проверка неполная.
+
+verified: true
+verified_at: 2026-07-13
+verified_note: |
+  Проверено: `npm run build` и `tsc --noEmit` проходят без ошибок типа, `resolveJsonModule` включён, `Equipment` описан в `src/types/equipment.ts` (family/subtype/stats.primary + общие поля). Оговорка та же, что для robots/weapons: приведение `equipmentData as Equipment[]` в store.ts — assert, не runtime-валидация. Runtime-проверка (zod) не вводилась — общий пункт для всех 3 data-каталогов в `active.todo` (low).

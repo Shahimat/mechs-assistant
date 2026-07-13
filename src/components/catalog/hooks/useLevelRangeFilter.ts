@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useMemo, useState } from 'react';
+import { useCallback, useMemo, useState } from 'react';
 
 interface UseLevelRangeArgs<T> {
   items: T[];
@@ -24,12 +24,10 @@ export function useLevelRangeFilter<T>({
     return { min: Math.min(...levels), max: Math.max(...levels) };
   }, [items, getLevel, defaultRange]);
 
-  useEffect(() => {
-    if (items.length > 0 && range === null) {
-      setRange([min, max]);
-    }
-  }, [items.length, min, max, range]);
-
+  // range === null означает «фильтр не тронут» — applied совпадает с
+  // текущим [min, max], фильтр не активен. Отдельный effect для инициализации
+  // range при первом появлении данных не нужен: applied всё равно вернёт
+  // актуальный [min, max], а isActive остаётся false до реального commit.
   const applied = useMemo<[number, number]>(() => range ?? [min, max], [range, min, max]);
   const isActive = applied[0] !== min || applied[1] !== max;
   const reset = useCallback(() => setRange([min, max]), [min, max]);

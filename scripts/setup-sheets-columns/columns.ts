@@ -96,8 +96,53 @@ export const WEAPONS_COLUMNS: ColumnSpec[] = [
   { name: 'source_note', description: 'Комментарий редактора (не идёт в JSON)' },
 ];
 
+export const EQUIPMENT_COLUMNS: ColumnSpec[] = [
+  { name: 'key', description: 'Ключ записи (translit от имени). Копируется из детали в UI' },
+  { name: 'name', description: 'Полное название с моделью/уровнем' },
+  { name: 'model', description: 'Модель без уровня' },
+  {
+    name: 'family',
+    description: 'Верхний уровень CSS-класса из вики: electronic / special / energy / defence',
+  },
+  {
+    name: 'subtype',
+    description:
+      'Подтип: computer (чипы) / extractor (буры) / cargo (трюма) / accumulator (накопители) / generator (реакторы) / armour (броня) / shield (энергощиты)',
+  },
+  {
+    name: 'slot',
+    description: 'Слот установки — из поля «Устанавливается в слот» (например «Доп»)',
+  },
+  { name: 'requiredLevel', description: 'Требуемый уровень персонажа' },
+  {
+    name: 'requiredRobotType',
+    description: 'Ограничение по классу меха («Добытчик» у буров)',
+  },
+  { name: 'stats.durability', description: 'Прочность' },
+  { name: 'stats.weight', description: 'Вес' },
+  {
+    name: 'stats.primary',
+    description:
+      'Subtype-specific ключевой параметр (Мощность подъема / Трюм / Емкость / Мощность / Броня / Мощность поля)',
+  },
+  {
+    name: 'stats.primaryLabel',
+    description: 'Русская подпись stats.primary из вики. У чипов может быть пусто',
+  },
+  { name: 'buyPrice.bonds', description: 'Цена покупки в бонах' },
+  { name: 'buyPrice.regls', description: 'Цена покупки в реглах' },
+  { name: 'sellPrice.bonds', description: 'Цена продажи в бонах (базовая, без «Торговли»)' },
+  { name: 'sellPrice.regls', description: 'Цена продажи в реглах' },
+  { name: 'craftFromBlueprints', description: 'Крафтится из чертежей — список через ;' },
+  { name: 'description', description: 'Свободное описание' },
+  { name: 'iconPath', description: 'Путь к иконке (например data/icons/equipment/…)' },
+  { name: 'wikiUrl', description: 'URL детальной страницы вики' },
+  { name: 'source_note', description: 'Комментарий редактора (не идёт в JSON)' },
+];
+
 /** Регистр колонок по slug каталога. */
 export const COLUMNS_BY_SLUG: Record<string, ColumnSpec[]> = {
   robots: MECHS_COLUMNS, // slug=robots, но лист=mechs (см. catalogs.config)
   weapons: WEAPONS_COLUMNS,
+  equipment: EQUIPMENT_COLUMNS,
 };
