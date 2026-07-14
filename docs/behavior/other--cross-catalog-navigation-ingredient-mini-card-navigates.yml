@@ -1,0 +1,53 @@
+id: other--cross-catalog-navigation-ingredient-mini-card-navigates
+kind: behavior
+namespace: ui
+entities: [other--cross-catalog-navigation]
+title: Клик по IngredientMiniCard навигирует в соответствующий каталог с ?open=<key>
+
+scenarios:
+  - given: Detail чертежа открыт, в секции «Ингредиенты» рендерится
+      `IngredientMiniCard catalog='ore' entryKey='kristall_zelenyy' count=80`
+    when: пользователь наводит на карточку
+    then: |
+      MUI Tooltip показывает имя сущности (из `lookupName`) — без
+      указания каталога (по решению юзера [catalog] в tooltip убран).
+
+  - given: то же
+    when: пользователь кликает по карточке
+    then: |
+      `catalogPathFor('ore', 'kristall_zelenyy')` возвращает
+      `/catalogs/ore-catalog?open=kristall_zelenyy`, `useNavigate` пушит
+      URL, там OreCatalog через `useDeepLinkOpen` откроет OreDetail.
+
+  - given: catalog='equipment', entryKey='bronya'
+    when: пользователь кликает
+    then: |
+      `catalogPathFor` резолвит `subtype='armour'` через `lookupSubtype`
+      и роутит в `/catalogs/armour-catalog?open=bronya`. Для остальных
+      subtype — соответствующий подкаталог (chips/shields/…).
+
+  - given: catalog=undefined или lookupName вернул undefined
+    when: рендер карточки
+    then: |
+      Карточка показывает fallback-плейсхолдер (текст key моноширинным
+      шрифтом), `disabled={!clickable}` отключает CardActionArea —
+      клик не срабатывает.
+
+  - given: секция «Крафт» в detail (BlueprintChipList)
+    when: рендер имени чертежа
+    then: |
+      `lookupBlueprintKeyByName(name)` резолвит name → key. Если
+      найдено — рендерится `IngredientMiniCard catalog='blueprints'
+      entryKey=<key>` без count (мини-карточка чертежа с фоном-планшетом,
+      клик ведёт в blueprints-catalog). Если не найдено — не-кликабельная
+      карточка-плейсхолдер.
+
+verified: true
+verified_at: 2026-07-14
+verified_note: |
+  Реализация: `IngredientMiniCard.tsx` (count опциональный),
+  `catalogPath.ts` (маршрутизация по catalog+subtype),
+  `BlueprintChipList.tsx` (переиспользует IngredientMiniCard).
+  Подключён в 3 Detail'ах (BlueprintDetail/WeaponDetail/EquipmentDetail —
+  ингредиенты) и 5 Detail'ах (WeaponDetail/EquipmentDetail/
+  ComponentDetail/ItemDetail/OreDetail — секция «Крафт»). Build зелёный.

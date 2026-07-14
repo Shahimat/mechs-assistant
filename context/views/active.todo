@@ -9,60 +9,16 @@
 ## blocker
 
 ## high
-# MVP1 · пилот-цепочка на мехах (подход C) закрыта 2026-07-12 —
-# см. CHANGELOG. Роутинг + layout + catalog-примитивы (other--catalog-shell)
-# выделены 2026-07-12 (по решению юзера — до второго каталога, ради
-# скорости подключения следующих). Все high-пункты сделаны, дальше —
-# medium: раскатать конвейер на остальные 10 каталогов через новый
-# generic-паттерн.
+# MVP1 закрыт 2026-07-14 — см. CHANGELOG. Все 11 data-сущностей + 16
+# UI-роутов работают; cross-catalog навигация (deep-link + мини-карточки)
+# подключена во всех каталогах. Следующая веха — MVP2 калькулятор
+# прокачки; перед стартом нужна фаза docs для skill-modifiers.
+
+catalog: [skill-modifiers] новая сущность перед MVP2 калькулятора — модель числовых модификаторов (skill × level → множитель к weapon.damage / robot.armor / sellPrice / ...), overlay-первичная (данных на вики нет, ручной ввод) → фаза docs → блокирует старт MVP2
 
 ## medium
-# MVP1 · остальные 10 каталогов — накатываются через тот же конвейер
-# weapons закрыт 2026-07-13: parser расширен на все 16 CSS-категорий
-# (bullet/missile/mortar/…/laser/repair/faser/empp), 323 записи; UI с
-# PairToggleGroup по CSS-category, LevelRangeFilter по requiredLevel;
-# merger научился overlay-only записям (новые сущности через Sheets).
-catalog: [weapons] прогнать sync:sheets и наполнить лист weapons в Google Sheets — сейчас overlay пустой (0 with overlay); наполнение = ручная работа редакторов → фаза feat → нет
-# equipment закрыт 2026-07-13: parser (173 записи из 4 root wiki), единый
-# data-слой с раздробленным на 7 subtype UI, 7 роутов, 7 плиток, audit
-# 16 behaviors + tile-behavior выполнен. Sheets: канон EQUIPMENT_COLUMNS
-# заведён; наполнение overlay — за редакторами.
-# ammo закрыт 2026-07-13: parser (58 записей из wiki 3661), схема с
-# compatibleCategories: string[] — связь ammo ↔ weapons.category в
-# данных; UI с PairToggleGroup по пересечению (7 пар + одиночка «Запчасти»,
-# laser исключён); audit 4 behaviors выполнен.
-refactor: [weapons/ammo] вынести `CATEGORY_LABELS` + `LABEL_TO_CATEGORY` из `WeaponsCatalog.tsx` в общую утилиту `src/utils/weaponCategories.ts` (сейчас дублируется в WeaponsCatalog и AmmoCatalog) → фаза refactor → ammo раскатан
-# items закрыт 2026-07-13: BFS с 7 seed'ами и ctx.subtype (pack/gift
-# делят один CSS-класс), 52 записи (2 подарка дублируют alt'ы с
-# trailing space, dedup-жертва), плоская схема с subtype-specific
-# opt-полями, UI с PairToggleGroup 4 капсулы + «главный» stat по
-# subtype в карточке, audit 4 behaviors выполнен.
-# ore закрыт 2026-07-13: parser (8 записей из wiki 3036), схема с
-# foundIn: string[] (простой список без count/chance, в отличие от items),
-# минималистичный UI без фильтров/поиска, foundIn только в детализации,
-# audit 4 behaviors выполнен.
-# components закрыт 2026-07-14: parser (32 записи из wiki 3955), гибридная
-# модель — parsed поля (name/weight/sellPrice/description/craftFromBlueprints)
-# + overlay-поля (kind base|composite, recipe), COMPONENTS_COLUMNS с
-# overlay-колонками в Sheets готовы к наполнению; UI с SearchField и
-# auto-hide фильтром по kind (панель не рендерится пока overlay пуст);
-# audit 4 behaviors выполнен.
-# loot закрыт 2026-07-14: parser (65 записей из wiki 3023/3027/20118:
-# 41+14+10), BFS с ctx.source, sources: LootSource[] (одноэлементный
-# сейчас, готов к пересечениям через mergeDuplicate), UI с SearchField
-# + PairToggleGroup 3 капсулы «Монстры»/«Кроты»/«Пираты», матч через
-# some(); audit 4 behaviors выполнен.
-# skills закрыт 2026-07-14: 12 записей (5 skill из wiki 2902 + 7 ability
-# из 2905), полу-ручной резолвер с SKILL_ENTRIES, из HTML 2905
-# подтверждаются perStatPercent регексом; добавлен `Resolver.hydrate()`
-# hook для устойчивости к 404 seed'а (недостающие записи из fallback);
-# минималистичный UI без фильтров; audit 4 behaviors выполнен.
-catalog: [skill-modifiers] новая сущность перед MVP2 калькулятора — модель числовых модификаторов (skill × level → множитель к weapon.damage / robot.armor / sellPrice / ...), overlay-первичная (данных на вики нет, ручной ввод) → фаза docs → skills раскатан
-catalog: [blueprints + items(upgrade) + weapons(transformsFrom) + equipment(transformsFrom)] docs готовы (2 новые entity + 4 blueprints behaviors + verify:false на 20 затронутых) — дальше 6 feat-подфаз: (1) items subtype=upgrade + seed 3950; (2) weapons+equipment transformsFrom (+ 8-10 колонок в Sheets); (3) blueprints resolver 9 seed'ов + BLUEPRINTS_COLUMNS + build-data cross-catalog resolve; (4) items UI +капсула; (5) weapons+equipment UI +chip карточки/секция детали; (6) blueprints UI полностью → фаза feat → docs готовы
-catalog: [skill-modifiers] новая сущность перед MVP2 калькулятора — модель числовых модификаторов (skill × level → множитель к weapon.damage / robot.armor / sellPrice / ...), overlay-первичная (данных на вики нет, ручной ввод) → фаза docs → skills раскатан
-catalog: parser--wiki расширить конфиг на 9 оставшихся каталогов → фаза feat → парсер обобщён
-catalog: parser--google-sheets расширить на 9 листов Sheets → фаза feat → лист под каталог настроен
-ui: подключить view для остальных каталогов через catalog-примитивы (equipment, ammo, items, loot, blueprints, ore, components, currencies, skills) — плитки на CatalogsHubPage + stub-роуты уже готовы (`CatalogStubPage`), нужно заменить stub на реальный view в `src/components/catalogs/<slug>/` по мере готовности парсера/overlay каждого каталога → фаза feat → catalog-shell выделен, данные каталога загружаются
+catalog: [weapons/equipment/items/components/loot/ore] прогонять sync:sheets и наполнять overlay в Google Sheets — сейчас все overlay пустые (0 with overlay); наполнение = ручная работа редакторов, повышение точности каталогов относительно вики → фаза feat → нет
+refactor: [weapons/ammo] вынести `CATEGORY_LABELS` + `LABEL_TO_CATEGORY` из `WeaponsCatalog.tsx` в общую утилиту `src/utils/weaponCategories.ts` (сейчас дублируется в WeaponsCatalog и AmmoCatalog) → фаза refactor → нет
 data: программный бэкап Google Sheets → отдельный GitHub Actions workflow, дампы в backups/gsheets/YYYY-MM-DD.json → фаза feat → возникает по факту инцидента или роста объёма редакторов
 data: решить судьбу @tanstack/react-query — либо начать использовать, либо убрать → нет
 
@@ -70,5 +26,6 @@ data: решить судьбу @tanstack/react-query — либо начать 
 catalog: TS-приведение `robotsData as Robot[]` не даёт runtime-валидации — рассмотреть zod/valibot для JSON-схемы (актуально для всех 11 data-сущностей после подключения) → нет
 build: рассмотреть Git LFS при росте размера иконок в data/icons/ выше 100 MB → нет
 catalog: добавить недостающих мехов через overlay (Грач — свежий, отсутствует в вики; Снеговик/Стужа — сезонные, страница вики 404) → нужен ручной ввод → нет
-build: включить сплит-чанки / lazy-import — main-бандл ~670 KiB после подключения react-router-dom и генериков (варнинг rspack при production build) → фаза perf → нет (заведено по факту 2026-07-12, не блокирует)
+build: включить сплит-чанки / lazy-import — main-бандл ~1.5 MiB после подключения всех 10 каталогов + blueprints иконок (варнинг rspack при production build) → фаза perf → нет (заведено по факту 2026-07-14, не блокирует)
 scripts: `scripts/parser-wiki/index.ts:287` — `@typescript-eslint/no-explicit-any` (осталось от старого коммита d48ed8a, не блокирует CI) → фаза chore → нет
+catalog: [blueprints] финальная привязка producesKey к конкретным вариантам целей через overlay — сейчас parser даёт translit имени без резолва ambiguity (напр. Чертеж Пулемёт → 'pulemyot', но в weapons 15+ пулемётов разного уровня); редактор указывает точную привязку через Sheets → фаза feat → нет

@@ -17,10 +17,15 @@ scenarios:
       `blueprints = []`, view показывает empty state.
 
   - given: при чтении JSON выброшена ошибка
-    when: "`initializeBlueprints` попадает в catch"
+    when: '`initializeBlueprints` попадает в catch'
     then: |
       `isLoading = false`, `error` = текст, view показывает error state.
 
-verified: false
+verified: true
+verified_at: 2026-07-14
 verified_note: |
-  Спецификация создана в фазе docs 2026-07-14, реализация — в фазе feat.
+  Стор `src/stores/blueprints/store.ts` создан по паттерну items, читает
+  `@build/data/blueprints.json` (211 записей). Прогон `sync:wiki
+  blueprints` + `build:data` — успешен. Три сценария соответствуют
+  реализации: `initializeBlueprints` синхронно грузит массив, ставит
+  isLoading=false; пустой массив → empty state; ошибка чтения → error.

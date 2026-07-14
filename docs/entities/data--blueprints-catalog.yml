@@ -126,8 +126,14 @@ behaviors:
   - view--blueprints-catalog-renders-cards-grid # кросс-ссылка
 
 verified_note: |
-  Спецификация обновлена в фазе docs 2026-07-14. Реализация парсера,
-  merger extension (cross-catalog resolve), типов, стора и view — в
-  фазе feat. Cross-catalog связка требует, чтобы к моменту прогона
-  blueprints resolver все другие каталоги были собраны — иначе
-  `ingredients.catalog` останется null.
+  Data-слой закрыт 2026-07-14: parser (211 записей из 9 подстраниц —
+  90 weapon, 66 equipment, 31 component, 14 pack→11 pack+3 mech, 6
+  upgrade, 4 teleport), build-data cross-catalog resolve через
+  двухпроходной merger с keyIndex, типы `Blueprint` + `BlueprintIngredient`
+  + `BlueprintCategory` (+'mech' post-processing из pack по префиксу
+  `robot_` в producesKey), стор `src/stores/blueprints/store.ts`,
+  view+card+detail+sortable, роут `/catalogs/blueprints-catalog`.
+  Cross-catalog связка требует, чтобы к моменту прогона blueprints
+  resolver все другие каталоги были собраны — иначе `ingredients.catalog`
+  останется null (парсер уже выводит catalog из URL, merger — fallback
+  через lookup по всем parsed JSON'ам).

@@ -72,4 +72,13 @@ behaviors:
   - other--favorites-toggle-on-star-click
 
 verified_note: |
-  Спецификация создана в фазе docs 2026-07-14, реализация — в фазе feat.
+  View закрыт 2026-07-14: `src/components/catalogs/blueprints/`
+  (BlueprintCard/BlueprintDetail/SortableBlueprintCard/BlueprintsCatalog),
+  роут `/catalogs/blueprints-catalog` в router.tsx, плитка в
+  CatalogsHubPage (уже была). Фильтр по решению юзера — раздельные
+  toggle-кнопки (7 категорий: mech/weapon/equipment/component/upgrade/
+  pack/teleport) вместо изначально предложенных 3 пар. Ингредиенты в
+  деталях — мини-карточки через shared `IngredientMiniCard`
+  (иконка+×N+tooltip+cross-catalog навигация). Deep-link открытия/
+  закрытия через `useDeepLinkOpen` с URL `?open=<key>` (push при клике,
+  replace при крестике).

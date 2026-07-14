@@ -9,21 +9,28 @@ scenarios:
     when: пользователь открыл `/catalogs/blueprints-catalog`
     then: |
       view--blueprints-catalog рендерит сетку `BlueprintCard`. В карточке:
-      имя, chip `category` (+ chip `subtype` если equipment), «Создает: N»,
-      «Прочность: N», цена продажи.
+      имя, chip `category` (+ chip `subtype` если equipment), «Создает ×N:
+      <имя цели>» (lookup через crossCatalogLookup), «Прочность: N».
 
-      Панель фильтров: `SearchField` (поиск по имени) + `PairToggleGroup`
-      6 капсул (3 пары): «Оружие+Компоненты» / «Оборудование+Апгрейды» /
-      «Паки+Телепорты». Матч по `blueprint.category`.
+      Панель фильтров: `SearchField` (поиск по имени) + `ToggleButtonGroup`
+      с 7 раздельными кнопками через `useTypeFilter<BlueprintCategory>`
+      (порядок — Мехи, Оружие, Оборудование, Компоненты, Апгрейды, Паки,
+      Телепорты). Матч по `blueprint.category`, multi-select.
 
   - given: массив `blueprints` пуст
     when: пользователь открыл `/catalogs/blueprints-catalog`
     then: view показывает empty state.
 
-  - given: "`error` не null (ошибка загрузки)"
+  - given: '`error` не null (ошибка загрузки)'
     when: пользователь открыл `/catalogs/blueprints-catalog`
     then: view показывает error state (Alert severity=error).
 
-verified: false
+verified: true
+verified_at: 2026-07-14
 verified_note: |
-  Спецификация создана в фазе docs 2026-07-14, реализация — в фазе feat.
+  Реализация: `src/components/catalogs/blueprints/BlueprintsCatalog.tsx`
+  + `BlueprintCard.tsx`. Категории раздельные (по решению юзера отошли от
+  пар в пользу паттерна мехов); категория 'mech' добавлена первой.
+  Иконка чертежа — композит `assets/raw/blueprint.png` + product-иконка
+  (см. `scripts/parser-wiki/lib/icons.ts` overlayBackground). Build
+  зелёный.

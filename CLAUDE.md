@@ -69,23 +69,29 @@
 
 - `src/index.tsx` — bootstrap (React, CssVarsProvider, QueryClientProvider).
 - `src/App.tsx` — `<RouterProvider router={router} />`.
-- `src/router.tsx` — createBrowserRouter, basename `/mechs-assistant` в prod.
+- `src/router.tsx` — createBrowserRouter, basename `/mechs-assistant` в prod, 16 роутов каталогов.
 - `src/components/layout/` — AppLayout, AppHeader, Breadcrumbs.
-- `src/pages/` — HomePage, CatalogsHubPage, `catalogs/{Mechs,Weapons}CatalogPage`, `CatalogStubPage`.
-- `src/components/catalog/` — общие примитивы каталога (Header, Section, Grid, FilterPanel, SearchField, LevelRangeFilter, PairToggleGroup, FavoritesDnDSection, OverlayBadge) + hook'и (`hooks/useSearchFilter`, `useLevelRangeFilter`, `useTypeFilter`, `usePairFilter`).
-- `src/components/catalogs/mechs/` — MechsCatalog + RobotCard/RobotDetail/SortableRobotCard.
-- `src/components/catalogs/weapons/` — WeaponsCatalog + WeaponCard/WeaponDetail/SortableWeaponCard.
+- `src/pages/` — HomePage, CatalogsHubPage, `catalogs/*CatalogPage.tsx` (16 тонких обёрток, по одной на каталог).
+- `src/components/catalog/` — общие примитивы каталога:
+  - Compositional: Header, Section, Grid, FilterPanel, SearchField, LevelRangeFilter, PairToggleGroup, FavoritesDnDSection, OverlayBadge.
+  - Cross-catalog: `IngredientMiniCard` (иконка+×N+tooltip+клик-навигация, count опционален), `BlueprintChipList` (мини-карточки чертежей для секции «Крафт»).
+  - Hook'и: `useSearchFilter`, `useLevelRangeFilter`, `useTypeFilter`, `usePairFilter`, `useDeepLinkOpen` (URL ?open=<key> для открытия Detail с историей браузера).
+- `src/components/catalogs/<slug>/` — карточные view + Card/Detail/SortableCard для каждого каталога (mechs/weapons/ammo/items/ore/loot/components/skills/blueprints + equipment общий + 7 тонких обёрток chips/shields/armour/accumulators/reactors/drills/cargos).
 - `src/components/tiles/` — Tile, TileGrid (плитки навигации).
 - `src/stores/indexedDBMiddleware.ts` — общий middleware Zustand.
-- `src/stores/robots/store.ts` — стор мехов; `src/stores/weapons/store.ts` — стор оружия (отдельные IndexedDB базы).
+- `src/stores/<slug>/store.ts` — 10 сторов (robots, weapons, equipment, ammo, items, ore, loot, components, skills, blueprints); каждый на отдельной IndexedDB базе.
 - `src/utils/overlay.ts` — helpers для `_meta.overlayFields` (принимает любую сущность с `_meta`).
-- `src/types/{common,robot,weapon}.ts` — общий Price/OverlayMeta + типы каталогов.
+- `src/utils/crossCatalogLookup.ts` — единый lookup name/iconPath/subtype по (catalog, key) + `lookupBlueprintKeyByName(name)` для секции «Крафт».
+- `src/utils/catalogPath.ts` — `catalogPathFor(catalog, key)` → URL `/catalogs/<slug>-catalog?open=<key>`; equipment → resolve subtype в 7 UI-подкаталогов.
+- `src/utils/icons.ts` — `resolveIconUrl(iconPath)` для сборки URL иконки.
+- `src/types/{common,robot,weapon,equipment,ammo,item,ore,loot,component,skill,blueprint}.ts` — Price/OverlayMeta/Transform + типы каталогов.
 - `data/*.json` (parsed) + `data/overrides/*.yml` (overlay) — источники данных.
-- `scripts/catalogs.config.ts` — единый конфиг каталогов (пути, лист Sheets, папки иконок).
-- `scripts/build-data/index.ts` — build-time merger (умеет overlay-only записи для новых сущностей).
-- `scripts/parser-wiki/` — lib/ (общая инфра) + resolvers/{robots,weapons}.ts + диспетчер index.ts.
+- `assets/raw/blueprint.png` — фон-«планшет» для композита иконок чертежей.
+- `scripts/catalogs.config.ts` — единый конфиг каталогов (пути, лист Sheets, папки иконок, опциональный `iconBackgroundPath`).
+- `scripts/build-data/index.ts` — build-time merger: overlay-merge + двухпроходной cross-catalog resolve `catalog` в blueprints.ingredients / producesCatalog / transformsFrom.ingredients.
+- `scripts/parser-wiki/` — lib/ (общая инфра, включая `composeWithBackground` для наложения продукта на background) + resolvers/*.ts (10 резолверов) + диспетчер index.ts.
 - `scripts/parser-google-sheets/index.ts` — синк overlay из Sheets.
-- `scripts/setup-sheets-columns/` — идемпотентная настройка колонок листа (columns.ts + index.ts).
+- `scripts/setup-sheets-columns/` — идемпотентная настройка колонок 10 листов (columns.ts + index.ts).
 
 ## Импорты в src/
 

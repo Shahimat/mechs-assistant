@@ -28,6 +28,9 @@ scenarios:
     when: пользователь открыл `/catalogs/items-catalog`
     then: view--items-catalog показывает error state (Alert severity=error).
 
-verified: false
+verified: true
+verified_at: 2026-07-14
 verified_note: |
-  Сценарий обновлён в фазе docs 2026-07-14: PairToggleGroup +5-я капсула «Апгрейды» (upgrade). Реализация — в фазе feat.
+  Реализовано: `PAIRS_WITH_LABELS` в `subtypeLabels.ts` содержит
+  5-ю капсулу `{ key: 'upgrade', label: 'Апгрейды', values: ['upgrade'] }`.
+  Матч через существующий `LABEL_TO_SUBTYPE`. Build зелёный.

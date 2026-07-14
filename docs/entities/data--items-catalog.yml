@@ -147,5 +147,6 @@ verified_note: |
   через seed 3950 (/wiki/modification/installation-skills), 6 записей
   парсер + 2 (уровни 7-8) через overlay Sheets. Overlay-поле
   `providesSkill: { skillKey, value }` заведено — парсер не тянет,
-  заполняется вручную по мере знаний. Всего 52 → ~58 записей после
-  прогона.
+  заполняется вручную по мере знаний. Всего 58 записей после прогона.
+  UI: 5-я капсула «Апгрейды» в PairToggleGroup, секция «Прибавка к
+  навыку» в ItemDetail (рендерится только когда providesSkill заполнен).

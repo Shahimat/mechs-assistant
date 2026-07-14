@@ -1,0 +1,52 @@
+id: other--cross-catalog-navigation-deep-link-opens-detail
+kind: behavior
+namespace: ui
+entities: [other--cross-catalog-navigation]
+title: URL-параметр ?open=<key> синхронизирует открытие Detail с историей браузера
+
+scenarios:
+  - given: пользователь перешёл по ссылке `/catalogs/ore-catalog?open=kristall_zelenyy`
+    when: стор ore гидратирован
+    then: |
+      `useDeepLinkOpen` находит entry по key и вызывает `onOpen(entry)` —
+      Detail открывается автоматически при монтаже без дополнительных
+      действий пользователя.
+
+  - given: пользователь на `/catalogs/blueprints-catalog` (без ?open=),
+      кликает по карточке чертежа
+    when: `handleCardClick(bp)` вызывает `openInUrl(bp.key)`
+    then: |
+      URL становится `?open=<key>` через `setSearchParams` с `replace:
+      false` — создаётся запись в истории браузера. Detail открывается
+      (state установлен параллельно).
+
+  - given: Detail открыт по deep-link, пользователь нажимает крестик
+    when: onClose вызывает `clearOpen()`
+    then: |
+      URL меняется на текущий без `?open=` через `setSearchParams` с
+      `replace: true` — история не растёт, повторный «Назад» не
+      возвращает на тот же Detail.
+
+  - given: пользователь перешёл `weapons?open=empp` → `ore?open=kristall_zelenyy`
+      (клик по ингредиенту)
+    when: пользователь нажимает «Назад» в браузере
+    then: |
+      URL откатывается на `weapons?open=empp`, `useDeepLinkOpen` через
+      ref.lastOpened видит изменение key и снова вызывает `onOpen` для
+      Weapon-detail.
+
+  - given: entry с указанным key в загруженном срезе не найден
+    when: `useDeepLinkOpen` не находит match
+    then: |
+      Detail не открывается, URL остаётся с ?open=<key>. Легитимно для
+      EquipmentSubCatalog при попадании ключа не своего subtype (не
+      должно происходить при правильном роутинге через catalogPathFor).
+
+verified: true
+verified_at: 2026-07-14
+verified_note: |
+  Реализация: `src/components/catalog/hooks/useDeepLinkOpen.ts`.
+  Подключён во всех 10 карточных каталогов (Blueprints/Weapons/Mechs/
+  Ammo/Items/Ore/Components/Loot/Skills + EquipmentSubCatalog — покрывает
+  7 UI-подкаталогов). getKey/onOpen/onClose хранятся в ref — эффект не
+  перезапускается на identity колбэков.

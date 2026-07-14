@@ -5,7 +5,7 @@ entities: [data--blueprints-catalog]
 title: Каждая запись blueprints.json соответствует типу Blueprint (TS strict)
 
 scenarios:
-  - given: "TypeScript strict включён (`strict: true`) и `resolveJsonModule: true`"
+  - given: 'TypeScript strict включён (`strict: true`) и `resolveJsonModule: true`'
     when: файл `store.ts` импортирует `blueprintsData` из `@build/data/blueprints.json`
       и приводит к `Blueprint[]`
     then: |
@@ -26,6 +26,16 @@ scenarios:
       `BlueprintIngredient { key: string; catalog?: string; count: number }`
       — catalog опциональный (резолвится merger'ом; unresolved → null).
 
-verified: false
+verified: true
+verified_at: 2026-07-14
 verified_note: |
-  Спецификация создана в фазе docs 2026-07-14, реализация — в фазе feat.
+  Тип `Blueprint` в `src/types/blueprint.ts` реализован: category+optional
+  subtype, producesKey+producesCatalog+output, ingredients[] с
+  BlueprintIngredient { key, catalog?, count }, stats.durability,
+  опциональные skillSpecialist/bondsCost/reglsCost/sellPrice/description/
+  iconPath/wikiUrl. `BlueprintCategory` = 'mech' | 'weapon' | 'equipment'
+  | 'component' | 'pack' | 'upgrade' | 'teleport' (mech добавлен
+  post-processing перекраской из pack при producesKey.startsWith('robot_')).
+  Merged JSON (211 записей) собирается: build-time cross-catalog resolve
+  (см. `scripts/build-data/index.ts` — двухпроходной merger с keyIndex).
+  `npx tsc --noEmit` — 0 ошибок.

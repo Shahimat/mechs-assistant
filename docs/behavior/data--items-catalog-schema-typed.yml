@@ -5,7 +5,7 @@ entities: [data--items-catalog]
 title: Каждая запись в items.json соответствует типу Item (TS strict)
 
 scenarios:
-  - given: "TypeScript strict включён (`strict: true`) и `resolveJsonModule: true`"
+  - given: 'TypeScript strict включён (`strict: true`) и `resolveJsonModule: true`'
     when: файл `store.ts` импортирует `itemsData` из
       `@build/data/items.json` и приводит его к `Item[]`
     then: |
@@ -18,6 +18,13 @@ scenarios:
       сборка/typecheck должны падать. На практике проверка через `as Item[]`
       — assert, не runtime-валидация (та же оговорка для всех data-каталогов).
 
-verified: false
+verified: true
+verified_at: 2026-07-14
 verified_note: |
-  Схема расширена в фазе docs 2026-07-14: `ItemSubtype` +'upgrade', `providesSkill?: { skillKey, value }` overlay. Реализация — в фазе feat.
+  Схема реализована: `ItemSubtype` расширен 'upgrade' (8 значений),
+  `ItemProvidesSkill { skillKey: string; value: number }` заведён как
+  overlay-поле, `Item.providesSkill?: ItemProvidesSkill`. Парсер тянет 6
+  апгрейдов из seed 3950 (`/wiki/modification/installation-skills`);
+  уровни 7-8 — через overlay. `providesSkill` рендерится в
+  `ItemDetail.tsx` секцией «Прибавка к навыку» только когда заполнен.
+  `npx tsc --noEmit` — 0 ошибок.

@@ -27,8 +27,15 @@ scenarios:
       bondsCost?: number; reglsCost?: number }` — опциональное. Записи
       без него (базовые weapon'ы без предшественника) проходят typecheck.
 
-verified: false
+verified: true
+verified_at: 2026-07-14
 verified_note: |
-  Behavior заведён в фазе docs 2026-07-14 (исторический пробел —
-  раньше `data--weapons-catalog-schema-typed` не существовал, только
-  loaded-from-json). Реализация типа `transformsFrom` — в фазе feat.
+  `Weapon.transformsFrom?: Transform` реализован в `src/types/weapon.ts`
+  (Transform из `src/types/common.ts`). Резолвер
+  `scripts/parser-wiki/resolvers/weapons.ts::extractTransform`
+  распаковывает td «Преобразуется из» + «Для преобразования требуется»:
+  275 из 323 записей получили transformsFrom. Merger резолвит
+  `ingredients[i].catalog` из parsed JSON-ов (см. `scripts/build-data/
+  index.ts::resolveCrossCatalogRefs`). UI-рендер: chip «Транс.» в
+  WeaponCard + секция «Преобразование» в WeaponDetail с
+  `IngredientMiniCard` для ингредиентов. `npx tsc --noEmit` — 0 ошибок.

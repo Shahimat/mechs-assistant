@@ -1,0 +1,67 @@
+id: other--cross-catalog-navigation
+kind: entity
+namespace: ui
+version: '1.x'
+
+description: |
+  Механика взаимной навигации между каталогами: клик по ссылке на
+  сущность из другого каталога (ингредиент в чертеже, чертёж в поле
+  «Крафт», трансформация в оружии) открывает Detail этой сущности в
+  соответствующем UI-каталоге. Реализация — через URL-параметр
+  `?open=<key>` + shared hook `useDeepLinkOpen` + утилита
+  `catalogPathFor`.
+
+  **Компоненты и утилиты (все в `src/components/catalog/` и `src/utils/`):**
+    - `IngredientMiniCard` — карточка ссылки: иконка сверху, `×N` снизу
+      (count опционален — для секции «Крафт» не показывается), MUI
+      Tooltip с именем, клик → навигация. Fallback: если catalog+key не
+      резолвятся — плейсхолдер с текстом key, click disabled.
+    - `BlueprintChipList` — обёртка над `IngredientMiniCard` для секции
+      «Крафт» в detail'ах weapon/equipment/component/item/ore: резолвит
+      имя чертежа в key через `lookupBlueprintKeyByName`, рендерит
+      мини-карточки без count.
+    - `crossCatalogLookup.ts` — единый lookup name/iconPath/subtype по
+      (catalog, key). Строит Map из 9 merged JSON'ов (weapons/equipment/
+      components/items/ore/loot/ammo/robots/blueprints) при первом
+      обращении.
+    - `catalogPath.ts::catalogPathFor(catalog, key)` — строит URL
+      `/catalogs/<slug>-catalog?open=<key>`. Для equipment резолвит
+      subtype и роутит в один из 7 UI-подкаталогов (chips/shields/…).
+    - `hooks/useDeepLinkOpen.ts` — hook при монтаже читает `?open=` из
+      URL, находит entry в `items` и вызывает `onOpen(entry)`.
+      Возвращает `openInUrl(key)` (push — для истории браузера) и
+      `clearOpen()` (replace — для крестика). Через `onClose` синхронно
+      закрывает Dialog при браузерной «Назад».
+
+  **UX-эффект:** каждая ссылка deep-linkable, «Назад» в браузере
+  откатывает открытие. Пример: чертёж Апгрейда → клик на ингредиент
+  «Кристалл Зелёный» → detail руды в `/catalogs/ore-catalog?open=
+  kristall_zelenyy` → «Назад» возвращает к чертежу.
+
+source_files:
+  ingredient_card: src/components/catalog/IngredientMiniCard.tsx
+  ingredient_card_styles: src/components/catalog/IngredientMiniCard.styles.ts
+  blueprint_chip_list: src/components/catalog/BlueprintChipList.tsx
+  cross_catalog_lookup: src/utils/crossCatalogLookup.ts
+  catalog_path: src/utils/catalogPath.ts
+  deep_link_hook: src/components/catalog/hooks/useDeepLinkOpen.ts
+
+features_enabled:
+  - url-query-state # ?open=<key> как источник правды для открытого Detail
+  - browser-history-back # push при клике, replace при закрытии
+  - cross-catalog-lookup # name/iconPath/subtype по (catalog, key)
+  - equipment-subtype-routing # equipment → chips/shields/... по subtype
+
+features_disabled:
+  - toast-notifications # unresolved lookup молча дают disabled-card
+
+manuals: []
+behaviors:
+  - other--cross-catalog-navigation-deep-link-opens-detail
+  - other--cross-catalog-navigation-ingredient-mini-card-navigates
+
+verified_note: |
+  Механика подключена во все 10 карточных каталогов (Blueprints,
+  Weapons, Mechs, Ammo, Items, Ore, Components, Loot, Skills,
+  EquipmentSubCatalog). Реализована и провалидирована 2026-07-14 через
+  `npm run build` (0 ошибок tsc).

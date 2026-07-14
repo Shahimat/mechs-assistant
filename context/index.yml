@@ -15,17 +15,17 @@ namespaces:
       - id: data--robots-catalog
         one_liner: Каталог мехов (parsed data/robots.json + overlay data/overrides/robots.yml → merged .build/data/robots.json → типы Robot). Пилот-каталог MVP1 — закрыт 2026-07-12.
       - id: data--weapons-catalog
-        one_liner: Каталог вооружения — 323 записи, 16 CSS-категорий (bullet/missile/mortar/…/laser/repair/faser/empp). Раскатан 2026-07-13; фильтр по category, не по склеенному group.
+        one_liner: Каталог вооружения — 323 записи, 16 CSS-категорий (bullet/missile/mortar/…/laser/repair/faser/empp). Раскатан 2026-07-13, transformsFrom (цепочка преобразований) добавлен 2026-07-14; фильтр по category, не по склеенному group.
       - id: data--equipment-catalog
-        one_liner: Каталог оборудования — 173 записи из wiki 3682/3657/3106/3108, family+subtype из CSS-класса. Единая data-сущность обслуживает 7 UI-каталогов (chips/shields/armour/accumulators/reactors/drills/cargos).
+        one_liner: Каталог оборудования — 173 записи из wiki 3682/3657/3106/3108, family+subtype из CSS-класса, transformsFrom (2026-07-14). Единая data-сущность обслуживает 7 UI-каталогов (chips/shields/armour/accumulators/reactors/drills/cargos).
       - id: data--ammo-catalog
         one_liner: "Каталог боезапасов — ~58 записей из wiki 3661, поле `compatibleCategories: string[]` — массив CSS-slug'ов совместимого оружия (ключевая связь с data--weapons-catalog.category). Стор+view — в фазе feat."
       - id: data--items-catalog
-        one_liner: Каталог используемых предметов — ~54 записи, 7 subtype (pack/gift/energy/invis/repair/scanner/teleport), BFS с зашитым в ctx subtype (pack и gift разделяют CSS-класс). Стор+view — в фазе feat.
+        one_liner: Каталог используемых предметов — 58 записей, 8 subtype (pack/gift/energy/invis/repair/scanner/teleport/upgrade), BFS с зашитым в ctx subtype. upgrade+providesSkill добавлены 2026-07-14. Раскатан 2026-07-13.
       - id: data--loot-catalog
         one_liner: 'Каталог лута — 65 записей из wiki 3023 (монстры, 41) + 3027 (кроты, 14) + 20118 (пираты, 10), BFS с ctx.source; `sources: string[]` (готов к пересечениям, сейчас всегда одноэлементный). Стор+view — в фазе feat.'
       - id: data--blueprints-catalog
-        one_liner: 'Каталог чертежей — ~215 записей из 9 подстраниц вики (weapon/equipment+subtype/component/pack/upgrade/teleport). Встроенный рецепт: producesKey+producesCatalog+ingredients с cross-catalog resolve через merger. Реализация — в фазе feat.'
+        one_liner: 'Каталог чертежей — 211 записей из 9 подстраниц вики (7 категорий: mech/weapon/equipment+subtype/component/pack/upgrade/teleport, mech — post-processing из pack по префиксу `robot_`). Встроенный рецепт с cross-catalog resolve через двухпроходной merger. Раскатан 2026-07-14.'
       - id: data--ore-catalog
         one_liner: 'Каталог руды и полезных ископаемых — 8 записей из wiki 3036 (три кристалла, гафний, магма, железная руда, железо, цезий); поле `foundIn: string[]` — простой список источников (без count/chance, в отличие от items.stats.creates). Стор+view — в фазе feat.'
       - id: data--components-catalog
@@ -82,7 +82,7 @@ namespaces:
       - id: view--ammo-catalog
         one_liner: Карточный каталог `/catalogs/ammo-catalog` — ~58 боезапасов, PairToggleGroup по `compatibleCategories` (CSS-slug'ам weapons) + LevelRangeFilter. Спецификация есть, реализация — в фазе feat.
       - id: view--items-catalog
-        one_liner: 'Карточный каталог `/catalogs/items-catalog` — ~54 предметов, PairToggleGroup по subtype (4 капсулы: паки+подарки/ремкомплект+шокеры/невидимость+сканер/телепортатор), «главный» stat по subtype в карточке. Спецификация есть, реализация — в фазе feat.'
+        one_liner: 'Карточный каталог `/catalogs/items-catalog` — 58 предметов, PairToggleGroup по subtype (5 капсул: паки+подарки/ремкомплект+шокеры/невидимость+сканер/телепортатор/апгрейды), «главный» stat по subtype, секция «Прибавка к навыку» для upgrade. Раскатан 2026-07-13.'
       - id: view--ore-catalog
         one_liner: Карточный каталог `/catalogs/ore-catalog` — 8 руд, без фильтров и без поиска (мало записей), foundIn показан только в детализации. Спецификация есть, реализация — в фазе feat.
       - id: view--components-catalog
@@ -92,11 +92,13 @@ namespaces:
       - id: view--skills-catalog
         one_liner: Карточный каталог `/catalogs/skills-catalog` — 12 записей навыков/умений, без фильтров и поиска (мало записей). Спецификация есть, реализация — в фазе feat.
       - id: view--blueprints-catalog
-        one_liner: Карточный каталог `/catalogs/blueprints-catalog` — ~215 чертежей, SearchField + PairToggleGroup 6 капсул по category, встроенный рецепт в детали. Спецификация есть, реализация — в фазе feat.
+        one_liner: Карточный каталог `/catalogs/blueprints-catalog` — 211 чертежей, SearchField + ToggleButtonGroup 7 раздельных категорий (мехи/оружие/оборудование/компоненты/апгрейды/паки/телепорты), встроенный рецепт в детали с мини-карточками ингредиентов. Раскатан 2026-07-14.
       - id: other--tile
         one_liner: Квадратная плитка навигации с hover-scale, active-press, focus-ring, слотом для иконки.
       - id: other--catalog-shell
-        one_liner: Набор примитивов (Header/Section/Grid/FilterPanel/SearchField/LevelRangeFilter/PairToggleGroup/OverlayBadge) и hook'ов (useSearchFilter/useTypeFilter/useLevelRangeFilter/usePairFilter) для сборки страницы каталога.
+        one_liner: Набор примитивов (Header/Section/Grid/FilterPanel/SearchField/LevelRangeFilter/PairToggleGroup/OverlayBadge/IngredientMiniCard/BlueprintChipList) и hook'ов (useSearchFilter/useTypeFilter/useLevelRangeFilter/usePairFilter/useDeepLinkOpen) для сборки страницы каталога.
+      - id: other--cross-catalog-navigation
+        one_liner: 'Механика взаимной навигации: клик по ингредиенту/чертежу/трансформации открывает Detail в другом каталоге. URL ?open=<key> + useDeepLinkOpen + catalogPathFor + crossCatalogLookup. Push при клике, replace при крестике, back-navigation работает.'
     behaviors:
       - id: layout--app-shell-renders-header-and-outlet
         one_liner: AppLayout рендерит AppHeader (logo/title/breadcrumbs) и вложенную страницу через Outlet.
@@ -153,7 +155,7 @@ namespaces:
       - id: data--items-catalog-loaded-from-json
         one_liner: Каталог предметов загружается из merged .build/data/items.json при инициализации стора.
       - id: data--items-catalog-schema-typed
-        one_liner: Каждая запись items.json соответствует типу Item (TS strict).
+        one_liner: Каждая запись items.json соответствует типу Item (TS strict), включая subtype='upgrade' и overlay-поле providesSkill { skillKey, value }.
       - id: view--items-catalog-renders-cards-grid
         one_liner: view--items-catalog рендерит сетку ItemCard из data--items-catalog, фильтр PairToggleGroup по subtype.
       - id: view--items-catalog-opens-detail-on-click
@@ -198,6 +200,10 @@ namespaces:
         one_liner: view--blueprints-catalog рендерит сетку BlueprintCard, SearchField + PairToggleGroup 6 капсул по category.
       - id: view--blueprints-catalog-opens-detail-on-click
         one_liner: Клик по карточке чертежа открывает детализацию (BlueprintDetail) с полным рецептом.
+      - id: other--cross-catalog-navigation-deep-link-opens-detail
+        one_liner: URL-параметр ?open=<key> синхронизирует открытие/закрытие Detail с историей браузера через useDeepLinkOpen (push при клике, replace при крестике, back — переоткрывает предыдущий).
+      - id: other--cross-catalog-navigation-ingredient-mini-card-navigates
+        one_liner: Клик по IngredientMiniCard (иконка+×N+tooltip) навигирует в соответствующий каталог с ?open=<key>; equipment — через resolve subtype в один из 7 UI-подкаталогов.
 
   comparison:
     description: Механики сравнения и приоритизации мехов (избранное, будущий боевой калькулятор).

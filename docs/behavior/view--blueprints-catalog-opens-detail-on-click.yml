@@ -8,19 +8,29 @@ scenarios:
   - given: сетка отрисована
     when: пользователь кликает по карточке (не по звёздочке)
     then: |
+      URL получает `?open=<key>` (push через `useDeepLinkOpen.openInUrl`),
       открывается `BlueprintDetail` — MUI Dialog с полным рецептом:
-        - «Производит» — chip производимого предмета (lookup по
-          producesCatalog/producesKey из соответствующего стора; если
-          producesCatalog не заполнен, chip только с именем producesKey).
-        - «Ингредиенты» — chip'ы «[Каталог] Имя ×N» (lookup имён через
-          key+catalog).
+        - «Производит» — value-row с именем цели (lookup по
+          producesCatalog/producesKey из crossCatalogLookup); если
+          producesCatalog не заполнен, показывается сырой producesKey.
+        - «Ингредиенты» — мини-карточки `IngredientMiniCard`: иконка цели
+          сверху, `×N` снизу, tooltip = имя, клик — навигация в
+          соответствующий каталог через `catalogPathFor(catalog, key)`.
         - «Требования» — chip'ы «Навык специалист: N», «Боны: N»,
           «Реглы: N» (только те, что заполнены).
         - «О чертеже» — Прочность, Цена продажи, Описание.
 
   - given: BlueprintDetail открыт
     when: пользователь закрывает его (крестик / Esc / клик по фону)
-    then: возврат к сетке.
+    then: |
+      Dialog закрывается, `clearOpen()` стирает `?open=` из URL (replace).
+
+  - given: BlueprintDetail открыт после перехода из другого каталога
+    when: пользователь нажимает «Назад» в браузере
+    then: |
+      URL откатывается к предыдущему `?open=<key>` (или на пустой URL);
+      `useDeepLinkOpen` синхронно закрывает или переоткрывает Dialog
+      через `onClose` / `onOpen`.
 
   - given: клик по звёздочке избранного внутри карточки
     when: обработчик `e.stopPropagation()`
@@ -28,6 +38,10 @@ scenarios:
       детализация НЕ открывается, срабатывает только
       `other--favorites-toggle-on-star-click`.
 
-verified: false
+verified: true
+verified_at: 2026-07-14
 verified_note: |
-  Спецификация создана в фазе docs 2026-07-14, реализация — в фазе feat.
+  Реализация: `BlueprintDetail.tsx` + подключение `useDeepLinkOpen` в
+  `BlueprintsCatalog.tsx`. Ингредиенты — через shared
+  `IngredientMiniCard` из `src/components/catalog/`. Deep-link
+  протестирован через full build.

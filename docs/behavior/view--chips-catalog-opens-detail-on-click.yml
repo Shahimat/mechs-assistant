@@ -26,6 +26,11 @@ scenarios:
       `other--favorites-toggle-on-star-click`. Избранное для equipment —
       общий набор ключей на все семь UI-каталогов оборудования.
 
-verified: false
+verified: true
+verified_at: 2026-07-14
 verified_note: |
-  Сценарий обновлён в фазе docs 2026-07-14 через shared `EquipmentDetail`: детализация добавляет секцию «Преобразуется из» — chip prev equipment, chip'ы ингредиентов, стоимость Боны/Реглы. Реализация — в фазе feat.
+  Реализовано: детализация показывает секцию «Преобразование» с
+  строкой «Из» (fromKey), списком мини-карточек `IngredientMiniCard`
+  (иконка+×N+tooltip+cross-catalog навигация) и строкой «Стоимость»
+  (Боны/Реглы). Проверено чтением `WeaponDetail.tsx`/`EquipmentDetail.tsx`
+  + build зелёный.

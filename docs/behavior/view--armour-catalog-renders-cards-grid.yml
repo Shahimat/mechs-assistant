@@ -27,6 +27,10 @@ scenarios:
     when: пользователь открыл `/catalogs/armour-catalog`
     then: view--armour-catalog показывает error state (Alert severity=error).
 
-verified: false
+verified: true
+verified_at: 2026-07-14
 verified_note: |
-  Сценарий обновлён в фазе docs 2026-07-14 через shared `EquipmentCard`: карточка получает короткий chip трансформации «⇢ [prev name]» когда `transformsFrom` заполнен (для extractor/drills — поле всегда пустое, для компьютера/chips — только у одного экземпляра). Реализация — в фазе feat.
+  Реализовано: карточка отображает компактный chip «Транс.» с title
+  «Преобразуется из: <fromKey>» когда `transformsFrom` заполнен.
+  Проверено чтением `WeaponCard.tsx`/`EquipmentCard.tsx` + build
+  зелёный.
