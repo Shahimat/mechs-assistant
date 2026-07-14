@@ -1,6 +1,18 @@
 import type { Price, OverlayMeta } from './common';
 
-export type ItemSubtype = 'pack' | 'gift' | 'energy' | 'invis' | 'repair' | 'scanner' | 'teleport';
+export type ItemSubtype =
+  'pack' | 'gift' | 'energy' | 'invis' | 'repair' | 'scanner' | 'teleport' | 'upgrade';
+
+/**
+ * Прирост к статам навыка от апгрейда — механика «навесить апгрейд на
+ * оружие/оборудование = +N к статам навыка X». Overlay-поле: парсер
+ * не тянет (на вики только описательная фраза «Микросхема для установки
+ * Nй ступени навыков»), заполняется вручную по мере знаний.
+ */
+export interface ItemProvidesSkill {
+  skillKey: string;
+  value: number;
+}
 
 /**
  * Одна дроп-позиция из полей «Создает» / «Находится в» на вики.
@@ -51,5 +63,10 @@ export interface Item {
   description?: string;
   iconPath?: string;
   wikiUrl?: string;
+  /**
+   * Только для subtype='upgrade' — прирост навыка при навешивании
+   * апгрейда на оружие/оборудование. Overlay-only (парсер не тянет).
+   */
+  providesSkill?: ItemProvidesSkill;
   _meta?: OverlayMeta;
 }

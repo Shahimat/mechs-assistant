@@ -14,6 +14,7 @@ import { SectionDivider } from '@/components/catalog/CatalogSection.styles';
 import { PairToggleGroup } from '@/components/catalog/PairToggleGroup';
 import { useSearchFilter } from '@/components/catalog/hooks/useSearchFilter';
 import { usePairFilter } from '@/components/catalog/hooks/usePairFilter';
+import { useDeepLinkOpen } from '@/components/catalog/hooks/useDeepLinkOpen';
 import { LootCard } from './LootCard';
 import { LootDetail } from './LootDetail';
 import { SortableLootCard } from './SortableLootCard';
@@ -25,6 +26,12 @@ export function LootCatalog() {
   const { loot, favorites, isLoading, error, initializeLoot, toggleFavorite, reorderFavorites } =
     useLootStore();
   const [selectedLoot, setSelectedLoot] = useState<Loot | null>(null);
+  const { openInUrl, clearOpen } = useDeepLinkOpen(
+    loot,
+    (l) => l.key,
+    setSelectedLoot,
+    () => setSelectedLoot(null)
+  );
 
   useEffect(() => {
     if (loot.length === 0 && !isLoading) {
@@ -74,7 +81,13 @@ export function LootCatalog() {
   }, [sourceFilter, favSearch, otherSearch]);
 
   const handleToggleFavorite = useCallback((key: string) => toggleFavorite(key), [toggleFavorite]);
-  const handleCardClick = useCallback((l: Loot) => setSelectedLoot(l), []);
+  const handleCardClick = useCallback(
+    (l: Loot) => {
+      setSelectedLoot(l);
+      openInUrl(l.key);
+    },
+    [openInUrl]
+  );
 
   if (isLoading) {
     return (
@@ -182,7 +195,13 @@ export function LootCatalog() {
         )}
       </CatalogSection>
 
-      <LootDetail loot={selectedLoot} onClose={() => setSelectedLoot(null)} />
+      <LootDetail
+        loot={selectedLoot}
+        onClose={() => {
+          setSelectedLoot(null);
+          clearOpen();
+        }}
+      />
     </Page>
   );
 }

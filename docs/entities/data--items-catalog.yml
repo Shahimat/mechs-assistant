@@ -27,6 +27,7 @@ description: |
     - 3788 «Ремкомплект» → subtype='repair' (5)
     - 3792 «Сканер» → subtype='scanner' (5)
     - 3796 «Телепортатор» → subtype='teleport' (14)
+    - 3950 «Установка навыков» → subtype='upgrade' (6, + 2 через overlay)
 
   Итого ~54 записи. `subtype` определяется через контекст парсера, не
   через CSS-класс: пакИ и подаркИ имеют один CSS
@@ -51,7 +52,7 @@ source_files:
 
 wiki_source:
   root_page_id: 3111 # оглавление «Используемые»
-  root_page_ids: [3704, 3719, 3779, 3786, 3788, 3792, 3796] # прямые seeds для BFS
+  root_page_ids: [3704, 3719, 3779, 3786, 3788, 3792, 3796, 3950] # прямые seeds для BFS (3950 = /wiki/modification/installation-skills — апгрейды-предметы)
   section: Предметы → Используемые
   data_flow: auto-parsed
   page_structure: |
@@ -66,7 +67,7 @@ schema:
     - key # уникальный идентификатор (translit от name)
     - name # полное название с моделью
     - model # префикс без варианта
-    - subtype # `pack` | `gift` | `energy` | `invis` | `repair` | `scanner` | `teleport`
+    - subtype # `pack` | `gift` | `energy` | `invis` | `repair` | `scanner` | `teleport` | `upgrade`
     - stats # ItemStats — плоский набор subtype-specific опциональных полей
   stats_fields:
     required: [weight]
@@ -83,6 +84,7 @@ schema:
   optional_top_level:
     - requiredLevel
     - requiredRobotType # scanner
+    - providesSkill # только у upgrade — { skillKey: string, value: number } — overlay-поле; парсер не тянет (на вики только описательная фраза «Микросхема для установки Nй ступени навыков»)
     - buyPrice # { bonds?, regls? }
     - sellPrice # { bonds?, regls? } — у части паков может отсутствовать
     - craftFromBlueprints # список названий чертежей
@@ -125,6 +127,11 @@ schema:
       label_ru: Телепортатор
       approx_count: 14
       primary_stat: null # у телепортаторов нет числового стата, только вес/цены
+    - key: upgrade
+      seed_page_id: 3950
+      label_ru: Апгрейды
+      approx_count: 6 # 1-6 на вики; 7-8 добавляются через overlay Sheets (как «Грач» у мехов)
+      primary_stat: null # прирост навыков от апгрейда — overlay-поле providesSkill
 
 features_enabled: [json-source, typed-schema, overlay-merge]
 features_disabled: [network-fetch, dynamic-schema]
@@ -136,4 +143,9 @@ behaviors:
   - view--items-catalog-renders-cards-grid # кросс-ссылка
 
 verified_note: |
-  Data-слой закрыт 2026-07-13: 7 seed'ов, 52 записи. `stats.creates`/`createdIn` — структурированные `LootDrop[]` вместо склеенной каши `.text()` (парсер `extractLootDrops` разбирает `<span class="wiki-inline-block">` по элементам). У Кольца/Мишки — 12 дропов каждый, у Контейнера Удачи — 22, у Паков и Наборов Апов — от 1 до 8. Все behaviors verified 2026-07-13.
+  Data-слой закрыт 2026-07-14 (расширение): добавлен subtype='upgrade'
+  через seed 3950 (/wiki/modification/installation-skills), 6 записей
+  парсер + 2 (уровни 7-8) через overlay Sheets. Overlay-поле
+  `providesSkill: { skillKey, value }` заведено — парсер не тянет,
+  заполняется вручную по мере знаний. Всего 52 → ~58 записей после
+  прогона.

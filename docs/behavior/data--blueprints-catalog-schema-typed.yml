@@ -1,0 +1,31 @@
+id: data--blueprints-catalog-schema-typed
+kind: behavior
+namespace: catalog
+entities: [data--blueprints-catalog]
+title: Каждая запись blueprints.json соответствует типу Blueprint (TS strict)
+
+scenarios:
+  - given: "TypeScript strict включён (`strict: true`) и `resolveJsonModule: true`"
+    when: файл `store.ts` импортирует `blueprintsData` из `@build/data/blueprints.json`
+      и приводит к `Blueprint[]`
+    then: |
+      сборка проходит без ошибок типа. `Blueprint`-тип из
+      `src/types/blueprint.ts` (category + optional subtype + producesKey +
+      producesCatalog + output + ingredients[] + stats.durability +
+      optional skillSpecialist/bondsCost/reglsCost).
+
+  - given: в JSON появилась запись без `category` или `stats.durability`
+    when: разработчик пытается собрать проект (`npm run build`)
+    then: |
+      сборка/typecheck должны падать. Оговорка про runtime-валидацию та же,
+      что для всех data-каталогов.
+
+  - given: у записи `ingredients[i]` заполнены `key` и `catalog`
+    when: TS-компиляция проверяет типы
+    then: |
+      `BlueprintIngredient { key: string; catalog?: string; count: number }`
+      — catalog опциональный (резолвится merger'ом; unresolved → null).
+
+verified: false
+verified_note: |
+  Спецификация создана в фазе docs 2026-07-14, реализация — в фазе feat.

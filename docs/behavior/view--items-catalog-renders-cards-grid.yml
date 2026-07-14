@@ -28,7 +28,6 @@ scenarios:
     when: пользователь открыл `/catalogs/items-catalog`
     then: view--items-catalog показывает error state (Alert severity=error).
 
-verified: true
-verified_at: 2026-07-13
+verified: false
 verified_note: |
-  Проверено чтением кода `ItemsCatalog.tsx`/`ItemCard.tsx`/`subtypeLabels.ts`: `PRIMARY_STAT.pack = null` и `PRIMARY_STAT.gift = null` — в карточке этих subtype primary stat не рендерится (только имя, chip subtype/уровня, вес). `ItemDetail.tsx` для creates/createdIn использует `<LootDropSection>` — flex-wrap список chip'ов «Название ×N (M%)» (без шанса — если поле отсутствует). PairToggleGroup, favorites, search — без изменений. Финальная визуальная проверка в браузере — пройдена юзером 2026-07-13.
+  Сценарий обновлён в фазе docs 2026-07-14: PairToggleGroup +5-я капсула «Апгрейды» (upgrade). Реализация — в фазе feat.

@@ -14,6 +14,7 @@ import { SectionDivider } from '@/components/catalog/CatalogSection.styles';
 import { PairToggleGroup } from '@/components/catalog/PairToggleGroup';
 import { useSearchFilter } from '@/components/catalog/hooks/useSearchFilter';
 import { usePairFilter } from '@/components/catalog/hooks/usePairFilter';
+import { useDeepLinkOpen } from '@/components/catalog/hooks/useDeepLinkOpen';
 import { ItemCard } from './ItemCard';
 import { ItemDetail } from './ItemDetail';
 import { SortableItemCard } from './SortableItemCard';
@@ -25,6 +26,12 @@ export function ItemsCatalog() {
   const { items, favorites, isLoading, error, initializeItems, toggleFavorite, reorderFavorites } =
     useItemsStore();
   const [selectedItem, setSelectedItem] = useState<Item | null>(null);
+  const { openInUrl, clearOpen } = useDeepLinkOpen(
+    items,
+    (i) => i.key,
+    setSelectedItem,
+    () => setSelectedItem(null)
+  );
 
   useEffect(() => {
     if (items.length === 0 && !isLoading) {
@@ -74,7 +81,13 @@ export function ItemsCatalog() {
   }, [subtypeFilter, favSearch, otherSearch]);
 
   const handleToggleFavorite = useCallback((key: string) => toggleFavorite(key), [toggleFavorite]);
-  const handleCardClick = useCallback((item: Item) => setSelectedItem(item), []);
+  const handleCardClick = useCallback(
+    (item: Item) => {
+      setSelectedItem(item);
+      openInUrl(item.key);
+    },
+    [openInUrl]
+  );
 
   if (isLoading) {
     return (
@@ -182,7 +195,13 @@ export function ItemsCatalog() {
         )}
       </CatalogSection>
 
-      <ItemDetail item={selectedItem} onClose={() => setSelectedItem(null)} />
+      <ItemDetail
+        item={selectedItem}
+        onClose={() => {
+          setSelectedItem(null);
+          clearOpen();
+        }}
+      />
     </Page>
   );
 }

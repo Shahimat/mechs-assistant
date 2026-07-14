@@ -7,6 +7,7 @@ import { isOverlaidField, isOverlaidPathOrChildren } from '@/utils/overlay';
 import { resolveIconUrl } from '@/utils/icons';
 import { OverlayBadge } from '@/components/catalog/OverlayBadge';
 import { OverlayPill } from '@/styles/overlay';
+import { BlueprintChipList } from '@/components/catalog/BlueprintChipList';
 import {
   Title,
   Spacer,
@@ -196,12 +197,7 @@ export function OreDetail({ ore, onClose }: OreDetailProps) {
                 <Typography variant="subtitle2" gutterBottom>
                   Крафт
                 </Typography>
-                <ValueRow
-                  ore={ore}
-                  path="craftFromBlueprints"
-                  label="Из чертежей"
-                  value={ore.craftFromBlueprints.join(', ')}
-                />
+                <BlueprintChipList names={ore.craftFromBlueprints} />
               </>
             )}
 

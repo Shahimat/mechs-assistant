@@ -1,5 +1,125 @@
 [
   {
+    "key": "apgreyd_uroven_1",
+    "name": "Апгрейд Уровень 1",
+    "model": "Апгрейд Уровень",
+    "subtype": "upgrade",
+    "buyPrice": {
+      "bonds": 400000,
+      "regls": 15
+    },
+    "sellPrice": {
+      "bonds": 100000
+    },
+    "craftFromBlueprints": [],
+    "description": "Микросхема для установки 1й ступени навыков на оружие или оборудование. Выдается за квест, создается крафтом или выпадает из подарков.",
+    "stats": {
+      "weight": 10
+    },
+    "iconPath": "items/apgreyd_uroven_1.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3950"
+  },
+  {
+    "key": "apgreyd_uroven_2",
+    "name": "Апгрейд Уровень 2",
+    "model": "Апгрейд Уровень",
+    "subtype": "upgrade",
+    "buyPrice": {
+      "bonds": 500000,
+      "regls": 20
+    },
+    "sellPrice": {
+      "bonds": 125000
+    },
+    "craftFromBlueprints": [],
+    "description": "Микросхема для установки 2й ступени навыков на оружие или оборудование. Выдается за квест, создается крафтом или выпадает из подарков.",
+    "stats": {
+      "weight": 10
+    },
+    "iconPath": "items/apgreyd_uroven_2.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3950"
+  },
+  {
+    "key": "apgreyd_uroven_3",
+    "name": "Апгрейд Уровень 3",
+    "model": "Апгрейд Уровень",
+    "subtype": "upgrade",
+    "buyPrice": {
+      "bonds": 600000,
+      "regls": 25
+    },
+    "sellPrice": {
+      "bonds": 150000
+    },
+    "craftFromBlueprints": [],
+    "description": "Микросхема для установки 3й ступени навыков на оружие или оборудование. Выдается за квест, создается крафтом или выпадает из подарков.",
+    "stats": {
+      "weight": 10
+    },
+    "iconPath": "items/apgreyd_uroven_3.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3950"
+  },
+  {
+    "key": "apgreyd_uroven_4",
+    "name": "Апгрейд Уровень 4",
+    "model": "Апгрейд Уровень",
+    "subtype": "upgrade",
+    "buyPrice": {
+      "bonds": 600000,
+      "regls": 30
+    },
+    "sellPrice": {
+      "bonds": 150000
+    },
+    "craftFromBlueprints": [],
+    "description": "Микросхема для установки 4й ступени навыков на оружие или оборудование. Выдается за квест, создается крафтом или выпадает из подарков.",
+    "stats": {
+      "weight": 10
+    },
+    "iconPath": "items/apgreyd_uroven_4.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3950"
+  },
+  {
+    "key": "apgreyd_uroven_5",
+    "name": "Апгрейд Уровень 5",
+    "model": "Апгрейд Уровень",
+    "subtype": "upgrade",
+    "buyPrice": {
+      "bonds": 600000,
+      "regls": 80
+    },
+    "sellPrice": {
+      "bonds": 150000
+    },
+    "craftFromBlueprints": [],
+    "description": "Микросхема для установки 5й ступени навыков на оружие или оборудование. Выдается за квест, создается крафтом или выпадает из подарков.",
+    "stats": {
+      "weight": 10
+    },
+    "iconPath": "items/apgreyd_uroven_5.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3950"
+  },
+  {
+    "key": "apgreyd_uroven_6",
+    "name": "Апгрейд Уровень 6",
+    "model": "Апгрейд Уровень",
+    "subtype": "upgrade",
+    "buyPrice": {
+      "bonds": 600000,
+      "regls": 120
+    },
+    "sellPrice": {
+      "bonds": 150000
+    },
+    "craftFromBlueprints": [],
+    "description": "Микросхема для установки 6й ступени навыков на оружие или оборудование. Выдается за квест, создается крафтом или выпадает из подарков.",
+    "stats": {
+      "weight": 10
+    },
+    "iconPath": "items/apgreyd_uroven_6.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3950"
+  },
+  {
     "key": "koltso",
     "name": "Кольцо",
     "model": "Кольцо",

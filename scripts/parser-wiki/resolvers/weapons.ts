@@ -1,6 +1,8 @@
 import type { AnyNode } from 'domhandler';
+import type { CheerioAPI, Cheerio } from 'cheerio';
 import type { QueueItem, Resolver } from '../lib/bfs.js';
 import { parseAlt, extractRows, parseNumber, parsePrice, type Price } from '../lib/html.js';
+import { translit } from '../translit.js';
 
 const WIKI_BASE = 'https://new.mechs.su';
 const ROOT_PAGE_ID = 3341; // «Вооружение» — оглавление
@@ -36,6 +38,18 @@ export interface WeaponStats {
   minRange?: number;
 }
 
+export interface TransformIngredient {
+  key: string;
+  count: number;
+}
+
+export interface Transform {
+  fromKey: string;
+  ingredients: TransformIngredient[];
+  bondsCost?: number;
+  reglsCost?: number;
+}
+
 export interface Weapon {
   key: string;
   name: string;
@@ -51,6 +65,7 @@ export interface Weapon {
   description?: string;
   iconPath?: string;
   wikiUrl?: string;
+  transformsFrom?: Transform;
 }
 
 /** Пустой контекст — категорию берём из CSS-класса на месте. */
@@ -127,6 +142,13 @@ export const weaponsResolver: Resolver<Weapon, WeaponCtx> = {
           weapon.requiredLevel = Number(nameLevelMatch[1]);
         }
       }
+
+      // «Преобразуется из» + «Для преобразования требуется» — цепочка
+      // трансформации. td1 склеен из двух меток, второй `<a data-description>`
+      // указывает на предыдущий weapon (первый — tooltip-help); td2 содержит
+      // ингредиенты (span'ы с иконкой + <sub>) и цену (Боны/Реглы).
+      const transform = extractTransform($, $table as unknown as Cheerio<AnyNode>);
+      if (transform) weapon.transformsFrom = transform;
 
       weapon.stats = stats as WeaponStats;
       if (iconSrc) weapon.iconPath = iconSrc;
@@ -232,4 +254,70 @@ function parseDamageRange(v: string): [number, number] | null {
   const single = parseNumber(v);
   if (single != null) return [single, single];
   return null;
+}
+
+/**
+ * Извлекает трансформацию weapon из склеенной ячейки «Преобразуется из /
+ * Для преобразования требуется». В td1 второй `<a data-description>` —
+ * предыдущий weapon (первый — tooltip-help). В td2:
+ *   - span'ы с иконкой + <sub>N</sub> — ингредиенты (translit
+ *     data-description → key);
+ *   - span'ы без <sub> с текстом «Боны: N» / «Реглы: N» — стоимость.
+ */
+function extractTransform($: CheerioAPI, $table: Cheerio<AnyNode>): Transform | null {
+  let result: Transform | null = null;
+  $table.find('td.wiki-item-td1').each((_, td1) => {
+    const $td1 = $(td1);
+    const label = $td1.text().trim().toLowerCase();
+    if (!label.includes('преобразуется из')) return;
+
+    // fromKey: второй data-description (первый — tooltip)
+    const dds: string[] = [];
+    $td1.find('[data-description]').each((_, el) => {
+      const d = $(el).attr('data-description');
+      if (d) dds.push(d.trim());
+    });
+    if (dds.length < 2) return;
+    const fromKey = translit(dds[1]);
+    if (!fromKey) return;
+
+    const $td2 = $td1.next('td.wiki-item-td2');
+    const ingredients: TransformIngredient[] = [];
+    let bondsCost: number | undefined;
+    let reglsCost: number | undefined;
+
+    $td2.find('span.wiki-inline-block').each((_, span) => {
+      const $span = $(span);
+      const $sub = $span.find('sub').first();
+      if ($sub.length) {
+        // ингредиент: имя из data-description
+        let name = '';
+        $span.find('[data-description]').each((_, el) => {
+          const d = $(el).attr('data-description');
+          if (d && !name) name = d.trim();
+        });
+        if (!name) {
+          const alt = $span.find('img').first().attr('alt') ?? '';
+          name = alt.replace(/^Иконка\s+/i, '').trim();
+        }
+        if (!name) return;
+        const key = translit(name);
+        if (!key) return;
+        const count = parseNumber($sub.text().trim()) ?? 1;
+        ingredients.push({ key, count });
+      } else {
+        // требование: «Боны: N» / «Реглы: N»
+        const text = $span.text().trim();
+        const mBonds = /Боны[^\d]*(\d+(?:[.,]\d+)?)/i.exec(text);
+        if (mBonds) bondsCost = Number(mBonds[1].replace(',', '.'));
+        const mRegls = /Реглы[^\d]*(\d+(?:[.,]\d+)?)/i.exec(text);
+        if (mRegls) reglsCost = Number(mRegls[1].replace(',', '.'));
+      }
+    });
+
+    result = { fromKey, ingredients };
+    if (bondsCost != null) result.bondsCost = bondsCost;
+    if (reglsCost != null) result.reglsCost = reglsCost;
+  });
+  return result;
 }

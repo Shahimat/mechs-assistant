@@ -7,6 +7,9 @@ import { isOverlaidField, isOverlaidPathOrChildren } from '@/utils/overlay';
 import { resolveIconUrl } from '@/utils/icons';
 import { OverlayBadge } from '@/components/catalog/OverlayBadge';
 import { OverlayPill } from '@/styles/overlay';
+import { IngredientMiniCard } from '@/components/catalog/IngredientMiniCard';
+import { MiniCardList } from '@/components/catalog/IngredientMiniCard.styles';
+import { BlueprintChipList } from '@/components/catalog/BlueprintChipList';
 import {
   Title,
   Spacer,
@@ -19,6 +22,7 @@ import {
   PriceParts,
   PriceSeparator,
   Description,
+  InlineLabel,
 } from './EquipmentDetail.styles';
 
 interface EquipmentDetailProps {
@@ -220,12 +224,59 @@ export function EquipmentDetail({ item, onClose }: EquipmentDetailProps) {
                 <Typography variant="subtitle2" gutterBottom>
                   Крафт
                 </Typography>
+                <BlueprintChipList names={item.craftFromBlueprints} />
+              </>
+            )}
+
+            {item.transformsFrom && (
+              <>
+                <Divider sx={{ my: 2 }} />
+                <Typography variant="subtitle2" gutterBottom>
+                  Преобразование
+                </Typography>
                 <ValueRow
                   item={item}
-                  path="craftFromBlueprints"
-                  label="Из чертежей"
-                  value={item.craftFromBlueprints.join(', ')}
+                  path="transformsFrom.fromKey"
+                  label="Из"
+                  value={item.transformsFrom.fromKey}
                 />
+                {item.transformsFrom.ingredients.length > 0 && (
+                  <>
+                    <InlineLabel>Ингредиенты</InlineLabel>
+                    <MiniCardList>
+                      {item.transformsFrom.ingredients.map((ing, i) => (
+                        <IngredientMiniCard
+                          key={`${ing.key}-${i}`}
+                          catalog={ing.catalog}
+                          entryKey={ing.key}
+                          count={ing.count}
+                        />
+                      ))}
+                    </MiniCardList>
+                  </>
+                )}
+                {(item.transformsFrom.bondsCost != null ||
+                  item.transformsFrom.reglsCost != null) && (
+                  <Row>
+                    <Typography variant="body2" color="text.secondary">
+                      Стоимость
+                    </Typography>
+                    <PriceParts>
+                      {item.transformsFrom.bondsCost != null && (
+                        <OverlayPill overlaid={isOverlaidField(item, 'transformsFrom.bondsCost')}>
+                          {formatPricePart(item.transformsFrom.bondsCost, 'бонов')}
+                        </OverlayPill>
+                      )}
+                      {item.transformsFrom.bondsCost != null &&
+                        item.transformsFrom.reglsCost != null && <PriceSeparator>/</PriceSeparator>}
+                      {item.transformsFrom.reglsCost != null && (
+                        <OverlayPill overlaid={isOverlaidField(item, 'transformsFrom.reglsCost')}>
+                          {formatPricePart(item.transformsFrom.reglsCost, 'реглов')}
+                        </OverlayPill>
+                      )}
+                    </PriceParts>
+                  </Row>
+                )}
               </>
             )}
 

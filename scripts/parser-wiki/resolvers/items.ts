@@ -5,7 +5,8 @@ import { parseAlt, extractRows, parseNumber, parsePrice, type Price } from '../l
 
 const WIKI_BASE = 'https://new.mechs.su';
 
-export type ItemSubtype = 'pack' | 'gift' | 'energy' | 'invis' | 'repair' | 'scanner' | 'teleport';
+export type ItemSubtype =
+  'pack' | 'gift' | 'energy' | 'invis' | 'repair' | 'scanner' | 'teleport' | 'upgrade';
 
 /**
  * Стартовые страницы категорий предметов. По каждой — своя ветка BFS с
@@ -25,6 +26,7 @@ const ITEM_SUBTYPE_PAGES: Array<{ page_id: number; subtype: ItemSubtype }> = [
   { page_id: 3788, subtype: 'repair' },
   { page_id: 3792, subtype: 'scanner' },
   { page_id: 3796, subtype: 'teleport' },
+  { page_id: 3950, subtype: 'upgrade' }, // /wiki/modification/installation-skills — апгрейды-предметы (1-6); 7-8 через overlay Sheets
 ];
 
 export interface LootDrop {

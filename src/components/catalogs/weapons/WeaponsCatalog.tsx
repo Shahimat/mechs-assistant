@@ -15,6 +15,7 @@ import { LevelRangeFilter } from '@/components/catalog/LevelRangeFilter';
 import { PairToggleGroup } from '@/components/catalog/PairToggleGroup';
 import { useSearchFilter } from '@/components/catalog/hooks/useSearchFilter';
 import { useLevelRangeFilter } from '@/components/catalog/hooks/useLevelRangeFilter';
+import { useDeepLinkOpen } from '@/components/catalog/hooks/useDeepLinkOpen';
 import { usePairFilter, type FilterPair } from '@/components/catalog/hooks/usePairFilter';
 import { WeaponCard } from './WeaponCard';
 import { WeaponDetail } from './WeaponDetail';
@@ -114,6 +115,12 @@ export function WeaponsCatalog() {
     reorderFavorites,
   } = useWeaponsStore();
   const [selectedWeapon, setSelectedWeapon] = useState<Weapon | null>(null);
+  const { openInUrl, clearOpen } = useDeepLinkOpen(
+    weapons,
+    (w) => w.key,
+    setSelectedWeapon,
+    () => setSelectedWeapon(null)
+  );
 
   useEffect(() => {
     if (weapons.length === 0 && !isLoading) {
@@ -173,7 +180,13 @@ export function WeaponsCatalog() {
   }, [groupFilter, level, favSearch, otherSearch]);
 
   const handleToggleFavorite = useCallback((key: string) => toggleFavorite(key), [toggleFavorite]);
-  const handleCardClick = useCallback((weapon: Weapon) => setSelectedWeapon(weapon), []);
+  const handleCardClick = useCallback(
+    (weapon: Weapon) => {
+      setSelectedWeapon(weapon);
+      openInUrl(weapon.key);
+    },
+    [openInUrl]
+  );
 
   if (isLoading) {
     return (
@@ -288,7 +301,13 @@ export function WeaponsCatalog() {
         )}
       </CatalogSection>
 
-      <WeaponDetail weapon={selectedWeapon} onClose={() => setSelectedWeapon(null)} />
+      <WeaponDetail
+        weapon={selectedWeapon}
+        onClose={() => {
+          setSelectedWeapon(null);
+          clearOpen();
+        }}
+      />
     </Page>
   );
 }

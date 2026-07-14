@@ -58,7 +58,8 @@ refactor: [weapons/ammo] вынести `CATEGORY_LABELS` + `LABEL_TO_CATEGORY` 
 # hook для устойчивости к 404 seed'а (недостающие записи из fallback);
 # минималистичный UI без фильтров; audit 4 behaviors выполнен.
 catalog: [skill-modifiers] новая сущность перед MVP2 калькулятора — модель числовых модификаторов (skill × level → множитель к weapon.damage / robot.armor / sellPrice / ...), overlay-первичная (данных на вики нет, ручной ввод) → фаза docs → skills раскатан
-catalog: последний оставшийся каталог blueprints — накатывается по паттерну → фаза feat → skills раскатан
+catalog: [blueprints + items(upgrade) + weapons(transformsFrom) + equipment(transformsFrom)] docs готовы (2 новые entity + 4 blueprints behaviors + verify:false на 20 затронутых) — дальше 6 feat-подфаз: (1) items subtype=upgrade + seed 3950; (2) weapons+equipment transformsFrom (+ 8-10 колонок в Sheets); (3) blueprints resolver 9 seed'ов + BLUEPRINTS_COLUMNS + build-data cross-catalog resolve; (4) items UI +капсула; (5) weapons+equipment UI +chip карточки/секция детали; (6) blueprints UI полностью → фаза feat → docs готовы
+catalog: [skill-modifiers] новая сущность перед MVP2 калькулятора — модель числовых модификаторов (skill × level → множитель к weapon.damage / robot.armor / sellPrice / ...), overlay-первичная (данных на вики нет, ручной ввод) → фаза docs → skills раскатан
 catalog: parser--wiki расширить конфиг на 9 оставшихся каталогов → фаза feat → парсер обобщён
 catalog: parser--google-sheets расширить на 9 листов Sheets → фаза feat → лист под каталог настроен
 ui: подключить view для остальных каталогов через catalog-примитивы (equipment, ammo, items, loot, blueprints, ore, components, currencies, skills) — плитки на CatalogsHubPage + stub-роуты уже готовы (`CatalogStubPage`), нужно заменить stub на реальный view в `src/components/catalogs/<slug>/` по мере готовности парсера/overlay каждого каталога → фаза feat → catalog-shell выделен, данные каталога загружаются

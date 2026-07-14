@@ -13,6 +13,7 @@ import { SectionDivider } from '@/components/catalog/CatalogSection.styles';
 import { LevelRangeFilter } from '@/components/catalog/LevelRangeFilter';
 import { useSearchFilter } from '@/components/catalog/hooks/useSearchFilter';
 import { useLevelRangeFilter } from '@/components/catalog/hooks/useLevelRangeFilter';
+import { useDeepLinkOpen } from '@/components/catalog/hooks/useDeepLinkOpen';
 import { EquipmentCard } from './EquipmentCard';
 import { EquipmentDetail } from './EquipmentDetail';
 import { SortableEquipmentCard } from './SortableEquipmentCard';
@@ -67,6 +68,15 @@ export function EquipmentSubCatalog({
     [equipment, subtype]
   );
 
+  // Deep-link открытие детали работает только в пределах текущего подкаталога:
+  // catalogPathFor уже роутит в правильный подкаталог по subtype записи.
+  const { openInUrl, clearOpen } = useDeepLinkOpen(
+    subtypeItems,
+    (e) => e.key,
+    setSelectedItem,
+    () => setSelectedItem(null)
+  );
+
   const level = useLevelRangeFilter({ items: subtypeItems, getLevel: getItemLevel });
   const favoritesSet = useMemo(() => new Set(favorites), [favorites]);
 
@@ -102,7 +112,13 @@ export function EquipmentSubCatalog({
   }, [level, favSearch, otherSearch]);
 
   const handleToggleFavorite = useCallback((key: string) => toggleFavorite(key), [toggleFavorite]);
-  const handleCardClick = useCallback((item: Equipment) => setSelectedItem(item), []);
+  const handleCardClick = useCallback(
+    (item: Equipment) => {
+      setSelectedItem(item);
+      openInUrl(item.key);
+    },
+    [openInUrl]
+  );
 
   if (isLoading) {
     return (
@@ -208,7 +224,13 @@ export function EquipmentSubCatalog({
         )}
       </CatalogSection>
 
-      <EquipmentDetail item={selectedItem} onClose={() => setSelectedItem(null)} />
+      <EquipmentDetail
+        item={selectedItem}
+        onClose={() => {
+          setSelectedItem(null);
+          clearOpen();
+        }}
+      />
     </Page>
   );
 }

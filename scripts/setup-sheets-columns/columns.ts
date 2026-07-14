@@ -93,6 +93,24 @@ export const WEAPONS_COLUMNS: ColumnSpec[] = [
   { name: 'description', description: 'Свободное описание оружия' },
   { name: 'iconPath', description: 'Путь к иконке (например data/icons/weapons/…)' },
   { name: 'wikiUrl', description: 'URL детальной страницы вики' },
+  {
+    name: 'transformsFrom.fromKey',
+    description:
+      'Трансформация — key предыдущего weapon (translit), из которого получен текущий (напр. mortira для Мортира 5)',
+  },
+  {
+    name: 'transformsFrom.res1',
+    description: 'Ингредиент 1 трансформации, key: ore/loot/components (напр. loot/khvost_varana)',
+  },
+  { name: 'transformsFrom.count1', description: 'Кол-во ингредиента 1' },
+  { name: 'transformsFrom.res2', description: 'Ингредиент 2 (key)' },
+  { name: 'transformsFrom.count2', description: 'Кол-во ингредиента 2' },
+  { name: 'transformsFrom.res3', description: 'Ингредиент 3 (key)' },
+  { name: 'transformsFrom.count3', description: 'Кол-во ингредиента 3' },
+  { name: 'transformsFrom.res4', description: 'Ингредиент 4 (key)' },
+  { name: 'transformsFrom.count4', description: 'Кол-во ингредиента 4' },
+  { name: 'transformsFrom.bondsCost', description: 'Стоимость трансформации в бонах' },
+  { name: 'transformsFrom.reglsCost', description: 'Стоимость трансформации в реглах' },
   { name: 'source_note', description: 'Комментарий редактора (не идёт в JSON)' },
 ];
 
@@ -137,6 +155,24 @@ export const EQUIPMENT_COLUMNS: ColumnSpec[] = [
   { name: 'description', description: 'Свободное описание' },
   { name: 'iconPath', description: 'Путь к иконке (например data/icons/equipment/…)' },
   { name: 'wikiUrl', description: 'URL детальной страницы вики' },
+  {
+    name: 'transformsFrom.fromKey',
+    description:
+      'Трансформация — key предыдущего equipment (translit). У extractor поля нет, у большинства armour/accumulator/generator/shield/cargo — заполнено',
+  },
+  {
+    name: 'transformsFrom.res1',
+    description: 'Ингредиент 1 трансформации, key: ore/loot/components (напр. loot/khvost_varana)',
+  },
+  { name: 'transformsFrom.count1', description: 'Кол-во ингредиента 1' },
+  { name: 'transformsFrom.res2', description: 'Ингредиент 2 (key)' },
+  { name: 'transformsFrom.count2', description: 'Кол-во ингредиента 2' },
+  { name: 'transformsFrom.res3', description: 'Ингредиент 3 (key)' },
+  { name: 'transformsFrom.count3', description: 'Кол-во ингредиента 3' },
+  { name: 'transformsFrom.res4', description: 'Ингредиент 4 (key)' },
+  { name: 'transformsFrom.count4', description: 'Кол-во ингредиента 4' },
+  { name: 'transformsFrom.bondsCost', description: 'Стоимость трансформации в бонах' },
+  { name: 'transformsFrom.reglsCost', description: 'Стоимость трансформации в реглах' },
   { name: 'source_note', description: 'Комментарий редактора (не идёт в JSON)' },
 ];
 
@@ -217,6 +253,16 @@ export const ITEMS_COLUMNS: ColumnSpec[] = [
   { name: 'description', description: 'Свободное описание предмета' },
   { name: 'iconPath', description: 'Путь к иконке (например data/icons/items/…)' },
   { name: 'wikiUrl', description: 'URL детальной страницы вики' },
+  {
+    name: 'providesSkill.skillKey',
+    description:
+      'Только у subtype=upgrade — key навыка из data--skills-catalog (напр. `energetika`), к которому апгрейд прибавляет статы. Overlay-only, парсер не тянет',
+  },
+  {
+    name: 'providesSkill.value',
+    description:
+      'Только у subtype=upgrade — число прибавки к навыку (напр. 3 = +3 к статам energetika). Overlay-only',
+  },
   { name: 'source_note', description: 'Комментарий редактора (не идёт в JSON)' },
 ];
 
@@ -319,6 +365,67 @@ export const SKILLS_COLUMNS: ColumnSpec[] = [
   { name: 'source_note', description: 'Комментарий редактора (не идёт в JSON)' },
 ];
 
+export const BLUEPRINTS_COLUMNS: ColumnSpec[] = [
+  { name: 'key', description: 'Ключ чертежа (translit от имени, напр. chertezh_pulemyot_6b)' },
+  { name: 'name', description: 'Полное название чертежа («Чертеж Пулемёт 6Б»)' },
+  { name: 'model', description: 'Имя без числового суффикса («Чертеж Пулемёт»)' },
+  {
+    name: 'category',
+    description:
+      'mech / weapon / equipment / component / pack / upgrade / teleport. Базово определяется по URL h2 вики; `mech` — post-processing перекраска из `pack` для чертежей с `producesKey`, начинающимся с `robot_` (Чертёж Филин/Казуар/Снеговик и т.п.)',
+  },
+  {
+    name: 'subtype',
+    description:
+      'Только для category=equipment: cargo / computer / armour / shield (по подсловарю drawing-*)',
+  },
+  {
+    name: 'producesKey',
+    description:
+      'key целевой сущности из producesCatalog (translit от data-description первой ссылки в «Создает»)',
+  },
+  {
+    name: 'producesCatalog',
+    description:
+      'Slug каталога цели: weapons / equipment / components / items (по href из «Создает»)',
+  },
+  { name: 'output', description: '«Создает» — сколько получается за 1 крафт' },
+  {
+    name: 'ingredient1.key',
+    description: 'Ингредиент 1 — key (translit от data-description иконки в «Для создания»)',
+  },
+  {
+    name: 'ingredient1.catalog',
+    description: 'Ингредиент 1 — slug каталога (components/weapons/equipment/loot/ore/items)',
+  },
+  { name: 'ingredient1.count', description: 'Ингредиент 1 — количество (<sub>N</sub>)' },
+  { name: 'ingredient2.key', description: 'Ингредиент 2 — key' },
+  { name: 'ingredient2.catalog', description: 'Ингредиент 2 — slug каталога' },
+  { name: 'ingredient2.count', description: 'Ингредиент 2 — количество' },
+  { name: 'ingredient3.key', description: 'Ингредиент 3 — key' },
+  { name: 'ingredient3.catalog', description: 'Ингредиент 3 — slug каталога' },
+  { name: 'ingredient3.count', description: 'Ингредиент 3 — количество' },
+  { name: 'ingredient4.key', description: 'Ингредиент 4 — key' },
+  { name: 'ingredient4.catalog', description: 'Ингредиент 4 — slug каталога' },
+  { name: 'ingredient4.count', description: 'Ингредиент 4 — количество' },
+  { name: 'ingredient5.key', description: 'Ингредиент 5 — key' },
+  { name: 'ingredient5.catalog', description: 'Ингредиент 5 — slug каталога' },
+  { name: 'ingredient5.count', description: 'Ингредиент 5 — количество' },
+  {
+    name: 'skillSpecialist',
+    description: '«Навык специалист: N» — требуемый уровень навыка для крафта',
+  },
+  { name: 'bondsCost', description: '«Боны: N» — стоимость крафта в бонах' },
+  { name: 'reglsCost', description: '«Реглы: N» — стоимость крафта в реглах' },
+  { name: 'stats.durability', description: '«Износостойкость» — сколько раз можно использовать' },
+  { name: 'sellPrice.bonds', description: 'Цена продажи в бонах (базовая, без «Торговли»)' },
+  { name: 'sellPrice.regls', description: 'Цена продажи в реглах' },
+  { name: 'description', description: 'Свободное описание чертежа' },
+  { name: 'iconPath', description: 'Путь к иконке (например data/icons/blueprints/…)' },
+  { name: 'wikiUrl', description: 'URL страницы вики (одна из 9 seed-страниц)' },
+  { name: 'source_note', description: 'Комментарий редактора (не идёт в JSON)' },
+];
+
 /** Регистр колонок по slug каталога. */
 export const COLUMNS_BY_SLUG: Record<string, ColumnSpec[]> = {
   robots: MECHS_COLUMNS, // slug=robots, но лист=mechs (см. catalogs.config)
@@ -330,4 +437,5 @@ export const COLUMNS_BY_SLUG: Record<string, ColumnSpec[]> = {
   components: COMPONENTS_COLUMNS,
   loot: LOOT_COLUMNS,
   skills: SKILLS_COLUMNS,
+  blueprints: BLUEPRINTS_COLUMNS,
 };

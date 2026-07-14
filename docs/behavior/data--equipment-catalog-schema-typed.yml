@@ -22,7 +22,6 @@ scenarios:
       задача автора JSON. Оговорка та же, что для robots/weapons —
       без runtime-валидации (zod и т.п.) проверка неполная.
 
-verified: true
-verified_at: 2026-07-13
+verified: false
 verified_note: |
-  Проверено: `npm run build` и `tsc --noEmit` проходят без ошибок типа, `resolveJsonModule` включён, `Equipment` описан в `src/types/equipment.ts` (family/subtype/stats.primary + общие поля). Оговорка та же, что для robots/weapons: приведение `equipmentData as Equipment[]` в store.ts — assert, не runtime-валидация. Runtime-проверка (zod) не вводилась — общий пункт для всех 3 data-каталогов в `active.todo` (low).
+  Схема расширена в фазе docs 2026-07-14: `transformsFrom?: { fromKey, ingredients[], bondsCost?, reglsCost? }`. Реализация парсера + UI — в фазе feat.

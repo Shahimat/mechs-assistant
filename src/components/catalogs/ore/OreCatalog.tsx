@@ -8,6 +8,7 @@ import { CatalogGrid } from '@/components/catalog/CatalogGrid';
 import { FavoritesDnDSection } from '@/components/catalog/FavoritesDnDSection';
 import { Page, CenteredPage } from '@/components/catalog/CatalogPage.styles';
 import { SectionDivider } from '@/components/catalog/CatalogSection.styles';
+import { useDeepLinkOpen } from '@/components/catalog/hooks/useDeepLinkOpen';
 import { OreCard } from './OreCard';
 import { OreDetail } from './OreDetail';
 import { SortableOreCard } from './SortableOreCard';
@@ -16,6 +17,12 @@ export function OreCatalog() {
   const { ore, favorites, isLoading, error, initializeOre, toggleFavorite, reorderFavorites } =
     useOreStore();
   const [selectedOre, setSelectedOre] = useState<Ore | null>(null);
+  const { openInUrl, clearOpen } = useDeepLinkOpen(
+    ore,
+    (o) => o.key,
+    setSelectedOre,
+    () => setSelectedOre(null)
+  );
 
   useEffect(() => {
     if (ore.length === 0 && !isLoading) {
@@ -40,7 +47,13 @@ export function OreCatalog() {
   }, [ore, favorites, favoritesSet]);
 
   const handleToggleFavorite = useCallback((key: string) => toggleFavorite(key), [toggleFavorite]);
-  const handleCardClick = useCallback((o: Ore) => setSelectedOre(o), []);
+  const handleCardClick = useCallback(
+    (o: Ore) => {
+      setSelectedOre(o);
+      openInUrl(o.key);
+    },
+    [openInUrl]
+  );
 
   if (isLoading) {
     return (
@@ -113,7 +126,13 @@ export function OreCatalog() {
         </CatalogGrid>
       </CatalogSection>
 
-      <OreDetail ore={selectedOre} onClose={() => setSelectedOre(null)} />
+      <OreDetail
+        ore={selectedOre}
+        onClose={() => {
+          setSelectedOre(null);
+          clearOpen();
+        }}
+      />
     </Page>
   );
 }

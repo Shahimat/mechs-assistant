@@ -34,6 +34,21 @@
     "sellPrice": {
       "bonds": 11148
     },
+    "transformsFrom": {
+      "fromKey": "bronya_91_m1",
+      "ingredients": [
+        {
+          "key": "kristall_zelenyy",
+          "count": 4680
+        },
+        {
+          "key": "kolpograf",
+          "count": 45
+        }
+      ],
+      "bondsCost": 11700000,
+      "reglsCost": 75
+    },
     "stats": {
       "primary": 273,
       "primaryLabel": "Броня",
@@ -79,6 +94,16 @@
     },
     "craftFromBlueprints": [],
     "description": "Броневая защита. Подходит для любого робота",
+    "transformsFrom": {
+      "fromKey": "bronya_8",
+      "ingredients": [
+        {
+          "key": "kristall_zelenyy",
+          "count": 15
+        }
+      ],
+      "bondsCost": 676
+    },
     "stats": {
       "primary": 36,
       "primaryLabel": "Броня",
@@ -101,6 +126,16 @@
     },
     "craftFromBlueprints": [],
     "description": "Броневая защита. Подходит для любого робота",
+    "transformsFrom": {
+      "fromKey": "bronya_13",
+      "ingredients": [
+        {
+          "key": "kristall_zelenyy",
+          "count": 21
+        }
+      ],
+      "bondsCost": 1054
+    },
     "stats": {
       "primary": 47,
       "primaryLabel": "Броня",
@@ -123,6 +158,16 @@
     },
     "craftFromBlueprints": [],
     "description": "Броневая защита. Подходит для любого робота",
+    "transformsFrom": {
+      "fromKey": "bronya_18",
+      "ingredients": [
+        {
+          "key": "kristall_zelenyy",
+          "count": 26
+        }
+      ],
+      "bondsCost": 1598
+    },
     "stats": {
       "primary": 56,
       "primaryLabel": "Броня",
@@ -166,6 +211,16 @@
     },
     "craftFromBlueprints": [],
     "description": "Броневая защита. Подходит для любого робота",
+    "transformsFrom": {
+      "fromKey": "bronya_22",
+      "ingredients": [
+        {
+          "key": "kristall_zelenyy",
+          "count": 31
+        }
+      ],
+      "bondsCost": 2192
+    },
     "stats": {
       "primary": 66,
       "primaryLabel": "Броня",
@@ -191,6 +246,16 @@
     },
     "craftFromBlueprints": [],
     "description": "Броневая защита. Подходит для любого робота",
+    "transformsFrom": {
+      "fromKey": "bronya_26",
+      "ingredients": [
+        {
+          "key": "kristall_zelenyy",
+          "count": 34
+        }
+      ],
+      "bondsCost": 2640
+    },
     "stats": {
       "primary": 73,
       "primaryLabel": "Броня",
@@ -212,6 +277,17 @@
       "bonds": 460
     },
     "description": "Броневая защита. Подходит для любого робота",
+    "transformsFrom": {
+      "fromKey": "bronya_22m1",
+      "ingredients": [
+        {
+          "key": "kristall_zelenyy",
+          "count": 102
+        }
+      ],
+      "bondsCost": 6627,
+      "reglsCost": 3
+    },
     "stats": {
       "primary": 89,
       "primaryLabel": "Броня",
@@ -234,6 +310,16 @@
     },
     "craftFromBlueprints": [],
     "description": "Броневая защита. Подходит для любого робота",
+    "transformsFrom": {
+      "fromKey": "bronya_29",
+      "ingredients": [
+        {
+          "key": "kristall_zelenyy",
+          "count": 39
+        }
+      ],
+      "bondsCost": 2713
+    },
     "stats": {
       "primary": 79,
       "primaryLabel": "Броня",
@@ -256,6 +342,16 @@
     },
     "craftFromBlueprints": [],
     "description": "Броневая защита. Подходит для любого робота",
+    "transformsFrom": {
+      "fromKey": "bronya_33",
+      "ingredients": [
+        {
+          "key": "kristall_zelenyy",
+          "count": 42
+        }
+      ],
+      "bondsCost": 5485
+    },
     "stats": {
       "primary": 83,
       "primaryLabel": "Броня",
@@ -278,6 +374,16 @@
     },
     "craftFromBlueprints": [],
     "description": "Броневая защита. Подходит для любого робота",
+    "transformsFrom": {
+      "fromKey": "bronya_35",
+      "ingredients": [
+        {
+          "key": "kristall_zelenyy",
+          "count": 45
+        }
+      ],
+      "bondsCost": 5529
+    },
     "stats": {
       "primary": 88,
       "primaryLabel": "Броня",
@@ -303,6 +409,16 @@
     },
     "craftFromBlueprints": [],
     "description": "Защита роботаПоглащает огнестрельный уронМожно установить 2 и 2",
+    "transformsFrom": {
+      "fromKey": "bronya",
+      "ingredients": [
+        {
+          "key": "kristall_zelenyy",
+          "count": 4
+        }
+      ],
+      "bondsCost": 110
+    },
     "stats": {
       "primary": 20,
       "primaryLabel": "Броня",
@@ -325,6 +441,16 @@
     },
     "craftFromBlueprints": [],
     "description": "Броневая защита. Подходит для любого робота",
+    "transformsFrom": {
+      "fromKey": "bronya_38",
+      "ingredients": [
+        {
+          "key": "kristall_zelenyy",
+          "count": 48
+        }
+      ],
+      "bondsCost": 6982
+    },
     "stats": {
       "primary": 92,
       "primaryLabel": "Броня",
@@ -346,6 +472,17 @@
       "bonds": 1414
     },
     "description": "Броневая защита. Подходит для любого робота",
+    "transformsFrom": {
+      "fromKey": "bronya_29m1",
+      "ingredients": [
+        {
+          "key": "kristall_zelenyy",
+          "count": 144
+        }
+      ],
+      "bondsCost": 20361,
+      "reglsCost": 9
+    },
     "stats": {
       "primary": 115,
       "primaryLabel": "Броня",
@@ -368,6 +505,16 @@
     },
     "craftFromBlueprints": [],
     "description": "Броневая защита. Подходит для любого робота",
+    "transformsFrom": {
+      "fromKey": "bronya_40",
+      "ingredients": [
+        {
+          "key": "kristall_zelenyy",
+          "count": 50
+        }
+      ],
+      "bondsCost": 6673
+    },
     "stats": {
       "primary": 96,
       "primaryLabel": "Броня",
@@ -390,6 +537,16 @@
     },
     "craftFromBlueprints": [],
     "description": "Броневая защита. Подходит для любого робота",
+    "transformsFrom": {
+      "fromKey": "bronya_42",
+      "ingredients": [
+        {
+          "key": "kristall_zelenyy",
+          "count": 54
+        }
+      ],
+      "bondsCost": 7572
+    },
     "stats": {
       "primary": 101,
       "primaryLabel": "Броня",
@@ -412,6 +569,16 @@
     },
     "craftFromBlueprints": [],
     "description": "Броневая защита. Подходит для любого робота",
+    "transformsFrom": {
+      "fromKey": "bronya_45",
+      "ingredients": [
+        {
+          "key": "kristall_zelenyy",
+          "count": 56
+        }
+      ],
+      "bondsCost": 8160
+    },
     "stats": {
       "primary": 104,
       "primaryLabel": "Броня",
@@ -437,6 +604,16 @@
     },
     "craftFromBlueprints": [],
     "description": "Броневая защита. Подходит для любого робота",
+    "transformsFrom": {
+      "fromKey": "bronya_47",
+      "ingredients": [
+        {
+          "key": "kristall_zelenyy",
+          "count": 60
+        }
+      ],
+      "bondsCost": 8472
+    },
     "stats": {
       "primary": 106,
       "primaryLabel": "Броня",
@@ -462,6 +639,17 @@
       "bonds": 1795
     },
     "description": "Броневая защита. Подходит для любого робота",
+    "transformsFrom": {
+      "fromKey": "bronya_40m1",
+      "ingredients": [
+        {
+          "key": "kristall_zelenyy",
+          "count": 180
+        }
+      ],
+      "bondsCost": 25854,
+      "reglsCost": 11
+    },
     "stats": {
       "primary": 132,
       "primaryLabel": "Броня",
@@ -486,6 +674,16 @@
       "bonds": 3641
     },
     "description": "Броневая защита. Подходит для любого робота",
+    "transformsFrom": {
+      "fromKey": "bronya_50",
+      "ingredients": [
+        {
+          "key": "kristall_zelenyy",
+          "count": 72
+        }
+      ],
+      "bondsCost": 17476
+    },
     "stats": {
       "primary": 118,
       "primaryLabel": "Броня",
@@ -511,6 +709,17 @@
       "bonds": 3744
     },
     "description": "Броневая защита. Подходит для любого робота",
+    "transformsFrom": {
+      "fromKey": "bronya_50m1",
+      "ingredients": [
+        {
+          "key": "kristall_zelenyy",
+          "count": 216
+        }
+      ],
+      "bondsCost": 53913,
+      "reglsCost": 11
+    },
     "stats": {
       "primary": 147,
       "primaryLabel": "Броня",
@@ -535,6 +744,16 @@
       "bonds": 5798
     },
     "description": "Броневая защита. Подходит для любого робота",
+    "transformsFrom": {
+      "fromKey": "bronya_60",
+      "ingredients": [
+        {
+          "key": "kristall_zelenyy",
+          "count": 85
+        }
+      ],
+      "bondsCost": 27834
+    },
     "stats": {
       "primary": 127,
       "primaryLabel": "Броня",
@@ -560,6 +779,17 @@
       "bonds": 5708
     },
     "description": "Броневая защита. Подходит для любого робота",
+    "transformsFrom": {
+      "fromKey": "bronya_60m1",
+      "ingredients": [
+        {
+          "key": "kristall_zelenyy",
+          "count": 255
+        }
+      ],
+      "bondsCost": 82197,
+      "reglsCost": 12
+    },
     "stats": {
       "primary": 159,
       "primaryLabel": "Броня",
@@ -585,6 +815,16 @@
     },
     "craftFromBlueprints": [],
     "description": "Броневая защита. Подходит для любого робота",
+    "transformsFrom": {
+      "fromKey": "bronya_4",
+      "ingredients": [
+        {
+          "key": "kristall_zelenyy",
+          "count": 9
+        }
+      ],
+      "bondsCost": 336
+    },
     "stats": {
       "primary": 28,
       "primaryLabel": "Броня",
@@ -627,6 +867,21 @@
       "bonds": 7135
     },
     "description": "Броневая защита. Подходит для любого робота",
+    "transformsFrom": {
+      "fromKey": "bronya_71m1",
+      "ingredients": [
+        {
+          "key": "kristall_zelenyy",
+          "count": 330
+        },
+        {
+          "key": "kolpograf",
+          "count": 27
+        }
+      ],
+      "bondsCost": 106857,
+      "reglsCost": 15
+    },
     "stats": {
       "primary": 182,
       "primaryLabel": "Броня",
@@ -648,6 +903,21 @@
       "bonds": 8919
     },
     "description": "Броневая защита. Подходит для любого робота",
+    "transformsFrom": {
+      "fromKey": "bronya_81",
+      "ingredients": [
+        {
+          "key": "kristall_zelenyy",
+          "count": 3600
+        },
+        {
+          "key": "kolpograf",
+          "count": 36
+        }
+      ],
+      "bondsCost": 9000000,
+      "reglsCost": 60
+    },
     "stats": {
       "primary": 227,
       "primaryLabel": "Броня",
@@ -1393,6 +1663,45 @@
       "bonds": 12800
     },
     "description": "Чип увеличения прочности робота",
+    "transformsFrom": {
+      "fromKey": "chip_prochnost",
+      "ingredients": [
+        {
+          "key": "kristall_siniy",
+          "count": 2560
+        },
+        {
+          "key": "zhelezo",
+          "count": 144
+        },
+        {
+          "key": "verkhniy_rider",
+          "count": 14
+        },
+        {
+          "key": "zaslon",
+          "count": 7
+        },
+        {
+          "key": "stimulyator",
+          "count": 7
+        },
+        {
+          "key": "stoker",
+          "count": 14
+        },
+        {
+          "key": "kristall_zelenyy",
+          "count": 2160
+        },
+        {
+          "key": "kristall_krasnyy",
+          "count": 2160
+        }
+      ],
+      "bondsCost": 2080000,
+      "reglsCost": 600
+    },
     "stats": {
       "durability": 900,
       "weight": 2500
@@ -1792,6 +2101,21 @@
     "sellPrice": {
       "bonds": 30000
     },
+    "transformsFrom": {
+      "fromKey": "nakopitel_94_m1",
+      "ingredients": [
+        {
+          "key": "kristall_siniy",
+          "count": 6888
+        },
+        {
+          "key": "zakhvat",
+          "count": 36
+        }
+      ],
+      "bondsCost": 6480000,
+      "reglsCost": 180
+    },
     "stats": {
       "primary": 2925,
       "primaryLabel": "Емкость",
@@ -1817,6 +2141,16 @@
     },
     "craftFromBlueprints": [],
     "description": "Накопитель энергии, производимой реактором. Подходит для любого робота",
+    "transformsFrom": {
+      "fromKey": "nakopitel_9",
+      "ingredients": [
+        {
+          "key": "kristall_siniy",
+          "count": 21
+        }
+      ],
+      "bondsCost": 421
+    },
     "stats": {
       "primary": 440,
       "primaryLabel": "Емкость",
@@ -1842,6 +2176,16 @@
     },
     "craftFromBlueprints": [],
     "description": "Накопитель энергии, производимой реактором. Подходит для любого робота",
+    "transformsFrom": {
+      "fromKey": "nakopitel_12",
+      "ingredients": [
+        {
+          "key": "kristall_siniy",
+          "count": 28
+        }
+      ],
+      "bondsCost": 693
+    },
     "stats": {
       "primary": 500,
       "primaryLabel": "Емкость",
@@ -1888,6 +2232,16 @@
     },
     "craftFromBlueprints": [],
     "description": "Накопитель энергии, производимой реактором. Подходит для любого робота",
+    "transformsFrom": {
+      "fromKey": "nakopitel_16",
+      "ingredients": [
+        {
+          "key": "kristall_siniy",
+          "count": 43
+        }
+      ],
+      "bondsCost": 960
+    },
     "stats": {
       "primary": 628,
       "primaryLabel": "Емкость",
@@ -1913,6 +2267,16 @@
     },
     "craftFromBlueprints": [],
     "description": "Накопитель энергии, производимой реактором. Подходит для любого робота",
+    "transformsFrom": {
+      "fromKey": "nakopitel_24",
+      "ingredients": [
+        {
+          "key": "kristall_siniy",
+          "count": 48
+        }
+      ],
+      "bondsCost": 1426
+    },
     "stats": {
       "primary": 718,
       "primaryLabel": "Емкость",
@@ -1934,6 +2298,17 @@
       "bonds": 340
     },
     "description": "Накопитель энергии, производимой реактором. Подходит для любого робота",
+    "transformsFrom": {
+      "fromKey": "nakopitel_20m1",
+      "ingredients": [
+        {
+          "key": "kristall_siniy",
+          "count": 144
+        }
+      ],
+      "bondsCost": 4905,
+      "reglsCost": 1
+    },
     "stats": {
       "primary": 898,
       "primaryLabel": "Емкость",
@@ -1959,6 +2334,16 @@
     },
     "craftFromBlueprints": [],
     "description": "Накопитель энергии, производимой реактором. Подходит для любого робота",
+    "transformsFrom": {
+      "fromKey": "nakopitel_27",
+      "ingredients": [
+        {
+          "key": "kristall_siniy",
+          "count": 54
+        }
+      ],
+      "bondsCost": 1730
+    },
     "stats": {
       "primary": 831,
       "primaryLabel": "Емкость",
@@ -1984,6 +2369,16 @@
     },
     "craftFromBlueprints": [],
     "description": "Накопитель энергии, производимой реактором. Подходит для любого робота",
+    "transformsFrom": {
+      "fromKey": "nakopitel_30",
+      "ingredients": [
+        {
+          "key": "kristall_siniy",
+          "count": 61
+        }
+      ],
+      "bondsCost": 2006
+    },
     "stats": {
       "primary": 996,
       "primaryLabel": "Емкость",
@@ -2005,6 +2400,17 @@
       "bonds": 478
     },
     "description": "Накопитель энергии, производимой реактором. Подходит для любого робота",
+    "transformsFrom": {
+      "fromKey": "nakopitel_27m1",
+      "ingredients": [
+        {
+          "key": "kristall_siniy",
+          "count": 183
+        }
+      ],
+      "bondsCost": 6894,
+      "reglsCost": 3
+    },
     "stats": {
       "primary": 1245,
       "primaryLabel": "Емкость",
@@ -2030,6 +2436,16 @@
     },
     "craftFromBlueprints": [],
     "description": "Накопитель энергии, производимой реактором. Подходит для любого робота",
+    "transformsFrom": {
+      "fromKey": "nakopitel",
+      "ingredients": [
+        {
+          "key": "kristall_siniy",
+          "count": 7
+        }
+      ],
+      "bondsCost": 75
+    },
     "stats": {
       "primary": 320,
       "primaryLabel": "Емкость",
@@ -2051,6 +2467,16 @@
       "bonds": 600
     },
     "description": "Накопитель энергии, производимой реактором. Подходит для любого робота",
+    "transformsFrom": {
+      "fromKey": "nakopitel_34",
+      "ingredients": [
+        {
+          "key": "kristall_siniy",
+          "count": 79
+        }
+      ],
+      "bondsCost": 2880
+    },
     "stats": {
       "primary": 1220,
       "primaryLabel": "Емкость",
@@ -2072,6 +2498,17 @@
       "bonds": 650
     },
     "description": "Накопитель энергии, производимой реактором. Подходит для любого робота",
+    "transformsFrom": {
+      "fromKey": "nakopitel_34m1",
+      "ingredients": [
+        {
+          "key": "kristall_siniy",
+          "count": 237
+        }
+      ],
+      "bondsCost": 9360,
+      "reglsCost": 5
+    },
     "stats": {
       "primary": 1525,
       "primaryLabel": "Емкость",
@@ -2096,6 +2533,16 @@
       "bonds": 848
     },
     "description": "Накопитель энергии, производимой реактором. Подходит для любого робота",
+    "transformsFrom": {
+      "fromKey": "nakopitel_44",
+      "ingredients": [
+        {
+          "key": "kristall_siniy",
+          "count": 97
+        }
+      ],
+      "bondsCost": 4070
+    },
     "stats": {
       "primary": 1240,
       "primaryLabel": "Емкость",
@@ -2121,6 +2568,17 @@
       "bonds": 900
     },
     "description": "Накопитель энергии, производимой реактором. Подходит для любого робота",
+    "transformsFrom": {
+      "fromKey": "nakopitel_44m1",
+      "ingredients": [
+        {
+          "key": "kristall_siniy",
+          "count": 291
+        }
+      ],
+      "bondsCost": 12960,
+      "reglsCost": 7
+    },
     "stats": {
       "primary": 1575,
       "primaryLabel": "Емкость",
@@ -2145,6 +2603,16 @@
       "bonds": 1187
     },
     "description": "Накопитель энергии, производимой реактором. Подходит для любого робота",
+    "transformsFrom": {
+      "fromKey": "nakopitel_54",
+      "ingredients": [
+        {
+          "key": "kristall_siniy",
+          "count": 115
+        }
+      ],
+      "bondsCost": 5701
+    },
     "stats": {
       "primary": 1400,
       "primaryLabel": "Емкость",
@@ -2170,6 +2638,17 @@
       "bonds": 1038
     },
     "description": "Накопитель энергии, производимой реактором. Подходит для любого робота",
+    "transformsFrom": {
+      "fromKey": "nakopitel_54m1",
+      "ingredients": [
+        {
+          "key": "kristall_siniy",
+          "count": 345
+        }
+      ],
+      "bondsCost": 14952,
+      "reglsCost": 9
+    },
     "stats": {
       "primary": 1775,
       "primaryLabel": "Емкость",
@@ -2195,6 +2674,16 @@
     },
     "craftFromBlueprints": [],
     "description": "Накопитель энергии, производимой реактором. Подходит для любого робота",
+    "transformsFrom": {
+      "fromKey": "nakopitel_4",
+      "ingredients": [
+        {
+          "key": "kristall_siniy",
+          "count": 12
+        }
+      ],
+      "bondsCost": 201
+    },
     "stats": {
       "primary": 350,
       "primaryLabel": "Емкость",
@@ -2219,6 +2708,16 @@
       "bonds": 1313
     },
     "description": "Накопитель энергии, производимой реактором. Подходит для любого робота",
+    "transformsFrom": {
+      "fromKey": "nakopitel_64",
+      "ingredients": [
+        {
+          "key": "kristall_siniy",
+          "count": 133
+        }
+      ],
+      "bondsCost": 6306
+    },
     "stats": {
       "primary": 1520,
       "primaryLabel": "Емкость",
@@ -2244,6 +2743,17 @@
       "bonds": 1536
     },
     "description": "Накопитель энергии, производимой реактором. Подходит для любого робота",
+    "transformsFrom": {
+      "fromKey": "nakopitel_64m1",
+      "ingredients": [
+        {
+          "key": "kristall_siniy",
+          "count": 399
+        }
+      ],
+      "bondsCost": 22122,
+      "reglsCost": 12
+    },
     "stats": {
       "primary": 1925,
       "primaryLabel": "Емкость",
@@ -2286,6 +2796,21 @@
       "bonds": 1920
     },
     "description": "Накопитель энергии, производимой реактором. Подходит для любого робота",
+    "transformsFrom": {
+      "fromKey": "nakopitel_74m1",
+      "ingredients": [
+        {
+          "key": "kristall_siniy",
+          "count": 477
+        },
+        {
+          "key": "zakhvat",
+          "count": 27
+        }
+      ],
+      "bondsCost": 26544,
+      "reglsCost": 18
+    },
     "stats": {
       "primary": 2213,
       "primaryLabel": "Емкость",
@@ -2308,6 +2833,16 @@
     },
     "craftFromBlueprints": [],
     "description": "Более емкий накопительМожно делать несколько выстреловИз орудий около 10 уровня",
+    "transformsFrom": {
+      "fromKey": "nakopitel_7",
+      "ingredients": [
+        {
+          "key": "kristall_siniy",
+          "count": 16
+        }
+      ],
+      "bondsCost": 288
+    },
     "stats": {
       "primary": 380,
       "primaryLabel": "Емкость",
@@ -2329,6 +2864,21 @@
       "bonds": 24000
     },
     "description": "Накопитель энергии, производимой реактором. Подходит для любого робота",
+    "transformsFrom": {
+      "fromKey": "nakopitel_84",
+      "ingredients": [
+        {
+          "key": "kristall_siniy",
+          "count": 5742
+        },
+        {
+          "key": "zakhvat",
+          "count": 30
+        }
+      ],
+      "bondsCost": 5400000,
+      "reglsCost": 150
+    },
     "stats": {
       "primary": 2544,
       "primaryLabel": "Емкость",
@@ -2372,6 +2922,21 @@
     "sellPrice": {
       "bonds": 7873
     },
+    "transformsFrom": {
+      "fromKey": "reaktor_93_m1",
+      "ingredients": [
+        {
+          "key": "kristall_siniy",
+          "count": 4536
+        },
+        {
+          "key": "zakhvat",
+          "count": 54
+        }
+      ],
+      "bondsCost": 4752000,
+      "reglsCost": 150
+    },
     "stats": {
       "primary": 294,
       "primaryLabel": "Мощность",
@@ -2396,6 +2961,16 @@
       "bonds": 120
     },
     "description": "Энергетическая силовая установка. Подходит для любого робота",
+    "transformsFrom": {
+      "fromKey": "reaktor_9",
+      "ingredients": [
+        {
+          "key": "kristall_siniy",
+          "count": 14
+        }
+      ],
+      "bondsCost": 869
+    },
     "stats": {
       "primary": 55,
       "primaryLabel": "Мощность",
@@ -2420,6 +2995,16 @@
       "bonds": 172
     },
     "description": "Энергетическая силовая установка. Подходит для любого робота",
+    "transformsFrom": {
+      "fromKey": "reaktor_12",
+      "ingredients": [
+        {
+          "key": "kristall_siniy",
+          "count": 19
+        }
+      ],
+      "bondsCost": 1238
+    },
     "stats": {
       "primary": 61,
       "primaryLabel": "Мощность",
@@ -2465,6 +3050,16 @@
       "bonds": 302
     },
     "description": "Энергетическая силовая установка. Подходит для любого робота",
+    "transformsFrom": {
+      "fromKey": "reaktor_16",
+      "ingredients": [
+        {
+          "key": "kristall_siniy",
+          "count": 28
+        }
+      ],
+      "bondsCost": 2176
+    },
     "stats": {
       "primary": 71,
       "primaryLabel": "Мощность",
@@ -2489,6 +3084,16 @@
       "bonds": 399
     },
     "description": "Энергетическая силовая установка. Подходит для любого робота",
+    "transformsFrom": {
+      "fromKey": "reaktor_24",
+      "ingredients": [
+        {
+          "key": "kristall_siniy",
+          "count": 32
+        }
+      ],
+      "bondsCost": 2872
+    },
     "stats": {
       "primary": 82,
       "primaryLabel": "Мощность",
@@ -2513,6 +3118,16 @@
       "bonds": 440
     },
     "description": "Энергетическая силовая установка. Подходит для любого робота",
+    "transformsFrom": {
+      "fromKey": "reaktor_27",
+      "ingredients": [
+        {
+          "key": "kristall_siniy",
+          "count": 36
+        }
+      ],
+      "bondsCost": 3168
+    },
     "stats": {
       "primary": 95,
       "primaryLabel": "Мощность",
@@ -2534,6 +3149,17 @@
       "bonds": 472
     },
     "description": "Энергетическая силовая установка. Подходит для любого робота",
+    "transformsFrom": {
+      "fromKey": "reaktor_20m1",
+      "ingredients": [
+        {
+          "key": "kristall_siniy",
+          "count": 108
+        }
+      ],
+      "bondsCost": 10206,
+      "reglsCost": 3
+    },
     "stats": {
       "primary": 119,
       "primaryLabel": "Мощность",
@@ -2558,6 +3184,16 @@
       "bonds": 488
     },
     "description": "Энергетическая силовая установка. Подходит для любого робота",
+    "transformsFrom": {
+      "fromKey": "reaktor_30",
+      "ingredients": [
+        {
+          "key": "kristall_siniy",
+          "count": 40
+        }
+      ],
+      "bondsCost": 3519
+    },
     "stats": {
       "primary": 115,
       "primaryLabel": "Мощность",
@@ -2582,6 +3218,16 @@
       "bonds": 1118
     },
     "description": "Энергетическая силовая установка. Подходит для любого робота",
+    "transformsFrom": {
+      "fromKey": "reaktor_34",
+      "ingredients": [
+        {
+          "key": "kristall_siniy",
+          "count": 45
+        }
+      ],
+      "bondsCost": 8049
+    },
     "stats": {
       "primary": 121,
       "primaryLabel": "Мощность",
@@ -2606,6 +3252,16 @@
       "bonds": 19
     },
     "description": "Более мощный реакторЗанимает больше места",
+    "transformsFrom": {
+      "fromKey": "reaktor",
+      "ingredients": [
+        {
+          "key": "kristall_siniy",
+          "count": 4
+        }
+      ],
+      "bondsCost": 136
+    },
     "stats": {
       "primary": 41,
       "primaryLabel": "Мощность",
@@ -2630,6 +3286,16 @@
       "bonds": 1374
     },
     "description": "Энергетическая силовая установка. Подходит для любого робота",
+    "transformsFrom": {
+      "fromKey": "reaktor_38",
+      "ingredients": [
+        {
+          "key": "kristall_siniy",
+          "count": 49
+        }
+      ],
+      "bondsCost": 9896
+    },
     "stats": {
       "primary": 125,
       "primaryLabel": "Мощность",
@@ -2651,6 +3317,17 @@
       "bonds": 1296
     },
     "description": "Энергетическая силовая установка. Подходит для любого робота",
+    "transformsFrom": {
+      "fromKey": "reaktor_30m1",
+      "ingredients": [
+        {
+          "key": "kristall_siniy",
+          "count": 147
+        }
+      ],
+      "bondsCost": 28008,
+      "reglsCost": 8
+    },
     "stats": {
       "primary": 156,
       "primaryLabel": "Мощность",
@@ -2675,6 +3352,16 @@
       "bonds": 1550
     },
     "description": "Энергетическая силовая установка. Подходит для любого робота",
+    "transformsFrom": {
+      "fromKey": "reaktor_41",
+      "ingredients": [
+        {
+          "key": "kristall_siniy",
+          "count": 52
+        }
+      ],
+      "bondsCost": 11160
+    },
     "stats": {
       "primary": 129,
       "primaryLabel": "Мощность",
@@ -2696,6 +3383,16 @@
       "bonds": 1723
     },
     "description": "Энергетическая силовая установка. Подходит для любого робота",
+    "transformsFrom": {
+      "fromKey": "reaktor_44",
+      "ingredients": [
+        {
+          "key": "kristall_siniy",
+          "count": 56
+        }
+      ],
+      "bondsCost": 12407
+    },
     "stats": {
       "primary": 133,
       "primaryLabel": "Мощность",
@@ -2720,6 +3417,16 @@
       "bonds": 1723
     },
     "description": "Энергетическая силовая установка. Подходит для любого робота",
+    "transformsFrom": {
+      "fromKey": "reaktor_47",
+      "ingredients": [
+        {
+          "key": "kristall_siniy",
+          "count": 60
+        }
+      ],
+      "bondsCost": 12407
+    },
     "stats": {
       "primary": 135,
       "primaryLabel": "Мощность",
@@ -2744,6 +3451,16 @@
       "bonds": 2492
     },
     "description": "Энергетическая силовая установка. Подходит для любого робота",
+    "transformsFrom": {
+      "fromKey": "reaktor_50",
+      "ingredients": [
+        {
+          "key": "kristall_siniy",
+          "count": 75
+        }
+      ],
+      "bondsCost": 17947
+    },
     "stats": {
       "primary": 143,
       "primaryLabel": "Мощность",
@@ -2769,6 +3486,17 @@
       "bonds": 2762
     },
     "description": "Энергетическая силовая установка. Подходит для любого робота",
+    "transformsFrom": {
+      "fromKey": "reaktor_41m1",
+      "ingredients": [
+        {
+          "key": "kristall_siniy",
+          "count": 225
+        }
+      ],
+      "bondsCost": 59673,
+      "reglsCost": 12
+    },
     "stats": {
       "primary": 178,
       "primaryLabel": "Мощность",
@@ -2793,6 +3521,16 @@
       "bonds": 48
     },
     "description": "Энергетическая силовая установка. Подходит для любого робота",
+    "transformsFrom": {
+      "fromKey": "reaktor_4",
+      "ingredients": [
+        {
+          "key": "kristall_siniy",
+          "count": 8
+        }
+      ],
+      "bondsCost": 347
+    },
     "stats": {
       "primary": 45,
       "primaryLabel": "Мощность",
@@ -2817,6 +3555,16 @@
       "bonds": 4160
     },
     "description": "Энергетическая силовая установка. Подходит для любого робота",
+    "transformsFrom": {
+      "fromKey": "reaktor_63",
+      "ingredients": [
+        {
+          "key": "kristall_siniy",
+          "count": 87
+        }
+      ],
+      "bondsCost": 29952
+    },
     "stats": {
       "primary": 155,
       "primaryLabel": "Мощность",
@@ -2842,6 +3590,17 @@
       "bonds": 4031
     },
     "description": "Энергетическая силовая установка. Подходит для любого робота",
+    "transformsFrom": {
+      "fromKey": "reaktor_63m1",
+      "ingredients": [
+        {
+          "key": "kristall_siniy",
+          "count": 261
+        }
+      ],
+      "bondsCost": 87075,
+      "reglsCost": 15
+    },
     "stats": {
       "primary": 194,
       "primaryLabel": "Мощность",
@@ -2884,6 +3643,21 @@
       "bonds": 5039
     },
     "description": "Энергетическая силовая установка. Подходит для любого робота",
+    "transformsFrom": {
+      "fromKey": "reaktor_73m1",
+      "ingredients": [
+        {
+          "key": "kristall_siniy",
+          "count": 315
+        },
+        {
+          "key": "zakhvat",
+          "count": 39
+        }
+      ],
+      "bondsCost": 104490,
+      "reglsCost": 21
+    },
     "stats": {
       "primary": 223,
       "primaryLabel": "Мощность",
@@ -2905,6 +3679,16 @@
       "bonds": 77
     },
     "description": "Энергетическая силовая установка. Подходит для любого робота",
+    "transformsFrom": {
+      "fromKey": "reaktor_7",
+      "ingredients": [
+        {
+          "key": "kristall_siniy",
+          "count": 10
+        }
+      ],
+      "bondsCost": 558
+    },
     "stats": {
       "primary": 49,
       "primaryLabel": "Мощность",
@@ -2926,6 +3710,21 @@
       "bonds": 6298
     },
     "description": "Энергетическая силовая установка. Подходит для любого робота",
+    "transformsFrom": {
+      "fromKey": "reaktor_83",
+      "ingredients": [
+        {
+          "key": "kristall_siniy",
+          "count": 3780
+        },
+        {
+          "key": "zakhvat",
+          "count": 45
+        }
+      ],
+      "bondsCost": 3960000,
+      "reglsCost": 120
+    },
     "stats": {
       "primary": 256,
       "primaryLabel": "Мощность",
@@ -2997,6 +3796,32 @@
       "bonds": 3750
     },
     "description": "Дополнительный трюм, для любого робота",
+    "transformsFrom": {
+      "fromKey": "tryum_9",
+      "ingredients": [
+        {
+          "key": "kristall_siniy",
+          "count": 180
+        },
+        {
+          "key": "kristall_zelenyy",
+          "count": 180
+        },
+        {
+          "key": "kristall_krasnyy",
+          "count": 180
+        },
+        {
+          "key": "zhelezo",
+          "count": 30
+        },
+        {
+          "key": "gafniy",
+          "count": 18
+        }
+      ],
+      "bondsCost": 2400000
+    },
     "stats": {
       "primary": 400,
       "primaryLabel": "Трюм",
@@ -3023,6 +3848,16 @@
     },
     "craftFromBlueprints": [],
     "description": "Дополнительный трюм для транспортного робота",
+    "transformsFrom": {
+      "fromKey": "tryum_17t",
+      "ingredients": [
+        {
+          "key": "kristall_zelenyy",
+          "count": 30
+        }
+      ],
+      "bondsCost": 39744
+    },
     "stats": {
       "primary": 1000,
       "primaryLabel": "Трюм",
@@ -3049,6 +3884,16 @@
     },
     "craftFromBlueprints": [],
     "description": "Дополнительный трюмдля транспортного робота",
+    "transformsFrom": {
+      "fromKey": "tryum_25t",
+      "ingredients": [
+        {
+          "key": "kristall_zelenyy",
+          "count": 38
+        }
+      ],
+      "bondsCost": 57555
+    },
     "stats": {
       "primary": 1600,
       "primaryLabel": "Трюм",
@@ -3076,6 +3921,17 @@
     },
     "craftFromBlueprints": [],
     "description": "Дополнительный трюм для транспортного робота",
+    "transformsFrom": {
+      "fromKey": "tryum_32t",
+      "ingredients": [
+        {
+          "key": "kristall_zelenyy",
+          "count": 144
+        }
+      ],
+      "bondsCost": 253371,
+      "reglsCost": 1
+    },
     "stats": {
       "primary": 2100,
       "primaryLabel": "Трюм",
@@ -3097,6 +3953,32 @@
       "bonds": 12500
     },
     "description": "Дополнительный трюм для любого робота",
+    "transformsFrom": {
+      "fromKey": "tryum_24",
+      "ingredients": [
+        {
+          "key": "kristall_siniy",
+          "count": 108
+        },
+        {
+          "key": "kristall_zelenyy",
+          "count": 108
+        },
+        {
+          "key": "kristall_krasnyy",
+          "count": 108
+        },
+        {
+          "key": "zhelezo",
+          "count": 25
+        },
+        {
+          "key": "gafniy",
+          "count": 18
+        }
+      ],
+      "bondsCost": 10800000
+    },
     "stats": {
       "primary": 500,
       "primaryLabel": "Трюм",
@@ -3124,6 +4006,17 @@
     },
     "craftFromBlueprints": [],
     "description": "Дополнительный трюм для транспортного робота",
+    "transformsFrom": {
+      "fromKey": "tryum_40tm1",
+      "ingredients": [
+        {
+          "key": "kristall_zelenyy",
+          "count": 180
+        }
+      ],
+      "bondsCost": 377703,
+      "reglsCost": 1
+    },
     "stats": {
       "primary": 2500,
       "primaryLabel": "Трюм",
@@ -3149,6 +4042,16 @@
     },
     "craftFromBlueprints": [],
     "description": "При установке в модулиУвеличивает вместимость трюма",
+    "transformsFrom": {
+      "fromKey": "tryum_1",
+      "ingredients": [
+        {
+          "key": "kristall_zelenyy",
+          "count": 7
+        }
+      ],
+      "bondsCost": 4672
+    },
     "stats": {
       "primary": 200,
       "primaryLabel": "Трюм",
@@ -3168,6 +4071,32 @@
     "slot": "Доп",
     "sellPrice": {
       "bonds": 12500
+    },
+    "transformsFrom": {
+      "fromKey": "tryum_48",
+      "ingredients": [
+        {
+          "key": "kristall_siniy",
+          "count": 780
+        },
+        {
+          "key": "kristall_zelenyy",
+          "count": 780
+        },
+        {
+          "key": "kristall_krasnyy",
+          "count": 780
+        },
+        {
+          "key": "zhelezo",
+          "count": 102
+        },
+        {
+          "key": "gafniy",
+          "count": 150
+        }
+      ],
+      "bondsCost": 42000000
     },
     "stats": {
       "primary": 600,
@@ -3192,6 +4121,17 @@
     },
     "craftFromBlueprints": [],
     "description": "Дополнительный трюм для транспортного робота",
+    "transformsFrom": {
+      "fromKey": "tryum_50tm1",
+      "ingredients": [
+        {
+          "key": "kristall_zelenyy",
+          "count": 216
+        }
+      ],
+      "bondsCost": 537882,
+      "reglsCost": 3
+    },
     "stats": {
       "primary": 3200,
       "primaryLabel": "Трюм",
@@ -3243,6 +4183,32 @@
     },
     "craftFromBlueprints": [],
     "description": "При установке в модулиУвеличивает вместимость трюма",
+    "transformsFrom": {
+      "fromKey": "tryum_6",
+      "ingredients": [
+        {
+          "key": "kristall_siniy",
+          "count": 108
+        },
+        {
+          "key": "kristall_zelenyy",
+          "count": 108
+        },
+        {
+          "key": "kristall_krasnyy",
+          "count": 108
+        },
+        {
+          "key": "zhelezo",
+          "count": 25
+        },
+        {
+          "key": "gafniy",
+          "count": 18
+        }
+      ],
+      "bondsCost": 10800000
+    },
     "stats": {
       "primary": 300,
       "primaryLabel": "Трюм",
@@ -3283,6 +4249,25 @@
     "slot": "Поле",
     "sellPrice": {
       "bonds": 5419
+    },
+    "transformsFrom": {
+      "fromKey": "zashchitnoe_pole_95_m1",
+      "ingredients": [
+        {
+          "key": "kristall_siniy",
+          "count": 5895
+        },
+        {
+          "key": "kristall_krasnyy",
+          "count": 1872
+        },
+        {
+          "key": "kompaund_krotov",
+          "count": 30
+        }
+      ],
+      "bondsCost": 9360000,
+      "reglsCost": 75
     },
     "stats": {
       "primary": 180,
@@ -3326,6 +4311,20 @@
     },
     "craftFromBlueprints": [],
     "description": "Энергетическая силовая защита. Подходит для любого робота",
+    "transformsFrom": {
+      "fromKey": "zashchitnoe_pole_9",
+      "ingredients": [
+        {
+          "key": "kristall_siniy",
+          "count": 14
+        },
+        {
+          "key": "kristall_krasnyy",
+          "count": 21
+        }
+      ],
+      "bondsCost": 498
+    },
     "stats": {
       "primary": 36,
       "primaryLabel": "Мощность поля",
@@ -3348,6 +4347,20 @@
     },
     "craftFromBlueprints": [],
     "description": "Энергетическая силовая защита. Подходит для любого робота",
+    "transformsFrom": {
+      "fromKey": "zashchitnoe_pole_12",
+      "ingredients": [
+        {
+          "key": "kristall_siniy",
+          "count": 19
+        },
+        {
+          "key": "kristall_krasnyy",
+          "count": 28
+        }
+      ],
+      "bondsCost": 864
+    },
     "stats": {
       "primary": 40,
       "primaryLabel": "Мощность поля",
@@ -3370,6 +4383,20 @@
     },
     "craftFromBlueprints": [],
     "description": "Энергетическая силовая защита. Подходит для любого робота",
+    "transformsFrom": {
+      "fromKey": "zashchitnoe_pole_16",
+      "ingredients": [
+        {
+          "key": "kristall_siniy",
+          "count": 24
+        },
+        {
+          "key": "kristall_krasnyy",
+          "count": 36
+        }
+      ],
+      "bondsCost": 1108
+    },
     "stats": {
       "primary": 44,
       "primaryLabel": "Мощность поля",
@@ -3413,6 +4440,20 @@
     },
     "craftFromBlueprints": [],
     "description": "Энергетическая силовая защита. Подходит для любого робота",
+    "transformsFrom": {
+      "fromKey": "zashchitnoe_pole_20",
+      "ingredients": [
+        {
+          "key": "kristall_siniy",
+          "count": 28
+        },
+        {
+          "key": "kristall_krasnyy",
+          "count": 43
+        }
+      ],
+      "bondsCost": 1458
+    },
     "stats": {
       "primary": 47,
       "primaryLabel": "Мощность поля",
@@ -3435,6 +4476,20 @@
     },
     "craftFromBlueprints": [],
     "description": "Энергетическая силовая защита. Подходит для любого робота",
+    "transformsFrom": {
+      "fromKey": "zashchitnoe_pole_24",
+      "ingredients": [
+        {
+          "key": "kristall_siniy",
+          "count": 32
+        },
+        {
+          "key": "kristall_krasnyy",
+          "count": 48
+        }
+      ],
+      "bondsCost": 1736
+    },
     "stats": {
       "primary": 50,
       "primaryLabel": "Мощность поля",
@@ -3460,6 +4515,20 @@
     },
     "craftFromBlueprints": [],
     "description": "Энергетическая силовая защита. Подходит для любого робота",
+    "transformsFrom": {
+      "fromKey": "zashchitnoe_pole_27",
+      "ingredients": [
+        {
+          "key": "kristall_siniy",
+          "count": 36
+        },
+        {
+          "key": "kristall_krasnyy",
+          "count": 54
+        }
+      ],
+      "bondsCost": 1968
+    },
     "stats": {
       "primary": 53,
       "primaryLabel": "Мощность поля",
@@ -3481,6 +4550,21 @@
       "bonds": 427
     },
     "description": "Энергетическая силовая защита. Подходит для любого робота",
+    "transformsFrom": {
+      "fromKey": "zashchitnoe_pole_20m1",
+      "ingredients": [
+        {
+          "key": "kristall_siniy",
+          "count": 108
+        },
+        {
+          "key": "kristall_krasnyy",
+          "count": 162
+        }
+      ],
+      "bondsCost": 6147,
+      "reglsCost": 2
+    },
     "stats": {
       "primary": 65,
       "primaryLabel": "Мощность поля",
@@ -3503,6 +4587,20 @@
     },
     "craftFromBlueprints": [],
     "description": "Энергетическая силовая защита. Подходит для любого робота",
+    "transformsFrom": {
+      "fromKey": "zashchitnoe_pole_30",
+      "ingredients": [
+        {
+          "key": "kristall_siniy",
+          "count": 40
+        },
+        {
+          "key": "kristall_krasnyy",
+          "count": 61
+        }
+      ],
+      "bondsCost": 2523
+    },
     "stats": {
       "primary": 57,
       "primaryLabel": "Мощность поля",
@@ -3525,6 +4623,20 @@
     },
     "craftFromBlueprints": [],
     "description": "Энергетическая силовая защита. Подходит для любого робота",
+    "transformsFrom": {
+      "fromKey": "zashchitnoe_pole_34",
+      "ingredients": [
+        {
+          "key": "kristall_siniy",
+          "count": 44
+        },
+        {
+          "key": "kristall_krasnyy",
+          "count": 66
+        }
+      ],
+      "bondsCost": 4458
+    },
     "stats": {
       "primary": 59,
       "primaryLabel": "Мощность поля",
@@ -3547,6 +4659,20 @@
     },
     "craftFromBlueprints": [],
     "description": "Защита роботаПоглащает энергетический уронМожно установить 3 и 2",
+    "transformsFrom": {
+      "fromKey": "zashchitnoe_pole",
+      "ingredients": [
+        {
+          "key": "kristall_siniy",
+          "count": 4
+        },
+        {
+          "key": "kristall_krasnyy",
+          "count": 7
+        }
+      ],
+      "bondsCost": 99
+    },
     "stats": {
       "primary": 24,
       "primaryLabel": "Мощность поля",
@@ -3569,6 +4695,20 @@
     },
     "craftFromBlueprints": [],
     "description": "Энергетическая силовая защита. Подходит для любого робота",
+    "transformsFrom": {
+      "fromKey": "zashchitnoe_pole_37",
+      "ingredients": [
+        {
+          "key": "kristall_siniy",
+          "count": 48
+        },
+        {
+          "key": "kristall_krasnyy",
+          "count": 72
+        }
+      ],
+      "bondsCost": 4884
+    },
     "stats": {
       "primary": 61,
       "primaryLabel": "Мощность поля",
@@ -3590,6 +4730,21 @@
       "bonds": 743
     },
     "description": "Энергетическая силовая защита. Подходит для любого робота",
+    "transformsFrom": {
+      "fromKey": "zashchitnoe_pole_30m1",
+      "ingredients": [
+        {
+          "key": "kristall_siniy",
+          "count": 144
+        },
+        {
+          "key": "kristall_krasnyy",
+          "count": 216
+        }
+      ],
+      "bondsCost": 10698,
+      "reglsCost": 6
+    },
     "stats": {
       "primary": 76,
       "primaryLabel": "Мощность поля",
@@ -3612,6 +4767,20 @@
     },
     "craftFromBlueprints": [],
     "description": "Энергетическая силовая защита. Подходит для любого робота",
+    "transformsFrom": {
+      "fromKey": "zashchitnoe_pole_40",
+      "ingredients": [
+        {
+          "key": "kristall_siniy",
+          "count": 51
+        },
+        {
+          "key": "kristall_krasnyy",
+          "count": 77
+        }
+      ],
+      "bondsCost": 7088
+    },
     "stats": {
       "primary": 64,
       "primaryLabel": "Мощность поля",
@@ -3634,6 +4803,20 @@
     },
     "craftFromBlueprints": [],
     "description": "Энергетическая силовая защита. Подходит для любого робота",
+    "transformsFrom": {
+      "fromKey": "zashchitnoe_pole_43",
+      "ingredients": [
+        {
+          "key": "kristall_siniy",
+          "count": 55
+        },
+        {
+          "key": "kristall_krasnyy",
+          "count": 82
+        }
+      ],
+      "bondsCost": 7406
+    },
     "stats": {
       "primary": 67,
       "primaryLabel": "Мощность поля",
@@ -3659,6 +4842,20 @@
     },
     "craftFromBlueprints": [],
     "description": "Энергетическая силовая защита. Подходит для любого робота",
+    "transformsFrom": {
+      "fromKey": "zashchitnoe_pole_46",
+      "ingredients": [
+        {
+          "key": "kristall_siniy",
+          "count": 60
+        },
+        {
+          "key": "kristall_krasnyy",
+          "count": 90
+        }
+      ],
+      "bondsCost": 8385
+    },
     "stats": {
       "primary": 69,
       "primaryLabel": "Мощность поля",
@@ -3684,6 +4881,20 @@
     },
     "craftFromBlueprints": [],
     "description": "Энергетическая силовая защита. Подходит для любого робота",
+    "transformsFrom": {
+      "fromKey": "zashchitnoe_pole_50",
+      "ingredients": [
+        {
+          "key": "kristall_siniy",
+          "count": 66
+        },
+        {
+          "key": "kristall_krasnyy",
+          "count": 99
+        }
+      ],
+      "bondsCost": 8640
+    },
     "stats": {
       "primary": 70,
       "primaryLabel": "Мощность поля",
@@ -3709,6 +4920,21 @@
       "bonds": 1800
     },
     "description": "Энергетическая силовая защита. Подходит для любого робота",
+    "transformsFrom": {
+      "fromKey": "zashchitnoe_pole_40m1",
+      "ingredients": [
+        {
+          "key": "kristall_siniy",
+          "count": 198
+        },
+        {
+          "key": "kristall_krasnyy",
+          "count": 297
+        }
+      ],
+      "bondsCost": 25920,
+      "reglsCost": 7
+    },
     "stats": {
       "primary": 88,
       "primaryLabel": "Мощность поля",
@@ -3731,6 +4957,20 @@
     },
     "craftFromBlueprints": [],
     "description": "Энергетическая силовая защита. Подходит для любого робота",
+    "transformsFrom": {
+      "fromKey": "zashchitnoe_pole_55",
+      "ingredients": [
+        {
+          "key": "kristall_siniy",
+          "count": 72
+        },
+        {
+          "key": "kristall_krasnyy",
+          "count": 108
+        }
+      ],
+      "bondsCost": 9720
+    },
     "stats": {
       "primary": 74,
       "primaryLabel": "Мощность поля",
@@ -3755,6 +4995,20 @@
       "bonds": 2300
     },
     "description": "Энергетическая силовая защита. Подходит для любого робота",
+    "transformsFrom": {
+      "fromKey": "zashchitnoe_pole_60",
+      "ingredients": [
+        {
+          "key": "kristall_siniy",
+          "count": 78
+        },
+        {
+          "key": "kristall_krasnyy",
+          "count": 117
+        }
+      ],
+      "bondsCost": 11040
+    },
     "stats": {
       "primary": 78,
       "primaryLabel": "Мощность поля",
@@ -3780,6 +5034,21 @@
       "bonds": 2375
     },
     "description": "Энергетическая силовая защита. Подходит для любого робота",
+    "transformsFrom": {
+      "fromKey": "zashchitnoe_pole_55m1",
+      "ingredients": [
+        {
+          "key": "kristall_siniy",
+          "count": 234
+        },
+        {
+          "key": "kristall_krasnyy",
+          "count": 351
+        }
+      ],
+      "bondsCost": 34200,
+      "reglsCost": 7
+    },
     "stats": {
       "primary": 98,
       "primaryLabel": "Мощность поля",
@@ -3802,6 +5071,20 @@
     },
     "craftFromBlueprints": [],
     "description": "Энергетическая силовая защита. Подходит для любого робота",
+    "transformsFrom": {
+      "fromKey": "zashchitnoe_pole_4",
+      "ingredients": [
+        {
+          "key": "kristall_siniy",
+          "count": 8
+        },
+        {
+          "key": "kristall_krasnyy",
+          "count": 12
+        }
+      ],
+      "bondsCost": 220
+    },
     "stats": {
       "primary": 28,
       "primaryLabel": "Мощность поля",
@@ -3826,6 +5109,20 @@
       "bonds": 2750
     },
     "description": "Энергетическая силовая защита. Подходит для любого робота",
+    "transformsFrom": {
+      "fromKey": "zashchitnoe_pole_65",
+      "ingredients": [
+        {
+          "key": "kristall_siniy",
+          "count": 90
+        },
+        {
+          "key": "kristall_krasnyy",
+          "count": 135
+        }
+      ],
+      "bondsCost": 13200
+    },
     "stats": {
       "primary": 84,
       "primaryLabel": "Мощность поля",
@@ -3851,6 +5148,21 @@
       "bonds": 2775
     },
     "description": "Энергетическая силовая защита. Подходит для любого робота",
+    "transformsFrom": {
+      "fromKey": "zashchitnoe_pole_65m1",
+      "ingredients": [
+        {
+          "key": "kristall_siniy",
+          "count": 270
+        },
+        {
+          "key": "kristall_krasnyy",
+          "count": 405
+        }
+      ],
+      "bondsCost": 39960,
+      "reglsCost": 8
+    },
     "stats": {
       "primary": 106,
       "primaryLabel": "Мощность поля",
@@ -3893,6 +5205,25 @@
       "bonds": 3468
     },
     "description": "Энергетическая силовая защита. Подходит для любого робота",
+    "transformsFrom": {
+      "fromKey": "zashchitnoe_pole_75m1",
+      "ingredients": [
+        {
+          "key": "kristall_siniy",
+          "count": 348
+        },
+        {
+          "key": "kristall_krasnyy",
+          "count": 525
+        },
+        {
+          "key": "kompaund_krotov",
+          "count": 18
+        }
+      ],
+      "bondsCost": 51945,
+      "reglsCost": 7
+    },
     "stats": {
       "primary": 121,
       "primaryLabel": "Мощность поля",
@@ -3915,6 +5246,20 @@
     },
     "craftFromBlueprints": [],
     "description": "Энергетическая силовая защита. Подходит для любого робота",
+    "transformsFrom": {
+      "fromKey": "zashchitnoe_pole_7",
+      "ingredients": [
+        {
+          "key": "kristall_siniy",
+          "count": 10
+        },
+        {
+          "key": "kristall_krasnyy",
+          "count": 16
+        }
+      ],
+      "bondsCost": 384
+    },
     "stats": {
       "primary": 32,
       "primaryLabel": "Мощность поля",
@@ -3936,6 +5281,25 @@
       "bonds": 4335
     },
     "description": "Энергетическая силовая защита. Подходит для любого робота",
+    "transformsFrom": {
+      "fromKey": "zashchitnoe_pole_85",
+      "ingredients": [
+        {
+          "key": "kristall_siniy",
+          "count": 4536
+        },
+        {
+          "key": "kristall_krasnyy",
+          "count": 1440
+        },
+        {
+          "key": "kompaund_krotov",
+          "count": 24
+        }
+      ],
+      "bondsCost": 7200000,
+      "reglsCost": 60
+    },
     "stats": {
       "primary": 150,
       "primaryLabel": "Мощность поля",

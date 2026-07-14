@@ -91,6 +91,15 @@ function EquipmentCardImpl({ item, isFavorite, onToggleFavorite, onClick }: Equi
                 color={isOverlaidField(item, 'requiredRobotType') ? 'primary' : 'default'}
               />
             )}
+            {item.transformsFrom && (
+              <Chip
+                label="Транс."
+                size="small"
+                variant="outlined"
+                title={`Преобразуется из: ${item.transformsFrom.fromKey}`}
+                color={isOverlaidField(item, 'transformsFrom') ? 'primary' : 'default'}
+              />
+            )}
           </ChipRow>
           <StatList>
             {primaryValue != null && primaryLabel && (

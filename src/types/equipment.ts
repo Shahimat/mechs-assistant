@@ -1,4 +1,4 @@
-import type { Price, OverlayMeta } from './common';
+import type { Price, OverlayMeta, Transform } from './common';
 
 export type EquipmentFamily = 'electronic' | 'special' | 'energy' | 'defence';
 
@@ -39,5 +39,13 @@ export interface Equipment {
   description?: string;
   iconPath?: string;
   wikiUrl?: string;
+  /**
+   * Трансформация из предыдущего equipment. Данные с td «Преобразуется
+   * из» + «Для преобразования требуется» страницы equipment. Есть у
+   * большинства armour/accumulator/generator/shield/cargo и одного
+   * computer'а; у extractor не встречается; базовые уровни без
+   * предшественника не имеют.
+   */
+  transformsFrom?: Transform;
   _meta?: OverlayMeta;
 }

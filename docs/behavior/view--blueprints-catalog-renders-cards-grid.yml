@@ -1,0 +1,29 @@
+id: view--blueprints-catalog-renders-cards-grid
+kind: behavior
+namespace: ui
+entities: [view--blueprints-catalog]
+title: view--blueprints-catalog рендерит сетку карточек чертежей из data--blueprints-catalog
+
+scenarios:
+  - given: стор чертежей гидратирован, `blueprints` содержит записи
+    when: пользователь открыл `/catalogs/blueprints-catalog`
+    then: |
+      view--blueprints-catalog рендерит сетку `BlueprintCard`. В карточке:
+      имя, chip `category` (+ chip `subtype` если equipment), «Создает: N»,
+      «Прочность: N», цена продажи.
+
+      Панель фильтров: `SearchField` (поиск по имени) + `PairToggleGroup`
+      6 капсул (3 пары): «Оружие+Компоненты» / «Оборудование+Апгрейды» /
+      «Паки+Телепорты». Матч по `blueprint.category`.
+
+  - given: массив `blueprints` пуст
+    when: пользователь открыл `/catalogs/blueprints-catalog`
+    then: view показывает empty state.
+
+  - given: "`error` не null (ошибка загрузки)"
+    when: пользователь открыл `/catalogs/blueprints-catalog`
+    then: view показывает error state (Alert severity=error).
+
+verified: false
+verified_note: |
+  Спецификация создана в фазе docs 2026-07-14, реализация — в фазе feat.

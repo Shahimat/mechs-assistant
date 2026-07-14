@@ -60,6 +60,11 @@ features_disabled:
   - filter-group # поле group в вики склеенное, семантически неразличимо между парами — заменено на filter-category
   - filter-slot # у всех оружий сейчас один слот «Орудие», не даёт разделения
 
+manuals_extra: |
+  Секция «Преобразуется из» — если `weapon.transformsFrom` заполнен:
+    - В карточке: короткий chip «⇢ [prev name]» (lookup имени по fromKey из useWeaponsStore).
+    - В детали: chip prev + список ингредиентов chip'ами + «Стоимость: Боны N».
+
 manuals: []
 behaviors:
   - view--weapons-catalog-renders-cards-grid

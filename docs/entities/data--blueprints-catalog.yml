@@ -1,31 +1,133 @@
 id: data--blueprints-catalog
 kind: entity
 namespace: catalog
-version: "0.x"
+version: '1.x'
 
 description: |
-  Каталог чертежей — используются для крафта компонентов и других
-  игровых сущностей. Первичный источник — вики
-  `new.mechs.su/?page_id=3034` (Экономика → Чертежи). Наполнение —
-  `parser--wiki`. Иконки — из парсера или скриншотов, поле `iconPath`.
+  Каталог чертежей — крафт с нуля через рецепт (ингредиенты →
+  производимый предмет). Десятый и финальный каталог MVP1.
 
-  Связка «чертёж → рецепт крафта компонента» описывается в
-  `data--components-catalog` (гибридный, с ручным вводом рецептов).
+  В zustand-стор импортируется merged JSON (`@build/data/blueprints.json`)
+  — массив объектов `Blueprint`. Merged JSON собирается build-time
+  скриптом `scripts/build-data`.
 
-  Shell-entity MVP1.
+  Первичный источник — **9 подстраниц** вики (корневая 3034 «Чертежи»
+  бесполезна: там только общее описание, 0 карточек). BFS проходит по
+  9 seed'ам с зашитым `category` (и `subtype` для equipment) в
+  контексте:
+
+    - 4029 «Чертеж Орудия» → category='weapon' (~93 записи)
+    - 3066 «Чертеж Трюма» → category='equipment', subtype='cargo' (~8)
+    - 3069 «Чертеж Чип» → category='equipment', subtype='computer' (~23)
+    - 3071 «Чертеж Броня» → category='equipment', subtype='armour' (~17)
+    - 3073 «Чертеж Поля» → category='equipment', subtype='shield' (~18)
+    - 3075 «Комплектующие» → category='component' (~32)
+    - 3077 «Чертежи Паков» → category='pack' (~11) + category='mech' (~3, чертежи корпусов, перекрашенные из pack по префиксу `robot_` в producesKey)
+    - 3080 «Чертежи Апгрейдов» → category='upgrade' (~6)
+    - 3083 «Чертежи ТП» → category='teleport' (~4)
+
+  Итого ~215 записей. Все карточки имеют CSS `wiki-item-type-design`,
+  стандартная разметка h2 + wiki-item-table.
+
+  **Встроенный рецепт.** Один чертёж = один рецепт (без чертежа
+  бессмыслен). Ссылки на целевые сущности и ингредиенты — **строго
+  по ключам** других каталогов (не по именам):
+    - `producesKey` + `producesCatalog` → ссылка на weapon/equipment/
+      component/item/… key.
+    - `ingredients[i].key` + `ingredients[i].catalog` → ссылка на
+      ingredient key из ore/loot/components/items/….
+    - `catalog` резолвится в build-time merger'ом через lookup по всем
+      parsed JSON'ам; unresolved → warning в build-log.
+
+  **Кросс-каталоговое отношение с трансформацией.**
+  `blueprint.recipe` = крафт **с нуля** (напр. Чертёж Мортира 5 →
+  компоненты + ресурсы). Параллельно на страницах weapon/equipment
+  есть поле «Преобразуется из» — это трансформация существующего
+  предмета в следующий (напр. Мортира → Мортира 5 + ресурсы). См.
+  `data--weapons-catalog.transformsFrom` и
+  `data--equipment-catalog.transformsFrom`.
+
+  **Требования крафта** — типизированные поля (не общий массив
+  requirements), чтобы удобно фильтровать/аналитить:
+    - `skillSpecialist?: number` — «Навык специалист: N»
+    - `bondsCost?: number` — «Боны: N»
+    - `reglsCost?: number` — «Реглы: N» (если встретится)
+
+  Overlay `data/overrides/blueprints.yml` синкается из Google Sheets
+  (лист `blueprints`) через `parser--google-sheets`. Схема — TS-типы
+  в `src/types/blueprint.ts`.
 
 source_files:
-  data: data/blueprints.json
+  parsed: data/blueprints.json
+  overlay: data/overrides/blueprints.yml
+  merged: .build/data/blueprints.json # build-time
+  merger: scripts/build-data/index.ts
+  parser: scripts/parser-wiki/resolvers/blueprints.ts
   types: src/types/blueprint.ts
 
 wiki_source:
-  page_ids: [3034]
-  section: Экономика → Чертежи
+  root_page_id: 3034 # оглавление (бесполезное)
+  root_page_ids: [4029, 3066, 3069, 3071, 3073, 3075, 3077, 3080, 3083]
+  section: Экономика → Чертежи (9 подстраниц)
   data_flow: auto-parsed
+  page_structure: |
+    9 подстраниц, каждая содержит полный список чертежей своей
+    категории. Карточки — h2.wiki-header с CSS `wiki-item-type-design`
+    + рядом table.wiki-item-table. Поле «Для создания требуется»
+    содержит два типа элементов внутри td2:
+      1. Ингредиенты — <span class="wiki-inline-block"> с иконкой
+         (<img alt="Иконка Название">, data-description на ancestor'е)
+         и <sub>N</sub> (количество).
+      2. Требования — те же span'ы, но без <sub>, с плоским текстом
+         «Навык специалист: N» / «Боны: N» / «Реглы: N».
+
+schema:
+  blueprint_key_fields:
+    - key # translit от name (напр. 'chertezh_plata')
+    - name # полное («Чертеж Плата»)
+    - model # семейный префикс без варианта («Чертеж»)
+    - category # 'mech' | 'weapon' | 'equipment' | 'component' | 'pack' | 'upgrade' | 'teleport'
+    - subtype # только для equipment: 'cargo' | 'computer' | 'armour' | 'shield'
+    - stats # BlueprintStats
+    # рецепт (обязательный)
+    - producesKey # key целевой сущности из другого каталога
+    - producesCatalog # 'weapons' | 'equipment' | 'components' | 'items'
+    - output # «Создает» — сколько получаем за 1 крафт
+    - ingredients # `BlueprintIngredient[]` — с key + catalog + count
+  stats_fields:
+    required: [durability]
+  optional_top_level:
+    - skillSpecialist # «Навык специалист: N» из «Для создания требуется»
+    - bondsCost # «Боны: N»
+    - reglsCost # «Реглы: N»
+    - sellPrice # { bonds?, regls? } — цена продажи чертежа
+    - description
+    - iconPath # data/icons/blueprints/<key>.webp
+    - wikiUrl
+  ingredient_shape:
+    - key # translit от data-description ингредиента
+    - catalog # 'ore' | 'loot' | 'components' | 'items' | ... — резолвится merger'ом
+    - count # число из <sub>
+  producesKey_heuristic: |
+    producesKey = translit(name.replace(/^Чертеж\s+/, '')).
+    Может не совпасть, если у target есть варианты (напр. Чертеж
+    Пулемёт → «pulemyot», а в weapons есть 15+ пулемётов разного
+    уровня — резолв ambiguous). В таком случае merger оставляет
+    producesCatalog заполненным по ctx, но producesKey не проверяет
+    существование. Финальную привязку правит редактор через overlay.
+
+features_enabled: [json-source, typed-schema, overlay-merge, cross-catalog-resolve]
+features_disabled: [network-fetch, dynamic-schema]
 
 manuals: []
-behaviors: []
+behaviors:
+  - data--blueprints-catalog-loaded-from-json
+  - data--blueprints-catalog-schema-typed
+  - view--blueprints-catalog-renders-cards-grid # кросс-ссылка
 
 verified_note: |
-  Shell-entity создана в фазе docs MVP1. Реализация — при подключении
-  каталога через пилот-цепочку.
+  Спецификация обновлена в фазе docs 2026-07-14. Реализация парсера,
+  merger extension (cross-catalog resolve), типов, стора и view — в
+  фазе feat. Cross-catalog связка требует, чтобы к моменту прогона
+  blueprints resolver все другие каталоги были собраны — иначе
+  `ingredients.catalog` останется null.

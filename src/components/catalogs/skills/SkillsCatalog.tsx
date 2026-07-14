@@ -8,6 +8,7 @@ import { CatalogGrid } from '@/components/catalog/CatalogGrid';
 import { FavoritesDnDSection } from '@/components/catalog/FavoritesDnDSection';
 import { Page, CenteredPage } from '@/components/catalog/CatalogPage.styles';
 import { SectionDivider } from '@/components/catalog/CatalogSection.styles';
+import { useDeepLinkOpen } from '@/components/catalog/hooks/useDeepLinkOpen';
 import { SkillCard } from './SkillCard';
 import { SkillDetail } from './SkillDetail';
 import { SortableSkillCard } from './SortableSkillCard';
@@ -23,6 +24,12 @@ export function SkillsCatalog() {
     reorderFavorites,
   } = useSkillsStore();
   const [selectedSkill, setSelectedSkill] = useState<Skill | null>(null);
+  const { openInUrl, clearOpen } = useDeepLinkOpen(
+    skills,
+    (s) => s.key,
+    setSelectedSkill,
+    () => setSelectedSkill(null)
+  );
 
   useEffect(() => {
     if (skills.length === 0 && !isLoading) {
@@ -47,7 +54,13 @@ export function SkillsCatalog() {
   }, [skills, favorites, favoritesSet]);
 
   const handleToggleFavorite = useCallback((key: string) => toggleFavorite(key), [toggleFavorite]);
-  const handleCardClick = useCallback((s: Skill) => setSelectedSkill(s), []);
+  const handleCardClick = useCallback(
+    (s: Skill) => {
+      setSelectedSkill(s);
+      openInUrl(s.key);
+    },
+    [openInUrl]
+  );
 
   if (isLoading) {
     return (
@@ -120,7 +133,13 @@ export function SkillsCatalog() {
         </CatalogGrid>
       </CatalogSection>
 
-      <SkillDetail skill={selectedSkill} onClose={() => setSelectedSkill(null)} />
+      <SkillDetail
+        skill={selectedSkill}
+        onClose={() => {
+          setSelectedSkill(null);
+          clearOpen();
+        }}
+      />
     </Page>
   );
 }

@@ -1,0 +1,8217 @@
+[
+  {
+    "key": "chertezh_apgreyd_uroven_1",
+    "name": "Чертеж Апгрейд Уровень 1",
+    "model": "Чертеж Апгрейд Уровень",
+    "category": "upgrade",
+    "producesKey": "apgreyd_uroven_1",
+    "output": 1,
+    "producesCatalog": "items",
+    "ingredients": [
+      {
+        "key": "kristall_zelenyy",
+        "count": 80
+      },
+      {
+        "key": "kristall_krasnyy",
+        "count": 80
+      },
+      {
+        "key": "kristall_siniy",
+        "count": 80
+      },
+      {
+        "key": "gafniy",
+        "count": 15
+      }
+    ],
+    "skillSpecialist": 100,
+    "sellPrice": {
+      "bonds": 100000
+    },
+    "description": "Чертеж для установки 1й ступени навыков. Покупается в магазине или дается за квест",
+    "stats": {
+      "durability": 1
+    },
+    "iconPath": "blueprints/chertezh_apgreyd_uroven_1.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3080"
+  },
+  {
+    "key": "chertezh_apgreyd_uroven_2",
+    "name": "Чертеж Апгрейд Уровень 2",
+    "model": "Чертеж Апгрейд Уровень",
+    "category": "upgrade",
+    "producesKey": "apgreyd_uroven_2",
+    "output": 1,
+    "producesCatalog": "items",
+    "ingredients": [
+      {
+        "key": "kapyushon_varana",
+        "count": 250,
+        "catalog": "loot"
+      },
+      {
+        "key": "kondensator",
+        "count": 20,
+        "catalog": "components"
+      },
+      {
+        "key": "zhelezo",
+        "count": 5
+      }
+    ],
+    "skillSpecialist": 120,
+    "sellPrice": {
+      "bonds": 125000
+    },
+    "description": "Чертеж для установки 2й ступени навыков. Покупается в магазине или дается за квест",
+    "stats": {
+      "durability": 1
+    },
+    "iconPath": "blueprints/chertezh_apgreyd_uroven_2.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3080"
+  },
+  {
+    "key": "chertezh_apgreyd_uroven_3",
+    "name": "Чертеж Апгрейд Уровень 3",
+    "model": "Чертеж Апгрейд Уровень",
+    "category": "upgrade",
+    "producesKey": "apgreyd_uroven_3",
+    "output": 1,
+    "producesCatalog": "items",
+    "ingredients": [
+      {
+        "key": "kristall_zelenyy",
+        "count": 100
+      },
+      {
+        "key": "kristall_krasnyy",
+        "count": 100
+      },
+      {
+        "key": "kristall_siniy",
+        "count": 100
+      },
+      {
+        "key": "gafniy",
+        "count": 10
+      },
+      {
+        "key": "blok_slezheniya",
+        "count": 5,
+        "catalog": "components"
+      },
+      {
+        "key": "vizor_krotov",
+        "count": 5,
+        "catalog": "components"
+      },
+      {
+        "key": "detal",
+        "count": 10,
+        "catalog": "components"
+      },
+      {
+        "key": "korpus",
+        "count": 5,
+        "catalog": "components"
+      }
+    ],
+    "skillSpecialist": 130,
+    "sellPrice": {
+      "bonds": 125000
+    },
+    "description": "Чертеж для установки 3й ступени навыков. Покупается в магазине или дается за квест",
+    "stats": {
+      "durability": 1
+    },
+    "iconPath": "blueprints/chertezh_apgreyd_uroven_3.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3080"
+  },
+  {
+    "key": "chertezh_apgreyd_uroven_4",
+    "name": "Чертеж Апгрейд Уровень 4",
+    "model": "Чертеж Апгрейд Уровень",
+    "category": "upgrade",
+    "producesKey": "apgreyd_uroven_4",
+    "output": 1,
+    "producesCatalog": "items",
+    "ingredients": [
+      {
+        "key": "usy_tuka_sinego",
+        "count": 20,
+        "catalog": "loot"
+      },
+      {
+        "key": "zashchita_tuka_zheltogo",
+        "count": 50,
+        "catalog": "loot"
+      },
+      {
+        "key": "zakhvat",
+        "count": 10,
+        "catalog": "loot"
+      },
+      {
+        "key": "kristall_siniy",
+        "count": 400
+      },
+      {
+        "key": "kristall_krasnyy",
+        "count": 400
+      },
+      {
+        "key": "kristall_zelenyy",
+        "count": 400
+      }
+    ],
+    "skillSpecialist": 140,
+    "sellPrice": {
+      "bonds": 125000
+    },
+    "description": "Чертеж для установки 4й ступени навыков. Покупается в магазине или дается за квест",
+    "stats": {
+      "durability": 1
+    },
+    "iconPath": "blueprints/chertezh_apgreyd_uroven_4.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3080"
+  },
+  {
+    "key": "chertezh_apgreyd_uroven_5",
+    "name": "Чертеж Апгрейд Уровень 5",
+    "model": "Чертеж Апгрейд Уровень",
+    "category": "upgrade",
+    "producesKey": "apgreyd_uroven_5",
+    "output": 1,
+    "producesCatalog": "items",
+    "ingredients": [
+      {
+        "key": "zakhvat",
+        "count": 40,
+        "catalog": "loot"
+      },
+      {
+        "key": "gafniy",
+        "count": 60
+      },
+      {
+        "key": "kristall_siniy",
+        "count": 750
+      },
+      {
+        "key": "kristall_krasnyy",
+        "count": 750
+      },
+      {
+        "key": "kristall_zelenyy",
+        "count": 750
+      }
+    ],
+    "skillSpecialist": 140,
+    "sellPrice": {
+      "bonds": 125000
+    },
+    "description": "Чертеж для установки 5й ступени навыков. Покупается в магазине или дается за квест",
+    "stats": {
+      "durability": 1
+    },
+    "iconPath": "blueprints/chertezh_apgreyd_uroven_5.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3080"
+  },
+  {
+    "key": "chertezh_apgreyd_uroven_6",
+    "name": "Чертеж Апгрейд Уровень 6",
+    "model": "Чертеж Апгрейд Уровень",
+    "category": "upgrade",
+    "producesKey": "apgreyd_uroven_6",
+    "output": 1,
+    "producesCatalog": "items",
+    "ingredients": [
+      {
+        "key": "chasti_pirata_sat",
+        "count": 1,
+        "catalog": "loot"
+      },
+      {
+        "key": "chasti_pirata_pif",
+        "count": 5,
+        "catalog": "loot"
+      },
+      {
+        "key": "chasti_pirata_rakh",
+        "count": 20,
+        "catalog": "loot"
+      },
+      {
+        "key": "chasti_pirata_tig",
+        "count": 20,
+        "catalog": "loot"
+      },
+      {
+        "key": "chasti_pirata_ugs",
+        "count": 20,
+        "catalog": "loot"
+      },
+      {
+        "key": "usy_tuka_sinego",
+        "count": 50,
+        "catalog": "loot"
+      },
+      {
+        "key": "zashchita_tuka_zheltogo",
+        "count": 80,
+        "catalog": "loot"
+      }
+    ],
+    "skillSpecialist": 140,
+    "sellPrice": {
+      "bonds": 500000
+    },
+    "stats": {
+      "durability": 1
+    },
+    "iconPath": "blueprints/chertezh_apgreyd_uroven_6.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3080"
+  },
+  {
+    "key": "chertezh_blok",
+    "name": "Чертеж Блок",
+    "model": "Чертеж Блок",
+    "category": "component",
+    "producesKey": "blok",
+    "output": 6,
+    "producesCatalog": "components",
+    "ingredients": [
+      {
+        "key": "kristall_zelenyy",
+        "count": 2
+      }
+    ],
+    "skillSpecialist": 10,
+    "sellPrice": {
+      "bonds": 143
+    },
+    "description": "Чертеж для крафта блоков. Добывается как лут из кротов",
+    "stats": {
+      "durability": 100
+    },
+    "iconPath": "blueprints/chertezh_blok.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3075"
+  },
+  {
+    "key": "chertezh_blok_slezheniya",
+    "name": "Чертеж Блок Слежения",
+    "model": "Чертеж Блок Слежения",
+    "category": "component",
+    "producesKey": "blok_slezheniya",
+    "output": 5,
+    "producesCatalog": "components",
+    "ingredients": [
+      {
+        "key": "blok_slezheniya_rasshirennyy",
+        "count": 1,
+        "catalog": "components"
+      }
+    ],
+    "skillSpecialist": 40,
+    "bondsCost": 19,
+    "sellPrice": {
+      "bonds": 202
+    },
+    "description": "Чертеж для крафта блока слежения. Добывается как лут из кротов",
+    "stats": {
+      "durability": 100
+    },
+    "iconPath": "blueprints/chertezh_blok_slezheniya.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3075"
+  },
+  {
+    "key": "chertezh_blok_slezheniya_rasshirennyy",
+    "name": "Чертеж Блок Слежения Расширенный",
+    "model": "Чертеж Блок Слежения Расширенный",
+    "category": "component",
+    "producesKey": "blok_slezheniya_rasshirennyy",
+    "output": 1,
+    "producesCatalog": "components",
+    "ingredients": [
+      {
+        "key": "plata",
+        "count": 2,
+        "catalog": "components"
+      },
+      {
+        "key": "kleshnya_skorpiona",
+        "count": 1,
+        "catalog": "loot"
+      }
+    ],
+    "skillSpecialist": 30,
+    "sellPrice": {
+      "bonds": 184
+    },
+    "description": "Чертеж для крафта блока слежения расширенного. Добывается как лут из кротов",
+    "stats": {
+      "durability": 100
+    },
+    "iconPath": "blueprints/chertezh_blok_slezheniya_rasshirennyy.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3075"
+  },
+  {
+    "key": "chertezh_bronya",
+    "name": "Чертеж Броня",
+    "model": "Чертеж Броня",
+    "category": "equipment",
+    "subtype": "armour",
+    "producesKey": "bronya",
+    "output": 2,
+    "producesCatalog": "equipment",
+    "ingredients": [
+      {
+        "key": "derzhatel",
+        "count": 1,
+        "catalog": "components"
+      },
+      {
+        "key": "bronya",
+        "count": 2,
+        "catalog": "components"
+      }
+    ],
+    "skillSpecialist": 30,
+    "sellPrice": {
+      "bonds": 50
+    },
+    "description": "Чертеж для крафта брони 1го уровня",
+    "stats": {
+      "durability": 60
+    },
+    "iconPath": "blueprints/chertezh_bronya.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3071"
+  },
+  {
+    "key": "chertezh_bronya_13",
+    "name": "Чертеж Броня 13",
+    "model": "Чертеж Броня",
+    "category": "equipment",
+    "subtype": "armour",
+    "producesKey": "bronya_13",
+    "output": 2,
+    "producesCatalog": "equipment",
+    "ingredients": [
+      {
+        "key": "derzhatel",
+        "count": 1,
+        "catalog": "components"
+      },
+      {
+        "key": "bronya",
+        "count": 2,
+        "catalog": "components"
+      }
+    ],
+    "skillSpecialist": 30,
+    "bondsCost": 51,
+    "sellPrice": {
+      "bonds": 50
+    },
+    "description": "Чертеж для крафта брони 13го уровня",
+    "stats": {
+      "durability": 60
+    },
+    "iconPath": "blueprints/chertezh_bronya_13.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3071"
+  },
+  {
+    "key": "chertezh_bronya_18",
+    "name": "Чертеж Броня 18",
+    "model": "Чертеж Броня",
+    "category": "equipment",
+    "subtype": "armour",
+    "producesKey": "bronya_18",
+    "output": 1,
+    "producesCatalog": "equipment",
+    "ingredients": [
+      {
+        "key": "derzhatel",
+        "count": 1,
+        "catalog": "components"
+      },
+      {
+        "key": "bronya",
+        "count": 2,
+        "catalog": "components"
+      }
+    ],
+    "skillSpecialist": 30,
+    "bondsCost": 17,
+    "sellPrice": {
+      "bonds": 50
+    },
+    "description": "Чертеж для крафта брони 18го уровня",
+    "stats": {
+      "durability": 60
+    },
+    "iconPath": "blueprints/chertezh_bronya_18.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3071"
+  },
+  {
+    "key": "chertezh_bronya_22",
+    "name": "Чертеж Броня 22",
+    "model": "Чертеж Броня",
+    "category": "equipment",
+    "subtype": "armour",
+    "producesKey": "bronya_22",
+    "output": 1,
+    "producesCatalog": "equipment",
+    "ingredients": [
+      {
+        "key": "derzhatel",
+        "count": 2,
+        "catalog": "components"
+      },
+      {
+        "key": "bronya",
+        "count": 4,
+        "catalog": "components"
+      }
+    ],
+    "skillSpecialist": 35,
+    "sellPrice": {
+      "bonds": 100
+    },
+    "description": "Чертеж для крафта брони 22го уровня",
+    "stats": {
+      "durability": 60
+    },
+    "iconPath": "blueprints/chertezh_bronya_22.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3071"
+  },
+  {
+    "key": "chertezh_bronya_26",
+    "name": "Чертеж Броня 26",
+    "model": "Чертеж Броня",
+    "category": "equipment",
+    "subtype": "armour",
+    "producesKey": "bronya_26",
+    "output": 1,
+    "producesCatalog": "equipment",
+    "ingredients": [
+      {
+        "key": "derzhatel",
+        "count": 2,
+        "catalog": "components"
+      },
+      {
+        "key": "bronya",
+        "count": 4,
+        "catalog": "components"
+      }
+    ],
+    "skillSpecialist": 35,
+    "sellPrice": {
+      "bonds": 100
+    },
+    "description": "Чертеж для крафта брони 26го уровня",
+    "stats": {
+      "durability": 60
+    },
+    "iconPath": "blueprints/chertezh_bronya_26.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3071"
+  },
+  {
+    "key": "chertezh_bronya_29",
+    "name": "Чертеж Броня 29",
+    "model": "Чертеж Броня",
+    "category": "equipment",
+    "subtype": "armour",
+    "producesKey": "bronya_29",
+    "output": 1,
+    "producesCatalog": "equipment",
+    "ingredients": [
+      {
+        "key": "derzhatel",
+        "count": 2,
+        "catalog": "components"
+      },
+      {
+        "key": "bronya",
+        "count": 4,
+        "catalog": "components"
+      }
+    ],
+    "skillSpecialist": 35,
+    "bondsCost": 41,
+    "sellPrice": {
+      "bonds": 100
+    },
+    "description": "Чертеж для крафта брони 29го уровня",
+    "stats": {
+      "durability": 60
+    },
+    "iconPath": "blueprints/chertezh_bronya_29.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3071"
+  },
+  {
+    "key": "chertezh_bronya_33",
+    "name": "Чертеж Броня 33",
+    "model": "Чертеж Броня",
+    "category": "equipment",
+    "subtype": "armour",
+    "producesKey": "bronya_33",
+    "output": 1,
+    "producesCatalog": "equipment",
+    "ingredients": [
+      {
+        "key": "derzhatel",
+        "count": 3,
+        "catalog": "components"
+      },
+      {
+        "key": "bronya",
+        "count": 6,
+        "catalog": "components"
+      }
+    ],
+    "skillSpecialist": 40,
+    "sellPrice": {
+      "bonds": 150
+    },
+    "description": "Чертеж для крафта брони 33го уровня",
+    "stats": {
+      "durability": 60
+    },
+    "iconPath": "blueprints/chertezh_bronya_33.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3071"
+  },
+  {
+    "key": "chertezh_bronya_35",
+    "name": "Чертеж Броня 35",
+    "model": "Чертеж Броня",
+    "category": "equipment",
+    "subtype": "armour",
+    "producesKey": "bronya_35",
+    "output": 1,
+    "producesCatalog": "equipment",
+    "ingredients": [
+      {
+        "key": "derzhatel",
+        "count": 3,
+        "catalog": "components"
+      },
+      {
+        "key": "bronya",
+        "count": 6,
+        "catalog": "components"
+      }
+    ],
+    "skillSpecialist": 40,
+    "bondsCost": 450,
+    "sellPrice": {
+      "bonds": 150
+    },
+    "description": "Чертеж для крафта брони 35го уровня",
+    "stats": {
+      "durability": 60
+    },
+    "iconPath": "blueprints/chertezh_bronya_35.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3071"
+  },
+  {
+    "key": "chertezh_bronya_38",
+    "name": "Чертеж Броня 38",
+    "model": "Чертеж Броня",
+    "category": "equipment",
+    "subtype": "armour",
+    "producesKey": "bronya_38",
+    "output": 1,
+    "producesCatalog": "equipment",
+    "ingredients": [
+      {
+        "key": "derzhatel",
+        "count": 3,
+        "catalog": "components"
+      },
+      {
+        "key": "bronya",
+        "count": 6,
+        "catalog": "components"
+      }
+    ],
+    "skillSpecialist": 40,
+    "bondsCost": 500,
+    "sellPrice": {
+      "bonds": 150
+    },
+    "description": "Чертеж для крафта брони 38го уровня",
+    "stats": {
+      "durability": 60
+    },
+    "iconPath": "blueprints/chertezh_bronya_38.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3071"
+  },
+  {
+    "key": "chertezh_bronya_4",
+    "name": "Чертеж Броня 4",
+    "model": "Чертеж Броня",
+    "category": "equipment",
+    "subtype": "armour",
+    "producesKey": "bronya_4",
+    "output": 9,
+    "producesCatalog": "equipment",
+    "ingredients": [
+      {
+        "key": "derzhatel",
+        "count": 1,
+        "catalog": "components"
+      },
+      {
+        "key": "bronya",
+        "count": 2,
+        "catalog": "components"
+      }
+    ],
+    "skillSpecialist": 30,
+    "sellPrice": {
+      "bonds": 50
+    },
+    "description": "Чертеж для крафта брони 4го уровня",
+    "stats": {
+      "durability": 60
+    },
+    "iconPath": "blueprints/chertezh_bronya_4.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3071"
+  },
+  {
+    "key": "chertezh_bronya_40",
+    "name": "Чертеж Броня 40",
+    "model": "Чертеж Броня",
+    "category": "equipment",
+    "subtype": "armour",
+    "producesKey": "bronya_40",
+    "output": 1,
+    "producesCatalog": "equipment",
+    "ingredients": [
+      {
+        "key": "derzhatel",
+        "count": 4,
+        "catalog": "components"
+      },
+      {
+        "key": "bronya",
+        "count": 8,
+        "catalog": "components"
+      }
+    ],
+    "skillSpecialist": 45,
+    "bondsCost": 539,
+    "sellPrice": {
+      "bonds": 200
+    },
+    "description": "Чертеж для крафта брони 40го уровня",
+    "stats": {
+      "durability": 60
+    },
+    "iconPath": "blueprints/chertezh_bronya_40.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3071"
+  },
+  {
+    "key": "chertezh_bronya_42",
+    "name": "Чертеж Броня 42",
+    "model": "Чертеж Броня",
+    "category": "equipment",
+    "subtype": "armour",
+    "producesKey": "bronya_42",
+    "output": 1,
+    "producesCatalog": "equipment",
+    "ingredients": [
+      {
+        "key": "derzhatel",
+        "count": 4,
+        "catalog": "components"
+      },
+      {
+        "key": "bronya",
+        "count": 8,
+        "catalog": "components"
+      }
+    ],
+    "skillSpecialist": 45,
+    "bondsCost": 582,
+    "sellPrice": {
+      "bonds": 200
+    },
+    "description": "Чертеж для крафта брони 42го уровня",
+    "stats": {
+      "durability": 60
+    },
+    "iconPath": "blueprints/chertezh_bronya_42.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3071"
+  },
+  {
+    "key": "chertezh_bronya_45",
+    "name": "Чертеж Броня 45",
+    "model": "Чертеж Броня",
+    "category": "equipment",
+    "subtype": "armour",
+    "producesKey": "bronya_45",
+    "output": 1,
+    "producesCatalog": "equipment",
+    "ingredients": [
+      {
+        "key": "derzhatel",
+        "count": 4,
+        "catalog": "components"
+      },
+      {
+        "key": "bronya",
+        "count": 8,
+        "catalog": "components"
+      }
+    ],
+    "skillSpecialist": 45,
+    "bondsCost": 611,
+    "sellPrice": {
+      "bonds": 200
+    },
+    "description": "Чертеж для крафта брони 45го уровня",
+    "stats": {
+      "durability": 60
+    },
+    "iconPath": "blueprints/chertezh_bronya_45.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3071"
+  },
+  {
+    "key": "chertezh_bronya_47",
+    "name": "Чертеж Броня 47",
+    "model": "Чертеж Броня",
+    "category": "equipment",
+    "subtype": "armour",
+    "producesKey": "bronya_47",
+    "output": 1,
+    "producesCatalog": "equipment",
+    "ingredients": [
+      {
+        "key": "derzhatel",
+        "count": 4,
+        "catalog": "components"
+      },
+      {
+        "key": "bronya",
+        "count": 8,
+        "catalog": "components"
+      }
+    ],
+    "skillSpecialist": 45,
+    "bondsCost": 814,
+    "sellPrice": {
+      "bonds": 200
+    },
+    "description": "Чертеж для крафта брони 47го уровня",
+    "stats": {
+      "durability": 60
+    },
+    "iconPath": "blueprints/chertezh_bronya_47.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3071"
+  },
+  {
+    "key": "chertezh_bronya_50",
+    "name": "Чертеж Броня 50",
+    "model": "Чертеж Броня",
+    "category": "equipment",
+    "subtype": "armour",
+    "producesKey": "bronya_50",
+    "output": 1,
+    "producesCatalog": "equipment",
+    "ingredients": [
+      {
+        "key": "derzhatel",
+        "count": 5,
+        "catalog": "components"
+      },
+      {
+        "key": "bronya",
+        "count": 10,
+        "catalog": "components"
+      }
+    ],
+    "skillSpecialist": 50,
+    "bondsCost": 264,
+    "sellPrice": {
+      "bonds": 250
+    },
+    "description": "Чертеж для крафта брони 50го уровня",
+    "stats": {
+      "durability": 60
+    },
+    "iconPath": "blueprints/chertezh_bronya_50.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3071"
+  },
+  {
+    "key": "chertezh_bronya_8",
+    "name": "Чертеж Броня 8",
+    "model": "Чертеж Броня",
+    "category": "equipment",
+    "subtype": "armour",
+    "producesKey": "bronya_8",
+    "output": 3,
+    "producesCatalog": "equipment",
+    "ingredients": [
+      {
+        "key": "derzhatel",
+        "count": 1,
+        "catalog": "components"
+      },
+      {
+        "key": "bronya",
+        "count": 2,
+        "catalog": "components"
+      }
+    ],
+    "skillSpecialist": 30,
+    "sellPrice": {
+      "bonds": 50
+    },
+    "description": "Чертеж для крафта брони 8го уровня",
+    "stats": {
+      "durability": 60
+    },
+    "iconPath": "blueprints/chertezh_bronya_8.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3071"
+  },
+  {
+    "key": "chertezh_bronya_splav_v13",
+    "name": "Чертеж Броня Сплав V.13",
+    "model": "Чертеж Броня Сплав V.13",
+    "category": "equipment",
+    "subtype": "armour",
+    "producesKey": "bronya_splav_v13",
+    "output": 3,
+    "producesCatalog": "components",
+    "ingredients": [
+      {
+        "key": "detal",
+        "count": 1,
+        "catalog": "components"
+      },
+      {
+        "key": "mekhanizm_podachi",
+        "count": 1,
+        "catalog": "components"
+      },
+      {
+        "key": "segment_chervya",
+        "count": 1,
+        "catalog": "loot"
+      }
+    ],
+    "skillSpecialist": 30,
+    "bondsCost": 81,
+    "sellPrice": {
+      "bonds": 103
+    },
+    "description": "Чертеж для крафта Брони СПЛАВ v.13. Добывается как лут из кротов",
+    "stats": {
+      "durability": 100
+    },
+    "iconPath": "blueprints/chertezh_bronya_splav_v13.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3071"
+  },
+  {
+    "key": "chertezh_chip_bronya",
+    "name": "Чертеж Чип Броня",
+    "model": "Чертеж Чип Броня",
+    "category": "equipment",
+    "subtype": "computer",
+    "producesKey": "chip_bronya_5",
+    "output": 3,
+    "producesCatalog": "equipment",
+    "ingredients": [
+      {
+        "key": "plata",
+        "count": 3,
+        "catalog": "components"
+      }
+    ],
+    "skillSpecialist": 40,
+    "bondsCost": 796,
+    "sellPrice": {
+      "bonds": 270
+    },
+    "description": "Чертеж для крафта усилителя брони робота",
+    "stats": {
+      "durability": 60
+    },
+    "iconPath": "blueprints/chertezh_chip_bronya.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3069"
+  },
+  {
+    "key": "chertezh_chip_bronya_v2",
+    "name": "Чертеж Чип Броня V.2",
+    "model": "Чертеж Чип Броня V.2",
+    "category": "equipment",
+    "subtype": "computer",
+    "producesKey": "chip_bronya_15",
+    "output": 3,
+    "producesCatalog": "equipment",
+    "ingredients": [
+      {
+        "key": "plata",
+        "count": 3,
+        "catalog": "components"
+      }
+    ],
+    "skillSpecialist": 40,
+    "bondsCost": 655,
+    "sellPrice": {
+      "bonds": 270
+    },
+    "description": "Чертеж для крафта усилителя брони робота",
+    "stats": {
+      "durability": 60
+    },
+    "iconPath": "blueprints/chertezh_chip_bronya_v2.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3069"
+  },
+  {
+    "key": "chertezh_chip_bronya_v3",
+    "name": "Чертеж Чип Броня V.3",
+    "model": "Чертеж Чип Броня V.3",
+    "category": "equipment",
+    "subtype": "computer",
+    "producesKey": "chip_bronya_25",
+    "output": 1,
+    "producesCatalog": "equipment",
+    "ingredients": [
+      {
+        "key": "plata",
+        "count": 3,
+        "catalog": "components"
+      }
+    ],
+    "skillSpecialist": 40,
+    "bondsCost": 787,
+    "sellPrice": {
+      "bonds": 270
+    },
+    "description": "Чертеж для крафта усилителя брони робота",
+    "stats": {
+      "durability": 60
+    },
+    "iconPath": "blueprints/chertezh_chip_bronya_v3.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3069"
+  },
+  {
+    "key": "chertezh_chip_bronya_v4",
+    "name": "Чертеж Чип Броня V.4",
+    "model": "Чертеж Чип Броня V.4",
+    "category": "equipment",
+    "subtype": "computer",
+    "producesKey": "chip_bronya_35",
+    "output": 1,
+    "producesCatalog": "equipment",
+    "ingredients": [
+      {
+        "key": "plata",
+        "count": 3,
+        "catalog": "components"
+      }
+    ],
+    "skillSpecialist": 40,
+    "bondsCost": 264,
+    "sellPrice": {
+      "bonds": 270
+    },
+    "description": "Чертеж для крафта усилителя брони робота",
+    "stats": {
+      "durability": 60
+    },
+    "iconPath": "blueprints/chertezh_chip_bronya_v4.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3069"
+  },
+  {
+    "key": "chertezh_chip_dobycha",
+    "name": "Чертеж Чип Добыча",
+    "model": "Чертеж Чип Добыча",
+    "category": "equipment",
+    "subtype": "computer",
+    "producesKey": "chip_dobycha_5",
+    "output": 3,
+    "producesCatalog": "equipment",
+    "ingredients": [
+      {
+        "key": "plata",
+        "count": 3,
+        "catalog": "components"
+      }
+    ],
+    "skillSpecialist": 40,
+    "bondsCost": 365,
+    "sellPrice": {
+      "bonds": 270
+    },
+    "description": "Чертеж для крафта ускорителя процесса бурения",
+    "stats": {
+      "durability": 60
+    },
+    "iconPath": "blueprints/chertezh_chip_dobycha.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3069"
+  },
+  {
+    "key": "chertezh_chip_dobycha_v2",
+    "name": "Чертеж Чип Добыча V.2",
+    "model": "Чертеж Чип Добыча V.2",
+    "category": "equipment",
+    "subtype": "computer",
+    "producesKey": "chip_dobycha_15",
+    "output": 2,
+    "producesCatalog": "equipment",
+    "ingredients": [
+      {
+        "key": "plata",
+        "count": 3,
+        "catalog": "components"
+      }
+    ],
+    "skillSpecialist": 40,
+    "bondsCost": 656,
+    "sellPrice": {
+      "bonds": 270
+    },
+    "description": "Чертеж для крафта ускорителя процесса бурения",
+    "stats": {
+      "durability": 60
+    },
+    "iconPath": "blueprints/chertezh_chip_dobycha_v2.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3069"
+  },
+  {
+    "key": "chertezh_chip_dobycha_v3",
+    "name": "Чертеж Чип Добыча V.3",
+    "model": "Чертеж Чип Добыча V.3",
+    "category": "equipment",
+    "subtype": "computer",
+    "producesKey": "chip_dobycha_25",
+    "output": 1,
+    "producesCatalog": "equipment",
+    "ingredients": [
+      {
+        "key": "plata",
+        "count": 6,
+        "catalog": "components"
+      }
+    ],
+    "skillSpecialist": 45,
+    "bondsCost": 1729,
+    "sellPrice": {
+      "bonds": 540
+    },
+    "description": "Чертеж для крафта ускорителя процесса бурения",
+    "stats": {
+      "durability": 60
+    },
+    "iconPath": "blueprints/chertezh_chip_dobycha_v3.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3069"
+  },
+  {
+    "key": "chertezh_chip_dobycha_v4",
+    "name": "Чертеж Чип Добыча V.4",
+    "model": "Чертеж Чип Добыча V.4",
+    "category": "equipment",
+    "subtype": "computer",
+    "producesKey": "chip_dobycha_35",
+    "output": 1,
+    "producesCatalog": "equipment",
+    "ingredients": [
+      {
+        "key": "plata",
+        "count": 6,
+        "catalog": "components"
+      }
+    ],
+    "skillSpecialist": 45,
+    "bondsCost": 2145,
+    "sellPrice": {
+      "bonds": 540
+    },
+    "description": "Чертеж для крафта ускорителя процесса бурения",
+    "stats": {
+      "durability": 60
+    },
+    "iconPath": "blueprints/chertezh_chip_dobycha_v4.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3069"
+  },
+  {
+    "key": "chertezh_chip_energosnabzhenie",
+    "name": "Чертеж Чип Энергоснабжение",
+    "model": "Чертеж Чип Энергоснабжение",
+    "category": "equipment",
+    "subtype": "computer",
+    "producesKey": "chip_energosnabzhenie_5",
+    "output": 3,
+    "producesCatalog": "equipment",
+    "ingredients": [
+      {
+        "key": "plata",
+        "count": 3,
+        "catalog": "components"
+      }
+    ],
+    "skillSpecialist": 40,
+    "bondsCost": 120,
+    "sellPrice": {
+      "bonds": 270
+    },
+    "description": "Чертеж для крафта усилителя энергоустановки робота",
+    "stats": {
+      "durability": 60
+    },
+    "iconPath": "blueprints/chertezh_chip_energosnabzhenie.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3069"
+  },
+  {
+    "key": "chertezh_chip_energosnabzhenie_v2",
+    "name": "Чертеж Чип Энергоснабжение V.2",
+    "model": "Чертеж Чип Энергоснабжение V.2",
+    "category": "equipment",
+    "subtype": "computer",
+    "producesKey": "chip_energosnabzhenie_15",
+    "output": 2,
+    "producesCatalog": "equipment",
+    "ingredients": [
+      {
+        "key": "plata",
+        "count": 3,
+        "catalog": "components"
+      }
+    ],
+    "skillSpecialist": 40,
+    "bondsCost": 525,
+    "sellPrice": {
+      "bonds": 270
+    },
+    "description": "Чертеж для крафта усилителя энергоустановки робота",
+    "stats": {
+      "durability": 60
+    },
+    "iconPath": "blueprints/chertezh_chip_energosnabzhenie_v2.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3069"
+  },
+  {
+    "key": "chertezh_chip_energosnabzhenie_v3",
+    "name": "Чертеж Чип Энергоснабжение V.3",
+    "model": "Чертеж Чип Энергоснабжение V.3",
+    "category": "equipment",
+    "subtype": "computer",
+    "producesKey": "chip_energosnabzhenie_25",
+    "output": 1,
+    "producesCatalog": "equipment",
+    "ingredients": [
+      {
+        "key": "plata",
+        "count": 3,
+        "catalog": "components"
+      }
+    ],
+    "skillSpecialist": 40,
+    "bondsCost": 1151,
+    "sellPrice": {
+      "bonds": 270
+    },
+    "description": "Чертеж для крафта усилителя энергоустановки робота",
+    "stats": {
+      "durability": 60
+    },
+    "iconPath": "blueprints/chertezh_chip_energosnabzhenie_v3.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3069"
+  },
+  {
+    "key": "chertezh_chip_energosnabzhenie_v4",
+    "name": "Чертеж Чип Энергоснабжение V.4",
+    "model": "Чертеж Чип Энергоснабжение V.4",
+    "category": "equipment",
+    "subtype": "computer",
+    "producesKey": "chip_energosnabzhenie_35",
+    "output": 1,
+    "producesCatalog": "equipment",
+    "ingredients": [
+      {
+        "key": "plata",
+        "count": 9,
+        "catalog": "components"
+      }
+    ],
+    "skillSpecialist": 50,
+    "bondsCost": 1764,
+    "sellPrice": {
+      "bonds": 810
+    },
+    "description": "Чертеж для крафта усилителя энергоустановки робота",
+    "stats": {
+      "durability": 60
+    },
+    "iconPath": "blueprints/chertezh_chip_energosnabzhenie_v4.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3069"
+  },
+  {
+    "key": "chertezh_chip_gdis",
+    "name": "Чертеж Чип Гдис",
+    "model": "Чертеж Чип Гдис",
+    "category": "equipment",
+    "subtype": "computer",
+    "producesKey": "zchip_gdis",
+    "output": 1,
+    "producesCatalog": "equipment",
+    "ingredients": [
+      {
+        "key": "plata",
+        "count": 12,
+        "catalog": "components"
+      }
+    ],
+    "skillSpecialist": 55,
+    "bondsCost": 8953,
+    "sellPrice": {
+      "bonds": 1080
+    },
+    "description": "Чертеж для крафта усилителя брони робота",
+    "stats": {
+      "durability": 60
+    },
+    "iconPath": "blueprints/chertezh_chip_gdis.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3069"
+  },
+  {
+    "key": "chertezh_chip_pole",
+    "name": "Чертеж Чип Поле",
+    "model": "Чертеж Чип Поле",
+    "category": "equipment",
+    "subtype": "computer",
+    "producesKey": "chip_pole_5",
+    "output": 4,
+    "producesCatalog": "equipment",
+    "ingredients": [
+      {
+        "key": "plata",
+        "count": 3,
+        "catalog": "components"
+      }
+    ],
+    "skillSpecialist": 40,
+    "bondsCost": 407,
+    "sellPrice": {
+      "bonds": 270
+    },
+    "description": "Чертеж для крафта усилителя энергополей",
+    "stats": {
+      "durability": 60
+    },
+    "iconPath": "blueprints/chertezh_chip_pole.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3069"
+  },
+  {
+    "key": "chertezh_chip_pole_v2",
+    "name": "Чертеж Чип Поле V.2",
+    "model": "Чертеж Чип Поле V.2",
+    "category": "equipment",
+    "subtype": "computer",
+    "producesKey": "chip_pole_15",
+    "output": 3,
+    "producesCatalog": "equipment",
+    "ingredients": [
+      {
+        "key": "plata",
+        "count": 3,
+        "catalog": "components"
+      }
+    ],
+    "skillSpecialist": 40,
+    "bondsCost": 371,
+    "sellPrice": {
+      "bonds": 270
+    },
+    "description": "Чертеж для крафта усилителя энергополей",
+    "stats": {
+      "durability": 60
+    },
+    "iconPath": "blueprints/chertezh_chip_pole_v2.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3069"
+  },
+  {
+    "key": "chertezh_chip_pole_v3",
+    "name": "Чертеж Чип Поле V.3",
+    "model": "Чертеж Чип Поле V.3",
+    "category": "equipment",
+    "subtype": "computer",
+    "producesKey": "chip_pole_25",
+    "output": 1,
+    "producesCatalog": "equipment",
+    "ingredients": [
+      {
+        "key": "plata",
+        "count": 6,
+        "catalog": "components"
+      }
+    ],
+    "skillSpecialist": 45,
+    "bondsCost": 1442,
+    "sellPrice": {
+      "bonds": 540
+    },
+    "description": "Чертеж для крафта усилителя энергополей",
+    "stats": {
+      "durability": 60
+    },
+    "iconPath": "blueprints/chertezh_chip_pole_v3.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3069"
+  },
+  {
+    "key": "chertezh_chip_pole_v4",
+    "name": "Чертеж Чип Поле V.4",
+    "model": "Чертеж Чип Поле V.4",
+    "category": "equipment",
+    "subtype": "computer",
+    "producesKey": "chip_pole_35",
+    "output": 1,
+    "producesCatalog": "equipment",
+    "ingredients": [
+      {
+        "key": "plata",
+        "count": 9,
+        "catalog": "components"
+      }
+    ],
+    "skillSpecialist": 50,
+    "bondsCost": 3705,
+    "sellPrice": {
+      "bonds": 810
+    },
+    "description": "Чертеж для крафта усилителя энергополей",
+    "stats": {
+      "durability": 60
+    },
+    "iconPath": "blueprints/chertezh_chip_pole_v4.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3069"
+  },
+  {
+    "key": "chertezh_chip_prochnost",
+    "name": "Чертеж Чип Прочность",
+    "model": "Чертеж Чип Прочность",
+    "category": "equipment",
+    "subtype": "computer",
+    "producesKey": "chip_prochnost",
+    "output": 1,
+    "producesCatalog": "equipment",
+    "ingredients": [
+      {
+        "key": "plata",
+        "count": 18,
+        "catalog": "components"
+      }
+    ],
+    "skillSpecialist": 65,
+    "bondsCost": 8164,
+    "sellPrice": {
+      "bonds": 1620
+    },
+    "description": "Чертеж для крафта усилителя прочности робота",
+    "stats": {
+      "durability": 60
+    },
+    "iconPath": "blueprints/chertezh_chip_prochnost.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3069"
+  },
+  {
+    "key": "chertezh_chip_skorost",
+    "name": "Чертеж Чип Скорость",
+    "model": "Чертеж Чип Скорость",
+    "category": "equipment",
+    "subtype": "computer",
+    "producesKey": "chip_skorost",
+    "output": 1,
+    "producesCatalog": "equipment",
+    "ingredients": [
+      {
+        "key": "plata",
+        "count": 15,
+        "catalog": "components"
+      }
+    ],
+    "skillSpecialist": 60,
+    "bondsCost": 2664,
+    "sellPrice": {
+      "bonds": 1350
+    },
+    "description": "Чертеж для крафта усилителя скорости робота",
+    "stats": {
+      "durability": 60
+    },
+    "iconPath": "blueprints/chertezh_chip_skorost.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3069"
+  },
+  {
+    "key": "chertezh_chip_tryum",
+    "name": "Чертеж Чип Трюм",
+    "model": "Чертеж Чип Трюм",
+    "category": "equipment",
+    "subtype": "computer",
+    "producesKey": "chip_tryum_5",
+    "output": 3,
+    "producesCatalog": "equipment",
+    "ingredients": [
+      {
+        "key": "plata",
+        "count": 3,
+        "catalog": "components"
+      }
+    ],
+    "skillSpecialist": 40,
+    "bondsCost": 205,
+    "sellPrice": {
+      "bonds": 270
+    },
+    "description": "Чертеж для крафта увеличителя емкости трюма",
+    "stats": {
+      "durability": 60
+    },
+    "iconPath": "blueprints/chertezh_chip_tryum.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3069"
+  },
+  {
+    "key": "chertezh_chip_tryum_v2",
+    "name": "Чертеж Чип Трюм V.2",
+    "model": "Чертеж Чип Трюм V.2",
+    "category": "equipment",
+    "subtype": "computer",
+    "producesKey": "chip_tryum_15",
+    "output": 2,
+    "producesCatalog": "equipment",
+    "ingredients": [
+      {
+        "key": "plata",
+        "count": 3,
+        "catalog": "components"
+      }
+    ],
+    "skillSpecialist": 40,
+    "bondsCost": 395,
+    "sellPrice": {
+      "bonds": 270
+    },
+    "description": "Чертеж для крафта увеличителя емкости трюма",
+    "stats": {
+      "durability": 60
+    },
+    "iconPath": "blueprints/chertezh_chip_tryum_v2.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3069"
+  },
+  {
+    "key": "chertezh_chip_tryum_v3",
+    "name": "Чертеж Чип Трюм V.3",
+    "model": "Чертеж Чип Трюм V.3",
+    "category": "equipment",
+    "subtype": "computer",
+    "producesKey": "chip_tryum_25",
+    "output": 1,
+    "producesCatalog": "equipment",
+    "ingredients": [
+      {
+        "key": "plata",
+        "count": 3,
+        "catalog": "components"
+      }
+    ],
+    "skillSpecialist": 40,
+    "bondsCost": 969,
+    "sellPrice": {
+      "bonds": 270
+    },
+    "description": "Чертеж для крафта увеличителя емкости трюма",
+    "stats": {
+      "durability": 60
+    },
+    "iconPath": "blueprints/chertezh_chip_tryum_v3.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3069"
+  },
+  {
+    "key": "chertezh_chip_tryum_v4",
+    "name": "Чертеж Чип Трюм V.4",
+    "model": "Чертеж Чип Трюм V.4",
+    "category": "equipment",
+    "subtype": "computer",
+    "producesKey": "chip_tryum_35",
+    "output": 1,
+    "producesCatalog": "equipment",
+    "ingredients": [
+      {
+        "key": "plata",
+        "count": 9,
+        "catalog": "components"
+      }
+    ],
+    "skillSpecialist": 50,
+    "bondsCost": 4154,
+    "sellPrice": {
+      "bonds": 810
+    },
+    "description": "Чертеж для крафта увеличителя емкости трюма",
+    "stats": {
+      "durability": 60
+    },
+    "iconPath": "blueprints/chertezh_chip_tryum_v4.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3069"
+  },
+  {
+    "key": "chertezh_derzhatel",
+    "name": "Чертеж Держатель",
+    "model": "Чертеж Держатель",
+    "category": "component",
+    "producesKey": "derzhatel",
+    "output": 2,
+    "producesCatalog": "components",
+    "ingredients": [
+      {
+        "key": "kronshteyn",
+        "count": 3,
+        "catalog": "components"
+      }
+    ],
+    "skillSpecialist": 25,
+    "sellPrice": {
+      "bonds": 49
+    },
+    "description": "Чертеж для крафта держателя. Добывается как лут из кротов",
+    "stats": {
+      "durability": 100
+    },
+    "iconPath": "blueprints/chertezh_derzhatel.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3075"
+  },
+  {
+    "key": "chertezh_detal",
+    "name": "Чертеж Деталь",
+    "model": "Чертеж Деталь",
+    "category": "component",
+    "producesKey": "detal",
+    "output": 2,
+    "producesCatalog": "components",
+    "ingredients": [
+      {
+        "key": "blok",
+        "count": 1,
+        "catalog": "components"
+      },
+      {
+        "key": "elitra_tuka",
+        "count": 1,
+        "catalog": "loot"
+      }
+    ],
+    "skillSpecialist": 15,
+    "sellPrice": {
+      "bonds": 27
+    },
+    "description": "Чертеж для крафта детали. Добывается как лут из кротов",
+    "stats": {
+      "durability": 100
+    },
+    "iconPath": "blueprints/chertezh_detal.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3075"
+  },
+  {
+    "key": "chertezh_empp",
+    "name": "Чертеж Эмпп",
+    "model": "Чертеж Эмпп",
+    "category": "weapon",
+    "producesKey": "empp",
+    "output": 48,
+    "producesCatalog": "weapons",
+    "ingredients": [
+      {
+        "key": "korpus",
+        "count": 1,
+        "catalog": "components"
+      },
+      {
+        "key": "shnek",
+        "count": 1,
+        "catalog": "components"
+      },
+      {
+        "key": "kondensator",
+        "count": 1,
+        "catalog": "components"
+      },
+      {
+        "key": "ionizator",
+        "count": 1,
+        "catalog": "components"
+      },
+      {
+        "key": "turbina",
+        "count": 1,
+        "catalog": "components"
+      }
+    ],
+    "skillSpecialist": 40,
+    "sellPrice": {
+      "bonds": 250
+    },
+    "description": "Чертеж для крафта электро-магнитной пушки 1го уровня",
+    "stats": {
+      "durability": 60
+    },
+    "iconPath": "blueprints/chertezh_empp.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=4029"
+  },
+  {
+    "key": "chertezh_empp_10b",
+    "name": "Чертеж Эмпп 10б",
+    "model": "Чертеж Эмпп",
+    "category": "weapon",
+    "producesKey": "empp_10b",
+    "output": 2,
+    "producesCatalog": "weapons",
+    "ingredients": [
+      {
+        "key": "korpus",
+        "count": 1,
+        "catalog": "components"
+      },
+      {
+        "key": "shnek",
+        "count": 1,
+        "catalog": "components"
+      },
+      {
+        "key": "kondensator",
+        "count": 1,
+        "catalog": "components"
+      },
+      {
+        "key": "ionizator",
+        "count": 1,
+        "catalog": "components"
+      },
+      {
+        "key": "turbina",
+        "count": 1,
+        "catalog": "components"
+      }
+    ],
+    "skillSpecialist": 40,
+    "bondsCost": 344,
+    "sellPrice": {
+      "bonds": 250
+    },
+    "description": "Чертеж для крафта электро-магнитной пушки 10го уровня",
+    "stats": {
+      "durability": 60
+    },
+    "iconPath": "blueprints/chertezh_empp_10b.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=4029"
+  },
+  {
+    "key": "chertezh_empp_13b",
+    "name": "Чертеж Эмпп 13б",
+    "model": "Чертеж Эмпп",
+    "category": "weapon",
+    "producesKey": "empp_13b",
+    "output": 1,
+    "producesCatalog": "weapons",
+    "ingredients": [
+      {
+        "key": "korpus",
+        "count": 1,
+        "catalog": "components"
+      },
+      {
+        "key": "shnek",
+        "count": 1,
+        "catalog": "components"
+      },
+      {
+        "key": "kondensator",
+        "count": 1,
+        "catalog": "components"
+      },
+      {
+        "key": "ionizator",
+        "count": 1,
+        "catalog": "components"
+      },
+      {
+        "key": "turbina",
+        "count": 1,
+        "catalog": "components"
+      }
+    ],
+    "skillSpecialist": 40,
+    "sellPrice": {
+      "bonds": 250
+    },
+    "description": "Чертеж для крафта электро-магнитной пушки 13го уровня",
+    "stats": {
+      "durability": 60
+    },
+    "iconPath": "blueprints/chertezh_empp_13b.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=4029"
+  },
+  {
+    "key": "chertezh_empp_16b",
+    "name": "Чертеж Эмпп 16б",
+    "model": "Чертеж Эмпп",
+    "category": "weapon",
+    "producesKey": "empp_16b",
+    "output": 1,
+    "producesCatalog": "weapons",
+    "ingredients": [
+      {
+        "key": "korpus",
+        "count": 1,
+        "catalog": "components"
+      },
+      {
+        "key": "shnek",
+        "count": 1,
+        "catalog": "components"
+      },
+      {
+        "key": "kondensator",
+        "count": 1,
+        "catalog": "components"
+      },
+      {
+        "key": "ionizator",
+        "count": 1,
+        "catalog": "components"
+      },
+      {
+        "key": "turbina",
+        "count": 1,
+        "catalog": "components"
+      }
+    ],
+    "skillSpecialist": 40,
+    "bondsCost": 320,
+    "sellPrice": {
+      "bonds": 250
+    },
+    "description": "Чертеж для крафта электро-магнитной пушки 16го уровня",
+    "stats": {
+      "durability": 60
+    },
+    "iconPath": "blueprints/chertezh_empp_16b.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=4029"
+  },
+  {
+    "key": "chertezh_empp_18b",
+    "name": "Чертеж Эмпп 18б",
+    "model": "Чертеж Эмпп",
+    "category": "weapon",
+    "producesKey": "empp_18b",
+    "output": 1,
+    "producesCatalog": "weapons",
+    "ingredients": [
+      {
+        "key": "korpus",
+        "count": 1,
+        "catalog": "components"
+      },
+      {
+        "key": "shnek",
+        "count": 1,
+        "catalog": "components"
+      },
+      {
+        "key": "kondensator",
+        "count": 1,
+        "catalog": "components"
+      },
+      {
+        "key": "ionizator",
+        "count": 1,
+        "catalog": "components"
+      },
+      {
+        "key": "turbina",
+        "count": 1,
+        "catalog": "components"
+      }
+    ],
+    "skillSpecialist": 40,
+    "bondsCost": 573,
+    "sellPrice": {
+      "bonds": 250
+    },
+    "description": "Чертеж для крафта электро-магнитной пушки 18го уровня",
+    "stats": {
+      "durability": 60
+    },
+    "iconPath": "blueprints/chertezh_empp_18b.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=4029"
+  },
+  {
+    "key": "chertezh_empp_2",
+    "name": "Чертеж Эмпп 2",
+    "model": "Чертеж Эмпп",
+    "category": "weapon",
+    "producesKey": "empp_2",
+    "output": 18,
+    "producesCatalog": "weapons",
+    "ingredients": [
+      {
+        "key": "korpus",
+        "count": 1,
+        "catalog": "components"
+      },
+      {
+        "key": "shnek",
+        "count": 1,
+        "catalog": "components"
+      },
+      {
+        "key": "kondensator",
+        "count": 1,
+        "catalog": "components"
+      },
+      {
+        "key": "ionizator",
+        "count": 1,
+        "catalog": "components"
+      },
+      {
+        "key": "turbina",
+        "count": 1,
+        "catalog": "components"
+      }
+    ],
+    "skillSpecialist": 40,
+    "sellPrice": {
+      "bonds": 250
+    },
+    "description": "Чертеж для крафта электро-магнитной пушки 2го уровня",
+    "stats": {
+      "durability": 60
+    },
+    "iconPath": "blueprints/chertezh_empp_2.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=4029"
+  },
+  {
+    "key": "chertezh_empp_21b",
+    "name": "Чертеж Эмпп 21б",
+    "model": "Чертеж Эмпп",
+    "category": "weapon",
+    "producesKey": "empp_21b",
+    "output": 1,
+    "producesCatalog": "weapons",
+    "ingredients": [
+      {
+        "key": "korpus",
+        "count": 2,
+        "catalog": "components"
+      },
+      {
+        "key": "shnek",
+        "count": 2,
+        "catalog": "components"
+      },
+      {
+        "key": "kondensator",
+        "count": 2,
+        "catalog": "components"
+      },
+      {
+        "key": "ionizator",
+        "count": 2,
+        "catalog": "components"
+      },
+      {
+        "key": "turbina",
+        "count": 2,
+        "catalog": "components"
+      }
+    ],
+    "skillSpecialist": 45,
+    "bondsCost": 182,
+    "sellPrice": {
+      "bonds": 500
+    },
+    "description": "Чертеж для крафта электро-магнитной пушки 21го уровня",
+    "stats": {
+      "durability": 60
+    },
+    "iconPath": "blueprints/chertezh_empp_21b.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=4029"
+  },
+  {
+    "key": "chertezh_empp_25b",
+    "name": "Чертеж Эмпп 25б",
+    "model": "Чертеж Эмпп",
+    "category": "weapon",
+    "producesKey": "empp_25b",
+    "output": 1,
+    "producesCatalog": "weapons",
+    "ingredients": [
+      {
+        "key": "korpus",
+        "count": 2,
+        "catalog": "components"
+      },
+      {
+        "key": "shnek",
+        "count": 2,
+        "catalog": "components"
+      },
+      {
+        "key": "kondensator",
+        "count": 2,
+        "catalog": "components"
+      },
+      {
+        "key": "ionizator",
+        "count": 2,
+        "catalog": "components"
+      },
+      {
+        "key": "turbina",
+        "count": 2,
+        "catalog": "components"
+      }
+    ],
+    "skillSpecialist": 45,
+    "bondsCost": 807,
+    "sellPrice": {
+      "bonds": 500
+    },
+    "description": "Чертеж для крафта электро-магнитной пушки 25го уровня",
+    "stats": {
+      "durability": 60
+    },
+    "iconPath": "blueprints/chertezh_empp_25b.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=4029"
+  },
+  {
+    "key": "chertezh_empp_29b",
+    "name": "Чертеж Эмпп 29б",
+    "model": "Чертеж Эмпп",
+    "category": "weapon",
+    "producesKey": "empp_29b",
+    "output": 1,
+    "producesCatalog": "weapons",
+    "ingredients": [
+      {
+        "key": "korpus",
+        "count": 2,
+        "catalog": "components"
+      },
+      {
+        "key": "shnek",
+        "count": 2,
+        "catalog": "components"
+      },
+      {
+        "key": "kondensator",
+        "count": 2,
+        "catalog": "components"
+      },
+      {
+        "key": "ionizator",
+        "count": 2,
+        "catalog": "components"
+      },
+      {
+        "key": "turbina",
+        "count": 2,
+        "catalog": "components"
+      }
+    ],
+    "skillSpecialist": 45,
+    "bondsCost": 1462,
+    "sellPrice": {
+      "bonds": 500
+    },
+    "description": "Чертеж для крафта электро-магнитной пушки 29го уровня",
+    "stats": {
+      "durability": 60
+    },
+    "iconPath": "blueprints/chertezh_empp_29b.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=4029"
+  },
+  {
+    "key": "chertezh_empp_33b",
+    "name": "Чертеж Эмпп 33б",
+    "model": "Чертеж Эмпп",
+    "category": "weapon",
+    "producesKey": "empp_33b",
+    "output": 1,
+    "producesCatalog": "weapons",
+    "ingredients": [
+      {
+        "key": "korpus",
+        "count": 3,
+        "catalog": "components"
+      },
+      {
+        "key": "shnek",
+        "count": 3,
+        "catalog": "components"
+      },
+      {
+        "key": "kondensator",
+        "count": 3,
+        "catalog": "components"
+      },
+      {
+        "key": "ionizator",
+        "count": 3,
+        "catalog": "components"
+      },
+      {
+        "key": "turbina",
+        "count": 3,
+        "catalog": "components"
+      }
+    ],
+    "skillSpecialist": 50,
+    "bondsCost": 1177,
+    "sellPrice": {
+      "bonds": 750
+    },
+    "description": "Чертеж для крафта электро-магнитной пушки 33го уровня",
+    "stats": {
+      "durability": 60
+    },
+    "iconPath": "blueprints/chertezh_empp_33b.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=4029"
+  },
+  {
+    "key": "chertezh_empp_37b",
+    "name": "Чертеж Эмпп 37б",
+    "model": "Чертеж Эмпп",
+    "category": "weapon",
+    "producesKey": "empp_37b",
+    "output": 1,
+    "producesCatalog": "weapons",
+    "ingredients": [
+      {
+        "key": "korpus",
+        "count": 3,
+        "catalog": "components"
+      },
+      {
+        "key": "shnek",
+        "count": 3,
+        "catalog": "components"
+      },
+      {
+        "key": "kondensator",
+        "count": 3,
+        "catalog": "components"
+      },
+      {
+        "key": "ionizator",
+        "count": 3,
+        "catalog": "components"
+      },
+      {
+        "key": "turbina",
+        "count": 3,
+        "catalog": "components"
+      }
+    ],
+    "skillSpecialist": 50,
+    "bondsCost": 2113,
+    "sellPrice": {
+      "bonds": 750
+    },
+    "description": "Чертеж для крафта электро-магнитной пушки 37го уровня",
+    "stats": {
+      "durability": 60
+    },
+    "iconPath": "blueprints/chertezh_empp_37b.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=4029"
+  },
+  {
+    "key": "chertezh_empp_41b",
+    "name": "Чертеж Эмпп 41б",
+    "model": "Чертеж Эмпп",
+    "category": "weapon",
+    "producesKey": "empp_41b",
+    "output": 1,
+    "producesCatalog": "weapons",
+    "ingredients": [
+      {
+        "key": "korpus",
+        "count": 4,
+        "catalog": "components"
+      },
+      {
+        "key": "shnek",
+        "count": 4,
+        "catalog": "components"
+      },
+      {
+        "key": "kondensator",
+        "count": 4,
+        "catalog": "components"
+      },
+      {
+        "key": "ionizator",
+        "count": 4,
+        "catalog": "components"
+      },
+      {
+        "key": "turbina",
+        "count": 4,
+        "catalog": "components"
+      }
+    ],
+    "skillSpecialist": 55,
+    "bondsCost": 707,
+    "sellPrice": {
+      "bonds": 1000
+    },
+    "description": "Чертеж для крафта электро-магнитной пушки 41го уровня",
+    "stats": {
+      "durability": 60
+    },
+    "iconPath": "blueprints/chertezh_empp_41b.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=4029"
+  },
+  {
+    "key": "chertezh_empp_45b",
+    "name": "Чертеж Эмпп 45б",
+    "model": "Чертеж Эмпп",
+    "category": "weapon",
+    "producesKey": "empp_45b",
+    "output": 1,
+    "producesCatalog": "weapons",
+    "ingredients": [
+      {
+        "key": "korpus",
+        "count": 4,
+        "catalog": "components"
+      },
+      {
+        "key": "shnek",
+        "count": 4,
+        "catalog": "components"
+      },
+      {
+        "key": "kondensator",
+        "count": 4,
+        "catalog": "components"
+      },
+      {
+        "key": "turbina",
+        "count": 4,
+        "catalog": "components"
+      },
+      {
+        "key": "ionizator",
+        "count": 4,
+        "catalog": "components"
+      }
+    ],
+    "skillSpecialist": 55,
+    "bondsCost": 1157,
+    "sellPrice": {
+      "bonds": 1000
+    },
+    "description": "Чертеж для крафта электро-магнитной пушки 45го уровня",
+    "stats": {
+      "durability": 60
+    },
+    "iconPath": "blueprints/chertezh_empp_45b.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=4029"
+  },
+  {
+    "key": "chertezh_empp_5",
+    "name": "Чертеж Эмпп 5",
+    "model": "Чертеж Эмпп",
+    "category": "weapon",
+    "producesKey": "empp_5",
+    "output": 4,
+    "producesCatalog": "weapons",
+    "ingredients": [
+      {
+        "key": "korpus",
+        "count": 1,
+        "catalog": "components"
+      },
+      {
+        "key": "shnek",
+        "count": 1,
+        "catalog": "components"
+      },
+      {
+        "key": "kondensator",
+        "count": 1,
+        "catalog": "components"
+      },
+      {
+        "key": "ionizator",
+        "count": 1,
+        "catalog": "components"
+      },
+      {
+        "key": "turbina",
+        "count": 1,
+        "catalog": "components"
+      }
+    ],
+    "skillSpecialist": 40,
+    "sellPrice": {
+      "bonds": 250
+    },
+    "description": "Чертеж для крафта электро-магнитной пушки 5го уровня",
+    "stats": {
+      "durability": 60
+    },
+    "iconPath": "blueprints/chertezh_empp_5.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=4029"
+  },
+  {
+    "key": "chertezh_empp_60b",
+    "name": "Чертеж Эмпп 60б",
+    "model": "Чертеж Эмпп",
+    "category": "weapon",
+    "producesKey": "empp_60b",
+    "output": 1,
+    "producesCatalog": "weapons",
+    "ingredients": [
+      {
+        "key": "ionizator",
+        "count": 6,
+        "catalog": "components"
+      },
+      {
+        "key": "kondensator",
+        "count": 6,
+        "catalog": "components"
+      },
+      {
+        "key": "korpus",
+        "count": 6,
+        "catalog": "components"
+      },
+      {
+        "key": "turbina",
+        "count": 6,
+        "catalog": "components"
+      },
+      {
+        "key": "shnek",
+        "count": 6,
+        "catalog": "components"
+      },
+      {
+        "key": "gafniy",
+        "count": 2
+      }
+    ],
+    "skillSpecialist": 65,
+    "bondsCost": 2000,
+    "sellPrice": {
+      "bonds": 1500
+    },
+    "description": "Чертеж для крафта электро-магнитной пушки 60го уровня",
+    "stats": {
+      "durability": 60
+    },
+    "iconPath": "blueprints/chertezh_empp_60b.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=4029"
+  },
+  {
+    "key": "chertezh_empp_7b",
+    "name": "Чертеж Эмпп 7б",
+    "model": "Чертеж Эмпп",
+    "category": "weapon",
+    "producesKey": "empp_7b",
+    "output": 3,
+    "producesCatalog": "weapons",
+    "ingredients": [
+      {
+        "key": "korpus",
+        "count": 1,
+        "catalog": "components"
+      },
+      {
+        "key": "shnek",
+        "count": 1,
+        "catalog": "components"
+      },
+      {
+        "key": "kondensator",
+        "count": 1,
+        "catalog": "components"
+      },
+      {
+        "key": "ionizator",
+        "count": 1,
+        "catalog": "components"
+      },
+      {
+        "key": "turbina",
+        "count": 1,
+        "catalog": "components"
+      }
+    ],
+    "skillSpecialist": 40,
+    "sellPrice": {
+      "bonds": 250
+    },
+    "description": "Чертеж для крафта электро-магнитной пушки 7го уровня",
+    "stats": {
+      "durability": 60
+    },
+    "iconPath": "blueprints/chertezh_empp_7b.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=4029"
+  },
+  {
+    "key": "chertezh_filin",
+    "name": "Чертеж Филин",
+    "model": "Чертеж Филин",
+    "category": "mech",
+    "producesKey": "robot_filin",
+    "output": 1,
+    "producesCatalog": "robots",
+    "ingredients": [
+      {
+        "key": "chasti_pirata_mor",
+        "count": 5,
+        "catalog": "loot"
+      },
+      {
+        "key": "elementy_broni_tarana",
+        "count": 100,
+        "catalog": "loot"
+      },
+      {
+        "key": "magnitnye_zhelezy_narata",
+        "count": 150,
+        "catalog": "loot"
+      },
+      {
+        "key": "khrebet_roytuka",
+        "count": 10,
+        "catalog": "loot"
+      },
+      {
+        "key": "struktura_liryy",
+        "count": 10,
+        "catalog": "loot"
+      },
+      {
+        "key": "vertlug_teridiona",
+        "count": 10,
+        "catalog": "loot"
+      },
+      {
+        "key": "apgreyd_uroven_1",
+        "count": 250,
+        "catalog": "items"
+      },
+      {
+        "key": "gafniy",
+        "count": 1000
+      }
+    ],
+    "skillSpecialist": 100,
+    "bondsCost": 500000000,
+    "sellPrice": {
+      "bonds": 125
+    },
+    "stats": {
+      "durability": 1
+    },
+    "iconPath": "blueprints/chertezh_filin.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3077"
+  },
+  {
+    "key": "chertezh_forsunka",
+    "name": "Чертеж Форсунка",
+    "model": "Чертеж Форсунка",
+    "category": "component",
+    "producesKey": "forsunka",
+    "output": 3,
+    "producesCatalog": "components",
+    "ingredients": [
+      {
+        "key": "detal",
+        "count": 1,
+        "catalog": "components"
+      },
+      {
+        "key": "blok",
+        "count": 2,
+        "catalog": "components"
+      },
+      {
+        "key": "glaz_varana",
+        "count": 1,
+        "catalog": "loot"
+      }
+    ],
+    "skillSpecialist": 40,
+    "bondsCost": 121,
+    "sellPrice": {
+      "bonds": 96
+    },
+    "description": "Чертеж для крафта форсунок. Добывается как лут из кротов",
+    "stats": {
+      "durability": 100
+    },
+    "iconPath": "blueprints/chertezh_forsunka.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3075"
+  },
+  {
+    "key": "chertezh_ionizator",
+    "name": "Чертеж Ионизатор",
+    "model": "Чертеж Ионизатор",
+    "category": "component",
+    "producesKey": "ionizator",
+    "output": 4,
+    "producesCatalog": "components",
+    "ingredients": [
+      {
+        "key": "vizor_krotov",
+        "count": 1,
+        "catalog": "components"
+      },
+      {
+        "key": "kristall_krasnyy",
+        "count": 1
+      }
+    ],
+    "skillSpecialist": 30,
+    "bondsCost": 129,
+    "sellPrice": {
+      "bonds": 133
+    },
+    "description": "Чертеж для крафта ионизатора. Добывается как лут из кротов",
+    "stats": {
+      "durability": 100
+    },
+    "iconPath": "blueprints/chertezh_ionizator.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3075"
+  },
+  {
+    "key": "chertezh_kazuar",
+    "name": "Чертеж Казуар",
+    "model": "Чертеж Казуар",
+    "category": "mech",
+    "producesKey": "robot_kazuar",
+    "output": 1,
+    "producesCatalog": "robots",
+    "ingredients": [
+      {
+        "key": "chasti_pirata_mor",
+        "count": 2,
+        "catalog": "loot"
+      },
+      {
+        "key": "chasti_pirata_pif",
+        "count": 20,
+        "catalog": "loot"
+      },
+      {
+        "key": "elementy_broni_tarana",
+        "count": 20,
+        "catalog": "loot"
+      },
+      {
+        "key": "magnitnye_zhelezy_narata",
+        "count": 300,
+        "catalog": "loot"
+      },
+      {
+        "key": "chasti_pirata_tig",
+        "count": 400,
+        "catalog": "loot"
+      },
+      {
+        "key": "chasti_pirata_rakh",
+        "count": 400,
+        "catalog": "loot"
+      },
+      {
+        "key": "chasti_pirata_ugs",
+        "count": 400,
+        "catalog": "loot"
+      },
+      {
+        "key": "apgreyd_uroven_1",
+        "count": 50,
+        "catalog": "items"
+      }
+    ],
+    "skillSpecialist": 100,
+    "bondsCost": 500000000,
+    "sellPrice": {
+      "bonds": 125
+    },
+    "description": "Создает робота КазуарУникальный универсальный роботИмеет начальное ускорениеХорошо подходит для внезапной атаки или бегства",
+    "stats": {
+      "durability": 1
+    },
+    "iconPath": "blueprints/chertezh_kazuar.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3077"
+  },
+  {
+    "key": "chertezh_khim_rastvor",
+    "name": "Чертеж Хим Раствор",
+    "model": "Чертеж Хим Раствор",
+    "category": "component",
+    "producesKey": "khim_rastvor",
+    "output": 1,
+    "producesCatalog": "components",
+    "ingredients": [
+      {
+        "key": "yadokhimikat",
+        "count": 1,
+        "catalog": "components"
+      },
+      {
+        "key": "kislota",
+        "count": 1,
+        "catalog": "components"
+      }
+    ],
+    "skillSpecialist": 15,
+    "sellPrice": {
+      "bonds": 52
+    },
+    "description": "Чертеж для крафта химраствора. Добывается как лут из кротов",
+    "stats": {
+      "durability": 100
+    },
+    "iconPath": "blueprints/chertezh_khim_rastvor.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3075"
+  },
+  {
+    "key": "chertezh_khimicheskoe_soedinenie",
+    "name": "Чертеж Химическое Соединение",
+    "model": "Чертеж Химическое Соединение",
+    "category": "component",
+    "producesKey": "khimicheskoe_soedinenie",
+    "output": 1,
+    "producesCatalog": "components",
+    "ingredients": [
+      {
+        "key": "yadovitaya_zheleza_pauka",
+        "count": 1,
+        "catalog": "loot"
+      },
+      {
+        "key": "zhalo_skorpiona",
+        "count": 1,
+        "catalog": "loot"
+      }
+    ],
+    "skillSpecialist": 15,
+    "sellPrice": {
+      "bonds": 13
+    },
+    "description": "Чертеж для крафта химсоединений. Добывается как лут из кротов",
+    "stats": {
+      "durability": 100
+    },
+    "iconPath": "blueprints/chertezh_khimicheskoe_soedinenie.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3075"
+  },
+  {
+    "key": "chertezh_khranilishche_patronov",
+    "name": "Чертеж Хранилище Патронов",
+    "model": "Чертеж Хранилище Патронов",
+    "category": "component",
+    "producesKey": "khranilishche_patronov",
+    "output": 2,
+    "producesCatalog": "components",
+    "ingredients": [
+      {
+        "key": "detal",
+        "count": 1,
+        "catalog": "components"
+      },
+      {
+        "key": "mekhanizm_podachi",
+        "count": 1,
+        "catalog": "components"
+      },
+      {
+        "key": "segment_chervya",
+        "count": 1,
+        "catalog": "loot"
+      }
+    ],
+    "skillSpecialist": 30,
+    "bondsCost": 71,
+    "sellPrice": {
+      "bonds": 65
+    },
+    "description": "Чертеж для крафта хранилища патронов. Добывается как лут из кротов",
+    "stats": {
+      "durability": 100
+    },
+    "iconPath": "blueprints/chertezh_khranilishche_patronov.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3075"
+  },
+  {
+    "key": "chertezh_kislota",
+    "name": "Чертеж Кислота",
+    "model": "Чертеж Кислота",
+    "category": "component",
+    "producesKey": "kislota",
+    "output": 1,
+    "producesCatalog": "components",
+    "ingredients": [
+      {
+        "key": "yadovitaya_zheleza_pauka",
+        "count": 20,
+        "catalog": "loot"
+      }
+    ],
+    "skillSpecialist": 10,
+    "bondsCost": 50,
+    "sellPrice": {
+      "bonds": 44
+    },
+    "description": "Чертеж для крафта кислоты. Добывается как лут из кротов",
+    "stats": {
+      "durability": 100
+    },
+    "iconPath": "blueprints/chertezh_kislota.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3075"
+  },
+  {
+    "key": "chertezh_kolpograf",
+    "name": "Чертеж Кольпограф",
+    "model": "Чертеж Кольпограф",
+    "category": "component",
+    "producesKey": "kolpograf",
+    "output": 3,
+    "producesCatalog": "components",
+    "ingredients": [
+      {
+        "key": "detal",
+        "count": 1,
+        "catalog": "components"
+      },
+      {
+        "key": "mekhanizm_podachi",
+        "count": 1,
+        "catalog": "components"
+      },
+      {
+        "key": "blok",
+        "count": 1,
+        "catalog": "components"
+      },
+      {
+        "key": "kronshteyn",
+        "count": 1,
+        "catalog": "components"
+      },
+      {
+        "key": "kapyushon_varana",
+        "count": 1,
+        "catalog": "loot"
+      },
+      {
+        "key": "dvoynaya_elitra_tuka",
+        "count": 3,
+        "catalog": "loot"
+      }
+    ],
+    "skillSpecialist": 40,
+    "bondsCost": 70,
+    "sellPrice": {
+      "bonds": 108
+    },
+    "description": "Чертеж для крафта кольпографа. Добывается как лут из кротов",
+    "stats": {
+      "durability": 100
+    },
+    "iconPath": "blueprints/chertezh_kolpograf.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3075"
+  },
+  {
+    "key": "chertezh_kondensator",
+    "name": "Чертеж Конденсатор",
+    "model": "Чертеж Конденсатор",
+    "category": "component",
+    "producesKey": "kondensator",
+    "output": 5,
+    "producesCatalog": "components",
+    "ingredients": [
+      {
+        "key": "kristall_krasnyy",
+        "count": 1
+      },
+      {
+        "key": "khim_rastvor",
+        "count": 1,
+        "catalog": "components"
+      }
+    ],
+    "skillSpecialist": 20,
+    "bondsCost": 210,
+    "sellPrice": {
+      "bonds": 206
+    },
+    "description": "Чертеж для крафта конденсаторов. Добывается как лут из кротов",
+    "stats": {
+      "durability": 100
+    },
+    "iconPath": "blueprints/chertezh_kondensator.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3075"
+  },
+  {
+    "key": "chertezh_korpus",
+    "name": "Чертеж Корпус",
+    "model": "Чертеж Корпус",
+    "category": "component",
+    "producesKey": "korpus",
+    "output": 5,
+    "producesCatalog": "components",
+    "ingredients": [
+      {
+        "key": "derzhatel",
+        "count": 2,
+        "catalog": "components"
+      },
+      {
+        "key": "kreptoydy",
+        "count": 1,
+        "catalog": "components"
+      }
+    ],
+    "skillSpecialist": 30,
+    "bondsCost": 226,
+    "sellPrice": {
+      "bonds": 150
+    },
+    "description": "Чертеж для крафта корпусов. Добывается как лут из кротов",
+    "stats": {
+      "durability": 100
+    },
+    "iconPath": "blueprints/chertezh_korpus.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3075"
+  },
+  {
+    "key": "chertezh_korpus_stvola",
+    "name": "Чертеж Корпус Ствола",
+    "model": "Чертеж Корпус Ствола",
+    "category": "component",
+    "producesKey": "korpus_stvola",
+    "output": 2,
+    "producesCatalog": "components",
+    "ingredients": [
+      {
+        "key": "detal",
+        "count": 1,
+        "catalog": "components"
+      },
+      {
+        "key": "blok",
+        "count": 2,
+        "catalog": "components"
+      },
+      {
+        "key": "usy_bogomola",
+        "count": 1,
+        "catalog": "loot"
+      }
+    ],
+    "skillSpecialist": 30,
+    "sellPrice": {
+      "bonds": 78
+    },
+    "description": "Чертеж для крафта корпуса ствола. Добывается как лут из кротов",
+    "stats": {
+      "durability": 100
+    },
+    "iconPath": "blueprints/chertezh_korpus_stvola.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3075"
+  },
+  {
+    "key": "chertezh_kreptoydy",
+    "name": "Чертеж Крептойды",
+    "model": "Чертеж Крептойды",
+    "category": "component",
+    "producesKey": "kreptoydy",
+    "output": 1,
+    "producesCatalog": "components",
+    "ingredients": [
+      {
+        "key": "kristall_zelenyy",
+        "count": 1
+      },
+      {
+        "key": "detal",
+        "count": 1,
+        "catalog": "components"
+      }
+    ],
+    "skillSpecialist": 25,
+    "sellPrice": {
+      "bonds": 86
+    },
+    "description": "Чертеж для крафта крептойдов. Добывается как лут из кротов",
+    "stats": {
+      "durability": 100
+    },
+    "iconPath": "blueprints/chertezh_kreptoydy.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3075"
+  },
+  {
+    "key": "chertezh_kronshteyn",
+    "name": "Чертеж Кронштейн",
+    "model": "Чертеж Кронштейн",
+    "category": "component",
+    "producesKey": "kronshteyn",
+    "output": 1,
+    "producesCatalog": "components",
+    "ingredients": [
+      {
+        "key": "detal",
+        "count": 1,
+        "catalog": "components"
+      }
+    ],
+    "skillSpecialist": 20,
+    "sellPrice": {
+      "bonds": 16
+    },
+    "description": "Чертеж для крафта кронштейна. Добывается как лут из кротов",
+    "stats": {
+      "durability": 100
+    },
+    "iconPath": "blueprints/chertezh_kronshteyn.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3075"
+  },
+  {
+    "key": "chertezh_lazer_10",
+    "name": "Чертеж Лазер 10",
+    "model": "Чертеж Лазер",
+    "category": "weapon",
+    "producesKey": "lazer_10",
+    "output": 2,
+    "producesCatalog": "weapons",
+    "ingredients": [
+      {
+        "key": "korpus",
+        "count": 1,
+        "catalog": "components"
+      },
+      {
+        "key": "shnek",
+        "count": 1,
+        "catalog": "components"
+      },
+      {
+        "key": "peredatchik",
+        "count": 1,
+        "catalog": "components"
+      },
+      {
+        "key": "opticheskoe_ustroystvo",
+        "count": 1,
+        "catalog": "components"
+      },
+      {
+        "key": "kondensator",
+        "count": 1,
+        "catalog": "components"
+      }
+    ],
+    "skillSpecialist": 40,
+    "bondsCost": 187,
+    "sellPrice": {
+      "bonds": 250
+    },
+    "description": "Чертеж для крафта лазера 10го уровня",
+    "stats": {
+      "durability": 60
+    },
+    "iconPath": "blueprints/chertezh_lazer_10.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=4029"
+  },
+  {
+    "key": "chertezh_lazer_11",
+    "name": "Чертеж Лазер 11",
+    "model": "Чертеж Лазер",
+    "category": "weapon",
+    "producesKey": "lazer_11",
+    "output": 2,
+    "producesCatalog": "weapons",
+    "ingredients": [
+      {
+        "key": "korpus",
+        "count": 1,
+        "catalog": "components"
+      },
+      {
+        "key": "shnek",
+        "count": 1,
+        "catalog": "components"
+      },
+      {
+        "key": "peredatchik",
+        "count": 1,
+        "catalog": "components"
+      },
+      {
+        "key": "opticheskoe_ustroystvo",
+        "count": 1,
+        "catalog": "components"
+      },
+      {
+        "key": "kondensator",
+        "count": 1,
+        "catalog": "components"
+      }
+    ],
+    "skillSpecialist": 40,
+    "bondsCost": 433,
+    "sellPrice": {
+      "bonds": 250
+    },
+    "description": "Чертеж для крафта лазера 11го уровня",
+    "stats": {
+      "durability": 60
+    },
+    "iconPath": "blueprints/chertezh_lazer_11.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=4029"
+  },
+  {
+    "key": "chertezh_lazer_13",
+    "name": "Чертеж Лазер 13",
+    "model": "Чертеж Лазер",
+    "category": "weapon",
+    "producesKey": "lazer_13",
+    "output": 1,
+    "producesCatalog": "weapons",
+    "ingredients": [
+      {
+        "key": "korpus",
+        "count": 1,
+        "catalog": "components"
+      },
+      {
+        "key": "shnek",
+        "count": 1,
+        "catalog": "components"
+      },
+      {
+        "key": "peredatchik",
+        "count": 1,
+        "catalog": "components"
+      },
+      {
+        "key": "opticheskoe_ustroystvo",
+        "count": 1,
+        "catalog": "components"
+      },
+      {
+        "key": "kondensator",
+        "count": 1,
+        "catalog": "components"
+      }
+    ],
+    "skillSpecialist": 40,
+    "sellPrice": {
+      "bonds": 250
+    },
+    "description": "Чертеж для крафта лазера 13го уровня",
+    "stats": {
+      "durability": 60
+    },
+    "iconPath": "blueprints/chertezh_lazer_13.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=4029"
+  },
+  {
+    "key": "chertezh_lazer_18",
+    "name": "Чертеж Лазер 18",
+    "model": "Чертеж Лазер",
+    "category": "weapon",
+    "producesKey": "lazer_18",
+    "output": 1,
+    "producesCatalog": "weapons",
+    "ingredients": [
+      {
+        "key": "korpus",
+        "count": 1,
+        "catalog": "components"
+      },
+      {
+        "key": "shnek",
+        "count": 1,
+        "catalog": "components"
+      },
+      {
+        "key": "peredatchik",
+        "count": 1,
+        "catalog": "components"
+      },
+      {
+        "key": "opticheskoe_ustroystvo",
+        "count": 1,
+        "catalog": "components"
+      },
+      {
+        "key": "kondensator",
+        "count": 1,
+        "catalog": "components"
+      }
+    ],
+    "skillSpecialist": 40,
+    "bondsCost": 594,
+    "sellPrice": {
+      "bonds": 250
+    },
+    "description": "Чертеж для крафта лазера 18го уровня",
+    "stats": {
+      "durability": 60
+    },
+    "iconPath": "blueprints/chertezh_lazer_18.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=4029"
+  },
+  {
+    "key": "chertezh_lazer_21",
+    "name": "Чертеж Лазер 21",
+    "model": "Чертеж Лазер",
+    "category": "weapon",
+    "producesKey": "lazer_21",
+    "output": 1,
+    "producesCatalog": "weapons",
+    "ingredients": [
+      {
+        "key": "korpus",
+        "count": 2,
+        "catalog": "components"
+      },
+      {
+        "key": "shnek",
+        "count": 2,
+        "catalog": "components"
+      },
+      {
+        "key": "peredatchik",
+        "count": 2,
+        "catalog": "components"
+      },
+      {
+        "key": "opticheskoe_ustroystvo",
+        "count": 2,
+        "catalog": "components"
+      },
+      {
+        "key": "kondensator",
+        "count": 2,
+        "catalog": "components"
+      }
+    ],
+    "skillSpecialist": 45,
+    "sellPrice": {
+      "bonds": 500
+    },
+    "description": "Чертеж для крафта лазера 21го уровня",
+    "stats": {
+      "durability": 60
+    },
+    "iconPath": "blueprints/chertezh_lazer_21.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=4029"
+  },
+  {
+    "key": "chertezh_lazer_25",
+    "name": "Чертеж Лазер 25",
+    "model": "Чертеж Лазер",
+    "category": "weapon",
+    "producesKey": "lazer_25",
+    "output": 1,
+    "producesCatalog": "weapons",
+    "ingredients": [
+      {
+        "key": "korpus",
+        "count": 2,
+        "catalog": "components"
+      },
+      {
+        "key": "shnek",
+        "count": 2,
+        "catalog": "components"
+      },
+      {
+        "key": "peredatchik",
+        "count": 2,
+        "catalog": "components"
+      },
+      {
+        "key": "opticheskoe_ustroystvo",
+        "count": 2,
+        "catalog": "components"
+      },
+      {
+        "key": "kondensator",
+        "count": 2,
+        "catalog": "components"
+      }
+    ],
+    "skillSpecialist": 45,
+    "bondsCost": 725,
+    "sellPrice": {
+      "bonds": 500
+    },
+    "description": "Чертеж для крафта лазера 25го уровня",
+    "stats": {
+      "durability": 60
+    },
+    "iconPath": "blueprints/chertezh_lazer_25.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=4029"
+  },
+  {
+    "key": "chertezh_lazer_29",
+    "name": "Чертеж Лазер 29",
+    "model": "Чертеж Лазер",
+    "category": "weapon",
+    "producesKey": "lazer_29",
+    "output": 1,
+    "producesCatalog": "weapons",
+    "ingredients": [
+      {
+        "key": "korpus",
+        "count": 2,
+        "catalog": "components"
+      },
+      {
+        "key": "shnek",
+        "count": 2,
+        "catalog": "components"
+      },
+      {
+        "key": "peredatchik",
+        "count": 2,
+        "catalog": "components"
+      },
+      {
+        "key": "opticheskoe_ustroystvo",
+        "count": 2,
+        "catalog": "components"
+      },
+      {
+        "key": "kondensator",
+        "count": 2,
+        "catalog": "components"
+      }
+    ],
+    "skillSpecialist": 45,
+    "bondsCost": 971,
+    "sellPrice": {
+      "bonds": 500
+    },
+    "description": "Чертеж для крафта лазера 29го уровня",
+    "stats": {
+      "durability": 60
+    },
+    "iconPath": "blueprints/chertezh_lazer_29.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=4029"
+  },
+  {
+    "key": "chertezh_lazer_3",
+    "name": "Чертеж Лазер 3",
+    "model": "Чертеж Лазер",
+    "category": "weapon",
+    "producesKey": "lazer_3",
+    "output": 10,
+    "producesCatalog": "weapons",
+    "ingredients": [
+      {
+        "key": "korpus",
+        "count": 1,
+        "catalog": "components"
+      },
+      {
+        "key": "shnek",
+        "count": 1,
+        "catalog": "components"
+      },
+      {
+        "key": "peredatchik",
+        "count": 1,
+        "catalog": "components"
+      },
+      {
+        "key": "opticheskoe_ustroystvo",
+        "count": 1,
+        "catalog": "components"
+      },
+      {
+        "key": "kondensator",
+        "count": 1,
+        "catalog": "components"
+      }
+    ],
+    "skillSpecialist": 40,
+    "sellPrice": {
+      "bonds": 250
+    },
+    "description": "Чертеж для крафта лазера 3го уровня",
+    "stats": {
+      "durability": 60
+    },
+    "iconPath": "blueprints/chertezh_lazer_3.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=4029"
+  },
+  {
+    "key": "chertezh_lazer_33",
+    "name": "Чертеж Лазер 33",
+    "model": "Чертеж Лазер",
+    "category": "weapon",
+    "producesKey": "lazer_33",
+    "output": 1,
+    "producesCatalog": "weapons",
+    "ingredients": [
+      {
+        "key": "korpus",
+        "count": 3,
+        "catalog": "components"
+      },
+      {
+        "key": "shnek",
+        "count": 3,
+        "catalog": "components"
+      },
+      {
+        "key": "peredatchik",
+        "count": 3,
+        "catalog": "components"
+      },
+      {
+        "key": "opticheskoe_ustroystvo",
+        "count": 3,
+        "catalog": "components"
+      },
+      {
+        "key": "kondensator",
+        "count": 3,
+        "catalog": "components"
+      }
+    ],
+    "skillSpecialist": 50,
+    "bondsCost": 793,
+    "sellPrice": {
+      "bonds": 750
+    },
+    "description": "Чертеж для крафта лазера 33го уровня",
+    "stats": {
+      "durability": 60
+    },
+    "iconPath": "blueprints/chertezh_lazer_33.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=4029"
+  },
+  {
+    "key": "chertezh_lazer_39",
+    "name": "Чертеж Лазер 39",
+    "model": "Чертеж Лазер",
+    "category": "weapon",
+    "producesKey": "lazer_39",
+    "output": 1,
+    "producesCatalog": "weapons",
+    "ingredients": [
+      {
+        "key": "korpus",
+        "count": 3,
+        "catalog": "components"
+      },
+      {
+        "key": "shnek",
+        "count": 3,
+        "catalog": "components"
+      },
+      {
+        "key": "peredatchik",
+        "count": 3,
+        "catalog": "components"
+      },
+      {
+        "key": "opticheskoe_ustroystvo",
+        "count": 3,
+        "catalog": "components"
+      },
+      {
+        "key": "kondensator",
+        "count": 3,
+        "catalog": "components"
+      }
+    ],
+    "skillSpecialist": 50,
+    "bondsCost": 1859,
+    "sellPrice": {
+      "bonds": 750
+    },
+    "description": "Чертеж для крафта лазера 39го уровня",
+    "stats": {
+      "durability": 60
+    },
+    "iconPath": "blueprints/chertezh_lazer_39.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=4029"
+  },
+  {
+    "key": "chertezh_lazer_43",
+    "name": "Чертеж Лазер 43",
+    "model": "Чертеж Лазер",
+    "category": "weapon",
+    "producesKey": "lazer_43",
+    "output": 1,
+    "producesCatalog": "weapons",
+    "ingredients": [
+      {
+        "key": "korpus",
+        "count": 4,
+        "catalog": "components"
+      },
+      {
+        "key": "shnek",
+        "count": 4,
+        "catalog": "components"
+      },
+      {
+        "key": "peredatchik",
+        "count": 4,
+        "catalog": "components"
+      },
+      {
+        "key": "opticheskoe_ustroystvo",
+        "count": 4,
+        "catalog": "components"
+      },
+      {
+        "key": "kondensator",
+        "count": 4,
+        "catalog": "components"
+      }
+    ],
+    "skillSpecialist": 55,
+    "bondsCost": 118,
+    "sellPrice": {
+      "bonds": 1000
+    },
+    "description": "Чертеж для крафта лазера 43го уровня",
+    "stats": {
+      "durability": 60
+    },
+    "iconPath": "blueprints/chertezh_lazer_43.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=4029"
+  },
+  {
+    "key": "chertezh_lazer_5",
+    "name": "Чертеж Лазер 5",
+    "model": "Чертеж Лазер",
+    "category": "weapon",
+    "producesKey": "lazer_5",
+    "output": 4,
+    "producesCatalog": "weapons",
+    "ingredients": [
+      {
+        "key": "korpus",
+        "count": 1,
+        "catalog": "components"
+      },
+      {
+        "key": "shnek",
+        "count": 1,
+        "catalog": "components"
+      },
+      {
+        "key": "peredatchik",
+        "count": 1,
+        "catalog": "components"
+      },
+      {
+        "key": "opticheskoe_ustroystvo",
+        "count": 1,
+        "catalog": "components"
+      },
+      {
+        "key": "kondensator",
+        "count": 1,
+        "catalog": "components"
+      }
+    ],
+    "skillSpecialist": 40,
+    "sellPrice": {
+      "bonds": 250
+    },
+    "description": "Чертеж для крафта лазера 5го уровня",
+    "stats": {
+      "durability": 60
+    },
+    "iconPath": "blueprints/chertezh_lazer_5.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=4029"
+  },
+  {
+    "key": "chertezh_lazer_60",
+    "name": "Чертеж Лазер 60",
+    "model": "Чертеж Лазер",
+    "category": "weapon",
+    "producesKey": "lazer_60",
+    "output": 1,
+    "producesCatalog": "weapons",
+    "ingredients": [
+      {
+        "key": "peredatchik",
+        "count": 6,
+        "catalog": "components"
+      },
+      {
+        "key": "kondensator",
+        "count": 6,
+        "catalog": "components"
+      },
+      {
+        "key": "korpus",
+        "count": 6,
+        "catalog": "components"
+      },
+      {
+        "key": "opticheskoe_ustroystvo",
+        "count": 6,
+        "catalog": "components"
+      },
+      {
+        "key": "shnek",
+        "count": 6,
+        "catalog": "components"
+      },
+      {
+        "key": "gafniy",
+        "count": 1
+      }
+    ],
+    "skillSpecialist": 65,
+    "bondsCost": 699,
+    "sellPrice": {
+      "bonds": 1500
+    },
+    "description": "Чертеж для крафта лазера 60го уровня",
+    "stats": {
+      "durability": 60
+    },
+    "iconPath": "blueprints/chertezh_lazer_60.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=4029"
+  },
+  {
+    "key": "chertezh_lazer_8",
+    "name": "Чертеж Лазер 8",
+    "model": "Чертеж Лазер",
+    "category": "weapon",
+    "producesKey": "lazer_8",
+    "output": 2,
+    "producesCatalog": "weapons",
+    "ingredients": [
+      {
+        "key": "korpus",
+        "count": 1,
+        "catalog": "components"
+      },
+      {
+        "key": "shnek",
+        "count": 1,
+        "catalog": "components"
+      },
+      {
+        "key": "peredatchik",
+        "count": 1,
+        "catalog": "components"
+      },
+      {
+        "key": "opticheskoe_ustroystvo",
+        "count": 1,
+        "catalog": "components"
+      },
+      {
+        "key": "kondensator",
+        "count": 1,
+        "catalog": "components"
+      }
+    ],
+    "skillSpecialist": 40,
+    "sellPrice": {
+      "bonds": 250
+    },
+    "description": "Чертеж для крафта лазера 8го уровня",
+    "stats": {
+      "durability": 60
+    },
+    "iconPath": "blueprints/chertezh_lazer_8.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=4029"
+  },
+  {
+    "key": "chertezh_mekhanizm_podachi",
+    "name": "Чертеж Механизм Подачи",
+    "model": "Чертеж Механизм Подачи",
+    "category": "component",
+    "producesKey": "mekhanizm_podachi",
+    "output": 1,
+    "producesCatalog": "components",
+    "ingredients": [
+      {
+        "key": "dvoynaya_elitra_tuka",
+        "count": 1,
+        "catalog": "loot"
+      },
+      {
+        "key": "parapodii_chervya",
+        "count": 1,
+        "catalog": "loot"
+      }
+    ],
+    "skillSpecialist": 20,
+    "sellPrice": {
+      "bonds": 40
+    },
+    "description": "Чертеж для крафта механизма подачи. Добывается как лут из кротов",
+    "stats": {
+      "durability": 100
+    },
+    "iconPath": "blueprints/chertezh_mekhanizm_podachi.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3075"
+  },
+  {
+    "key": "chertezh_obektiv",
+    "name": "Чертеж Объектив",
+    "model": "Чертеж Объектив",
+    "category": "component",
+    "producesKey": "obektiv",
+    "output": 1,
+    "producesCatalog": "components",
+    "ingredients": [
+      {
+        "key": "kleshnya_skorpiona",
+        "count": 1,
+        "catalog": "loot"
+      }
+    ],
+    "skillSpecialist": 20,
+    "sellPrice": {
+      "bonds": 4
+    },
+    "description": "Чертеж для крафта объектива. Добывается как лут из кротов",
+    "stats": {
+      "durability": 100
+    },
+    "iconPath": "blueprints/chertezh_obektiv.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3075"
+  },
+  {
+    "key": "chertezh_opticheskoe_ustroystvo",
+    "name": "Чертеж Оптическое Устройство",
+    "model": "Чертеж Оптическое Устройство",
+    "category": "component",
+    "producesKey": "opticheskoe_ustroystvo",
+    "output": 5,
+    "producesCatalog": "components",
+    "ingredients": [
+      {
+        "key": "obektiv",
+        "count": 10,
+        "catalog": "components"
+      },
+      {
+        "key": "khilitsery_pauka_glavnogo",
+        "count": 10,
+        "catalog": "loot"
+      }
+    ],
+    "skillSpecialist": 30,
+    "bondsCost": 566,
+    "sellPrice": {
+      "bonds": 206
+    },
+    "description": "Чертеж для крафта оптического устройства. Добывается как лут из кротов",
+    "stats": {
+      "durability": 100
+    },
+    "iconPath": "blueprints/chertezh_opticheskoe_ustroystvo.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3075"
+  },
+  {
+    "key": "chertezh_pak_bronya_100",
+    "name": "Чертеж Пак Броня 100",
+    "model": "Чертеж Пак Броня",
+    "category": "pack",
+    "producesKey": "pak_bronya_100",
+    "output": 1,
+    "producesCatalog": "items",
+    "ingredients": [
+      {
+        "key": "kristall_krasnyy",
+        "count": 50
+      },
+      {
+        "key": "demultipleksator",
+        "count": 5,
+        "catalog": "loot"
+      }
+    ],
+    "skillSpecialist": 60,
+    "bondsCost": 250000,
+    "sellPrice": {
+      "bonds": 125000
+    },
+    "description": "Чертеж для крафта усилителя брони. Добывается как лут из кротов и боссов",
+    "stats": {
+      "durability": 1
+    },
+    "iconPath": "blueprints/chertezh_pak_bronya_100.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3077"
+  },
+  {
+    "key": "chertezh_pak_polya_100",
+    "name": "Чертеж Пак Поля 100",
+    "model": "Чертеж Пак Поля",
+    "category": "pack",
+    "producesKey": "pak_polya_100",
+    "output": 1,
+    "producesCatalog": "items",
+    "ingredients": [
+      {
+        "key": "kristall_krasnyy",
+        "count": 50
+      },
+      {
+        "key": "demultipleksator",
+        "count": 5,
+        "catalog": "loot"
+      }
+    ],
+    "skillSpecialist": 60,
+    "bondsCost": 250000,
+    "sellPrice": {
+      "bonds": 125000
+    },
+    "description": "Чертеж для крафта усилителя полей. Добывается как лут из кротов и боссов",
+    "stats": {
+      "durability": 1
+    },
+    "iconPath": "blueprints/chertezh_pak_polya_100.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3077"
+  },
+  {
+    "key": "chertezh_pak_prochnost_100",
+    "name": "Чертеж Пак Прочность 100",
+    "model": "Чертеж Пак Прочность",
+    "category": "pack",
+    "producesKey": "pak_prochnost_100",
+    "output": 1,
+    "producesCatalog": "items",
+    "ingredients": [
+      {
+        "key": "kristall_krasnyy",
+        "count": 50
+      },
+      {
+        "key": "kristall_siniy",
+        "count": 50
+      },
+      {
+        "key": "remkomplekt_3900",
+        "count": 100,
+        "catalog": "items"
+      }
+    ],
+    "skillSpecialist": 60,
+    "bondsCost": 250000,
+    "sellPrice": {
+      "bonds": 125000
+    },
+    "description": "Чертеж для крафта пака-усилителя прочности. Добывается как лут из кротов и боссов",
+    "stats": {
+      "durability": 1
+    },
+    "iconPath": "blueprints/chertezh_pak_prochnost_100.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3077"
+  },
+  {
+    "key": "chertezh_pak_resursy",
+    "name": "Чертеж Пак Ресурсы",
+    "model": "Чертеж Пак Ресурсы",
+    "category": "pack",
+    "producesKey": "pak_resursy",
+    "output": 1,
+    "producesCatalog": "items",
+    "ingredients": [
+      {
+        "key": "kristall_krasnyy",
+        "count": 1800
+      },
+      {
+        "key": "kristall_siniy",
+        "count": 1800
+      },
+      {
+        "key": "kristall_zelenyy",
+        "count": 1800
+      },
+      {
+        "key": "gafniy",
+        "count": 60
+      },
+      {
+        "key": "zheleznaya_ruda",
+        "count": 800
+      }
+    ],
+    "skillSpecialist": 60,
+    "sellPrice": {
+      "bonds": 185000
+    },
+    "stats": {
+      "durability": 1
+    },
+    "iconPath": "blueprints/chertezh_pak_resursy.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3077"
+  },
+  {
+    "key": "chertezh_pak_skorost_100",
+    "name": "Чертеж Пак Скорость 100",
+    "model": "Чертеж Пак Скорость",
+    "category": "pack",
+    "producesKey": "pak_skorost_100",
+    "output": 1,
+    "producesCatalog": "items",
+    "ingredients": [
+      {
+        "key": "gafniy",
+        "count": 15
+      },
+      {
+        "key": "demultipleksator",
+        "count": 10,
+        "catalog": "loot"
+      },
+      {
+        "key": "kristall_krasnyy",
+        "count": 50
+      },
+      {
+        "key": "kristall_siniy",
+        "count": 50
+      }
+    ],
+    "skillSpecialist": 60,
+    "bondsCost": 250000,
+    "sellPrice": {
+      "bonds": 125000
+    },
+    "description": "Чертеж для крафта усилителя скорости. Добывается как лут из кротов и боссов",
+    "stats": {
+      "durability": 1
+    },
+    "iconPath": "blueprints/chertezh_pak_skorost_100.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3077"
+  },
+  {
+    "key": "chertezh_pak_zashchita_100",
+    "name": "Чертеж Пак Защита 100",
+    "model": "Чертеж Пак Защита",
+    "category": "pack",
+    "producesKey": "pak_zashchita_100",
+    "output": 1,
+    "producesCatalog": "items",
+    "ingredients": [
+      {
+        "key": "gafniy",
+        "count": 10
+      },
+      {
+        "key": "kristall_krasnyy",
+        "count": 60
+      },
+      {
+        "key": "kristall_siniy",
+        "count": 60
+      },
+      {
+        "key": "kristall_zelenyy",
+        "count": 60
+      }
+    ],
+    "skillSpecialist": 60,
+    "bondsCost": 80000,
+    "sellPrice": {
+      "bonds": 185000
+    },
+    "description": "Чертеж для крафта усилителя брони и полей. Добывается как лут из кротов и боссов",
+    "stats": {
+      "durability": 1
+    },
+    "iconPath": "blueprints/chertezh_pak_zashchita_100.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3077"
+  },
+  {
+    "key": "chertezh_peredatchik",
+    "name": "Чертеж Передатчик",
+    "model": "Чертеж Передатчик",
+    "category": "component",
+    "producesKey": "peredatchik",
+    "output": 10,
+    "producesCatalog": "components",
+    "ingredients": [
+      {
+        "key": "plata",
+        "count": 1,
+        "catalog": "components"
+      },
+      {
+        "key": "kristall_krasnyy",
+        "count": 3
+      },
+      {
+        "key": "kapyushon_varana",
+        "count": 1,
+        "catalog": "loot"
+      }
+    ],
+    "skillSpecialist": 35,
+    "bondsCost": 120,
+    "sellPrice": {
+      "bonds": 413
+    },
+    "description": "Чертеж для крафта передатчиков. Добывается как лут из кротов",
+    "stats": {
+      "durability": 100
+    },
+    "iconPath": "blueprints/chertezh_peredatchik.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3075"
+  },
+  {
+    "key": "chertezh_plata",
+    "name": "Чертеж Плата",
+    "model": "Чертеж Плата",
+    "category": "component",
+    "producesKey": "plata",
+    "output": 1,
+    "producesCatalog": "components",
+    "ingredients": [
+      {
+        "key": "kristall_siniy",
+        "count": 1
+      },
+      {
+        "key": "stoktor",
+        "count": 1,
+        "catalog": "components"
+      }
+    ],
+    "skillSpecialist": 25,
+    "bondsCost": 33,
+    "sellPrice": {
+      "bonds": 73
+    },
+    "description": "Чертеж для крафта плат. Добывается как лут из кротов",
+    "stats": {
+      "durability": 100
+    },
+    "iconPath": "blueprints/chertezh_plata.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3075"
+  },
+  {
+    "key": "chertezh_podarok",
+    "name": "Чертеж Подарок",
+    "model": "Чертеж Подарок",
+    "category": "pack",
+    "producesKey": "podarok",
+    "output": 1,
+    "producesCatalog": "items",
+    "ingredients": [
+      {
+        "key": "snezhnyy_kom",
+        "count": 20,
+        "catalog": "loot"
+      }
+    ],
+    "sellPrice": {
+      "bonds": 125
+    },
+    "description": "Чертеж для крафта новогодних подарков. Добывается как лут из снежных мобов",
+    "stats": {
+      "durability": 1
+    },
+    "iconPath": "blueprints/chertezh_podarok.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3077"
+  },
+  {
+    "key": "chertezh_podarok_bolshoy",
+    "name": "Чертеж Подарок Большой",
+    "model": "Чертеж Подарок Большой",
+    "category": "pack",
+    "producesKey": "podarok_bolshoy",
+    "output": 1,
+    "producesCatalog": "items",
+    "ingredients": [
+      {
+        "key": "snezhnyy_kom",
+        "count": 700,
+        "catalog": "loot"
+      }
+    ],
+    "sellPrice": {
+      "bonds": 125
+    },
+    "description": "Чертеж для крафта новогодних подарков. Добывается как лут из снежных мобов",
+    "stats": {
+      "durability": 1
+    },
+    "iconPath": "blueprints/chertezh_podarok_bolshoy.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3077"
+  },
+  {
+    "key": "chertezh_podarok_bolshoy_khellouin",
+    "name": "Чертеж Подарок Большой Хеллоуин",
+    "model": "Чертеж Подарок Большой Хеллоуин",
+    "category": "pack",
+    "producesKey": "podarok_bolshoy",
+    "output": 1,
+    "producesCatalog": "items",
+    "ingredients": [
+      {
+        "key": "tykva",
+        "count": 200,
+        "catalog": "loot"
+      }
+    ],
+    "sellPrice": {
+      "bonds": 125
+    },
+    "description": "Чертеж для крафта подарков. Добывается как лут из призраков",
+    "stats": {
+      "durability": 1
+    },
+    "iconPath": "blueprints/chertezh_podarok_bolshoy_khellouin.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3077"
+  },
+  {
+    "key": "chertezh_pulemyot",
+    "name": "Чертеж Пулемёт",
+    "model": "Чертеж Пулемёт",
+    "category": "weapon",
+    "producesKey": "pulemyot",
+    "output": 3,
+    "producesCatalog": "weapons",
+    "ingredients": [
+      {
+        "key": "korpus",
+        "count": 1,
+        "catalog": "components"
+      },
+      {
+        "key": "shnek",
+        "count": 1,
+        "catalog": "components"
+      },
+      {
+        "key": "korpus_stvola",
+        "count": 1,
+        "catalog": "components"
+      },
+      {
+        "key": "zatvor",
+        "count": 1,
+        "catalog": "components"
+      },
+      {
+        "key": "khranilishche_patronov",
+        "count": 1,
+        "catalog": "components"
+      }
+    ],
+    "skillSpecialist": 40,
+    "sellPrice": {
+      "bonds": 250
+    },
+    "description": "Чертеж для крафта пулемета 1го уровня",
+    "stats": {
+      "durability": 100
+    },
+    "iconPath": "blueprints/chertezh_pulemyot.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=4029"
+  },
+  {
+    "key": "chertezh_pulemyot_11b",
+    "name": "Чертеж Пулемёт 11б",
+    "model": "Чертеж Пулемёт",
+    "category": "weapon",
+    "producesKey": "pulemyot_11b",
+    "output": 2,
+    "producesCatalog": "weapons",
+    "ingredients": [
+      {
+        "key": "korpus",
+        "count": 1,
+        "catalog": "components"
+      },
+      {
+        "key": "shnek",
+        "count": 1,
+        "catalog": "components"
+      },
+      {
+        "key": "korpus_stvola",
+        "count": 1,
+        "catalog": "components"
+      },
+      {
+        "key": "zatvor",
+        "count": 1,
+        "catalog": "components"
+      },
+      {
+        "key": "khranilishche_patronov",
+        "count": 1,
+        "catalog": "components"
+      }
+    ],
+    "skillSpecialist": 40,
+    "bondsCost": 480,
+    "sellPrice": {
+      "bonds": 250
+    },
+    "description": "Чертеж для крафта пулемета 11го уровня",
+    "stats": {
+      "durability": 60
+    },
+    "iconPath": "blueprints/chertezh_pulemyot_11b.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=4029"
+  },
+  {
+    "key": "chertezh_pulemyot_13b",
+    "name": "Чертеж Пулемёт 13б",
+    "model": "Чертеж Пулемёт",
+    "category": "weapon",
+    "producesKey": "pulemyot_13b",
+    "output": 2,
+    "producesCatalog": "weapons",
+    "ingredients": [
+      {
+        "key": "korpus",
+        "count": 1,
+        "catalog": "components"
+      },
+      {
+        "key": "shnek",
+        "count": 1,
+        "catalog": "components"
+      },
+      {
+        "key": "korpus_stvola",
+        "count": 1,
+        "catalog": "components"
+      },
+      {
+        "key": "zatvor",
+        "count": 1,
+        "catalog": "components"
+      },
+      {
+        "key": "khranilishche_patronov",
+        "count": 1,
+        "catalog": "components"
+      }
+    ],
+    "skillSpecialist": 40,
+    "bondsCost": 882,
+    "sellPrice": {
+      "bonds": 250
+    },
+    "description": "Чертеж для крафта пулемета 13го уровня",
+    "stats": {
+      "durability": 60
+    },
+    "iconPath": "blueprints/chertezh_pulemyot_13b.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=4029"
+  },
+  {
+    "key": "chertezh_pulemyot_15b",
+    "name": "Чертеж Пулемёт 15б",
+    "model": "Чертеж Пулемёт",
+    "category": "weapon",
+    "producesKey": "pulemyot_15b",
+    "output": 1,
+    "producesCatalog": "weapons",
+    "ingredients": [
+      {
+        "key": "korpus",
+        "count": 1,
+        "catalog": "components"
+      },
+      {
+        "key": "shnek",
+        "count": 1,
+        "catalog": "components"
+      },
+      {
+        "key": "korpus_stvola",
+        "count": 1,
+        "catalog": "components"
+      },
+      {
+        "key": "zatvor",
+        "count": 1,
+        "catalog": "components"
+      },
+      {
+        "key": "khranilishche_patronov",
+        "count": 1,
+        "catalog": "components"
+      }
+    ],
+    "skillSpecialist": 40,
+    "bondsCost": 150,
+    "sellPrice": {
+      "bonds": 250
+    },
+    "description": "Чертеж для крафта пулемета 15го уровня",
+    "stats": {
+      "durability": 60
+    },
+    "iconPath": "blueprints/chertezh_pulemyot_15b.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=4029"
+  },
+  {
+    "key": "chertezh_pulemyot_18b",
+    "name": "Чертеж Пулемёт 18б",
+    "model": "Чертеж Пулемёт",
+    "category": "weapon",
+    "producesKey": "pulemyot_18b",
+    "output": 1,
+    "producesCatalog": "weapons",
+    "ingredients": [
+      {
+        "key": "korpus",
+        "count": 1,
+        "catalog": "components"
+      },
+      {
+        "key": "shnek",
+        "count": 1,
+        "catalog": "components"
+      },
+      {
+        "key": "korpus_stvola",
+        "count": 1,
+        "catalog": "components"
+      },
+      {
+        "key": "zatvor",
+        "count": 1,
+        "catalog": "components"
+      },
+      {
+        "key": "khranilishche_patronov",
+        "count": 1,
+        "catalog": "components"
+      }
+    ],
+    "skillSpecialist": 40,
+    "bondsCost": 644,
+    "sellPrice": {
+      "bonds": 250
+    },
+    "description": "Чертеж для крафта пулемета 18го уровня",
+    "stats": {
+      "durability": 60
+    },
+    "iconPath": "blueprints/chertezh_pulemyot_18b.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=4029"
+  },
+  {
+    "key": "chertezh_pulemyot_22b",
+    "name": "Чертеж Пулемёт 22б",
+    "model": "Чертеж Пулемёт",
+    "category": "weapon",
+    "producesKey": "pulemyot_22b",
+    "output": 1,
+    "producesCatalog": "weapons",
+    "ingredients": [
+      {
+        "key": "korpus",
+        "count": 2,
+        "catalog": "components"
+      },
+      {
+        "key": "shnek",
+        "count": 2,
+        "catalog": "components"
+      },
+      {
+        "key": "korpus_stvola",
+        "count": 2,
+        "catalog": "components"
+      },
+      {
+        "key": "zatvor",
+        "count": 2,
+        "catalog": "components"
+      },
+      {
+        "key": "khranilishche_patronov",
+        "count": 2,
+        "catalog": "components"
+      }
+    ],
+    "skillSpecialist": 45,
+    "bondsCost": 123,
+    "sellPrice": {
+      "bonds": 500
+    },
+    "description": "Чертеж для крафта пулемета 22го уровня",
+    "stats": {
+      "durability": 60
+    },
+    "iconPath": "blueprints/chertezh_pulemyot_22b.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=4029"
+  },
+  {
+    "key": "chertezh_pulemyot_26b",
+    "name": "Чертеж Пулемёт 26б",
+    "model": "Чертеж Пулемёт",
+    "category": "weapon",
+    "producesKey": "pulemyot_26b",
+    "output": 1,
+    "producesCatalog": "weapons",
+    "ingredients": [
+      {
+        "key": "korpus",
+        "count": 2,
+        "catalog": "components"
+      },
+      {
+        "key": "shnek",
+        "count": 2,
+        "catalog": "components"
+      },
+      {
+        "key": "korpus_stvola",
+        "count": 2,
+        "catalog": "components"
+      },
+      {
+        "key": "zatvor",
+        "count": 2,
+        "catalog": "components"
+      },
+      {
+        "key": "khranilishche_patronov",
+        "count": 2,
+        "catalog": "components"
+      }
+    ],
+    "skillSpecialist": 45,
+    "bondsCost": 579,
+    "sellPrice": {
+      "bonds": 500
+    },
+    "description": "Чертеж для крафта пулемета 26го уровня",
+    "stats": {
+      "durability": 60
+    },
+    "iconPath": "blueprints/chertezh_pulemyot_26b.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=4029"
+  },
+  {
+    "key": "chertezh_pulemyot_30b",
+    "name": "Чертеж Пулемёт 30б",
+    "model": "Чертеж Пулемёт",
+    "category": "weapon",
+    "producesKey": "pulemyot_30b",
+    "output": 1,
+    "producesCatalog": "weapons",
+    "ingredients": [
+      {
+        "key": "korpus",
+        "count": 3,
+        "catalog": "components"
+      },
+      {
+        "key": "shnek",
+        "count": 3,
+        "catalog": "components"
+      },
+      {
+        "key": "korpus_stvola",
+        "count": 3,
+        "catalog": "components"
+      },
+      {
+        "key": "zatvor",
+        "count": 3,
+        "catalog": "components"
+      },
+      {
+        "key": "khranilishche_patronov",
+        "count": 3,
+        "catalog": "components"
+      }
+    ],
+    "skillSpecialist": 50,
+    "bondsCost": 234,
+    "sellPrice": {
+      "bonds": 750
+    },
+    "description": "Чертеж для крафта пулемета 30го уровня",
+    "stats": {
+      "durability": 60
+    },
+    "iconPath": "blueprints/chertezh_pulemyot_30b.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=4029"
+  },
+  {
+    "key": "chertezh_pulemyot_40b",
+    "name": "Чертеж Пулемёт 40б",
+    "model": "Чертеж Пулемёт",
+    "category": "weapon",
+    "producesKey": "pulemyot_40b",
+    "output": 1,
+    "producesCatalog": "weapons",
+    "ingredients": [
+      {
+        "key": "korpus",
+        "count": 4,
+        "catalog": "components"
+      },
+      {
+        "key": "shnek",
+        "count": 4,
+        "catalog": "components"
+      },
+      {
+        "key": "korpus_stvola",
+        "count": 4,
+        "catalog": "components"
+      },
+      {
+        "key": "zatvor",
+        "count": 4,
+        "catalog": "components"
+      },
+      {
+        "key": "khranilishche_patronov",
+        "count": 4,
+        "catalog": "components"
+      }
+    ],
+    "skillSpecialist": 55,
+    "bondsCost": 164,
+    "sellPrice": {
+      "bonds": 1000
+    },
+    "description": "Чертеж для крафта пулемета 40го уровня",
+    "stats": {
+      "durability": 60
+    },
+    "iconPath": "blueprints/chertezh_pulemyot_40b.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=4029"
+  },
+  {
+    "key": "chertezh_pulemyot_50b",
+    "name": "Чертеж Пулемёт 50б",
+    "model": "Чертеж Пулемёт",
+    "category": "weapon",
+    "producesKey": "pulemyot_50b",
+    "output": 1,
+    "producesCatalog": "weapons",
+    "ingredients": [
+      {
+        "key": "korpus",
+        "count": 5,
+        "catalog": "components"
+      },
+      {
+        "key": "shnek",
+        "count": 5,
+        "catalog": "components"
+      },
+      {
+        "key": "korpus_stvola",
+        "count": 5,
+        "catalog": "components"
+      },
+      {
+        "key": "zatvor",
+        "count": 5,
+        "catalog": "components"
+      },
+      {
+        "key": "khranilishche_patronov",
+        "count": 5,
+        "catalog": "components"
+      }
+    ],
+    "skillSpecialist": 60,
+    "bondsCost": 259,
+    "sellPrice": {
+      "bonds": 1250
+    },
+    "description": "Чертеж для крафта пулемета 50го уровня",
+    "stats": {
+      "durability": 60
+    },
+    "iconPath": "blueprints/chertezh_pulemyot_50b.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=4029"
+  },
+  {
+    "key": "chertezh_pulemyot_60b",
+    "name": "Чертеж Пулемёт 60б",
+    "model": "Чертеж Пулемёт",
+    "category": "weapon",
+    "producesKey": "pulemyot_60b",
+    "output": 1,
+    "producesCatalog": "weapons",
+    "ingredients": [
+      {
+        "key": "zatvor",
+        "count": 6,
+        "catalog": "components"
+      },
+      {
+        "key": "korpus",
+        "count": 6,
+        "catalog": "components"
+      },
+      {
+        "key": "khranilishche_patronov",
+        "count": 6,
+        "catalog": "components"
+      },
+      {
+        "key": "shnek",
+        "count": 6,
+        "catalog": "components"
+      },
+      {
+        "key": "korpus_stvola",
+        "count": 6,
+        "catalog": "components"
+      },
+      {
+        "key": "gafniy",
+        "count": 1
+      }
+    ],
+    "skillSpecialist": 65,
+    "bondsCost": 3931,
+    "sellPrice": {
+      "bonds": 1500
+    },
+    "description": "Чертеж для крафта пулемета 60го уровня",
+    "stats": {
+      "durability": 60
+    },
+    "iconPath": "blueprints/chertezh_pulemyot_60b.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=4029"
+  },
+  {
+    "key": "chertezh_pulemyot_6b",
+    "name": "Чертеж Пулемёт 6б",
+    "model": "Чертеж Пулемёт",
+    "category": "weapon",
+    "producesKey": "pulemyot_6b",
+    "output": 4,
+    "producesCatalog": "weapons",
+    "ingredients": [
+      {
+        "key": "korpus",
+        "count": 1,
+        "catalog": "components"
+      },
+      {
+        "key": "shnek",
+        "count": 1,
+        "catalog": "components"
+      },
+      {
+        "key": "korpus_stvola",
+        "count": 1,
+        "catalog": "components"
+      },
+      {
+        "key": "zatvor",
+        "count": 1,
+        "catalog": "components"
+      },
+      {
+        "key": "khranilishche_patronov",
+        "count": 1,
+        "catalog": "components"
+      }
+    ],
+    "skillSpecialist": 40,
+    "sellPrice": {
+      "bonds": 250
+    },
+    "description": "Чертеж для крафта пулемета 6го уровня",
+    "stats": {
+      "durability": 60
+    },
+    "iconPath": "blueprints/chertezh_pulemyot_6b.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=4029"
+  },
+  {
+    "key": "chertezh_pulemyot_9b",
+    "name": "Чертеж Пулемёт 9б",
+    "model": "Чертеж Пулемёт",
+    "category": "weapon",
+    "producesKey": "pulemyot_9b",
+    "output": 2,
+    "producesCatalog": "weapons",
+    "ingredients": [
+      {
+        "key": "korpus",
+        "count": 1,
+        "catalog": "components"
+      },
+      {
+        "key": "shnek",
+        "count": 1,
+        "catalog": "components"
+      },
+      {
+        "key": "korpus_stvola",
+        "count": 1,
+        "catalog": "components"
+      },
+      {
+        "key": "zatvor",
+        "count": 1,
+        "catalog": "components"
+      },
+      {
+        "key": "khranilishche_patronov",
+        "count": 1,
+        "catalog": "components"
+      }
+    ],
+    "skillSpecialist": 40,
+    "sellPrice": {
+      "bonds": 250
+    },
+    "description": "Чертеж для крафта пулемета 9го уровня",
+    "stats": {
+      "durability": 60
+    },
+    "iconPath": "blueprints/chertezh_pulemyot_9b.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=4029"
+  },
+  {
+    "key": "chertezh_pushka",
+    "name": "Чертеж Пушка",
+    "model": "Чертеж Пушка",
+    "category": "weapon",
+    "producesKey": "pushka",
+    "output": 2,
+    "producesCatalog": "weapons",
+    "ingredients": [
+      {
+        "key": "korpus",
+        "count": 1,
+        "catalog": "components"
+      },
+      {
+        "key": "shnek",
+        "count": 1,
+        "catalog": "components"
+      },
+      {
+        "key": "korpus_stvola",
+        "count": 1,
+        "catalog": "components"
+      },
+      {
+        "key": "zatvor",
+        "count": 1,
+        "catalog": "components"
+      },
+      {
+        "key": "bronya_splav_v13",
+        "count": 1,
+        "catalog": "components"
+      }
+    ],
+    "skillSpecialist": 40,
+    "sellPrice": {
+      "bonds": 250
+    },
+    "description": "Чертеж для крафта пушки 1го уровня",
+    "stats": {
+      "durability": 60
+    },
+    "iconPath": "blueprints/chertezh_pushka.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=4029"
+  },
+  {
+    "key": "chertezh_pushka_12b",
+    "name": "Чертеж Пушка 12б",
+    "model": "Чертеж Пушка",
+    "category": "weapon",
+    "producesKey": "pushka_12b",
+    "output": 1,
+    "producesCatalog": "weapons",
+    "ingredients": [
+      {
+        "key": "korpus",
+        "count": 1,
+        "catalog": "components"
+      },
+      {
+        "key": "shnek",
+        "count": 1,
+        "catalog": "components"
+      },
+      {
+        "key": "korpus_stvola",
+        "count": 1,
+        "catalog": "components"
+      },
+      {
+        "key": "zatvor",
+        "count": 1,
+        "catalog": "components"
+      },
+      {
+        "key": "bronya_splav_v13",
+        "count": 1,
+        "catalog": "components"
+      }
+    ],
+    "skillSpecialist": 40,
+    "sellPrice": {
+      "bonds": 250
+    },
+    "description": "Чертеж для крафта пушки 12го уровня",
+    "stats": {
+      "durability": 60
+    },
+    "iconPath": "blueprints/chertezh_pushka_12b.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=4029"
+  },
+  {
+    "key": "chertezh_pushka_14b",
+    "name": "Чертеж Пушка 14б",
+    "model": "Чертеж Пушка",
+    "category": "weapon",
+    "producesKey": "pushka_14b",
+    "output": 1,
+    "producesCatalog": "weapons",
+    "ingredients": [
+      {
+        "key": "korpus",
+        "count": 1,
+        "catalog": "components"
+      },
+      {
+        "key": "shnek",
+        "count": 1,
+        "catalog": "components"
+      },
+      {
+        "key": "korpus_stvola",
+        "count": 1,
+        "catalog": "components"
+      },
+      {
+        "key": "zatvor",
+        "count": 1,
+        "catalog": "components"
+      },
+      {
+        "key": "bronya_splav_v13",
+        "count": 1,
+        "catalog": "components"
+      }
+    ],
+    "skillSpecialist": 40,
+    "bondsCost": 188,
+    "sellPrice": {
+      "bonds": 250
+    },
+    "description": "Чертеж для крафта пушки 14го уровня",
+    "stats": {
+      "durability": 60
+    },
+    "iconPath": "blueprints/chertezh_pushka_14b.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=4029"
+  },
+  {
+    "key": "chertezh_pushka_16b",
+    "name": "Чертеж Пушка 16б",
+    "model": "Чертеж Пушка",
+    "category": "weapon",
+    "producesKey": "pushka_16b",
+    "output": 1,
+    "producesCatalog": "weapons",
+    "ingredients": [
+      {
+        "key": "korpus",
+        "count": 1,
+        "catalog": "components"
+      },
+      {
+        "key": "shnek",
+        "count": 1,
+        "catalog": "components"
+      },
+      {
+        "key": "korpus_stvola",
+        "count": 1,
+        "catalog": "components"
+      },
+      {
+        "key": "zatvor",
+        "count": 1,
+        "catalog": "components"
+      },
+      {
+        "key": "bronya_splav_v13",
+        "count": 1,
+        "catalog": "components"
+      }
+    ],
+    "skillSpecialist": 40,
+    "bondsCost": 451,
+    "sellPrice": {
+      "bonds": 250
+    },
+    "description": "Чертеж для крафта пушки 16го уровня",
+    "stats": {
+      "durability": 60
+    },
+    "iconPath": "blueprints/chertezh_pushka_16b.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=4029"
+  },
+  {
+    "key": "chertezh_pushka_18b",
+    "name": "Чертеж Пушка 18б",
+    "model": "Чертеж Пушка",
+    "category": "weapon",
+    "producesKey": "pushka_18b",
+    "output": 1,
+    "producesCatalog": "weapons",
+    "ingredients": [
+      {
+        "key": "korpus",
+        "count": 1,
+        "catalog": "components"
+      },
+      {
+        "key": "shnek",
+        "count": 1,
+        "catalog": "components"
+      },
+      {
+        "key": "korpus_stvola",
+        "count": 1,
+        "catalog": "components"
+      },
+      {
+        "key": "zatvor",
+        "count": 1,
+        "catalog": "components"
+      },
+      {
+        "key": "bronya_splav_v13",
+        "count": 1,
+        "catalog": "components"
+      }
+    ],
+    "skillSpecialist": 40,
+    "bondsCost": 638,
+    "sellPrice": {
+      "bonds": 250
+    },
+    "description": "Чертеж для крафта пушки 18го уровня",
+    "stats": {
+      "durability": 60
+    },
+    "iconPath": "blueprints/chertezh_pushka_18b.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=4029"
+  },
+  {
+    "key": "chertezh_pushka_2",
+    "name": "Чертеж Пушка 2",
+    "model": "Чертеж Пушка",
+    "category": "weapon",
+    "producesKey": "pushka_2",
+    "output": 19,
+    "producesCatalog": "weapons",
+    "ingredients": [
+      {
+        "key": "korpus",
+        "count": 1,
+        "catalog": "components"
+      },
+      {
+        "key": "shnek",
+        "count": 1,
+        "catalog": "components"
+      },
+      {
+        "key": "korpus_stvola",
+        "count": 1,
+        "catalog": "components"
+      },
+      {
+        "key": "zatvor",
+        "count": 1,
+        "catalog": "components"
+      },
+      {
+        "key": "bronya_splav_v13",
+        "count": 1,
+        "catalog": "components"
+      }
+    ],
+    "skillSpecialist": 40,
+    "sellPrice": {
+      "bonds": 250
+    },
+    "description": "Чертеж для крафта пушки 2го уровня",
+    "stats": {
+      "durability": 60
+    },
+    "iconPath": "blueprints/chertezh_pushka_2.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=4029"
+  },
+  {
+    "key": "chertezh_pushka_20b",
+    "name": "Чертеж Пушка 20б",
+    "model": "Чертеж Пушка",
+    "category": "weapon",
+    "producesKey": "pushka_20b",
+    "output": 1,
+    "producesCatalog": "weapons",
+    "ingredients": [
+      {
+        "key": "korpus",
+        "count": 2,
+        "catalog": "components"
+      },
+      {
+        "key": "shnek",
+        "count": 2,
+        "catalog": "components"
+      },
+      {
+        "key": "korpus_stvola",
+        "count": 2,
+        "catalog": "components"
+      },
+      {
+        "key": "zatvor",
+        "count": 2,
+        "catalog": "components"
+      },
+      {
+        "key": "bronya_splav_v13",
+        "count": 2,
+        "catalog": "components"
+      }
+    ],
+    "skillSpecialist": 45,
+    "bondsCost": 46,
+    "sellPrice": {
+      "bonds": 500
+    },
+    "description": "Чертеж для крафта пушки 20го уровня",
+    "stats": {
+      "durability": 60
+    },
+    "iconPath": "blueprints/chertezh_pushka_20b.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=4029"
+  },
+  {
+    "key": "chertezh_pushka_24b",
+    "name": "Чертеж Пушка 24б",
+    "model": "Чертеж Пушка",
+    "category": "weapon",
+    "producesKey": "pushka_24b",
+    "output": 1,
+    "producesCatalog": "weapons",
+    "ingredients": [
+      {
+        "key": "korpus",
+        "count": 2,
+        "catalog": "components"
+      },
+      {
+        "key": "shnek",
+        "count": 2,
+        "catalog": "components"
+      },
+      {
+        "key": "korpus_stvola",
+        "count": 2,
+        "catalog": "components"
+      },
+      {
+        "key": "zatvor",
+        "count": 2,
+        "catalog": "components"
+      },
+      {
+        "key": "bronya_splav_v13",
+        "count": 2,
+        "catalog": "components"
+      }
+    ],
+    "skillSpecialist": 45,
+    "bondsCost": 414,
+    "sellPrice": {
+      "bonds": 500
+    },
+    "description": "Чертеж для крафта пушки 24го уровня",
+    "stats": {
+      "durability": 60
+    },
+    "iconPath": "blueprints/chertezh_pushka_24b.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=4029"
+  },
+  {
+    "key": "chertezh_pushka_28b",
+    "name": "Чертеж Пушка 28б",
+    "model": "Чертеж Пушка",
+    "category": "weapon",
+    "producesKey": "pushka_28b",
+    "output": 1,
+    "producesCatalog": "weapons",
+    "ingredients": [
+      {
+        "key": "korpus",
+        "count": 2,
+        "catalog": "components"
+      },
+      {
+        "key": "shnek",
+        "count": 2,
+        "catalog": "components"
+      },
+      {
+        "key": "korpus_stvola",
+        "count": 2,
+        "catalog": "components"
+      },
+      {
+        "key": "zatvor",
+        "count": 2,
+        "catalog": "components"
+      },
+      {
+        "key": "bronya_splav_v13",
+        "count": 2,
+        "catalog": "components"
+      }
+    ],
+    "skillSpecialist": 45,
+    "bondsCost": 1306,
+    "sellPrice": {
+      "bonds": 500
+    },
+    "description": "Чертеж для крафта пушки 28го уровня",
+    "stats": {
+      "durability": 60
+    },
+    "iconPath": "blueprints/chertezh_pushka_28b.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=4029"
+  },
+  {
+    "key": "chertezh_pushka_30b",
+    "name": "Чертеж Пушка 30б",
+    "model": "Чертеж Пушка",
+    "category": "weapon",
+    "producesKey": "pushka_30b",
+    "output": 1,
+    "producesCatalog": "weapons",
+    "ingredients": [
+      {
+        "key": "korpus",
+        "count": 3,
+        "catalog": "components"
+      },
+      {
+        "key": "shnek",
+        "count": 3,
+        "catalog": "components"
+      },
+      {
+        "key": "korpus_stvola",
+        "count": 3,
+        "catalog": "components"
+      },
+      {
+        "key": "zatvor",
+        "count": 3,
+        "catalog": "components"
+      },
+      {
+        "key": "bronya_splav_v13",
+        "count": 3,
+        "catalog": "components"
+      }
+    ],
+    "skillSpecialist": 50,
+    "bondsCost": 732,
+    "sellPrice": {
+      "bonds": 750
+    },
+    "description": "Чертеж для крафта пушки 30го уровня",
+    "stats": {
+      "durability": 60
+    },
+    "iconPath": "blueprints/chertezh_pushka_30b.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=4029"
+  },
+  {
+    "key": "chertezh_pushka_4",
+    "name": "Чертеж Пушка 4",
+    "model": "Чертеж Пушка",
+    "category": "weapon",
+    "producesKey": "pushka_4",
+    "output": 6,
+    "producesCatalog": "weapons",
+    "ingredients": [
+      {
+        "key": "korpus",
+        "count": 1,
+        "catalog": "components"
+      },
+      {
+        "key": "shnek",
+        "count": 1,
+        "catalog": "components"
+      },
+      {
+        "key": "korpus_stvola",
+        "count": 1,
+        "catalog": "components"
+      },
+      {
+        "key": "zatvor",
+        "count": 1,
+        "catalog": "components"
+      },
+      {
+        "key": "bronya_splav_v13",
+        "count": 1,
+        "catalog": "components"
+      }
+    ],
+    "skillSpecialist": 40,
+    "sellPrice": {
+      "bonds": 250
+    },
+    "description": "Чертеж для крафта пушки 4го уровня",
+    "stats": {
+      "durability": 60
+    },
+    "iconPath": "blueprints/chertezh_pushka_4.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=4029"
+  },
+  {
+    "key": "chertezh_pushka_40b",
+    "name": "Чертеж Пушка 40б",
+    "model": "Чертеж Пушка",
+    "category": "weapon",
+    "producesKey": "pushka_40b",
+    "output": 1,
+    "producesCatalog": "weapons",
+    "ingredients": [
+      {
+        "key": "korpus",
+        "count": 4,
+        "catalog": "components"
+      },
+      {
+        "key": "shnek",
+        "count": 4,
+        "catalog": "components"
+      },
+      {
+        "key": "korpus_stvola",
+        "count": 4,
+        "catalog": "components"
+      },
+      {
+        "key": "zatvor",
+        "count": 4,
+        "catalog": "components"
+      },
+      {
+        "key": "bronya_splav_v13",
+        "count": 4,
+        "catalog": "components"
+      }
+    ],
+    "skillSpecialist": 55,
+    "bondsCost": 203,
+    "sellPrice": {
+      "bonds": 1000
+    },
+    "description": "Чертеж для крафта пушки 40го уровня",
+    "stats": {
+      "durability": 60
+    },
+    "iconPath": "blueprints/chertezh_pushka_40b.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=4029"
+  },
+  {
+    "key": "chertezh_pushka_50b",
+    "name": "Чертеж Пушка 50б",
+    "model": "Чертеж Пушка",
+    "category": "weapon",
+    "producesKey": "pushka_50b",
+    "output": 1,
+    "producesCatalog": "weapons",
+    "ingredients": [
+      {
+        "key": "korpus",
+        "count": 5,
+        "catalog": "components"
+      },
+      {
+        "key": "shnek",
+        "count": 5,
+        "catalog": "components"
+      },
+      {
+        "key": "korpus_stvola",
+        "count": 5,
+        "catalog": "components"
+      },
+      {
+        "key": "zatvor",
+        "count": 5,
+        "catalog": "components"
+      },
+      {
+        "key": "bronya_splav_v13",
+        "count": 5,
+        "catalog": "components"
+      }
+    ],
+    "skillSpecialist": 60,
+    "bondsCost": 752,
+    "sellPrice": {
+      "bonds": 1250
+    },
+    "description": "Чертеж для крафта пушки 50го уровня",
+    "stats": {
+      "durability": 60
+    },
+    "iconPath": "blueprints/chertezh_pushka_50b.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=4029"
+  },
+  {
+    "key": "chertezh_pushka_60b",
+    "name": "Чертеж Пушка 60б",
+    "model": "Чертеж Пушка",
+    "category": "weapon",
+    "producesKey": "pushka_60b",
+    "output": 1,
+    "producesCatalog": "weapons",
+    "ingredients": [
+      {
+        "key": "bronya_splav_v13",
+        "count": 6,
+        "catalog": "components"
+      },
+      {
+        "key": "zatvor",
+        "count": 6,
+        "catalog": "components"
+      },
+      {
+        "key": "korpus",
+        "count": 6,
+        "catalog": "components"
+      },
+      {
+        "key": "shnek",
+        "count": 6,
+        "catalog": "components"
+      },
+      {
+        "key": "korpus_stvola",
+        "count": 6,
+        "catalog": "components"
+      },
+      {
+        "key": "gafniy",
+        "count": 1
+      }
+    ],
+    "skillSpecialist": 65,
+    "bondsCost": 2462,
+    "sellPrice": {
+      "bonds": 1500
+    },
+    "description": "Чертеж для крафта пушки 60го уровня",
+    "stats": {
+      "durability": 60
+    },
+    "iconPath": "blueprints/chertezh_pushka_60b.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=4029"
+  },
+  {
+    "key": "chertezh_pushka_6b",
+    "name": "Чертеж Пушка 6б",
+    "model": "Чертеж Пушка",
+    "category": "weapon",
+    "producesKey": "pushka_6b",
+    "output": 3,
+    "producesCatalog": "weapons",
+    "ingredients": [
+      {
+        "key": "korpus",
+        "count": 1,
+        "catalog": "components"
+      },
+      {
+        "key": "shnek",
+        "count": 1,
+        "catalog": "components"
+      },
+      {
+        "key": "korpus_stvola",
+        "count": 1,
+        "catalog": "components"
+      },
+      {
+        "key": "zatvor",
+        "count": 1,
+        "catalog": "components"
+      },
+      {
+        "key": "bronya_splav_v13",
+        "count": 1,
+        "catalog": "components"
+      }
+    ],
+    "skillSpecialist": 40,
+    "sellPrice": {
+      "bonds": 250
+    },
+    "description": "Чертеж для крафта пушки 6го уровня",
+    "stats": {
+      "durability": 60
+    },
+    "iconPath": "blueprints/chertezh_pushka_6b.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=4029"
+  },
+  {
+    "key": "chertezh_pushka_9b",
+    "name": "Чертеж Пушка 9б",
+    "model": "Чертеж Пушка",
+    "category": "weapon",
+    "producesKey": "pushka_9b",
+    "output": 2,
+    "producesCatalog": "weapons",
+    "ingredients": [
+      {
+        "key": "korpus",
+        "count": 1,
+        "catalog": "components"
+      },
+      {
+        "key": "shnek",
+        "count": 1,
+        "catalog": "components"
+      },
+      {
+        "key": "korpus_stvola",
+        "count": 1,
+        "catalog": "components"
+      },
+      {
+        "key": "zatvor",
+        "count": 1,
+        "catalog": "components"
+      },
+      {
+        "key": "bronya_splav_v13",
+        "count": 1,
+        "catalog": "components"
+      }
+    ],
+    "skillSpecialist": 40,
+    "sellPrice": {
+      "bonds": 250
+    },
+    "description": "Чертеж для крафта пушки 9го уровня",
+    "stats": {
+      "durability": 60
+    },
+    "iconPath": "blueprints/chertezh_pushka_9b.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=4029"
+  },
+  {
+    "key": "chertezh_pushka_zamorozka",
+    "name": "Чертеж Пушка Заморозка",
+    "model": "Чертеж Пушка Заморозка",
+    "category": "pack",
+    "producesKey": "pushka_zamorozka",
+    "output": 1,
+    "producesCatalog": "weapons",
+    "ingredients": [
+      {
+        "key": "snezhnyy_kom",
+        "count": 1000,
+        "catalog": "loot"
+      },
+      {
+        "key": "led",
+        "count": 100,
+        "catalog": "loot"
+      }
+    ],
+    "bondsCost": 1000000,
+    "sellPrice": {
+      "bonds": 125
+    },
+    "stats": {
+      "durability": 1
+    },
+    "iconPath": "blueprints/chertezh_pushka_zamorozka.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3077"
+  },
+  {
+    "key": "chertezh_rempak_9000",
+    "name": "Чертеж Ремпак 9000",
+    "model": "Чертеж Ремпак",
+    "category": "pack",
+    "producesKey": "rempak_9000",
+    "output": 1,
+    "producesCatalog": "items",
+    "ingredients": [
+      {
+        "key": "kristall_zelenyy",
+        "count": 600
+      },
+      {
+        "key": "kristall_siniy",
+        "count": 200
+      },
+      {
+        "key": "kristall_krasnyy",
+        "count": 100
+      },
+      {
+        "key": "shchit_zhuka_glavnogo",
+        "count": 50,
+        "catalog": "loot"
+      },
+      {
+        "key": "shchit_senokosetsa",
+        "count": 100,
+        "catalog": "loot"
+      },
+      {
+        "key": "elitra_tuka",
+        "count": 222,
+        "catalog": "loot"
+      },
+      {
+        "key": "zakhvat",
+        "count": 1,
+        "catalog": "loot"
+      }
+    ],
+    "skillSpecialist": 40,
+    "sellPrice": {
+      "bonds": 2500
+    },
+    "description": "Чертеж для крафта ремпака. Добывается как лут из жуков-сенокосцев и боссов",
+    "stats": {
+      "durability": 1
+    },
+    "iconPath": "blueprints/chertezh_rempak_9000.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3077"
+  },
+  {
+    "key": "chertezh_rk",
+    "name": "Чертеж Рк",
+    "model": "Чертеж Рк",
+    "category": "weapon",
+    "producesKey": "rk",
+    "output": 5,
+    "producesCatalog": "weapons",
+    "ingredients": [
+      {
+        "key": "korpus",
+        "count": 1,
+        "catalog": "components"
+      },
+      {
+        "key": "vidiofon",
+        "count": 1,
+        "catalog": "components"
+      },
+      {
+        "key": "forsunka",
+        "count": 1,
+        "catalog": "components"
+      },
+      {
+        "key": "blok_slezheniya",
+        "count": 1,
+        "catalog": "components"
+      },
+      {
+        "key": "kolpograf",
+        "count": 1,
+        "catalog": "components"
+      }
+    ],
+    "skillSpecialist": 40,
+    "sellPrice": {
+      "bonds": 250
+    },
+    "description": "Чертеж для крафта ракетной установки 1го уровня",
+    "stats": {
+      "durability": 100
+    },
+    "iconPath": "blueprints/chertezh_rk.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=4029"
+  },
+  {
+    "key": "chertezh_rk_12b",
+    "name": "Чертеж Рк 12б",
+    "model": "Чертеж Рк",
+    "category": "weapon",
+    "producesKey": "rk_12b",
+    "output": 2,
+    "producesCatalog": "weapons",
+    "ingredients": [
+      {
+        "key": "korpus",
+        "count": 1,
+        "catalog": "components"
+      },
+      {
+        "key": "vidiofon",
+        "count": 1,
+        "catalog": "components"
+      },
+      {
+        "key": "forsunka",
+        "count": 1,
+        "catalog": "components"
+      },
+      {
+        "key": "blok_slezheniya",
+        "count": 1,
+        "catalog": "components"
+      },
+      {
+        "key": "kolpograf",
+        "count": 1,
+        "catalog": "components"
+      }
+    ],
+    "skillSpecialist": 40,
+    "bondsCost": 566,
+    "sellPrice": {
+      "bonds": 250
+    },
+    "description": "Чертеж для крафта ударной ракетной установки 12го уровня",
+    "stats": {
+      "durability": 60
+    },
+    "iconPath": "blueprints/chertezh_rk_12b.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=4029"
+  },
+  {
+    "key": "chertezh_rk_15b",
+    "name": "Чертеж Рк 15б",
+    "model": "Чертеж Рк",
+    "category": "weapon",
+    "producesKey": "rk_15b",
+    "output": 1,
+    "producesCatalog": "weapons",
+    "ingredients": [
+      {
+        "key": "korpus",
+        "count": 1,
+        "catalog": "components"
+      },
+      {
+        "key": "vidiofon",
+        "count": 1,
+        "catalog": "components"
+      },
+      {
+        "key": "forsunka",
+        "count": 1,
+        "catalog": "components"
+      },
+      {
+        "key": "blok_slezheniya",
+        "count": 1,
+        "catalog": "components"
+      },
+      {
+        "key": "kolpograf",
+        "count": 1,
+        "catalog": "components"
+      }
+    ],
+    "skillSpecialist": 40,
+    "bondsCost": 137,
+    "sellPrice": {
+      "bonds": 250
+    },
+    "description": "Чертеж для крафта ударной ракетной установки 15го уровня",
+    "stats": {
+      "durability": 60
+    },
+    "iconPath": "blueprints/chertezh_rk_15b.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=4029"
+  },
+  {
+    "key": "chertezh_rk_17b",
+    "name": "Чертеж Рк 17б",
+    "model": "Чертеж Рк",
+    "category": "weapon",
+    "producesKey": "rk_17b",
+    "output": 1,
+    "producesCatalog": "weapons",
+    "ingredients": [
+      {
+        "key": "korpus",
+        "count": 1,
+        "catalog": "components"
+      },
+      {
+        "key": "vidiofon",
+        "count": 1,
+        "catalog": "components"
+      },
+      {
+        "key": "forsunka",
+        "count": 1,
+        "catalog": "components"
+      },
+      {
+        "key": "blok_slezheniya",
+        "count": 1,
+        "catalog": "components"
+      },
+      {
+        "key": "kolpograf",
+        "count": 1,
+        "catalog": "components"
+      }
+    ],
+    "skillSpecialist": 40,
+    "bondsCost": 386,
+    "sellPrice": {
+      "bonds": 250
+    },
+    "description": "Чертеж для крафта ударной ракетной установки 17го уровня",
+    "stats": {
+      "durability": 60
+    },
+    "iconPath": "blueprints/chertezh_rk_17b.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=4029"
+  },
+  {
+    "key": "chertezh_rk_19b",
+    "name": "Чертеж Рк 19б",
+    "model": "Чертеж Рк",
+    "category": "weapon",
+    "producesKey": "rk_19b",
+    "output": 1,
+    "producesCatalog": "weapons",
+    "ingredients": [
+      {
+        "key": "korpus",
+        "count": 1,
+        "catalog": "components"
+      },
+      {
+        "key": "vidiofon",
+        "count": 1,
+        "catalog": "components"
+      },
+      {
+        "key": "forsunka",
+        "count": 1,
+        "catalog": "components"
+      },
+      {
+        "key": "blok_slezheniya",
+        "count": 1,
+        "catalog": "components"
+      },
+      {
+        "key": "kolpograf",
+        "count": 1,
+        "catalog": "components"
+      }
+    ],
+    "skillSpecialist": 40,
+    "bondsCost": 420,
+    "sellPrice": {
+      "bonds": 250
+    },
+    "description": "Чертеж для крафта ударной ракетной установки 19го уровня",
+    "stats": {
+      "durability": 60
+    },
+    "iconPath": "blueprints/chertezh_rk_19b.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=4029"
+  },
+  {
+    "key": "chertezh_rk_21b",
+    "name": "Чертеж Рк 21б",
+    "model": "Чертеж Рк",
+    "category": "weapon",
+    "producesKey": "rk_21b",
+    "output": 1,
+    "producesCatalog": "weapons",
+    "ingredients": [
+      {
+        "key": "korpus",
+        "count": 2,
+        "catalog": "components"
+      },
+      {
+        "key": "vidiofon",
+        "count": 2,
+        "catalog": "components"
+      },
+      {
+        "key": "forsunka",
+        "count": 2,
+        "catalog": "components"
+      },
+      {
+        "key": "blok_slezheniya",
+        "count": 2,
+        "catalog": "components"
+      },
+      {
+        "key": "kolpograf",
+        "count": 2,
+        "catalog": "components"
+      }
+    ],
+    "skillSpecialist": 45,
+    "bondsCost": 802,
+    "sellPrice": {
+      "bonds": 500
+    },
+    "description": "Чертеж для крафта ударной ракетной установки 21го уровня",
+    "stats": {
+      "durability": 60
+    },
+    "iconPath": "blueprints/chertezh_rk_21b.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=4029"
+  },
+  {
+    "key": "chertezh_rk_24b",
+    "name": "Чертеж Рк 24б",
+    "model": "Чертеж Рк",
+    "category": "weapon",
+    "producesKey": "rk_24b",
+    "output": 1,
+    "producesCatalog": "weapons",
+    "ingredients": [
+      {
+        "key": "korpus",
+        "count": 2,
+        "catalog": "components"
+      },
+      {
+        "key": "vidiofon",
+        "count": 2,
+        "catalog": "components"
+      },
+      {
+        "key": "forsunka",
+        "count": 2,
+        "catalog": "components"
+      },
+      {
+        "key": "blok_slezheniya",
+        "count": 2,
+        "catalog": "components"
+      },
+      {
+        "key": "kolpograf",
+        "count": 2,
+        "catalog": "components"
+      }
+    ],
+    "skillSpecialist": 45,
+    "bondsCost": 1662,
+    "sellPrice": {
+      "bonds": 500
+    },
+    "description": "Чертеж для крафта ударной ракетной установки 24го уровня",
+    "stats": {
+      "durability": 60
+    },
+    "iconPath": "blueprints/chertezh_rk_24b.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=4029"
+  },
+  {
+    "key": "chertezh_rk_27b",
+    "name": "Чертеж Рк 27б",
+    "model": "Чертеж Рк",
+    "category": "weapon",
+    "producesKey": "rk_27b",
+    "output": 1,
+    "producesCatalog": "weapons",
+    "ingredients": [
+      {
+        "key": "korpus",
+        "count": 2,
+        "catalog": "components"
+      },
+      {
+        "key": "vidiofon",
+        "count": 2,
+        "catalog": "components"
+      },
+      {
+        "key": "forsunka",
+        "count": 2,
+        "catalog": "components"
+      },
+      {
+        "key": "blok_slezheniya",
+        "count": 2,
+        "catalog": "components"
+      },
+      {
+        "key": "kolpograf",
+        "count": 2,
+        "catalog": "components"
+      }
+    ],
+    "skillSpecialist": 45,
+    "bondsCost": 254,
+    "sellPrice": {
+      "bonds": 500
+    },
+    "description": "Чертеж для крафта ударной ракетной установки 27го уровня",
+    "stats": {
+      "durability": 60
+    },
+    "iconPath": "blueprints/chertezh_rk_27b.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=4029"
+  },
+  {
+    "key": "chertezh_rk_3",
+    "name": "Чертеж Рк 3",
+    "model": "Чертеж Рк",
+    "category": "weapon",
+    "producesKey": "rk_3",
+    "output": 9,
+    "producesCatalog": "weapons",
+    "ingredients": [
+      {
+        "key": "korpus",
+        "count": 1,
+        "catalog": "components"
+      },
+      {
+        "key": "vidiofon",
+        "count": 1,
+        "catalog": "components"
+      },
+      {
+        "key": "forsunka",
+        "count": 1,
+        "catalog": "components"
+      },
+      {
+        "key": "blok_slezheniya",
+        "count": 1,
+        "catalog": "components"
+      },
+      {
+        "key": "kolpograf",
+        "count": 1,
+        "catalog": "components"
+      }
+    ],
+    "skillSpecialist": 40,
+    "sellPrice": {
+      "bonds": 250
+    },
+    "description": "Чертеж для крафта ракетной установки 3го уровня",
+    "stats": {
+      "durability": 60
+    },
+    "iconPath": "blueprints/chertezh_rk_3.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=4029"
+  },
+  {
+    "key": "chertezh_rk_31b",
+    "name": "Чертеж Рк 31б",
+    "model": "Чертеж Рк",
+    "category": "weapon",
+    "producesKey": "rk_31b",
+    "output": 1,
+    "producesCatalog": "weapons",
+    "ingredients": [
+      {
+        "key": "korpus",
+        "count": 3,
+        "catalog": "components"
+      },
+      {
+        "key": "vidiofon",
+        "count": 3,
+        "catalog": "components"
+      },
+      {
+        "key": "forsunka",
+        "count": 3,
+        "catalog": "components"
+      },
+      {
+        "key": "blok_slezheniya",
+        "count": 3,
+        "catalog": "components"
+      },
+      {
+        "key": "kolpograf",
+        "count": 3,
+        "catalog": "components"
+      }
+    ],
+    "skillSpecialist": 50,
+    "bondsCost": 2922,
+    "sellPrice": {
+      "bonds": 750
+    },
+    "description": "Чертеж для крафта ударной ракетной установки 31го уровня",
+    "stats": {
+      "durability": 60
+    },
+    "iconPath": "blueprints/chertezh_rk_31b.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=4029"
+  },
+  {
+    "key": "chertezh_rk_37b",
+    "name": "Чертеж Рк 37б",
+    "model": "Чертеж Рк",
+    "category": "weapon",
+    "producesKey": "rk_37b",
+    "output": 1,
+    "producesCatalog": "weapons",
+    "ingredients": [
+      {
+        "key": "korpus",
+        "count": 3,
+        "catalog": "components"
+      },
+      {
+        "key": "vidiofon",
+        "count": 3,
+        "catalog": "components"
+      },
+      {
+        "key": "forsunka",
+        "count": 3,
+        "catalog": "components"
+      },
+      {
+        "key": "blok_slezheniya",
+        "count": 3,
+        "catalog": "components"
+      },
+      {
+        "key": "kolpograf",
+        "count": 3,
+        "catalog": "components"
+      }
+    ],
+    "skillSpecialist": 50,
+    "bondsCost": 950,
+    "sellPrice": {
+      "bonds": 750
+    },
+    "description": "Чертеж для крафта ударной ракетной установки 37го уровня",
+    "stats": {
+      "durability": 60
+    },
+    "iconPath": "blueprints/chertezh_rk_37b.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=4029"
+  },
+  {
+    "key": "chertezh_rk_41b",
+    "name": "Чертеж Рк 41б",
+    "model": "Чертеж Рк",
+    "category": "weapon",
+    "producesKey": "rk_41b",
+    "output": 1,
+    "producesCatalog": "weapons",
+    "ingredients": [
+      {
+        "key": "korpus",
+        "count": 4,
+        "catalog": "components"
+      },
+      {
+        "key": "vidiofon",
+        "count": 4,
+        "catalog": "components"
+      },
+      {
+        "key": "forsunka",
+        "count": 4,
+        "catalog": "components"
+      },
+      {
+        "key": "blok_slezheniya",
+        "count": 4,
+        "catalog": "components"
+      },
+      {
+        "key": "kolpograf",
+        "count": 4,
+        "catalog": "components"
+      }
+    ],
+    "skillSpecialist": 55,
+    "bondsCost": 537,
+    "sellPrice": {
+      "bonds": 1000
+    },
+    "description": "Чертеж для крафта ударной ракетной установки 41го уровня",
+    "stats": {
+      "durability": 60
+    },
+    "iconPath": "blueprints/chertezh_rk_41b.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=4029"
+  },
+  {
+    "key": "chertezh_rk_47b",
+    "name": "Чертеж Рк 47б",
+    "model": "Чертеж Рк",
+    "category": "weapon",
+    "producesKey": "rk_47b",
+    "output": 1,
+    "producesCatalog": "weapons",
+    "ingredients": [
+      {
+        "key": "korpus",
+        "count": 4,
+        "catalog": "components"
+      },
+      {
+        "key": "vidiofon",
+        "count": 4,
+        "catalog": "components"
+      },
+      {
+        "key": "forsunka",
+        "count": 4,
+        "catalog": "components"
+      },
+      {
+        "key": "blok_slezheniya",
+        "count": 4,
+        "catalog": "components"
+      },
+      {
+        "key": "kolpograf",
+        "count": 4,
+        "catalog": "components"
+      }
+    ],
+    "skillSpecialist": 55,
+    "bondsCost": 227,
+    "sellPrice": {
+      "bonds": 1000
+    },
+    "description": "Чертеж для крафта ударной ракетной установки 47го уровня",
+    "stats": {
+      "durability": 60
+    },
+    "iconPath": "blueprints/chertezh_rk_47b.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=4029"
+  },
+  {
+    "key": "chertezh_rk_5",
+    "name": "Чертеж Рк 5",
+    "model": "Чертеж Рк",
+    "category": "weapon",
+    "producesKey": "rk_5",
+    "output": 5,
+    "producesCatalog": "weapons",
+    "ingredients": [
+      {
+        "key": "korpus",
+        "count": 1,
+        "catalog": "components"
+      },
+      {
+        "key": "vidiofon",
+        "count": 1,
+        "catalog": "components"
+      },
+      {
+        "key": "forsunka",
+        "count": 1,
+        "catalog": "components"
+      },
+      {
+        "key": "blok_slezheniya",
+        "count": 1,
+        "catalog": "components"
+      },
+      {
+        "key": "kolpograf",
+        "count": 1,
+        "catalog": "components"
+      }
+    ],
+    "skillSpecialist": 40,
+    "sellPrice": {
+      "bonds": 250
+    },
+    "description": "Чертеж для крафта ракетной установки 5го уровня",
+    "stats": {
+      "durability": 60
+    },
+    "iconPath": "blueprints/chertezh_rk_5.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=4029"
+  },
+  {
+    "key": "chertezh_rk_60b",
+    "name": "Чертеж Рк 60б",
+    "model": "Чертеж Рк",
+    "category": "weapon",
+    "producesKey": "rk_60b",
+    "output": 1,
+    "producesCatalog": "weapons",
+    "ingredients": [
+      {
+        "key": "blok_slezheniya",
+        "count": 6,
+        "catalog": "components"
+      },
+      {
+        "key": "forsunka",
+        "count": 6,
+        "catalog": "components"
+      },
+      {
+        "key": "korpus",
+        "count": 6,
+        "catalog": "components"
+      },
+      {
+        "key": "vidiofon",
+        "count": 6,
+        "catalog": "components"
+      },
+      {
+        "key": "kolpograf",
+        "count": 6,
+        "catalog": "components"
+      },
+      {
+        "key": "gafniy",
+        "count": 1
+      }
+    ],
+    "skillSpecialist": 65,
+    "bondsCost": 2423,
+    "sellPrice": {
+      "bonds": 1711
+    },
+    "description": "Чертеж для крафта ударной ракетной установки 60го уровня",
+    "stats": {
+      "durability": 60
+    },
+    "iconPath": "blueprints/chertezh_rk_60b.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=4029"
+  },
+  {
+    "key": "chertezh_rk_9b",
+    "name": "Чертеж Рк 9б",
+    "model": "Чертеж Рк",
+    "category": "weapon",
+    "producesKey": "rk_9b",
+    "output": 2,
+    "producesCatalog": "weapons",
+    "ingredients": [
+      {
+        "key": "korpus",
+        "count": 1,
+        "catalog": "components"
+      },
+      {
+        "key": "vidiofon",
+        "count": 1,
+        "catalog": "components"
+      },
+      {
+        "key": "forsunka",
+        "count": 1,
+        "catalog": "components"
+      },
+      {
+        "key": "blok_slezheniya",
+        "count": 1,
+        "catalog": "components"
+      },
+      {
+        "key": "kolpograf",
+        "count": 1,
+        "catalog": "components"
+      }
+    ],
+    "skillSpecialist": 40,
+    "sellPrice": {
+      "bonds": 250
+    },
+    "description": "Чертеж для крафта ударной ракетной установки 9го уровня",
+    "stats": {
+      "durability": 60
+    },
+    "iconPath": "blueprints/chertezh_rk_9b.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=4029"
+  },
+  {
+    "key": "chertezh_rk_enrg_10b",
+    "name": "Чертеж Рк Энрг 10б",
+    "model": "Чертеж Рк Энрг",
+    "category": "weapon",
+    "producesKey": "rk_enrg_10b",
+    "output": 2,
+    "producesCatalog": "weapons",
+    "ingredients": [
+      {
+        "key": "kolpograf",
+        "count": 1,
+        "catalog": "components"
+      },
+      {
+        "key": "blok_slezheniya",
+        "count": 1,
+        "catalog": "components"
+      },
+      {
+        "key": "vidiofon",
+        "count": 1,
+        "catalog": "components"
+      },
+      {
+        "key": "korpus",
+        "count": 1,
+        "catalog": "components"
+      }
+    ],
+    "skillSpecialist": 40,
+    "bondsCost": 270,
+    "sellPrice": {
+      "bonds": 250
+    },
+    "description": "Чертеж для крафта ракетной установки энергетической 10го уровня",
+    "stats": {
+      "durability": 60
+    },
+    "iconPath": "blueprints/chertezh_rk_enrg_10b.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=4029"
+  },
+  {
+    "key": "chertezh_rk_enrg_13b",
+    "name": "Чертеж Рк Энрг 13б",
+    "model": "Чертеж Рк Энрг",
+    "category": "weapon",
+    "producesKey": "rk_enrg_13b",
+    "output": 2,
+    "producesCatalog": "weapons",
+    "ingredients": [
+      {
+        "key": "kolpograf",
+        "count": 1,
+        "catalog": "components"
+      },
+      {
+        "key": "blok_slezheniya",
+        "count": 1,
+        "catalog": "components"
+      },
+      {
+        "key": "vidiofon",
+        "count": 1,
+        "catalog": "components"
+      },
+      {
+        "key": "korpus",
+        "count": 1,
+        "catalog": "components"
+      }
+    ],
+    "skillSpecialist": 40,
+    "bondsCost": 724,
+    "sellPrice": {
+      "bonds": 250
+    },
+    "description": "Чертеж для крафта ракетной установки энергетической 13го уровня",
+    "stats": {
+      "durability": 60
+    },
+    "iconPath": "blueprints/chertezh_rk_enrg_13b.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=4029"
+  },
+  {
+    "key": "chertezh_rk_enrg_14b",
+    "name": "Чертеж Рк Энрг 14б",
+    "model": "Чертеж Рк Энрг",
+    "category": "weapon",
+    "producesKey": "rk_enrg_14b",
+    "output": 2,
+    "producesCatalog": "weapons",
+    "ingredients": [
+      {
+        "key": "kolpograf",
+        "count": 1,
+        "catalog": "components"
+      },
+      {
+        "key": "blok_slezheniya",
+        "count": 1,
+        "catalog": "components"
+      },
+      {
+        "key": "vidiofon",
+        "count": 1,
+        "catalog": "components"
+      },
+      {
+        "key": "korpus",
+        "count": 1,
+        "catalog": "components"
+      }
+    ],
+    "skillSpecialist": 40,
+    "bondsCost": 802,
+    "sellPrice": {
+      "bonds": 250
+    },
+    "description": "Чертеж для крафта ракетной установки энергетической 14го уровня",
+    "stats": {
+      "durability": 60
+    },
+    "iconPath": "blueprints/chertezh_rk_enrg_14b.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=4029"
+  },
+  {
+    "key": "chertezh_rk_enrg_16b",
+    "name": "Чертеж Рк Энрг 16б",
+    "model": "Чертеж Рк Энрг",
+    "category": "weapon",
+    "producesKey": "rk_enrg_16b",
+    "output": 1,
+    "producesCatalog": "weapons",
+    "ingredients": [
+      {
+        "key": "kolpograf",
+        "count": 1,
+        "catalog": "components"
+      },
+      {
+        "key": "blok_slezheniya",
+        "count": 1,
+        "catalog": "components"
+      },
+      {
+        "key": "vidiofon",
+        "count": 1,
+        "catalog": "components"
+      },
+      {
+        "key": "korpus",
+        "count": 1,
+        "catalog": "components"
+      }
+    ],
+    "skillSpecialist": 40,
+    "bondsCost": 202,
+    "sellPrice": {
+      "bonds": 250
+    },
+    "description": "Чертеж для крафта ракетной установки энергетической 16го уровня",
+    "stats": {
+      "durability": 60
+    },
+    "iconPath": "blueprints/chertezh_rk_enrg_16b.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=4029"
+  },
+  {
+    "key": "chertezh_rk_enrg_19b",
+    "name": "Чертеж Рк Энрг 19б",
+    "model": "Чертеж Рк Энрг",
+    "category": "weapon",
+    "producesKey": "rk_enrg_19b",
+    "output": 1,
+    "producesCatalog": "weapons",
+    "ingredients": [
+      {
+        "key": "kolpograf",
+        "count": 1,
+        "catalog": "components"
+      },
+      {
+        "key": "blok_slezheniya",
+        "count": 1,
+        "catalog": "components"
+      },
+      {
+        "key": "vidiofon",
+        "count": 1,
+        "catalog": "components"
+      },
+      {
+        "key": "korpus",
+        "count": 1,
+        "catalog": "components"
+      }
+    ],
+    "skillSpecialist": 40,
+    "bondsCost": 475,
+    "sellPrice": {
+      "bonds": 250
+    },
+    "description": "Чертеж для крафта ракетной установки энергетической 19го уровня",
+    "stats": {
+      "durability": 60
+    },
+    "iconPath": "blueprints/chertezh_rk_enrg_19b.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=4029"
+  },
+  {
+    "key": "chertezh_rk_enrg_22b",
+    "name": "Чертеж Рк Энрг 22б",
+    "model": "Чертеж Рк Энрг",
+    "category": "weapon",
+    "producesKey": "rk_enrg_22b",
+    "output": 1,
+    "producesCatalog": "weapons",
+    "ingredients": [
+      {
+        "key": "kolpograf",
+        "count": 2,
+        "catalog": "components"
+      },
+      {
+        "key": "blok_slezheniya",
+        "count": 2,
+        "catalog": "components"
+      },
+      {
+        "key": "vidiofon",
+        "count": 2,
+        "catalog": "components"
+      },
+      {
+        "key": "korpus",
+        "count": 2,
+        "catalog": "components"
+      }
+    ],
+    "skillSpecialist": 45,
+    "bondsCost": 1306,
+    "sellPrice": {
+      "bonds": 500
+    },
+    "description": "Чертеж для крафта ракетной установки энергетической 22го уровня",
+    "stats": {
+      "durability": 60
+    },
+    "iconPath": "blueprints/chertezh_rk_enrg_22b.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=4029"
+  },
+  {
+    "key": "chertezh_rk_enrg_24b",
+    "name": "Чертеж Рк Энрг 24б",
+    "model": "Чертеж Рк Энрг",
+    "category": "weapon",
+    "producesKey": "rk_enrg_24b",
+    "output": 1,
+    "producesCatalog": "weapons",
+    "ingredients": [
+      {
+        "key": "kolpograf",
+        "count": 2,
+        "catalog": "components"
+      },
+      {
+        "key": "blok_slezheniya",
+        "count": 2,
+        "catalog": "components"
+      },
+      {
+        "key": "vidiofon",
+        "count": 2,
+        "catalog": "components"
+      },
+      {
+        "key": "korpus",
+        "count": 2,
+        "catalog": "components"
+      }
+    ],
+    "skillSpecialist": 45,
+    "bondsCost": 1676,
+    "sellPrice": {
+      "bonds": 500
+    },
+    "description": "Чертеж для крафта ракетной установки энергетической 24го уровня",
+    "stats": {
+      "durability": 60
+    },
+    "iconPath": "blueprints/chertezh_rk_enrg_24b.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=4029"
+  },
+  {
+    "key": "chertezh_rk_enrg_27b",
+    "name": "Чертеж Рк Энрг 27б",
+    "model": "Чертеж Рк Энрг",
+    "category": "weapon",
+    "producesKey": "rk_enrg_27b",
+    "output": 1,
+    "producesCatalog": "weapons",
+    "ingredients": [
+      {
+        "key": "kolpograf",
+        "count": 2,
+        "catalog": "components"
+      },
+      {
+        "key": "blok_slezheniya",
+        "count": 2,
+        "catalog": "components"
+      },
+      {
+        "key": "vidiofon",
+        "count": 2,
+        "catalog": "components"
+      },
+      {
+        "key": "korpus",
+        "count": 2,
+        "catalog": "components"
+      }
+    ],
+    "skillSpecialist": 45,
+    "bondsCost": 277,
+    "sellPrice": {
+      "bonds": 500
+    },
+    "description": "Чертеж для крафта ракетной установки энергетической 27го уровня",
+    "stats": {
+      "durability": 60
+    },
+    "iconPath": "blueprints/chertezh_rk_enrg_27b.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=4029"
+  },
+  {
+    "key": "chertezh_rk_enrg_31b",
+    "name": "Чертеж Рк Энрг 31б",
+    "model": "Чертеж Рк Энрг",
+    "category": "weapon",
+    "producesKey": "rk_enrg_31b",
+    "output": 1,
+    "producesCatalog": "weapons",
+    "ingredients": [
+      {
+        "key": "kolpograf",
+        "count": 3,
+        "catalog": "components"
+      },
+      {
+        "key": "blok_slezheniya",
+        "count": 3,
+        "catalog": "components"
+      },
+      {
+        "key": "vidiofon",
+        "count": 3,
+        "catalog": "components"
+      },
+      {
+        "key": "korpus",
+        "count": 3,
+        "catalog": "components"
+      }
+    ],
+    "skillSpecialist": 50,
+    "bondsCost": 2426,
+    "sellPrice": {
+      "bonds": 750
+    },
+    "description": "Чертеж для крафта ракетной установки энергетической 31го уровня",
+    "stats": {
+      "durability": 60
+    },
+    "iconPath": "blueprints/chertezh_rk_enrg_31b.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=4029"
+  },
+  {
+    "key": "chertezh_rk_enrg_35b",
+    "name": "Чертеж Рк Энрг 35б",
+    "model": "Чертеж Рк Энрг",
+    "category": "weapon",
+    "producesKey": "rk_enrg_35b",
+    "output": 1,
+    "producesCatalog": "weapons",
+    "ingredients": [
+      {
+        "key": "kolpograf",
+        "count": 3,
+        "catalog": "components"
+      },
+      {
+        "key": "blok_slezheniya",
+        "count": 3,
+        "catalog": "components"
+      },
+      {
+        "key": "vidiofon",
+        "count": 3,
+        "catalog": "components"
+      },
+      {
+        "key": "korpus",
+        "count": 3,
+        "catalog": "components"
+      }
+    ],
+    "skillSpecialist": 50,
+    "bondsCost": 260,
+    "sellPrice": {
+      "bonds": 750
+    },
+    "description": "Чертеж для крафта ракетной установки энергетической 35го уровня",
+    "stats": {
+      "durability": 60
+    },
+    "iconPath": "blueprints/chertezh_rk_enrg_35b.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=4029"
+  },
+  {
+    "key": "chertezh_rk_enrg_40b",
+    "name": "Чертеж Рк Энрг 40б",
+    "model": "Чертеж Рк Энрг",
+    "category": "weapon",
+    "producesKey": "rk_enrg_40b",
+    "output": 1,
+    "producesCatalog": "weapons",
+    "ingredients": [
+      {
+        "key": "kolpograf",
+        "count": 4,
+        "catalog": "components"
+      },
+      {
+        "key": "blok_slezheniya",
+        "count": 4,
+        "catalog": "components"
+      },
+      {
+        "key": "vidiofon",
+        "count": 4,
+        "catalog": "components"
+      },
+      {
+        "key": "korpus",
+        "count": 4,
+        "catalog": "components"
+      }
+    ],
+    "skillSpecialist": 55,
+    "bondsCost": 1750,
+    "sellPrice": {
+      "bonds": 1000
+    },
+    "description": "Чертеж для крафта ракетной установки энергетической 40го уровня",
+    "stats": {
+      "durability": 60
+    },
+    "iconPath": "blueprints/chertezh_rk_enrg_40b.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=4029"
+  },
+  {
+    "key": "chertezh_rk_enrg_45b",
+    "name": "Чертеж Рк Энрг 45б",
+    "model": "Чертеж Рк Энрг",
+    "category": "weapon",
+    "producesKey": "rk_enrg_45b",
+    "output": 1,
+    "producesCatalog": "weapons",
+    "ingredients": [
+      {
+        "key": "kolpograf",
+        "count": 4,
+        "catalog": "components"
+      },
+      {
+        "key": "blok_slezheniya",
+        "count": 4,
+        "catalog": "components"
+      },
+      {
+        "key": "vidiofon",
+        "count": 4,
+        "catalog": "components"
+      },
+      {
+        "key": "korpus",
+        "count": 4,
+        "catalog": "components"
+      }
+    ],
+    "skillSpecialist": 55,
+    "bondsCost": 244,
+    "sellPrice": {
+      "bonds": 1000
+    },
+    "description": "Чертеж для крафта ракетной установки энергетической 45го уровня",
+    "stats": {
+      "durability": 60
+    },
+    "iconPath": "blueprints/chertezh_rk_enrg_45b.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=4029"
+  },
+  {
+    "key": "chertezh_rk_enrg_60b",
+    "name": "Чертеж Рк Энрг 60б",
+    "model": "Чертеж Рк Энрг",
+    "category": "weapon",
+    "producesKey": "rk_enrg_60b",
+    "output": 1,
+    "producesCatalog": "weapons",
+    "ingredients": [
+      {
+        "key": "blok_slezheniya",
+        "count": 6,
+        "catalog": "components"
+      },
+      {
+        "key": "korpus",
+        "count": 6,
+        "catalog": "components"
+      },
+      {
+        "key": "vidiofon",
+        "count": 6,
+        "catalog": "components"
+      },
+      {
+        "key": "kolpograf",
+        "count": 6,
+        "catalog": "components"
+      },
+      {
+        "key": "gafniy",
+        "count": 1
+      }
+    ],
+    "skillSpecialist": 65,
+    "bondsCost": 2307,
+    "sellPrice": {
+      "bonds": 1500
+    },
+    "description": "Чертеж для крафта ракетной установки энергетической 60го уровня",
+    "stats": {
+      "durability": 60
+    },
+    "iconPath": "blueprints/chertezh_rk_enrg_60b.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=4029"
+  },
+  {
+    "key": "chertezh_rk_enrg_6b",
+    "name": "Чертеж Рк Энрг 6б",
+    "model": "Чертеж Рк Энрг",
+    "category": "weapon",
+    "producesKey": "rk_enrg_6b",
+    "output": 4,
+    "producesCatalog": "weapons",
+    "ingredients": [
+      {
+        "key": "kolpograf",
+        "count": 1,
+        "catalog": "components"
+      },
+      {
+        "key": "blok_slezheniya",
+        "count": 1,
+        "catalog": "components"
+      },
+      {
+        "key": "vidiofon",
+        "count": 1,
+        "catalog": "components"
+      },
+      {
+        "key": "korpus",
+        "count": 1,
+        "catalog": "components"
+      }
+    ],
+    "skillSpecialist": 40,
+    "sellPrice": {
+      "bonds": 250
+    },
+    "description": "Чертеж для крафта ракетной установки энергетической 6го уровня",
+    "stats": {
+      "durability": 60
+    },
+    "iconPath": "blueprints/chertezh_rk_enrg_6b.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=4029"
+  },
+  {
+    "key": "chertezh_rk_enrg_8b",
+    "name": "Чертеж Рк Энрг 8б",
+    "model": "Чертеж Рк Энрг",
+    "category": "weapon",
+    "producesKey": "rk_enrg_8b",
+    "output": 2,
+    "producesCatalog": "weapons",
+    "ingredients": [
+      {
+        "key": "kolpograf",
+        "count": 1,
+        "catalog": "components"
+      },
+      {
+        "key": "blok_slezheniya",
+        "count": 1,
+        "catalog": "components"
+      },
+      {
+        "key": "vidiofon",
+        "count": 1,
+        "catalog": "components"
+      },
+      {
+        "key": "korpus",
+        "count": 1,
+        "catalog": "components"
+      }
+    ],
+    "skillSpecialist": 40,
+    "sellPrice": {
+      "bonds": 250
+    },
+    "description": "Чертеж для крафта ракетной установки энергетической 8го уровня",
+    "stats": {
+      "durability": 60
+    },
+    "iconPath": "blueprints/chertezh_rk_enrg_8b.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=4029"
+  },
+  {
+    "key": "chertezh_shnek",
+    "name": "Чертеж Шнек",
+    "model": "Чертеж Шнек",
+    "category": "component",
+    "producesKey": "shnek",
+    "output": 15,
+    "producesCatalog": "components",
+    "ingredients": [
+      {
+        "key": "skhema_navedeniya",
+        "count": 1,
+        "catalog": "components"
+      },
+      {
+        "key": "blok_slezheniya_rasshirennyy",
+        "count": 1,
+        "catalog": "components"
+      }
+    ],
+    "skillSpecialist": 35,
+    "bondsCost": 876,
+    "sellPrice": {
+      "bonds": 400
+    },
+    "description": "Чертеж для крафта шнеков. Добывается как лут из кротов",
+    "stats": {
+      "durability": 100
+    },
+    "iconPath": "blueprints/chertezh_shnek.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3075"
+  },
+  {
+    "key": "chertezh_skhema_navedeniya",
+    "name": "Чертеж Схема Наведения",
+    "model": "Чертеж Схема Наведения",
+    "category": "component",
+    "producesKey": "skhema_navedeniya",
+    "output": 2,
+    "producesCatalog": "components",
+    "ingredients": [
+      {
+        "key": "plata",
+        "count": 2,
+        "catalog": "components"
+      },
+      {
+        "key": "gafniy",
+        "count": 1
+      }
+    ],
+    "skillSpecialist": 30,
+    "bondsCost": 144,
+    "sellPrice": {
+      "bonds": 324
+    },
+    "description": "Чертеж для крафта схем наведения. Добывается как лут из кротов",
+    "stats": {
+      "durability": 100
+    },
+    "iconPath": "blueprints/chertezh_skhema_navedeniya.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3075"
+  },
+  {
+    "key": "chertezh_snegovika",
+    "name": "Чертеж Снеговика",
+    "model": "Чертеж Снеговика",
+    "category": "mech",
+    "producesKey": "robot_snegovik",
+    "output": 1,
+    "producesCatalog": "robots",
+    "ingredients": [
+      {
+        "key": "snezhnyy_kom",
+        "count": 1000,
+        "catalog": "loot"
+      },
+      {
+        "key": "chertezh_podarok_bolshoy",
+        "count": 2
+      },
+      {
+        "key": "chertezh_apgreyd_uroven_1",
+        "count": 10
+      }
+    ],
+    "bondsCost": 1000000,
+    "sellPrice": {
+      "bonds": 125
+    },
+    "description": "Создает робота СнеговикаДовольно сильный роботПо окончанию зимы растает!",
+    "stats": {
+      "durability": 1
+    },
+    "iconPath": "blueprints/chertezh_snegovika.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3077"
+  },
+  {
+    "key": "chertezh_stoktor",
+    "name": "Чертеж Стоктор",
+    "model": "Чертеж Стоктор",
+    "category": "component",
+    "producesKey": "stoktor",
+    "output": 11,
+    "producesCatalog": "components",
+    "ingredients": [
+      {
+        "key": "khimicheskoe_soedinenie",
+        "count": 1,
+        "catalog": "components"
+      },
+      {
+        "key": "khim_rastvor",
+        "count": 1,
+        "catalog": "components"
+      }
+    ],
+    "skillSpecialist": 20,
+    "sellPrice": {
+      "bonds": 73
+    },
+    "description": "Чертеж для крафта стокторов. Добывается как лут из кротов",
+    "stats": {
+      "durability": 100
+    },
+    "iconPath": "blueprints/chertezh_stoktor.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3075"
+  },
+  {
+    "key": "chertezh_teleportator",
+    "name": "Чертеж Телепортатор",
+    "model": "Чертеж Телепортатор",
+    "category": "teleport",
+    "producesKey": "teleportator",
+    "output": 40,
+    "producesCatalog": "items",
+    "ingredients": [
+      {
+        "key": "glaz_varana",
+        "count": 6,
+        "catalog": "loot"
+      },
+      {
+        "key": "kapyushon_varana",
+        "count": 20,
+        "catalog": "loot"
+      },
+      {
+        "key": "kristall_zelenyy",
+        "count": 1
+      },
+      {
+        "key": "khilitsery_pauka_glavnogo",
+        "count": 20,
+        "catalog": "loot"
+      },
+      {
+        "key": "khvost_varana",
+        "count": 10,
+        "catalog": "loot"
+      }
+    ],
+    "skillSpecialist": 4,
+    "sellPrice": {
+      "bonds": 109
+    },
+    "description": "Чертеж для крафта одиночного телепорта. Добывается как лут из слизней",
+    "stats": {
+      "durability": 100
+    },
+    "iconPath": "blueprints/chertezh_teleportator.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3083"
+  },
+  {
+    "key": "chertezh_tp_gruppa",
+    "name": "Чертеж Тп Группа",
+    "model": "Чертеж Тп Группа",
+    "category": "teleport",
+    "producesKey": "tp_gruppa",
+    "output": 1,
+    "producesCatalog": "items",
+    "ingredients": [
+      {
+        "key": "kristall_zelenyy",
+        "count": 300
+      },
+      {
+        "key": "kristall_siniy",
+        "count": 300
+      },
+      {
+        "key": "kristall_krasnyy",
+        "count": 200
+      },
+      {
+        "key": "gafniy",
+        "count": 30
+      },
+      {
+        "key": "remkomplekt_9000",
+        "count": 150,
+        "catalog": "items"
+      },
+      {
+        "key": "kompaund_krotov",
+        "count": 7,
+        "catalog": "loot"
+      },
+      {
+        "key": "zakhvat",
+        "count": 5,
+        "catalog": "loot"
+      }
+    ],
+    "skillSpecialist": 80,
+    "bondsCost": 1500000,
+    "sellPrice": {
+      "bonds": 12500
+    },
+    "description": "Чертеж для крафта телепорта набранной группы. Добывается как лут из слизней",
+    "stats": {
+      "durability": 1
+    },
+    "iconPath": "blueprints/chertezh_tp_gruppa.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3083"
+  },
+  {
+    "key": "chertezh_tp_otryad",
+    "name": "Чертеж Тп Отряд",
+    "model": "Чертеж Тп Отряд",
+    "category": "teleport",
+    "producesKey": "tp_otryad",
+    "output": 1,
+    "producesCatalog": "items",
+    "ingredients": [
+      {
+        "key": "kristall_zelenyy",
+        "count": 250
+      },
+      {
+        "key": "kristall_siniy",
+        "count": 300
+      },
+      {
+        "key": "kristall_krasnyy",
+        "count": 240
+      },
+      {
+        "key": "gafniy",
+        "count": 40
+      },
+      {
+        "key": "remkomplekt_9000",
+        "count": 200,
+        "catalog": "items"
+      },
+      {
+        "key": "kompaund_krotov",
+        "count": 8,
+        "catalog": "loot"
+      },
+      {
+        "key": "zakhvat",
+        "count": 6,
+        "catalog": "loot"
+      }
+    ],
+    "skillSpecialist": 100,
+    "bondsCost": 2000000,
+    "sellPrice": {
+      "bonds": 25000
+    },
+    "description": "Чертеж для крафта телепорта всех, кто онлайн в клане. Добывается как лут из слизней",
+    "stats": {
+      "durability": 1
+    },
+    "iconPath": "blueprints/chertezh_tp_otryad.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3083"
+  },
+  {
+    "key": "chertezh_tp_soyuz",
+    "name": "Чертеж Тп Союз",
+    "model": "Чертеж Тп Союз",
+    "category": "teleport",
+    "producesKey": "tp_soyuz",
+    "output": 1,
+    "producesCatalog": "items",
+    "ingredients": [
+      {
+        "key": "kristall_zelenyy",
+        "count": 350
+      },
+      {
+        "key": "kristall_siniy",
+        "count": 400
+      },
+      {
+        "key": "kristall_krasnyy",
+        "count": 340
+      },
+      {
+        "key": "gafniy",
+        "count": 60
+      },
+      {
+        "key": "remkomplekt_9000",
+        "count": 350,
+        "catalog": "items"
+      },
+      {
+        "key": "kompaund_krotov",
+        "count": 10,
+        "catalog": "loot"
+      },
+      {
+        "key": "zakhvat",
+        "count": 7,
+        "catalog": "loot"
+      }
+    ],
+    "skillSpecialist": 50,
+    "bondsCost": 3500000,
+    "sellPrice": {
+      "bonds": 37500
+    },
+    "description": "Чертеж для крафта телепорта всех, кто онлайн в союзе. Добывается как лут из слизней",
+    "stats": {
+      "durability": 1
+    },
+    "iconPath": "blueprints/chertezh_tp_soyuz.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3083"
+  },
+  {
+    "key": "chertezh_tryum_12",
+    "name": "Чертеж Трюм 12",
+    "model": "Чертеж Трюм",
+    "category": "equipment",
+    "subtype": "cargo",
+    "producesKey": "tryum_9",
+    "output": 1,
+    "producesCatalog": "equipment",
+    "ingredients": [
+      {
+        "key": "korpus",
+        "count": 1,
+        "catalog": "components"
+      },
+      {
+        "key": "derzhatel",
+        "count": 2,
+        "catalog": "components"
+      }
+    ],
+    "skillSpecialist": 40,
+    "bondsCost": 1268,
+    "sellPrice": {
+      "bonds": 100
+    },
+    "description": "Чертеж для крафта доп.трюма 12го уровня",
+    "stats": {
+      "durability": 60
+    },
+    "iconPath": "blueprints/chertezh_tryum_12.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3066"
+  },
+  {
+    "key": "chertezh_tryum_17t",
+    "name": "Чертеж Трюм 17т",
+    "model": "Чертеж Трюм",
+    "category": "equipment",
+    "subtype": "cargo",
+    "producesKey": "tryum_17t",
+    "output": 1,
+    "producesCatalog": "equipment",
+    "ingredients": [
+      {
+        "key": "korpus",
+        "count": 1,
+        "catalog": "components"
+      },
+      {
+        "key": "derzhatel",
+        "count": 2,
+        "catalog": "components"
+      }
+    ],
+    "skillSpecialist": 40,
+    "bondsCost": 2414,
+    "sellPrice": {
+      "bonds": 100
+    },
+    "description": "Чертеж для крафта доп.трюма 17го уровня",
+    "stats": {
+      "durability": 60
+    },
+    "iconPath": "blueprints/chertezh_tryum_17t.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3066"
+  },
+  {
+    "key": "chertezh_tryum_25t",
+    "name": "Чертеж Трюм 25т",
+    "model": "Чертеж Трюм",
+    "category": "equipment",
+    "subtype": "cargo",
+    "producesKey": "tryum_25t",
+    "output": 1,
+    "producesCatalog": "equipment",
+    "ingredients": [
+      {
+        "key": "korpus",
+        "count": 2,
+        "catalog": "components"
+      },
+      {
+        "key": "derzhatel",
+        "count": 4,
+        "catalog": "components"
+      }
+    ],
+    "skillSpecialist": 45,
+    "bondsCost": 4218,
+    "sellPrice": {
+      "bonds": 200
+    },
+    "description": "Чертеж для крафта доп.трюма 25го уровня",
+    "stats": {
+      "durability": 60
+    },
+    "iconPath": "blueprints/chertezh_tryum_25t.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3066"
+  },
+  {
+    "key": "chertezh_tryum_32t",
+    "name": "Чертеж Трюм 32т",
+    "model": "Чертеж Трюм",
+    "category": "equipment",
+    "subtype": "cargo",
+    "producesKey": "tryum_32t",
+    "output": 1,
+    "producesCatalog": "equipment",
+    "ingredients": [
+      {
+        "key": "korpus",
+        "count": 3,
+        "catalog": "components"
+      },
+      {
+        "key": "derzhatel",
+        "count": 6,
+        "catalog": "components"
+      }
+    ],
+    "skillSpecialist": 50,
+    "bondsCost": 6070,
+    "sellPrice": {
+      "bonds": 300
+    },
+    "description": "Чертеж для крафта доп.трюма 32го уровня",
+    "stats": {
+      "durability": 60
+    },
+    "iconPath": "blueprints/chertezh_tryum_32t.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3066"
+  },
+  {
+    "key": "chertezh_tryum_40tm1",
+    "name": "Чертеж Трюм 40тм1",
+    "model": "Чертеж Трюм",
+    "category": "equipment",
+    "subtype": "cargo",
+    "producesKey": "tryum_40tm1",
+    "output": 1,
+    "producesCatalog": "equipment",
+    "ingredients": [
+      {
+        "key": "korpus",
+        "count": 4,
+        "catalog": "components"
+      },
+      {
+        "key": "derzhatel",
+        "count": 8,
+        "catalog": "components"
+      }
+    ],
+    "skillSpecialist": 55,
+    "bondsCost": 7240,
+    "sellPrice": {
+      "bonds": 400
+    },
+    "description": "Чертеж для крафта доп.трюма 40го уровня",
+    "stats": {
+      "durability": 60
+    },
+    "iconPath": "blueprints/chertezh_tryum_40tm1.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3066"
+  },
+  {
+    "key": "chertezh_tryum_50tm1",
+    "name": "Чертеж Трюм 50тм1",
+    "model": "Чертеж Трюм",
+    "category": "equipment",
+    "subtype": "cargo",
+    "producesKey": "tryum_50tm1",
+    "output": 1,
+    "producesCatalog": "equipment",
+    "ingredients": [
+      {
+        "key": "korpus",
+        "count": 5,
+        "catalog": "components"
+      },
+      {
+        "key": "derzhatel",
+        "count": 10,
+        "catalog": "components"
+      }
+    ],
+    "skillSpecialist": 60,
+    "bondsCost": 11700,
+    "sellPrice": {
+      "bonds": 500
+    },
+    "description": "Чертеж для крафта доп.трюма 50го уровня",
+    "stats": {
+      "durability": 60
+    },
+    "iconPath": "blueprints/chertezh_tryum_50tm1.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3066"
+  },
+  {
+    "key": "chertezh_tryum_6",
+    "name": "Чертеж Трюм 6",
+    "model": "Чертеж Трюм",
+    "category": "equipment",
+    "subtype": "cargo",
+    "producesKey": "tryum_6",
+    "output": 1,
+    "producesCatalog": "equipment",
+    "ingredients": [
+      {
+        "key": "korpus",
+        "count": 1,
+        "catalog": "components"
+      },
+      {
+        "key": "derzhatel",
+        "count": 2,
+        "catalog": "components"
+      }
+    ],
+    "skillSpecialist": 40,
+    "bondsCost": 190,
+    "sellPrice": {
+      "bonds": 100
+    },
+    "description": "Чертеж для крафта доп.трюма 6го уровня",
+    "stats": {
+      "durability": 60
+    },
+    "iconPath": "blueprints/chertezh_tryum_6.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3066"
+  },
+  {
+    "key": "chertezh_tryum_60tm1",
+    "name": "Чертеж Трюм 60тм1",
+    "model": "Чертеж Трюм",
+    "category": "equipment",
+    "subtype": "cargo",
+    "producesKey": "tryum_60tm1",
+    "output": 1,
+    "producesCatalog": "equipment",
+    "ingredients": [
+      {
+        "key": "korpus",
+        "count": 6,
+        "catalog": "components"
+      },
+      {
+        "key": "derzhatel",
+        "count": 12,
+        "catalog": "components"
+      }
+    ],
+    "skillSpecialist": 65,
+    "bondsCost": 12500,
+    "sellPrice": {
+      "bonds": 600
+    },
+    "description": "Чертеж для крафта доп.трюма 60го уровня",
+    "stats": {
+      "durability": 60
+    },
+    "iconPath": "blueprints/chertezh_tryum_60tm1.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3066"
+  },
+  {
+    "key": "chertezh_turbina",
+    "name": "Чертеж Турбина",
+    "model": "Чертеж Турбина",
+    "category": "component",
+    "producesKey": "turbina",
+    "output": 3,
+    "producesCatalog": "components",
+    "ingredients": [
+      {
+        "key": "plata",
+        "count": 1,
+        "catalog": "components"
+      },
+      {
+        "key": "parapodii_chervya",
+        "count": 1,
+        "catalog": "loot"
+      }
+    ],
+    "skillSpecialist": 30,
+    "bondsCost": 32,
+    "sellPrice": {
+      "bonds": 116
+    },
+    "description": "Чертеж для крафта турбин. Добывается как лут из кротов",
+    "stats": {
+      "durability": 100
+    },
+    "iconPath": "blueprints/chertezh_turbina.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3075"
+  },
+  {
+    "key": "chertezh_vidiofon",
+    "name": "Чертеж Видиофон",
+    "model": "Чертеж Видиофон",
+    "category": "component",
+    "producesKey": "vidiofon",
+    "output": 5,
+    "producesCatalog": "components",
+    "ingredients": [
+      {
+        "key": "skhema_navedeniya",
+        "count": 1,
+        "catalog": "components"
+      }
+    ],
+    "skillSpecialist": 40,
+    "bondsCost": 39,
+    "sellPrice": {
+      "bonds": 198
+    },
+    "description": "Чертеж для крафта видиофона. Добывается как лут из кротов",
+    "stats": {
+      "durability": 100
+    },
+    "iconPath": "blueprints/chertezh_vidiofon.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3075"
+  },
+  {
+    "key": "chertezh_vizor_krotov",
+    "name": "Чертеж Визор Кротов",
+    "model": "Чертеж Визор Кротов",
+    "category": "component",
+    "producesKey": "vizor_krotov",
+    "output": 2,
+    "producesCatalog": "components",
+    "ingredients": [
+      {
+        "key": "kristall_siniy",
+        "count": 1
+      },
+      {
+        "key": "khvost_varana",
+        "count": 1,
+        "catalog": "loot"
+      }
+    ],
+    "skillSpecialist": 20,
+    "sellPrice": {
+      "bonds": 67
+    },
+    "description": "Чертеж для крафта визора кротов. Добывается как лут из кротов",
+    "stats": {
+      "durability": 100
+    },
+    "iconPath": "blueprints/chertezh_vizor_krotov.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3075"
+  },
+  {
+    "key": "chertezh_yadokhimikat",
+    "name": "Чертеж Ядохимикат",
+    "model": "Чертеж Ядохимикат",
+    "category": "component",
+    "producesKey": "yadokhimikat",
+    "output": 1,
+    "producesCatalog": "components",
+    "ingredients": [
+      {
+        "key": "yadovitaya_zheleza_pauka",
+        "count": 1,
+        "catalog": "loot"
+      },
+      {
+        "key": "elitra_tuka",
+        "count": 1,
+        "catalog": "loot"
+      },
+      {
+        "key": "kleshnya_skorpiona",
+        "count": 1,
+        "catalog": "loot"
+      },
+      {
+        "key": "dvoynaya_elitra_tuka",
+        "count": 1,
+        "catalog": "loot"
+      }
+    ],
+    "skillSpecialist": 10,
+    "sellPrice": {
+      "bonds": 3
+    },
+    "description": "Чертеж для крафта ядохимиката. Добывается как лут из кротов",
+    "stats": {
+      "durability": 100
+    },
+    "iconPath": "blueprints/chertezh_yadokhimikat.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3075"
+  },
+  {
+    "key": "chertezh_zashchitnoe_pole",
+    "name": "Чертеж Защитное Поле",
+    "model": "Чертеж Защитное Поле",
+    "category": "equipment",
+    "subtype": "shield",
+    "producesKey": "zashchitnoe_pole",
+    "output": 2,
+    "producesCatalog": "equipment",
+    "ingredients": [
+      {
+        "key": "vizor_krotov",
+        "count": 2,
+        "catalog": "components"
+      },
+      {
+        "key": "peredatchik",
+        "count": 1,
+        "catalog": "components"
+      }
+    ],
+    "skillSpecialist": 30,
+    "sellPrice": {
+      "bonds": 120
+    },
+    "description": "Чертеж для крафта защитного поля 1го уровня",
+    "stats": {
+      "durability": 100
+    },
+    "iconPath": "blueprints/chertezh_zashchitnoe_pole.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3073"
+  },
+  {
+    "key": "chertezh_zashchitnoe_pole_12",
+    "name": "Чертеж Защитное Поле 12",
+    "model": "Чертеж Защитное Поле",
+    "category": "equipment",
+    "subtype": "shield",
+    "producesKey": "zashchitnoe_pole_12",
+    "output": 5,
+    "producesCatalog": "equipment",
+    "ingredients": [
+      {
+        "key": "vizor_krotov",
+        "count": 2,
+        "catalog": "components"
+      },
+      {
+        "key": "peredatchik",
+        "count": 1,
+        "catalog": "components"
+      }
+    ],
+    "skillSpecialist": 35,
+    "bondsCost": 2,
+    "sellPrice": {
+      "bonds": 120
+    },
+    "description": "Чертеж для крафта защитного поля 12го уровня",
+    "stats": {
+      "durability": 60
+    },
+    "iconPath": "blueprints/chertezh_zashchitnoe_pole_12.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3073"
+  },
+  {
+    "key": "chertezh_zashchitnoe_pole_16",
+    "name": "Чертеж Защитное Поле 16",
+    "model": "Чертеж Защитное Поле",
+    "category": "equipment",
+    "subtype": "shield",
+    "producesKey": "zashchitnoe_pole_16",
+    "output": 4,
+    "producesCatalog": "equipment",
+    "ingredients": [
+      {
+        "key": "vizor_krotov",
+        "count": 2,
+        "catalog": "components"
+      },
+      {
+        "key": "peredatchik",
+        "count": 1,
+        "catalog": "components"
+      }
+    ],
+    "skillSpecialist": 35,
+    "bondsCost": 128,
+    "sellPrice": {
+      "bonds": 120
+    },
+    "description": "Чертеж для крафта защитного поля 16го уровня",
+    "stats": {
+      "durability": 60
+    },
+    "iconPath": "blueprints/chertezh_zashchitnoe_pole_16.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3073"
+  },
+  {
+    "key": "chertezh_zashchitnoe_pole_20",
+    "name": "Чертеж Защитное Поле 20",
+    "model": "Чертеж Защитное Поле",
+    "category": "equipment",
+    "subtype": "shield",
+    "producesKey": "zashchitnoe_pole_20",
+    "output": 1,
+    "producesCatalog": "equipment",
+    "ingredients": [
+      {
+        "key": "vizor_krotov",
+        "count": 4,
+        "catalog": "components"
+      },
+      {
+        "key": "peredatchik",
+        "count": 2,
+        "catalog": "components"
+      }
+    ],
+    "skillSpecialist": 40,
+    "bondsCost": 99,
+    "sellPrice": {
+      "bonds": 240
+    },
+    "description": "Чертеж для крафта защитного поля 20го уровня",
+    "stats": {
+      "durability": 60
+    },
+    "iconPath": "blueprints/chertezh_zashchitnoe_pole_20.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3073"
+  },
+  {
+    "key": "chertezh_zashchitnoe_pole_24",
+    "name": "Чертеж Защитное Поле 24",
+    "model": "Чертеж Защитное Поле",
+    "category": "equipment",
+    "subtype": "shield",
+    "producesKey": "zashchitnoe_pole_24",
+    "output": 1,
+    "producesCatalog": "equipment",
+    "ingredients": [
+      {
+        "key": "vizor_krotov",
+        "count": 4,
+        "catalog": "components"
+      },
+      {
+        "key": "peredatchik",
+        "count": 2,
+        "catalog": "components"
+      }
+    ],
+    "skillSpecialist": 40,
+    "bondsCost": 128,
+    "sellPrice": {
+      "bonds": 240
+    },
+    "description": "Чертеж для крафта защитного поля 24го уровня",
+    "stats": {
+      "durability": 60
+    },
+    "iconPath": "blueprints/chertezh_zashchitnoe_pole_24.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3073"
+  },
+  {
+    "key": "chertezh_zashchitnoe_pole_27",
+    "name": "Чертеж Защитное Поле 27",
+    "model": "Чертеж Защитное Поле",
+    "category": "equipment",
+    "subtype": "shield",
+    "producesKey": "zashchitnoe_pole_27",
+    "output": 1,
+    "producesCatalog": "equipment",
+    "ingredients": [
+      {
+        "key": "vizor_krotov",
+        "count": 4,
+        "catalog": "components"
+      },
+      {
+        "key": "peredatchik",
+        "count": 2,
+        "catalog": "components"
+      }
+    ],
+    "skillSpecialist": 40,
+    "bondsCost": 344,
+    "sellPrice": {
+      "bonds": 240
+    },
+    "description": "Чертеж для крафта защитного поля 27го уровня",
+    "stats": {
+      "durability": 60
+    },
+    "iconPath": "blueprints/chertezh_zashchitnoe_pole_27.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3073"
+  },
+  {
+    "key": "chertezh_zashchitnoe_pole_30",
+    "name": "Чертеж Защитное Поле 30",
+    "model": "Чертеж Защитное Поле",
+    "category": "equipment",
+    "subtype": "shield",
+    "producesKey": "zashchitnoe_pole_30",
+    "output": 1,
+    "producesCatalog": "equipment",
+    "ingredients": [
+      {
+        "key": "vizor_krotov",
+        "count": 6,
+        "catalog": "components"
+      },
+      {
+        "key": "peredatchik",
+        "count": 3,
+        "catalog": "components"
+      }
+    ],
+    "skillSpecialist": 45,
+    "bondsCost": 128,
+    "sellPrice": {
+      "bonds": 360
+    },
+    "description": "Чертеж для крафта защитного поля 30го уровня",
+    "stats": {
+      "durability": 60
+    },
+    "iconPath": "blueprints/chertezh_zashchitnoe_pole_30.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3073"
+  },
+  {
+    "key": "chertezh_zashchitnoe_pole_34",
+    "name": "Чертеж Защитное Поле 34",
+    "model": "Чертеж Защитное Поле",
+    "category": "equipment",
+    "subtype": "shield",
+    "producesKey": "zashchitnoe_pole_34",
+    "output": 1,
+    "producesCatalog": "equipment",
+    "ingredients": [
+      {
+        "key": "vizor_krotov",
+        "count": 6,
+        "catalog": "components"
+      },
+      {
+        "key": "peredatchik",
+        "count": 3,
+        "catalog": "components"
+      }
+    ],
+    "skillSpecialist": 45,
+    "bondsCost": 165,
+    "sellPrice": {
+      "bonds": 360
+    },
+    "description": "Чертеж для крафта защитного поля 34го уровня",
+    "stats": {
+      "durability": 60
+    },
+    "iconPath": "blueprints/chertezh_zashchitnoe_pole_34.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3073"
+  },
+  {
+    "key": "chertezh_zashchitnoe_pole_37",
+    "name": "Чертеж Защитное Поле 37",
+    "model": "Чертеж Защитное Поле",
+    "category": "equipment",
+    "subtype": "shield",
+    "producesKey": "zashchitnoe_pole_37",
+    "output": 1,
+    "producesCatalog": "equipment",
+    "ingredients": [
+      {
+        "key": "vizor_krotov",
+        "count": 6,
+        "catalog": "components"
+      },
+      {
+        "key": "peredatchik",
+        "count": 3,
+        "catalog": "components"
+      }
+    ],
+    "skillSpecialist": 45,
+    "bondsCost": 254,
+    "sellPrice": {
+      "bonds": 360
+    },
+    "description": "Чертеж для крафта защитного поля 37го уровня",
+    "stats": {
+      "durability": 60
+    },
+    "iconPath": "blueprints/chertezh_zashchitnoe_pole_37.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3073"
+  },
+  {
+    "key": "chertezh_zashchitnoe_pole_4",
+    "name": "Чертеж Защитное Поле 4",
+    "model": "Чертеж Защитное Поле",
+    "category": "equipment",
+    "subtype": "shield",
+    "producesKey": "zashchitnoe_pole_4",
+    "output": 26,
+    "producesCatalog": "equipment",
+    "ingredients": [
+      {
+        "key": "vizor_krotov",
+        "count": 2,
+        "catalog": "components"
+      },
+      {
+        "key": "peredatchik",
+        "count": 1,
+        "catalog": "components"
+      }
+    ],
+    "skillSpecialist": 30,
+    "sellPrice": {
+      "bonds": 120
+    },
+    "description": "Чертеж для крафта защитного поля 4го уровня",
+    "stats": {
+      "durability": 100
+    },
+    "iconPath": "blueprints/chertezh_zashchitnoe_pole_4.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3073"
+  },
+  {
+    "key": "chertezh_zashchitnoe_pole_40",
+    "name": "Чертеж Защитное Поле 40",
+    "model": "Чертеж Защитное Поле",
+    "category": "equipment",
+    "subtype": "shield",
+    "producesKey": "zashchitnoe_pole_40",
+    "output": 1,
+    "producesCatalog": "equipment",
+    "ingredients": [
+      {
+        "key": "vizor_krotov",
+        "count": 8,
+        "catalog": "components"
+      },
+      {
+        "key": "peredatchik",
+        "count": 4,
+        "catalog": "components"
+      }
+    ],
+    "skillSpecialist": 50,
+    "bondsCost": 82,
+    "sellPrice": {
+      "bonds": 480
+    },
+    "description": "Чертеж для крафта защитного поля 40го уровня",
+    "stats": {
+      "durability": 100
+    },
+    "iconPath": "blueprints/chertezh_zashchitnoe_pole_40.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3073"
+  },
+  {
+    "key": "chertezh_zashchitnoe_pole_43",
+    "name": "Чертеж Защитное Поле 43",
+    "model": "Чертеж Защитное Поле",
+    "category": "equipment",
+    "subtype": "shield",
+    "producesKey": "zashchitnoe_pole_43",
+    "output": 1,
+    "producesCatalog": "equipment",
+    "ingredients": [
+      {
+        "key": "vizor_krotov",
+        "count": 8,
+        "catalog": "components"
+      },
+      {
+        "key": "peredatchik",
+        "count": 4,
+        "catalog": "components"
+      }
+    ],
+    "skillSpecialist": 50,
+    "bondsCost": 826,
+    "sellPrice": {
+      "bonds": 480
+    },
+    "description": "Чертеж для крафта защитного поля 43го уровня",
+    "stats": {
+      "durability": 60
+    },
+    "iconPath": "blueprints/chertezh_zashchitnoe_pole_43.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3073"
+  },
+  {
+    "key": "chertezh_zashchitnoe_pole_46",
+    "name": "Чертеж Защитное Поле 46",
+    "model": "Чертеж Защитное Поле",
+    "category": "equipment",
+    "subtype": "shield",
+    "producesKey": "zashchitnoe_pole_46",
+    "output": 1,
+    "producesCatalog": "equipment",
+    "ingredients": [
+      {
+        "key": "vizor_krotov",
+        "count": 8,
+        "catalog": "components"
+      },
+      {
+        "key": "peredatchik",
+        "count": 4,
+        "catalog": "components"
+      }
+    ],
+    "skillSpecialist": 50,
+    "bondsCost": 628,
+    "sellPrice": {
+      "bonds": 480
+    },
+    "description": "Чертеж для крафта защитного поля 46го уровня",
+    "stats": {
+      "durability": 60
+    },
+    "iconPath": "blueprints/chertezh_zashchitnoe_pole_46.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3073"
+  },
+  {
+    "key": "chertezh_zashchitnoe_pole_50",
+    "name": "Чертеж Защитное Поле 50",
+    "model": "Чертеж Защитное Поле",
+    "category": "equipment",
+    "subtype": "shield",
+    "producesKey": "zashchitnoe_pole_50",
+    "output": 1,
+    "producesCatalog": "equipment",
+    "ingredients": [
+      {
+        "key": "vizor_krotov",
+        "count": 10,
+        "catalog": "components"
+      },
+      {
+        "key": "peredatchik",
+        "count": 5,
+        "catalog": "components"
+      }
+    ],
+    "skillSpecialist": 55,
+    "bondsCost": 450,
+    "sellPrice": {
+      "bonds": 600
+    },
+    "description": "Чертеж для крафта защитного поля 50го уровня",
+    "stats": {
+      "durability": 60
+    },
+    "iconPath": "blueprints/chertezh_zashchitnoe_pole_50.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3073"
+  },
+  {
+    "key": "chertezh_zashchitnoe_pole_55",
+    "name": "Чертеж Защитное Поле 55",
+    "model": "Чертеж Защитное Поле",
+    "category": "equipment",
+    "subtype": "shield",
+    "producesKey": "zashchitnoe_pole_55",
+    "output": 1,
+    "producesCatalog": "equipment",
+    "ingredients": [
+      {
+        "key": "vizor_krotov",
+        "count": 10,
+        "catalog": "components"
+      },
+      {
+        "key": "peredatchik",
+        "count": 5,
+        "catalog": "components"
+      }
+    ],
+    "skillSpecialist": 55,
+    "bondsCost": 163,
+    "sellPrice": {
+      "bonds": 600
+    },
+    "description": "Чертеж для крафта защитного поля 55го уровня",
+    "stats": {
+      "durability": 60
+    },
+    "iconPath": "blueprints/chertezh_zashchitnoe_pole_55.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3073"
+  },
+  {
+    "key": "chertezh_zashchitnoe_pole_60",
+    "name": "Чертеж Защитное Поле 60",
+    "model": "Чертеж Защитное Поле",
+    "category": "equipment",
+    "subtype": "shield",
+    "producesKey": "zashchitnoe_pole_60",
+    "output": 1,
+    "producesCatalog": "equipment",
+    "ingredients": [
+      {
+        "key": "vizor_krotov",
+        "count": 12,
+        "catalog": "components"
+      },
+      {
+        "key": "peredatchik",
+        "count": 6,
+        "catalog": "components"
+      }
+    ],
+    "skillSpecialist": 60,
+    "bondsCost": 149,
+    "sellPrice": {
+      "bonds": 720
+    },
+    "description": "Чертеж для крафта защитного поля 60го уровня",
+    "stats": {
+      "durability": 60
+    },
+    "iconPath": "blueprints/chertezh_zashchitnoe_pole_60.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3073"
+  },
+  {
+    "key": "chertezh_zashchitnoe_pole_7",
+    "name": "Чертеж Защитное Поле 7",
+    "model": "Чертеж Защитное Поле",
+    "category": "equipment",
+    "subtype": "shield",
+    "producesKey": "zashchitnoe_pole_7",
+    "output": 11,
+    "producesCatalog": "equipment",
+    "ingredients": [
+      {
+        "key": "vizor_krotov",
+        "count": 2,
+        "catalog": "components"
+      },
+      {
+        "key": "peredatchik",
+        "count": 1,
+        "catalog": "components"
+      }
+    ],
+    "skillSpecialist": 30,
+    "sellPrice": {
+      "bonds": 120
+    },
+    "description": "Чертеж для крафта защитного поля 7го уровня",
+    "stats": {
+      "durability": 60
+    },
+    "iconPath": "blueprints/chertezh_zashchitnoe_pole_7.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3073"
+  },
+  {
+    "key": "chertezh_zashchitnoe_pole_9",
+    "name": "Чертеж Защитное Поле 9",
+    "model": "Чертеж Защитное Поле",
+    "category": "equipment",
+    "subtype": "shield",
+    "producesKey": "zashchitnoe_pole_9",
+    "output": 8,
+    "producesCatalog": "equipment",
+    "ingredients": [
+      {
+        "key": "vizor_krotov",
+        "count": 2,
+        "catalog": "components"
+      },
+      {
+        "key": "peredatchik",
+        "count": 1,
+        "catalog": "components"
+      }
+    ],
+    "skillSpecialist": 30,
+    "sellPrice": {
+      "bonds": 120
+    },
+    "description": "Чертеж для крафта защитного поля 9го уровня",
+    "stats": {
+      "durability": 60
+    },
+    "iconPath": "blueprints/chertezh_zashchitnoe_pole_9.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3073"
+  },
+  {
+    "key": "chertezh_zatvor",
+    "name": "Чертеж Затвор",
+    "model": "Чертеж Затвор",
+    "category": "component",
+    "producesKey": "zatvor",
+    "output": 2,
+    "producesCatalog": "components",
+    "ingredients": [
+      {
+        "key": "lapa_bogomola",
+        "count": 1,
+        "catalog": "loot"
+      },
+      {
+        "key": "blok",
+        "count": 1,
+        "catalog": "components"
+      },
+      {
+        "key": "kronshteyn",
+        "count": 1,
+        "catalog": "components"
+      }
+    ],
+    "skillSpecialist": 30,
+    "bondsCost": 102,
+    "sellPrice": {
+      "bonds": 57
+    },
+    "description": "Чертеж для крафта затвора. Добывается как лут из кротов",
+    "stats": {
+      "durability": 100
+    },
+    "iconPath": "blueprints/chertezh_zatvor.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3075"
+  },
+  {
+    "key": "chertezh_zhelezo",
+    "name": "Чертеж Железо",
+    "model": "Чертеж Железо",
+    "category": "component",
+    "producesKey": "zhelezo",
+    "output": 100,
+    "ingredients": [
+      {
+        "key": "zheleznaya_ruda",
+        "count": 1000
+      },
+      {
+        "key": "kristall_zelenyy",
+        "count": 10
+      },
+      {
+        "key": "kristall_krasnyy",
+        "count": 10
+      },
+      {
+        "key": "kristall_siniy",
+        "count": 10
+      },
+      {
+        "key": "gafniy",
+        "count": 5
+      }
+    ],
+    "sellPrice": {
+      "bonds": 1250
+    },
+    "description": "Чертеж для крафта железа. Добывается как лут из кротов и Псов огромных",
+    "stats": {
+      "durability": 20
+    },
+    "iconPath": "blueprints/chertezh_zhelezo.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3075"
+  }
+]

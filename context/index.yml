@@ -25,7 +25,7 @@ namespaces:
       - id: data--loot-catalog
         one_liner: 'Каталог лута — 65 записей из wiki 3023 (монстры, 41) + 3027 (кроты, 14) + 20118 (пираты, 10), BFS с ctx.source; `sources: string[]` (готов к пересечениям, сейчас всегда одноэлементный). Стор+view — в фазе feat.'
       - id: data--blueprints-catalog
-        one_liner: Каталог чертежей — источники крафта компонентов (wiki 3034). Shell-entity MVP1.
+        one_liner: 'Каталог чертежей — ~215 записей из 9 подстраниц вики (weapon/equipment+subtype/component/pack/upgrade/teleport). Встроенный рецепт: producesKey+producesCatalog+ingredients с cross-catalog resolve через merger. Реализация — в фазе feat.'
       - id: data--ore-catalog
         one_liner: 'Каталог руды и полезных ископаемых — 8 записей из wiki 3036 (три кристалла, гафний, магма, железная руда, железо, цезий); поле `foundIn: string[]` — простой список источников (без count/chance, в отличие от items.stats.creates). Стор+view — в фазе feat.'
       - id: data--components-catalog
@@ -45,6 +45,8 @@ namespaces:
         one_liner: Каждая запись robots.json соответствует типу Robot (TS strict).
       - id: data--weapons-catalog-loaded-from-json
         one_liner: Каталог оружия загружается из merged .build/data/weapons.json при инициализации стора.
+      - id: data--weapons-catalog-schema-typed
+        one_liner: Каждая запись weapons.json соответствует типу Weapon (TS strict), включая опциональный transformsFrom.
       - id: data--equipment-catalog-loaded-from-json
         one_liner: Каталог оборудования загружается из merged .build/data/equipment.json при инициализации стора.
       - id: data--equipment-catalog-schema-typed
@@ -89,6 +91,8 @@ namespaces:
         one_liner: Карточный каталог `/catalogs/loot-catalog` — 65 записей, SearchField + PairToggleGroup по sources (3 капсулы «Монстры»/«Кроты»/«Пираты»). Спецификация есть, реализация — в фазе feat.
       - id: view--skills-catalog
         one_liner: Карточный каталог `/catalogs/skills-catalog` — 12 записей навыков/умений, без фильтров и поиска (мало записей). Спецификация есть, реализация — в фазе feat.
+      - id: view--blueprints-catalog
+        one_liner: Карточный каталог `/catalogs/blueprints-catalog` — ~215 чертежей, SearchField + PairToggleGroup 6 капсул по category, встроенный рецепт в детали. Спецификация есть, реализация — в фазе feat.
       - id: other--tile
         one_liner: Квадратная плитка навигации с hover-scale, active-press, focus-ring, слотом для иконки.
       - id: other--catalog-shell
@@ -186,6 +190,14 @@ namespaces:
         one_liner: view--skills-catalog рендерит сетку SkillCard, без фильтров и поиска.
       - id: view--skills-catalog-opens-detail-on-click
         one_liner: Клик по карточке навыка открывает детализацию (SkillDetail).
+      - id: data--blueprints-catalog-loaded-from-json
+        one_liner: Каталог чертежей загружается из merged .build/data/blueprints.json при инициализации стора.
+      - id: data--blueprints-catalog-schema-typed
+        one_liner: Каждая запись blueprints.json соответствует типу Blueprint (TS strict) с встроенным рецептом.
+      - id: view--blueprints-catalog-renders-cards-grid
+        one_liner: view--blueprints-catalog рендерит сетку BlueprintCard, SearchField + PairToggleGroup 6 капсул по category.
+      - id: view--blueprints-catalog-opens-detail-on-click
+        one_liner: Клик по карточке чертежа открывает детализацию (BlueprintDetail) с полным рецептом.
 
   comparison:
     description: Механики сравнения и приоритизации мехов (избранное, будущий боевой калькулятор).

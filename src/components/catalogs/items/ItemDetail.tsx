@@ -7,6 +7,7 @@ import { isOverlaidField, isOverlaidPathOrChildren } from '@/utils/overlay';
 import { resolveIconUrl } from '@/utils/icons';
 import { OverlayBadge } from '@/components/catalog/OverlayBadge';
 import { OverlayPill } from '@/styles/overlay';
+import { BlueprintChipList } from '@/components/catalog/BlueprintChipList';
 import { SUBTYPE_LABELS } from './subtypeLabels';
 import {
   Title,
@@ -288,11 +289,21 @@ export function ItemDetail({ item, onClose }: ItemDetailProps) {
                 <Typography variant="subtitle2" gutterBottom>
                   Крафт
                 </Typography>
+                <BlueprintChipList names={item.craftFromBlueprints} />
+              </>
+            )}
+
+            {item.providesSkill && (
+              <>
+                <Divider sx={{ my: 2 }} />
+                <Typography variant="subtitle2" gutterBottom>
+                  Прибавка к навыку
+                </Typography>
                 <ValueRow
                   item={item}
-                  path="craftFromBlueprints"
-                  label="Из чертежей"
-                  value={item.craftFromBlueprints.join(', ')}
+                  path="providesSkill"
+                  label={item.providesSkill.skillKey}
+                  value={`+${item.providesSkill.value}`}
                 />
               </>
             )}

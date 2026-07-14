@@ -41,6 +41,16 @@ description: |
   «Что живёт в overlay», пункт про новые сущности). Схема — TS-типы
   в `src/types/weapon.ts`.
 
+  **Трансформация weapon (`transformsFrom`).** Большинство weapon'ов
+  на вики имеют цепочку преобразований: `Мортира ← Мортира 5 ← Мортира
+  10 ← ...`. На странице weapon оформлено как склеенное поле
+  «Преобразуется из [icon prev] / Для преобразования требуется»:
+  td1 содержит ссылку на предыдущий weapon (data-description),
+  td2 — ингредиенты (span'ы с иконкой + `<sub>`) + Боны/Реглы.
+  Резолвер распаковывает в `transformsFrom.fromKey` +
+  `transformsFrom.ingredients[]` + `bondsCost/reglsCost`. Отдельная
+  ветвь параллельна `data--blueprints-catalog` (крафт с нуля).
+
 source_files:
   parsed: data/weapons.json
   overlay: data/overrides/weapons.yml
@@ -75,6 +85,7 @@ schema:
       - minRange # мёртвая зона у пушек, гаубиц, мортир
   optional_top_level:
     - requiredLevel
+    - transformsFrom # { fromKey, ingredients[], bondsCost?, reglsCost? } — трансформация из предыдущего weapon (напр. «Мортира ← Мортира 5»); данные из td «Преобразуется из» + «Для преобразования требуется» на странице weapon
     - buyPrice # { bonds?, regls? }
     - sellPrice # { bonds?, regls? }
     - craftFromBlueprints # список названий чертежей

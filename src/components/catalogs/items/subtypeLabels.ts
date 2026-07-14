@@ -11,14 +11,16 @@ export const SUBTYPE_LABELS: Record<ItemSubtype, string> = {
   repair: 'Ремкомплект',
   scanner: 'Сканер',
   teleport: 'Телепортатор',
+  upgrade: 'Апгрейды',
 };
 
-/** Пары для PairToggleGroup — 4 капсулы, зашитые по семантике категорий. */
+/** Пары для PairToggleGroup — 5 капсул, зашитые по семантике категорий. */
 const SUBTYPE_PAIRS: FilterPair<string>[] = [
   { key: 'pack+gift', label: 'Наборы', values: ['pack', 'gift'] },
   { key: 'repair+energy', label: 'Восстановление', values: ['repair', 'energy'] },
   { key: 'invis+scanner', label: 'Тактика', values: ['invis', 'scanner'] },
   { key: 'teleport', label: 'Перемещение', values: ['teleport'] },
+  { key: 'upgrade', label: 'Апгрейды', values: ['upgrade'] },
 ];
 
 function labelFor(subtype: string): string {
@@ -78,4 +80,7 @@ export const PRIMARY_STAT: Record<ItemSubtype, PrimaryStat | null> = {
     path: 'stats.scanRadius',
   },
   teleport: null,
+  // у upgrade primary stat в карточке не показывается; providesSkill
+  // рендерится отдельно в детали (когда overlay заполнен).
+  upgrade: null,
 };

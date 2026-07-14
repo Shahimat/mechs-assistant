@@ -17,12 +17,13 @@ description: |
   `ItemDetail`, `SortableItemCard`).
 
   Фильтры:
-    - **Тип** — `PairToggleGroup` (4 капсулы) через `usePairFilter`.
+    - **Тип** — `PairToggleGroup` (5 капсул) через `usePairFilter`.
       Матч по `item.subtype` (одиночный slug). Раскладка:
         - «Паки + Подарки» (pack + gift) — наборы
         - «Ремкомплект + Шокеры» (repair + energy) — восстановление
         - «Невидимость + Сканер» (invis + scanner) — тактика
         - «Телепортатор» (teleport) — перемещение (одиночная)
+        - «Апгрейды» (upgrade) — модификаторы навыков на оружие/оборудование (одиночная)
 
   Фильтр по уровню не заводится: у items нет одинаково значимого
   `requiredLevel` (у части subtype пусто, у части одинаковый).
@@ -78,4 +79,6 @@ behaviors:
   - other--favorites-toggle-on-star-click # кросс-ссылка
 
 verified_note: |
-  Реализация закрыта 2026-07-13. У pack/gift primary stat в карточке снят (`stats.creates` не влезает в узкий формат); полный список дропов рендерится в детализации `<LootDropSection>` — flex-wrap chip'ов «Название ×N (M%)». Behaviors verified 2026-07-13.
+  Спецификация расширена в фазе docs 2026-07-14: добавлена 5-я капсула
+  «Апгрейды» под subtype='upgrade'. Матч логика без изменений
+  (`activeSubtypes.has(item.subtype)`).

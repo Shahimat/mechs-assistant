@@ -73,6 +73,7 @@ schema:
       - primaryLabel # русская подпись параметра из вики (для чипов может отсутствовать)
   optional_top_level:
     - requiredLevel
+    - transformsFrom # { fromKey, ingredients[], bondsCost?, reglsCost? } — трансформация из предыдущего equipment; данные из td «Преобразуется из» на странице equipment. Есть у armour/accumulator/generator/shield/cargo (частично) и у одного computer; у extractor нет
     - requiredRobotType # у буров: «Добытчик»
     - buyPrice # { bonds?, regls? }
     - sellPrice # { bonds?, regls? }

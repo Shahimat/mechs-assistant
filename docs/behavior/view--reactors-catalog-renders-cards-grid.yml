@@ -27,7 +27,6 @@ scenarios:
     when: пользователь открыл `/catalogs/reactors-catalog`
     then: view--reactors-catalog показывает error state (Alert severity=error).
 
-verified: true
-verified_at: 2026-07-13
+verified: false
 verified_note: |
-  Проверено чтением кода: `ReactorsCatalog.tsx` — тонкая обёртка над `EquipmentSubCatalog subtype="generator"`. `EquipmentSubCatalog.tsx` фильтрует `equipment` по `subtype === 'generator'` (строка 63-66) и рендерит `CatalogGrid` из `EquipmentCard`. Панель фильтров: `LevelRangeFilter` (Slider по requiredLevel) через `useLevelRangeFilter`. Записи без requiredLevel не отсекаются (см. `useLevelRangeFilter.matches` — `if (level == null) return true`). Empty/error state — Alert через `Page`/`CenteredPage`. Финальная визуальная проверка в браузере — пройдена юзером 2026-07-13.
+  Сценарий обновлён в фазе docs 2026-07-14 через shared `EquipmentCard`: карточка получает короткий chip трансформации «⇢ [prev name]» когда `transformsFrom` заполнен (для extractor/drills — поле всегда пустое, для компьютера/chips — только у одного экземпляра). Реализация — в фазе feat.

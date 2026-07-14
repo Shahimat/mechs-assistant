@@ -22,6 +22,13 @@ export interface CatalogConfig {
   iconsDir: string;
   /** URL-префикс иконки в JSON — путь от `data/icons/` (см. iconsDir) */
   iconsUrlPrefix: string;
+  /**
+   * Опциональный путь к PNG-фону, который парсер подкладывает под каждую
+   * иконку каталога (композитит product-иконку в центре background'а).
+   * Используется для чертежей: сама вики отдаёт иконку целевого предмета,
+   * фон-«планшет» лежит локально в `assets/raw/*.png`.
+   */
+  iconBackgroundPath?: string;
 }
 
 export const CATALOGS: CatalogConfig[] = [
@@ -114,6 +121,17 @@ export const CATALOGS: CatalogConfig[] = [
     overlaySheetName: 'skills',
     iconsDir: 'data/icons/skills',
     iconsUrlPrefix: 'skills',
+  },
+  {
+    slug: 'blueprints',
+    label: 'Чертежи',
+    parsedJsonPath: 'data/blueprints.json',
+    overlayYamlPath: 'data/overrides/blueprints.yml',
+    mergedJsonPath: '.build/data/blueprints.json',
+    overlaySheetName: 'blueprints',
+    iconsDir: 'data/icons/blueprints',
+    iconsUrlPrefix: 'blueprints',
+    iconBackgroundPath: 'assets/raw/blueprint.png',
   },
 ];
 

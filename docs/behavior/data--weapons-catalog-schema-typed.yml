@@ -1,0 +1,34 @@
+id: data--weapons-catalog-schema-typed
+kind: behavior
+namespace: catalog
+entities: [data--weapons-catalog]
+title: Каждая запись в weapons.json соответствует типу Weapon (TS strict)
+
+scenarios:
+  - given: 'TypeScript strict включён (`strict: true`) и `resolveJsonModule: true`'
+    when: файл `store.ts` импортирует `weaponsData` из
+      `@build/data/weapons.json` и приводит его к `Weapon[]`
+    then: |
+      сборка проходит без ошибок типа. `Weapon`-тип из
+      `src/types/weapon.ts` (category / group / slot / stats.* / …).
+
+  - given: в JSON появилась запись без обязательного поля (`category`
+      / `stats.damageMin` / `stats.durability` / ...)
+    when: разработчик пытается собрать проект (`npm run build`)
+    then: |
+      сборка/typecheck должны падать. На практике `weaponsData as Weapon[]`
+      — assert, не runtime-валидация. Оговорка та же, что для всех
+      data-каталогов.
+
+  - given: у записи заполнено новое поле `transformsFrom`
+    when: TS-компиляция проверяет типы
+    then: |
+      `transformsFrom?: { fromKey: string; ingredients: TransformIngredient[];
+      bondsCost?: number; reglsCost?: number }` — опциональное. Записи
+      без него (базовые weapon'ы без предшественника) проходят typecheck.
+
+verified: false
+verified_note: |
+  Behavior заведён в фазе docs 2026-07-14 (исторический пробел —
+  раньше `data--weapons-catalog-schema-typed` не существовал, только
+  loaded-from-json). Реализация типа `transformsFrom` — в фазе feat.

@@ -108,6 +108,15 @@ function WeaponCardImpl({ weapon, isFavorite, onToggleFavorite, onClick }: Weapo
                 variant={isOverlaidField(weapon, 'requiredLevel') ? 'filled' : 'outlined'}
               />
             )}
+            {weapon.transformsFrom && (
+              <Chip
+                label="Транс."
+                size="small"
+                variant="outlined"
+                title={`Преобразуется из: ${weapon.transformsFrom.fromKey}`}
+                color={isOverlaidField(weapon, 'transformsFrom') ? 'primary' : 'default'}
+              />
+            )}
           </ChipRow>
           <StatList>
             {STAT_ROWS.map(({ label, path, getValue }) => {

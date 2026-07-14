@@ -14,6 +14,7 @@ import { SectionDivider } from '@/components/catalog/CatalogSection.styles';
 import { useSearchFilter } from '@/components/catalog/hooks/useSearchFilter';
 import { useLevelRangeFilter } from '@/components/catalog/hooks/useLevelRangeFilter';
 import { useTypeFilter } from '@/components/catalog/hooks/useTypeFilter';
+import { useDeepLinkOpen } from '@/components/catalog/hooks/useDeepLinkOpen';
 import { LevelRangeFilter } from '@/components/catalog/LevelRangeFilter';
 import { RobotCard } from './RobotCard';
 import { RobotDetail } from './RobotDetail';
@@ -42,6 +43,12 @@ export function MechsCatalog() {
     reorderFavorites,
   } = useRobotsStore();
   const [selectedRobot, setSelectedRobot] = useState<Robot | null>(null);
+  const { openInUrl, clearOpen } = useDeepLinkOpen(
+    robots,
+    (r) => r.key,
+    setSelectedRobot,
+    () => setSelectedRobot(null)
+  );
 
   useEffect(() => {
     if (robots.length === 0 && !isLoading) {
@@ -86,7 +93,13 @@ export function MechsCatalog() {
   }, [typeFilter, level, favSearch, otherSearch]);
 
   const handleToggleFavorite = useCallback((key: string) => toggleFavorite(key), [toggleFavorite]);
-  const handleCardClick = useCallback((robot: Robot) => setSelectedRobot(robot), []);
+  const handleCardClick = useCallback(
+    (robot: Robot) => {
+      setSelectedRobot(robot);
+      openInUrl(robot.key);
+    },
+    [openInUrl]
+  );
 
   if (isLoading) {
     return (
@@ -208,7 +221,13 @@ export function MechsCatalog() {
         )}
       </CatalogSection>
 
-      <RobotDetail robot={selectedRobot} onClose={() => setSelectedRobot(null)} />
+      <RobotDetail
+        robot={selectedRobot}
+        onClose={() => {
+          setSelectedRobot(null);
+          clearOpen();
+        }}
+      />
     </Page>
   );
 }

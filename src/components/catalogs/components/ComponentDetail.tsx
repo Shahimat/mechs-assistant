@@ -7,6 +7,7 @@ import { isOverlaidField, isOverlaidPathOrChildren } from '@/utils/overlay';
 import { resolveIconUrl } from '@/utils/icons';
 import { OverlayBadge } from '@/components/catalog/OverlayBadge';
 import { OverlayPill } from '@/styles/overlay';
+import { BlueprintChipList } from '@/components/catalog/BlueprintChipList';
 import { KIND_LABELS } from './kindLabels';
 import {
   Title,
@@ -220,12 +221,7 @@ export function ComponentDetail({ component, onClose }: ComponentDetailProps) {
                 <Typography variant="subtitle2" gutterBottom>
                   Крафт
                 </Typography>
-                <SectionLabel>Из чертежей</SectionLabel>
-                <ListRow>
-                  {component.craftFromBlueprints.map((n, i) => (
-                    <Chip key={`${n}-${i}`} label={n} size="small" variant="outlined" />
-                  ))}
-                </ListRow>
+                <BlueprintChipList names={component.craftFromBlueprints} />
               </>
             )}
 

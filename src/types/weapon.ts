@@ -1,4 +1,4 @@
-import type { Price, OverlayMeta } from './common';
+import type { Price, OverlayMeta, Transform } from './common';
 
 export interface WeaponStats {
   damageMin: number;
@@ -35,5 +35,11 @@ export interface Weapon {
   description?: string;
   iconPath?: string;
   wikiUrl?: string;
+  /**
+   * Трансформация из предыдущего weapon (напр. Мортира ← Мортира 5).
+   * Данные с td «Преобразуется из» + «Для преобразования требуется»
+   * страницы weapon. Базовые weapon'ы без предшественника не имеют.
+   */
+  transformsFrom?: Transform;
   _meta?: OverlayMeta;
 }

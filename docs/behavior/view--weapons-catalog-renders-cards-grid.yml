@@ -28,19 +28,10 @@ scenarios:
       view--weapons-catalog показывает empty state (Alert
       «Нет данных для отображения» аналогично мехам).
 
-  - given: `error` не null (ошибка загрузки данных)
+  - given: "`error` не null (ошибка загрузки данных)"
     when: пользователь открыл `/catalogs/weapons-catalog`
     then: view--weapons-catalog показывает error state (Alert severity=error).
 
-verified: true
-verified_at: 2026-07-13
+verified: false
 verified_note: |
-  Проверено чтением кода `WeaponsCatalog.tsx` (после переезда фильтра
-  на CSS-category): рендерит `<CatalogGrid>` из `WeaponCard` по
-  `otherSearch.filtered`; избранные — в `<FavoritesDnDSection>` с
-  `SortableWeaponCard`. Панель фильтров: `<PairToggleGroup>` c 9
-  капсулами (7 пар + 2 одиночки для лазера и ремпушки) через
-  `usePairFilter`; `<LevelRangeFilter>` через `useLevelRangeFilter`.
-  Матч weapon — по `activeCategories.has(w.category)` (не по `group`).
-  Empty/error state — Alert через `Page`/`CenteredPage`. Финальная
-  визуальная проверка в браузере — за юзером после деплоя.
+  Сценарий обновлён в фазе docs 2026-07-14: карточка получает короткий chip трансформации «⇢ [prev name]» когда `transformsFrom` заполнен. Реализация — в фазе feat.

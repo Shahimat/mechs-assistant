@@ -14,6 +14,7 @@ import { SectionDivider } from '@/components/catalog/CatalogSection.styles';
 import { PairToggleGroup } from '@/components/catalog/PairToggleGroup';
 import { useSearchFilter } from '@/components/catalog/hooks/useSearchFilter';
 import { usePairFilter } from '@/components/catalog/hooks/usePairFilter';
+import { useDeepLinkOpen } from '@/components/catalog/hooks/useDeepLinkOpen';
 import { AmmoCard } from './AmmoCard';
 import { AmmoDetail } from './AmmoDetail';
 import { SortableAmmoCard } from './SortableAmmoCard';
@@ -25,6 +26,12 @@ export function AmmoCatalog() {
   const { ammo, favorites, isLoading, error, initializeAmmo, toggleFavorite, reorderFavorites } =
     useAmmoStore();
   const [selectedItem, setSelectedItem] = useState<Ammo | null>(null);
+  const { openInUrl, clearOpen } = useDeepLinkOpen(
+    ammo,
+    (a) => a.key,
+    setSelectedItem,
+    () => setSelectedItem(null)
+  );
 
   useEffect(() => {
     if (ammo.length === 0 && !isLoading) {
@@ -78,7 +85,13 @@ export function AmmoCatalog() {
   }, [familyFilter, favSearch, otherSearch]);
 
   const handleToggleFavorite = useCallback((key: string) => toggleFavorite(key), [toggleFavorite]);
-  const handleCardClick = useCallback((item: Ammo) => setSelectedItem(item), []);
+  const handleCardClick = useCallback(
+    (item: Ammo) => {
+      setSelectedItem(item);
+      openInUrl(item.key);
+    },
+    [openInUrl]
+  );
 
   if (isLoading) {
     return (
@@ -186,7 +199,13 @@ export function AmmoCatalog() {
         )}
       </CatalogSection>
 
-      <AmmoDetail item={selectedItem} onClose={() => setSelectedItem(null)} />
+      <AmmoDetail
+        item={selectedItem}
+        onClose={() => {
+          setSelectedItem(null);
+          clearOpen();
+        }}
+      />
     </Page>
   );
 }

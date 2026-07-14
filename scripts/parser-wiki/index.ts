@@ -11,6 +11,7 @@ import { oreResolver, oreSeeds } from './resolvers/ore.js';
 import { componentsResolver, componentsSeeds } from './resolvers/components.js';
 import { lootResolver, lootSeeds } from './resolvers/loot.js';
 import { skillsResolver, skillsSeeds } from './resolvers/skills.js';
+import { blueprintsResolver, blueprintsSeeds } from './resolvers/blueprints.js';
 
 const FETCH_DELAY_MS = 150; // вежливость к серверу
 
@@ -63,6 +64,10 @@ const RESOLVERS: Record<string, () => ResolverEntry> = {
     resolver: skillsResolver,
     seeds: skillsSeeds(),
   }),
+  blueprints: () => ({
+    resolver: blueprintsResolver,
+    seeds: blueprintsSeeds(),
+  }),
 };
 
 async function main() {
@@ -85,7 +90,9 @@ async function runCatalog(cfg: CatalogConfig, entry: ResolverEntry): Promise<voi
     fetchDelayMs: FETCH_DELAY_MS,
   })) as Array<{ key: string; iconPath?: string }>;
 
-  await downloadAndConvertIcons(items, cfg.iconsDir, cfg.iconsUrlPrefix);
+  await downloadAndConvertIcons(items, cfg.iconsDir, cfg.iconsUrlPrefix, {
+    overlayBackground: cfg.iconBackgroundPath,
+  });
 
   items.sort((a, b) => a.key.localeCompare(b.key));
   await fs.writeFile(cfg.parsedJsonPath, JSON.stringify(items, null, 2) + '\n', 'utf-8');

@@ -34,6 +34,29 @@
     "sellPrice": {
       "bonds": 32816
     },
+    "transformsFrom": {
+      "fromKey": "empp_95bm1",
+      "ingredients": [
+        {
+          "key": "kristall_siniy",
+          "count": 1296
+        },
+        {
+          "key": "kristall_zelenyy",
+          "count": 4968
+        },
+        {
+          "key": "kristall_krasnyy",
+          "count": 1728
+        },
+        {
+          "key": "zakhvat",
+          "count": 63
+        }
+      ],
+      "bondsCost": 5161707,
+      "reglsCost": 180
+    },
     "stats": {
       "damageMin": 2966,
       "damageMax": 3214,
@@ -56,6 +79,29 @@
     "group": "Фазер, Эмпп",
     "sellPrice": {
       "bonds": 632812
+    },
+    "transformsFrom": {
+      "fromKey": "empp_95bm2",
+      "ingredients": [
+        {
+          "key": "kristall_siniy",
+          "count": 4968
+        },
+        {
+          "key": "kristall_zelenyy",
+          "count": 4968
+        },
+        {
+          "key": "kristall_krasnyy",
+          "count": 2484
+        },
+        {
+          "key": "zakhvat",
+          "count": 63
+        }
+      ],
+      "bondsCost": 5161707,
+      "reglsCost": 90
     },
     "stats": {
       "damageMin": 4745,
@@ -82,6 +128,24 @@
     },
     "craftFromBlueprints": [],
     "description": "Оружие ближнего боя средней скорострельности, без мертвой зоны, большой урон на малых и средних дистанциях",
+    "transformsFrom": {
+      "fromKey": "empp_7b",
+      "ingredients": [
+        {
+          "key": "kristall_siniy",
+          "count": 12
+        },
+        {
+          "key": "kristall_zelenyy",
+          "count": 12
+        },
+        {
+          "key": "kristall_krasnyy",
+          "count": 6
+        }
+      ],
+      "bondsCost": 8811
+    },
     "stats": {
       "damageMin": 327,
       "damageMax": 355,
@@ -107,6 +171,24 @@
     },
     "craftFromBlueprints": [],
     "description": "Оружие ближнего боя средней скорострельности, без мертвой зоны, большой урон на малых и средних дистанциях",
+    "transformsFrom": {
+      "fromKey": "empp_10b",
+      "ingredients": [
+        {
+          "key": "kristall_siniy",
+          "count": 15
+        },
+        {
+          "key": "kristall_zelenyy",
+          "count": 15
+        },
+        {
+          "key": "kristall_krasnyy",
+          "count": 7
+        }
+      ],
+      "bondsCost": 12804
+    },
     "stats": {
       "damageMin": 371,
       "damageMax": 402,
@@ -132,6 +214,24 @@
     },
     "craftFromBlueprints": [],
     "description": "Оружие ближнего боя средней скорострельности, без мертвой зоны, большой урон на малых и средних дистанциях",
+    "transformsFrom": {
+      "fromKey": "empp_13b",
+      "ingredients": [
+        {
+          "key": "kristall_siniy",
+          "count": 19
+        },
+        {
+          "key": "kristall_zelenyy",
+          "count": 19
+        },
+        {
+          "key": "kristall_krasnyy",
+          "count": 9
+        }
+      ],
+      "bondsCost": 15216
+    },
     "stats": {
       "damageMin": 415,
       "damageMax": 449,
@@ -157,6 +257,24 @@
     },
     "craftFromBlueprints": [],
     "description": "Оружие ближнего боя средней скорострельности, без мертвой зоны, большой урон на малых и средних дистанциях",
+    "transformsFrom": {
+      "fromKey": "empp_16b",
+      "ingredients": [
+        {
+          "key": "kristall_siniy",
+          "count": 21
+        },
+        {
+          "key": "kristall_zelenyy",
+          "count": 21
+        },
+        {
+          "key": "kristall_krasnyy",
+          "count": 10
+        }
+      ],
+      "bondsCost": 22257
+    },
     "stats": {
       "damageMin": 444,
       "damageMax": 481,
@@ -206,6 +324,24 @@
     },
     "craftFromBlueprints": [],
     "description": "Оружие ближнего боя средней скорострельности, без мертвой зоны, большой урон на малых и средних дистанциях",
+    "transformsFrom": {
+      "fromKey": "empp",
+      "ingredients": [
+        {
+          "key": "kristall_siniy",
+          "count": 2
+        },
+        {
+          "key": "kristall_zelenyy",
+          "count": 2
+        },
+        {
+          "key": "kristall_krasnyy",
+          "count": 1
+        }
+      ],
+      "bondsCost": 756
+    },
     "stats": {
       "damageMin": 215,
       "damageMax": 233,
@@ -231,6 +367,24 @@
     },
     "craftFromBlueprints": [],
     "description": "Оружие ближнего боя средней скорострельности, без мертвой зоны, большой урон на малых и средних дистанциях",
+    "transformsFrom": {
+      "fromKey": "empp_18b",
+      "ingredients": [
+        {
+          "key": "kristall_siniy",
+          "count": 25
+        },
+        {
+          "key": "kristall_zelenyy",
+          "count": 25
+        },
+        {
+          "key": "kristall_krasnyy",
+          "count": 12
+        }
+      ],
+      "bondsCost": 28005
+    },
     "stats": {
       "damageMin": 489,
       "damageMax": 530,
@@ -255,6 +409,24 @@
       "bonds": 2111
     },
     "description": "Оружие ближнего боя средней скорострельности, без мертвой зоны, большой урон на малых и средних дистанциях, усиленное",
+    "transformsFrom": {
+      "fromKey": "empp_18bm1",
+      "ingredients": [
+        {
+          "key": "kristall_siniy",
+          "count": 75
+        },
+        {
+          "key": "kristall_zelenyy",
+          "count": 75
+        },
+        {
+          "key": "kristall_krasnyy",
+          "count": 36
+        }
+      ],
+      "bondsCost": 30408
+    },
     "stats": {
       "damageMin": 532,
       "damageMax": 576,
@@ -280,6 +452,24 @@
     },
     "craftFromBlueprints": [],
     "description": "Оружие ближнего боя средней скорострельности, без мертвой зоны, большой урон на малых и средних дистанциях",
+    "transformsFrom": {
+      "fromKey": "empp_21b",
+      "ingredients": [
+        {
+          "key": "kristall_siniy",
+          "count": 30
+        },
+        {
+          "key": "kristall_zelenyy",
+          "count": 30
+        },
+        {
+          "key": "kristall_krasnyy",
+          "count": 15
+        }
+      ],
+      "bondsCost": 36693
+    },
     "stats": {
       "damageMin": 550,
       "damageMax": 596,
@@ -304,6 +494,24 @@
       "bonds": 2857
     },
     "description": "Оружие ближнего боя средней скорострельности, без мертвой зоны, большой урон на малых и средних дистанциях, усиленное",
+    "transformsFrom": {
+      "fromKey": "empp_21bm1",
+      "ingredients": [
+        {
+          "key": "kristall_siniy",
+          "count": 90
+        },
+        {
+          "key": "kristall_zelenyy",
+          "count": 90
+        },
+        {
+          "key": "kristall_krasnyy",
+          "count": 45
+        }
+      ],
+      "bondsCost": 41142
+    },
     "stats": {
       "damageMin": 598,
       "damageMax": 648,
@@ -329,6 +537,24 @@
     },
     "craftFromBlueprints": [],
     "description": "Оружие ближнего боя средней скорострельности, без мертвой зоны, большой урон на малых и средних дистанциях",
+    "transformsFrom": {
+      "fromKey": "empp_25b",
+      "ingredients": [
+        {
+          "key": "kristall_siniy",
+          "count": 34
+        },
+        {
+          "key": "kristall_zelenyy",
+          "count": 34
+        },
+        {
+          "key": "kristall_krasnyy",
+          "count": 17
+        }
+      ],
+      "bondsCost": 40110
+    },
     "stats": {
       "damageMin": 613,
       "damageMax": 664,
@@ -353,6 +579,25 @@
       "bonds": 3464
     },
     "description": "Оружие ближнего боя средней скорострельности, без мертвой зоны, большой урон на малых и средних дистанциях, усиленное",
+    "transformsFrom": {
+      "fromKey": "empp_25bm1",
+      "ingredients": [
+        {
+          "key": "kristall_siniy",
+          "count": 102
+        },
+        {
+          "key": "kristall_zelenyy",
+          "count": 102
+        },
+        {
+          "key": "kristall_krasnyy",
+          "count": 51
+        }
+      ],
+      "bondsCost": 49890,
+      "reglsCost": 4
+    },
     "stats": {
       "damageMin": 666,
       "damageMax": 722,
@@ -378,6 +623,24 @@
     },
     "craftFromBlueprints": [],
     "description": "Оружие ближнего боя средней скорострельности, без мертвой зоны, большой урон на малых и средних дистанциях",
+    "transformsFrom": {
+      "fromKey": "empp_29b",
+      "ingredients": [
+        {
+          "key": "kristall_siniy",
+          "count": 39
+        },
+        {
+          "key": "kristall_zelenyy",
+          "count": 39
+        },
+        {
+          "key": "kristall_krasnyy",
+          "count": 19
+        }
+      ],
+      "bondsCost": 54408
+    },
     "stats": {
       "damageMin": 677,
       "damageMax": 733,
@@ -402,6 +665,24 @@
       "bonds": 4099
     },
     "description": "Оружие ближнего боя средней скорострельности, без мертвой зоны, большой урон на малых и средних дистанциях, усиленное",
+    "transformsFrom": {
+      "fromKey": "empp_29bm1",
+      "ingredients": [
+        {
+          "key": "kristall_siniy",
+          "count": 117
+        },
+        {
+          "key": "kristall_zelenyy",
+          "count": 117
+        },
+        {
+          "key": "kristall_krasnyy",
+          "count": 57
+        }
+      ],
+      "bondsCost": 59031
+    },
     "stats": {
       "damageMin": 735,
       "damageMax": 797,
@@ -427,6 +708,24 @@
     },
     "craftFromBlueprints": [],
     "description": "Оружие ближнего боя средней скорострельности, без мертвой зоны, большой урон на малых и средних дистанциях",
+    "transformsFrom": {
+      "fromKey": "empp_33b",
+      "ingredients": [
+        {
+          "key": "kristall_siniy",
+          "count": 44
+        },
+        {
+          "key": "kristall_zelenyy",
+          "count": 44
+        },
+        {
+          "key": "kristall_krasnyy",
+          "count": 22
+        }
+      ],
+      "bondsCost": 56079
+    },
     "stats": {
       "damageMin": 742,
       "damageMax": 803,
@@ -451,6 +750,25 @@
       "bonds": 5070
     },
     "description": "Оружие ближнего боя средней скорострельности, без мертвой зоны, большой урон на малых и средних дистанциях, усиленное",
+    "transformsFrom": {
+      "fromKey": "empp_33bm1",
+      "ingredients": [
+        {
+          "key": "kristall_siniy",
+          "count": 132
+        },
+        {
+          "key": "kristall_zelenyy",
+          "count": 132
+        },
+        {
+          "key": "kristall_krasnyy",
+          "count": 66
+        }
+      ],
+      "bondsCost": 73011,
+      "reglsCost": 4
+    },
     "stats": {
       "damageMin": 806,
       "damageMax": 873,
@@ -479,6 +797,24 @@
     },
     "craftFromBlueprints": [],
     "description": "Оружие ближнего боя средней скорострельности, без мертвой зоны, большой урон на малых и средних дистанциях",
+    "transformsFrom": {
+      "fromKey": "empp_37b",
+      "ingredients": [
+        {
+          "key": "kristall_siniy",
+          "count": 49
+        },
+        {
+          "key": "kristall_zelenyy",
+          "count": 49
+        },
+        {
+          "key": "kristall_krasnyy",
+          "count": 24
+        }
+      ],
+      "bondsCost": 79080
+    },
     "stats": {
       "damageMin": 808,
       "damageMax": 875,
@@ -507,6 +843,24 @@
       "bonds": 6035
     },
     "description": "Оружие ближнего боя средней скорострельности, без мертвой зоны, большой урон на малых и средних дистанциях, усиленное",
+    "transformsFrom": {
+      "fromKey": "empp_37bm1",
+      "ingredients": [
+        {
+          "key": "kristall_siniy",
+          "count": 147
+        },
+        {
+          "key": "kristall_zelenyy",
+          "count": 147
+        },
+        {
+          "key": "kristall_krasnyy",
+          "count": 72
+        }
+      ],
+      "bondsCost": 86907
+    },
     "stats": {
       "damageMin": 878,
       "damageMax": 952,
@@ -532,6 +886,24 @@
     },
     "craftFromBlueprints": [],
     "description": "Оружие ближнего боя средней скорострельности, без мертвой зоны, большой урон на малых и средних дистанциях",
+    "transformsFrom": {
+      "fromKey": "empp_41b",
+      "ingredients": [
+        {
+          "key": "kristall_siniy",
+          "count": 54
+        },
+        {
+          "key": "kristall_zelenyy",
+          "count": 54
+        },
+        {
+          "key": "kristall_krasnyy",
+          "count": 27
+        }
+      ],
+      "bondsCost": 74328
+    },
     "stats": {
       "damageMin": 876,
       "damageMax": 949,
@@ -556,6 +928,24 @@
       "bonds": 6194
     },
     "description": "Оружие ближнего боя средней скорострельности, без мертвой зоны, большой урон на малых и средних дистанциях, усиленное",
+    "transformsFrom": {
+      "fromKey": "empp_41bm1",
+      "ingredients": [
+        {
+          "key": "kristall_siniy",
+          "count": 162
+        },
+        {
+          "key": "kristall_zelenyy",
+          "count": 162
+        },
+        {
+          "key": "kristall_krasnyy",
+          "count": 81
+        }
+      ],
+      "bondsCost": 89193
+    },
     "stats": {
       "damageMin": 952,
       "damageMax": 1032,
@@ -581,6 +971,24 @@
     },
     "craftFromBlueprints": [],
     "description": "Энергетическое орудие, большой уронДля ближнего бояЭффиктивно против существ/роботовЧасть урона поглощают поля",
+    "transformsFrom": {
+      "fromKey": "empp_2",
+      "ingredients": [
+        {
+          "key": "kristall_siniy",
+          "count": 6
+        },
+        {
+          "key": "kristall_zelenyy",
+          "count": 6
+        },
+        {
+          "key": "kristall_krasnyy",
+          "count": 3
+        }
+      ],
+      "bondsCost": 2859
+    },
     "stats": {
       "damageMin": 257,
       "damageMax": 278,
@@ -606,6 +1014,24 @@
     },
     "craftFromBlueprints": [],
     "description": "Оружие ближнего боя средней скорострельности, без мертвой зоны, большой урон на малых и средних дистанциях",
+    "transformsFrom": {
+      "fromKey": "empp_45b",
+      "ingredients": [
+        {
+          "key": "kristall_siniy",
+          "count": 72
+        },
+        {
+          "key": "kristall_zelenyy",
+          "count": 72
+        },
+        {
+          "key": "kristall_krasnyy",
+          "count": 36
+        }
+      ],
+      "bondsCost": 146262
+    },
     "stats": {
       "damageMin": 1144,
       "damageMax": 1240,
@@ -630,6 +1056,25 @@
       "bonds": 12188
     },
     "description": "Оружие ближнего боя средней скорострельности, без мертвой зоны, большой урон на малых и средних дистанциях, усиленное",
+    "transformsFrom": {
+      "fromKey": "empp_45bm1",
+      "ingredients": [
+        {
+          "key": "kristall_siniy",
+          "count": 216
+        },
+        {
+          "key": "kristall_zelenyy",
+          "count": 216
+        },
+        {
+          "key": "kristall_krasnyy",
+          "count": 108
+        }
+      ],
+      "bondsCost": 175512,
+      "reglsCost": 9
+    },
     "stats": {
       "damageMin": 1244,
       "damageMax": 1347,
@@ -657,6 +1102,24 @@
       "bonds": 16046
     },
     "description": "Оружие ближнего боя средней скорострельности, без мертвой зоны, большой урон на малых и средних дистанциях",
+    "transformsFrom": {
+      "fromKey": "empp_60b",
+      "ingredients": [
+        {
+          "key": "kristall_siniy",
+          "count": 84
+        },
+        {
+          "key": "kristall_zelenyy",
+          "count": 84
+        },
+        {
+          "key": "kristall_krasnyy",
+          "count": 42
+        }
+      ],
+      "bondsCost": 192555
+    },
     "stats": {
       "damageMin": 1336,
       "damageMax": 1447,
@@ -685,6 +1148,25 @@
       "bonds": 17118
     },
     "description": "Оружие ближнего боя средней скорострельности, без мертвой зоны, большой урон на малых и средних дистанциях, усиленное",
+    "transformsFrom": {
+      "fromKey": "empp_60bm1",
+      "ingredients": [
+        {
+          "key": "kristall_siniy",
+          "count": 252
+        },
+        {
+          "key": "kristall_zelenyy",
+          "count": 252
+        },
+        {
+          "key": "kristall_krasnyy",
+          "count": 126
+        }
+      ],
+      "bondsCost": 246498,
+      "reglsCost": 24
+    },
     "stats": {
       "damageMin": 1452,
       "damageMax": 1573,
@@ -710,6 +1192,24 @@
     },
     "craftFromBlueprints": [],
     "description": "Оружие ближнего боя средней скорострельности, без мертвой зоны, большой урон на малых и средних дистанциях",
+    "transformsFrom": {
+      "fromKey": "empp_5",
+      "ingredients": [
+        {
+          "key": "kristall_siniy",
+          "count": 8
+        },
+        {
+          "key": "kristall_zelenyy",
+          "count": 8
+        },
+        {
+          "key": "kristall_krasnyy",
+          "count": 4
+        }
+      ],
+      "bondsCost": 5439
+    },
     "stats": {
       "damageMin": 285,
       "damageMax": 309,
@@ -758,6 +1258,25 @@
       "bonds": 20743
     },
     "description": "Оружие ближнего боя средней скорострельности, без мертвой зоны, большой урон на малых и средних дистанциях, усиленное",
+    "transformsFrom": {
+      "fromKey": "empp_70bm1",
+      "ingredients": [
+        {
+          "key": "kristall_siniy",
+          "count": 288
+        },
+        {
+          "key": "kristall_zelenyy",
+          "count": 288
+        },
+        {
+          "key": "kristall_krasnyy",
+          "count": 144
+        }
+      ],
+      "bondsCost": 298710,
+      "reglsCost": 72
+    },
     "stats": {
       "damageMin": 1673,
       "damageMax": 1813,
@@ -782,6 +1301,28 @@
       "bonds": 22847
     },
     "description": "Оружие ближнего боя средней скорострельности, без мертвой зоны, большой урон на малых и средних дистанциях",
+    "transformsFrom": {
+      "fromKey": "empp_80b",
+      "ingredients": [
+        {
+          "key": "kristall_siniy",
+          "count": 115
+        },
+        {
+          "key": "kristall_zelenyy",
+          "count": 115
+        },
+        {
+          "key": "kristall_krasnyy",
+          "count": 57
+        },
+        {
+          "key": "zakhvat",
+          "count": 29
+        }
+      ],
+      "bondsCost": 263199
+    },
     "stats": {
       "damageMin": 1755,
       "damageMax": 1901,
@@ -806,6 +1347,29 @@
       "bonds": 25929
     },
     "description": "Оружие ближнего боя средней скорострельности, без мертвой зоны, большой урон на малых и средних дистанциях, усиленное",
+    "transformsFrom": {
+      "fromKey": "empp_80bm1",
+      "ingredients": [
+        {
+          "key": "kristall_siniy",
+          "count": 621
+        },
+        {
+          "key": "kristall_zelenyy",
+          "count": 621
+        },
+        {
+          "key": "kristall_krasnyy",
+          "count": 306
+        },
+        {
+          "key": "zakhvat",
+          "count": 81
+        }
+      ],
+      "bondsCost": 645210,
+      "reglsCost": 36
+    },
     "stats": {
       "damageMin": 1908,
       "damageMax": 2067,
@@ -858,6 +1422,29 @@
       "bonds": 29170
     },
     "description": "Оружие ближнего боя средней скорострельности, без мертвой зоны, большой урон на малых и средних дистанциях, усиленное",
+    "transformsFrom": {
+      "fromKey": "empp_90b",
+      "ingredients": [
+        {
+          "key": "kristall_siniy",
+          "count": 1080
+        },
+        {
+          "key": "kristall_zelenyy",
+          "count": 4140
+        },
+        {
+          "key": "kristall_krasnyy",
+          "count": 1440
+        },
+        {
+          "key": "zakhvat",
+          "count": 54
+        }
+      ],
+      "bondsCost": 4301424,
+      "reglsCost": 120
+    },
     "stats": {
       "damageMin": 2543,
       "damageMax": 2755,
@@ -882,6 +1469,29 @@
       "bonds": 562500
     },
     "description": "Оружие ближнего боя средней скорострельности, без мертвой зоны, большой урон на малых и средних дистанциях, усиленное",
+    "transformsFrom": {
+      "fromKey": "empp_90bm2",
+      "ingredients": [
+        {
+          "key": "kristall_siniy",
+          "count": 4140
+        },
+        {
+          "key": "kristall_zelenyy",
+          "count": 4140
+        },
+        {
+          "key": "kristall_krasnyy",
+          "count": 2070
+        },
+        {
+          "key": "zakhvat",
+          "count": 54
+        }
+      ],
+      "bondsCost": 4301424,
+      "reglsCost": 60
+    },
     "stats": {
       "damageMin": 4067,
       "damageMax": 4318,
@@ -904,6 +1514,29 @@
     "group": "Фазер, Эмпп",
     "sellPrice": {
       "bonds": 28953
+    },
+    "transformsFrom": {
+      "fromKey": "fazer_95bm1",
+      "ingredients": [
+        {
+          "key": "kristall_siniy",
+          "count": 4968
+        },
+        {
+          "key": "kristall_zelenyy",
+          "count": 1296
+        },
+        {
+          "key": "kristall_krasnyy",
+          "count": 1080
+        },
+        {
+          "key": "zakhvat",
+          "count": 90
+        }
+      ],
+      "bondsCost": 4553970,
+      "reglsCost": 180
     },
     "stats": {
       "damageMin": 2136,
@@ -987,6 +1620,24 @@
       "bonds": 8975
     },
     "description": "Дальнобойное оружие большой скорострельности, урон средний, мертвой зоны нет",
+    "transformsFrom": {
+      "fromKey": "fazer_40b",
+      "ingredients": [
+        {
+          "key": "kristall_siniy",
+          "count": 60
+        },
+        {
+          "key": "kristall_zelenyy",
+          "count": 60
+        },
+        {
+          "key": "kristall_krasnyy",
+          "count": 30
+        }
+      ],
+      "bondsCost": 107706
+    },
     "stats": {
       "damageMin": 666,
       "damageMax": 694,
@@ -1012,6 +1663,25 @@
       "bonds": 8654
     },
     "description": "Дальнобойное оружие большой скорострельности, урон средний, мертвой зоны нет, усиленное",
+    "transformsFrom": {
+      "fromKey": "fazer_40bm1",
+      "ingredients": [
+        {
+          "key": "kristall_siniy",
+          "count": 180
+        },
+        {
+          "key": "kristall_zelenyy",
+          "count": 180
+        },
+        {
+          "key": "kristall_krasnyy",
+          "count": 90
+        }
+      ],
+      "bondsCost": 124626,
+      "reglsCost": 4
+    },
     "stats": {
       "damageMin": 753,
       "damageMax": 784,
@@ -1037,6 +1707,24 @@
       "bonds": 11599
     },
     "description": "Дальнобойное оружие большой скорострельности, урон средний, мертвой зоны нет",
+    "transformsFrom": {
+      "fromKey": "fazer_50b",
+      "ingredients": [
+        {
+          "key": "kristall_siniy",
+          "count": 72
+        },
+        {
+          "key": "kristall_zelenyy",
+          "count": 72
+        },
+        {
+          "key": "kristall_krasnyy",
+          "count": 36
+        }
+      ],
+      "bondsCost": 139191
+    },
     "stats": {
       "damageMin": 792,
       "damageMax": 824,
@@ -1062,6 +1750,25 @@
       "bonds": 12420
     },
     "description": "Дальнобойное оружие большой скорострельности, урон средний, мертвой зоны нет, усиленное",
+    "transformsFrom": {
+      "fromKey": "fazer_50bm1",
+      "ingredients": [
+        {
+          "key": "kristall_siniy",
+          "count": 216
+        },
+        {
+          "key": "kristall_zelenyy",
+          "count": 216
+        },
+        {
+          "key": "kristall_krasnyy",
+          "count": 108
+        }
+      ],
+      "bondsCost": 178848,
+      "reglsCost": 4
+    },
     "stats": {
       "damageMin": 895,
       "damageMax": 932,
@@ -1090,6 +1797,24 @@
       "bonds": 14915
     },
     "description": "Дальнобойное оружие большой скорострельности, урон средний, мертвой зоны нет",
+    "transformsFrom": {
+      "fromKey": "fazer_60b",
+      "ingredients": [
+        {
+          "key": "kristall_siniy",
+          "count": 84
+        },
+        {
+          "key": "kristall_zelenyy",
+          "count": 84
+        },
+        {
+          "key": "kristall_krasnyy",
+          "count": 42
+        }
+      ],
+      "bondsCost": 178989
+    },
     "stats": {
       "damageMin": 925,
       "damageMax": 963,
@@ -1119,6 +1844,25 @@
       "bonds": 13643
     },
     "description": "Дальнобойное оружие большой скорострельности, урон средний, мертвой зоны нет, усиленное",
+    "transformsFrom": {
+      "fromKey": "fazer_70b",
+      "ingredients": [
+        {
+          "key": "kristall_siniy",
+          "count": 252
+        },
+        {
+          "key": "kristall_zelenyy",
+          "count": 252
+        },
+        {
+          "key": "kristall_krasnyy",
+          "count": 126
+        }
+      ],
+      "bondsCost": 196464,
+      "reglsCost": 24
+    },
     "stats": {
       "damageMin": 1045,
       "damageMax": 1088,
@@ -1169,6 +1913,25 @@
       "bonds": 18301
     },
     "description": "Дальнобойное оружие большой скорострельности, урон средний, мертвой зоны нет, усиленное",
+    "transformsFrom": {
+      "fromKey": "fazer_70bm1",
+      "ingredients": [
+        {
+          "key": "kristall_siniy",
+          "count": 288
+        },
+        {
+          "key": "kristall_zelenyy",
+          "count": 288
+        },
+        {
+          "key": "kristall_krasnyy",
+          "count": 144
+        }
+      ],
+      "bondsCost": 263541,
+      "reglsCost": 72
+    },
     "stats": {
       "damageMin": 1205,
       "damageMax": 1254,
@@ -1194,6 +1957,28 @@
       "bonds": 22869
     },
     "description": "Дальнобойное оружие большой скорострельности, урон средний, мертвой зоны нет",
+    "transformsFrom": {
+      "fromKey": "fazer_80b",
+      "ingredients": [
+        {
+          "key": "kristall_siniy",
+          "count": 115
+        },
+        {
+          "key": "kristall_zelenyy",
+          "count": 115
+        },
+        {
+          "key": "kristall_krasnyy",
+          "count": 57
+        },
+        {
+          "key": "zakhvat",
+          "count": 17
+        }
+      ],
+      "bondsCost": 263458
+    },
     "stats": {
       "damageMin": 1215,
       "damageMax": 1265,
@@ -1219,6 +2004,29 @@
       "bonds": 22876
     },
     "description": "Дальнобойное оружие большой скорострельности, урон средний, мертвой зоны нет, усиленное",
+    "transformsFrom": {
+      "fromKey": "fazer_80bm1",
+      "ingredients": [
+        {
+          "key": "kristall_siniy",
+          "count": 345
+        },
+        {
+          "key": "kristall_zelenyy",
+          "count": 345
+        },
+        {
+          "key": "kristall_krasnyy",
+          "count": 171
+        },
+        {
+          "key": "zakhvat",
+          "count": 63
+        }
+      ],
+      "bondsCost": 316248,
+      "reglsCost": 120
+    },
     "stats": {
       "damageMin": 1373,
       "damageMax": 1430,
@@ -1244,6 +2052,29 @@
       "bonds": 25736
     },
     "description": "Дальнобойное оружие большой скорострельности, урон средний, мертвой зоны нет, усиленное",
+    "transformsFrom": {
+      "fromKey": "fazer_90b",
+      "ingredients": [
+        {
+          "key": "kristall_siniy",
+          "count": 4140
+        },
+        {
+          "key": "kristall_zelenyy",
+          "count": 1080
+        },
+        {
+          "key": "kristall_krasnyy",
+          "count": 900
+        },
+        {
+          "key": "zakhvat",
+          "count": 75
+        }
+      ],
+      "bondsCost": 3794976,
+      "reglsCost": 120
+    },
     "stats": {
       "damageMin": 1831,
       "damageMax": 1905,
@@ -1267,6 +2098,37 @@
     "group": "Гаубица, Гранатомет",
     "sellPrice": {
       "bonds": 33794
+    },
+    "transformsFrom": {
+      "fromKey": "gaubitsa_95bm1",
+      "ingredients": [
+        {
+          "key": "kristall_siniy",
+          "count": 531
+        },
+        {
+          "key": "kristall_zelenyy",
+          "count": 5334
+        },
+        {
+          "key": "kristall_krasnyy",
+          "count": 1080
+        },
+        {
+          "key": "zakhvat",
+          "count": 99
+        },
+        {
+          "key": "gafniy",
+          "count": 45
+        },
+        {
+          "key": "kogot_medvedya",
+          "count": 801
+        }
+      ],
+      "bondsCost": 3234951,
+      "reglsCost": 180
     },
     "stats": {
       "damageMin": 3697,
@@ -1353,6 +2215,36 @@
       "bonds": 10937
     },
     "description": "Дальнобойное оружие очень низкой скорострельности, большая мертвая зона, стреляет навесом, наносит урон по площади",
+    "transformsFrom": {
+      "fromKey": "gaubitsa_40b",
+      "ingredients": [
+        {
+          "key": "kristall_siniy",
+          "count": 60
+        },
+        {
+          "key": "kristall_zelenyy",
+          "count": 60
+        },
+        {
+          "key": "kristall_krasnyy",
+          "count": 60
+        },
+        {
+          "key": "zakhvat",
+          "count": 12
+        },
+        {
+          "key": "gafniy",
+          "count": 6
+        },
+        {
+          "key": "kogot_medvedya",
+          "count": 90
+        }
+      ],
+      "bondsCost": 120000
+    },
     "stats": {
       "damageMin": 1111,
       "damageMax": 1358,
@@ -1379,6 +2271,37 @@
       "bonds": 10937
     },
     "description": "Дальнобойное оружие очень низкой скорострельности, большая мертвая зона, стреляет навесом, наносит урон по площади, усиленное",
+    "transformsFrom": {
+      "fromKey": "gaubitsa_40bm1",
+      "ingredients": [
+        {
+          "key": "kristall_siniy",
+          "count": 180
+        },
+        {
+          "key": "kristall_zelenyy",
+          "count": 180
+        },
+        {
+          "key": "kristall_krasnyy",
+          "count": 180
+        },
+        {
+          "key": "zakhvat",
+          "count": 36
+        },
+        {
+          "key": "gafniy",
+          "count": 18
+        },
+        {
+          "key": "kogot_medvedya",
+          "count": 270
+        }
+      ],
+      "bondsCost": 360000,
+      "reglsCost": 45
+    },
     "stats": {
       "damageMin": 1305,
       "damageMax": 1595,
@@ -1405,6 +2328,36 @@
       "bonds": 13671
     },
     "description": "Дальнобойное оружие очень низкой скорострельности, большая мертвая зона, стреляет навесом, наносит урон по площади",
+    "transformsFrom": {
+      "fromKey": "gaubitsa_50b",
+      "ingredients": [
+        {
+          "key": "kristall_siniy",
+          "count": 72
+        },
+        {
+          "key": "kristall_zelenyy",
+          "count": 72
+        },
+        {
+          "key": "kristall_krasnyy",
+          "count": 72
+        },
+        {
+          "key": "zakhvat",
+          "count": 14
+        },
+        {
+          "key": "gafniy",
+          "count": 7
+        },
+        {
+          "key": "kogot_medvedya",
+          "count": 108
+        }
+      ],
+      "bondsCost": 144000
+    },
     "stats": {
       "damageMin": 1320,
       "damageMax": 1614,
@@ -1431,6 +2384,37 @@
       "bonds": 13671
     },
     "description": "Дальнобойное оружие очень низкой скорострельности, большая мертвая зона, стреляет навесом, наносит урон по площади, усиленное",
+    "transformsFrom": {
+      "fromKey": "gaubitsa_50bm1",
+      "ingredients": [
+        {
+          "key": "kristall_siniy",
+          "count": 216
+        },
+        {
+          "key": "kristall_zelenyy",
+          "count": 216
+        },
+        {
+          "key": "kristall_krasnyy",
+          "count": 216
+        },
+        {
+          "key": "zakhvat",
+          "count": 42
+        },
+        {
+          "key": "gafniy",
+          "count": 21
+        },
+        {
+          "key": "kogot_medvedya",
+          "count": 324
+        }
+      ],
+      "bondsCost": 432000,
+      "reglsCost": 4
+    },
     "stats": {
       "damageMin": 1550,
       "damageMax": 1895,
@@ -1460,6 +2444,36 @@
       "bonds": 17089
     },
     "description": "Дальнобойное оружие очень низкой скорострельности, большая мертвая зона, стреляет навесом, наносит урон по площади",
+    "transformsFrom": {
+      "fromKey": "gaubitsa_60b",
+      "ingredients": [
+        {
+          "key": "kristall_siniy",
+          "count": 86
+        },
+        {
+          "key": "kristall_zelenyy",
+          "count": 86
+        },
+        {
+          "key": "kristall_krasnyy",
+          "count": 86
+        },
+        {
+          "key": "zakhvat",
+          "count": 16
+        },
+        {
+          "key": "gafniy",
+          "count": 8
+        },
+        {
+          "key": "kogot_medvedya",
+          "count": 129
+        }
+      ],
+      "bondsCost": 172800
+    },
     "stats": {
       "damageMin": 1542,
       "damageMax": 1884,
@@ -1490,6 +2504,37 @@
       "bonds": 17089
     },
     "description": "Дальнобойное оружие очень низкой скорострельности, большая мертвая зона, стреляет навесом, наносит урон по площади, усиленное",
+    "transformsFrom": {
+      "fromKey": "gaubitsa_60bm1",
+      "ingredients": [
+        {
+          "key": "kristall_siniy",
+          "count": 258
+        },
+        {
+          "key": "kristall_zelenyy",
+          "count": 258
+        },
+        {
+          "key": "kristall_krasnyy",
+          "count": 258
+        },
+        {
+          "key": "zakhvat",
+          "count": 48
+        },
+        {
+          "key": "gafniy",
+          "count": 24
+        },
+        {
+          "key": "kogot_medvedya",
+          "count": 387
+        }
+      ],
+      "bondsCost": 518400,
+      "reglsCost": 24
+    },
     "stats": {
       "damageMin": 1810,
       "damageMax": 2212,
@@ -1542,6 +2587,37 @@
       "bonds": 21361
     },
     "description": "Дальнобойное оружие очень низкой скорострельности, большая мертвая зона, стреляет навесом, наносит урон по площади, усиленное",
+    "transformsFrom": {
+      "fromKey": "gaubitsa_70bm1",
+      "ingredients": [
+        {
+          "key": "kristall_siniy",
+          "count": 309
+        },
+        {
+          "key": "kristall_zelenyy",
+          "count": 309
+        },
+        {
+          "key": "kristall_krasnyy",
+          "count": 309
+        },
+        {
+          "key": "zakhvat",
+          "count": 57
+        },
+        {
+          "key": "gafniy",
+          "count": 27
+        },
+        {
+          "key": "kogot_medvedya",
+          "count": 465
+        }
+      ],
+      "bondsCost": 622080,
+      "reglsCost": 72
+    },
     "stats": {
       "damageMin": 2085,
       "damageMax": 2549,
@@ -1568,6 +2644,36 @@
       "bonds": 26702
     },
     "description": "Дальнобойное оружие очень низкой скорострельности, большая мертвая зона, стреляет навесом, наносит урон по площади",
+    "transformsFrom": {
+      "fromKey": "gaubitsa_80b",
+      "ingredients": [
+        {
+          "key": "kristall_siniy",
+          "count": 123
+        },
+        {
+          "key": "kristall_zelenyy",
+          "count": 123
+        },
+        {
+          "key": "kristall_krasnyy",
+          "count": 123
+        },
+        {
+          "key": "zakhvat",
+          "count": 23
+        },
+        {
+          "key": "gafniy",
+          "count": 11
+        },
+        {
+          "key": "kogot_medvedya",
+          "count": 186
+        }
+      ],
+      "bondsCost": 248832
+    },
     "stats": {
       "damageMin": 2025,
       "damageMax": 2476,
@@ -1594,6 +2700,37 @@
       "bonds": 26702
     },
     "description": "Дальнобойное оружие очень низкой скорострельности, большая мертвая зона, стреляет навесом, наносит урон по площади, усиленное",
+    "transformsFrom": {
+      "fromKey": "gaubitsa_80bm1",
+      "ingredients": [
+        {
+          "key": "kristall_siniy",
+          "count": 369
+        },
+        {
+          "key": "kristall_zelenyy",
+          "count": 369
+        },
+        {
+          "key": "kristall_krasnyy",
+          "count": 369
+        },
+        {
+          "key": "zakhvat",
+          "count": 69
+        },
+        {
+          "key": "gafniy",
+          "count": 33
+        },
+        {
+          "key": "kogot_medvedya",
+          "count": 558
+        }
+      ],
+      "bondsCost": 746496,
+      "reglsCost": 120
+    },
     "stats": {
       "damageMin": 2378,
       "damageMax": 2906,
@@ -1620,6 +2757,37 @@
       "bonds": 30039
     },
     "description": "Дальнобойное оружие очень низкой скорострельности, большая мертвая зона, стреляет навесом, наносит урон по площади, усиленное",
+    "transformsFrom": {
+      "fromKey": "gaubitsa_90b",
+      "ingredients": [
+        {
+          "key": "kristall_siniy",
+          "count": 444
+        },
+        {
+          "key": "kristall_zelenyy",
+          "count": 4446
+        },
+        {
+          "key": "kristall_krasnyy",
+          "count": 900
+        },
+        {
+          "key": "zakhvat",
+          "count": 81
+        },
+        {
+          "key": "gafniy",
+          "count": 39
+        },
+        {
+          "key": "kogot_medvedya",
+          "count": 669
+        }
+      ],
+      "bondsCost": 2695794,
+      "reglsCost": 120
+    },
     "stats": {
       "damageMin": 3169,
       "damageMax": 3873,
@@ -1644,6 +2812,45 @@
     "group": "Гаубица энрг, Гранатомет энрг",
     "sellPrice": {
       "bonds": 316406
+    },
+    "transformsFrom": {
+      "fromKey": "gaubitsa_enrg_95bm1",
+      "ingredients": [
+        {
+          "key": "kristall_siniy",
+          "count": 3888
+        },
+        {
+          "key": "zhelezo",
+          "count": 258
+        },
+        {
+          "key": "zaslon",
+          "count": 12
+        },
+        {
+          "key": "verkhniy_rider",
+          "count": 24
+        },
+        {
+          "key": "stoker",
+          "count": 24
+        },
+        {
+          "key": "stimulyator",
+          "count": 12
+        },
+        {
+          "key": "kristall_krasnyy",
+          "count": 3888
+        },
+        {
+          "key": "kristall_zelenyy",
+          "count": 3888
+        }
+      ],
+      "bondsCost": 5184000,
+      "reglsCost": 180
     },
     "stats": {
       "damageMin": 3554,
@@ -1700,6 +2907,44 @@
       "bonds": 75000
     },
     "description": "Дальнобойное оружие очень низкой скорострельности, большая мертвая зона, стреляет навесом, наносит урон по площади",
+    "transformsFrom": {
+      "fromKey": "gaubitsa_enrg_40",
+      "ingredients": [
+        {
+          "key": "kristall_siniy",
+          "count": 1
+        },
+        {
+          "key": "kristall_zelenyy",
+          "count": 1
+        },
+        {
+          "key": "kristall_krasnyy",
+          "count": 1
+        },
+        {
+          "key": "khilitsery_pauka_glavnogo",
+          "count": 38
+        },
+        {
+          "key": "zhalo_skorpiona",
+          "count": 30
+        },
+        {
+          "key": "kleshnya_skorpiona",
+          "count": 30
+        },
+        {
+          "key": "lapa_bogomola",
+          "count": 15
+        },
+        {
+          "key": "usy_bogomola",
+          "count": 15
+        }
+      ],
+      "bondsCost": 10404
+    },
     "stats": {
       "damageMin": 1254,
       "damageMax": 1472,
@@ -1726,6 +2971,40 @@
       "bonds": 128000
     },
     "description": "Дальнобойное оружие очень низкой скорострельности, большая мертвая зона, стреляет навесом, наносит урон по площади",
+    "transformsFrom": {
+      "fromKey": "gaubitsa_enrg_50b",
+      "ingredients": [
+        {
+          "key": "kristall_siniy",
+          "count": 4
+        },
+        {
+          "key": "kristall_zelenyy",
+          "count": 4
+        },
+        {
+          "key": "kristall_krasnyy",
+          "count": 4
+        },
+        {
+          "key": "usy_bogomola",
+          "count": 39
+        },
+        {
+          "key": "lapa_bogomola",
+          "count": 39
+        },
+        {
+          "key": "parapodii_chervya",
+          "count": 19
+        },
+        {
+          "key": "segment_chervya",
+          "count": 19
+        }
+      ],
+      "bondsCost": 15903
+    },
     "stats": {
       "damageMin": 1490,
       "damageMax": 1749,
@@ -1756,6 +3035,33 @@
       "bonds": 160000
     },
     "description": "Дальнобойное оружие очень низкой скорострельности, большая мертвая зона, стреляет навесом, наносит урон по площади, усиленное",
+    "transformsFrom": {
+      "fromKey": "gaubitsa_enrg_60b",
+      "ingredients": [
+        {
+          "key": "kristall_siniy",
+          "count": 900
+        },
+        {
+          "key": "kristall_zelenyy",
+          "count": 900
+        },
+        {
+          "key": "kristall_krasnyy",
+          "count": 900
+        },
+        {
+          "key": "gafniy",
+          "count": 54
+        },
+        {
+          "key": "klyki_medvedya",
+          "count": 90
+        }
+      ],
+      "bondsCost": 2304000,
+      "reglsCost": 6
+    },
     "stats": {
       "damageMin": 1740,
       "damageMax": 2043,
@@ -1786,6 +3092,33 @@
       "bonds": 200000
     },
     "description": "Дальнобойное оружие очень низкой скорострельности, большая мертвая зона, стреляет навесом, наносит урон по площади, усиленное",
+    "transformsFrom": {
+      "fromKey": "gaubitsa_enrg_70bm1",
+      "ingredients": [
+        {
+          "key": "kristall_krasnyy",
+          "count": 1800
+        },
+        {
+          "key": "gafniy",
+          "count": 108
+        },
+        {
+          "key": "krotoskop",
+          "count": 9
+        },
+        {
+          "key": "kristall_zelenyy",
+          "count": 1800
+        },
+        {
+          "key": "kristall_siniy",
+          "count": 1800
+        }
+      ],
+      "bondsCost": 2880000,
+      "reglsCost": 45
+    },
     "stats": {
       "damageMin": 2005,
       "damageMax": 2353,
@@ -1816,6 +3149,45 @@
       "bonds": 250000
     },
     "description": "Дальнобойное оружие очень низкой скорострельности, большая мертвая зона, стреляет навесом, наносит урон по площади, усиленное",
+    "transformsFrom": {
+      "fromKey": "gaubitsa_enrg_80bm1",
+      "ingredients": [
+        {
+          "key": "kristall_siniy",
+          "count": 2700
+        },
+        {
+          "key": "zhelezo",
+          "count": 180
+        },
+        {
+          "key": "zaslon",
+          "count": 9
+        },
+        {
+          "key": "verkhniy_rider",
+          "count": 18
+        },
+        {
+          "key": "stoker",
+          "count": 18
+        },
+        {
+          "key": "stimulyator",
+          "count": 9
+        },
+        {
+          "key": "kristall_krasnyy",
+          "count": 2700
+        },
+        {
+          "key": "kristall_zelenyy",
+          "count": 2700
+        }
+      ],
+      "bondsCost": 3600000,
+      "reglsCost": 60
+    },
     "stats": {
       "damageMin": 2286,
       "damageMax": 2683,
@@ -1842,6 +3214,45 @@
       "bonds": 281250
     },
     "description": "Дальнобойное оружие очень низкой скорострельности, большая мертвая зона, стреляет навесом, наносит урон по площади, усиленное",
+    "transformsFrom": {
+      "fromKey": "gaubitsa_enrg_90bm1",
+      "ingredients": [
+        {
+          "key": "kristall_siniy",
+          "count": 3240
+        },
+        {
+          "key": "zhelezo",
+          "count": 216
+        },
+        {
+          "key": "zaslon",
+          "count": 9
+        },
+        {
+          "key": "verkhniy_rider",
+          "count": 21
+        },
+        {
+          "key": "stoker",
+          "count": 21
+        },
+        {
+          "key": "stimulyator",
+          "count": 9
+        },
+        {
+          "key": "kristall_krasnyy",
+          "count": 3240
+        },
+        {
+          "key": "kristall_zelenyy",
+          "count": 3240
+        }
+      ],
+      "bondsCost": 4320000,
+      "reglsCost": 120
+    },
     "stats": {
       "damageMin": 3046,
       "damageMax": 3576,
@@ -1866,6 +3277,33 @@
     "group": "Гаубица, Гранатомет",
     "sellPrice": {
       "bonds": 28001
+    },
+    "transformsFrom": {
+      "fromKey": "granatomet_95bm1",
+      "ingredients": [
+        {
+          "key": "kristall_siniy",
+          "count": 1728
+        },
+        {
+          "key": "kristall_zelenyy",
+          "count": 531
+        },
+        {
+          "key": "kristall_krasnyy",
+          "count": 1728
+        },
+        {
+          "key": "zhelezo",
+          "count": 99
+        },
+        {
+          "key": "gafniy",
+          "count": 45
+        }
+      ],
+      "bondsCost": 3234951,
+      "reglsCost": 180
     },
     "stats": {
       "damageMin": 2112,
@@ -1946,6 +3384,32 @@
       "bonds": 9062
     },
     "description": "Дальнобойное оружие с мертвой зоной вблизи и низкой скорострельностью",
+    "transformsFrom": {
+      "fromKey": "granatomet_40b",
+      "ingredients": [
+        {
+          "key": "kristall_siniy",
+          "count": 60
+        },
+        {
+          "key": "kristall_zelenyy",
+          "count": 60
+        },
+        {
+          "key": "kristall_krasnyy",
+          "count": 60
+        },
+        {
+          "key": "zhelezo",
+          "count": 12
+        },
+        {
+          "key": "gafniy",
+          "count": 6
+        }
+      ],
+      "bondsCost": 120000
+    },
     "stats": {
       "damageMin": 635,
       "damageMax": 702,
@@ -1970,6 +3434,33 @@
       "bonds": 9062
     },
     "description": "Дальнобойное оружие с мертвой зоной вблизи и низкой скорострельностью, усиленное",
+    "transformsFrom": {
+      "fromKey": "granatomet_40bm1",
+      "ingredients": [
+        {
+          "key": "kristall_siniy",
+          "count": 180
+        },
+        {
+          "key": "kristall_zelenyy",
+          "count": 180
+        },
+        {
+          "key": "kristall_krasnyy",
+          "count": 180
+        },
+        {
+          "key": "zhelezo",
+          "count": 36
+        },
+        {
+          "key": "gafniy",
+          "count": 18
+        }
+      ],
+      "bondsCost": 360000,
+      "reglsCost": 45
+    },
     "stats": {
       "damageMin": 745,
       "damageMax": 824,
@@ -1994,6 +3485,32 @@
       "bonds": 11328
     },
     "description": "Дальнобойное оружие с мертвой зоной вблизи и низкой скорострельностью",
+    "transformsFrom": {
+      "fromKey": "granatomet_50b",
+      "ingredients": [
+        {
+          "key": "kristall_siniy",
+          "count": 72
+        },
+        {
+          "key": "kristall_zelenyy",
+          "count": 72
+        },
+        {
+          "key": "kristall_krasnyy",
+          "count": 72
+        },
+        {
+          "key": "zhelezo",
+          "count": 14
+        },
+        {
+          "key": "gafniy",
+          "count": 7
+        }
+      ],
+      "bondsCost": 144000
+    },
     "stats": {
       "damageMin": 754,
       "damageMax": 834,
@@ -2018,6 +3535,33 @@
       "bonds": 11328
     },
     "description": "Дальнобойное оружие с мертвой зоной вблизи и низкой скорострельностью, усиленное",
+    "transformsFrom": {
+      "fromKey": "granatomet_50bm1",
+      "ingredients": [
+        {
+          "key": "kristall_siniy",
+          "count": 216
+        },
+        {
+          "key": "kristall_zelenyy",
+          "count": 216
+        },
+        {
+          "key": "kristall_krasnyy",
+          "count": 216
+        },
+        {
+          "key": "zhelezo",
+          "count": 42
+        },
+        {
+          "key": "gafniy",
+          "count": 21
+        }
+      ],
+      "bondsCost": 432000,
+      "reglsCost": 4
+    },
     "stats": {
       "damageMin": 885,
       "damageMax": 979,
@@ -2045,6 +3589,32 @@
       "bonds": 14160
     },
     "description": "Дальнобойное оружие с мертвой зоной вблизи и низкой скорострельностью",
+    "transformsFrom": {
+      "fromKey": "granatomet_60b",
+      "ingredients": [
+        {
+          "key": "kristall_siniy",
+          "count": 86
+        },
+        {
+          "key": "kristall_zelenyy",
+          "count": 86
+        },
+        {
+          "key": "kristall_krasnyy",
+          "count": 86
+        },
+        {
+          "key": "zhelezo",
+          "count": 16
+        },
+        {
+          "key": "gafniy",
+          "count": 8
+        }
+      ],
+      "bondsCost": 172800
+    },
     "stats": {
       "damageMin": 881,
       "damageMax": 973,
@@ -2073,6 +3643,33 @@
       "bonds": 14160
     },
     "description": "Дальнобойное оружие с мертвой зоной вблизи и низкой скорострельностью, усиленное",
+    "transformsFrom": {
+      "fromKey": "granatomet_60bm1",
+      "ingredients": [
+        {
+          "key": "kristall_siniy",
+          "count": 258
+        },
+        {
+          "key": "kristall_zelenyy",
+          "count": 258
+        },
+        {
+          "key": "kristall_krasnyy",
+          "count": 258
+        },
+        {
+          "key": "zhelezo",
+          "count": 48
+        },
+        {
+          "key": "gafniy",
+          "count": 24
+        }
+      ],
+      "bondsCost": 518400,
+      "reglsCost": 24
+    },
     "stats": {
       "damageMin": 1034,
       "damageMax": 1143,
@@ -2121,6 +3718,33 @@
       "bonds": 17700
     },
     "description": "Дальнобойное оружие с мертвой зоной вблизи и низкой скорострельностью, усиленное",
+    "transformsFrom": {
+      "fromKey": "granatomet_70bm1",
+      "ingredients": [
+        {
+          "key": "kristall_siniy",
+          "count": 309
+        },
+        {
+          "key": "kristall_zelenyy",
+          "count": 309
+        },
+        {
+          "key": "kristall_krasnyy",
+          "count": 309
+        },
+        {
+          "key": "zhelezo",
+          "count": 57
+        },
+        {
+          "key": "gafniy",
+          "count": 27
+        }
+      ],
+      "bondsCost": 622080,
+      "reglsCost": 72
+    },
     "stats": {
       "damageMin": 1191,
       "damageMax": 1317,
@@ -2145,6 +3769,32 @@
       "bonds": 22125
     },
     "description": "Дальнобойное оружие с мертвой зоной вблизи и низкой скорострельностью",
+    "transformsFrom": {
+      "fromKey": "granatomet_80b",
+      "ingredients": [
+        {
+          "key": "kristall_siniy",
+          "count": 123
+        },
+        {
+          "key": "kristall_zelenyy",
+          "count": 123
+        },
+        {
+          "key": "kristall_krasnyy",
+          "count": 123
+        },
+        {
+          "key": "zhelezo",
+          "count": 23
+        },
+        {
+          "key": "gafniy",
+          "count": 11
+        }
+      ],
+      "bondsCost": 248832
+    },
     "stats": {
       "damageMin": 1157,
       "damageMax": 1279,
@@ -2169,6 +3819,33 @@
       "bonds": 22125
     },
     "description": "Дальнобойное оружие с мертвой зоной вблизи и низкой скорострельностью, усиленное",
+    "transformsFrom": {
+      "fromKey": "granatomet_80bm1",
+      "ingredients": [
+        {
+          "key": "kristall_siniy",
+          "count": 369
+        },
+        {
+          "key": "kristall_zelenyy",
+          "count": 369
+        },
+        {
+          "key": "kristall_krasnyy",
+          "count": 369
+        },
+        {
+          "key": "zhelezo",
+          "count": 69
+        },
+        {
+          "key": "gafniy",
+          "count": 33
+        }
+      ],
+      "bondsCost": 746496,
+      "reglsCost": 120
+    },
     "stats": {
       "damageMin": 1358,
       "damageMax": 1501,
@@ -2193,6 +3870,33 @@
       "bonds": 24890
     },
     "description": "Дальнобойное оружие с мертвой зоной вблизи и низкой скорострельностью, усиленное",
+    "transformsFrom": {
+      "fromKey": "granatomet_90b",
+      "ingredients": [
+        {
+          "key": "kristall_siniy",
+          "count": 1440
+        },
+        {
+          "key": "kristall_zelenyy",
+          "count": 444
+        },
+        {
+          "key": "kristall_krasnyy",
+          "count": 1440
+        },
+        {
+          "key": "zhelezo",
+          "count": 81
+        },
+        {
+          "key": "gafniy",
+          "count": 39
+        }
+      ],
+      "bondsCost": 2695794,
+      "reglsCost": 120
+    },
     "stats": {
       "damageMin": 1810,
       "damageMax": 2001,
@@ -2243,6 +3947,24 @@
       "bonds": 400
     },
     "description": "Дальнобойное оружие средней скорострельности без мертвой зоны вблизи",
+    "transformsFrom": {
+      "fromKey": "granatomet_enrg_5",
+      "ingredients": [
+        {
+          "key": "elitra_tuka",
+          "count": 1
+        },
+        {
+          "key": "dvoynaya_elitra_tuka",
+          "count": 1
+        },
+        {
+          "key": "yadovitaya_zheleza_pauka",
+          "count": 1
+        }
+      ],
+      "bondsCost": 432
+    },
     "stats": {
       "damageMin": 225,
       "damageMax": 253,
@@ -2265,6 +3987,45 @@
     "group": "Гаубица энрг, Гранатомет энрг",
     "sellPrice": {
       "bonds": 316406
+    },
+    "transformsFrom": {
+      "fromKey": "granatomet_enrg_95bm1",
+      "ingredients": [
+        {
+          "key": "kristall_siniy",
+          "count": 3888
+        },
+        {
+          "key": "zhelezo",
+          "count": 258
+        },
+        {
+          "key": "verkhniy_rider",
+          "count": 24
+        },
+        {
+          "key": "zaslon",
+          "count": 12
+        },
+        {
+          "key": "stimulyator",
+          "count": 12
+        },
+        {
+          "key": "stoker",
+          "count": 24
+        },
+        {
+          "key": "kristall_zelenyy",
+          "count": 3888
+        },
+        {
+          "key": "kristall_krasnyy",
+          "count": 3888
+        }
+      ],
+      "bondsCost": 5184000,
+      "reglsCost": 180
     },
     "stats": {
       "damageMin": 1874,
@@ -2293,6 +4054,36 @@
       "bonds": 1250
     },
     "description": "Дальнобойное оружие средней скорострельности без мертвой зоны вблизи",
+    "transformsFrom": {
+      "fromKey": "granatomet_enrg_10",
+      "ingredients": [
+        {
+          "key": "kristall_siniy",
+          "count": 1
+        },
+        {
+          "key": "yadovitaya_zheleza_pauka",
+          "count": 6
+        },
+        {
+          "key": "shchit_zhuka_glavnogo",
+          "count": 5
+        },
+        {
+          "key": "shchit_senokosetsa",
+          "count": 5
+        },
+        {
+          "key": "zhalo_zhuka_glavnogo",
+          "count": 5
+        },
+        {
+          "key": "dvoynoy_shchit_senokosetsa",
+          "count": 5
+        }
+      ],
+      "bondsCost": 972
+    },
     "stats": {
       "damageMin": 274,
       "damageMax": 310,
@@ -2317,6 +4108,32 @@
       "bonds": 2500
     },
     "description": "Дальнобойное оружие средней скорострельности без мертвой зоны вблизи",
+    "transformsFrom": {
+      "fromKey": "granatomet_enrg_15",
+      "ingredients": [
+        {
+          "key": "kristall_siniy",
+          "count": 1
+        },
+        {
+          "key": "kristall_zelenyy",
+          "count": 1
+        },
+        {
+          "key": "kristall_krasnyy",
+          "count": 1
+        },
+        {
+          "key": "khilitsery_pauka_glavnogo",
+          "count": 10
+        },
+        {
+          "key": "yadovitaya_zheleza_pauka",
+          "count": 21
+        }
+      ],
+      "bondsCost": 2592
+    },
     "stats": {
       "damageMin": 326,
       "damageMax": 367,
@@ -2341,6 +4158,40 @@
       "bonds": 7500
     },
     "description": "Дальнобойное оружие средней скорострельности без мертвой зоны вблизи",
+    "transformsFrom": {
+      "fromKey": "granatomet_enrg_20",
+      "ingredients": [
+        {
+          "key": "kristall_siniy",
+          "count": 1
+        },
+        {
+          "key": "kristall_zelenyy",
+          "count": 1
+        },
+        {
+          "key": "kristall_krasnyy",
+          "count": 1
+        },
+        {
+          "key": "yadovitaya_zheleza_pauka",
+          "count": 32
+        },
+        {
+          "key": "khilitsery_pauka_glavnogo",
+          "count": 21
+        },
+        {
+          "key": "shchit_senokosetsa",
+          "count": 43
+        },
+        {
+          "key": "zhalo_zhuka_glavnogo",
+          "count": 43
+        }
+      ],
+      "bondsCost": 5659
+    },
     "stats": {
       "damageMin": 432,
       "damageMax": 487,
@@ -2368,6 +4219,40 @@
       "bonds": 30000
     },
     "description": "Дальнобойное оружие средней скорострельности без мертвой зоны вблизи",
+    "transformsFrom": {
+      "fromKey": "granatomet_enrg_30",
+      "ingredients": [
+        {
+          "key": "kristall_siniy",
+          "count": 3
+        },
+        {
+          "key": "kristall_zelenyy",
+          "count": 3
+        },
+        {
+          "key": "kristall_krasnyy",
+          "count": 3
+        },
+        {
+          "key": "yadovitaya_zheleza_pauka",
+          "count": 86
+        },
+        {
+          "key": "khilitsery_pauka_glavnogo",
+          "count": 64
+        },
+        {
+          "key": "zhalo_skorpiona",
+          "count": 43
+        },
+        {
+          "key": "kleshnya_skorpiona",
+          "count": 43
+        }
+      ],
+      "bondsCost": 15530
+    },
     "stats": {
       "damageMin": 543,
       "damageMax": 613,
@@ -2392,6 +4277,20 @@
       "bonds": 225
     },
     "description": "Дальнобойное оружие средней скорострельности без мертвой зоны вблизи",
+    "transformsFrom": {
+      "fromKey": "granatomet_enrg",
+      "ingredients": [
+        {
+          "key": "elitra_tuka",
+          "count": 4
+        },
+        {
+          "key": "dvoynaya_elitra_tuka",
+          "count": 1
+        }
+      ],
+      "bondsCost": 108
+    },
     "stats": {
       "damageMin": 176,
       "damageMax": 199,
@@ -2416,6 +4315,44 @@
       "bonds": 75000
     },
     "description": "Дальнобойное оружие средней скорострельности без мертвой зоны вблизи",
+    "transformsFrom": {
+      "fromKey": "granatomet_enrg_40",
+      "ingredients": [
+        {
+          "key": "kristall_siniy",
+          "count": 1
+        },
+        {
+          "key": "kristall_zelenyy",
+          "count": 1
+        },
+        {
+          "key": "kristall_krasnyy",
+          "count": 1
+        },
+        {
+          "key": "khilitsery_pauka_glavnogo",
+          "count": 38
+        },
+        {
+          "key": "zhalo_skorpiona",
+          "count": 30
+        },
+        {
+          "key": "kleshnya_skorpiona",
+          "count": 30
+        },
+        {
+          "key": "lapa_bogomola",
+          "count": 15
+        },
+        {
+          "key": "usy_bogomola",
+          "count": 15
+        }
+      ],
+      "bondsCost": 10404
+    },
     "stats": {
       "damageMin": 661,
       "damageMax": 746,
@@ -2440,6 +4377,40 @@
       "bonds": 128000
     },
     "description": "Дальнобойное оружие средней скорострельности без мертвой зоны вблизи",
+    "transformsFrom": {
+      "fromKey": "granatomet_enrg_50",
+      "ingredients": [
+        {
+          "key": "kristall_siniy",
+          "count": 4
+        },
+        {
+          "key": "kristall_zelenyy",
+          "count": 4
+        },
+        {
+          "key": "kristall_krasnyy",
+          "count": 4
+        },
+        {
+          "key": "usy_bogomola",
+          "count": 39
+        },
+        {
+          "key": "lapa_bogomola",
+          "count": 39
+        },
+        {
+          "key": "parapodii_chervya",
+          "count": 19
+        },
+        {
+          "key": "segment_chervya",
+          "count": 19
+        }
+      ],
+      "bondsCost": 15903
+    },
     "stats": {
       "damageMin": 786,
       "damageMax": 886,
@@ -2468,6 +4439,37 @@
       "bonds": 160000
     },
     "description": "Дальнобойное оружие средней скорострельности без мертвой зоны вблизи, усиленное",
+    "transformsFrom": {
+      "fromKey": "granatomet_enrg_60",
+      "ingredients": [
+        {
+          "key": "kristall_siniy",
+          "count": 900
+        },
+        {
+          "key": "kristall_zelenyy",
+          "count": 900
+        },
+        {
+          "key": "kristall_krasnyy",
+          "count": 900
+        },
+        {
+          "key": "gafniy",
+          "count": 54
+        },
+        {
+          "key": "polikozha_krota",
+          "count": 18
+        },
+        {
+          "key": "kapyushon_varana",
+          "count": 180
+        }
+      ],
+      "bondsCost": 2304000,
+      "reglsCost": 6
+    },
     "stats": {
       "damageMin": 917,
       "damageMax": 1035,
@@ -2496,6 +4498,33 @@
       "bonds": 200000
     },
     "description": "Дальнобойное оружие средней скорострельности без мертвой зоны вблизи, усиленное",
+    "transformsFrom": {
+      "fromKey": "granatomet_enrg_70m1",
+      "ingredients": [
+        {
+          "key": "kristall_krasnyy",
+          "count": 1800
+        },
+        {
+          "key": "gafniy",
+          "count": 108
+        },
+        {
+          "key": "zatvor_modifitsirovannyy",
+          "count": 9
+        },
+        {
+          "key": "kristall_siniy",
+          "count": 1800
+        },
+        {
+          "key": "kristall_zelenyy",
+          "count": 1800
+        }
+      ],
+      "bondsCost": 2880000,
+      "reglsCost": 45
+    },
     "stats": {
       "damageMin": 1057,
       "damageMax": 1192,
@@ -2524,6 +4553,45 @@
       "bonds": 250000
     },
     "description": "Дальнобойное оружие средней скорострельности без мертвой зоны вблизи, усиленное",
+    "transformsFrom": {
+      "fromKey": "granatomet_enrg_80bm1",
+      "ingredients": [
+        {
+          "key": "kristall_siniy",
+          "count": 2700
+        },
+        {
+          "key": "zhelezo",
+          "count": 180
+        },
+        {
+          "key": "verkhniy_rider",
+          "count": 18
+        },
+        {
+          "key": "zaslon",
+          "count": 9
+        },
+        {
+          "key": "stimulyator",
+          "count": 9
+        },
+        {
+          "key": "stoker",
+          "count": 18
+        },
+        {
+          "key": "kristall_zelenyy",
+          "count": 2700
+        },
+        {
+          "key": "kristall_krasnyy",
+          "count": 2700
+        }
+      ],
+      "bondsCost": 3600000,
+      "reglsCost": 60
+    },
     "stats": {
       "damageMin": 1205,
       "damageMax": 1359,
@@ -2548,6 +4616,45 @@
       "bonds": 281250
     },
     "description": "Дальнобойное оружие средней скорострельности без мертвой зоны вблизи, усиленное",
+    "transformsFrom": {
+      "fromKey": "granatomet_enrg_90bm1",
+      "ingredients": [
+        {
+          "key": "kristall_siniy",
+          "count": 3240
+        },
+        {
+          "key": "zhelezo",
+          "count": 216
+        },
+        {
+          "key": "verkhniy_rider",
+          "count": 21
+        },
+        {
+          "key": "zaslon",
+          "count": 9
+        },
+        {
+          "key": "stimulyator",
+          "count": 9
+        },
+        {
+          "key": "stoker",
+          "count": 21
+        },
+        {
+          "key": "kristall_zelenyy",
+          "count": 3240
+        },
+        {
+          "key": "kristall_krasnyy",
+          "count": 3240
+        }
+      ],
+      "bondsCost": 4320000,
+      "reglsCost": 120
+    },
     "stats": {
       "damageMin": 1606,
       "damageMax": 1812,
@@ -2600,6 +4707,24 @@
     },
     "craftFromBlueprints": [],
     "description": "Скорострельное оружие малого радиуса действия, не требует боезапаса или навыков, урон указан в описании",
+    "transformsFrom": {
+      "fromKey": "lazer_8",
+      "ingredients": [
+        {
+          "key": "kristall_siniy",
+          "count": 12
+        },
+        {
+          "key": "kristall_zelenyy",
+          "count": 12
+        },
+        {
+          "key": "kristall_krasnyy",
+          "count": 6
+        }
+      ],
+      "bondsCost": 9000
+    },
     "stats": {
       "damageMin": 682,
       "damageMax": 833,
@@ -2622,6 +4747,29 @@
     "group": "Лазер",
     "sellPrice": {
       "bonds": 23830
+    },
+    "transformsFrom": {
+      "fromKey": "lazer_95bm1",
+      "ingredients": [
+        {
+          "key": "kristall_siniy",
+          "count": 1728
+        },
+        {
+          "key": "kristall_zelenyy",
+          "count": 1944
+        },
+        {
+          "key": "kristall_krasnyy",
+          "count": 2484
+        },
+        {
+          "key": "zakhvat",
+          "count": 63
+        }
+      ],
+      "bondsCost": 3748332,
+      "reglsCost": 180
     },
     "stats": {
       "damageMin": 12913,
@@ -2648,6 +4796,24 @@
     },
     "craftFromBlueprints": [],
     "description": "Скорострельное оружие малого радиуса действия, не требует боезапаса или навыков, урон указан в описании",
+    "transformsFrom": {
+      "fromKey": "lazer_10",
+      "ingredients": [
+        {
+          "key": "kristall_siniy",
+          "count": 13
+        },
+        {
+          "key": "kristall_zelenyy",
+          "count": 13
+        },
+        {
+          "key": "kristall_krasnyy",
+          "count": 6
+        }
+      ],
+      "bondsCost": 10830
+    },
     "stats": {
       "damageMin": 687,
       "damageMax": 840,
@@ -2673,6 +4839,24 @@
     },
     "craftFromBlueprints": [],
     "description": "Скорострельное оружие малого радиуса действия, не требует боезапаса или навыков, урон указан в описании",
+    "transformsFrom": {
+      "fromKey": "lazer_11",
+      "ingredients": [
+        {
+          "key": "kristall_siniy",
+          "count": 15
+        },
+        {
+          "key": "kristall_zelenyy",
+          "count": 15
+        },
+        {
+          "key": "kristall_krasnyy",
+          "count": 7
+        }
+      ],
+      "bondsCost": 10914
+    },
     "stats": {
       "damageMin": 699,
       "damageMax": 854,
@@ -2698,6 +4882,24 @@
     },
     "craftFromBlueprints": [],
     "description": "Скорострельное оружие малого радиуса действия, не требует боезапаса или навыков, урон указан в описании",
+    "transformsFrom": {
+      "fromKey": "lazer_13",
+      "ingredients": [
+        {
+          "key": "kristall_siniy",
+          "count": 19
+        },
+        {
+          "key": "kristall_zelenyy",
+          "count": 19
+        },
+        {
+          "key": "kristall_krasnyy",
+          "count": 9
+        }
+      ],
+      "bondsCost": 17547
+    },
     "stats": {
       "damageMin": 716,
       "damageMax": 875,
@@ -2723,6 +4925,24 @@
     },
     "craftFromBlueprints": [],
     "description": "Скорострельное оружие малого радиуса действия, не требует боезапаса или навыков, урон указан в описании",
+    "transformsFrom": {
+      "fromKey": "lazer_16",
+      "ingredients": [
+        {
+          "key": "kristall_siniy",
+          "count": 21
+        },
+        {
+          "key": "kristall_zelenyy",
+          "count": 21
+        },
+        {
+          "key": "kristall_krasnyy",
+          "count": 10
+        }
+      ],
+      "bondsCost": 22425
+    },
     "stats": {
       "damageMin": 727,
       "damageMax": 889,
@@ -2748,6 +4968,24 @@
     },
     "craftFromBlueprints": [],
     "description": "Скорострельное оружие малого радиуса действия, не требует боезапаса или навыков, урон указан в описании",
+    "transformsFrom": {
+      "fromKey": "lazer_18",
+      "ingredients": [
+        {
+          "key": "kristall_siniy",
+          "count": 25
+        },
+        {
+          "key": "kristall_zelenyy",
+          "count": 25
+        },
+        {
+          "key": "kristall_krasnyy",
+          "count": 12
+        }
+      ],
+      "bondsCost": 25386
+    },
     "stats": {
       "damageMin": 1973,
       "damageMax": 2412,
@@ -2797,6 +5035,24 @@
     },
     "craftFromBlueprints": [],
     "description": "Скорострельное оружие малого радиуса действия, не требует боезапаса или навыков, урон указан в описании",
+    "transformsFrom": {
+      "fromKey": "lazer_21",
+      "ingredients": [
+        {
+          "key": "kristall_siniy",
+          "count": 30
+        },
+        {
+          "key": "kristall_zelenyy",
+          "count": 30
+        },
+        {
+          "key": "kristall_krasnyy",
+          "count": 15
+        }
+      ],
+      "bondsCost": 36447
+    },
     "stats": {
       "damageMin": 2220,
       "damageMax": 2713,
@@ -2822,6 +5078,24 @@
     },
     "craftFromBlueprints": [],
     "description": "Скорострельное оружие малого радиуса действия, не требует боезапаса или навыков, урон указан в описании",
+    "transformsFrom": {
+      "fromKey": "lazer_25",
+      "ingredients": [
+        {
+          "key": "kristall_siniy",
+          "count": 34
+        },
+        {
+          "key": "kristall_zelenyy",
+          "count": 34
+        },
+        {
+          "key": "kristall_krasnyy",
+          "count": 17
+        }
+      ],
+      "bondsCost": 42984
+    },
     "stats": {
       "damageMin": 2471,
       "damageMax": 3020,
@@ -2846,6 +5120,25 @@
       "bonds": 3343
     },
     "description": "Скорострельное оружие малого радиуса действия, не требует боезапаса или навыков, урон указан в описании, усиленное",
+    "transformsFrom": {
+      "fromKey": "lazer_21m1",
+      "ingredients": [
+        {
+          "key": "kristall_siniy",
+          "count": 102
+        },
+        {
+          "key": "kristall_zelenyy",
+          "count": 102
+        },
+        {
+          "key": "kristall_krasnyy",
+          "count": 51
+        }
+      ],
+      "bondsCost": 48141,
+      "reglsCost": 4
+    },
     "stats": {
       "damageMin": 2901,
       "damageMax": 3546,
@@ -2871,6 +5164,24 @@
     },
     "craftFromBlueprints": [],
     "description": "Скорострельное оружие малого радиуса действия, не требует боезапаса или навыков, урон указан в описании",
+    "transformsFrom": {
+      "fromKey": "lazer",
+      "ingredients": [
+        {
+          "key": "kristall_siniy",
+          "count": 3
+        },
+        {
+          "key": "kristall_zelenyy",
+          "count": 3
+        },
+        {
+          "key": "kristall_krasnyy",
+          "count": 1
+        }
+      ],
+      "bondsCost": 1590
+    },
     "stats": {
       "damageMin": 668,
       "damageMax": 817,
@@ -2896,6 +5207,24 @@
     },
     "craftFromBlueprints": [],
     "description": "Скорострельное оружие малого радиуса действия, не требует боезапаса или навыков, урон указан в описании",
+    "transformsFrom": {
+      "fromKey": "lazer_29",
+      "ingredients": [
+        {
+          "key": "kristall_siniy",
+          "count": 39
+        },
+        {
+          "key": "kristall_zelenyy",
+          "count": 39
+        },
+        {
+          "key": "kristall_krasnyy",
+          "count": 19
+        }
+      ],
+      "bondsCost": 50553
+    },
     "stats": {
       "damageMin": 2728,
       "damageMax": 3334,
@@ -2924,6 +5253,24 @@
     },
     "craftFromBlueprints": [],
     "description": "Скорострельное оружие малого радиуса действия, не требует боезапаса или навыков, урон указан в описании",
+    "transformsFrom": {
+      "fromKey": "lazer_33",
+      "ingredients": [
+        {
+          "key": "kristall_siniy",
+          "count": 46
+        },
+        {
+          "key": "kristall_zelenyy",
+          "count": 46
+        },
+        {
+          "key": "kristall_krasnyy",
+          "count": 23
+        }
+      ],
+      "bondsCost": 68685
+    },
     "stats": {
       "damageMin": 3123,
       "damageMax": 3817,
@@ -2952,6 +5299,25 @@
       "bonds": 5723
     },
     "description": "Скорострельное оружие малого радиуса действия, не требует боезапаса или навыков, урон указан в описании, усиленное",
+    "transformsFrom": {
+      "fromKey": "lazer_29m1",
+      "ingredients": [
+        {
+          "key": "kristall_siniy",
+          "count": 138
+        },
+        {
+          "key": "kristall_zelenyy",
+          "count": 138
+        },
+        {
+          "key": "kristall_krasnyy",
+          "count": 69
+        }
+      ],
+      "bondsCost": 82422,
+      "reglsCost": 4
+    },
     "stats": {
       "damageMin": 3666,
       "damageMax": 4481,
@@ -2977,6 +5343,24 @@
     },
     "craftFromBlueprints": [],
     "description": "Скорострельное оружие малого радиуса действия, не требует боезапаса или навыков, урон указан в описании",
+    "transformsFrom": {
+      "fromKey": "lazer_39",
+      "ingredients": [
+        {
+          "key": "kristall_siniy",
+          "count": 51
+        },
+        {
+          "key": "kristall_zelenyy",
+          "count": 51
+        },
+        {
+          "key": "kristall_krasnyy",
+          "count": 25
+        }
+      ],
+      "bondsCost": 99000
+    },
     "stats": {
       "damageMin": 3394,
       "damageMax": 4148,
@@ -3005,6 +5389,24 @@
     },
     "craftFromBlueprints": [],
     "description": "Скорострельное оружие малого радиуса действия, не требует боезапаса или навыков, урон указан в описании",
+    "transformsFrom": {
+      "fromKey": "lazer_3",
+      "ingredients": [
+        {
+          "key": "kristall_siniy",
+          "count": 6
+        },
+        {
+          "key": "kristall_zelenyy",
+          "count": 6
+        },
+        {
+          "key": "kristall_krasnyy",
+          "count": 3
+        }
+      ],
+      "bondsCost": 2898
+    },
     "stats": {
       "damageMin": 680,
       "damageMax": 831,
@@ -3030,6 +5432,24 @@
     },
     "craftFromBlueprints": [],
     "description": "Скорострельное оружие малого радиуса действия, не требует боезапаса или навыков, урон указан в описании",
+    "transformsFrom": {
+      "fromKey": "lazer_43",
+      "ingredients": [
+        {
+          "key": "kristall_siniy",
+          "count": 72
+        },
+        {
+          "key": "kristall_zelenyy",
+          "count": 72
+        },
+        {
+          "key": "kristall_krasnyy",
+          "count": 36
+        }
+      ],
+      "bondsCost": 138015
+    },
     "stats": {
       "damageMin": 4612,
       "damageMax": 5637,
@@ -3054,6 +5474,25 @@
       "bonds": 11501
     },
     "description": "Скорострельное оружие малого радиуса действия, не требует боезапаса или навыков, урон указан в описании, усиленное",
+    "transformsFrom": {
+      "fromKey": "lazer_39m1",
+      "ingredients": [
+        {
+          "key": "kristall_siniy",
+          "count": 216
+        },
+        {
+          "key": "kristall_zelenyy",
+          "count": 216
+        },
+        {
+          "key": "kristall_krasnyy",
+          "count": 108
+        }
+      ],
+      "bondsCost": 165618,
+      "reglsCost": 9
+    },
     "stats": {
       "damageMin": 5415,
       "damageMax": 6618,
@@ -3081,6 +5520,24 @@
       "bonds": 13551
     },
     "description": "Скорострельное оружие малого радиуса действия, не требует боезапаса или навыков, урон указан в описании",
+    "transformsFrom": {
+      "fromKey": "lazer_60",
+      "ingredients": [
+        {
+          "key": "kristall_siniy",
+          "count": 84
+        },
+        {
+          "key": "kristall_zelenyy",
+          "count": 84
+        },
+        {
+          "key": "kristall_krasnyy",
+          "count": 42
+        }
+      ],
+      "bondsCost": 162615
+    },
     "stats": {
       "damageMin": 5385,
       "damageMax": 6582,
@@ -3109,6 +5566,25 @@
       "bonds": 14593
     },
     "description": "Скорострельное оружие малого радиуса действия, не требует боезапаса или навыков, урон указан в описании, усиленное",
+    "transformsFrom": {
+      "fromKey": "lazer_70",
+      "ingredients": [
+        {
+          "key": "kristall_siniy",
+          "count": 252
+        },
+        {
+          "key": "kristall_zelenyy",
+          "count": 252
+        },
+        {
+          "key": "kristall_krasnyy",
+          "count": 126
+        }
+      ],
+      "bondsCost": 210150,
+      "reglsCost": 24
+    },
     "stats": {
       "damageMin": 6322,
       "damageMax": 7727,
@@ -3137,6 +5613,24 @@
     },
     "craftFromBlueprints": [],
     "description": "Скорострельное оружие малого радиуса действия, не требует боезапаса или навыков, урон указан в описании",
+    "transformsFrom": {
+      "fromKey": "lazer_5",
+      "ingredients": [
+        {
+          "key": "kristall_siniy",
+          "count": 9
+        },
+        {
+          "key": "kristall_zelenyy",
+          "count": 9
+        },
+        {
+          "key": "kristall_krasnyy",
+          "count": 4
+        }
+      ],
+      "bondsCost": 6417
+    },
     "stats": {
       "damageMin": 697,
       "damageMax": 852,
@@ -3185,6 +5679,25 @@
       "bonds": 15063
     },
     "description": "Скорострельное оружие малого радиуса действия, не требует боезапаса или навыков, урон указан в описании, усиленное",
+    "transformsFrom": {
+      "fromKey": "lazer_70m1",
+      "ingredients": [
+        {
+          "key": "kristall_siniy",
+          "count": 288
+        },
+        {
+          "key": "kristall_zelenyy",
+          "count": 288
+        },
+        {
+          "key": "kristall_krasnyy",
+          "count": 144
+        }
+      ],
+      "bondsCost": 216918,
+      "reglsCost": 72
+    },
     "stats": {
       "damageMin": 7284,
       "damageMax": 8903,
@@ -3209,6 +5722,28 @@
       "bonds": 20245
     },
     "description": "Скорострельное оружие малого радиуса действия, не требует боезапаса или навыков, урон указан в описании",
+    "transformsFrom": {
+      "fromKey": "lazer_80",
+      "ingredients": [
+        {
+          "key": "kristall_siniy",
+          "count": 115
+        },
+        {
+          "key": "kristall_zelenyy",
+          "count": 115
+        },
+        {
+          "key": "kristall_krasnyy",
+          "count": 57
+        },
+        {
+          "key": "zakhvat",
+          "count": 21
+        }
+      ],
+      "bondsCost": 233226
+    },
     "stats": {
       "damageMin": 7074,
       "damageMax": 8647,
@@ -3233,6 +5768,29 @@
       "bonds": 18829
     },
     "description": "Скорострельное оружие малого радиуса действия, не требует боезапаса или навыков, урон указан в описании, усиленное",
+    "transformsFrom": {
+      "fromKey": "lazer_80m1",
+      "ingredients": [
+        {
+          "key": "kristall_siniy",
+          "count": 345
+        },
+        {
+          "key": "kristall_zelenyy",
+          "count": 345
+        },
+        {
+          "key": "kristall_krasnyy",
+          "count": 171
+        },
+        {
+          "key": "zakhvat",
+          "count": 45
+        }
+      ],
+      "bondsCost": 260301,
+      "reglsCost": 120
+    },
     "stats": {
       "damageMin": 8305,
       "damageMax": 10150,
@@ -3257,6 +5815,29 @@
       "bonds": 21183
     },
     "description": "Скорострельное оружие малого радиуса действия, не требует боезапаса или навыков, урон указан в описании, усиленное",
+    "transformsFrom": {
+      "fromKey": "lazer_90",
+      "ingredients": [
+        {
+          "key": "kristall_siniy",
+          "count": 1440
+        },
+        {
+          "key": "kristall_zelenyy",
+          "count": 1620
+        },
+        {
+          "key": "kristall_krasnyy",
+          "count": 2070
+        },
+        {
+          "key": "zakhvat",
+          "count": 54
+        }
+      ],
+      "bondsCost": 3123612,
+      "reglsCost": 120
+    },
     "stats": {
       "damageMin": 11068,
       "damageMax": 13527,
@@ -3308,6 +5889,24 @@
       "bonds": 750
     },
     "description": "Мощное оружие среднего радиуса действия, скорострельность средняя, мертвой зоны нет",
+    "transformsFrom": {
+      "fromKey": "mortira_5",
+      "ingredients": [
+        {
+          "key": "elitra_tuka",
+          "count": 1
+        },
+        {
+          "key": "dvoynaya_elitra_tuka",
+          "count": 1
+        },
+        {
+          "key": "yadovitaya_zheleza_pauka",
+          "count": 1
+        }
+      ],
+      "bondsCost": 432
+    },
     "stats": {
       "damageMin": 316,
       "damageMax": 364,
@@ -3332,6 +5931,45 @@
     "sellPrice": {
       "bonds": 316406
     },
+    "transformsFrom": {
+      "fromKey": "mortira_95bm1",
+      "ingredients": [
+        {
+          "key": "kristall_siniy",
+          "count": 3888
+        },
+        {
+          "key": "zhelezo",
+          "count": 258
+        },
+        {
+          "key": "verkhniy_rider",
+          "count": 24
+        },
+        {
+          "key": "zaslon",
+          "count": 12
+        },
+        {
+          "key": "stimulyator",
+          "count": 12
+        },
+        {
+          "key": "stoker",
+          "count": 24
+        },
+        {
+          "key": "kristall_krasnyy",
+          "count": 3888
+        },
+        {
+          "key": "kristall_zelenyy",
+          "count": 3888
+        }
+      ],
+      "bondsCost": 5184000,
+      "reglsCost": 180
+    },
     "stats": {
       "damageMin": 2636,
       "damageMax": 3033,
@@ -3355,6 +5993,45 @@
     "group": "Мортира, Пулемет крупнокалиберный",
     "sellPrice": {
       "bonds": 632812
+    },
+    "transformsFrom": {
+      "fromKey": "mortira_95bm2",
+      "ingredients": [
+        {
+          "key": "kristall_siniy",
+          "count": 3888
+        },
+        {
+          "key": "zhelezo",
+          "count": 258
+        },
+        {
+          "key": "verkhniy_rider",
+          "count": 24
+        },
+        {
+          "key": "zaslon",
+          "count": 12
+        },
+        {
+          "key": "stimulyator",
+          "count": 12
+        },
+        {
+          "key": "stoker",
+          "count": 24
+        },
+        {
+          "key": "kristall_krasnyy",
+          "count": 3888
+        },
+        {
+          "key": "kristall_zelenyy",
+          "count": 3888
+        }
+      ],
+      "bondsCost": 5184000,
+      "reglsCost": 90
     },
     "stats": {
       "damageMin": 4629,
@@ -3384,6 +6061,36 @@
       "bonds": 1875
     },
     "description": "Мощное оружие среднего радиуса действия, скорострельность средняя, мертвой зоны нет",
+    "transformsFrom": {
+      "fromKey": "mortira_10",
+      "ingredients": [
+        {
+          "key": "kristall_siniy",
+          "count": 1
+        },
+        {
+          "key": "yadovitaya_zheleza_pauka",
+          "count": 6
+        },
+        {
+          "key": "shchit_zhuka_glavnogo",
+          "count": 5
+        },
+        {
+          "key": "shchit_senokosetsa",
+          "count": 5
+        },
+        {
+          "key": "zhalo_zhuka_glavnogo",
+          "count": 5
+        },
+        {
+          "key": "dvoynoy_shchit_senokosetsa",
+          "count": 5
+        }
+      ],
+      "bondsCost": 972
+    },
     "stats": {
       "damageMin": 386,
       "damageMax": 445,
@@ -3409,6 +6116,32 @@
       "bonds": 3000
     },
     "description": "Мощное оружие среднего радиуса действия, скорострельность средняя, мертвой зоны нет",
+    "transformsFrom": {
+      "fromKey": "mortira_15",
+      "ingredients": [
+        {
+          "key": "kristall_siniy",
+          "count": 1
+        },
+        {
+          "key": "kristall_zelenyy",
+          "count": 1
+        },
+        {
+          "key": "kristall_krasnyy",
+          "count": 1
+        },
+        {
+          "key": "khilitsery_pauka_glavnogo",
+          "count": 10
+        },
+        {
+          "key": "yadovitaya_zheleza_pauka",
+          "count": 21
+        }
+      ],
+      "bondsCost": 2592
+    },
     "stats": {
       "damageMin": 458,
       "damageMax": 527,
@@ -3434,6 +6167,40 @@
       "bonds": 15000
     },
     "description": "Мощное оружие среднего радиуса действия, скорострельность средняя, мертвой зоны нет",
+    "transformsFrom": {
+      "fromKey": "mortira_20",
+      "ingredients": [
+        {
+          "key": "kristall_siniy",
+          "count": 1
+        },
+        {
+          "key": "kristall_zelenyy",
+          "count": 1
+        },
+        {
+          "key": "kristall_krasnyy",
+          "count": 1
+        },
+        {
+          "key": "yadovitaya_zheleza_pauka",
+          "count": 32
+        },
+        {
+          "key": "khilitsery_pauka_glavnogo",
+          "count": 21
+        },
+        {
+          "key": "shchit_senokosetsa",
+          "count": 43
+        },
+        {
+          "key": "zhalo_zhuka_glavnogo",
+          "count": 43
+        }
+      ],
+      "bondsCost": 5659
+    },
     "stats": {
       "damageMin": 607,
       "damageMax": 699,
@@ -3462,6 +6229,40 @@
       "bonds": 37500
     },
     "description": "Мощное оружие среднего радиуса действия, скорострельность средняя, мертвой зоны нет",
+    "transformsFrom": {
+      "fromKey": "mortira_30",
+      "ingredients": [
+        {
+          "key": "kristall_siniy",
+          "count": 3
+        },
+        {
+          "key": "kristall_zelenyy",
+          "count": 3
+        },
+        {
+          "key": "kristall_krasnyy",
+          "count": 3
+        },
+        {
+          "key": "yadovitaya_zheleza_pauka",
+          "count": 86
+        },
+        {
+          "key": "khilitsery_pauka_glavnogo",
+          "count": 64
+        },
+        {
+          "key": "zhalo_skorpiona",
+          "count": 43
+        },
+        {
+          "key": "kleshnya_skorpiona",
+          "count": 43
+        }
+      ],
+      "bondsCost": 15530
+    },
     "stats": {
       "damageMin": 764,
       "damageMax": 880,
@@ -3487,6 +6288,20 @@
       "bonds": 250
     },
     "description": "Мощное оружие среднего радиуса действия, скорострельность средняя, мертвой зоны нет",
+    "transformsFrom": {
+      "fromKey": "mortira",
+      "ingredients": [
+        {
+          "key": "elitra_tuka",
+          "count": 4
+        },
+        {
+          "key": "dvoynaya_elitra_tuka",
+          "count": 1
+        }
+      ],
+      "bondsCost": 108
+    },
     "stats": {
       "damageMin": 248,
       "damageMax": 285,
@@ -3512,6 +6327,44 @@
       "bonds": 75000
     },
     "description": "Мощное оружие среднего радиуса действия, скорострельность средняя, мертвой зоны нет",
+    "transformsFrom": {
+      "fromKey": "mortira_40",
+      "ingredients": [
+        {
+          "key": "kristall_siniy",
+          "count": 1
+        },
+        {
+          "key": "kristall_zelenyy",
+          "count": 1
+        },
+        {
+          "key": "kristall_krasnyy",
+          "count": 1
+        },
+        {
+          "key": "khilitsery_pauka_glavnogo",
+          "count": 38
+        },
+        {
+          "key": "zhalo_skorpiona",
+          "count": 30
+        },
+        {
+          "key": "kleshnya_skorpiona",
+          "count": 30
+        },
+        {
+          "key": "lapa_bogomola",
+          "count": 15
+        },
+        {
+          "key": "usy_bogomola",
+          "count": 15
+        }
+      ],
+      "bondsCost": 10404
+    },
     "stats": {
       "damageMin": 930,
       "damageMax": 1070,
@@ -3537,6 +6390,40 @@
       "bonds": 128000
     },
     "description": "Мощное оружие среднего радиуса действия, скорострельность средняя, мертвой зоны нет",
+    "transformsFrom": {
+      "fromKey": "mortira_50",
+      "ingredients": [
+        {
+          "key": "kristall_siniy",
+          "count": 4
+        },
+        {
+          "key": "kristall_zelenyy",
+          "count": 4
+        },
+        {
+          "key": "kristall_krasnyy",
+          "count": 4
+        },
+        {
+          "key": "usy_bogomola",
+          "count": 39
+        },
+        {
+          "key": "lapa_bogomola",
+          "count": 39
+        },
+        {
+          "key": "parapodii_chervya",
+          "count": 19
+        },
+        {
+          "key": "segment_chervya",
+          "count": 19
+        }
+      ],
+      "bondsCost": 15903
+    },
     "stats": {
       "damageMin": 1105,
       "damageMax": 1272,
@@ -3566,6 +6453,37 @@
       "bonds": 160000
     },
     "description": "Мощное оружие среднего радиуса действия, скорострельность средняя, мертвой зоны нет",
+    "transformsFrom": {
+      "fromKey": "mortira_60",
+      "ingredients": [
+        {
+          "key": "kristall_siniy",
+          "count": 900
+        },
+        {
+          "key": "kristall_zelenyy",
+          "count": 900
+        },
+        {
+          "key": "kristall_krasnyy",
+          "count": 900
+        },
+        {
+          "key": "gafniy",
+          "count": 54
+        },
+        {
+          "key": "khvost_varana",
+          "count": 180
+        },
+        {
+          "key": "krototranslyator",
+          "count": 18
+        }
+      ],
+      "bondsCost": 2304000,
+      "reglsCost": 6
+    },
     "stats": {
       "damageMin": 1291,
       "damageMax": 1485,
@@ -3595,6 +6513,33 @@
       "bonds": 200000
     },
     "description": "Мощное оружие среднего радиуса действия, скорострельность средняя, мертвой зоны нет",
+    "transformsFrom": {
+      "fromKey": "mortira_70m1",
+      "ingredients": [
+        {
+          "key": "kristall_krasnyy",
+          "count": 1800
+        },
+        {
+          "key": "gafniy",
+          "count": 108
+        },
+        {
+          "key": "blokirator",
+          "count": 9
+        },
+        {
+          "key": "kristall_zelenyy",
+          "count": 1800
+        },
+        {
+          "key": "kristall_siniy",
+          "count": 1800
+        }
+      ],
+      "bondsCost": 2880000,
+      "reglsCost": 45
+    },
     "stats": {
       "damageMin": 1487,
       "damageMax": 1711,
@@ -3624,6 +6569,45 @@
       "bonds": 250000
     },
     "description": "Мощное оружие среднего радиуса действия, скорострельность средняя, мертвой зоны нет",
+    "transformsFrom": {
+      "fromKey": "mortira_80bm1",
+      "ingredients": [
+        {
+          "key": "kristall_siniy",
+          "count": 4860
+        },
+        {
+          "key": "zhelezo",
+          "count": 324
+        },
+        {
+          "key": "verkhniy_rider",
+          "count": 27
+        },
+        {
+          "key": "zaslon",
+          "count": 1
+        },
+        {
+          "key": "stimulyator",
+          "count": 1
+        },
+        {
+          "key": "stoker",
+          "count": 27
+        },
+        {
+          "key": "kristall_krasnyy",
+          "count": 4860
+        },
+        {
+          "key": "kristall_zelenyy",
+          "count": 4860
+        }
+      ],
+      "bondsCost": 6480000,
+      "reglsCost": 18
+    },
     "stats": {
       "damageMin": 1695,
       "damageMax": 1951,
@@ -3678,6 +6662,45 @@
       "bonds": 281250
     },
     "description": "Мощное оружие среднего радиуса действия, скорострельность средняя, мертвой зоны нет",
+    "transformsFrom": {
+      "fromKey": "mortira_90bm1",
+      "ingredients": [
+        {
+          "key": "kristall_siniy",
+          "count": 3240
+        },
+        {
+          "key": "zhelezo",
+          "count": 216
+        },
+        {
+          "key": "verkhniy_rider",
+          "count": 21
+        },
+        {
+          "key": "zaslon",
+          "count": 9
+        },
+        {
+          "key": "stimulyator",
+          "count": 9
+        },
+        {
+          "key": "stoker",
+          "count": 21
+        },
+        {
+          "key": "kristall_krasnyy",
+          "count": 3240
+        },
+        {
+          "key": "kristall_zelenyy",
+          "count": 3240
+        }
+      ],
+      "bondsCost": 4320000,
+      "reglsCost": 120
+    },
     "stats": {
       "damageMin": 2260,
       "damageMax": 2600,
@@ -3703,6 +6726,45 @@
       "bonds": 562500
     },
     "description": "Мощное оружие среднего радиуса действия, скорострельность средняя, мертвой зоны нет",
+    "transformsFrom": {
+      "fromKey": "mortira_90bm2",
+      "ingredients": [
+        {
+          "key": "kristall_siniy",
+          "count": 3240
+        },
+        {
+          "key": "zhelezo",
+          "count": 216
+        },
+        {
+          "key": "verkhniy_rider",
+          "count": 21
+        },
+        {
+          "key": "zaslon",
+          "count": 9
+        },
+        {
+          "key": "stimulyator",
+          "count": 9
+        },
+        {
+          "key": "stoker",
+          "count": 21
+        },
+        {
+          "key": "kristall_krasnyy",
+          "count": 3240
+        },
+        {
+          "key": "kristall_zelenyy",
+          "count": 3240
+        }
+      ],
+      "bondsCost": 4320000,
+      "reglsCost": 60
+    },
     "stats": {
       "damageMin": 3968,
       "damageMax": 4213,
@@ -3751,6 +6813,29 @@
     "sellPrice": {
       "bonds": 28156
     },
+    "transformsFrom": {
+      "fromKey": "pulemyot_95bm1",
+      "ingredients": [
+        {
+          "key": "kristall_siniy",
+          "count": 4968
+        },
+        {
+          "key": "kristall_zelenyy",
+          "count": 1728
+        },
+        {
+          "key": "kristall_krasnyy",
+          "count": 1944
+        },
+        {
+          "key": "zakhvat",
+          "count": 63
+        }
+      ],
+      "bondsCost": 4428690,
+      "reglsCost": 180
+    },
     "stats": {
       "damageMin": 2201,
       "damageMax": 2291,
@@ -3776,6 +6861,24 @@
     },
     "craftFromBlueprints": [],
     "description": "Оружие большой скорострельности, без мертвой зоны, урон средний",
+    "transformsFrom": {
+      "fromKey": "pulemyot_9b",
+      "ingredients": [
+        {
+          "key": "kristall_siniy",
+          "count": 13
+        },
+        {
+          "key": "kristall_zelenyy",
+          "count": 13
+        },
+        {
+          "key": "kristall_krasnyy",
+          "count": 6
+        }
+      ],
+      "bondsCost": 10017
+    },
     "stats": {
       "damageMin": 244,
       "damageMax": 254,
@@ -3801,6 +6904,24 @@
     },
     "craftFromBlueprints": [],
     "description": "Оружие большой скорострельности, без мертвой зоны, урон средний",
+    "transformsFrom": {
+      "fromKey": "pulemyot_11b",
+      "ingredients": [
+        {
+          "key": "kristall_siniy",
+          "count": 15
+        },
+        {
+          "key": "kristall_zelenyy",
+          "count": 15
+        },
+        {
+          "key": "kristall_krasnyy",
+          "count": 7
+        }
+      ],
+      "bondsCost": 14133
+    },
     "stats": {
       "damageMin": 264,
       "damageMax": 275,
@@ -3826,6 +6947,24 @@
     },
     "craftFromBlueprints": [],
     "description": "Оружие большой скорострельности, без мертвой зоны, урон средний",
+    "transformsFrom": {
+      "fromKey": "pulemyot_13b",
+      "ingredients": [
+        {
+          "key": "kristall_siniy",
+          "count": 18
+        },
+        {
+          "key": "kristall_zelenyy",
+          "count": 18
+        },
+        {
+          "key": "kristall_krasnyy",
+          "count": 9
+        }
+      ],
+      "bondsCost": 17568
+    },
     "stats": {
       "damageMin": 285,
       "damageMax": 297,
@@ -3851,6 +6990,24 @@
     },
     "craftFromBlueprints": [],
     "description": "Оружие большой скорострельности, без мертвой зоны, урон средний",
+    "transformsFrom": {
+      "fromKey": "pulemyot_15b",
+      "ingredients": [
+        {
+          "key": "kristall_siniy",
+          "count": 21
+        },
+        {
+          "key": "kristall_zelenyy",
+          "count": 21
+        },
+        {
+          "key": "kristall_krasnyy",
+          "count": 10
+        }
+      ],
+      "bondsCost": 24399
+    },
     "stats": {
       "damageMin": 317,
       "damageMax": 330,
@@ -3900,6 +7057,24 @@
     },
     "craftFromBlueprints": [],
     "description": "Оружие большой скорострельности, без мертвой зоны, урон средний",
+    "transformsFrom": {
+      "fromKey": "pulemyot_18b",
+      "ingredients": [
+        {
+          "key": "kristall_siniy",
+          "count": 26
+        },
+        {
+          "key": "kristall_zelenyy",
+          "count": 26
+        },
+        {
+          "key": "kristall_krasnyy",
+          "count": 13
+        }
+      ],
+      "bondsCost": 31551
+    },
     "stats": {
       "damageMin": 346,
       "damageMax": 361,
@@ -3925,6 +7100,24 @@
     },
     "craftFromBlueprints": [],
     "description": "Оружие большой скорострельности, без мертвой зоны, урон средний",
+    "transformsFrom": {
+      "fromKey": "pulemyot_22b",
+      "ingredients": [
+        {
+          "key": "kristall_siniy",
+          "count": 31
+        },
+        {
+          "key": "kristall_zelenyy",
+          "count": 31
+        },
+        {
+          "key": "kristall_krasnyy",
+          "count": 15
+        }
+      ],
+      "bondsCost": 36882
+    },
     "stats": {
       "damageMin": 389,
       "damageMax": 405,
@@ -3950,6 +7143,24 @@
     },
     "craftFromBlueprints": [],
     "description": "Оружие большой скорострельности, без мертвой зоны, урон средний",
+    "transformsFrom": {
+      "fromKey": "pulemyot_26b",
+      "ingredients": [
+        {
+          "key": "kristall_siniy",
+          "count": 36
+        },
+        {
+          "key": "kristall_zelenyy",
+          "count": 36
+        },
+        {
+          "key": "kristall_krasnyy",
+          "count": 18
+        }
+      ],
+      "bondsCost": 45840
+    },
     "stats": {
       "damageMin": 432,
       "damageMax": 449,
@@ -3974,6 +7185,25 @@
       "bonds": 4206
     },
     "description": "Оружие большой скорострельности, без мертвой зоны, урон средний, усиленное",
+    "transformsFrom": {
+      "fromKey": "pulemyot_18bm1",
+      "ingredients": [
+        {
+          "key": "kristall_siniy",
+          "count": 108
+        },
+        {
+          "key": "kristall_zelenyy",
+          "count": 108
+        },
+        {
+          "key": "kristall_krasnyy",
+          "count": 54
+        }
+      ],
+      "bondsCost": 60573,
+      "reglsCost": 4
+    },
     "stats": {
       "damageMin": 507,
       "damageMax": 528,
@@ -4002,6 +7232,24 @@
     },
     "craftFromBlueprints": [],
     "description": "Оружие большой скорострельности, без мертвой зоны, урон средний",
+    "transformsFrom": {
+      "fromKey": "pulemyot_30b",
+      "ingredients": [
+        {
+          "key": "kristall_siniy",
+          "count": 48
+        },
+        {
+          "key": "kristall_zelenyy",
+          "count": 48
+        },
+        {
+          "key": "kristall_krasnyy",
+          "count": 24
+        }
+      ],
+      "bondsCost": 71262
+    },
     "stats": {
       "damageMin": 544,
       "damageMax": 566,
@@ -4030,6 +7278,25 @@
       "bonds": 6028
     },
     "description": "Оружие большой скорострельности, без мертвой зоны, урон средний, усиленное",
+    "transformsFrom": {
+      "fromKey": "pulemyot_30bm1",
+      "ingredients": [
+        {
+          "key": "kristall_siniy",
+          "count": 144
+        },
+        {
+          "key": "kristall_zelenyy",
+          "count": 144
+        },
+        {
+          "key": "kristall_krasnyy",
+          "count": 72
+        }
+      ],
+      "bondsCost": 86802,
+      "reglsCost": 4
+    },
     "stats": {
       "damageMin": 638,
       "damageMax": 664,
@@ -4055,6 +7322,24 @@
     },
     "craftFromBlueprints": [],
     "description": "Оружие большой скорострельности, без мертвой зоны, урон средний",
+    "transformsFrom": {
+      "fromKey": "pulemyot_40b",
+      "ingredients": [
+        {
+          "key": "kristall_siniy",
+          "count": 60
+        },
+        {
+          "key": "kristall_zelenyy",
+          "count": 60
+        },
+        {
+          "key": "kristall_krasnyy",
+          "count": 30
+        }
+      ],
+      "bondsCost": 96537
+    },
     "stats": {
       "damageMin": 661,
       "damageMax": 688,
@@ -4079,6 +7364,25 @@
       "bonds": 8044
     },
     "description": "Оружие большой скорострельности, без мертвой зоны, урон средний, усиленное",
+    "transformsFrom": {
+      "fromKey": "pulemyot_40bm1",
+      "ingredients": [
+        {
+          "key": "kristall_siniy",
+          "count": 180
+        },
+        {
+          "key": "kristall_zelenyy",
+          "count": 180
+        },
+        {
+          "key": "kristall_krasnyy",
+          "count": 90
+        }
+      ],
+      "bondsCost": 115842,
+      "reglsCost": 4
+    },
     "stats": {
       "damageMin": 777,
       "damageMax": 808,
@@ -4104,6 +7408,24 @@
     },
     "craftFromBlueprints": [],
     "description": "Оружие большой скорострельности, без мертвой зоны, урон средний",
+    "transformsFrom": {
+      "fromKey": "pulemyot_50b",
+      "ingredients": [
+        {
+          "key": "kristall_siniy",
+          "count": 72
+        },
+        {
+          "key": "kristall_zelenyy",
+          "count": 72
+        },
+        {
+          "key": "kristall_krasnyy",
+          "count": 36
+        }
+      ],
+      "bondsCost": 180642
+    },
     "stats": {
       "damageMin": 786,
       "damageMax": 818,
@@ -4128,6 +7450,25 @@
       "bonds": 15053
     },
     "description": "Оружие большой скорострельности, без мертвой зоны, урон средний, усиленное",
+    "transformsFrom": {
+      "fromKey": "pulemyot_50bm1",
+      "ingredients": [
+        {
+          "key": "kristall_siniy",
+          "count": 216
+        },
+        {
+          "key": "kristall_zelenyy",
+          "count": 216
+        },
+        {
+          "key": "kristall_krasnyy",
+          "count": 108
+        }
+      ],
+      "bondsCost": 216768,
+      "reglsCost": 4
+    },
     "stats": {
       "damageMin": 923,
       "damageMax": 961,
@@ -4179,6 +7520,24 @@
       "bonds": 14880
     },
     "description": "Оружие большой скорострельности, без мертвой зоны, урон средний",
+    "transformsFrom": {
+      "fromKey": "pulemyot_60b",
+      "ingredients": [
+        {
+          "key": "kristall_siniy",
+          "count": 84
+        },
+        {
+          "key": "kristall_zelenyy",
+          "count": 84
+        },
+        {
+          "key": "kristall_krasnyy",
+          "count": 42
+        }
+      ],
+      "bondsCost": 178560
+    },
     "stats": {
       "damageMin": 918,
       "damageMax": 955,
@@ -4207,6 +7566,25 @@
       "bonds": 11816
     },
     "description": "Оружие большой скорострельности, без мертвой зоны, урон средний, усиленное",
+    "transformsFrom": {
+      "fromKey": "pulemyot_70b",
+      "ingredients": [
+        {
+          "key": "kristall_siniy",
+          "count": 252
+        },
+        {
+          "key": "kristall_zelenyy",
+          "count": 252
+        },
+        {
+          "key": "kristall_krasnyy",
+          "count": 126
+        }
+      ],
+      "bondsCost": 170160,
+      "reglsCost": 24
+    },
     "stats": {
       "damageMin": 1078,
       "damageMax": 1122,
@@ -4255,6 +7633,25 @@
       "bonds": 17798
     },
     "description": "Оружие большой скорострельности, без мертвой зоны, урон средний, усиленное",
+    "transformsFrom": {
+      "fromKey": "pulemyot_70bm1",
+      "ingredients": [
+        {
+          "key": "kristall_siniy",
+          "count": 288
+        },
+        {
+          "key": "kristall_zelenyy",
+          "count": 288
+        },
+        {
+          "key": "kristall_krasnyy",
+          "count": 144
+        }
+      ],
+      "bondsCost": 256290,
+      "reglsCost": 72
+    },
     "stats": {
       "damageMin": 1242,
       "damageMax": 1292,
@@ -4279,6 +7676,28 @@
       "bonds": 24005
     },
     "description": "Оружие большой скорострельности, без мертвой зоны, урон средний",
+    "transformsFrom": {
+      "fromKey": "pulemyot_80b",
+      "ingredients": [
+        {
+          "key": "kristall_siniy",
+          "count": 115
+        },
+        {
+          "key": "kristall_zelenyy",
+          "count": 115
+        },
+        {
+          "key": "kristall_krasnyy",
+          "count": 57
+        },
+        {
+          "key": "zakhvat",
+          "count": 21
+        }
+      ],
+      "bondsCost": 276548
+    },
     "stats": {
       "damageMin": 1206,
       "damageMax": 1255,
@@ -4303,6 +7722,29 @@
       "bonds": 22247
     },
     "description": "Оружие большой скорострельности, без мертвой зоны, урон средний, усиленное",
+    "transformsFrom": {
+      "fromKey": "pulemyot_80bm1",
+      "ingredients": [
+        {
+          "key": "kristall_siniy",
+          "count": 345
+        },
+        {
+          "key": "kristall_zelenyy",
+          "count": 345
+        },
+        {
+          "key": "kristall_krasnyy",
+          "count": 171
+        },
+        {
+          "key": "zakhvat",
+          "count": 45
+        }
+      ],
+      "bondsCost": 307548,
+      "reglsCost": 120
+    },
     "stats": {
       "damageMin": 1416,
       "damageMax": 1473,
@@ -4327,6 +7769,29 @@
       "bonds": 25028
     },
     "description": "Оружие большой скорострельности, без мертвой зоны, урон средний, усиленное",
+    "transformsFrom": {
+      "fromKey": "pulemyot_90b",
+      "ingredients": [
+        {
+          "key": "kristall_siniy",
+          "count": 4140
+        },
+        {
+          "key": "kristall_zelenyy",
+          "count": 1440
+        },
+        {
+          "key": "kristall_krasnyy",
+          "count": 1620
+        },
+        {
+          "key": "zakhvat",
+          "count": 54
+        }
+      ],
+      "bondsCost": 3690576,
+      "reglsCost": 120
+    },
     "stats": {
       "damageMin": 1887,
       "damageMax": 1964,
@@ -4352,6 +7817,24 @@
     },
     "craftFromBlueprints": [],
     "description": "Оружие большой скорострельности, без мертвой зоны, урон средний",
+    "transformsFrom": {
+      "fromKey": "pulemyot_6b",
+      "ingredients": [
+        {
+          "key": "kristall_siniy",
+          "count": 10
+        },
+        {
+          "key": "kristall_zelenyy",
+          "count": 10
+        },
+        {
+          "key": "kristall_krasnyy",
+          "count": 5
+        }
+      ],
+      "bondsCost": 7578
+    },
     "stats": {
       "damageMin": 232,
       "damageMax": 242,
@@ -4374,6 +7857,37 @@
     "group": "Пулемет энрг, Пушка энрг",
     "sellPrice": {
       "bonds": 53107
+    },
+    "transformsFrom": {
+      "fromKey": "pulemyot_enrg_95bm1",
+      "ingredients": [
+        {
+          "key": "kristall_siniy",
+          "count": 1512
+        },
+        {
+          "key": "kristall_zelenyy",
+          "count": 1944
+        },
+        {
+          "key": "kristall_krasnyy",
+          "count": 5334
+        },
+        {
+          "key": "zakhvat",
+          "count": 99
+        },
+        {
+          "key": "zhelezo",
+          "count": 99
+        },
+        {
+          "key": "kogot_psa_ogromnogo",
+          "count": 45
+        }
+      ],
+      "bondsCost": 4269540,
+      "reglsCost": 180
     },
     "stats": {
       "damageMin": 2577,
@@ -4454,6 +7968,36 @@
       "bonds": 15625
     },
     "description": "Оружие большой скорострельности, мертвой зоны нет, урон средний",
+    "transformsFrom": {
+      "fromKey": "pulemyot_enrg_40b",
+      "ingredients": [
+        {
+          "key": "kristall_siniy",
+          "count": 60
+        },
+        {
+          "key": "kristall_zelenyy",
+          "count": 60
+        },
+        {
+          "key": "kristall_krasnyy",
+          "count": 60
+        },
+        {
+          "key": "zakhvat",
+          "count": 12
+        },
+        {
+          "key": "zhelezo",
+          "count": 12
+        },
+        {
+          "key": "kogot_psa_ogromnogo",
+          "count": 6
+        }
+      ],
+      "bondsCost": 120000
+    },
     "stats": {
       "damageMin": 774,
       "damageMax": 806,
@@ -4478,6 +8022,37 @@
       "bonds": 17187
     },
     "description": "Оружие большой скорострельности, мертвой зоны нет, урон средний, усиленное",
+    "transformsFrom": {
+      "fromKey": "pulemyot_enrg_40bm1",
+      "ingredients": [
+        {
+          "key": "kristall_siniy",
+          "count": 180
+        },
+        {
+          "key": "kristall_zelenyy",
+          "count": 180
+        },
+        {
+          "key": "kristall_krasnyy",
+          "count": 180
+        },
+        {
+          "key": "zakhvat",
+          "count": 36
+        },
+        {
+          "key": "zhelezo",
+          "count": 36
+        },
+        {
+          "key": "kogot_psa_ogromnogo",
+          "count": 18
+        }
+      ],
+      "bondsCost": 360000,
+      "reglsCost": 45
+    },
     "stats": {
       "damageMin": 909,
       "damageMax": 946,
@@ -4502,6 +8077,36 @@
       "bonds": 19531
     },
     "description": "Оружие большой скорострельности, мертвой зоны нет, урон средний",
+    "transformsFrom": {
+      "fromKey": "pulemyot_enrg_50b",
+      "ingredients": [
+        {
+          "key": "kristall_siniy",
+          "count": 72
+        },
+        {
+          "key": "kristall_zelenyy",
+          "count": 72
+        },
+        {
+          "key": "kristall_krasnyy",
+          "count": 72
+        },
+        {
+          "key": "zakhvat",
+          "count": 14
+        },
+        {
+          "key": "zhelezo",
+          "count": 14
+        },
+        {
+          "key": "kogot_psa_ogromnogo",
+          "count": 7
+        }
+      ],
+      "bondsCost": 144000
+    },
     "stats": {
       "damageMin": 920,
       "damageMax": 958,
@@ -4526,6 +8131,37 @@
       "bonds": 21484
     },
     "description": "Оружие большой скорострельности, мертвой зоны нет, урон средний, усиленное",
+    "transformsFrom": {
+      "fromKey": "pulemyot_enrg_50bm1",
+      "ingredients": [
+        {
+          "key": "kristall_siniy",
+          "count": 216
+        },
+        {
+          "key": "kristall_zelenyy",
+          "count": 216
+        },
+        {
+          "key": "kristall_krasnyy",
+          "count": 216
+        },
+        {
+          "key": "zakhvat",
+          "count": 42
+        },
+        {
+          "key": "zhelezo",
+          "count": 42
+        },
+        {
+          "key": "kogot_psa_ogromnogo",
+          "count": 21
+        }
+      ],
+      "bondsCost": 432000,
+      "reglsCost": 4
+    },
     "stats": {
       "damageMin": 1080,
       "damageMax": 1124,
@@ -4553,6 +8189,36 @@
       "bonds": 24414
     },
     "description": "Оружие большой скорострельности, мертвой зоны нет, урон средний",
+    "transformsFrom": {
+      "fromKey": "pulemyot_enrg_60b",
+      "ingredients": [
+        {
+          "key": "kristall_siniy",
+          "count": 86
+        },
+        {
+          "key": "kristall_zelenyy",
+          "count": 86
+        },
+        {
+          "key": "kristall_krasnyy",
+          "count": 86
+        },
+        {
+          "key": "zakhvat",
+          "count": 16
+        },
+        {
+          "key": "zhelezo",
+          "count": 16
+        },
+        {
+          "key": "kogot_psa_ogromnogo",
+          "count": 8
+        }
+      ],
+      "bondsCost": 172800
+    },
     "stats": {
       "damageMin": 1074,
       "damageMax": 1118,
@@ -4581,6 +8247,37 @@
       "bonds": 26855
     },
     "description": "Оружие большой скорострельности, мертвой зоны нет, урон средний, усиленное",
+    "transformsFrom": {
+      "fromKey": "pulemyot_enrg_60bm1",
+      "ingredients": [
+        {
+          "key": "kristall_siniy",
+          "count": 258
+        },
+        {
+          "key": "kristall_zelenyy",
+          "count": 258
+        },
+        {
+          "key": "kristall_krasnyy",
+          "count": 258
+        },
+        {
+          "key": "zakhvat",
+          "count": 48
+        },
+        {
+          "key": "zhelezo",
+          "count": 48
+        },
+        {
+          "key": "kogot_psa_ogromnogo",
+          "count": 24
+        }
+      ],
+      "bondsCost": 518400,
+      "reglsCost": 24
+    },
     "stats": {
       "damageMin": 1261,
       "damageMax": 1313,
@@ -4629,6 +8326,37 @@
       "bonds": 33569
     },
     "description": "Оружие большой скорострельности, мертвой зоны нет, урон средний, усиленное",
+    "transformsFrom": {
+      "fromKey": "pulemyot_enrg_70bm1",
+      "ingredients": [
+        {
+          "key": "kristall_siniy",
+          "count": 309
+        },
+        {
+          "key": "kristall_zelenyy",
+          "count": 309
+        },
+        {
+          "key": "kristall_krasnyy",
+          "count": 309
+        },
+        {
+          "key": "zakhvat",
+          "count": 57
+        },
+        {
+          "key": "zhelezo",
+          "count": 57
+        },
+        {
+          "key": "kogot_psa_ogromnogo",
+          "count": 27
+        }
+      ],
+      "bondsCost": 622080,
+      "reglsCost": 72
+    },
     "stats": {
       "damageMin": 1453,
       "damageMax": 1513,
@@ -4653,6 +8381,36 @@
       "bonds": 38146
     },
     "description": "Оружие большой скорострельности, мертвой зоны нет, урон средний",
+    "transformsFrom": {
+      "fromKey": "pulemyot_enrg_80b",
+      "ingredients": [
+        {
+          "key": "kristall_siniy",
+          "count": 123
+        },
+        {
+          "key": "kristall_zelenyy",
+          "count": 123
+        },
+        {
+          "key": "kristall_krasnyy",
+          "count": 123
+        },
+        {
+          "key": "zakhvat",
+          "count": 23
+        },
+        {
+          "key": "zhelezo",
+          "count": 23
+        },
+        {
+          "key": "kogot_psa_ogromnogo",
+          "count": 11
+        }
+      ],
+      "bondsCost": 248832
+    },
     "stats": {
       "damageMin": 1411,
       "damageMax": 1469,
@@ -4677,6 +8435,37 @@
       "bonds": 41961
     },
     "description": "Оружие большой скорострельности, мертвой зоны нет, урон средний, усиленное",
+    "transformsFrom": {
+      "fromKey": "pulemyot_enrg_80bm1",
+      "ingredients": [
+        {
+          "key": "kristall_siniy",
+          "count": 369
+        },
+        {
+          "key": "kristall_zelenyy",
+          "count": 369
+        },
+        {
+          "key": "kristall_krasnyy",
+          "count": 369
+        },
+        {
+          "key": "zakhvat",
+          "count": 69
+        },
+        {
+          "key": "zhelezo",
+          "count": 69
+        },
+        {
+          "key": "kogot_psa_ogromnogo",
+          "count": 33
+        }
+      ],
+      "bondsCost": 746496,
+      "reglsCost": 120
+    },
     "stats": {
       "damageMin": 1657,
       "damageMax": 1725,
@@ -4701,6 +8490,37 @@
       "bonds": 47206
     },
     "description": "Оружие большой скорострельности, мертвой зоны нет, урон средний, усиленное",
+    "transformsFrom": {
+      "fromKey": "pulemyot_enrg_90b",
+      "ingredients": [
+        {
+          "key": "kristall_siniy",
+          "count": 1260
+        },
+        {
+          "key": "kristall_zelenyy",
+          "count": 1620
+        },
+        {
+          "key": "kristall_krasnyy",
+          "count": 4446
+        },
+        {
+          "key": "zakhvat",
+          "count": 81
+        },
+        {
+          "key": "zhelezo",
+          "count": 81
+        },
+        {
+          "key": "kogot_psa_ogromnogo",
+          "count": 39
+        }
+      ],
+      "bondsCost": 3557952,
+      "reglsCost": 120
+    },
     "stats": {
       "damageMin": 2208,
       "damageMax": 2299,
@@ -4723,6 +8543,45 @@
     "group": "Мортира, Пулемет крупнокалиберный",
     "sellPrice": {
       "bonds": 316406
+    },
+    "transformsFrom": {
+      "fromKey": "pulemyot_krupnokalibernyy_95bm1",
+      "ingredients": [
+        {
+          "key": "kristall_siniy",
+          "count": 3888
+        },
+        {
+          "key": "zhelezo",
+          "count": 258
+        },
+        {
+          "key": "verkhniy_rider",
+          "count": 24
+        },
+        {
+          "key": "zaslon",
+          "count": 12
+        },
+        {
+          "key": "stimulyator",
+          "count": 12
+        },
+        {
+          "key": "stoker",
+          "count": 24
+        },
+        {
+          "key": "kristall_zelenyy",
+          "count": 3888
+        },
+        {
+          "key": "kristall_krasnyy",
+          "count": 3888
+        }
+      ],
+      "bondsCost": 5184000,
+      "reglsCost": 180
     },
     "stats": {
       "damageMin": 1916,
@@ -4775,6 +8634,44 @@
       "bonds": 75000
     },
     "description": "Оружие большой скорострельности, мертвой зоны нет, урон средний",
+    "transformsFrom": {
+      "fromKey": "pulemyot_krupnokalibernyy_40",
+      "ingredients": [
+        {
+          "key": "kristall_siniy",
+          "count": 1
+        },
+        {
+          "key": "kristall_zelenyy",
+          "count": 1
+        },
+        {
+          "key": "kristall_krasnyy",
+          "count": 1
+        },
+        {
+          "key": "khilitsery_pauka_glavnogo",
+          "count": 38
+        },
+        {
+          "key": "zhalo_skorpiona",
+          "count": 30
+        },
+        {
+          "key": "kleshnya_skorpiona",
+          "count": 30
+        },
+        {
+          "key": "lapa_bogomola",
+          "count": 15
+        },
+        {
+          "key": "usy_bogomola",
+          "count": 15
+        }
+      ],
+      "bondsCost": 10404
+    },
     "stats": {
       "damageMin": 676,
       "damageMax": 704,
@@ -4799,6 +8696,40 @@
       "bonds": 128000
     },
     "description": "Оружие большой скорострельности, мертвой зоны нет, урон средний",
+    "transformsFrom": {
+      "fromKey": "pulemyot_krupnokalibernyy_50",
+      "ingredients": [
+        {
+          "key": "kristall_siniy",
+          "count": 4
+        },
+        {
+          "key": "kristall_zelenyy",
+          "count": 4
+        },
+        {
+          "key": "kristall_krasnyy",
+          "count": 4
+        },
+        {
+          "key": "usy_bogomola",
+          "count": 39
+        },
+        {
+          "key": "lapa_bogomola",
+          "count": 39
+        },
+        {
+          "key": "parapodii_chervya",
+          "count": 19
+        },
+        {
+          "key": "segment_chervya",
+          "count": 19
+        }
+      ],
+      "bondsCost": 15903
+    },
     "stats": {
       "damageMin": 803,
       "damageMax": 836,
@@ -4827,6 +8758,37 @@
       "bonds": 160000
     },
     "description": "Оружие большой скорострельности, мертвой зоны нет, урон средний",
+    "transformsFrom": {
+      "fromKey": "pulemyot_krupnokalibernyy_60",
+      "ingredients": [
+        {
+          "key": "kristall_siniy",
+          "count": 900
+        },
+        {
+          "key": "kristall_zelenyy",
+          "count": 900
+        },
+        {
+          "key": "kristall_krasnyy",
+          "count": 900
+        },
+        {
+          "key": "gafniy",
+          "count": 54
+        },
+        {
+          "key": "kogot_medvedya",
+          "count": 90
+        },
+        {
+          "key": "kompaund_krotov",
+          "count": 18
+        }
+      ],
+      "bondsCost": 2304000,
+      "reglsCost": 6
+    },
     "stats": {
       "damageMin": 938,
       "damageMax": 976,
@@ -4855,6 +8817,33 @@
       "bonds": 200000
     },
     "description": "Оружие большой скорострельности, мертвой зоны нет, урон средний",
+    "transformsFrom": {
+      "fromKey": "pulemyot_krupnokalibernyy_70m1",
+      "ingredients": [
+        {
+          "key": "kristall_krasnyy",
+          "count": 1800
+        },
+        {
+          "key": "gafniy",
+          "count": 108
+        },
+        {
+          "key": "komplekt_zp_krotov",
+          "count": 9
+        },
+        {
+          "key": "kristall_siniy",
+          "count": 1800
+        },
+        {
+          "key": "kristall_zelenyy",
+          "count": 1800
+        }
+      ],
+      "bondsCost": 2880000,
+      "reglsCost": 45
+    },
     "stats": {
       "damageMin": 1081,
       "damageMax": 1125,
@@ -4883,6 +8872,45 @@
       "bonds": 250000
     },
     "description": "Оружие большой скорострельности, мертвой зоны нет, урон средний",
+    "transformsFrom": {
+      "fromKey": "pulemyot_krupnokalibernyy_80bm1",
+      "ingredients": [
+        {
+          "key": "kristall_siniy",
+          "count": 2700
+        },
+        {
+          "key": "zhelezo",
+          "count": 180
+        },
+        {
+          "key": "verkhniy_rider",
+          "count": 18
+        },
+        {
+          "key": "zaslon",
+          "count": 9
+        },
+        {
+          "key": "stimulyator",
+          "count": 9
+        },
+        {
+          "key": "stoker",
+          "count": 18
+        },
+        {
+          "key": "kristall_zelenyy",
+          "count": 2700
+        },
+        {
+          "key": "kristall_krasnyy",
+          "count": 2700
+        }
+      ],
+      "bondsCost": 3600000,
+      "reglsCost": 60
+    },
     "stats": {
       "damageMin": 1232,
       "damageMax": 1283,
@@ -4907,6 +8935,45 @@
       "bonds": 281250
     },
     "description": "Оружие большой скорострельности, мертвой зоны нет, урон средний",
+    "transformsFrom": {
+      "fromKey": "pulemyot_krupnokalibernyy_90bm1",
+      "ingredients": [
+        {
+          "key": "kristall_siniy",
+          "count": 3240
+        },
+        {
+          "key": "zhelezo",
+          "count": 216
+        },
+        {
+          "key": "verkhniy_rider",
+          "count": 21
+        },
+        {
+          "key": "zaslon",
+          "count": 9
+        },
+        {
+          "key": "stimulyator",
+          "count": 9
+        },
+        {
+          "key": "stoker",
+          "count": 21
+        },
+        {
+          "key": "kristall_zelenyy",
+          "count": 3240
+        },
+        {
+          "key": "kristall_krasnyy",
+          "count": 3240
+        }
+      ],
+      "bondsCost": 4320000,
+      "reglsCost": 120
+    },
     "stats": {
       "damageMin": 1642,
       "damageMax": 1709,
@@ -4955,6 +9022,29 @@
     "sellPrice": {
       "bonds": 34754
     },
+    "transformsFrom": {
+      "fromKey": "pushka_95bm1",
+      "ingredients": [
+        {
+          "key": "kristall_siniy",
+          "count": 1944
+        },
+        {
+          "key": "kristall_zelenyy",
+          "count": 4968
+        },
+        {
+          "key": "kristall_krasnyy",
+          "count": 1728
+        },
+        {
+          "key": "zakhvat",
+          "count": 81
+        }
+      ],
+      "bondsCost": 2706630,
+      "reglsCost": 180
+    },
     "stats": {
       "damageMin": 3867,
       "damageMax": 4275,
@@ -4979,6 +9069,29 @@
     "group": "Пулемет, Пушка",
     "sellPrice": {
       "bonds": 632812
+    },
+    "transformsFrom": {
+      "fromKey": "pushka_95bm2",
+      "ingredients": [
+        {
+          "key": "kristall_siniy",
+          "count": 4968
+        },
+        {
+          "key": "kristall_zelenyy",
+          "count": 4968
+        },
+        {
+          "key": "kristall_krasnyy",
+          "count": 2484
+        },
+        {
+          "key": "zakhvat",
+          "count": 81
+        }
+      ],
+      "bondsCost": 5466312,
+      "reglsCost": 90
     },
     "stats": {
       "damageMin": 4612,
@@ -5007,6 +9120,24 @@
     },
     "craftFromBlueprints": [],
     "description": "Оружие средней скорострельности, с мертвой зоной вблизи, наносит большой урон на дальней дистанции",
+    "transformsFrom": {
+      "fromKey": "pushka_9b",
+      "ingredients": [
+        {
+          "key": "kristall_siniy",
+          "count": 14
+        },
+        {
+          "key": "kristall_zelenyy",
+          "count": 14
+        },
+        {
+          "key": "kristall_krasnyy",
+          "count": 7
+        }
+      ],
+      "bondsCost": 10854
+    },
     "stats": {
       "damageMin": 447,
       "damageMax": 494,
@@ -5033,6 +9164,24 @@
     },
     "craftFromBlueprints": [],
     "description": "Оружие средней скорострельности, с мертвой зоной вблизи, наносит большой урон на дальней дистанции",
+    "transformsFrom": {
+      "fromKey": "pushka_12b",
+      "ingredients": [
+        {
+          "key": "kristall_siniy",
+          "count": 16
+        },
+        {
+          "key": "kristall_zelenyy",
+          "count": 16
+        },
+        {
+          "key": "kristall_krasnyy",
+          "count": 8
+        }
+      ],
+      "bondsCost": 13776
+    },
     "stats": {
       "damageMin": 483,
       "damageMax": 534,
@@ -5059,6 +9208,24 @@
     },
     "craftFromBlueprints": [],
     "description": "Оружие средней скорострельности, с мертвой зоной вблизи, наносит большой урон на дальней дистанции",
+    "transformsFrom": {
+      "fromKey": "pushka_14b",
+      "ingredients": [
+        {
+          "key": "kristall_siniy",
+          "count": 19
+        },
+        {
+          "key": "kristall_zelenyy",
+          "count": 19
+        },
+        {
+          "key": "kristall_krasnyy",
+          "count": 9
+        }
+      ],
+      "bondsCost": 18042
+    },
     "stats": {
       "damageMin": 520,
       "damageMax": 575,
@@ -5085,6 +9252,24 @@
     },
     "craftFromBlueprints": [],
     "description": "Оружие средней скорострельности, с мертвой зоной вблизи, наносит большой урон на дальней дистанции",
+    "transformsFrom": {
+      "fromKey": "pushka_16b",
+      "ingredients": [
+        {
+          "key": "kristall_siniy",
+          "count": 21
+        },
+        {
+          "key": "kristall_zelenyy",
+          "count": 21
+        },
+        {
+          "key": "kristall_krasnyy",
+          "count": 10
+        }
+      ],
+      "bondsCost": 21771
+    },
     "stats": {
       "damageMin": 557,
       "damageMax": 616,
@@ -5111,6 +9296,24 @@
     },
     "craftFromBlueprints": [],
     "description": "Оружие средней скорострельности, с мертвой зоной вблизи, наносит большой урон на дальней дистанции",
+    "transformsFrom": {
+      "fromKey": "pushka",
+      "ingredients": [
+        {
+          "key": "kristall_siniy",
+          "count": 2
+        },
+        {
+          "key": "kristall_zelenyy",
+          "count": 2
+        },
+        {
+          "key": "kristall_krasnyy",
+          "count": 1
+        }
+      ],
+      "bondsCost": 603
+    },
     "stats": {
       "damageMin": 281,
       "damageMax": 310,
@@ -5137,6 +9340,24 @@
     },
     "craftFromBlueprints": [],
     "description": "Оружие средней скорострельности, с мертвой зоной вблизи, наносит большой урон на дальней дистанции",
+    "transformsFrom": {
+      "fromKey": "pushka_18b",
+      "ingredients": [
+        {
+          "key": "kristall_siniy",
+          "count": 24
+        },
+        {
+          "key": "kristall_zelenyy",
+          "count": 24
+        },
+        {
+          "key": "kristall_krasnyy",
+          "count": 12
+        }
+      ],
+      "bondsCost": 23232
+    },
     "stats": {
       "damageMin": 573,
       "damageMax": 633,
@@ -5188,6 +9409,24 @@
     },
     "craftFromBlueprints": [],
     "description": "Оружие средней скорострельности, с мертвой зоной вблизи, наносит большой урон на дальней дистанции",
+    "transformsFrom": {
+      "fromKey": "pushka_20b",
+      "ingredients": [
+        {
+          "key": "kristall_siniy",
+          "count": 28
+        },
+        {
+          "key": "kristall_zelenyy",
+          "count": 28
+        },
+        {
+          "key": "kristall_krasnyy",
+          "count": 14
+        }
+      ],
+      "bondsCost": 33345
+    },
     "stats": {
       "damageMin": 646,
       "damageMax": 714,
@@ -5214,6 +9453,24 @@
     },
     "craftFromBlueprints": [],
     "description": "Оружие средней скорострельности, с мертвой зоной вблизи, наносит большой урон на дальней дистанции",
+    "transformsFrom": {
+      "fromKey": "pushka_24b",
+      "ingredients": [
+        {
+          "key": "kristall_siniy",
+          "count": 33
+        },
+        {
+          "key": "kristall_zelenyy",
+          "count": 33
+        },
+        {
+          "key": "kristall_krasnyy",
+          "count": 16
+        }
+      ],
+      "bondsCost": 39912
+    },
     "stats": {
       "damageMin": 721,
       "damageMax": 797,
@@ -5239,6 +9496,25 @@
       "bonds": 3599
     },
     "description": "Оружие средней скорострельности, с мертвой зоной вблизи, наносит большой урон на дальней дистанции, усиленное",
+    "transformsFrom": {
+      "fromKey": "pushka_20bm1",
+      "ingredients": [
+        {
+          "key": "kristall_siniy",
+          "count": 99
+        },
+        {
+          "key": "kristall_zelenyy",
+          "count": 99
+        },
+        {
+          "key": "kristall_krasnyy",
+          "count": 48
+        }
+      ],
+      "bondsCost": 51828,
+      "reglsCost": 4
+    },
     "stats": {
       "damageMin": 846,
       "damageMax": 935,
@@ -5265,6 +9541,24 @@
     },
     "craftFromBlueprints": [],
     "description": "Оружие средней скорострельности, с мертвой зоной вблизи, наносит большой урон на дальней дистанции",
+    "transformsFrom": {
+      "fromKey": "pushka_28b",
+      "ingredients": [
+        {
+          "key": "kristall_siniy",
+          "count": 36
+        },
+        {
+          "key": "kristall_zelenyy",
+          "count": 36
+        },
+        {
+          "key": "kristall_krasnyy",
+          "count": 18
+        }
+      ],
+      "bondsCost": 43839
+    },
     "stats": {
       "damageMin": 759,
       "damageMax": 839,
@@ -5291,6 +9585,24 @@
       "bonds": 3902
     },
     "description": "Оружие средней скорострельности, с мертвой зоной вблизи, наносит большой урон на дальней дистанции, усиленное",
+    "transformsFrom": {
+      "fromKey": "pushka_28bm1",
+      "ingredients": [
+        {
+          "key": "kristall_siniy",
+          "count": 108
+        },
+        {
+          "key": "kristall_zelenyy",
+          "count": 108
+        },
+        {
+          "key": "kristall_krasnyy",
+          "count": 54
+        }
+      ],
+      "bondsCost": 56199
+    },
     "stats": {
       "damageMin": 891,
       "damageMax": 985,
@@ -5318,6 +9630,24 @@
     },
     "craftFromBlueprints": [],
     "description": "Оружие средней скорострельности, с мертвой зоной вблизи, наносит большой урон на дальней дистанции",
+    "transformsFrom": {
+      "fromKey": "pushka_2",
+      "ingredients": [
+        {
+          "key": "kristall_siniy",
+          "count": 4
+        },
+        {
+          "key": "kristall_zelenyy",
+          "count": 4
+        },
+        {
+          "key": "kristall_krasnyy",
+          "count": 2
+        }
+      ],
+      "bondsCost": 2181
+    },
     "stats": {
       "damageMin": 317,
       "damageMax": 350,
@@ -5347,6 +9677,24 @@
     },
     "craftFromBlueprints": [],
     "description": "Оружие средней скорострельности, с мертвой зоной вблизи, наносит большой урон на дальней дистанции",
+    "transformsFrom": {
+      "fromKey": "pushka_30b",
+      "ingredients": [
+        {
+          "key": "kristall_siniy",
+          "count": 48
+        },
+        {
+          "key": "kristall_zelenyy",
+          "count": 48
+        },
+        {
+          "key": "kristall_krasnyy",
+          "count": 24
+        }
+      ],
+      "bondsCost": 77346
+    },
     "stats": {
       "damageMin": 955,
       "damageMax": 1056,
@@ -5377,6 +9725,25 @@
       "bonds": 5625
     },
     "description": "Оружие средней скорострельности, с мертвой зоной вблизи, наносит большой урон на дальней дистанции, усиленное",
+    "transformsFrom": {
+      "fromKey": "pushka_30bm1",
+      "ingredients": [
+        {
+          "key": "kristall_siniy",
+          "count": 144
+        },
+        {
+          "key": "kristall_zelenyy",
+          "count": 144
+        },
+        {
+          "key": "kristall_krasnyy",
+          "count": 72
+        }
+      ],
+      "bondsCost": 81000,
+      "reglsCost": 4
+    },
     "stats": {
       "damageMin": 1121,
       "damageMax": 1240,
@@ -5404,6 +9771,24 @@
     },
     "craftFromBlueprints": [],
     "description": "Оружие средней скорострельности, с мертвой зоной вблизи, наносит большой урон на дальней дистанции",
+    "transformsFrom": {
+      "fromKey": "pushka_40b",
+      "ingredients": [
+        {
+          "key": "kristall_siniy",
+          "count": 60
+        },
+        {
+          "key": "kristall_zelenyy",
+          "count": 60
+        },
+        {
+          "key": "kristall_krasnyy",
+          "count": 30
+        }
+      ],
+      "bondsCost": 98508
+    },
     "stats": {
       "damageMin": 1162,
       "damageMax": 1285,
@@ -5430,6 +9815,25 @@
       "bonds": 8105
     },
     "description": "Оружие средней скорострельности, с мертвой зоной вблизи, наносит большой урон на дальней дистанции, усиленное",
+    "transformsFrom": {
+      "fromKey": "pushka_40bm1",
+      "ingredients": [
+        {
+          "key": "kristall_siniy",
+          "count": 180
+        },
+        {
+          "key": "kristall_zelenyy",
+          "count": 180
+        },
+        {
+          "key": "kristall_krasnyy",
+          "count": 90
+        }
+      ],
+      "bondsCost": 116718,
+      "reglsCost": 4
+    },
     "stats": {
       "damageMin": 1365,
       "damageMax": 1508,
@@ -5457,6 +9861,24 @@
     },
     "craftFromBlueprints": [],
     "description": "Оружие средней скорострельности, с мертвой зоной вблизи, наносит большой урон на дальней дистанции",
+    "transformsFrom": {
+      "fromKey": "pushka_50b",
+      "ingredients": [
+        {
+          "key": "kristall_siniy",
+          "count": 72
+        },
+        {
+          "key": "kristall_zelenyy",
+          "count": 72
+        },
+        {
+          "key": "kristall_krasnyy",
+          "count": 36
+        }
+      ],
+      "bondsCost": 149646
+    },
     "stats": {
       "damageMin": 1381,
       "damageMax": 1527,
@@ -5483,6 +9905,25 @@
       "bonds": 12470
     },
     "description": "Оружие средней скорострельности, с мертвой зоной вблизи, наносит большой урон на дальней дистанции, усиленное",
+    "transformsFrom": {
+      "fromKey": "pushka_50bm1",
+      "ingredients": [
+        {
+          "key": "kristall_siniy",
+          "count": 216
+        },
+        {
+          "key": "kristall_zelenyy",
+          "count": 216
+        },
+        {
+          "key": "kristall_krasnyy",
+          "count": 108
+        }
+      ],
+      "bondsCost": 179574,
+      "reglsCost": 4
+    },
     "stats": {
       "damageMin": 1622,
       "damageMax": 1792,
@@ -5510,6 +9951,24 @@
     },
     "craftFromBlueprints": [],
     "description": "Оружие средней скорострельности, с мертвой зоной вблизи, наносит большой урон на дальней дистанции",
+    "transformsFrom": {
+      "fromKey": "pushka_4",
+      "ingredients": [
+        {
+          "key": "kristall_siniy",
+          "count": 7
+        },
+        {
+          "key": "kristall_zelenyy",
+          "count": 7
+        },
+        {
+          "key": "kristall_krasnyy",
+          "count": 3
+        }
+      ],
+      "bondsCost": 4077
+    },
     "stats": {
       "damageMin": 353,
       "damageMax": 390,
@@ -5538,6 +9997,24 @@
       "bonds": 14804
     },
     "description": "Оружие средней скорострельности, с мертвой зоной вблизи, наносит большой урон на дальней дистанции",
+    "transformsFrom": {
+      "fromKey": "pushka_60b",
+      "ingredients": [
+        {
+          "key": "kristall_siniy",
+          "count": 84
+        },
+        {
+          "key": "kristall_zelenyy",
+          "count": 84
+        },
+        {
+          "key": "kristall_krasnyy",
+          "count": 42
+        }
+      ],
+      "bondsCost": 177651
+    },
     "stats": {
       "damageMin": 1613,
       "damageMax": 1783,
@@ -5568,6 +10045,25 @@
       "bonds": 14688
     },
     "description": "Оружие средней скорострельности, с мертвой зоной вблизи, наносит большой урон на дальней дистанции, усиленное",
+    "transformsFrom": {
+      "fromKey": "pushka_70b",
+      "ingredients": [
+        {
+          "key": "kristall_siniy",
+          "count": 252
+        },
+        {
+          "key": "kristall_zelenyy",
+          "count": 252
+        },
+        {
+          "key": "kristall_krasnyy",
+          "count": 126
+        }
+      ],
+      "bondsCost": 211509,
+      "reglsCost": 24
+    },
     "stats": {
       "damageMin": 1893,
       "damageMax": 2093,
@@ -5620,6 +10116,25 @@
       "bonds": 21968
     },
     "description": "Оружие средней скорострельности, с мертвой зоной вблизи, наносит большой урон на дальней дистанции, усиленное",
+    "transformsFrom": {
+      "fromKey": "pushka_70bm1",
+      "ingredients": [
+        {
+          "key": "kristall_siniy",
+          "count": 288
+        },
+        {
+          "key": "kristall_zelenyy",
+          "count": 288
+        },
+        {
+          "key": "kristall_krasnyy",
+          "count": 144
+        }
+      ],
+      "bondsCost": 316338,
+      "reglsCost": 72
+    },
     "stats": {
       "damageMin": 2181,
       "damageMax": 2411,
@@ -5646,6 +10161,28 @@
       "bonds": 30767
     },
     "description": "Оружие средней скорострельности, с мертвой зоной вблизи, наносит большой урон на дальней дистанции",
+    "transformsFrom": {
+      "fromKey": "pushka_80b",
+      "ingredients": [
+        {
+          "key": "kristall_siniy",
+          "count": 115
+        },
+        {
+          "key": "kristall_zelenyy",
+          "count": 115
+        },
+        {
+          "key": "kristall_krasnyy",
+          "count": 57
+        },
+        {
+          "key": "zakhvat",
+          "count": 13
+        }
+      ],
+      "bondsCost": 354438
+    },
     "stats": {
       "damageMin": 2119,
       "damageMax": 2342,
@@ -5672,6 +10209,29 @@
       "bonds": 27460
     },
     "description": "Оружие средней скорострельности, с мертвой зоной вблизи, наносит большой урон на дальней дистанции, усиленное",
+    "transformsFrom": {
+      "fromKey": "pushka_80bm1",
+      "ingredients": [
+        {
+          "key": "kristall_siniy",
+          "count": 621
+        },
+        {
+          "key": "kristall_zelenyy",
+          "count": 621
+        },
+        {
+          "key": "kristall_krasnyy",
+          "count": 306
+        },
+        {
+          "key": "zakhvat",
+          "count": 99
+        }
+      ],
+      "bondsCost": 683289,
+      "reglsCost": 36
+    },
     "stats": {
       "damageMin": 2487,
       "damageMax": 2749,
@@ -5728,6 +10288,29 @@
       "bonds": 30892
     },
     "description": "Оружие средней скорострельности, с мертвой зоной вблизи, наносит большой урон на дальней дистанции, усиленное",
+    "transformsFrom": {
+      "fromKey": "pushka_90b",
+      "ingredients": [
+        {
+          "key": "kristall_siniy",
+          "count": 1620
+        },
+        {
+          "key": "kristall_zelenyy",
+          "count": 4140
+        },
+        {
+          "key": "kristall_krasnyy",
+          "count": 1440
+        },
+        {
+          "key": "zakhvat",
+          "count": 66
+        }
+      ],
+      "bondsCost": 2255526,
+      "reglsCost": 120
+    },
     "stats": {
       "damageMin": 3315,
       "damageMax": 3664,
@@ -5754,6 +10337,29 @@
       "bonds": 562500
     },
     "description": "Оружие средней скорострельности, с мертвой зоной вблизи, наносит большой урон на дальней дистанции, усиленное",
+    "transformsFrom": {
+      "fromKey": "pushka_90bm2",
+      "ingredients": [
+        {
+          "key": "kristall_siniy",
+          "count": 4140
+        },
+        {
+          "key": "kristall_zelenyy",
+          "count": 4140
+        },
+        {
+          "key": "kristall_krasnyy",
+          "count": 2070
+        },
+        {
+          "key": "zakhvat",
+          "count": 66
+        }
+      ],
+      "bondsCost": 4555260,
+      "reglsCost": 60
+    },
     "stats": {
       "damageMin": 3953,
       "damageMax": 4198,
@@ -5781,6 +10387,24 @@
     },
     "craftFromBlueprints": [],
     "description": "Оружие средней скорострельности, с мертвой зоной вблизи, наносит большой урон на дальней дистанции",
+    "transformsFrom": {
+      "fromKey": "pushka_6b",
+      "ingredients": [
+        {
+          "key": "kristall_siniy",
+          "count": 10
+        },
+        {
+          "key": "kristall_zelenyy",
+          "count": 10
+        },
+        {
+          "key": "kristall_krasnyy",
+          "count": 5
+        }
+      ],
+      "bondsCost": 6483
+    },
     "stats": {
       "damageMin": 408,
       "damageMax": 451,
@@ -5833,6 +10457,24 @@
       "bonds": 750
     },
     "description": "Оружие средней скорострельности, с мертвой зоной вблизи, наносит большой урон на дальней дистанции",
+    "transformsFrom": {
+      "fromKey": "pushka_enrg_5",
+      "ingredients": [
+        {
+          "key": "elitra_tuka",
+          "count": 1
+        },
+        {
+          "key": "dvoynaya_elitra_tuka",
+          "count": 1
+        },
+        {
+          "key": "yadovitaya_zheleza_pauka",
+          "count": 1
+        }
+      ],
+      "bondsCost": 432
+    },
     "stats": {
       "damageMin": 397,
       "damageMax": 457,
@@ -5856,6 +10498,45 @@
     "group": "Пулемет энрг, Пушка энрг",
     "sellPrice": {
       "bonds": 316406
+    },
+    "transformsFrom": {
+      "fromKey": "pushka_enrg_95bm1",
+      "ingredients": [
+        {
+          "key": "kristall_siniy",
+          "count": 3888
+        },
+        {
+          "key": "zhelezo",
+          "count": 258
+        },
+        {
+          "key": "verkhniy_rider",
+          "count": 24
+        },
+        {
+          "key": "zaslon",
+          "count": 12
+        },
+        {
+          "key": "stimulyator",
+          "count": 12
+        },
+        {
+          "key": "stoker",
+          "count": 24
+        },
+        {
+          "key": "kristall_zelenyy",
+          "count": 3888
+        },
+        {
+          "key": "kristall_krasnyy",
+          "count": 3888
+        }
+      ],
+      "bondsCost": 5184000,
+      "reglsCost": 180
     },
     "stats": {
       "damageMin": 3307,
@@ -5881,6 +10562,45 @@
     "group": "Пулемет энрг, Пушка энрг",
     "sellPrice": {
       "bonds": 632812
+    },
+    "transformsFrom": {
+      "fromKey": "pushka_enrg_95bm2",
+      "ingredients": [
+        {
+          "key": "kristall_siniy",
+          "count": 3888
+        },
+        {
+          "key": "zhelezo",
+          "count": 258
+        },
+        {
+          "key": "verkhniy_rider",
+          "count": 24
+        },
+        {
+          "key": "zaslon",
+          "count": 12
+        },
+        {
+          "key": "stimulyator",
+          "count": 12
+        },
+        {
+          "key": "stoker",
+          "count": 24
+        },
+        {
+          "key": "kristall_zelenyy",
+          "count": 3888
+        },
+        {
+          "key": "kristall_krasnyy",
+          "count": 3888
+        }
+      ],
+      "bondsCost": 5184000,
+      "reglsCost": 90
     },
     "stats": {
       "damageMin": 4177,
@@ -5911,6 +10631,36 @@
       "bonds": 1875
     },
     "description": "Оружие средней скорострельности, с мертвой зоной вблизи, наносит большой урон на дальней дистанции",
+    "transformsFrom": {
+      "fromKey": "pushka_enrg_10",
+      "ingredients": [
+        {
+          "key": "kristall_siniy",
+          "count": 1
+        },
+        {
+          "key": "yadovitaya_zheleza_pauka",
+          "count": 6
+        },
+        {
+          "key": "shchit_zhuka_glavnogo",
+          "count": 5
+        },
+        {
+          "key": "shchit_senokosetsa",
+          "count": 5
+        },
+        {
+          "key": "zhalo_zhuka_glavnogo",
+          "count": 5
+        },
+        {
+          "key": "dvoynoy_shchit_senokosetsa",
+          "count": 5
+        }
+      ],
+      "bondsCost": 972
+    },
     "stats": {
       "damageMin": 485,
       "damageMax": 558,
@@ -5936,6 +10686,32 @@
       "bonds": 3000
     },
     "description": "Оружие средней скорострельности, с мертвой зоной вблизи, наносит большой урон на дальней дистанции",
+    "transformsFrom": {
+      "fromKey": "pushka_enrg_15",
+      "ingredients": [
+        {
+          "key": "kristall_siniy",
+          "count": 1
+        },
+        {
+          "key": "kristall_zelenyy",
+          "count": 1
+        },
+        {
+          "key": "kristall_krasnyy",
+          "count": 1
+        },
+        {
+          "key": "khilitsery_pauka_glavnogo",
+          "count": 10
+        },
+        {
+          "key": "yadovitaya_zheleza_pauka",
+          "count": 21
+        }
+      ],
+      "bondsCost": 2592
+    },
     "stats": {
       "damageMin": 575,
       "damageMax": 661,
@@ -5961,6 +10737,40 @@
       "bonds": 15000
     },
     "description": "Оружие средней скорострельности, с мертвой зоной вблизи, наносит большой урон на дальней дистанции",
+    "transformsFrom": {
+      "fromKey": "pushka_enrg_20",
+      "ingredients": [
+        {
+          "key": "kristall_siniy",
+          "count": 1
+        },
+        {
+          "key": "kristall_zelenyy",
+          "count": 1
+        },
+        {
+          "key": "kristall_krasnyy",
+          "count": 1
+        },
+        {
+          "key": "yadovitaya_zheleza_pauka",
+          "count": 32
+        },
+        {
+          "key": "khilitsery_pauka_glavnogo",
+          "count": 21
+        },
+        {
+          "key": "shchit_senokosetsa",
+          "count": 43
+        },
+        {
+          "key": "zhalo_zhuka_glavnogo",
+          "count": 43
+        }
+      ],
+      "bondsCost": 5659
+    },
     "stats": {
       "damageMin": 762,
       "damageMax": 877,
@@ -5989,6 +10799,40 @@
       "bonds": 37500
     },
     "description": "Оружие средней скорострельности, с мертвой зоной вблизи, наносит большой урон на дальней дистанции",
+    "transformsFrom": {
+      "fromKey": "pushka_enrg_30",
+      "ingredients": [
+        {
+          "key": "kristall_siniy",
+          "count": 3
+        },
+        {
+          "key": "kristall_zelenyy",
+          "count": 3
+        },
+        {
+          "key": "kristall_krasnyy",
+          "count": 3
+        },
+        {
+          "key": "yadovitaya_zheleza_pauka",
+          "count": 86
+        },
+        {
+          "key": "khilitsery_pauka_glavnogo",
+          "count": 64
+        },
+        {
+          "key": "zhalo_skorpiona",
+          "count": 43
+        },
+        {
+          "key": "kleshnya_skorpiona",
+          "count": 43
+        }
+      ],
+      "bondsCost": 15530
+    },
     "stats": {
       "damageMin": 959,
       "damageMax": 1103,
@@ -6014,6 +10858,20 @@
       "bonds": 250
     },
     "description": "Оружие средней скорострельности, с мертвой зоной вблизи, наносит большой урон на дальней дистанции",
+    "transformsFrom": {
+      "fromKey": "pushka_enrg",
+      "ingredients": [
+        {
+          "key": "elitra_tuka",
+          "count": 4
+        },
+        {
+          "key": "dvoynaya_elitra_tuka",
+          "count": 1
+        }
+      ],
+      "bondsCost": 108
+    },
     "stats": {
       "damageMin": 311,
       "damageMax": 358,
@@ -6039,6 +10897,44 @@
       "bonds": 75000
     },
     "description": "Оружие средней скорострельности, с мертвой зоной вблизи, наносит большой урон на дальней дистанции",
+    "transformsFrom": {
+      "fromKey": "pushka_enrg_40",
+      "ingredients": [
+        {
+          "key": "kristall_siniy",
+          "count": 1
+        },
+        {
+          "key": "kristall_zelenyy",
+          "count": 1
+        },
+        {
+          "key": "kristall_krasnyy",
+          "count": 1
+        },
+        {
+          "key": "khilitsery_pauka_glavnogo",
+          "count": 38
+        },
+        {
+          "key": "zhalo_skorpiona",
+          "count": 30
+        },
+        {
+          "key": "kleshnya_skorpiona",
+          "count": 30
+        },
+        {
+          "key": "lapa_bogomola",
+          "count": 15
+        },
+        {
+          "key": "usy_bogomola",
+          "count": 15
+        }
+      ],
+      "bondsCost": 10404
+    },
     "stats": {
       "damageMin": 1167,
       "damageMax": 1343,
@@ -6065,6 +10961,40 @@
       "bonds": 128000
     },
     "description": "Оружие средней скорострельности, с мертвой зоной вблизи, наносит большой урон на дальней дистанции",
+    "transformsFrom": {
+      "fromKey": "pushka_enrg_50",
+      "ingredients": [
+        {
+          "key": "kristall_siniy",
+          "count": 4
+        },
+        {
+          "key": "kristall_zelenyy",
+          "count": 4
+        },
+        {
+          "key": "kristall_krasnyy",
+          "count": 4
+        },
+        {
+          "key": "usy_bogomola",
+          "count": 39
+        },
+        {
+          "key": "lapa_bogomola",
+          "count": 39
+        },
+        {
+          "key": "parapodii_chervya",
+          "count": 19
+        },
+        {
+          "key": "segment_chervya",
+          "count": 19
+        }
+      ],
+      "bondsCost": 15903
+    },
     "stats": {
       "damageMin": 1386,
       "damageMax": 1595,
@@ -6095,6 +11025,37 @@
       "bonds": 160000
     },
     "description": "Оружие средней скорострельности, с мертвой зоной вблизи, наносит большой урон на дальней дистанции, усиленное",
+    "transformsFrom": {
+      "fromKey": "pushka_enrg_60",
+      "ingredients": [
+        {
+          "key": "kristall_siniy",
+          "count": 900
+        },
+        {
+          "key": "kristall_zelenyy",
+          "count": 900
+        },
+        {
+          "key": "kristall_krasnyy",
+          "count": 900
+        },
+        {
+          "key": "gafniy",
+          "count": 54
+        },
+        {
+          "key": "glaz_varana",
+          "count": 180
+        },
+        {
+          "key": "magma_konteyner",
+          "count": 18
+        }
+      ],
+      "bondsCost": 2304000,
+      "reglsCost": 6
+    },
     "stats": {
       "damageMin": 1619,
       "damageMax": 1863,
@@ -6125,6 +11086,33 @@
       "bonds": 200000
     },
     "description": "Оружие средней скорострельности, с мертвой зоной вблизи, наносит большой урон на дальней дистанции, усиленное",
+    "transformsFrom": {
+      "fromKey": "pushka_enrg_70m1",
+      "ingredients": [
+        {
+          "key": "kristall_krasnyy",
+          "count": 1800
+        },
+        {
+          "key": "gafniy",
+          "count": 108
+        },
+        {
+          "key": "demultipleksator",
+          "count": 18
+        },
+        {
+          "key": "kristall_siniy",
+          "count": 1800
+        },
+        {
+          "key": "kristall_zelenyy",
+          "count": 1800
+        }
+      ],
+      "bondsCost": 2880000,
+      "reglsCost": 45
+    },
     "stats": {
       "damageMin": 1865,
       "damageMax": 2146,
@@ -6155,6 +11143,45 @@
       "bonds": 250000
     },
     "description": "Оружие средней скорострельности, с мертвой зоной вблизи, наносит большой урон на дальней дистанции, усиленное",
+    "transformsFrom": {
+      "fromKey": "pushka_enrg_80bm1",
+      "ingredients": [
+        {
+          "key": "kristall_siniy",
+          "count": 4860
+        },
+        {
+          "key": "zhelezo",
+          "count": 324
+        },
+        {
+          "key": "verkhniy_rider",
+          "count": 27
+        },
+        {
+          "key": "zaslon",
+          "count": 1
+        },
+        {
+          "key": "stimulyator",
+          "count": 1
+        },
+        {
+          "key": "stoker",
+          "count": 27
+        },
+        {
+          "key": "kristall_zelenyy",
+          "count": 4860
+        },
+        {
+          "key": "kristall_krasnyy",
+          "count": 4860
+        }
+      ],
+      "bondsCost": 6480000,
+      "reglsCost": 18
+    },
     "stats": {
       "damageMin": 2127,
       "damageMax": 2447,
@@ -6211,6 +11238,45 @@
       "bonds": 281250
     },
     "description": "Оружие средней скорострельности, с мертвой зоной вблизи, наносит большой урон на дальней дистанции, усиленное",
+    "transformsFrom": {
+      "fromKey": "pushka_enrg_90bm1",
+      "ingredients": [
+        {
+          "key": "kristall_siniy",
+          "count": 3240
+        },
+        {
+          "key": "zhelezo",
+          "count": 216
+        },
+        {
+          "key": "verkhniy_rider",
+          "count": 21
+        },
+        {
+          "key": "zaslon",
+          "count": 9
+        },
+        {
+          "key": "stimulyator",
+          "count": 9
+        },
+        {
+          "key": "stoker",
+          "count": 21
+        },
+        {
+          "key": "kristall_zelenyy",
+          "count": 3240
+        },
+        {
+          "key": "kristall_krasnyy",
+          "count": 3240
+        }
+      ],
+      "bondsCost": 4320000,
+      "reglsCost": 120
+    },
     "stats": {
       "damageMin": 2834,
       "damageMax": 3261,
@@ -6237,6 +11303,45 @@
       "bonds": 562500
     },
     "description": "Оружие средней скорострельности, с мертвой зоной вблизи, наносит большой урон на дальней дистанции, усиленное",
+    "transformsFrom": {
+      "fromKey": "pushka_enrg_90bm2",
+      "ingredients": [
+        {
+          "key": "kristall_siniy",
+          "count": 3240
+        },
+        {
+          "key": "zhelezo",
+          "count": 216
+        },
+        {
+          "key": "verkhniy_rider",
+          "count": 21
+        },
+        {
+          "key": "zaslon",
+          "count": 9
+        },
+        {
+          "key": "stimulyator",
+          "count": 9
+        },
+        {
+          "key": "stoker",
+          "count": 21
+        },
+        {
+          "key": "kristall_zelenyy",
+          "count": 3240
+        },
+        {
+          "key": "kristall_krasnyy",
+          "count": 3240
+        }
+      ],
+      "bondsCost": 4320000,
+      "reglsCost": 60
+    },
     "stats": {
       "damageMin": 3580,
       "damageMax": 3801,
@@ -6372,6 +11477,24 @@
       "bonds": 4831
     },
     "description": "Ремонтный модуль для меха-добытчика",
+    "transformsFrom": {
+      "fromKey": "remontnaya_pushka_10d",
+      "ingredients": [
+        {
+          "key": "kristall_siniy",
+          "count": 20
+        },
+        {
+          "key": "kristall_zelenyy",
+          "count": 20
+        },
+        {
+          "key": "kristall_krasnyy",
+          "count": 10
+        }
+      ],
+      "bondsCost": 57972
+    },
     "stats": {
       "damageMin": 448,
       "damageMax": 484,
@@ -6397,6 +11520,25 @@
       "bonds": 6214
     },
     "description": "Ремонтный модуль для меха-добытчика, усиленный вариант",
+    "transformsFrom": {
+      "fromKey": "remontnaya_pushka_10dm1",
+      "ingredients": [
+        {
+          "key": "kristall_siniy",
+          "count": 60
+        },
+        {
+          "key": "kristall_zelenyy",
+          "count": 60
+        },
+        {
+          "key": "kristall_krasnyy",
+          "count": 30
+        }
+      ],
+      "bondsCost": 89481,
+      "reglsCost": 24
+    },
     "stats": {
       "damageMin": 500,
       "damageMax": 560,
@@ -6425,6 +11567,24 @@
       "bonds": 4831
     },
     "description": "Ремонтный модуль для транспортного робота",
+    "transformsFrom": {
+      "fromKey": "remontnaya_pushka_10t",
+      "ingredients": [
+        {
+          "key": "kristall_siniy",
+          "count": 20
+        },
+        {
+          "key": "kristall_zelenyy",
+          "count": 20
+        },
+        {
+          "key": "kristall_krasnyy",
+          "count": 10
+        }
+      ],
+      "bondsCost": 57972
+    },
     "stats": {
       "damageMin": 448,
       "damageMax": 484,
@@ -6450,6 +11610,25 @@
       "bonds": 6214
     },
     "description": "Ремонтный модуль для транспортного робота, усиленный вариант",
+    "transformsFrom": {
+      "fromKey": "remontnaya_pushka_10tm1",
+      "ingredients": [
+        {
+          "key": "kristall_siniy",
+          "count": 60
+        },
+        {
+          "key": "kristall_zelenyy",
+          "count": 60
+        },
+        {
+          "key": "kristall_krasnyy",
+          "count": 30
+        }
+      ],
+      "bondsCost": 89481,
+      "reglsCost": 24
+    },
     "stats": {
       "damageMin": 500,
       "damageMax": 560,
@@ -6478,6 +11657,24 @@
       "bonds": 13059
     },
     "description": "Ремонтный модуль для меха-добытчика",
+    "transformsFrom": {
+      "fromKey": "remontnaya_pushka_17d",
+      "ingredients": [
+        {
+          "key": "kristall_siniy",
+          "count": 30
+        },
+        {
+          "key": "kristall_zelenyy",
+          "count": 30
+        },
+        {
+          "key": "kristall_krasnyy",
+          "count": 15
+        }
+      ],
+      "bondsCost": 156714
+    },
     "stats": {
       "damageMin": 540,
       "damageMax": 587,
@@ -6506,6 +11703,24 @@
       "bonds": 13059
     },
     "description": "Ремонтный модуль для транспортного робота",
+    "transformsFrom": {
+      "fromKey": "remontnaya_pushka_17t",
+      "ingredients": [
+        {
+          "key": "kristall_siniy",
+          "count": 30
+        },
+        {
+          "key": "kristall_zelenyy",
+          "count": 30
+        },
+        {
+          "key": "kristall_krasnyy",
+          "count": 15
+        }
+      ],
+      "bondsCost": 156714
+    },
     "stats": {
       "damageMin": 540,
       "damageMax": 587,
@@ -6535,6 +11750,25 @@
       "bonds": 15483
     },
     "description": "Ремонтный модуль для меха-добытчика, усиленный вариант",
+    "transformsFrom": {
+      "fromKey": "remontnaya_pushka_25d",
+      "ingredients": [
+        {
+          "key": "kristall_siniy",
+          "count": 114
+        },
+        {
+          "key": "kristall_zelenyy",
+          "count": 114
+        },
+        {
+          "key": "kristall_krasnyy",
+          "count": 57
+        }
+      ],
+      "bondsCost": 222960,
+      "reglsCost": 12
+    },
     "stats": {
       "damageMin": 644,
       "damageMax": 680,
@@ -6564,6 +11798,25 @@
       "bonds": 15483
     },
     "description": "Ремонтный модуль для транспортного робота, усиленный вариант",
+    "transformsFrom": {
+      "fromKey": "remontnaya_pushka_25t",
+      "ingredients": [
+        {
+          "key": "kristall_siniy",
+          "count": 114
+        },
+        {
+          "key": "kristall_zelenyy",
+          "count": 114
+        },
+        {
+          "key": "kristall_krasnyy",
+          "count": 57
+        }
+      ],
+      "bondsCost": 222960,
+      "reglsCost": 12
+    },
     "stats": {
       "damageMin": 644,
       "damageMax": 680,
@@ -6614,6 +11867,24 @@
       "bonds": 20000
     },
     "description": "Ремонтный модуль для транспортного робота",
+    "transformsFrom": {
+      "fromKey": "remontnaya_pushka_32tm1",
+      "ingredients": [
+        {
+          "key": "kristall_siniy",
+          "count": 1440
+        },
+        {
+          "key": "kristall_zelenyy",
+          "count": 1440
+        },
+        {
+          "key": "kristall_krasnyy",
+          "count": 720
+        }
+      ],
+      "bondsCost": 36000000
+    },
     "stats": {
       "damageMin": 690,
       "damageMax": 720,
@@ -6637,6 +11908,37 @@
     "group": "Ремонтная пушка",
     "sellPrice": {
       "bonds": 22500
+    },
+    "transformsFrom": {
+      "fromKey": "remontnaya_pushka_40tm1",
+      "ingredients": [
+        {
+          "key": "kristall_siniy",
+          "count": 1800
+        },
+        {
+          "key": "kristall_zelenyy",
+          "count": 1800
+        },
+        {
+          "key": "kristall_krasnyy",
+          "count": 1800
+        },
+        {
+          "key": "zakhvat",
+          "count": 180
+        },
+        {
+          "key": "zashchita_tuka_zheltogo",
+          "count": 36
+        },
+        {
+          "key": "usy_tuka_sinego",
+          "count": 36
+        }
+      ],
+      "bondsCost": 7200000,
+      "reglsCost": 60
     },
     "stats": {
       "damageMin": 741,
@@ -6662,6 +11964,37 @@
     "sellPrice": {
       "bonds": 25312
     },
+    "transformsFrom": {
+      "fromKey": "remontnaya_pushka_45tm1",
+      "ingredients": [
+        {
+          "key": "kristall_siniy",
+          "count": 2160
+        },
+        {
+          "key": "kristall_zelenyy",
+          "count": 2160
+        },
+        {
+          "key": "kristall_krasnyy",
+          "count": 2160
+        },
+        {
+          "key": "zakhvat",
+          "count": 216
+        },
+        {
+          "key": "zashchita_tuka_zheltogo",
+          "count": 42
+        },
+        {
+          "key": "usy_tuka_sinego",
+          "count": 42
+        }
+      ],
+      "bondsCost": 8640000,
+      "reglsCost": 120
+    },
     "stats": {
       "damageMin": 796,
       "damageMax": 832,
@@ -6685,6 +12018,37 @@
     "group": "Ремонтная пушка",
     "sellPrice": {
       "bonds": 28476
+    },
+    "transformsFrom": {
+      "fromKey": "remontnaya_pushka_50tm1",
+      "ingredients": [
+        {
+          "key": "kristall_siniy",
+          "count": 2592
+        },
+        {
+          "key": "kristall_zelenyy",
+          "count": 2592
+        },
+        {
+          "key": "kristall_krasnyy",
+          "count": 2592
+        },
+        {
+          "key": "zakhvat",
+          "count": 258
+        },
+        {
+          "key": "zashchita_tuka_zheltogo",
+          "count": 48
+        },
+        {
+          "key": "usy_tuka_sinego",
+          "count": 48
+        }
+      ],
+      "bondsCost": 10368000,
+      "reglsCost": 180
     },
     "stats": {
       "damageMin": 855,
@@ -6710,6 +12074,45 @@
     "sellPrice": {
       "bonds": 32036
     },
+    "transformsFrom": {
+      "fromKey": "remontnaya_pushka_55tm1",
+      "ingredients": [
+        {
+          "key": "kristall_siniy",
+          "count": 6000
+        },
+        {
+          "key": "kristall_zelenyy",
+          "count": 6000
+        },
+        {
+          "key": "kristall_krasnyy",
+          "count": 6000
+        },
+        {
+          "key": "zakhvat",
+          "count": 360
+        },
+        {
+          "key": "zashchita_tuka_zheltogo",
+          "count": 150
+        },
+        {
+          "key": "usy_tuka_sinego",
+          "count": 150
+        },
+        {
+          "key": "magma",
+          "count": 30
+        },
+        {
+          "key": "struktura_liryy",
+          "count": 1
+        }
+      ],
+      "bondsCost": 12441600,
+      "reglsCost": 200
+    },
     "stats": {
       "damageMin": 919,
       "damageMax": 961,
@@ -6733,6 +12136,45 @@
     "group": "Ремонтная пушка",
     "sellPrice": {
       "bonds": 36040
+    },
+    "transformsFrom": {
+      "fromKey": "remontnaya_pushka_60tm1",
+      "ingredients": [
+        {
+          "key": "kristall_krasnyy",
+          "count": 9000
+        },
+        {
+          "key": "zakhvat",
+          "count": 432
+        },
+        {
+          "key": "usy_tuka_sinego",
+          "count": 180
+        },
+        {
+          "key": "magma",
+          "count": 36
+        },
+        {
+          "key": "struktura_liryy",
+          "count": 1
+        },
+        {
+          "key": "vertlug_teridiona",
+          "count": 1
+        },
+        {
+          "key": "khrebet_roytuka",
+          "count": 6
+        },
+        {
+          "key": "chasti_pirata_sat",
+          "count": 6
+        }
+      ],
+      "bondsCost": 30000000,
+      "reglsCost": 300
     },
     "stats": {
       "damageMin": 1100,
@@ -6806,6 +12248,29 @@
     "sellPrice": {
       "bonds": 40129
     },
+    "transformsFrom": {
+      "fromKey": "rk_95bm1",
+      "ingredients": [
+        {
+          "key": "kristall_siniy",
+          "count": 4968
+        },
+        {
+          "key": "kristall_zelenyy",
+          "count": 4968
+        },
+        {
+          "key": "kristall_krasnyy",
+          "count": 2484
+        },
+        {
+          "key": "zakhvat",
+          "count": 66
+        }
+      ],
+      "bondsCost": 2791179,
+      "reglsCost": 180
+    },
     "stats": {
       "damageMin": 2100,
       "damageMax": 2321,
@@ -6828,6 +12293,29 @@
     "group": "Рк, Рк энрг",
     "sellPrice": {
       "bonds": 707812
+    },
+    "transformsFrom": {
+      "fromKey": "rk_95bm2",
+      "ingredients": [
+        {
+          "key": "kristall_siniy",
+          "count": 4000
+        },
+        {
+          "key": "kristall_zelenyy",
+          "count": 4000
+        },
+        {
+          "key": "kristall_krasnyy",
+          "count": 6200
+        },
+        {
+          "key": "gafniy",
+          "count": 200
+        }
+      ],
+      "bondsCost": 4791179,
+      "reglsCost": 380
     },
     "stats": {
       "damageMin": 3767,
@@ -6854,6 +12342,24 @@
     },
     "craftFromBlueprints": [],
     "description": "Оружие средней скорострельности, мертвой зоны нет, равный урон на всей дистанции выстрела, основной удар по броне цели",
+    "transformsFrom": {
+      "fromKey": "rk_9b",
+      "ingredients": [
+        {
+          "key": "kristall_siniy",
+          "count": 14
+        },
+        {
+          "key": "kristall_zelenyy",
+          "count": 14
+        },
+        {
+          "key": "kristall_krasnyy",
+          "count": 7
+        }
+      ],
+      "bondsCost": 8640
+    },
     "stats": {
       "damageMin": 242,
       "damageMax": 268,
@@ -6879,6 +12385,24 @@
     },
     "craftFromBlueprints": [],
     "description": "Оружие средней скорострельности, мертвой зоны нет, равный урон на всей дистанции выстрела, основной удар по броне цели",
+    "transformsFrom": {
+      "fromKey": "rk_12b",
+      "ingredients": [
+        {
+          "key": "kristall_siniy",
+          "count": 18
+        },
+        {
+          "key": "kristall_zelenyy",
+          "count": 18
+        },
+        {
+          "key": "kristall_krasnyy",
+          "count": 9
+        }
+      ],
+      "bondsCost": 13956
+    },
     "stats": {
       "damageMin": 272,
       "damageMax": 301,
@@ -6904,6 +12428,24 @@
     },
     "craftFromBlueprints": [],
     "description": "Оружие средней скорострельности, мертвой зоны нет, равный урон на всей дистанции выстрела, основной удар по броне цели",
+    "transformsFrom": {
+      "fromKey": "rk_15b",
+      "ingredients": [
+        {
+          "key": "kristall_siniy",
+          "count": 20
+        },
+        {
+          "key": "kristall_zelenyy",
+          "count": 20
+        },
+        {
+          "key": "kristall_krasnyy",
+          "count": 10
+        }
+      ],
+      "bondsCost": 13338
+    },
     "stats": {
       "damageMin": 292,
       "damageMax": 323,
@@ -6929,6 +12471,24 @@
     },
     "craftFromBlueprints": [],
     "description": "Оружие средней скорострельности, мертвой зоны нет, равный урон на всей дистанции выстрела, основной удар по броне цели",
+    "transformsFrom": {
+      "fromKey": "rk_17b",
+      "ingredients": [
+        {
+          "key": "kristall_siniy",
+          "count": 22
+        },
+        {
+          "key": "kristall_zelenyy",
+          "count": 22
+        },
+        {
+          "key": "kristall_krasnyy",
+          "count": 11
+        }
+      ],
+      "bondsCost": 19623
+    },
     "stats": {
       "damageMin": 312,
       "damageMax": 345,
@@ -6954,6 +12514,24 @@
     },
     "craftFromBlueprints": [],
     "description": "Оружие средней скорострельности, мертвой зоны нет, равный урон на всей дистанции выстрела, основной удар по броне цели",
+    "transformsFrom": {
+      "fromKey": "rk_19b",
+      "ingredients": [
+        {
+          "key": "kristall_siniy",
+          "count": 25
+        },
+        {
+          "key": "kristall_zelenyy",
+          "count": 25
+        },
+        {
+          "key": "kristall_krasnyy",
+          "count": 12
+        }
+      ],
+      "bondsCost": 21042
+    },
     "stats": {
       "damageMin": 321,
       "damageMax": 354,
@@ -7003,6 +12581,24 @@
     },
     "craftFromBlueprints": [],
     "description": "Оружие средней скорострельности, мертвой зоны нет, равный урон на всей дистанции выстрела, основной удар по броне цели",
+    "transformsFrom": {
+      "fromKey": "rk_21b",
+      "ingredients": [
+        {
+          "key": "kristall_siniy",
+          "count": 28
+        },
+        {
+          "key": "kristall_zelenyy",
+          "count": 28
+        },
+        {
+          "key": "kristall_krasnyy",
+          "count": 14
+        }
+      ],
+      "bondsCost": 24108
+    },
     "stats": {
       "damageMin": 351,
       "damageMax": 387,
@@ -7028,6 +12624,24 @@
     },
     "craftFromBlueprints": [],
     "description": "Оружие средней скорострельности, мертвой зоны нет, равный урон на всей дистанции выстрела, основной удар по броне цели",
+    "transformsFrom": {
+      "fromKey": "rk_24b",
+      "ingredients": [
+        {
+          "key": "kristall_siniy",
+          "count": 32
+        },
+        {
+          "key": "kristall_zelenyy",
+          "count": 32
+        },
+        {
+          "key": "kristall_krasnyy",
+          "count": 16
+        }
+      ],
+      "bondsCost": 30300
+    },
     "stats": {
       "damageMin": 381,
       "damageMax": 421,
@@ -7053,6 +12667,24 @@
     },
     "craftFromBlueprints": [],
     "description": "Оружие средней скорострельности, мертвой зоны нет, равный урон на всей дистанции выстрела, основной удар по броне цели",
+    "transformsFrom": {
+      "fromKey": "rk",
+      "ingredients": [
+        {
+          "key": "kristall_siniy",
+          "count": 3
+        },
+        {
+          "key": "kristall_zelenyy",
+          "count": 3
+        },
+        {
+          "key": "kristall_krasnyy",
+          "count": 1
+        }
+      ],
+      "bondsCost": 1353
+    },
     "stats": {
       "damageMin": 162,
       "damageMax": 179,
@@ -7078,6 +12710,24 @@
     },
     "craftFromBlueprints": [],
     "description": "Оружие средней скорострельности, мертвой зоны нет, равный урон на всей дистанции выстрела, основной удар по броне цели",
+    "transformsFrom": {
+      "fromKey": "rk_27b",
+      "ingredients": [
+        {
+          "key": "kristall_siniy",
+          "count": 37
+        },
+        {
+          "key": "kristall_zelenyy",
+          "count": 37
+        },
+        {
+          "key": "kristall_krasnyy",
+          "count": 18
+        }
+      ],
+      "bondsCost": 35568
+    },
     "stats": {
       "damageMin": 422,
       "damageMax": 467,
@@ -7102,6 +12752,25 @@
       "bonds": 8500
     },
     "description": "Оружие средней скорострельности, мертвой зоны нет, равный урон на всей дистанции выстрела, основной удар по броне цели, усиленное",
+    "transformsFrom": {
+      "fromKey": "rk_21bm1",
+      "ingredients": [
+        {
+          "key": "kristall_siniy",
+          "count": 111
+        },
+        {
+          "key": "kristall_zelenyy",
+          "count": 111
+        },
+        {
+          "key": "kristall_krasnyy",
+          "count": 54
+        }
+      ],
+      "bondsCost": 122400,
+      "reglsCost": 4
+    },
     "stats": {
       "damageMin": 496,
       "damageMax": 548,
@@ -7127,6 +12796,24 @@
     },
     "craftFromBlueprints": [],
     "description": "Оружие средней скорострельности, мертвой зоны нет, равный урон на всей дистанции выстрела, основной удар по броне цели",
+    "transformsFrom": {
+      "fromKey": "rk_31b",
+      "ingredients": [
+        {
+          "key": "kristall_siniy",
+          "count": 44
+        },
+        {
+          "key": "kristall_zelenyy",
+          "count": 44
+        },
+        {
+          "key": "kristall_krasnyy",
+          "count": 22
+        }
+      ],
+      "bondsCost": 40470
+    },
     "stats": {
       "damageMin": 486,
       "damageMax": 537,
@@ -7155,6 +12842,24 @@
     },
     "craftFromBlueprints": [],
     "description": "Оружие средней скорострельности, мертвой зоны нет, равный урон на всей дистанции выстрела, основной удар по броне цели",
+    "transformsFrom": {
+      "fromKey": "rk_37b",
+      "ingredients": [
+        {
+          "key": "kristall_siniy",
+          "count": 49
+        },
+        {
+          "key": "kristall_zelenyy",
+          "count": 49
+        },
+        {
+          "key": "kristall_krasnyy",
+          "count": 24
+        }
+      ],
+      "bondsCost": 53397
+    },
     "stats": {
       "damageMin": 529,
       "damageMax": 585,
@@ -7183,6 +12888,25 @@
       "bonds": 4464
     },
     "description": "Оружие средней скорострельности, мертвой зоны нет, равный урон на всей дистанции выстрела, основной удар по броне цели, усиленное",
+    "transformsFrom": {
+      "fromKey": "rk_31bm1",
+      "ingredients": [
+        {
+          "key": "kristall_siniy",
+          "count": 147
+        },
+        {
+          "key": "kristall_zelenyy",
+          "count": 147
+        },
+        {
+          "key": "kristall_krasnyy",
+          "count": 72
+        }
+      ],
+      "bondsCost": 64287,
+      "reglsCost": 4
+    },
     "stats": {
       "damageMin": 622,
       "damageMax": 687,
@@ -7208,6 +12932,24 @@
     },
     "craftFromBlueprints": [],
     "description": "Оружие средней скорострельности, мертвой зоны нет, равный урон на всей дистанции выстрела, основной удар по броне цели",
+    "transformsFrom": {
+      "fromKey": "rk_41b",
+      "ingredients": [
+        {
+          "key": "kristall_siniy",
+          "count": 56
+        },
+        {
+          "key": "kristall_zelenyy",
+          "count": 56
+        },
+        {
+          "key": "kristall_krasnyy",
+          "count": 28
+        }
+      ],
+      "bondsCost": 162000
+    },
     "stats": {
       "damageMin": 597,
       "damageMax": 659,
@@ -7233,6 +12975,24 @@
     },
     "craftFromBlueprints": [],
     "description": "Оружие средней скорострельности, мертвой зоны нет, равный урон на всей дистанции выстрела, основной удар по броне цели",
+    "transformsFrom": {
+      "fromKey": "rk_3",
+      "ingredients": [
+        {
+          "key": "kristall_siniy",
+          "count": 6
+        },
+        {
+          "key": "kristall_zelenyy",
+          "count": 6
+        },
+        {
+          "key": "kristall_krasnyy",
+          "count": 3
+        }
+      ],
+      "bondsCost": 2154
+    },
     "stats": {
       "damageMin": 182,
       "damageMax": 201,
@@ -7258,6 +13018,24 @@
     },
     "craftFromBlueprints": [],
     "description": "Оружие средней скорострельности, мертвой зоны нет, равный урон на всей дистанции выстрела, основной удар по броне цели",
+    "transformsFrom": {
+      "fromKey": "rk_47b",
+      "ingredients": [
+        {
+          "key": "kristall_siniy",
+          "count": 72
+        },
+        {
+          "key": "kristall_zelenyy",
+          "count": 72
+        },
+        {
+          "key": "kristall_krasnyy",
+          "count": 36
+        }
+      ],
+      "bondsCost": 99087
+    },
     "stats": {
       "damageMin": 779,
       "damageMax": 861,
@@ -7282,6 +13060,25 @@
       "bonds": 8107
     },
     "description": "Оружие средней скорострельности, мертвой зоны нет, равный урон на всей дистанции выстрела, основной удар по броне цели, усиленное",
+    "transformsFrom": {
+      "fromKey": "rk_41bm1",
+      "ingredients": [
+        {
+          "key": "kristall_siniy",
+          "count": 216
+        },
+        {
+          "key": "kristall_zelenyy",
+          "count": 216
+        },
+        {
+          "key": "kristall_krasnyy",
+          "count": 108
+        }
+      ],
+      "bondsCost": 116748,
+      "reglsCost": 9
+    },
     "stats": {
       "damageMin": 880,
       "damageMax": 973,
@@ -7309,6 +13106,24 @@
       "bonds": 21021
     },
     "description": "Оружие средней скорострельности, мертвой зоны нет, равный урон на всей дистанции выстрела, основной удар по броне цели",
+    "transformsFrom": {
+      "fromKey": "rk_60b",
+      "ingredients": [
+        {
+          "key": "kristall_siniy",
+          "count": 84
+        },
+        {
+          "key": "kristall_zelenyy",
+          "count": 84
+        },
+        {
+          "key": "kristall_krasnyy",
+          "count": 42
+        }
+      ],
+      "bondsCost": 252258
+    },
     "stats": {
       "damageMin": 909,
       "damageMax": 1005,
@@ -7337,6 +13152,25 @@
       "bonds": 18886
     },
     "description": "Оружие средней скорострельности, мертвой зоны нет, равный урон на всей дистанции выстрела, основной удар по броне цели, усиленное",
+    "transformsFrom": {
+      "fromKey": "rk_70b",
+      "ingredients": [
+        {
+          "key": "kristall_siniy",
+          "count": 252
+        },
+        {
+          "key": "kristall_zelenyy",
+          "count": 252
+        },
+        {
+          "key": "kristall_krasnyy",
+          "count": 126
+        }
+      ],
+      "bondsCost": 271956,
+      "reglsCost": 24
+    },
     "stats": {
       "damageMin": 1028,
       "damageMax": 1136,
@@ -7385,6 +13219,25 @@
       "bonds": 25365
     },
     "description": "Оружие средней скорострельности, мертвой зоны нет, равный урон на всей дистанции выстрела, основной удар по броне цели, усиленное",
+    "transformsFrom": {
+      "fromKey": "rk_70bm1",
+      "ingredients": [
+        {
+          "key": "kristall_siniy",
+          "count": 288
+        },
+        {
+          "key": "kristall_zelenyy",
+          "count": 288
+        },
+        {
+          "key": "kristall_krasnyy",
+          "count": 144
+        }
+      ],
+      "bondsCost": 365265,
+      "reglsCost": 72
+    },
     "stats": {
       "damageMin": 1184,
       "damageMax": 1309,
@@ -7409,6 +13262,28 @@
       "bonds": 30020
     },
     "description": "Оружие средней скорострельности, мертвой зоны нет, равный урон на всей дистанции выстрела, основной удар по броне цели",
+    "transformsFrom": {
+      "fromKey": "rk_80b",
+      "ingredients": [
+        {
+          "key": "kristall_siniy",
+          "count": 115
+        },
+        {
+          "key": "kristall_zelenyy",
+          "count": 115
+        },
+        {
+          "key": "kristall_krasnyy",
+          "count": 57
+        },
+        {
+          "key": "zakhvat",
+          "count": 24
+        }
+      ],
+      "bondsCost": 345841
+    },
     "stats": {
       "damageMin": 1194,
       "damageMax": 1320,
@@ -7433,6 +13308,29 @@
       "bonds": 31707
     },
     "description": "Оружие средней скорострельности, мертвой зоны нет, равный урон на всей дистанции выстрела, основной удар по броне цели, усиленное",
+    "transformsFrom": {
+      "fromKey": "rk_80bm1",
+      "ingredients": [
+        {
+          "key": "kristall_siniy",
+          "count": 345
+        },
+        {
+          "key": "kristall_zelenyy",
+          "count": 345
+        },
+        {
+          "key": "kristall_krasnyy",
+          "count": 171
+        },
+        {
+          "key": "zakhvat",
+          "count": 48
+        }
+      ],
+      "bondsCost": 438318,
+      "reglsCost": 120
+    },
     "stats": {
       "damageMin": 1350,
       "damageMax": 1493,
@@ -7457,6 +13355,29 @@
       "bonds": 35670
     },
     "description": "Оружие средней скорострельности, мертвой зоны нет, равный урон на всей дистанции выстрела, основной удар по броне цели, усиленное",
+    "transformsFrom": {
+      "fromKey": "rk_90b",
+      "ingredients": [
+        {
+          "key": "kristall_siniy",
+          "count": 4140
+        },
+        {
+          "key": "kristall_zelenyy",
+          "count": 4140
+        },
+        {
+          "key": "kristall_krasnyy",
+          "count": 2070
+        },
+        {
+          "key": "zakhvat",
+          "count": 57
+        }
+      ],
+      "bondsCost": 2325981,
+      "reglsCost": 120
+    },
     "stats": {
       "damageMin": 1800,
       "damageMax": 1989,
@@ -7505,6 +13426,24 @@
     },
     "craftFromBlueprints": [],
     "description": "Оружие средней скорострельности, мертвой зоны нет, равный урон на всей дистанции выстрела, основной удар по броне цели",
+    "transformsFrom": {
+      "fromKey": "rk_5",
+      "ingredients": [
+        {
+          "key": "kristall_siniy",
+          "count": 10
+        },
+        {
+          "key": "kristall_zelenyy",
+          "count": 10
+        },
+        {
+          "key": "kristall_krasnyy",
+          "count": 5
+        }
+      ],
+      "bondsCost": 4500
+    },
     "stats": {
       "damageMin": 222,
       "damageMax": 245,
@@ -7528,6 +13467,29 @@
     "sellPrice": {
       "bonds": 38759
     },
+    "transformsFrom": {
+      "fromKey": "rk_enrg_95bm1",
+      "ingredients": [
+        {
+          "key": "kristall_siniy",
+          "count": 4968
+        },
+        {
+          "key": "kristall_zelenyy",
+          "count": 4968
+        },
+        {
+          "key": "kristall_krasnyy",
+          "count": 2484
+        },
+        {
+          "key": "zakhvat",
+          "count": 57
+        }
+      ],
+      "bondsCost": 4929636,
+      "reglsCost": 180
+    },
     "stats": {
       "damageMin": 2670,
       "damageMax": 2952,
@@ -7550,6 +13512,29 @@
     "group": "Рк, Рк энрг",
     "sellPrice": {
       "bonds": 632812
+    },
+    "transformsFrom": {
+      "fromKey": "rk_enrg_95bm2",
+      "ingredients": [
+        {
+          "key": "kristall_siniy",
+          "count": 4968
+        },
+        {
+          "key": "kristall_zelenyy",
+          "count": 4968
+        },
+        {
+          "key": "kristall_krasnyy",
+          "count": 2484
+        },
+        {
+          "key": "zakhvat",
+          "count": 57
+        }
+      ],
+      "bondsCost": 6096384,
+      "reglsCost": 90
     },
     "stats": {
       "damageMin": 3749,
@@ -7576,6 +13561,24 @@
     },
     "craftFromBlueprints": [],
     "description": "Энергетическое орудие, большой уронДля дальнего бояЭффиктивно против существ/роботовЧасть урона поглощают поля",
+    "transformsFrom": {
+      "fromKey": "rk_enrg_8b",
+      "ingredients": [
+        {
+          "key": "kristall_siniy",
+          "count": 12
+        },
+        {
+          "key": "kristall_zelenyy",
+          "count": 12
+        },
+        {
+          "key": "kristall_krasnyy",
+          "count": 6
+        }
+      ],
+      "bondsCost": 6654
+    },
     "stats": {
       "damageMin": 283,
       "damageMax": 313,
@@ -7601,6 +13604,24 @@
     },
     "craftFromBlueprints": [],
     "description": "Оружие средней скорострельности, падение урона вблизи, основной удар по полям цели",
+    "transformsFrom": {
+      "fromKey": "rk_enrg_10b",
+      "ingredients": [
+        {
+          "key": "kristall_siniy",
+          "count": 15
+        },
+        {
+          "key": "kristall_zelenyy",
+          "count": 15
+        },
+        {
+          "key": "kristall_krasnyy",
+          "count": 7
+        }
+      ],
+      "bondsCost": 10116
+    },
     "stats": {
       "damageMin": 321,
       "damageMax": 355,
@@ -7626,6 +13647,24 @@
     },
     "craftFromBlueprints": [],
     "description": "Оружие средней скорострельности, падение урона вблизи, основной удар по полям цели",
+    "transformsFrom": {
+      "fromKey": "rk_enrg_13b",
+      "ingredients": [
+        {
+          "key": "kristall_siniy",
+          "count": 16
+        },
+        {
+          "key": "kristall_zelenyy",
+          "count": 16
+        },
+        {
+          "key": "kristall_krasnyy",
+          "count": 8
+        }
+      ],
+      "bondsCost": 13884
+    },
     "stats": {
       "damageMin": 333,
       "damageMax": 369,
@@ -7651,6 +13690,24 @@
     },
     "craftFromBlueprints": [],
     "description": "Оружие средней скорострельности, падение урона вблизи, основной удар по полям цели",
+    "transformsFrom": {
+      "fromKey": "rk_enrg_14b",
+      "ingredients": [
+        {
+          "key": "kristall_siniy",
+          "count": 19
+        },
+        {
+          "key": "kristall_zelenyy",
+          "count": 19
+        },
+        {
+          "key": "kristall_krasnyy",
+          "count": 9
+        }
+      ],
+      "bondsCost": 12729
+    },
     "stats": {
       "damageMin": 359,
       "damageMax": 397,
@@ -7676,6 +13733,24 @@
     },
     "craftFromBlueprints": [],
     "description": "Оружие средней скорострельности, падение урона вблизи, основной удар по полям цели",
+    "transformsFrom": {
+      "fromKey": "rk_enrg_16b",
+      "ingredients": [
+        {
+          "key": "kristall_siniy",
+          "count": 22
+        },
+        {
+          "key": "kristall_zelenyy",
+          "count": 22
+        },
+        {
+          "key": "kristall_krasnyy",
+          "count": 11
+        }
+      ],
+      "bondsCost": 20319
+    },
     "stats": {
       "damageMin": 397,
       "damageMax": 439,
@@ -7725,6 +13800,24 @@
     },
     "craftFromBlueprints": [],
     "description": "Оружие средней скорострельности, падение урона вблизи, основной удар по полям цели",
+    "transformsFrom": {
+      "fromKey": "rk_enrg_19b",
+      "ingredients": [
+        {
+          "key": "kristall_siniy",
+          "count": 26
+        },
+        {
+          "key": "kristall_zelenyy",
+          "count": 26
+        },
+        {
+          "key": "kristall_krasnyy",
+          "count": 13
+        }
+      ],
+      "bondsCost": 22563
+    },
     "stats": {
       "damageMin": 420,
       "damageMax": 465,
@@ -7750,6 +13843,24 @@
     },
     "craftFromBlueprints": [],
     "description": "Оружие средней скорострельности, падение урона вблизи, основной удар по полям цели",
+    "transformsFrom": {
+      "fromKey": "rk_enrg_22b",
+      "ingredients": [
+        {
+          "key": "kristall_siniy",
+          "count": 28
+        },
+        {
+          "key": "kristall_zelenyy",
+          "count": 28
+        },
+        {
+          "key": "kristall_krasnyy",
+          "count": 14
+        }
+      ],
+      "bondsCost": 23223
+    },
     "stats": {
       "damageMin": 446,
       "damageMax": 493,
@@ -7775,6 +13886,24 @@
     },
     "craftFromBlueprints": [],
     "description": "Оружие средней скорострельности, падение урона вблизи, основной удар по полям цели",
+    "transformsFrom": {
+      "fromKey": "rk_enrg_24b",
+      "ingredients": [
+        {
+          "key": "kristall_siniy",
+          "count": 32
+        },
+        {
+          "key": "kristall_zelenyy",
+          "count": 32
+        },
+        {
+          "key": "kristall_krasnyy",
+          "count": 16
+        }
+      ],
+      "bondsCost": 32151
+    },
     "stats": {
       "damageMin": 485,
       "damageMax": 536,
@@ -7800,6 +13929,24 @@
     },
     "craftFromBlueprints": [],
     "description": "Оружие средней скорострельности, падение урона вблизи, основной удар по полям цели",
+    "transformsFrom": {
+      "fromKey": "rk_enrg_27b",
+      "ingredients": [
+        {
+          "key": "kristall_siniy",
+          "count": 37
+        },
+        {
+          "key": "kristall_zelenyy",
+          "count": 37
+        },
+        {
+          "key": "kristall_krasnyy",
+          "count": 18
+        }
+      ],
+      "bondsCost": 33381
+    },
     "stats": {
       "damageMin": 537,
       "damageMax": 594,
@@ -7824,6 +13971,25 @@
       "bonds": 2623
     },
     "description": "Оружие средней скорострельности, падение урона вблизи, основной удар по полям цели, усиленное",
+    "transformsFrom": {
+      "fromKey": "rk_enrg_19bm1",
+      "ingredients": [
+        {
+          "key": "kristall_siniy",
+          "count": 111
+        },
+        {
+          "key": "kristall_zelenyy",
+          "count": 111
+        },
+        {
+          "key": "kristall_krasnyy",
+          "count": 54
+        }
+      ],
+      "bondsCost": 37773,
+      "reglsCost": 4
+    },
     "stats": {
       "damageMin": 631,
       "damageMax": 697,
@@ -7849,6 +14015,24 @@
     },
     "craftFromBlueprints": [],
     "description": "Оружие средней скорострельности, падение урона вблизи, основной удар по полям цели",
+    "transformsFrom": {
+      "fromKey": "rk_enrg_31b",
+      "ingredients": [
+        {
+          "key": "kristall_siniy",
+          "count": 42
+        },
+        {
+          "key": "kristall_zelenyy",
+          "count": 42
+        },
+        {
+          "key": "kristall_krasnyy",
+          "count": 21
+        }
+      ],
+      "bondsCost": 40524
+    },
     "stats": {
       "damageMin": 591,
       "damageMax": 653,
@@ -7877,6 +14061,24 @@
     },
     "craftFromBlueprints": [],
     "description": "Оружие средней скорострельности, падение урона вблизи, основной удар по полям цели",
+    "transformsFrom": {
+      "fromKey": "rk_enrg_35b",
+      "ingredients": [
+        {
+          "key": "kristall_siniy",
+          "count": 48
+        },
+        {
+          "key": "kristall_zelenyy",
+          "count": 48
+        },
+        {
+          "key": "kristall_krasnyy",
+          "count": 24
+        }
+      ],
+      "bondsCost": 46989
+    },
     "stats": {
       "damageMin": 659,
       "damageMax": 729,
@@ -7905,6 +14107,25 @@
       "bonds": 4038
     },
     "description": "Оружие средней скорострельности, падение урона вблизи, основной удар по полям цели, усиленное",
+    "transformsFrom": {
+      "fromKey": "rk_enrg_31bm1",
+      "ingredients": [
+        {
+          "key": "kristall_siniy",
+          "count": 144
+        },
+        {
+          "key": "kristall_zelenyy",
+          "count": 144
+        },
+        {
+          "key": "kristall_krasnyy",
+          "count": 72
+        }
+      ],
+      "bondsCost": 58146,
+      "reglsCost": 4
+    },
     "stats": {
       "damageMin": 774,
       "damageMax": 856,
@@ -7930,6 +14151,24 @@
     },
     "craftFromBlueprints": [],
     "description": "Оружие средней скорострельности, падение урона вблизи, основной удар по полям цели",
+    "transformsFrom": {
+      "fromKey": "rk_enrg_40b",
+      "ingredients": [
+        {
+          "key": "kristall_siniy",
+          "count": 54
+        },
+        {
+          "key": "kristall_zelenyy",
+          "count": 54
+        },
+        {
+          "key": "kristall_krasnyy",
+          "count": 27
+        }
+      ],
+      "bondsCost": 156000
+    },
     "stats": {
       "damageMin": 730,
       "damageMax": 807,
@@ -7955,6 +14194,24 @@
     },
     "craftFromBlueprints": [],
     "description": "Оружие средней скорострельности, падение урона вблизи, основной удар по полям цели",
+    "transformsFrom": {
+      "fromKey": "rk_enrg_45b",
+      "ingredients": [
+        {
+          "key": "kristall_siniy",
+          "count": 72
+        },
+        {
+          "key": "kristall_zelenyy",
+          "count": 72
+        },
+        {
+          "key": "kristall_krasnyy",
+          "count": 36
+        }
+      ],
+      "bondsCost": 102915
+    },
     "stats": {
       "damageMin": 990,
       "damageMax": 1095,
@@ -7979,6 +14236,25 @@
       "bonds": 8576
     },
     "description": "Оружие средней скорострельности, падение урона вблизи, основной удар по полям цели, усиленное",
+    "transformsFrom": {
+      "fromKey": "rk_enrg_40bm1",
+      "ingredients": [
+        {
+          "key": "kristall_siniy",
+          "count": 216
+        },
+        {
+          "key": "kristall_zelenyy",
+          "count": 216
+        },
+        {
+          "key": "kristall_krasnyy",
+          "count": 108
+        }
+      ],
+      "bondsCost": 123498,
+      "reglsCost": 9
+    },
     "stats": {
       "damageMin": 1120,
       "damageMax": 1237,
@@ -8031,6 +14307,24 @@
       "bonds": 16500
     },
     "description": "Оружие средней скорострельности, падение урона вблизи, основной удар по полям цели",
+    "transformsFrom": {
+      "fromKey": "rk_enrg_60b",
+      "ingredients": [
+        {
+          "key": "kristall_siniy",
+          "count": 84
+        },
+        {
+          "key": "kristall_zelenyy",
+          "count": 84
+        },
+        {
+          "key": "kristall_krasnyy",
+          "count": 42
+        }
+      ],
+      "bondsCost": 198000
+    },
     "stats": {
       "damageMin": 1156,
       "damageMax": 1278,
@@ -8059,6 +14353,25 @@
       "bonds": 16500
     },
     "description": "Оружие средней скорострельности, падение урона вблизи, основной удар по полям цели, усиленное",
+    "transformsFrom": {
+      "fromKey": "rk_enrg_70b",
+      "ingredients": [
+        {
+          "key": "kristall_siniy",
+          "count": 252
+        },
+        {
+          "key": "kristall_zelenyy",
+          "count": 252
+        },
+        {
+          "key": "kristall_krasnyy",
+          "count": 126
+        }
+      ],
+      "bondsCost": 237600,
+      "reglsCost": 24
+    },
     "stats": {
       "damageMin": 1307,
       "damageMax": 1445,
@@ -8107,6 +14420,25 @@
       "bonds": 24500
     },
     "description": "Оружие средней скорострельности, падение урона вблизи, основной удар по полям цели, усиленное",
+    "transformsFrom": {
+      "fromKey": "rk_enrg_70bm1",
+      "ingredients": [
+        {
+          "key": "kristall_siniy",
+          "count": 288
+        },
+        {
+          "key": "kristall_zelenyy",
+          "count": 288
+        },
+        {
+          "key": "kristall_krasnyy",
+          "count": 144
+        }
+      ],
+      "bondsCost": 352800,
+      "reglsCost": 72
+    },
     "stats": {
       "damageMin": 1506,
       "damageMax": 1665,
@@ -8132,6 +14464,24 @@
     },
     "craftFromBlueprints": [],
     "description": "Оружие средней скорострельности, падение урона вблизи, основной удар по полям цели",
+    "transformsFrom": {
+      "fromKey": "rk_enrg_6b",
+      "ingredients": [
+        {
+          "key": "kristall_siniy",
+          "count": 9
+        },
+        {
+          "key": "kristall_zelenyy",
+          "count": 9
+        },
+        {
+          "key": "kristall_krasnyy",
+          "count": 4
+        }
+      ],
+      "bondsCost": 4353
+    },
     "stats": {
       "damageMin": 269,
       "damageMax": 297,
@@ -8156,6 +14506,28 @@
       "bonds": 30625
     },
     "description": "Оружие средней скорострельности, падение урона вблизи, основной удар по полям цели",
+    "transformsFrom": {
+      "fromKey": "rk_enrg_80b",
+      "ingredients": [
+        {
+          "key": "kristall_siniy",
+          "count": 115
+        },
+        {
+          "key": "kristall_zelenyy",
+          "count": 115
+        },
+        {
+          "key": "kristall_krasnyy",
+          "count": 57
+        },
+        {
+          "key": "zakhvat",
+          "count": 21
+        }
+      ],
+      "bondsCost": 352800
+    },
     "stats": {
       "damageMin": 1519,
       "damageMax": 1679,
@@ -8180,6 +14552,29 @@
       "bonds": 30625
     },
     "description": "Оружие средней скорострельности, падение урона вблизи, основной удар по полям цели, усиленное",
+    "transformsFrom": {
+      "fromKey": "rk_enrg_80bm1",
+      "ingredients": [
+        {
+          "key": "kristall_siniy",
+          "count": 621
+        },
+        {
+          "key": "kristall_zelenyy",
+          "count": 621
+        },
+        {
+          "key": "kristall_krasnyy",
+          "count": 306
+        },
+        {
+          "key": "zakhvat",
+          "count": 63
+        }
+      ],
+      "bondsCost": 762048,
+      "reglsCost": 36
+    },
     "stats": {
       "damageMin": 1717,
       "damageMax": 1898,
@@ -8232,6 +14627,29 @@
       "bonds": 34453
     },
     "description": "Оружие средней скорострельности, падение урона вблизи, основной удар по полям цели, усиленное",
+    "transformsFrom": {
+      "fromKey": "rk_enrg_90b",
+      "ingredients": [
+        {
+          "key": "kristall_siniy",
+          "count": 4140
+        },
+        {
+          "key": "kristall_zelenyy",
+          "count": 4140
+        },
+        {
+          "key": "kristall_krasnyy",
+          "count": 2070
+        },
+        {
+          "key": "zakhvat",
+          "count": 48
+        }
+      ],
+      "bondsCost": 4108032,
+      "reglsCost": 120
+    },
     "stats": {
       "damageMin": 2289,
       "damageMax": 2530,
@@ -8256,6 +14674,29 @@
       "bonds": 562500
     },
     "description": "Оружие средней скорострельности, падение урона вблизи, основной удар по полям цели, усиленное",
+    "transformsFrom": {
+      "fromKey": "rk_enrg_90bm2",
+      "ingredients": [
+        {
+          "key": "kristall_siniy",
+          "count": 4140
+        },
+        {
+          "key": "kristall_zelenyy",
+          "count": 4140
+        },
+        {
+          "key": "kristall_krasnyy",
+          "count": 2070
+        },
+        {
+          "key": "zakhvat",
+          "count": 48
+        }
+      ],
+      "bondsCost": 5080320,
+      "reglsCost": 60
+    },
     "stats": {
       "damageMin": 3213,
       "damageMax": 3412,

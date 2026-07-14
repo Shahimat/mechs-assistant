@@ -26,7 +26,6 @@ scenarios:
       `other--favorites-toggle-on-star-click`. Избранное для equipment —
       общий набор ключей на все семь UI-каталогов оборудования.
 
-verified: true
-verified_at: 2026-07-13
+verified: false
 verified_note: |
-  Проверено чтением кода: клик по `<CardActionArea>` в `EquipmentCard.tsx` вызывает `onClick(item)` → `EquipmentSubCatalog.tsx` ставит `selectedItem`, `EquipmentDetail` рендерится как MUI Dialog (`item !== null`). Закрытие — стандартный `onClose` Dialog (крестик, Esc, клик по фону). Клик по звёздочке использует `e.stopPropagation()` в `EquipmentCard.tsx:36-39`, детализация не открывается. `EquipmentDetail.tsx` показывает family/subtype/slot/уровень + все stats (primary/primaryLabel/durability/weight) + buyPrice/sellPrice + craftFromBlueprints + description + requiredRobotType. Финальная визуальная проверка в браузере — пройдена юзером 2026-07-13.
+  Сценарий обновлён в фазе docs 2026-07-14 через shared `EquipmentDetail`: детализация добавляет секцию «Преобразуется из» — chip prev equipment, chip'ы ингредиентов, стоимость Боны/Реглы. Реализация — в фазе feat.

@@ -1,0 +1,33 @@
+id: view--blueprints-catalog-opens-detail-on-click
+kind: behavior
+namespace: ui
+entities: [view--blueprints-catalog]
+title: Клик по карточке в view--blueprints-catalog открывает детализацию (BlueprintDetail)
+
+scenarios:
+  - given: сетка отрисована
+    when: пользователь кликает по карточке (не по звёздочке)
+    then: |
+      открывается `BlueprintDetail` — MUI Dialog с полным рецептом:
+        - «Производит» — chip производимого предмета (lookup по
+          producesCatalog/producesKey из соответствующего стора; если
+          producesCatalog не заполнен, chip только с именем producesKey).
+        - «Ингредиенты» — chip'ы «[Каталог] Имя ×N» (lookup имён через
+          key+catalog).
+        - «Требования» — chip'ы «Навык специалист: N», «Боны: N»,
+          «Реглы: N» (только те, что заполнены).
+        - «О чертеже» — Прочность, Цена продажи, Описание.
+
+  - given: BlueprintDetail открыт
+    when: пользователь закрывает его (крестик / Esc / клик по фону)
+    then: возврат к сетке.
+
+  - given: клик по звёздочке избранного внутри карточки
+    when: обработчик `e.stopPropagation()`
+    then: |
+      детализация НЕ открывается, срабатывает только
+      `other--favorites-toggle-on-star-click`.
+
+verified: false
+verified_note: |
+  Спецификация создана в фазе docs 2026-07-14, реализация — в фазе feat.

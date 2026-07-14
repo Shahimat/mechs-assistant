@@ -1,6 +1,8 @@
 import type { AnyNode } from 'domhandler';
+import type { CheerioAPI, Cheerio } from 'cheerio';
 import type { QueueItem, Resolver } from '../lib/bfs.js';
 import { parseAlt, extractRows, parseNumber, parsePrice, type Price } from '../lib/html.js';
+import { translit } from '../translit.js';
 
 const WIKI_BASE = 'https://new.mechs.su';
 
@@ -99,6 +101,18 @@ export interface EquipmentStats {
   primaryLabel?: string;
 }
 
+export interface TransformIngredient {
+  key: string;
+  count: number;
+}
+
+export interface Transform {
+  fromKey: string;
+  ingredients: TransformIngredient[];
+  bondsCost?: number;
+  reglsCost?: number;
+}
+
 export interface Equipment {
   key: string;
   name: string;
@@ -115,6 +129,7 @@ export interface Equipment {
   description?: string;
   iconPath?: string;
   wikiUrl?: string;
+  transformsFrom?: Transform;
 }
 
 export type EquipmentCtx = Record<string, never>;
@@ -170,6 +185,12 @@ export const equipmentResolver: Resolver<Equipment, EquipmentCtx> = {
           item.requiredLevel = Number(nameLevelMatch[1]);
         }
       }
+
+      // «Преобразуется из» + «Для преобразования требуется» — цепочка
+      // трансформации. Есть у большинства armour/accumulator/generator/
+      // shield/cargo (частично) и одного computer; у extractor нет.
+      const transform = extractTransform($, $table as unknown as Cheerio<AnyNode>);
+      if (transform) item.transformsFrom = transform;
 
       item.stats = stats as EquipmentStats;
       if (iconSrc) item.iconPath = iconSrc;
@@ -241,4 +262,66 @@ function applyEquipmentField(
       .map((s) => s.trim())
       .filter(Boolean);
   else if (lower === 'описание') item.description = value;
+}
+
+/**
+ * Извлекает трансформацию equipment из склеенной ячейки «Преобразуется из /
+ * Для преобразования требуется». Логика та же, что в weapons-резолвере:
+ * второй `<a data-description>` в td1 → fromKey; span'ы в td2 с `<sub>` →
+ * ингредиенты (translit data-description); span'ы без `<sub>` с текстом
+ * «Боны: N» / «Реглы: N» → стоимость.
+ */
+function extractTransform($: CheerioAPI, $table: Cheerio<AnyNode>): Transform | null {
+  let result: Transform | null = null;
+  $table.find('td.wiki-item-td1').each((_, td1) => {
+    const $td1 = $(td1);
+    const label = $td1.text().trim().toLowerCase();
+    if (!label.includes('преобразуется из')) return;
+
+    const dds: string[] = [];
+    $td1.find('[data-description]').each((_, el) => {
+      const d = $(el).attr('data-description');
+      if (d) dds.push(d.trim());
+    });
+    if (dds.length < 2) return;
+    const fromKey = translit(dds[1]);
+    if (!fromKey) return;
+
+    const $td2 = $td1.next('td.wiki-item-td2');
+    const ingredients: TransformIngredient[] = [];
+    let bondsCost: number | undefined;
+    let reglsCost: number | undefined;
+
+    $td2.find('span.wiki-inline-block').each((_, span) => {
+      const $span = $(span);
+      const $sub = $span.find('sub').first();
+      if ($sub.length) {
+        let name = '';
+        $span.find('[data-description]').each((_, el) => {
+          const d = $(el).attr('data-description');
+          if (d && !name) name = d.trim();
+        });
+        if (!name) {
+          const alt = $span.find('img').first().attr('alt') ?? '';
+          name = alt.replace(/^Иконка\s+/i, '').trim();
+        }
+        if (!name) return;
+        const key = translit(name);
+        if (!key) return;
+        const count = parseNumber($sub.text().trim()) ?? 1;
+        ingredients.push({ key, count });
+      } else {
+        const text = $span.text().trim();
+        const mBonds = /Боны[^\d]*(\d+(?:[.,]\d+)?)/i.exec(text);
+        if (mBonds) bondsCost = Number(mBonds[1].replace(',', '.'));
+        const mRegls = /Реглы[^\d]*(\d+(?:[.,]\d+)?)/i.exec(text);
+        if (mRegls) reglsCost = Number(mRegls[1].replace(',', '.'));
+      }
+    });
+
+    result = { fromKey, ingredients };
+    if (bondsCost != null) result.bondsCost = bondsCost;
+    if (reglsCost != null) result.reglsCost = reglsCost;
+  });
+  return result;
 }

@@ -17,19 +17,9 @@ import { OreCatalogPage } from './pages/catalogs/OreCatalogPage';
 import { ComponentsCatalogPage } from './pages/catalogs/ComponentsCatalogPage';
 import { LootCatalogPage } from './pages/catalogs/LootCatalogPage';
 import { SkillsCatalogPage } from './pages/catalogs/SkillsCatalogPage';
-import { CatalogStubPage } from './pages/catalogs/CatalogStubPage';
+import { BlueprintsCatalogPage } from './pages/catalogs/BlueprintsCatalogPage';
 
 const basename = process.env.NODE_ENV === 'production' ? '/mechs-assistant' : undefined;
-
-interface CatalogStub {
-  path: string;
-  crumb: string;
-  title: string;
-}
-
-const STUB_CATALOGS: CatalogStub[] = [
-  { path: 'blueprints-catalog', crumb: 'Чертежи', title: 'Каталог чертежей' },
-];
 
 interface EquipmentSubRoute {
   path: string;
@@ -106,11 +96,11 @@ export const router = createBrowserRouter(
               element: r.element,
               handle: { crumb: r.crumb },
             })),
-            ...STUB_CATALOGS.map((c) => ({
-              path: c.path,
-              element: <CatalogStubPage title={c.title} />,
-              handle: { crumb: c.crumb },
-            })),
+            {
+              path: 'blueprints-catalog',
+              element: <BlueprintsCatalogPage />,
+              handle: { crumb: 'Чертежи' },
+            },
           ],
         },
       ],

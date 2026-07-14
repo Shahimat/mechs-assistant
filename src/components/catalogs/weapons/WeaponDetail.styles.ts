@@ -69,3 +69,9 @@ export const Description = styled('p')(({ theme }) => ({
   margin: 0,
   whiteSpace: 'pre-wrap',
 }));
+
+export const InlineLabel = styled('div')(({ theme }) => ({
+  ...theme.typography.body2,
+  color: theme.palette.text.secondary,
+  marginTop: theme.spacing(1),
+}));

@@ -25,17 +25,6 @@ scenarios:
       механизм — тот же store, что и для мехов, но с другим ключом,
       либо отдельная механика favorites для weapons).
 
-verified: true
-verified_at: 2026-07-12
+verified: false
 verified_note: |
-  Проверено чтением кода: клик по `<CardActionArea>` в `WeaponCard.tsx:63`
-  вызывает `onClick(weapon)` → `WeaponsCatalog.tsx:63` ставит
-  `selectedWeapon`, `WeaponDetail` рендерится как MUI Dialog
-  (`WeaponDetail.tsx:118-121` с `open={weapon !== null}`). Закрытие —
-  стандартный `onClose` Dialog (крестик, Esc, клик по фону). Клик по
-  звёздочке использует `e.stopPropagation()` (`WeaponCard.tsx:47-50`),
-  детализация не открывается. WeaponDetail показывает полный набор
-  Weapon: group/category/slot/уровень + все stats
-  (damageMin/damageMax/range/minRange/rateOfFire/energyConsumption/
-  ammo/durability/weight) + buyPrice/sellPrice + craftFromBlueprints
-  + description.
+  Сценарий обновлён в фазе docs 2026-07-14: детализация добавляет секцию «Преобразуется из» — chip prev weapon, chip'ы ингредиентов, стоимость Боны/Реглы. Реализация — в фазе feat.

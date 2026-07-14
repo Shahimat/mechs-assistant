@@ -14,6 +14,7 @@ import { SectionDivider } from '@/components/catalog/CatalogSection.styles';
 import { PairToggleGroup } from '@/components/catalog/PairToggleGroup';
 import { useSearchFilter } from '@/components/catalog/hooks/useSearchFilter';
 import { usePairFilter } from '@/components/catalog/hooks/usePairFilter';
+import { useDeepLinkOpen } from '@/components/catalog/hooks/useDeepLinkOpen';
 import { ComponentCard } from './ComponentCard';
 import { ComponentDetail } from './ComponentDetail';
 import { SortableComponentCard } from './SortableComponentCard';
@@ -32,6 +33,12 @@ export function ComponentsCatalog() {
     reorderFavorites,
   } = useComponentsStore();
   const [selectedComponent, setSelectedComponent] = useState<Component | null>(null);
+  const { openInUrl, clearOpen } = useDeepLinkOpen(
+    components,
+    (c) => c.key,
+    setSelectedComponent,
+    () => setSelectedComponent(null)
+  );
 
   useEffect(() => {
     if (components.length === 0 && !isLoading) {
@@ -84,7 +91,13 @@ export function ComponentsCatalog() {
   }, [kindFilter, favSearch, otherSearch]);
 
   const handleToggleFavorite = useCallback((key: string) => toggleFavorite(key), [toggleFavorite]);
-  const handleCardClick = useCallback((c: Component) => setSelectedComponent(c), []);
+  const handleCardClick = useCallback(
+    (c: Component) => {
+      setSelectedComponent(c);
+      openInUrl(c.key);
+    },
+    [openInUrl]
+  );
 
   if (isLoading) {
     return (
@@ -194,7 +207,13 @@ export function ComponentsCatalog() {
         )}
       </CatalogSection>
 
-      <ComponentDetail component={selectedComponent} onClose={() => setSelectedComponent(null)} />
+      <ComponentDetail
+        component={selectedComponent}
+        onClose={() => {
+          setSelectedComponent(null);
+          clearOpen();
+        }}
+      />
     </Page>
   );
 }

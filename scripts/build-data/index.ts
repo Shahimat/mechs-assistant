@@ -12,13 +12,31 @@ interface EntryMeta {
 type Jsonish = Record<string, unknown>;
 
 async function main() {
+  // Первый проход: собираем keyIndex по всем parsed JSON'ам, чтобы на
+  // втором проходе резолвить catalog для nested ссылок (blueprints.
+  // ingredients / producesCatalog, transformsFrom.ingredients).
+  const keyIndex = new Map<string, Set<string>>();
+  const parsedBySlug = new Map<string, Jsonish[]>();
   for (const cfg of CATALOGS) {
-    await mergeCatalog(cfg);
+    const parsed = (await loadParsed(cfg.parsedJsonPath)) ?? [];
+    parsedBySlug.set(cfg.slug, parsed);
+    for (const entry of parsed) {
+      const k = String(entry.key);
+      if (!keyIndex.has(k)) keyIndex.set(k, new Set());
+      keyIndex.get(k)!.add(cfg.slug);
+    }
+  }
+
+  for (const cfg of CATALOGS) {
+    await mergeCatalog(cfg, parsedBySlug.get(cfg.slug) ?? [], keyIndex);
   }
 }
 
-async function mergeCatalog(cfg: CatalogConfig): Promise<void> {
-  const parsed = (await loadParsed(cfg.parsedJsonPath)) ?? [];
+async function mergeCatalog(
+  cfg: CatalogConfig,
+  parsed: Jsonish[],
+  keyIndex: Map<string, Set<string>>
+): Promise<void> {
   const overrides = await loadOverrides(cfg.overlayYamlPath);
 
   if (parsed.length === 0 && Object.keys(overrides).length === 0) {
@@ -42,6 +60,8 @@ async function mergeCatalog(cfg: CatalogConfig): Promise<void> {
     if (entry._meta) overlayOnlyCount++;
     merged.push(entry);
   }
+
+  resolveCrossCatalogRefs(cfg.slug, merged, keyIndex);
 
   await fs.mkdir(path.dirname(cfg.mergedJsonPath), { recursive: true });
   await fs.writeFile(cfg.mergedJsonPath, JSON.stringify(merged, null, 2) + '\n', 'utf-8');
@@ -116,6 +136,75 @@ function deepMerge(target: Jsonish, source: Jsonish): Jsonish {
 
 function isPlainObject(v: unknown): v is Jsonish {
   return v !== null && typeof v === 'object' && !Array.isArray(v);
+}
+
+/**
+ * Резолвит поле `catalog` у cross-catalog ссылок по key, если оно не
+ * задано ни парсером, ни overlay: blueprints.ingredients + producesCatalog;
+ * weapons/equipment.transformsFrom.ingredients. Ambiguity (один key в
+ * нескольких parsed JSON'ах) → warning + первый по алфавиту.
+ */
+function resolveCrossCatalogRefs(
+  slug: string,
+  entries: Jsonish[],
+  keyIndex: Map<string, Set<string>>
+): void {
+  if (slug === 'blueprints') {
+    for (const bp of entries) {
+      if (typeof bp.producesKey === 'string' && !bp.producesCatalog) {
+        const c = pickCatalog(String(bp.producesKey), keyIndex, slug, bp.key);
+        if (c) bp.producesCatalog = c;
+      }
+      resolveIngredientCatalogs(bp.ingredients, keyIndex, slug, bp.key);
+    }
+  } else if (slug === 'weapons' || slug === 'equipment') {
+    for (const e of entries) {
+      const tf = e.transformsFrom;
+      if (isPlainObject(tf)) {
+        resolveIngredientCatalogs(tf.ingredients, keyIndex, slug, e.key);
+      }
+    }
+  }
+}
+
+function resolveIngredientCatalogs(
+  ings: unknown,
+  keyIndex: Map<string, Set<string>>,
+  slug: string,
+  ownerKey: unknown
+): void {
+  if (!Array.isArray(ings)) return;
+  for (const ing of ings) {
+    if (!isPlainObject(ing)) continue;
+    if (ing.catalog || typeof ing.key !== 'string') continue;
+    const c = pickCatalog(ing.key, keyIndex, slug, ownerKey);
+    if (c) ing.catalog = c;
+  }
+}
+
+function pickCatalog(
+  key: string,
+  keyIndex: Map<string, Set<string>>,
+  ownerSlug: string,
+  ownerKey: unknown
+): string | undefined {
+  const set = keyIndex.get(key);
+  if (!set || set.size === 0) {
+    console.warn(
+      `  ⚠ ${ownerSlug}/${String(ownerKey)}: key '${key}' не найден ни в одном каталоге`
+    );
+    return undefined;
+  }
+  if (set.size > 1) {
+    const list = [...set].sort();
+    console.warn(
+      `  ⚠ ${ownerSlug}/${String(ownerKey)}: key '${key}' есть в [${list.join(
+        ', '
+      )}] — беру ${list[0]} (переопредели через overlay)`
+    );
+    return list[0];
+  }
+  return [...set][0];
 }
 
 /**

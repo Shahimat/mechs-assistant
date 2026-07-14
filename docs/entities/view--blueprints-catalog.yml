@@ -1,0 +1,75 @@
+id: view--blueprints-catalog
+kind: entity
+namespace: ui
+version: '0.x'
+
+description: |
+  Карточный каталог чертежей — десятый и финальный view MVP1. Сетка
+  ~215 карточек со звёздочкой избранного. По клику — детализация
+  (MUI Dialog) с полным рецептом.
+
+  Монтируется по маршруту `/catalogs/blueprints-catalog` через
+  `BlueprintsCatalogPage`. Собирается из примитивов
+  `other--catalog-shell` (`CatalogHeader`, `CatalogSection`,
+  `CatalogGrid`, `FavoritesDnDSection`, `SearchField`,
+  `PairToggleGroup`) плюс blueprints-специфичные компоненты
+  (`BlueprintCard`, `BlueprintDetail`, `SortableBlueprintCard`).
+
+  **Фильтры:**
+    - **Поиск** — `SearchField` по имени (215 записей).
+    - **Категория** — `ToggleButtonGroup` + `useTypeFilter` (по аналогии
+      с `TYPE_OPTIONS` у мехов): 7 раздельных toggle-кнопок, порядок —
+      Мехи, Оружие, Оборудование, Компоненты, Апгрейды, Паки, Телепорты.
+      Матч по `blueprint.category`, multi-select без объединения.
+
+  Карточка показывает: имя, chip `category` (+ chip `subtype` если
+  есть), «Создает: N», «Прочность: N» (износостойкость), цена
+  продажи. Плейсхолдер иконки — `Description` из MUI.
+
+  Детализация показывает:
+    - «**Производит**» — chip'ы: имя целевого предмета (lookup через
+      `producesCatalog/producesKey`) + `output`. Если producesCatalog
+      не заполнен — chip только с именем.
+    - «**Ингредиенты**» — chip'ы «[Каталог] Имя ×N» (lookup имени по
+      key + catalog из соответствующего стора).
+    - «**Требования**» — chip'ы «Навык специалист: N», «Боны: N»,
+      «Реглы: N» (только те, что есть).
+    - «**О чертеже**» — Прочность, Цена продажи, Описание.
+
+  Читает данные из `data--blueprints-catalog` через
+  `useBlueprintsStore`. Для lookup имён производимого/ингредиентов
+  использует остальные сторы (weapons/equipment/components/items/
+  ore/loot) — те же зустанд-store'ы.
+
+  Плитка на `CatalogsHubPage` — `@img/catalog-icons/blueprints.webp`
+  (уже на месте).
+
+source_files:
+  page: src/pages/catalogs/BlueprintsCatalogPage.tsx
+  view: src/components/catalogs/blueprints/BlueprintsCatalog.tsx
+  card: src/components/catalogs/blueprints/BlueprintCard.tsx
+  detail: src/components/catalogs/blueprints/BlueprintDetail.tsx
+  sortable_card: src/components/catalogs/blueprints/SortableBlueprintCard.tsx
+
+features_enabled:
+  - cards-grid
+  - blueprint-detail-view
+  - favorites-star
+  - favorites-dnd
+  - overlay-highlight
+  - search-in-section
+  - filter-category # 7 раздельных toggle-кнопок по blueprint.category (как TYPE_OPTIONS у мехов)
+  - cross-catalog-lookup # lookup имён производимого/ингредиентов из других сторов
+
+features_disabled:
+  - filter-subtype # subtype есть только у equipment — 4 значения; отдельный фильтр не нужен, покрывается category='equipment'
+  - filter-level-range # у чертежей нет requiredLevel
+
+manuals: []
+behaviors:
+  - view--blueprints-catalog-renders-cards-grid
+  - view--blueprints-catalog-opens-detail-on-click
+  - other--favorites-toggle-on-star-click
+
+verified_note: |
+  Спецификация создана в фазе docs 2026-07-14, реализация — в фазе feat.
