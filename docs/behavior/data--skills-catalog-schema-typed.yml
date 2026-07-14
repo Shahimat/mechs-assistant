@@ -1,0 +1,30 @@
+id: data--skills-catalog-schema-typed
+kind: behavior
+namespace: catalog
+entities: [data--skills-catalog]
+title: Каждая запись в skills.json соответствует типу Skill (TS strict)
+
+scenarios:
+  - given: 'TypeScript strict включён (`strict: true`) и `resolveJsonModule: true`'
+    when: файл `store.ts` импортирует `skillsData` из `@build/data/skills.json`
+      и приводит его к `Skill[]`
+    then: |
+      сборка проходит без ошибок типа, `Skill`-типы из `src/types/skill.ts`
+      применимы ко всем 12 записям.
+
+  - given: в JSON появилась запись без `kind` или `affects`
+    when: разработчик пытается собрать проект (`npm run build`)
+    then: |
+      сборка/typecheck должны падать. Оговорка про runtime-валидацию та же,
+      что для всех data-каталогов (assert `as Skill[]`, не zod).
+
+  - given: "у записи с `kind: 'ability'` заполнен `perStatPercent: number`"
+    when: TS-компиляция проверяет типы
+    then: |
+      `perStatPercent?: number` описан как опциональный. Записи с
+      `kind: 'skill'` — без него, проходят typecheck.
+
+verified: true
+verified_at: 2026-07-14
+verified_note: |
+  Проверено: `npm run build` и `tsc --noEmit` проходят без ошибок типа. `Skill`/`SkillKind` описаны в `src/types/skill.ts`. Все 12 записей содержат `key`/`name`/`kind`/`description`/`affects`. У 7 ability заполнен `perStatPercent` (5 skill — без него, `perStatPercent?: number` опциональное). Оговорка про runtime-валидацию та же, что для всех data-каталогов.

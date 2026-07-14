@@ -23,6 +23,15 @@ export interface Resolver<T, Ctx> {
   parsePage(args: { $: CheerioAPI; url: string; ctx: Ctx }): T[];
   /** Какие URL со страницы кладём в очередь (с новым ctx). */
   extractLinks(args: { $: CheerioAPI; url: string; ctx: Ctx }): QueueItem<Ctx>[];
+  /**
+   * Опциональный post-BFS hook. Вызывается один раз после обхода всех
+   * seed'ов, до записи parsed JSON. Позволяет резолверу дозаполнить
+   * записи из статичного источника, если fetch страниц провалился
+   * (напр. 404 на seed → parsePage не вызвался → потеря записей).
+   * Возвращает финальный массив (может добавлять, мержить, оставлять
+   * как есть).
+   */
+  hydrate?(entries: T[]): T[];
 }
 
 /**
@@ -72,5 +81,5 @@ export async function runBfs<T extends { key: string }, Ctx>(
     await sleep(opts.fetchDelayMs);
   }
 
-  return entries;
+  return resolver.hydrate ? resolver.hydrate(entries) : entries;
 }

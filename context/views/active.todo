@@ -52,7 +52,13 @@ refactor: [weapons/ammo] вынести `CATEGORY_LABELS` + `LABEL_TO_CATEGORY` 
 # сейчас, готов к пересечениям через mergeDuplicate), UI с SearchField
 # + PairToggleGroup 3 капсулы «Монстры»/«Кроты»/«Пираты», матч через
 # some(); audit 4 behaviors выполнен.
-catalog: остальные 2 каталога (blueprints, skills) — накатываются по паттерну → фаза feat → loot раскатан
+# skills закрыт 2026-07-14: 12 записей (5 skill из wiki 2902 + 7 ability
+# из 2905), полу-ручной резолвер с SKILL_ENTRIES, из HTML 2905
+# подтверждаются perStatPercent регексом; добавлен `Resolver.hydrate()`
+# hook для устойчивости к 404 seed'а (недостающие записи из fallback);
+# минималистичный UI без фильтров; audit 4 behaviors выполнен.
+catalog: [skill-modifiers] новая сущность перед MVP2 калькулятора — модель числовых модификаторов (skill × level → множитель к weapon.damage / robot.armor / sellPrice / ...), overlay-первичная (данных на вики нет, ручной ввод) → фаза docs → skills раскатан
+catalog: последний оставшийся каталог blueprints — накатывается по паттерну → фаза feat → skills раскатан
 catalog: parser--wiki расширить конфиг на 9 оставшихся каталогов → фаза feat → парсер обобщён
 catalog: parser--google-sheets расширить на 9 листов Sheets → фаза feat → лист под каталог настроен
 ui: подключить view для остальных каталогов через catalog-примитивы (equipment, ammo, items, loot, blueprints, ore, components, currencies, skills) — плитки на CatalogsHubPage + stub-роуты уже готовы (`CatalogStubPage`), нужно заменить stub на реальный view в `src/components/catalogs/<slug>/` по мере готовности парсера/overlay каждого каталога → фаза feat → catalog-shell выделен, данные каталога загружаются

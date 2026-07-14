@@ -1,0 +1,63 @@
+id: view--skills-catalog
+kind: entity
+namespace: ui
+version: '0.x'
+
+description: |
+  Карточный каталог навыков — девятый и финальный view MVP1. Сетка
+  из 12 карточек (5 навыков + 7 умений) со звёздочкой избранного. По
+  клику — детализация (MUI Dialog).
+
+  Монтируется по маршруту `/catalogs/skills-catalog` через
+  `SkillsCatalogPage`. Собирается из примитивов `other--catalog-shell`
+  (`CatalogHeader`, `CatalogSection`, `CatalogGrid`,
+  `FavoritesDnDSection`) плюс skills-специфичные компоненты
+  (`SkillCard`, `SkillDetail`, `SortableSkillCard`).
+
+  **Без фильтров и без SearchField** (12 записей помещаются на один
+  экран, по решению юзера 2026-07-14 — как у ore).
+
+  Карточка показывает: имя, chip `kind` («Навык» / «Умение»), chip
+  `perStatPercent` (у ability, «+1.5% на стат»), первые affects-теги.
+  Полный список — в детализации.
+
+  Детализация показывает: chip `kind`, `perStatPercent` (если есть),
+  полный список `affects` как chip'ы, `description`.
+
+  Читает данные из `data--skills-catalog` через `useSkillsStore`,
+  общая механика избранного `other--favorites` (отдельная IndexedDB-база).
+
+  Плитка на `CatalogsHubPage` — `@img/catalog-icons/skills.webp` (уже
+  на месте).
+
+  **UI-интеграции модификаторов сюда не входят** — это MVP2 (слайдер
+  уровня, пересчёт полей в других view). Здесь только «карточки-факты».
+
+source_files:
+  page: src/pages/catalogs/SkillsCatalogPage.tsx
+  view: src/components/catalogs/skills/SkillsCatalog.tsx
+  card: src/components/catalogs/skills/SkillCard.tsx
+  detail: src/components/catalogs/skills/SkillDetail.tsx
+  sortable_card: src/components/catalogs/skills/SortableSkillCard.tsx
+
+features_enabled:
+  - cards-grid
+  - skill-detail-view
+  - favorites-star
+  - favorites-dnd
+  - overlay-highlight
+
+features_disabled:
+  - filter-panel # 12 записей — фильтр не нужен
+  - search-in-section # 12 записей — поиск избыточен
+  - filter-kind # PairToggleGroup по kind не заводим (мало записей)
+  - level-slider # интерактивные модификаторы — MVP2
+
+manuals: []
+behaviors:
+  - view--skills-catalog-renders-cards-grid
+  - view--skills-catalog-opens-detail-on-click
+  - other--favorites-toggle-on-star-click
+
+verified_note: |
+  Реализация закрыта 2026-07-14. Минималистичный view без фильтров и без SearchField (12 записей). Карточка: chip `kind`, `+X%/стат` у ability, первые 3 `affects` + overflow, короткое описание. Детали: полный `affects` chip'ами с ремаркой про MVP2, полное описание. Behaviors verified 2026-07-14.

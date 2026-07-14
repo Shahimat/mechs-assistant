@@ -1,0 +1,28 @@
+id: view--skills-catalog-opens-detail-on-click
+kind: behavior
+namespace: ui
+entities: [view--skills-catalog]
+title: Клик по карточке в view--skills-catalog открывает детализацию (SkillDetail)
+
+scenarios:
+  - given: сетка карточек отрисована
+    when: пользователь кликает по карточке (не по звёздочке)
+    then: |
+      открывается `SkillDetail` — MUI Dialog со всеми полями Skill:
+      chip `kind`, `perStatPercent` (если ability), полный список
+      `affects` как chip'ы, `description`, key для копирования.
+
+  - given: SkillDetail открыт
+    when: пользователь закрывает его (крестик / Esc / клик по фону)
+    then: возврат к сетке, состояние стора не меняется.
+
+  - given: пользователь кликает по звёздочке избранного внутри карточки
+    when: обработчик события звёздочки перехватывает клик
+    then: |
+      детализация НЕ открывается, срабатывает только
+      `other--favorites-toggle-on-star-click`.
+
+verified: true
+verified_at: 2026-07-14
+verified_note: |
+  Проверено чтением кода: клик по `<CardActionArea>` в `SkillCard.tsx` вызывает `onClick(skill)` → `SkillsCatalog.tsx` ставит `selectedSkill`, `SkillDetail` рендерится как MUI Dialog. Клик по звёздочке через `e.stopPropagation()`, детализация не открывается. `SkillDetail.tsx` показывает: chip `kind`, chip `perStatPercent` (если есть), key для копирования, секцию «Влияет на» с ремаркой про MVP2 и всеми `affects` как chip'ы, полное `description`. Финальная визуальная проверка в браузере — пройдена юзером 2026-07-14.

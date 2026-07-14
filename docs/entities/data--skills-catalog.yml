@@ -1,35 +1,76 @@
 id: data--skills-catalog
 kind: entity
 namespace: catalog
-version: "0.x"
+version: '1.x'
 
 description: |
-  Каталог навыков и умений персонажа. Источник — вики: Навык
-  (page_id=2902) + Умение (2905).
+  Каталог навыков и умений персонажа — 12 записей (5 навыков + 7 умений).
+  Девятый каталог MVP1. **Только справочный слой** — модель числовых
+  модификаторов (как skill × level даёт множитель к weapon.damage,
+  robot.armor, sellPrice и т.п.) сюда не входит, будет отдельной
+  сущностью `data--skill-modifiers` перед MVP2 калькулятора.
 
-  **В MVP1 — только факты:** название, описание, уровни, категория.
-  Модель модификаторов (например, «Торговля» → множитель цены продажи
-  лута) — отдельная фаза `docs` перед MVP2, когда навыки будут
-  использоваться в калькуляторе.
+  В zustand-стор импортируется merged JSON (`@build/data/skills.json`)
+  — массив объектов `Skill`. Merged JSON генерируется build-time
+  скриптом `scripts/build-data`.
 
-  Наполнение — `parser--wiki`. Иконки — из парсера или скриншотов, поле
-  `iconPath`.
+  **Первичный источник — 2 страницы вики с нестандартной разметкой:**
+    - `?page_id=2902` «Навык» — 5 навыков в теле статьи, оформлены как
+      `<strong>`-заголовки + свободный текст описания. НЕТ h2.wiki-header
+      и wiki-item-table.
+    - `?page_id=2905` «Умение» — 7 умений в блоке «Каждый стат умений,
+      навыков прибавляет в процентах» плоским списком «Броня 1.5% Поля
+      1.5% …». Тоже без стандартной wiki-item-разметки.
 
-  Shell-entity MVP1.
+  **Полу-ручной парсер.** Стандартный `parsePage` через h2/table здесь
+  не работает. Резолвер держит захардкоженный список `SKILL_ENTRIES` (12
+  сущностей: key/name/kind/affects), а из HTML вытаскивает только:
+    - для навыков — description по `<strong>`-заголовкам из 2902;
+    - для умений — `perStatPercent` регексом `Название X.Y%` из 2905.
+  Ключи стабильны (5 + 7 = 12 сущностей давно определены), overlay
+  Sheets — для уточнений description / notes.
+
+  Overlay `data/overrides/skills.yml` синкается из Google Sheets (лист
+  `skills`) через `parser--google-sheets`. Схема — TS-типы в
+  `src/types/skill.ts`.
 
 source_files:
-  data: data/skills.json
+  parsed: data/skills.json
+  overlay: data/overrides/skills.yml
+  merged: .build/data/skills.json # build-time
+  merger: scripts/build-data/index.ts
+  parser: scripts/parser-wiki/resolvers/skills.ts
   types: src/types/skill.ts
 
 wiki_source:
   page_ids: [2902, 2905]
   section: Персонаж → Навык + Умение
-  data_flow: auto-parsed
+  data_flow: semi-manual # захардкоженный SKILL_ENTRIES + скупой парсинг из HTML
+  page_structure: |
+    Обе страницы — плоский HTML без h2.wiki-header/table.wiki-item-table.
+    2902: 5 навыков через <strong>Название</strong> + свободный текст
+    описания. 2905: 7 умений в списке «Броня 1.5% Поля 1.5% …».
+
+schema:
+  skill_key_fields:
+    - key # 'weapon-mastery', 'sniper', 'mining', 'specialist', 'trade', 'armor', 'fields', 'capacity', 'reactor-power', 'accumulator-capacity', 'all-weapons', 'specialist-boost'
+    - name # русское название («Владение оружием», «Снайпер», «Броня», …)
+    - kind # 'skill' (2902) | 'ability' (2905)
+    - description # короткое разъяснение из вики
+    - affects # `string[]` — семантические ключи полей других каталогов, на которые skill влияет (пока просто теги, runtime-логика — MVP2)
+  optional_top_level:
+    - perStatPercent # only ability — прирост на 1 стат в процентах (1.5, 0.75)
+    - iconPath # data/icons/skills/<key>.webp — иконки на вики нет, только автор
+    - wikiUrl
+
+features_enabled: [json-source, typed-schema, overlay-merge, semi-manual-parser]
+features_disabled: [network-fetch, dynamic-schema]
 
 manuals: []
-behaviors: []
+behaviors:
+  - data--skills-catalog-loaded-from-json
+  - data--skills-catalog-schema-typed
+  - view--skills-catalog-renders-cards-grid # кросс-ссылка
 
 verified_note: |
-  Shell-entity создана в фазе docs MVP1 — только справочные факты,
-  без модели модификаторов. Модификаторы (влияние на цены, урон,
-  крафт) — фаза docs перед MVP2 калькулятора.
+  Data-слой закрыт 2026-07-14: 12 записей (5 skill + 7 ability), полу-ручной resolver с захардкоженным `SKILL_ENTRIES`. Из HTML 2905 подтверждаются `perStatPercent` регексом `Название X.Y%` (совпадает у всех 7). Добавлен `Resolver.hydrate()` hook — если seed-страница упала (404), недостающие записи всё равно добавятся из fallback. Все behaviors verified 2026-07-14.

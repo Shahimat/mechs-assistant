@@ -288,6 +288,37 @@ export const LOOT_COLUMNS: ColumnSpec[] = [
   { name: 'source_note', description: 'Комментарий редактора (не идёт в JSON)' },
 ];
 
+export const SKILLS_COLUMNS: ColumnSpec[] = [
+  {
+    name: 'key',
+    description:
+      'Ключ навыка (стабильный, задан в SKILL_ENTRIES): sniper, mining, trade, ability-armor, ability-fields, …',
+  },
+  { name: 'name', description: 'Русское название («Снайпер», «Броня», …)' },
+  { name: 'kind', description: '`skill` (2902 — навык) | `ability` (2905 — умение)' },
+  {
+    name: 'description',
+    description:
+      'Разъяснение из вики. Захардкожено в резолвере, редактор может уточнить через overlay',
+  },
+  {
+    name: 'affects',
+    description:
+      'Семантические ключи полей других каталогов через ;: weaponDamage / sellPrice / armor / … (пока просто теги, runtime — MVP2)',
+  },
+  {
+    name: 'perStatPercent',
+    description:
+      'Только у ability — прирост на 1 стат в процентах (2905): 1.5, 0.75. Для skill пусто.',
+  },
+  {
+    name: 'iconPath',
+    description: 'Путь к иконке (например data/icons/skills/…) — иконки не парсим, только автор',
+  },
+  { name: 'wikiUrl', description: 'URL страницы вики (2902 или 2905)' },
+  { name: 'source_note', description: 'Комментарий редактора (не идёт в JSON)' },
+];
+
 /** Регистр колонок по slug каталога. */
 export const COLUMNS_BY_SLUG: Record<string, ColumnSpec[]> = {
   robots: MECHS_COLUMNS, // slug=robots, но лист=mechs (см. catalogs.config)
@@ -298,4 +329,5 @@ export const COLUMNS_BY_SLUG: Record<string, ColumnSpec[]> = {
   ore: ORE_COLUMNS,
   components: COMPONENTS_COLUMNS,
   loot: LOOT_COLUMNS,
+  skills: SKILLS_COLUMNS,
 };

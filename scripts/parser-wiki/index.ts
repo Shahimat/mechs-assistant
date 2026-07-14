@@ -10,6 +10,7 @@ import { itemsResolver, itemsSeeds } from './resolvers/items.js';
 import { oreResolver, oreSeeds } from './resolvers/ore.js';
 import { componentsResolver, componentsSeeds } from './resolvers/components.js';
 import { lootResolver, lootSeeds } from './resolvers/loot.js';
+import { skillsResolver, skillsSeeds } from './resolvers/skills.js';
 
 const FETCH_DELAY_MS = 150; // вежливость к серверу
 
@@ -57,6 +58,10 @@ const RESOLVERS: Record<string, () => ResolverEntry> = {
   loot: () => ({
     resolver: lootResolver,
     seeds: lootSeeds(),
+  }),
+  skills: () => ({
+    resolver: skillsResolver,
+    seeds: skillsSeeds(),
   }),
 };
 

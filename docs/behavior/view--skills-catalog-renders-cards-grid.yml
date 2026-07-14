@@ -1,0 +1,30 @@
+id: view--skills-catalog-renders-cards-grid
+kind: behavior
+namespace: ui
+entities: [view--skills-catalog]
+title: view--skills-catalog рендерит сетку карточек навыков из data--skills-catalog
+
+scenarios:
+  - given: стор навыков гидратирован, `skills` содержит 12 записей
+    when: пользователь открыл `/catalogs/skills-catalog`
+    then: |
+      view--skills-catalog рендерит сетку `SkillCard` — по одной карточке
+      на запись. В карточке: имя, chip `kind` («Навык» или «Умение»),
+      chip `perStatPercent` (у ability, `«+X%»`), короткий список
+      первых `affects`-тегов, звёздочка избранного.
+
+      Панель фильтров и SearchField отсутствуют (12 записей). Секция
+      «Избранные» появляется, если есть отмеченные звёздочкой.
+
+  - given: массив `skills` пуст
+    when: пользователь открыл `/catalogs/skills-catalog`
+    then: view показывает empty state (Alert «Нет данных для отображения»).
+
+  - given: "`error` не null (ошибка загрузки данных)"
+    when: пользователь открыл `/catalogs/skills-catalog`
+    then: view показывает error state (Alert severity=error).
+
+verified: true
+verified_at: 2026-07-14
+verified_note: |
+  Проверено чтением кода: `SkillsCatalog.tsx` — минималистичный view без `useSearchFilter`/`usePairFilter`, только split `favoriteSkills`/`otherSkills` через `Set(favorites)`. Сетка `<CatalogGrid>` из `SkillCard`. `SkillCard.tsx` показывает имя, chip `KIND_LABELS[kind]`, chip `+X% / стат` (у ability), первые 3 affects как chip'ы + `+N` overflow, описание 3-строчным ellipsis. Placeholder `School`. Empty/error state — Alert. Финальная визуальная проверка в браузере — пройдена юзером 2026-07-14.

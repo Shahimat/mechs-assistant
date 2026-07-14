@@ -1,0 +1,130 @@
+[
+  {
+    "key": "ability-accumulator-capacity",
+    "name": "Емкость накопителей",
+    "kind": "ability",
+    "description": "Умение «Емкость накопителей». Каждый стат прибавляет процент к емкости накопителей.",
+    "affects": [
+      "accumulatorCapacity"
+    ],
+    "wikiUrl": "https://new.mechs.su/?page_id=2905",
+    "perStatPercent": 1.5
+  },
+  {
+    "key": "ability-all-weapons",
+    "name": "Все виды орудий",
+    "kind": "ability",
+    "description": "Умение «Все виды орудий». Каждый стат прибавляет процент ко всем видам орудий.",
+    "affects": [
+      "allWeapons"
+    ],
+    "wikiUrl": "https://new.mechs.su/?page_id=2905",
+    "perStatPercent": 1.5
+  },
+  {
+    "key": "ability-armor",
+    "name": "Броня",
+    "kind": "ability",
+    "description": "Умение «Броня». Каждый стат прибавляет процент к броне робота.",
+    "affects": [
+      "armor"
+    ],
+    "wikiUrl": "https://new.mechs.su/?page_id=2905",
+    "perStatPercent": 1.5
+  },
+  {
+    "key": "ability-capacity",
+    "name": "Вместимость",
+    "kind": "ability",
+    "description": "Умение «Вместимость». Каждый стат прибавляет процент к вместимости трюма.",
+    "affects": [
+      "capacity"
+    ],
+    "wikiUrl": "https://new.mechs.su/?page_id=2905",
+    "perStatPercent": 1.5
+  },
+  {
+    "key": "ability-fields",
+    "name": "Поля",
+    "kind": "ability",
+    "description": "Умение «Поля». Каждый стат прибавляет процент к энергетическим полям робота.",
+    "affects": [
+      "fields"
+    ],
+    "wikiUrl": "https://new.mechs.su/?page_id=2905",
+    "perStatPercent": 1.5
+  },
+  {
+    "key": "ability-reactor-power",
+    "name": "Мощность реакторов",
+    "kind": "ability",
+    "description": "Умение «Мощность реакторов». Каждый стат прибавляет процент к мощности реакторов.",
+    "affects": [
+      "reactorPower"
+    ],
+    "wikiUrl": "https://new.mechs.su/?page_id=2905",
+    "perStatPercent": 0.75
+  },
+  {
+    "key": "ability-specialist-boost",
+    "name": "Навык Специалиста",
+    "kind": "ability",
+    "description": "Умение «Навык Специалиста». Каждый стат прибавляет процент к навыку Специалиста.",
+    "affects": [
+      "specialistSkill"
+    ],
+    "wikiUrl": "https://new.mechs.su/?page_id=2905",
+    "perStatPercent": 1.5
+  },
+  {
+    "key": "mining",
+    "name": "Добыча",
+    "kind": "skill",
+    "description": "Растёт от количества добытых ресурсов. Увеличивает скорость добычи. Важна для персонажа-добытчика.",
+    "affects": [
+      "miningSpeed"
+    ],
+    "wikiUrl": "https://new.mechs.su/?page_id=2902"
+  },
+  {
+    "key": "sniper",
+    "name": "Снайпер",
+    "kind": "skill",
+    "description": "Растёт от количества сделанных выстрелов. Уменьшает шанс промаха и увеличивает шанс критического урона. Важна для бойца.",
+    "affects": [
+      "missChance",
+      "critChance"
+    ],
+    "wikiUrl": "https://new.mechs.su/?page_id=2902"
+  },
+  {
+    "key": "specialist",
+    "name": "Специалист",
+    "kind": "skill",
+    "description": "Растёт от количества выстрелов из ремонтных пушек по поврежденным роботам своей нации. Увеличивает мощность ремонтника. Не растёт при лечении серых турелей, энергоблоков и криминальных игроков.",
+    "affects": [
+      "repairPower"
+    ],
+    "wikiUrl": "https://new.mechs.su/?page_id=2902"
+  },
+  {
+    "key": "trade",
+    "name": "Торговля",
+    "kind": "skill",
+    "description": "Растёт от продажи вещей и ресурсов в магазин. Увеличивает процент цены при продаже в магазин. Важен для торговца.",
+    "affects": [
+      "sellPrice"
+    ],
+    "wikiUrl": "https://new.mechs.su/?page_id=2902"
+  },
+  {
+    "key": "weapon-mastery",
+    "name": "Владение оружием",
+    "kind": "skill",
+    "description": "Опыт владения оружием — растёт от уничтожения монстров/кротов. Выше 100 каждый уровень добавляет +1 стат к удару этим видом орудий.",
+    "affects": [
+      "weaponDamage"
+    ],
+    "wikiUrl": "https://new.mechs.su/?page_id=2902"
+  }
+]

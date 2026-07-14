@@ -33,7 +33,7 @@ namespaces:
       - id: data--currencies
         one_liner: Справочник валют — Боны + Реглы (wiki 3017/3020). Без своего view, без плитки (2026-07-13). Понятия используются как `Price { bonds?, regls? }` в других каталогах.
       - id: data--skills-catalog
-        one_liner: Каталог навыков и умений персонажа (wiki 2902/2905). В MVP1 — только факты, модификаторы позже.
+        one_liner: 'Каталог навыков и умений — 12 записей из wiki 2902/2905, полу-ручной парсер (SKILL_ENTRIES захардкожен, description/perStatPercent из HTML). В MVP1 только справочный слой; модель модификаторов — отдельная сущность data--skill-modifiers перед MVP2.'
       - id: parser--wiki
         one_liner: Универсальный js/ts-парсер вики new.mechs.su — один скрипт с конфигом каталогов, коммитит JSON и иконки в data/ основного репо.
       - id: parser--google-sheets
@@ -87,6 +87,8 @@ namespaces:
         one_liner: Карточный каталог `/catalogs/components-catalog` — 32 компонента, SearchField + PairToggleGroup по kind (auto-hide при пустом overlay). Спецификация есть, реализация — в фазе feat.
       - id: view--loot-catalog
         one_liner: Карточный каталог `/catalogs/loot-catalog` — 65 записей, SearchField + PairToggleGroup по sources (3 капсулы «Монстры»/«Кроты»/«Пираты»). Спецификация есть, реализация — в фазе feat.
+      - id: view--skills-catalog
+        one_liner: Карточный каталог `/catalogs/skills-catalog` — 12 записей навыков/умений, без фильтров и поиска (мало записей). Спецификация есть, реализация — в фазе feat.
       - id: other--tile
         one_liner: Квадратная плитка навигации с hover-scale, active-press, focus-ring, слотом для иконки.
       - id: other--catalog-shell
@@ -176,6 +178,14 @@ namespaces:
         one_liner: view--loot-catalog рендерит сетку LootCard, SearchField + PairToggleGroup по sources.
       - id: view--loot-catalog-opens-detail-on-click
         one_liner: Клик по карточке лута открывает детализацию (LootDetail).
+      - id: data--skills-catalog-loaded-from-json
+        one_liner: Каталог навыков загружается из merged .build/data/skills.json при инициализации стора.
+      - id: data--skills-catalog-schema-typed
+        one_liner: Каждая запись skills.json соответствует типу Skill (TS strict).
+      - id: view--skills-catalog-renders-cards-grid
+        one_liner: view--skills-catalog рендерит сетку SkillCard, без фильтров и поиска.
+      - id: view--skills-catalog-opens-detail-on-click
+        one_liner: Клик по карточке навыка открывает детализацию (SkillDetail).
 
   comparison:
     description: Механики сравнения и приоритизации мехов (избранное, будущий боевой калькулятор).
@@ -239,6 +249,8 @@ conventions:
     one_liner: Именованные импорты MUI из корня пакета для tree-shaking.
   - key: openness
     one_liner: Устойчивые уточнения — в репу, не в memory/hooks; «запомни» = правка доки по умолчанию.
+  - key: ui-no-engineering-leak
+    one_liner: В UI не пропускаем инженерную кухню (data--*, «MVP2», overlay, TS-типы) — юзер видит факты игры, служебное живёт в docs/*.yml.
   - key: react
     one_liner: React 18+, только функциональные компоненты + hooks.
   - key: rspack
