@@ -9,6 +9,7 @@ import { ammoResolver, ammoSeeds } from './resolvers/ammo.js';
 import { itemsResolver, itemsSeeds } from './resolvers/items.js';
 import { oreResolver, oreSeeds } from './resolvers/ore.js';
 import { componentsResolver, componentsSeeds } from './resolvers/components.js';
+import { lootResolver, lootSeeds } from './resolvers/loot.js';
 
 const FETCH_DELAY_MS = 150; // вежливость к серверу
 
@@ -52,6 +53,10 @@ const RESOLVERS: Record<string, () => ResolverEntry> = {
   components: () => ({
     resolver: componentsResolver,
     seeds: componentsSeeds(),
+  }),
+  loot: () => ({
+    resolver: lootResolver,
+    seeds: lootSeeds(),
   }),
 };
 

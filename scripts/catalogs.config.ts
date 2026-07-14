@@ -95,6 +95,16 @@ export const CATALOGS: CatalogConfig[] = [
     iconsDir: 'data/icons/components',
     iconsUrlPrefix: 'components',
   },
+  {
+    slug: 'loot',
+    label: 'Лут',
+    parsedJsonPath: 'data/loot.json',
+    overlayYamlPath: 'data/overrides/loot.yml',
+    mergedJsonPath: '.build/data/loot.json',
+    overlaySheetName: 'loot',
+    iconsDir: 'data/icons/loot',
+    iconsUrlPrefix: 'loot',
+  },
 ];
 
 export function findCatalog(slug: string): CatalogConfig {

@@ -1,0 +1,24 @@
+id: data--loot-catalog-schema-typed
+kind: behavior
+namespace: catalog
+entities: [data--loot-catalog]
+title: Каждая запись в loot.json соответствует типу Loot (TS strict)
+
+scenarios:
+  - given: "TypeScript strict включён (`strict: true`) и `resolveJsonModule: true`"
+    when: файл `store.ts` импортирует `lootData` из `@build/data/loot.json`
+      и приводит его к `Loot[]`
+    then: |
+      сборка проходит без ошибок типа, `Loot`-типы из `src/types/loot.ts`
+      применимы ко всем записям.
+
+  - given: в JSON появилась запись без `stats.weight` или `sources`
+    when: разработчик пытается собрать проект (`npm run build`)
+    then: |
+      сборка/typecheck должны падать. Оговорка про runtime-валидацию та же,
+      что для всех data-каталогов.
+
+verified: true
+verified_at: 2026-07-14
+verified_note: |
+  Проверено: `npm run build` и `tsc --noEmit` проходят без ошибок типа. `Loot`/`LootStats`/`LootSource` описаны в `src/types/loot.ts`. Все 65 записей содержат `stats.weight` и `sources: LootSource[]` (одноэлементный на 2026-07-14). Оговорка про runtime-валидацию та же, что для всех data-каталогов.

@@ -1,0 +1,32 @@
+id: view--loot-catalog-renders-cards-grid
+kind: behavior
+namespace: ui
+entities: [view--loot-catalog]
+title: view--loot-catalog рендерит сетку карточек лута из data--loot-catalog
+
+scenarios:
+  - given: стор лута гидратирован, `loot` содержит записи
+    when: пользователь открыл `/catalogs/loot-catalog`
+    then: |
+      view--loot-catalog рендерит сетку `LootCard` — по одной карточке на
+      запись. В карточке: имя, chip источника (из `sources[0]`), вес,
+      цена продажи, звёздочка избранного.
+
+      Панель фильтров: `SearchField` (всегда) + `PairToggleGroup` по
+      `sources` (3 одиночные капсулы: «Монстры», «Кроты», «Пираты»).
+      Матч: `sources.some(s => activeSources.has(s))` — готов к
+      будущим пересечениям, сейчас поведение эквивалентно
+      `activeSources.has(sources[0])`.
+
+  - given: массив `loot` пуст
+    when: пользователь открыл `/catalogs/loot-catalog`
+    then: view показывает empty state.
+
+  - given: "`error` не null (ошибка загрузки данных)"
+    when: пользователь открыл `/catalogs/loot-catalog`
+    then: view показывает error state (Alert severity=error).
+
+verified: true
+verified_at: 2026-07-14
+verified_note: |
+  Проверено чтением кода: `LootCatalog.tsx` фильтрует `loot` по `l.sources.some(s => activeSources.has(s))` — семантика готова к пересечениям. Панель фильтров: `PairToggleGroup` с 3 одиночными капсулами «Монстры»/«Кроты»/«Пираты» через `usePairFilter`. `LootCard.tsx` показывает имя, chip'ы всех `sources` (сейчас всегда один), вес, цену продажи в бонах. SearchField в fav/other секциях. Empty/error state — Alert. Финальная визуальная проверка в браузере — пройдена юзером 2026-07-14.

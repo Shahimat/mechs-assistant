@@ -1,0 +1,65 @@
+id: view--loot-catalog
+kind: entity
+namespace: ui
+version: '0.x'
+
+description: |
+  Карточный каталог лута — восьмой view MVP1. Сетка ~65 карточек со
+  звёздочкой избранного. По клику — детализация (MUI Dialog).
+
+  Монтируется по маршруту `/catalogs/loot-catalog` через
+  `LootCatalogPage` — тонкая обёртка поверх `LootCatalog`. Собирается
+  из примитивов `other--catalog-shell` (`CatalogHeader`, `CatalogSection`,
+  `CatalogGrid`, `FavoritesDnDSection`, `SearchField`, `PairToggleGroup`)
+  плюс loot-специфичные компоненты (`LootCard`, `LootDetail`,
+  `SortableLootCard`).
+
+  **Фильтры:**
+    - **Поиск** — `SearchField` по имени.
+    - **Источник** — `PairToggleGroup` (3 одиночные капсулы:
+      «Монстры» / «Кроты» / «Пираты»). Матч: `sources` содержит хотя
+      бы один из активных ключей (`some()`). Даже при одиночном
+      `sources` сейчас, логика через `some()` готова к пересечениям.
+
+  Карточка показывает: имя, chip источника (из `sources[0]` — визуально
+  единственный на 2026-07-14), вес, цену продажи. Placeholder-иконка —
+  `Backpack` из MUI.
+
+  Детализация показывает: `stats.weight`, `sellPrice`, chip'ы всех
+  `sources` (если больше одного), полный список `foundIn` как chip'ы
+  (если есть), `description`.
+
+  Читает данные из `data--loot-catalog` через `useLootStore`, общая
+  механика избранного `other--favorites` (отдельная IndexedDB-база).
+
+  Плитка на `CatalogsHubPage` — `@img/catalog-icons/loot.webp`
+  (перезаписана 2026-07-13 из raw/loot.png).
+
+source_files:
+  page: src/pages/catalogs/LootCatalogPage.tsx
+  view: src/components/catalogs/loot/LootCatalog.tsx
+  card: src/components/catalogs/loot/LootCard.tsx
+  detail: src/components/catalogs/loot/LootDetail.tsx
+  sortable_card: src/components/catalogs/loot/SortableLootCard.tsx
+
+features_enabled:
+  - cards-grid
+  - loot-detail-view
+  - favorites-star
+  - favorites-dnd
+  - overlay-highlight
+  - search-in-section
+  - filter-sources # 3 капсулы по `sources`, матч через `some()`
+
+features_disabled:
+  - filter-level-range # у лута нет requiredLevel
+  - filter-subtype # `sources` — единственная классификация
+
+manuals: []
+behaviors:
+  - view--loot-catalog-renders-cards-grid
+  - view--loot-catalog-opens-detail-on-click
+  - other--favorites-toggle-on-star-click
+
+verified_note: |
+  Реализация закрыта 2026-07-14. View с SearchField + PairToggleGroup 3 капсулы по `sources`. Матч `some()` семантически поддерживает пересечения, сейчас эквивалентен `has()`. Chip'ы всех `sources` в карточке и в детализации, placeholder `Backpack`. Behaviors verified 2026-07-14.

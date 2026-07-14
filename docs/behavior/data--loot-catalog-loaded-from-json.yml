@@ -1,0 +1,28 @@
+id: data--loot-catalog-loaded-from-json
+kind: behavior
+namespace: catalog
+entities: [data--loot-catalog]
+title: Каталог лута загружается из merged JSON при инициализации стора
+
+scenarios:
+  - given: пользователь открыл `/catalogs/loot-catalog`, стор лута пуст
+    when: срабатывает `initializeLoot` (через useEffect в корневом компоненте
+      `view--loot-catalog`)
+    then: |
+      состояние стора `loot` заполнено массивом из `@build/data/loot.json`,
+      `isLoading` = false, `error` = null.
+
+  - given: JSON успешно распарсен, но массив пустой
+    when: срабатывает `initializeLoot`
+    then: |
+      `loot = []`, view показывает empty state.
+
+  - given: при чтении/парсинге JSON выброшена ошибка
+    when: "`initializeLoot` попадает в catch"
+    then: |
+      `isLoading = false`, `error` = текст ошибки, view показывает error state.
+
+verified: true
+verified_at: 2026-07-14
+verified_note: |
+  Проверено чтением кода и прогонами: `src/stores/loot/store.ts` — `initializeLoot` импортирует `@build/data/loot.json` и синхронно ставит `loot`, `isLoading=false`, `error=null`. `LootCatalog.tsx` вызывает `initializeLoot()` через useEffect при пустом сторе. Merged JSON собирается `scripts/build-data`: `npm run build:data → ✓ loot: merged 65 entries (0 with overlay) → .build/data/loot.json`. `npm run build`, `tsc --noEmit`, `npm run lint` — зелёные. Empty/error state — Alert.

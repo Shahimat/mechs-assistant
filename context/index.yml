@@ -23,7 +23,7 @@ namespaces:
       - id: data--items-catalog
         one_liner: Каталог используемых предметов — ~54 записи, 7 subtype (pack/gift/energy/invis/repair/scanner/teleport), BFS с зашитым в ctx subtype (pack и gift разделяют CSS-класс). Стор+view — в фазе feat.
       - id: data--loot-catalog
-        one_liner: Каталог лута — выпадает с монстров/кротов/пиратов (wiki 3023/3027/20118). Гибридный (парсер + overlay).
+        one_liner: 'Каталог лута — 65 записей из wiki 3023 (монстры, 41) + 3027 (кроты, 14) + 20118 (пираты, 10), BFS с ctx.source; `sources: string[]` (готов к пересечениям, сейчас всегда одноэлементный). Стор+view — в фазе feat.'
       - id: data--blueprints-catalog
         one_liner: Каталог чертежей — источники крафта компонентов (wiki 3034). Shell-entity MVP1.
       - id: data--ore-catalog
@@ -85,6 +85,8 @@ namespaces:
         one_liner: Карточный каталог `/catalogs/ore-catalog` — 8 руд, без фильтров и без поиска (мало записей), foundIn показан только в детализации. Спецификация есть, реализация — в фазе feat.
       - id: view--components-catalog
         one_liner: Карточный каталог `/catalogs/components-catalog` — 32 компонента, SearchField + PairToggleGroup по kind (auto-hide при пустом overlay). Спецификация есть, реализация — в фазе feat.
+      - id: view--loot-catalog
+        one_liner: Карточный каталог `/catalogs/loot-catalog` — 65 записей, SearchField + PairToggleGroup по sources (3 капсулы «Монстры»/«Кроты»/«Пираты»). Спецификация есть, реализация — в фазе feat.
       - id: other--tile
         one_liner: Квадратная плитка навигации с hover-scale, active-press, focus-ring, слотом для иконки.
       - id: other--catalog-shell
@@ -166,6 +168,14 @@ namespaces:
         one_liner: view--components-catalog рендерит сетку ComponentCard, SearchField + PairToggleGroup по kind (auto-hide).
       - id: view--components-catalog-opens-detail-on-click
         one_liner: Клик по карточке компонента открывает детализацию (ComponentDetail).
+      - id: data--loot-catalog-loaded-from-json
+        one_liner: Каталог лута загружается из merged .build/data/loot.json при инициализации стора.
+      - id: data--loot-catalog-schema-typed
+        one_liner: Каждая запись loot.json соответствует типу Loot (TS strict).
+      - id: view--loot-catalog-renders-cards-grid
+        one_liner: view--loot-catalog рендерит сетку LootCard, SearchField + PairToggleGroup по sources.
+      - id: view--loot-catalog-opens-detail-on-click
+        one_liner: Клик по карточке лута открывает детализацию (LootDetail).
 
   comparison:
     description: Механики сравнения и приоритизации мехов (избранное, будущий боевой калькулятор).

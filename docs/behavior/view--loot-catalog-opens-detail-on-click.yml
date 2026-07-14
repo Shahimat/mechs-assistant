@@ -1,0 +1,29 @@
+id: view--loot-catalog-opens-detail-on-click
+kind: behavior
+namespace: ui
+entities: [view--loot-catalog]
+title: Клик по карточке в view--loot-catalog открывает детализацию (LootDetail)
+
+scenarios:
+  - given: сетка карточек отрисована
+    when: пользователь кликает по карточке (не по звёздочке)
+    then: |
+      открывается `LootDetail` — MUI Dialog со всеми полями Loot:
+      `stats.weight`, `sellPrice`, chip'ы всех `sources` (если больше
+      одного), `foundIn` chip'ами (если есть), `description`, key для
+      копирования.
+
+  - given: LootDetail открыт
+    when: пользователь закрывает его (крестик / Esc / клик по фону)
+    then: возврат к сетке, состояние стора не меняется.
+
+  - given: пользователь кликает по звёздочке избранного внутри карточки
+    when: обработчик события звёздочки перехватывает клик
+    then: |
+      детализация НЕ открывается, срабатывает только
+      `other--favorites-toggle-on-star-click`.
+
+verified: true
+verified_at: 2026-07-14
+verified_note: |
+  Проверено чтением кода: клик по `<CardActionArea>` в `LootCard.tsx` вызывает `onClick(loot)` → `LootCatalog.tsx` ставит `selectedLoot`, `LootDetail` рендерится как MUI Dialog. Клик по звёздочке использует `e.stopPropagation()`, детализация не открывается. `LootDetail.tsx` показывает: chip'ы всех `sources`, `stats.weight`, `sellPrice`, секцию «Источники» с chip'ами из `foundIn` (у 6 записей есть, у остальных секция скрыта), `description`, key для копирования. Финальная визуальная проверка в браузере — пройдена юзером 2026-07-14.

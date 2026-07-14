@@ -1,36 +1,89 @@
 id: data--loot-catalog
 kind: entity
 namespace: catalog
-version: "0.x"
+version: '1.x'
 
 description: |
-  Каталог лута — предметы, выпадающие с монстров, кротов, пиратов.
-  Первичный источник — вики: Лут монстров (page_id=3023), Лут кротов
-  (3027), Лут пиратов (20118).
+  Каталог лута — предметы, выпадающие с монстров/кротов/пиратов.
+  Восьмой каталог MVP1 после мехов, weapons, equipment, ammo, items, ore,
+  components. Гибридный (parsed + overlay через стандартный `data-overlay`
+  механизм).
 
-  **Гибридный каталог.** Часть данных вытаскивает `parser--wiki`
-  (названия лута, источник выпадения, иллюстрации), часть заполняется
-  автором вручную через overlay (`data/overrides/loot.yml`): вес,
-  базовая цена в бонах (без модификатора навыка «Торговля»), возможные
-  уточнения иконок. См. convention `data-overlay`.
+  В zustand-стор импортируется merged JSON (`@build/data/loot.json`) —
+  массив объектов `Loot`. Merged JSON генерируется build-time скриптом
+  `scripts/build-data`.
 
-  Shell-entity MVP1.
+  Первичный источник — **три страницы** вики (по одной на источник):
+    - `?page_id=3023` «Лут монстров» → source='monster' (41 запись)
+    - `?page_id=3027` «Лут кротов» → source='mole' (14 записей)
+    - `?page_id=20118` «Лут пиратов» → source='pirate' (10 записей)
+
+  ~65 записей суммарно, все с CSS `wiki-item-type-cargo`. BFS проходит
+  по 3 seed'ам с зашитым `source` в контексте (тот же паттерн, что у
+  `robots` с `MechType` и `items` с `ItemCtx.subtype`). Разметка
+  минимальна: Вес, Цена продажи (Боны), Описание. Некоторые кроты имеют
+  «Находится в» — разбираем аналогично `ore.foundIn` через
+  `extractSourceNames` (`<a data-description>`).
+
+  **Sources: string[].** Даже если фактически на 2026-07-14 каждый лут
+  выпадает ровно из одного источника (проверено, пересечений между
+  страницами нет), схема — массив. Готовы к будущим пересечениям
+  (напр., «универсальный сертификат» с монстров и пиратов). Резолвер
+  пока проставляет `sources = [ctx.source]`; при появлении дублей
+  потребуется добавить `mergeDuplicate` в интерфейс `Resolver` (или
+  пост-обработку в резолвере loot) для мёржа sources.
+
+  **«Гибридная модель»** сводится к стандартному `data-overlay` (нет
+  overlay-only полей): парсер тянет всё, что есть на вики; overlay
+  позволяет перезаписать/уточнить любое поле — цену, вес, иконку,
+  описание.
+
+  Overlay `data/overrides/loot.yml` синкается из Google Sheets (лист
+  `loot`) через `parser--google-sheets`. Схема — TS-типы в
+  `src/types/loot.ts`.
 
 source_files:
-  data: data/loot.json                       # результат merge(parsed, overlay)
-  overlay: data/overrides/loot.yml           # ручной ввод автора
+  parsed: data/loot.json
+  overlay: data/overrides/loot.yml
+  merged: .build/data/loot.json # build-time
+  merger: scripts/build-data/index.ts
+  parser: scripts/parser-wiki/resolvers/loot.ts
   types: src/types/loot.ts
 
 wiki_source:
-  page_ids: [3023, 3027, 20118]
-  section: Экономика → Лут монстров/кротов/пиратов
+  root_page_ids: [3023, 3027, 20118] # seeds для BFS, каждая с зашитым source
+  section: Экономика → Лут монстров / кротов / пиратов
   data_flow: hybrid
-  overlay_fields: [weight, basePrice, iconPath]
+  page_structure: |
+    Три отдельные страницы, каждая содержит полный список лута своего
+    источника. h2.wiki-header с классом `wiki-item-type-cargo`, рядом
+    table.wiki-item-table с минимальным набором (Вес / Цена продажи /
+    Описание, иногда Находится в).
+
+schema:
+  loot_key_fields:
+    - key
+    - name
+    - model
+    - sources # `string[]` — 'monster' | 'mole' | 'pirate'; всегда одноэлементный на 2026-07-14
+    - stats # LootStats — только вес
+  stats_fields:
+    required: [weight]
+  optional_top_level:
+    - foundIn # `string[]` — список источников выпадения (когда поле есть на вики)
+    - sellPrice # { bonds?, regls? } — у лута встречены только Боны
+    - description
+    - iconPath # data/icons/loot/<key>.webp
+    - wikiUrl
+
+features_enabled: [json-source, typed-schema, overlay-merge]
+features_disabled: [network-fetch, dynamic-schema]
 
 manuals: []
-behaviors: []
+behaviors:
+  - data--loot-catalog-loaded-from-json
+  - data--loot-catalog-schema-typed
+  - view--loot-catalog-renders-cards-grid # кросс-ссылка
 
 verified_note: |
-  Shell-entity создана в фазе docs MVP1. Гибридная модель: парсер +
-  ручной ввод через `data/overrides/loot.yml`. Реализация — при
-  подключении каталога через пилот-цепочку.
+  Data-слой закрыт 2026-07-14: 65 записей из wiki 3023 (41 монстр) + 3027 (14 кротов) + 20118 (10 пиратов), пересечений нет. `sources: LootSource[]` — сейчас одноэлементный, готов к будущим пересечениям через `mergeDuplicate`. У 6 записей заполнен `foundIn`. Все behaviors verified 2026-07-14.

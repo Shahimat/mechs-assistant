@@ -47,7 +47,12 @@ refactor: [weapons/ammo] вынести `CATEGORY_LABELS` + `LABEL_TO_CATEGORY` 
 # overlay-колонками в Sheets готовы к наполнению; UI с SearchField и
 # auto-hide фильтром по kind (панель не рендерится пока overlay пуст);
 # audit 4 behaviors выполнен.
-catalog: остальные 3 каталога (blueprints, skills, loot) — накатываются по паттерну → фаза feat → components раскатан
+# loot закрыт 2026-07-14: parser (65 записей из wiki 3023/3027/20118:
+# 41+14+10), BFS с ctx.source, sources: LootSource[] (одноэлементный
+# сейчас, готов к пересечениям через mergeDuplicate), UI с SearchField
+# + PairToggleGroup 3 капсулы «Монстры»/«Кроты»/«Пираты», матч через
+# some(); audit 4 behaviors выполнен.
+catalog: остальные 2 каталога (blueprints, skills) — накатываются по паттерну → фаза feat → loot раскатан
 catalog: parser--wiki расширить конфиг на 9 оставшихся каталогов → фаза feat → парсер обобщён
 catalog: parser--google-sheets расширить на 9 листов Sheets → фаза feat → лист под каталог настроен
 ui: подключить view для остальных каталогов через catalog-примитивы (equipment, ammo, items, loot, blueprints, ore, components, currencies, skills) — плитки на CatalogsHubPage + stub-роуты уже готовы (`CatalogStubPage`), нужно заменить stub на реальный view в `src/components/catalogs/<slug>/` по мере готовности парсера/overlay каждого каталога → фаза feat → catalog-shell выделен, данные каталога загружаются

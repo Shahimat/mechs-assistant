@@ -1,0 +1,1096 @@
+[
+  {
+    "key": "blokirator",
+    "name": "Блокиратор",
+    "model": "Блокиратор",
+    "sources": [
+      "mole"
+    ],
+    "sellPrice": {
+      "bonds": 1250
+    },
+    "description": "Разновидность лута кротов. Используется для апгрейда роботов или крафтинга",
+    "foundIn": [
+      "Поцелуй"
+    ],
+    "stats": {
+      "weight": 51
+    },
+    "iconPath": "loot/blokirator.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3027"
+  },
+  {
+    "key": "bryushko_terida",
+    "name": "Брюшко Терида",
+    "model": "Брюшко Терида",
+    "sources": [
+      "monster"
+    ],
+    "sellPrice": {
+      "bonds": 2500000
+    },
+    "stats": {
+      "weight": 1800
+    },
+    "iconPath": "loot/bryushko_terida.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3023"
+  },
+  {
+    "key": "chasti_pirata_amf",
+    "name": "Части Пирата Амф",
+    "model": "Части Пирата Амф",
+    "sources": [
+      "pirate"
+    ],
+    "sellPrice": {
+      "bonds": 550
+    },
+    "stats": {
+      "weight": 350
+    },
+    "iconPath": "loot/chasti_pirata_amf.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=20118"
+  },
+  {
+    "key": "chasti_pirata_gab",
+    "name": "Части Пирата Габ",
+    "model": "Части Пирата Габ",
+    "sources": [
+      "pirate"
+    ],
+    "sellPrice": {
+      "bonds": 2500
+    },
+    "stats": {
+      "weight": 1100
+    },
+    "iconPath": "loot/chasti_pirata_gab.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=20118"
+  },
+  {
+    "key": "chasti_pirata_gip",
+    "name": "Части Пирата Гип",
+    "model": "Части Пирата Гип",
+    "sources": [
+      "pirate"
+    ],
+    "sellPrice": {
+      "bonds": 500
+    },
+    "stats": {
+      "weight": 300
+    },
+    "iconPath": "loot/chasti_pirata_gip.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=20118"
+  },
+  {
+    "key": "chasti_pirata_mao",
+    "name": "Части Пирата Мао",
+    "model": "Части Пирата Мао",
+    "sources": [
+      "pirate"
+    ],
+    "sellPrice": {
+      "bonds": 1250
+    },
+    "stats": {
+      "weight": 600
+    },
+    "iconPath": "loot/chasti_pirata_mao.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=20118"
+  },
+  {
+    "key": "chasti_pirata_mor",
+    "name": "Части Пирата Мор",
+    "model": "Части Пирата Мор",
+    "sources": [
+      "pirate"
+    ],
+    "sellPrice": {
+      "bonds": 2750
+    },
+    "description": "Очень ценный ресурсТребуется для прокачки последних ступеней робота икрафта лучшего оборудования",
+    "stats": {
+      "weight": 50000
+    },
+    "iconPath": "loot/chasti_pirata_mor.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=20118"
+  },
+  {
+    "key": "chasti_pirata_pif",
+    "name": "Части Пирата Пиф",
+    "model": "Части Пирата Пиф",
+    "sources": [
+      "pirate"
+    ],
+    "sellPrice": {
+      "bonds": 50000
+    },
+    "stats": {
+      "weight": 640
+    },
+    "iconPath": "loot/chasti_pirata_pif.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=20118"
+  },
+  {
+    "key": "chasti_pirata_rakh",
+    "name": "Части Пирата Рах",
+    "model": "Части Пирата Рах",
+    "sources": [
+      "pirate"
+    ],
+    "sellPrice": {
+      "bonds": 3775
+    },
+    "stats": {
+      "weight": 750
+    },
+    "iconPath": "loot/chasti_pirata_rakh.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=20118"
+  },
+  {
+    "key": "chasti_pirata_sat",
+    "name": "Части Пирата Сат",
+    "model": "Части Пирата Сат",
+    "sources": [
+      "pirate"
+    ],
+    "sellPrice": {
+      "bonds": 375000
+    },
+    "stats": {
+      "weight": 1300
+    },
+    "iconPath": "loot/chasti_pirata_sat.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=20118"
+  },
+  {
+    "key": "chasti_pirata_tig",
+    "name": "Части Пирата Тиг",
+    "model": "Части Пирата Тиг",
+    "sources": [
+      "pirate"
+    ],
+    "sellPrice": {
+      "bonds": 5750
+    },
+    "stats": {
+      "weight": 1200
+    },
+    "iconPath": "loot/chasti_pirata_tig.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=20118"
+  },
+  {
+    "key": "chasti_pirata_ugs",
+    "name": "Части Пирата Угс",
+    "model": "Части Пирата Угс",
+    "sources": [
+      "pirate"
+    ],
+    "sellPrice": {
+      "bonds": 5000
+    },
+    "stats": {
+      "weight": 800
+    },
+    "iconPath": "loot/chasti_pirata_ugs.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=20118"
+  },
+  {
+    "key": "demultipleksator",
+    "name": "Демультиплексатор",
+    "model": "Демультиплексатор",
+    "sources": [
+      "mole"
+    ],
+    "sellPrice": {
+      "bonds": 1250
+    },
+    "description": "Разновидность лута кротов. Используется для апгрейда роботов или крафтинга",
+    "foundIn": [
+      "Поцелуй"
+    ],
+    "stats": {
+      "weight": 51
+    },
+    "iconPath": "loot/demultipleksator.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3027"
+  },
+  {
+    "key": "dvoynaya_elitra_tuka",
+    "name": "Двойная Элитра Тука",
+    "model": "Двойная Элитра Тука",
+    "sources": [
+      "monster"
+    ],
+    "sellPrice": {
+      "bonds": 10
+    },
+    "description": "Более дорогие части туков.Можно продать в магазин/пилотамИли сохранить для крафта/улучшений",
+    "stats": {
+      "weight": 10
+    },
+    "iconPath": "loot/dvoynaya_elitra_tuka.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3023"
+  },
+  {
+    "key": "dvoynoy_shchit_senokosetsa",
+    "name": "Двойной Щит Сенокосеца",
+    "model": "Двойной Щит Сенокосеца",
+    "sources": [
+      "monster"
+    ],
+    "sellPrice": {
+      "bonds": 11
+    },
+    "description": "Лут жуков. Можно продать или сохранить для крафта",
+    "stats": {
+      "weight": 10
+    },
+    "iconPath": "loot/dvoynoy_shchit_senokosetsa.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3023"
+  },
+  {
+    "key": "elementy_broni_tarana",
+    "name": "Элементы Брони Тарана",
+    "model": "Элементы Брони Тарана",
+    "sources": [
+      "monster"
+    ],
+    "sellPrice": {
+      "bonds": 750000
+    },
+    "description": "Уникальные части брони Тарана.Очень прочный материал.Обеспечивает его непревзойденную защиту.Требуется для крафта очень редких предметов.",
+    "stats": {
+      "weight": 30000
+    },
+    "iconPath": "loot/elementy_broni_tarana.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3023"
+  },
+  {
+    "key": "elitra_tuka",
+    "name": "Элитра Тука",
+    "model": "Элитра Тука",
+    "sources": [
+      "monster"
+    ],
+    "sellPrice": {
+      "bonds": 5
+    },
+    "description": "Части туков.Можно продать в магазин,другим пилотам.Или сохранить для крафта/улучшений",
+    "stats": {
+      "weight": 10
+    },
+    "iconPath": "loot/elitra_tuka.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3023"
+  },
+  {
+    "key": "glaz_tuka_krasnogo",
+    "name": "Глаз Тука Красного",
+    "model": "Глаз Тука Красного",
+    "sources": [
+      "monster"
+    ],
+    "sellPrice": {
+      "bonds": 2000000
+    },
+    "stats": {
+      "weight": 10000
+    },
+    "iconPath": "loot/glaz_tuka_krasnogo.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3023"
+  },
+  {
+    "key": "glaz_varana",
+    "name": "Глаз Варана",
+    "model": "Глаз Варана",
+    "sources": [
+      "monster"
+    ],
+    "sellPrice": {
+      "bonds": 62
+    },
+    "description": "Лут варанов. Можно продать или сохранить для крафта",
+    "stats": {
+      "weight": 100
+    },
+    "iconPath": "loot/glaz_varana.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3023"
+  },
+  {
+    "key": "kapyushon_varana",
+    "name": "Капюшон Варана",
+    "model": "Капюшон Варана",
+    "sources": [
+      "monster"
+    ],
+    "sellPrice": {
+      "bonds": 15
+    },
+    "description": "Лут варанов. Можно продать или сохранить для крафта",
+    "stats": {
+      "weight": 20
+    },
+    "iconPath": "loot/kapyushon_varana.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3023"
+  },
+  {
+    "key": "khilitsery_pauka_glavnogo",
+    "name": "Хилицеры Паука Главного",
+    "model": "Хилицеры Паука Главного",
+    "sources": [
+      "monster"
+    ],
+    "sellPrice": {
+      "bonds": 14
+    },
+    "description": "Лут пауков. Можно продать или сохранить для крафта",
+    "stats": {
+      "weight": 25
+    },
+    "iconPath": "loot/khilitsery_pauka_glavnogo.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3023"
+  },
+  {
+    "key": "khrebet_roytuka",
+    "name": "Хребет Ройтука",
+    "model": "Хребет Ройтука",
+    "sources": [
+      "monster"
+    ],
+    "sellPrice": {
+      "bonds": 5000000
+    },
+    "stats": {
+      "weight": 2000
+    },
+    "iconPath": "loot/khrebet_roytuka.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3023"
+  },
+  {
+    "key": "khvost_varana",
+    "name": "Хвост Варана",
+    "model": "Хвост Варана",
+    "sources": [
+      "monster"
+    ],
+    "sellPrice": {
+      "bonds": 47
+    },
+    "description": "Лут варанов. Можно продать или сохранить для крафта",
+    "stats": {
+      "weight": 20
+    },
+    "iconPath": "loot/khvost_varana.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3023"
+  },
+  {
+    "key": "kleshnya_skorpiona",
+    "name": "Клешня Скорпиона",
+    "model": "Клешня Скорпиона",
+    "sources": [
+      "monster"
+    ],
+    "sellPrice": {
+      "bonds": 18
+    },
+    "description": "Лут скорпиона. Можно продать или сохранить для крафта",
+    "stats": {
+      "weight": 10
+    },
+    "iconPath": "loot/kleshnya_skorpiona.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3023"
+  },
+  {
+    "key": "klyki_medvedya",
+    "name": "Клыки Медведя",
+    "model": "Клыки Медведя",
+    "sources": [
+      "monster"
+    ],
+    "sellPrice": {
+      "bonds": 125
+    },
+    "description": "Лут медведя. Можно продать или сохранить для крафта",
+    "stats": {
+      "weight": 200
+    },
+    "iconPath": "loot/klyki_medvedya.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3023"
+  },
+  {
+    "key": "kogot_medvedya",
+    "name": "Коготь Медведя",
+    "model": "Коготь Медведя",
+    "sources": [
+      "monster"
+    ],
+    "sellPrice": {
+      "bonds": 60
+    },
+    "description": "Лут медведя. Можно продать или сохранить для крафта",
+    "stats": {
+      "weight": 100
+    },
+    "iconPath": "loot/kogot_medvedya.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3023"
+  },
+  {
+    "key": "kogot_psa",
+    "name": "Коготь Пса",
+    "model": "Коготь Пса",
+    "sources": [
+      "monster"
+    ],
+    "sellPrice": {
+      "bonds": 125
+    },
+    "description": "Лут собак. Лучше всего продать",
+    "stats": {
+      "weight": 100
+    },
+    "iconPath": "loot/kogot_psa.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3023"
+  },
+  {
+    "key": "kogot_psa_bolshogo",
+    "name": "Коготь Пса Большого",
+    "model": "Коготь Пса Большого",
+    "sources": [
+      "monster"
+    ],
+    "sellPrice": {
+      "bonds": 500
+    },
+    "description": "Лут собак. Лучше всего продать",
+    "stats": {
+      "weight": 200
+    },
+    "iconPath": "loot/kogot_psa_bolshogo.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3023"
+  },
+  {
+    "key": "kogot_psa_ogromnogo",
+    "name": "Коготь Пса Огромного",
+    "model": "Коготь Пса Огромного",
+    "sources": [
+      "monster"
+    ],
+    "sellPrice": {
+      "bonds": 5000
+    },
+    "description": "Лут собак. Лучше всего продать, но и для крафта сгодится",
+    "stats": {
+      "weight": 400
+    },
+    "iconPath": "loot/kogot_psa_ogromnogo.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3023"
+  },
+  {
+    "key": "kompaund_krotov",
+    "name": "Компаунд Кротов",
+    "model": "Компаунд Кротов",
+    "sources": [
+      "mole"
+    ],
+    "sellPrice": {
+      "bonds": 1250
+    },
+    "description": "Разновидность лута кротов. Используется для апгрейда роботов или крафтинга",
+    "stats": {
+      "weight": 51
+    },
+    "iconPath": "loot/kompaund_krotov.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3027"
+  },
+  {
+    "key": "komplekt_zp_krotov",
+    "name": "Комплект З/п Кротов",
+    "model": "Комплект З/п Кротов",
+    "sources": [
+      "mole"
+    ],
+    "sellPrice": {
+      "bonds": 1250
+    },
+    "description": "Разновидность лута кротов. Используется для апгрейда роботов или крафтинга",
+    "foundIn": [
+      "Подарок",
+      "Поцелуй"
+    ],
+    "stats": {
+      "weight": 51
+    },
+    "iconPath": "loot/komplekt_zp_krotov.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3027"
+  },
+  {
+    "key": "krotoskop",
+    "name": "Кротоскоп",
+    "model": "Кротоскоп",
+    "sources": [
+      "mole"
+    ],
+    "sellPrice": {
+      "bonds": 1250
+    },
+    "description": "Разновидность лута кротов. Используется для апгрейда роботов или крафтинга",
+    "stats": {
+      "weight": 51
+    },
+    "iconPath": "loot/krotoskop.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3027"
+  },
+  {
+    "key": "krototranslyator",
+    "name": "Крототранслятор",
+    "model": "Крототранслятор",
+    "sources": [
+      "mole"
+    ],
+    "sellPrice": {
+      "bonds": 1250
+    },
+    "description": "Разновидность лута кротов. Используется для апгрейда роботов или крафтинга",
+    "stats": {
+      "weight": 51
+    },
+    "iconPath": "loot/krototranslyator.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3027"
+  },
+  {
+    "key": "lapa_bogomola",
+    "name": "Лапа Богомола",
+    "model": "Лапа Богомола",
+    "sources": [
+      "monster"
+    ],
+    "sellPrice": {
+      "bonds": 55
+    },
+    "description": "Лут богомола. Можно продать или сохранить для крафта",
+    "stats": {
+      "weight": 100
+    },
+    "iconPath": "loot/lapa_bogomola.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3023"
+  },
+  {
+    "key": "lapa_teri",
+    "name": "Лапа Тери",
+    "model": "Лапа Тери",
+    "sources": [
+      "monster"
+    ],
+    "sellPrice": {
+      "bonds": 75000
+    },
+    "stats": {
+      "weight": 1000
+    },
+    "iconPath": "loot/lapa_teri.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3023"
+  },
+  {
+    "key": "led",
+    "name": "Лед",
+    "model": "Лед",
+    "sources": [
+      "monster"
+    ],
+    "stats": {
+      "weight": 100
+    },
+    "iconPath": "loot/led.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3023"
+  },
+  {
+    "key": "magma_konteyner",
+    "name": "Магма Контейнер",
+    "model": "Магма Контейнер",
+    "sources": [
+      "mole"
+    ],
+    "sellPrice": {
+      "bonds": 1250
+    },
+    "description": "Разновидность лута кротов. Используется для апгрейда роботов или крафтинга",
+    "stats": {
+      "weight": 51
+    },
+    "iconPath": "loot/magma_konteyner.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3027"
+  },
+  {
+    "key": "magnitnye_zhelezy_narata",
+    "name": "Магнитные Железы Нарата",
+    "model": "Магнитные Железы Нарата",
+    "sources": [
+      "monster"
+    ],
+    "sellPrice": {
+      "bonds": 250000
+    },
+    "description": "С их помощью Нарат искажает пространствоили усиливает всех вокруг.Требуется для крафта очень редких предметов.",
+    "stats": {
+      "weight": 15000
+    },
+    "iconPath": "loot/magnitnye_zhelezy_narata.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3023"
+  },
+  {
+    "key": "parapodii_chervya",
+    "name": "Параподии Червя",
+    "model": "Параподии Червя",
+    "sources": [
+      "monster"
+    ],
+    "sellPrice": {
+      "bonds": 81
+    },
+    "description": "Лут червей. Можно продать или сохранить для крафта",
+    "stats": {
+      "weight": 20
+    },
+    "iconPath": "loot/parapodii_chervya.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3023"
+  },
+  {
+    "key": "polikozha_krota",
+    "name": "Поликожа Крота",
+    "model": "Поликожа Крота",
+    "sources": [
+      "mole"
+    ],
+    "sellPrice": {
+      "bonds": 1250
+    },
+    "description": "Разновидность лута кротов. Используется для апгрейда роботов или крафтинга",
+    "stats": {
+      "weight": 51
+    },
+    "iconPath": "loot/polikozha_krota.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3027"
+  },
+  {
+    "key": "segment_chervya",
+    "name": "Сегмент Червя",
+    "model": "Сегмент Червя",
+    "sources": [
+      "monster"
+    ],
+    "sellPrice": {
+      "bonds": 70
+    },
+    "description": "Лут червей. Можно продать или сохранить для крафта",
+    "stats": {
+      "weight": 20
+    },
+    "iconPath": "loot/segment_chervya.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3023"
+  },
+  {
+    "key": "sertifikat_90_orudiya_i_nizhe",
+    "name": "Сертификат 90 Орудия И Ниже",
+    "model": "Сертификат",
+    "sources": [
+      "monster"
+    ],
+    "description": "У ГМов можно поменять на любое боевое оружие 90го уровняили апгрейды 1-5",
+    "foundIn": [
+      "Цветы",
+      "Сердечко",
+      "Кольцо",
+      "Мишка",
+      "Поцелуй",
+      "Подарок Большой",
+      "Контейнер удачи"
+    ],
+    "stats": {
+      "weight": 1000
+    },
+    "iconPath": "loot/sertifikat_90_orudiya_i_nizhe.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3023"
+  },
+  {
+    "key": "sertifikat_95_orudiya",
+    "name": "Сертификат 95 Орудия",
+    "model": "Сертификат",
+    "sources": [
+      "monster"
+    ],
+    "description": "У ГМов можно поменять на любое боевое оружие 95го уровняили апгрейды 6-7",
+    "foundIn": [
+      "Мишка",
+      "Подарок Большой",
+      "Подарок Огромный",
+      "Контейнер удачи"
+    ],
+    "stats": {
+      "weight": 1000
+    },
+    "iconPath": "loot/sertifikat_95_orudiya.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3023"
+  },
+  {
+    "key": "sertifikat_rozygrysh",
+    "name": "Сертификат Розыгрыш",
+    "model": "Сертификат Розыгрыш",
+    "sources": [
+      "monster"
+    ],
+    "description": "31 декабря проходит розыгрыш Сохрани - можешь выиграть крутого робота!или что то ценное",
+    "stats": {
+      "weight": 1000
+    },
+    "iconPath": "loot/sertifikat_rozygrysh.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3023"
+  },
+  {
+    "key": "shchit_senokosetsa",
+    "name": "Щит Сенокосеца",
+    "model": "Щит Сенокосеца",
+    "sources": [
+      "monster"
+    ],
+    "sellPrice": {
+      "bonds": 16
+    },
+    "description": "Лут жуков. Можно продать или сохранить для крафта",
+    "stats": {
+      "weight": 10
+    },
+    "iconPath": "loot/shchit_senokosetsa.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3023"
+  },
+  {
+    "key": "shchit_zhuka_glavnogo",
+    "name": "Щит Жука Главного",
+    "model": "Щит Жука Главного",
+    "sources": [
+      "monster"
+    ],
+    "sellPrice": {
+      "bonds": 12
+    },
+    "description": "Лут жуков. Можно продать или сохранить для крафта",
+    "stats": {
+      "weight": 10
+    },
+    "iconPath": "loot/shchit_zhuka_glavnogo.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3023"
+  },
+  {
+    "key": "shipy_tuka_serogo",
+    "name": "Шипы Тука Серого",
+    "model": "Шипы Тука Серого",
+    "sources": [
+      "monster"
+    ],
+    "sellPrice": {
+      "bonds": 8000
+    },
+    "stats": {
+      "weight": 5000
+    },
+    "iconPath": "loot/shipy_tuka_serogo.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3023"
+  },
+  {
+    "key": "shkura_ryy",
+    "name": "Шкура Рый",
+    "model": "Шкура Рый",
+    "sources": [
+      "monster"
+    ],
+    "sellPrice": {
+      "bonds": 87500
+    },
+    "stats": {
+      "weight": 15000
+    },
+    "iconPath": "loot/shkura_ryy.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3023"
+  },
+  {
+    "key": "shkura_vuryy",
+    "name": "Шкура Вурый",
+    "model": "Шкура Вурый",
+    "sources": [
+      "monster"
+    ],
+    "sellPrice": {
+      "bonds": 2000000
+    },
+    "stats": {
+      "weight": 15000
+    },
+    "iconPath": "loot/shkura_vuryy.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3023"
+  },
+  {
+    "key": "snezhnyy_kom",
+    "name": "Снежный Ком",
+    "model": "Снежный Ком",
+    "sources": [
+      "monster"
+    ],
+    "description": "Лут снежных мобов. Требуется для крафта подарков. Летом не тает",
+    "foundIn": [
+      "Подарок"
+    ],
+    "stats": {
+      "weight": 30
+    },
+    "iconPath": "loot/snezhnyy_kom.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3023"
+  },
+  {
+    "key": "stimulyator",
+    "name": "Стимулятор",
+    "model": "Стимулятор",
+    "sources": [
+      "mole"
+    ],
+    "sellPrice": {
+      "bonds": 12500
+    },
+    "description": "Разновидность лута кротов. Используется для апгрейда роботов или крафтинга",
+    "stats": {
+      "weight": 200
+    },
+    "iconPath": "loot/stimulyator.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3027"
+  },
+  {
+    "key": "stoker",
+    "name": "Стокер",
+    "model": "Стокер",
+    "sources": [
+      "mole"
+    ],
+    "sellPrice": {
+      "bonds": 7500
+    },
+    "description": "Разновидность лута кротов. Используется для апгрейда роботов или крафтинга",
+    "stats": {
+      "weight": 100
+    },
+    "iconPath": "loot/stoker.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3027"
+  },
+  {
+    "key": "struktura_liryy",
+    "name": "Структура Лирый",
+    "model": "Структура Лирый",
+    "sources": [
+      "monster"
+    ],
+    "sellPrice": {
+      "bonds": 7500000
+    },
+    "stats": {
+      "weight": 50000
+    },
+    "iconPath": "loot/struktura_liryy.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3023"
+  },
+  {
+    "key": "tykva",
+    "name": "Тыква",
+    "model": "Тыква",
+    "sources": [
+      "monster"
+    ],
+    "description": "Хэллоуинская тыква. Требуется для крафта подарков",
+    "stats": {
+      "weight": 30
+    },
+    "iconPath": "loot/tykva.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3023"
+  },
+  {
+    "key": "usy_bogomola",
+    "name": "Усы Богомола",
+    "model": "Усы Богомола",
+    "sources": [
+      "monster"
+    ],
+    "sellPrice": {
+      "bonds": 50
+    },
+    "description": "Лут богомола. Можно продать или сохранить для крафта",
+    "stats": {
+      "weight": 100
+    },
+    "iconPath": "loot/usy_bogomola.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3023"
+  },
+  {
+    "key": "usy_tuka_sinego",
+    "name": "Усы Тука Синего",
+    "model": "Усы Тука Синего",
+    "sources": [
+      "monster"
+    ],
+    "sellPrice": {
+      "bonds": 8750
+    },
+    "stats": {
+      "weight": 1500
+    },
+    "iconPath": "loot/usy_tuka_sinego.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3023"
+  },
+  {
+    "key": "verkhniy_rider",
+    "name": "Верхний Ридер",
+    "model": "Верхний Ридер",
+    "sources": [
+      "mole"
+    ],
+    "sellPrice": {
+      "bonds": 15000
+    },
+    "description": "Разновидность лута кротов. Используется для апгрейда роботов или крафтинга",
+    "stats": {
+      "weight": 180
+    },
+    "iconPath": "loot/verkhniy_rider.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3027"
+  },
+  {
+    "key": "vertlug_teridiona",
+    "name": "Вертлуг Теридиона",
+    "model": "Вертлуг Теридиона",
+    "sources": [
+      "monster"
+    ],
+    "sellPrice": {
+      "bonds": 10000000
+    },
+    "stats": {
+      "weight": 50000
+    },
+    "iconPath": "loot/vertlug_teridiona.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3023"
+  },
+  {
+    "key": "yadovitaya_zheleza_pauka",
+    "name": "Ядовитая Железа Паука",
+    "model": "Ядовитая Железа Паука",
+    "sources": [
+      "monster"
+    ],
+    "sellPrice": {
+      "bonds": 12
+    },
+    "description": "Лут пауков. Можно продать или сохранить для крафта",
+    "stats": {
+      "weight": 25
+    },
+    "iconPath": "loot/yadovitaya_zheleza_pauka.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3023"
+  },
+  {
+    "key": "zakhvat",
+    "name": "Захват",
+    "model": "Захват",
+    "sources": [
+      "mole"
+    ],
+    "sellPrice": {
+      "bonds": 3500
+    },
+    "description": "Разновидность лута кротов. Используется для апгрейда роботов или крафтинга",
+    "stats": {
+      "weight": 230
+    },
+    "iconPath": "loot/zakhvat.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3027"
+  },
+  {
+    "key": "zashchita_tuka_zheltogo",
+    "name": "Защита Тука Желтого",
+    "model": "Защита Тука Желтого",
+    "sources": [
+      "monster"
+    ],
+    "sellPrice": {
+      "bonds": 3000
+    },
+    "stats": {
+      "weight": 750
+    },
+    "iconPath": "loot/zashchita_tuka_zheltogo.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3023"
+  },
+  {
+    "key": "zaslon",
+    "name": "Заслон",
+    "model": "Заслон",
+    "sources": [
+      "mole"
+    ],
+    "sellPrice": {
+      "bonds": 3500
+    },
+    "description": "Разновидность лута кротов. Используется для апгрейда роботов или крафтинга",
+    "stats": {
+      "weight": 300
+    },
+    "iconPath": "loot/zaslon.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3027"
+  },
+  {
+    "key": "zatvor_modifitsirovannyy",
+    "name": "Затвор Модифицированный",
+    "model": "Затвор Модифицированный",
+    "sources": [
+      "mole"
+    ],
+    "sellPrice": {
+      "bonds": 1250
+    },
+    "description": "Разновидность лута кротов. Используется для апгрейда роботов или крафтинга",
+    "stats": {
+      "weight": 51
+    },
+    "iconPath": "loot/zatvor_modifitsirovannyy.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3027"
+  },
+  {
+    "key": "zhalo_skorpiona",
+    "name": "Жало Скорпиона",
+    "model": "Жало Скорпиона",
+    "sources": [
+      "monster"
+    ],
+    "sellPrice": {
+      "bonds": 25
+    },
+    "description": "Лут скорпиона. Можно продать или сохранить для крафта",
+    "stats": {
+      "weight": 10
+    },
+    "iconPath": "loot/zhalo_skorpiona.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3023"
+  },
+  {
+    "key": "zhalo_zhuka_glavnogo",
+    "name": "Жало Жука Главного",
+    "model": "Жало Жука Главного",
+    "sources": [
+      "monster"
+    ],
+    "sellPrice": {
+      "bonds": 16
+    },
+    "description": "Лут жуков. Можно продать или сохранить для крафта",
+    "stats": {
+      "weight": 10
+    },
+    "iconPath": "loot/zhalo_zhuka_glavnogo.webp",
+    "wikiUrl": "https://new.mechs.su/?page_id=3023"
+  }
+]
