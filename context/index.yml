@@ -34,10 +34,12 @@ namespaces:
         one_liner: Справочник валют — Боны + Реглы (wiki 3017/3020). Без своего view, без плитки (2026-07-13). Понятия используются как `Price { bonds?, regls? }` в других каталогах.
       - id: data--skills-catalog
         one_liner: 'Каталог навыков и умений — 12 записей из wiki 2902/2905, полу-ручной парсер (SKILL_ENTRIES захардкожен, description/perStatPercent из HTML). В MVP1 только справочный слой; модель модификаторов — отдельная сущность data--skill-modifiers перед MVP2.'
+      - id: data--todo-list
+        one_liner: 'Meta-каталог задач разработки — публичный TODO-список ассистента (не игровые данные). Sheet-only источник: лист `todo` в overlay-spreadsheet, dropdown-validation на priority/status, sync через тот же parser-google-sheets → data/overrides/todos.yml → merged JSON.'
       - id: parser--wiki
         one_liner: Универсальный js/ts-парсер вики new.mechs.su — один скрипт с конфигом каталогов, коммитит JSON и иконки в data/ основного репо.
       - id: parser--google-sheets
-        one_liner: Синк из Google Sheets в data/overrides/*.yml — тянет overlay через Sheets API v4, авто-кэш в репе.
+        one_liner: Синк из Google Sheets в data/overrides/*.yml — тянет overlay через Sheets API v4, авто-кэш в репе. Расширен 2026-07-14 обработкой листа `todo` (meta-каталог задач разработки).
     behaviors:
       - id: data--robots-catalog-loaded-from-json
         one_liner: Каталог мехов загружается из data/robots.json при инициализации стора.
@@ -93,6 +95,8 @@ namespaces:
         one_liner: Карточный каталог `/catalogs/skills-catalog` — 12 записей навыков/умений, без фильтров и поиска (мало записей). Спецификация есть, реализация — в фазе feat.
       - id: view--blueprints-catalog
         one_liner: Карточный каталог `/catalogs/blueprints-catalog` — 211 чертежей, SearchField + ToggleButtonGroup 7 раздельных категорий (мехи/оружие/оборудование/компоненты/апгрейды/паки/телепорты), встроенный рецепт в детали с мини-карточками ингредиентов. Раскатан 2026-07-14.
+      - id: view--todo-list
+        one_liner: Публичная страница планов разработки `/todo` — 4 секции по priority (Блокер/Высокий/Средний/Низкий), карточки с status-chip, кнопка «Предложить задачу» → Google Sheets. Плитка «Планы разработки» на HomePage. Реализация — в фазе feat.
       - id: other--tile
         one_liner: Квадратная плитка навигации с hover-scale, active-press, focus-ring, слотом для иконки.
       - id: other--catalog-shell
@@ -194,6 +198,10 @@ namespaces:
         one_liner: Клик по карточке навыка открывает детализацию (SkillDetail).
       - id: data--blueprints-catalog-loaded-from-json
         one_liner: Каталог чертежей загружается из merged .build/data/blueprints.json при инициализации стора.
+      - id: data--todo-list-loaded-from-json
+        one_liner: TODO-список загружается из merged .build/data/todos.json при инициализации useTodosStore.
+      - id: data--todo-list-schema-typed
+        one_liner: Каждая запись todos.json соответствует типу Todo (TS strict); priority/status — строгие enum, валидированные dropdown'ом в Sheets.
       - id: data--blueprints-catalog-schema-typed
         one_liner: Каждая запись blueprints.json соответствует типу Blueprint (TS strict) с встроенным рецептом.
       - id: view--blueprints-catalog-renders-cards-grid
@@ -204,6 +212,8 @@ namespaces:
         one_liner: URL-параметр ?open=<key> синхронизирует открытие/закрытие Detail с историей браузера через useDeepLinkOpen (push при клике, replace при крестике, back — переоткрывает предыдущий).
       - id: other--cross-catalog-navigation-ingredient-mini-card-navigates
         one_liner: Клик по IngredientMiniCard (иконка+×N+tooltip) навигирует в соответствующий каталог с ?open=<key>; equipment — через resolve subtype в один из 7 UI-подкаталогов.
+      - id: view--todo-list-renders-sections-by-priority
+        one_liner: TodoPage рендерит 4 секции по priority (пустые скрываются) + кнопку «Предложить задачу» → внешняя ссылка на Google Sheets в новой вкладке.
 
   comparison:
     description: Механики сравнения и приоритизации мехов (избранное, будущий боевой калькулятор).
@@ -263,6 +273,8 @@ conventions:
     one_liner: Стили компонентов — CSS-модули (`*.module.css`) рядом с TSX; `sx` только для крайних случаев.
   - key: theme-colors
     one_liner: Цвета в одном месте — `src/theme.ts` через MUI CssVars; в CSS доступ через `var(--mui-palette-*)`.
+  - key: todo-split
+    one_liner: Две системы задач — active.todo (dev/internal, привязана к workflow.md) и Sheets `todo`/страница /todo (product-facing, transparency). Не смешивать. Агент читает обе при report-сценариях.
   - key: mui-imports
     one_liner: Именованные импорты MUI из корня пакета для tree-shaking.
   - key: openness

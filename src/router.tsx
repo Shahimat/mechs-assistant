@@ -18,6 +18,8 @@ import { ComponentsCatalogPage } from './pages/catalogs/ComponentsCatalogPage';
 import { LootCatalogPage } from './pages/catalogs/LootCatalogPage';
 import { SkillsCatalogPage } from './pages/catalogs/SkillsCatalogPage';
 import { BlueprintsCatalogPage } from './pages/catalogs/BlueprintsCatalogPage';
+import { TodoPage } from './pages/TodoPage';
+import { WipPage } from './pages/WipPage';
 
 const basename = process.env.NODE_ENV === 'production' ? '/mechs-assistant' : undefined;
 
@@ -46,6 +48,26 @@ export const router = createBrowserRouter(
       handle: { crumb: 'Главная' },
       children: [
         { index: true, element: <HomePage /> },
+        {
+          path: 'todo',
+          element: <TodoPage />,
+          handle: { crumb: 'Планы разработки' },
+        },
+        {
+          path: 'mechs-calculator',
+          element: <WipPage title="Калькулятор мехов" epic="MVP2" />,
+          handle: { crumb: 'Калькулятор мехов' },
+        },
+        {
+          path: 'stats-calculator',
+          element: <WipPage title="Калькулятор характеристик" epic="MVP4" />,
+          handle: { crumb: 'Калькулятор характеристик' },
+        },
+        {
+          path: 'warehouse',
+          element: <WipPage title="Клановый склад" epic="MVP3" />,
+          handle: { crumb: 'Клановый склад' },
+        },
         {
           path: 'catalogs',
           handle: { crumb: 'Каталоги' },

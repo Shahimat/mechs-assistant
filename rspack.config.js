@@ -4,9 +4,18 @@ import ReactRefreshPlugin from '@rspack/plugin-react-refresh';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 import path from 'path';
 import { fileURLToPath } from 'url';
+import { config as dotenvConfig } from 'dotenv';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
+
+// Подхватываем переменные из .env.local. Часть из них — server-only
+// (GSHEETS_SA_KEY_PATH и т.п.), используются только в scripts/. Часть
+// намеренно инжектируется в клиентский бандл через DefinePlugin ниже
+// (MECHS_OVERLAY_SPREADSHEET_ID — не секрет: доступ к таблице
+// контролируется Sheets sharing, ID виден в клиенте только тем, кто
+// открыл сайт).
+dotenvConfig({ path: path.resolve(__dirname, '.env.local') });
 
 export default defineConfig({
   entry: './src/index.tsx',
@@ -74,6 +83,9 @@ export default defineConfig({
     }),
     new rspack.DefinePlugin({
       'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV || 'development'),
+      'process.env.MECHS_OVERLAY_SPREADSHEET_ID': JSON.stringify(
+        process.env.MECHS_OVERLAY_SPREADSHEET_ID || ''
+      ),
     }),
     new rspack.CopyRspackPlugin({
       patterns: [

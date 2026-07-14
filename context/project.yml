@@ -54,7 +54,7 @@ runtime:
 paths:
   source: src/
   data_processed: data/robots.json
-  data_raw: raw-data/       # gitignored, HTML-выгрузки со страниц вики (исходники для robots.json)
+  data_raw: raw-data/ # gitignored, HTML-выгрузки со страниц вики (исходники для robots.json)
   docs_entities: docs/entities/
   docs_behavior: docs/behavior/
   conventions: context/conventions/
@@ -62,10 +62,10 @@ paths:
   active_todo: context/views/active.todo
 
 namespaces:
-  - catalog       # каталоги, парсеры (wiki + Sheets), build-time merger
-  - ui            # карточные view каталогов, общие UI-компоненты
-  - comparison    # избранное (список ключей + drag-and-drop сортировка)
-  - persistence   # IndexedDB-персистенция
+  - catalog # каталоги, парсеры (wiki + Sheets), build-time merger
+  - ui # карточные view каталогов, общие UI-компоненты
+  - comparison # избранное (список ключей + drag-and-drop сортировка)
+  - persistence # IndexedDB-персистенция
 
 commands:
   install: npm install
@@ -78,7 +78,13 @@ commands:
   format: npm run format
 
 external_links:
-  official_site: https://new.mechs.su/                             # официальный сайт игры
-  wiki_robots: https://new.mechs.su/wiki/robots                    # первичный источник данных мехов и иллюстраций (парсинг вики)
-  upgrade_calculator: https://new.mechs.su/help/upgrade-robots     # референс онлайн-калькулятора прокачки для MVP2, клиентский Redux
-  mechs_earth_system: https://github.com/MechsEarth/System         # community-maintained база знаний ЕСИ, возможный вторичный источник (не первичный)
+  official_site: https://new.mechs.su/ # официальный сайт игры
+  wiki_robots: https://new.mechs.su/wiki/robots # первичный источник данных мехов и иллюстраций (парсинг вики)
+  upgrade_calculator: https://new.mechs.su/help/upgrade-robots # референс онлайн-калькулятора прокачки для MVP2, клиентский Redux
+  mechs_earth_system: https://github.com/MechsEarth/System # community-maintained база знаний ЕСИ, возможный вторичный источник (не первичный)
+  # todo_sheet: URL публичного листа `todo` в overlay-spreadsheet — не в git.
+  # Собирается в src/config/links.ts из env `MECHS_OVERLAY_SPREADSHEET_ID`
+  # (инжектится rspack DefinePlugin) + фиксированного GID листа. Кнопка
+  # «Предложить задачу» на /todo скрывается если ID не задан. См.
+  # .env.local.example.
+  todo_sheet_env: MECHS_OVERLAY_SPREADSHEET_ID + TODO_SHEET_GID

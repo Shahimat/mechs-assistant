@@ -5,7 +5,7 @@
 strizh_sport:
   requiredLevel: 1
   _sourceRow: 3
-  _updatedAt: '2026-07-12T10:06:46.078Z'
+  _updatedAt: '2026-07-14T20:04:13.281Z'
 kazuar:
   stats:
     durability: 550000
@@ -13,4 +13,4 @@ kazuar:
     regls: 1000
   description: Короче мороче поменяли значения
   _sourceRow: 4
-  _updatedAt: '2026-07-12T10:06:46.078Z'
+  _updatedAt: '2026-07-14T20:04:13.281Z'

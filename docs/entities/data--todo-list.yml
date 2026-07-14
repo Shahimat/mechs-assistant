@@ -1,0 +1,79 @@
+id: data--todo-list
+kind: entity
+namespace: catalog
+version: '1.x'
+
+description: |
+  Список задач разработки — публичный трекер планов и текущих
+  доработок ассистента. **Не игровой каталог**, а meta-сущность: юзеры
+  видят transparency-список «что делается / что запланировано», авторы
+  и редакторы правят задачи прямо в Google Sheets (лист `todo`).
+
+  В отличие от каталогов, лист `todo` — единственный источник (нет
+  parser-wiki, нет merge с parsed). Механика та же, что и overlay:
+  `parser-google-sheets` тянет `todo` → `data/todos.yml`, build-time
+  копирует в `.build/data/todos.json`. UI-стор читает merged JSON, view
+  группирует по приоритету и выводит на странице `/todo`.
+
+  Значения `priority` и `status` — русские, с dropdown-validation в
+  Sheets (`strict: true`), чтобы не было опечаток. Сортировка в UI —
+  по фиксированному массиву приоритетов (`Блокер → Высокий → Средний
+  → Низкий`), внутри приоритета — сохраняется порядок Sheets (либо по
+  дате).
+
+  Обновление данных: редактор правит `todo` в Sheets → жмёт
+  `workflow_dispatch` в `sync-sheets.yml` в GitHub → парсер тянет
+  свежий лист → deploy автомат по push в main. Полный цикл на пару
+  минут.
+
+source_files:
+  overlay: data/overrides/todos.yml # синкается из Sheets
+  merged: .build/data/todos.json # build-time
+  merger: scripts/build-data/index.ts
+  parser: scripts/parser-google-sheets/index.ts # расширен обработкой листа `todo`
+  types: src/types/todo.ts
+  setup: scripts/setup-todo-sheet/index.ts # идемпотентная настройка заголовков + dropdown
+
+sheet:
+  spreadsheet_id_env: MECHS_OVERLAY_SPREADSHEET_ID
+  sheet_name: todo
+  columns:
+    - name: Дата
+      description: Когда заведена запись (ISO YYYY-MM-DD)
+    - name: Приоритет
+      description: 'Уровень срочности'
+      dropdown: [Блокер, Высокий, Средний, Низкий]
+    - name: Статус
+      description: 'Стадия задачи'
+      dropdown: [Новая, В работе, Готово]
+    - name: Задача
+      description: Суть — что нужно сделать
+    - name: Заметка
+      description: Контекст/ссылки/детали (опционально)
+
+schema:
+  todo_fields:
+    required: [priority, status, text]
+    optional: [createdAt, note]
+  priority: 'Блокер' | 'Высокий' | 'Средний' | 'Низкий'
+  status: 'Новая' | 'В работе' | 'Готово'
+  key_generation: |
+    У Todo нет естественного key — генерируем позиционный `row-<N>`
+    при парсинге (N = индекс в Sheets, начиная с 3). Позволяет
+    стабильно ссылаться на конкретную запись; при удалении/вставке
+    строк ключи смещаются — это ok, TODO не имеет cross-refs.
+
+features_enabled: [json-source, typed-schema, sheets-sync]
+features_disabled: [wiki-parse, overlay-merge, cross-catalog-resolve, favorites]
+
+manuals: []
+behaviors:
+  - data--todo-list-loaded-from-json
+  - data--todo-list-schema-typed
+  - view--todo-list-renders-sections-by-priority # кросс-ссылка
+
+verified_note: |
+  Спецификация создана в фазе docs 2026-07-14. Реализация парсера
+  (расширение parser-google-sheets), типа, стора и view — в фазе
+  feat. Лист `todo` в Sheets уже настроен через
+  `npm run setup:todo` (заголовки + dropdown-validation).

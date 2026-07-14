@@ -1,0 +1,30 @@
+id: data--todo-list-loaded-from-json
+kind: behavior
+namespace: catalog
+entities: [data--todo-list]
+title: TODO-список загружается из merged JSON при инициализации стора
+
+scenarios:
+  - given: пользователь открыл `/todo`, стор пуст
+    when: срабатывает `initializeTodos` через useEffect
+    then: |
+      состояние `todos` заполнено массивом из `@build/data/todos.json`,
+      `isLoading` = false, `error` = null.
+
+  - given: JSON распарсен, но массив пустой
+    when: срабатывает `initializeTodos`
+    then: |
+      `todos = []`, view показывает empty state («Пока нет задач»).
+
+  - given: при чтении JSON выброшена ошибка
+    when: '`initializeTodos` попадает в catch'
+    then: |
+      `isLoading = false`, `error` = текст, view показывает error state.
+
+verified: true
+verified_at: 2026-07-14
+verified_note: |
+  Стор `src/stores/todos/store.ts` создан по паттерну items (без
+  IndexedDB — нет favorites/DnD), читает `@build/data/todos.json`.
+  Прогон `sync:sheets` + `build:data` — успешен (0 записей на
+  момент проверки: лист `todo` пуст, ждёт наполнения редакторами).

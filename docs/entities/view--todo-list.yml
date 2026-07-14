@@ -1,0 +1,59 @@
+id: view--todo-list
+kind: entity
+namespace: ui
+version: '1.x'
+
+description: |
+  Публичная страница планов разработки — `/todo`. Показывает список
+  задач ассистента (не игровых) сгруппированных по приоритету, чтобы
+  пользователи видели, что делается сейчас и что запланировано.
+
+  Раскладка: 4 секции по `priority` в фиксированном порядке (`Блокер
+  → Высокий → Средний → Низкий`), внутри секции — карточки с полями:
+    - `text` (крупно) — суть задачи;
+    - `status` — chip с цветовой кодировкой (Новая=default,
+      В работе=warning, Готово=success);
+    - `createdAt` — дата, если заполнена;
+    - `note` — раскрываемая заметка, если заполнена.
+
+  В шапке страницы — кнопка «Предложить задачу» с внешней ссылкой
+  на Google Sheets (target=_blank). Ссылка — из
+  `context/project.yml::external_links.todo_sheet`, в бандл попадает
+  через `src/config/links.ts`.
+
+  Точка входа — плитка «Планы разработки» на HomePage (иконка
+  временно placeholder, замена — см. active.todo, задача про
+  4-icons-on-main-page).
+
+  Данные читает из `data--todo-list` через `useTodosStore`. Стор
+  простой: `todos: Todo[]` + `initializeTodos()`, без favorites/DnD.
+
+source_files:
+  page: src/pages/TodoPage.tsx
+  view: src/components/todos/TodoList.tsx
+  card: src/components/todos/TodoCard.tsx
+  store: src/stores/todos/store.ts
+  links_config: src/config/links.ts
+
+features_enabled:
+  - grouped-by-priority
+  - status-chip-colored
+  - external-add-task-link # кнопка в шапке → Google Sheets в новой вкладке
+  - home-tile # плитка на HomePage
+
+features_disabled:
+  - favorites-star # TODO — не персональный список
+  - favorites-dnd
+  - search-in-section # мало записей, поиск избыточен
+  - filter-panel
+
+manuals: []
+behaviors:
+  - view--todo-list-renders-sections-by-priority
+  - view--home-renders-section-tiles # кросс-ссылка (плитка добавляется в существующий behavior)
+
+verified_note: |
+  Спецификация создана в фазе docs 2026-07-14. Реализация — в фазе
+  feat: store, TodoPage/TodoList/TodoCard, роут `/todo`, плитка на
+  HomePage, placeholder-иконка (заменится на реальную из
+  4-icons-on-main-page.png).

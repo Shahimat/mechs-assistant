@@ -5,6 +5,11 @@
 # от самого срочного к самому терпеливому. Внутри секции сверху вниз —
 # от того, за что берёмся первым, к тому, что может подождать своей
 # очереди.
+#
+# Это internal/dev-очередь. Product-facing задачи (планы, интересные
+# игрокам) живут в отдельной системе: лист `todo` в Google Sheets →
+# `data/overrides/todos.yml` → страница `/todo`. Разделение
+# зафиксировано в convention `todo-split`.
 
 ## blocker
 
@@ -17,6 +22,26 @@
 catalog: [skill-modifiers] новая сущность перед MVP2 калькулятора — модель числовых модификаторов (skill × level → множитель к weapon.damage / robot.armor / sellPrice / ...), overlay-первичная (данных на вики нет, ручной ввод) → фаза docs → блокирует старт MVP2
 
 ## medium
+# main-page-icons закрыт 2026-07-14: 4 webp в assets/images/main-icons/,
+# 5 плиток на HomePage, 3 stub-роута через WipPage для будущих MVP-эпиков.
+
+backend+auth: [MVP3 Клановый склад — единый скелет для всех приватных фич] СОГЛАСОВАННЫЙ ПЛАН (2026-07-14):
+  СТЕК: Cloudflare Workers + D1 (SQLite) + Hono + Drizzle ORM + jose (JWT-валидация) + `@react-oauth/google` на клиенте. Всё в free tier ($0/мес для 15-30 юзеров, ~500-2000 req/день).
+  АВТОРИЗАЦИЯ: Google OAuth id-token → валидация в Worker по Google JWKS → email → lookup в `members` table → role (viewer/editor/admin). Bootstrap: INITIAL_ADMIN_EMAIL в Wrangler-secret (юзер как единственный admin на старте), дальше — управление через admin UI. Whitelist живёт в БД, не в env.
+  СТРУКТУРА: `backend/` папка в том же репо (`backend/src/{index,auth,db/schema,routes/*}.ts` + wrangler.toml). Deploy — GitHub Action `deploy-backend.yml` (wrangler deploy по push в main). Backend URL — `.workers.dev` subdomain (бесплатный, кастомный домен — позже).
+  БЭКАПЫ: Cloudflare R2 (S3-совместимое хранилище, 10 GB free) — nightly workflow пишет `warehouse-backups/YYYY-MM-DD.json`. Плюс D1 Time Travel даёт 30 дней встроенных snapshot'ов.
+  МАСШТАБИРОВАНИЕ: любая новая приватная фича (календарь событий, статистика, голосования) добавляется тем же паттерном — новая миграция D1 + routes в backend/ + страницы в src/, использует существующий auth и role-model.
+  СВЯЗЬ С TODO: тот же auth-механизм (Google OAuth + email-whitelist) применить к кнопке «Предложить задачу» на /todo (пока показывается всем) — гейт по role=admin. Единый `useAuth()` hook.
+  ФАЗЫ (последовательные, каждая — после явного «поехали»):
+    Phase 0 (setup, ты вручную): Cloudflare account + `wrangler login`, Google Cloud Console → OAuth 2.0 Client ID (Web application, добавить origins localhost:3000 + shahimat.github.io) — это ОТДЕЛЬНАЯ credentials от существующего Service Account, приватный репо не нужен если R2 выбран для бэкапов.
+    Phase 1 (docs, я): conventions `private-data` / `auth-model` / `backend-layer`; entities `backend--warehouse-api` / `data--warehouse` / `view--warehouse`; 5-8 behaviors; правки roadmap.md/project.yml/index.yml; 2 строки CHANGELOG.
+    Phase 2 (feat, я): backend skeleton — Hono + D1 + `/health` + `/me`; JWT валидация; INITIAL_ADMIN bootstrap; локальный `wrangler dev` + deploy на CF.
+    Phase 3 (feat, я): warehouse endpoints — income/withdraw/participants schema, все routes, role-based middleware, тесты (vitest).
+    Phase 4 (feat, я): warehouse frontend — `@react-oauth/google` + auth-store + BackendClient + WarehousePage + плитка HomePage + гейт TODO-кнопки под auth-model.
+    Phase 5 (feat, я): backup workflow в R2 + endpoint `/admin/backup`.
+    Phase 6 (data, юзер+я): миграция из текущего Sheets → D1 через одноразовый скрипт.
+    Phase 7 (audit, я): verified:true на behaviors + manual для админа + README section.
+  → фаза docs → блокеры: (1) Phase 0 setup от юзера, (2) явный старт по каждой фазе последовательно
 catalog: [weapons/equipment/items/components/loot/ore] прогонять sync:sheets и наполнять overlay в Google Sheets — сейчас все overlay пустые (0 with overlay); наполнение = ручная работа редакторов, повышение точности каталогов относительно вики → фаза feat → нет
 refactor: [weapons/ammo] вынести `CATEGORY_LABELS` + `LABEL_TO_CATEGORY` из `WeaponsCatalog.tsx` в общую утилиту `src/utils/weaponCategories.ts` (сейчас дублируется в WeaponsCatalog и AmmoCatalog) → фаза refactor → нет
 data: программный бэкап Google Sheets → отдельный GitHub Actions workflow, дампы в backups/gsheets/YYYY-MM-DD.json → фаза feat → возникает по факту инцидента или роста объёма редакторов

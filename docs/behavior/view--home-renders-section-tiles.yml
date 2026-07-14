@@ -8,25 +8,35 @@ scenarios:
   - given: пользователь открыл `/`
     when: React Router монтирует `HomePage`
     then: |
-      отображается `<TileGrid>` с плитками разделов. На момент 2026-07-12
-      подключена одна плитка «Каталоги» (иконка `LibraryBooks`,
-      `to="/catalogs"`). Клик по плитке уводит в `view--catalogs-hub`.
-      Порядок плиток фиксирован в коде страницы.
+      отображается `<TileGrid>` с 5 плитками разделов в фиксированном
+      порядке (по решению юзера):
+        1. «Каталоги» → `/catalogs` (иконка `catalog-icon.webp`)
+        2. «Клановый склад» → `/warehouse` (MVP3, stub-страница)
+        3. «Калькулятор характеристик» → `/stats-calculator` (MVP4, stub)
+        4. «Калькулятор мехов» → `/mechs-calculator` (MVP2, stub)
+        5. «Планы разработки» → `/todo`
+      Иконки 2-5 — из `assets/images/main-icons/{mech-calc,stats-calc,
+      clan-storage,todo}.webp` (нарезаны sharp'ом из
+      `assets/raw/4-icons-on-main-page.png`, 512×512 каждая).
 
-  - given: список разделов расширяется (появился Калькулятор прокачки, Склад и т.д.)
+  - given: пользователь кликает по плитке нереализованного MVP-эпика
+    when: клик по «Калькулятор мехов» / «Калькулятор характеристик» / «Клановый склад»
+    then: |
+      навигация на соответствующий роут, где рендерится `WipPage` с
+      заголовком раздела и Alert «Раздел в разработке. Появится в
+      рамках MVPN». Каталоги, TODO — работают реально.
+
+  - given: список разделов расширяется дальше
     when: разработчик добавляет новую плитку в `HomePage`
     then: |
-      достаточно добавить `<Tile to="..." title="..." icon={...} />` —
-      сетка адаптивно перестроится, hover/click-эффекты и focus-ring
-      идут из `other--tile` без дополнительного кода.
+      достаточно добавить запись в массив `TILES` — сетка адаптивно
+      перестроится, hover/click-эффекты и focus-ring идут из
+      `other--tile` без дополнительного кода.
 
 verified: true
-verified_at: 2026-07-12
+verified_at: 2026-07-14
 verified_note: |
-  Проверено чтением кода: `HomePage.tsx` рендерит `<TileGrid>` с одной
-  плиткой `<Tile to="/catalogs" title="Каталоги" icon={<LibraryBooks />} />`.
-  `TileGrid` (`TileGrid.styles.ts`) — CSS Grid с адаптивным
-  `repeat(auto-fill, minmax(220-240px, 1fr))`. Финальный визуальный
-  тест навигации (клик по плитке → переход на /catalogs) — за юзером
-  после деплоя, но логика тривиальная — `Tile` = `<Link to>` из
-  react-router-dom.
+  Проверено чтением `HomePage.tsx` (массив `TILES` = 5 записей),
+  `router.tsx` (роуты `/mechs-calculator`, `/stats-calculator`,
+  `/warehouse` → `<WipPage>`), файлов иконок в
+  `assets/images/main-icons/`. Build зелёный.

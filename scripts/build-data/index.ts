@@ -30,6 +30,29 @@ async function main() {
   for (const cfg of CATALOGS) {
     await mergeCatalog(cfg, parsedBySlug.get(cfg.slug) ?? [], keyIndex);
   }
+
+  await buildTodoList();
+}
+
+/**
+ * Копирует TODO-список из sheet-only overlay в build-artefact. TODO — не
+ * каталог (нет parsed, нет merge, нет _meta), просто array записей.
+ */
+async function buildTodoList(): Promise<void> {
+  const src = 'data/overrides/todos.yml';
+  const dst = '.build/data/todos.json';
+  let arr: Jsonish[] = [];
+  try {
+    const raw = await fs.readFile(src, 'utf-8');
+    const parsed = yamlLoad(raw);
+    if (Array.isArray(parsed)) arr = parsed as Jsonish[];
+  } catch (err) {
+    if ((err as NodeJS.ErrnoException).code !== 'ENOENT') throw err;
+    // ENOENT: yml ещё не сгенерирован (первый прогон до `sync:sheets`).
+  }
+  await fs.mkdir(path.dirname(dst), { recursive: true });
+  await fs.writeFile(dst, JSON.stringify(arr, null, 2) + '\n', 'utf-8');
+  console.log(`✓ todos: ${arr.length} записей → ${dst}`);
 }
 
 async function mergeCatalog(

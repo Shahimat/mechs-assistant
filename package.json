@@ -27,6 +27,7 @@
     "format:check": "prettier --check \"**/*.{ts,tsx,js,jsx,json,css,md}\"",
     "sync:sheets": "tsx scripts/parser-google-sheets/index.ts",
     "setup:sheets": "tsx scripts/setup-sheets-columns/index.ts",
+    "setup:todo": "tsx scripts/setup-todo-sheet/index.ts",
     "sync:wiki": "tsx scripts/parser-wiki/index.ts",
     "convert:webp": "tsx scripts/convert-to-webp/index.ts"
   },

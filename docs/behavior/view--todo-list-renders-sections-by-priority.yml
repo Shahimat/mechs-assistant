@@ -1,0 +1,47 @@
+id: view--todo-list-renders-sections-by-priority
+kind: behavior
+namespace: ui
+entities: [view--todo-list]
+title: TodoPage рендерит 4 секции по приоритету + кнопку «Предложить задачу»
+
+scenarios:
+  - given: стор гидратирован, `todos` содержит записи
+    when: пользователь открыл `/todo`
+    then: |
+      view рендерит 4 секции в фиксированном порядке: «Блокер»,
+      «Высокий», «Средний», «Низкий». Внутри секции — карточки Todo
+      с полями text (крупно), status-chip (цвет по статусу: default/
+      warning/success), createdAt (если есть), note (если есть).
+
+      Пустые секции скрыты — не показываем «0 задач», чтобы не шумить.
+
+      В шапке страницы — кнопка «Предложить задачу» (`variant='outlined'`),
+      ссылка на `TODO_SHEET_URL` через `<a target="_blank"
+      rel="noopener">`.
+
+  - given: массив `todos` пуст
+    when: пользователь открыл `/todo`
+    then: |
+      view показывает empty state («Пока нет задач в списке») +
+      кнопка «Предложить задачу» остаётся.
+
+  - given: '`error` не null (ошибка загрузки)'
+    when: пользователь открыл `/todo`
+    then: view показывает error state (Alert severity=error).
+
+  - given: пользователь на HomePage
+    when: рендерится сетка плиток
+    then: |
+      среди плиток есть «Планы разработки» с иконкой (пока placeholder),
+      клик — навигация на `/todo`.
+
+verified: true
+verified_at: 2026-07-14
+verified_note: |
+  Реализация: `TodoList.tsx` (4 секции по фиксированному массиву
+  `TODO_PRIORITIES`, пустые секции скрыты), `TodoCard.tsx` (chip
+  цвет по статусу через STATUS_COLOR), кнопка «Предложить задачу»
+  → TODO_SHEET_URL из `src/config/links.ts`. Плитка «Планы
+  разработки» на HomePage с placeholder-иконкой `Checklist`
+  (замена — из raw/4-icons-on-main-page.png, см. active.todo).
+  Роут `/todo` в router.tsx. Build зелёный.

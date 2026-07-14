@@ -1,0 +1,36 @@
+id: data--todo-list-schema-typed
+kind: behavior
+namespace: catalog
+entities: [data--todo-list]
+title: Каждая запись todos.json соответствует типу Todo (TS strict)
+
+scenarios:
+  - given: 'TypeScript strict включён (`strict: true`) и `resolveJsonModule: true`'
+    when: файл `store.ts` импортирует `todosData` из `@build/data/todos.json`
+      и приводит к `Todo[]`
+    then: |
+      сборка проходит без ошибок типа. `Todo`-тип из `src/types/todo.ts`:
+        interface Todo {
+          key: string;             // 'row-<N>' из parser'а
+          text: string;            // «Задача»
+          priority: TodoPriority;  // 'Блокер' | 'Высокий' | 'Средний' | 'Низкий'
+          status: TodoStatus;      // 'Новая' | 'В работе' | 'Готово'
+          createdAt?: string;      // ISO 'YYYY-MM-DD'
+          note?: string;
+        }
+
+  - given: в JSON появилась запись без обязательного поля (`priority` /
+      `status` / `text`) или с невалидным значением enum
+    when: разработчик пытается собрать проект (`npm run build`)
+    then: |
+      typecheck падает на приведении. Sheets-парсер дополнительно
+      валидирует значения при чтении (dropdown в Sheets = strict, но
+      скрипт защищается от ручной правки yml мимо Sheets).
+
+verified: true
+verified_at: 2026-07-14
+verified_note: |
+  Тип `Todo` + enum-константы `TODO_PRIORITIES`/`TODO_STATUSES` в
+  `src/types/todo.ts`. Парсер `parser-google-sheets::syncTodoSheet`
+  проставляет `key=row-<N>` и fallback-даты, записывает даты
+  обратно в Sheets (batchUpdate). `npx tsc --noEmit` — 0 ошибок.
