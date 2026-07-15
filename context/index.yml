@@ -306,3 +306,5 @@ manuals:
     one_liner: Настройка Google Cloud Service Account, Sheets API, JSON-ключа локально и в GitHub Secrets для parser--google-sheets.
   - id: setup-github-workflow
     one_liner: Настройка публичности репо, Collaborators, GitHub Pages, deploy prefix /mechs-assistant/, три workflow-ручки (sync-wiki PR, sync-sheets прямой push с автотриггером deploy, deploy автомат).
+  - id: design-clan-warehouse-schema
+    one_liner: Учебная задача для начинающего backend-разработчика — спроектировать реляционную схему БД для кланового склада (постановка + требования + вопросы для размышления + критерии оценки, без готовой схемы).
