@@ -7,7 +7,12 @@ import { WindowList } from './components/WindowList';
 import { CaptureView } from './components/CaptureView';
 import { InventoryResult } from './components/InventoryResult';
 import { GridSettings } from './components/GridSettings';
-import { DEFAULT_GRID, recognizePage, type GridConfig } from './pipeline/recognize';
+import {
+  DEFAULT_GRID,
+  recognizePage,
+  type GridConfig,
+  type InventoryCorner,
+} from './pipeline/recognize';
 import { mergeSeries } from './pipeline/mergeSeries';
 import type { CapturedWindow, Recognized, SeriesState } from './types';
 
@@ -24,6 +29,7 @@ function App() {
   const [captured, setCaptured] = useState<CapturedWindow | null>(null);
   const [error, setError] = useState<string | null>(null);
   const [recognized, setRecognized] = useState<Recognized[]>([]);
+  const [corner, setCorner] = useState<InventoryCorner | null>(null);
   const [series, setSeries] = useState<SeriesState>({ active: false, pages: [] });
   const [grid, setGrid] = useState<GridConfig>(DEFAULT_GRID);
 
@@ -57,8 +63,9 @@ function App() {
     const cap = await captureNow();
     if (!cap) return;
     try {
-      const items = await recognizePage(cap, grid);
+      const { items, corner: c } = await recognizePage(cap, grid);
       setRecognized(items);
+      setCorner(c);
     } catch (e) {
       setError(`Ошибка распознавания: ${e}`);
     }
@@ -68,7 +75,8 @@ function App() {
     const cap = await captureNow();
     if (!cap) return;
     try {
-      const items = await recognizePage(cap, grid);
+      const { items, corner: c } = await recognizePage(cap, grid);
+      setCorner(c);
       setSeries((s) => ({
         active: true,
         pages: [...s.pages, items],
@@ -178,7 +186,7 @@ function App() {
       {captured && (
         <section className="section">
           <h2>Скрин окна</h2>
-          <CaptureView captured={captured} />
+          <CaptureView captured={captured} corner={corner} grid={grid} />
         </section>
       )}
 

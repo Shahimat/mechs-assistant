@@ -36,12 +36,16 @@ export interface GridConfig {
   rows: number;
 }
 
+// Дефолт под 1920×1080 (типичное разрешение игры сейчас). Инвентарь
+// в игре — 3 колонки × 4 строки (плюс пагинация «1/N» на нижней
+// границе). Cell size ~48 px — грубая оценка по скрину; точнее
+// подкручивается через форму «Настройки сетки» с визуальным оверлеем.
 export const DEFAULT_GRID: GridConfig = {
   offset_x: 8,
   offset_y: 8,
-  cell_size: 35,
-  cols: 4,
-  rows: 6,
+  cell_size: 48,
+  cols: 3,
+  rows: 4,
 };
 
 async function decodeCapturedToCanvas(captured: CapturedWindow): Promise<HTMLCanvasElement> {
@@ -104,17 +108,24 @@ export async function findInventoryCorner(
   });
 }
 
+export interface PageResult {
+  items: Recognized[];
+  /** Найденный угол UI-рамки инвентаря — null, если matching провалился.
+   *  Нужен UI-слою для визуализации оверлея на скрине. */
+  corner: InventoryCorner | null;
+}
+
 export async function recognizePage(
   captured: CapturedWindow,
   grid: GridConfig = DEFAULT_GRID
-): Promise<Recognized[]> {
+): Promise<PageResult> {
   const corner = await findInventoryCorner(captured);
   if (!corner) {
     console.warn(
       'recognizePage: UI-рамка инвентаря не найдена (template matching score > 0.5). ' +
         'Скорее всего окно не то или инвентарь не открыт.'
     );
-    return [];
+    return { items: [], corner: null };
   }
 
   const source = await decodeCapturedToCanvas(captured);
@@ -169,5 +180,5 @@ export async function recognizePage(
     }
   }
 
-  return results;
+  return { items: results, corner };
 }
