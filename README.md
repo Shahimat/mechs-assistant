@@ -46,4 +46,3 @@ npm run lint     # eslint
 Проект живёт по модели трёх слоёв (manual / domain / context) — см.
 `CLAUDE.md`. Мануалы для нетривиальных процедур — в `docs/manuals/`
 (`setup-google-sheets.md`, `setup-github-workflow.md`, `setup-safety-hooks.md`).
-test
