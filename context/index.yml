@@ -275,6 +275,8 @@ conventions:
     one_liner: Цвета в одном месте — `src/theme.ts` через MUI CssVars; в CSS доступ через `var(--mui-palette-*)`.
   - key: todo-split
     one_liner: Две системы задач — active.todo (dev/internal, привязана к workflow.md) и Sheets `todo`/страница /todo (product-facing, transparency). Не смешивать. Агент читает обе при report-сценариях.
+  - key: monorepo-shared-config
+    one_liner: apps/* держат свой .npmrc (копия root — npm не walks-up) и НЕ тащат тяжёлые build-time зависимости (Sharp живёт только в root).
   - key: mui-imports
     one_liner: Именованные импорты MUI из корня пакета для tree-shaking.
   - key: openness
