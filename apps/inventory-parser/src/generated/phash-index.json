@@ -1,0 +1,5132 @@
+{
+  "_generated_at": "2026-07-15T20:15:52.493Z",
+  "_hash_side": 16,
+  "_bits": 256,
+  "entries": [
+    {
+      "catalog": "ammo",
+      "item_key": "empp_10",
+      "hash": "000000000000018007e01ff81ff80ff80ff80ff80fe007c00180000000000000"
+    },
+    {
+      "catalog": "ammo",
+      "item_key": "empp_20",
+      "hash": "000000000000000007e01ff81ff81ff80ff80ff80fe007c00180000000000000"
+    },
+    {
+      "catalog": "ammo",
+      "item_key": "empp_30_m1",
+      "hash": "0000000003801ff87ffc3ffe0ffe03fe01ee01ee01e0016000e001e000000000"
+    },
+    {
+      "catalog": "ammo",
+      "item_key": "empp_30_m2",
+      "hash": "0000000003801ff87ffc3ffe0ffe03fe01ee01ee01e0016000e001e000000000"
+    },
+    {
+      "catalog": "ammo",
+      "item_key": "empp_standart",
+      "hash": "0000000001800ff03ff83ff81ffc0ffc03fc01fc01e801c001c001c000000000"
+    },
+    {
+      "catalog": "ammo",
+      "item_key": "fazer_15",
+      "hash": "00000000000001f007fc1ffc1ffc3ffc7ffc3ff83ff83ff00fd0018000000000"
+    },
+    {
+      "catalog": "ammo",
+      "item_key": "fazer_25",
+      "hash": "00000000000001f007f81ff83ff87ffc7ff83ff83ff03fe00fc0038000800000"
+    },
+    {
+      "catalog": "ammo",
+      "item_key": "fazer_standart",
+      "hash": "00000000000001e007fc1ffc3ffc7ffc7ffc3ff83ff83ff00ff003c000000000"
+    },
+    {
+      "catalog": "ammo",
+      "item_key": "gaubitsa_15",
+      "hash": "0000000003c00ff00df00ff00df00ff00df00ff01df01ff01ff01ff000000000"
+    },
+    {
+      "catalog": "ammo",
+      "item_key": "gaubitsa_35",
+      "hash": "0000000003c00ff00ff00ff00ff00ff00ff00ff01ff01ff01ff01ff000000000"
+    },
+    {
+      "catalog": "ammo",
+      "item_key": "gaubitsa_enrg_15",
+      "hash": "00000000079807f007f007f01fe01fe01fc01fc00fc00f800f80078000000000"
+    },
+    {
+      "catalog": "ammo",
+      "item_key": "gaubitsa_enrg_35",
+      "hash": "00000000079807f007f007f01fe01fe01fc01fc00fc00f800f80078000000000"
+    },
+    {
+      "catalog": "ammo",
+      "item_key": "gaubitsa_enrg_standart",
+      "hash": "00000000079807f007f007f01fe01fe01fe01fc00fc00f800f80078001000000"
+    },
+    {
+      "catalog": "ammo",
+      "item_key": "gaubitsa_standart",
+      "hash": "0000000003c00ff00ff00ff00ff00ff00ff00ff01ff01ff01ff01ff000000000"
+    },
+    {
+      "catalog": "ammo",
+      "item_key": "granatomet_10",
+      "hash": "000000000000000003800ff01f783cfc39fc3ffc1ff803f001c0000000000000"
+    },
+    {
+      "catalog": "ammo",
+      "item_key": "granatomet_20",
+      "hash": "000000000000000003800ff01f783cfc39fc3ffc1ff803f001c0000000000000"
+    },
+    {
+      "catalog": "ammo",
+      "item_key": "granatomet_40_m1",
+      "hash": "000000000000030007c01ffc3e7c7dfe7bfc7ffc1ff80ff001e000c000000000"
+    },
+    {
+      "catalog": "ammo",
+      "item_key": "granatomet_40_m2",
+      "hash": "000000000000030007c01ffc3e7c7dfe7bfc7ffc1ff80ff001e000c000000000"
+    },
+    {
+      "catalog": "ammo",
+      "item_key": "granatomet_enrg_10",
+      "hash": "0000000005e01ff01ff00ff01ff01ff01ff01ff00ff01ff01ff0056000600000"
+    },
+    {
+      "catalog": "ammo",
+      "item_key": "granatomet_enrg_20",
+      "hash": "0000000005e01ff01ff00ff01ff01ff01ff01ff00ff01ff01ff0056000600000"
+    },
+    {
+      "catalog": "ammo",
+      "item_key": "granatomet_enrg_40_m1",
+      "hash": "000000401ff01fd81ff01ff01ff01ff01ff01ff01ff01ff03ff83ff800000000"
+    },
+    {
+      "catalog": "ammo",
+      "item_key": "granatomet_enrg_40_m2",
+      "hash": "000000401ff01fd81ff01ff01ff01ff01ff01ff01ff01ff03ff83ff800000000"
+    },
+    {
+      "catalog": "ammo",
+      "item_key": "granatomet_enrg_standart",
+      "hash": "0000000001e01ff01fe00ff00ff00ff01ff01ff00ff01ff01ff005e000000000"
+    },
+    {
+      "catalog": "ammo",
+      "item_key": "granatomet_standart",
+      "hash": "000000000000000003800ff01f783cfc39fc3ffc1ff803f001c0000000000000"
+    },
+    {
+      "catalog": "ammo",
+      "item_key": "mortira_10",
+      "hash": "00000000007807ec1edc15fc1efe0dde693e7ffc3ffc3ffc07fc001800000000"
+    },
+    {
+      "catalog": "ammo",
+      "item_key": "mortira_20",
+      "hash": "00000000007807cc06dc15fc1fbe091e493e7ffc3ffc3ffc07fc001800000000"
+    },
+    {
+      "catalog": "ammo",
+      "item_key": "mortira_30_m1",
+      "hash": "0000003c03fc1ffe1ffe3fff7ffffffffffefffefffe2dd6005e010000080000"
+    },
+    {
+      "catalog": "ammo",
+      "item_key": "mortira_30_m2",
+      "hash": "0000003c03fc1ffe1ffe3fff7ffffffffffefffefffe2dd6005e010000080000"
+    },
+    {
+      "catalog": "ammo",
+      "item_key": "mortira_standart",
+      "hash": "00000000007807ec1edc15fc1ffe0dde693e7ffc3ffc3ffc07fc001800000000"
+    },
+    {
+      "catalog": "ammo",
+      "item_key": "pulemyot_15",
+      "hash": "00000000000003c007e007e007e007e007e007e007e007f807f801f000000000"
+    },
+    {
+      "catalog": "ammo",
+      "item_key": "pulemyot_25",
+      "hash": "00000000000001e007e007e007e007e007e007e007e007f807f801f800000000"
+    },
+    {
+      "catalog": "ammo",
+      "item_key": "pulemyot_enrg_15",
+      "hash": "0000000000701efc1ffc3d16259e2efe3ffe3ffe17fe17fe1e3c001800000000"
+    },
+    {
+      "catalog": "ammo",
+      "item_key": "pulemyot_enrg_25",
+      "hash": "0000000000701efc1ffc3d3627be2efe3ffe3ffe1ffe1ffe1e3c001800000000"
+    },
+    {
+      "catalog": "ammo",
+      "item_key": "pulemyot_enrg_standart",
+      "hash": "0000000000701efc1ffc3d36269e2efe3ffe3ffe1ffe1ffe1e3c001800000000"
+    },
+    {
+      "catalog": "ammo",
+      "item_key": "pulemyot_krupnokalibernyy_15",
+      "hash": "0000018003c003c007f80ffc1ffe1fee3ffe7fb81f701ee01f80070006000000"
+    },
+    {
+      "catalog": "ammo",
+      "item_key": "pulemyot_krupnokalibernyy_25",
+      "hash": "00000080038003c007f807fc1fde1fee3fbc3fb81f601cc01f80060006000000"
+    },
+    {
+      "catalog": "ammo",
+      "item_key": "pulemyot_krupnokalibernyy_standart",
+      "hash": "00000000038003c007f807fc1fce1fe63f887f901e601cc01d00020002000000"
+    },
+    {
+      "catalog": "ammo",
+      "item_key": "pulemyot_standart",
+      "hash": "0000000007c01fe01fe01ff01fe01ff017f01ff007e01ff01ff00ffc07f80000"
+    },
+    {
+      "catalog": "ammo",
+      "item_key": "pushka_10",
+      "hash": "00000000000000e003f81ffe3ffe1ffe1ffe0ffe0ffc0ff00fc0070004000000"
+    },
+    {
+      "catalog": "ammo",
+      "item_key": "pushka_20",
+      "hash": "000000000000006003f81ffc3ffe1ffe1ffe0ffe0ffc0ff007e0070004000000"
+    },
+    {
+      "catalog": "ammo",
+      "item_key": "pushka_30_m1",
+      "hash": "0000000001e007fc0ffc3ffc7ffc3ffc07fc01f801f000e000c000c000800000"
+    },
+    {
+      "catalog": "ammo",
+      "item_key": "pushka_30_m2",
+      "hash": "0000000001e007fc0ffc3ffc7ffc3ffc07fc01f801f000e000c000c000800000"
+    },
+    {
+      "catalog": "ammo",
+      "item_key": "pushka_enrg_10",
+      "hash": "000001c007e00ff00ff81ff81ff81ff81bf81bf80bf80ff00ff00fe001000000"
+    },
+    {
+      "catalog": "ammo",
+      "item_key": "pushka_enrg_20",
+      "hash": "000001c007e00ff00ff81ff81ff81ff81ff81bf80bf80ff00ff00fe001000000"
+    },
+    {
+      "catalog": "ammo",
+      "item_key": "pushka_enrg_30_m1",
+      "hash": "000001c007e00ff00ff81ff81ff81ff813f81bf80bf80bf00ff007e001000000"
+    },
+    {
+      "catalog": "ammo",
+      "item_key": "pushka_enrg_30_m2",
+      "hash": "000001c007e00ff00ff81ff81ff81ff813f81bf80bf80bf00ff007e001000000"
+    },
+    {
+      "catalog": "ammo",
+      "item_key": "pushka_enrg_standart",
+      "hash": "000001c007e00ff00ff81ff81ff81ff813f81bf80bf80bf00ff00fe001000000"
+    },
+    {
+      "catalog": "ammo",
+      "item_key": "pushka_standart",
+      "hash": "0000006001f007f81ffc7ffc7ffc3ffc3ffc1ff81ff01fc00f800f0004000000"
+    },
+    {
+      "catalog": "ammo",
+      "item_key": "rk_20",
+      "hash": "00000000000003c00ff81ffc3ffe3ffe3ffe3ffe1ffc0ffc03f801f800700000"
+    },
+    {
+      "catalog": "ammo",
+      "item_key": "rk_30",
+      "hash": "00000000000003c00ff03ffc3ffe3ffe3ffe3ffe1ffc07fc03f801f800700000"
+    },
+    {
+      "catalog": "ammo",
+      "item_key": "rk_enrg_20",
+      "hash": "00000000000003c00ff03ffc3ffe3ffe3ffe3ffe1ffc0ffc03f801f800700000"
+    },
+    {
+      "catalog": "ammo",
+      "item_key": "rk_enrg_30",
+      "hash": "00000000000003c00ff03ffc3ffe3ffe3ffe3ffe1ffc0ffc03f801f800700000"
+    },
+    {
+      "catalog": "ammo",
+      "item_key": "rk_obshchiy_40_m1",
+      "hash": "0000000003800fe03ff83ffc3ffe3ffc3ffc1ffc0ff80ff003f001e000c00000"
+    },
+    {
+      "catalog": "ammo",
+      "item_key": "rk_obshchiy_40_m2",
+      "hash": "0000000003800fe03ff83ffc3ffe3ffc3ffc1ffc0ff80ff003f001e000c00000"
+    },
+    {
+      "catalog": "ammo",
+      "item_key": "rk_standart",
+      "hash": "0000000007000fe03ff43ffc3ffe3ffc3ffc3ffc1ff80ff007f003e000c00000"
+    },
+    {
+      "catalog": "ammo",
+      "item_key": "zapchasti_standart",
+      "hash": "00001060186018307ffc7ffc1ffc2ffc2ffc0ffc0ffc0ff00fc00f000c000000"
+    },
+    {
+      "catalog": "ammo",
+      "item_key": "zapchasti_uluchshennye_15",
+      "hash": "00001060186018307ffc7ffc1ffc0ffc0ffc0ffc0ffc0ff80fe00f000c000000"
+    },
+    {
+      "catalog": "ammo",
+      "item_key": "zapchasti_uluchshennye_30",
+      "hash": "00001060186018307ffc7ffc1ffc2ffc0ffc0ffc0ffc0ff80fc00f000c000000"
+    },
+    {
+      "catalog": "blueprints",
+      "item_key": "chertezh_apgreyd_uroven_1",
+      "hash": "0000800003801e080fe81ff81ff81ff81ff81ff81ff81fe80ff0000000000000"
+    },
+    {
+      "catalog": "blueprints",
+      "item_key": "chertezh_apgreyd_uroven_2",
+      "hash": "4000800107c00fc0170017f01ff01ff81ff81ff01ff01fe007e0018000000000"
+    },
+    {
+      "catalog": "blueprints",
+      "item_key": "chertezh_apgreyd_uroven_3",
+      "hash": "0000800001000ff00ff81ff81ff80fb81fb80fb80fb81ff80df0000000000000"
+    },
+    {
+      "catalog": "blueprints",
+      "item_key": "chertezh_apgreyd_uroven_4",
+      "hash": "c000c0030fe00ff00ff83ff83ff82ff81fb81fb80fb81ff80df007e040020000"
+    },
+    {
+      "catalog": "blueprints",
+      "item_key": "chertezh_apgreyd_uroven_5",
+      "hash": "0000800003800ff00ff80ff80ff80fb01fb80fb80fb81fb80df0000000000000"
+    },
+    {
+      "catalog": "blueprints",
+      "item_key": "chertezh_apgreyd_uroven_6",
+      "hash": "0000000000001ff81ff81ff81ff81ff81ff81ff81ff81ff81ff8000000000000"
+    },
+    {
+      "catalog": "blueprints",
+      "item_key": "chertezh_blok",
+      "hash": "c002c0030fe01ff01ff81ff83ef83ef81e781f981ff81ff80ff007e040020000"
+    },
+    {
+      "catalog": "blueprints",
+      "item_key": "chertezh_blok_slezheniya",
+      "hash": "e003c0031ff03ff83f7c383c371c371c370c371c331c1f981ff80ff0c0030000"
+    },
+    {
+      "catalog": "blueprints",
+      "item_key": "chertezh_blok_slezheniya_rasshirennyy",
+      "hash": "c003c0030fe01ff81ff83fd83b3c373c1c7c1fbc1ef81ff80ff00fe040020000"
+    },
+    {
+      "catalog": "blueprints",
+      "item_key": "chertezh_bronya",
+      "hash": "c003c0030fe01ff01ff83ff83dfc3dfc17fc1fe81ff81ff80ff007e040020000"
+    },
+    {
+      "catalog": "blueprints",
+      "item_key": "chertezh_bronya_13",
+      "hash": "c000c0010fc01ff01ff81ff81ff81ff81ff81ff81df81ff00ff007c040000000"
+    },
+    {
+      "catalog": "blueprints",
+      "item_key": "chertezh_bronya_18",
+      "hash": "c002c0030fc01ff01ff83ff83ff83df81ff81ff81ff81ff80ff007e040020000"
+    },
+    {
+      "catalog": "blueprints",
+      "item_key": "chertezh_bronya_22",
+      "hash": "c000c0010fc01ff01ff81ff81ff81ff81ff81ff81df81ff00ff003c040000000"
+    },
+    {
+      "catalog": "blueprints",
+      "item_key": "chertezh_bronya_26",
+      "hash": "c003c0030fe01ff01ff83ff83d7c3dbc17dc1bec1fe81ff80ff007e040020000"
+    },
+    {
+      "catalog": "blueprints",
+      "item_key": "chertezh_bronya_29",
+      "hash": "c000c0030fc01ff01ff81ff83ff83b381ff81ff81bf81ff80ff007e040000000"
+    },
+    {
+      "catalog": "blueprints",
+      "item_key": "chertezh_bronya_33",
+      "hash": "c000c0010fc01ff01ff81ff81ff81ff81ff81ff81df81ff00ff007c040000000"
+    },
+    {
+      "catalog": "blueprints",
+      "item_key": "chertezh_bronya_35",
+      "hash": "c000c00107c01ff01ff81ff81ff81ff81ff81ff81ff81ff00ff003c040000000"
+    },
+    {
+      "catalog": "blueprints",
+      "item_key": "chertezh_bronya_38",
+      "hash": "c000c0030fc01ff01ff81ef83ff83b381ff81ff81bf81ff80ff007e040000000"
+    },
+    {
+      "catalog": "blueprints",
+      "item_key": "chertezh_bronya_4",
+      "hash": "c000c0010fc01ff01ff81ff81ff81ff81ff81ff81df81ff00ff003c040000000"
+    },
+    {
+      "catalog": "blueprints",
+      "item_key": "chertezh_bronya_40",
+      "hash": "c003c0031fe01ff81ff83fbc38dc318c1bec18fc1ef81ff81ff00fe040030000"
+    },
+    {
+      "catalog": "blueprints",
+      "item_key": "chertezh_bronya_42",
+      "hash": "c000c0010fc01ff01ff81ff83ff83ff81ff81ff81df81ff80ff007e040000000"
+    },
+    {
+      "catalog": "blueprints",
+      "item_key": "chertezh_bronya_45",
+      "hash": "c000c0010fc01ff01ff81ff83ff83ff81ff81ff81df81ff80ff007e040020000"
+    },
+    {
+      "catalog": "blueprints",
+      "item_key": "chertezh_bronya_47",
+      "hash": "c000c0010fc01ff01ff81ff83ff81b381ff81ff81bf81ff00ff007c040000000"
+    },
+    {
+      "catalog": "blueprints",
+      "item_key": "chertezh_bronya_50",
+      "hash": "c002c0030fc01ff01ff81ff83fd83fd81ff81ff81ff81ff80ff007e040020000"
+    },
+    {
+      "catalog": "blueprints",
+      "item_key": "chertezh_bronya_8",
+      "hash": "c000c0010fc01ff01ff81ff83ff83ff81ff81fe81ff81ff80ff007e040000000"
+    },
+    {
+      "catalog": "blueprints",
+      "item_key": "chertezh_bronya_splav_v13",
+      "hash": "c000c0010fc01ff01ff81ff81ff81ff81ff81fd81c181c300ff007c040000000"
+    },
+    {
+      "catalog": "blueprints",
+      "item_key": "chertezh_chip_bronya",
+      "hash": "c003c0031fe01ff83ff83efc3c9c3c1c1d1c1d7c1ff81ff81ff00fe040030000"
+    },
+    {
+      "catalog": "blueprints",
+      "item_key": "chertezh_chip_bronya_v2",
+      "hash": "c000c0010fc01ff01ff81ff83eb83ff81ff81df81ff81ff80ff007e040020000"
+    },
+    {
+      "catalog": "blueprints",
+      "item_key": "chertezh_chip_bronya_v3",
+      "hash": "c000c0010fc01ff01ff81ff81eb81ff81ff81df81ff81ff00ff003c040000000"
+    },
+    {
+      "catalog": "blueprints",
+      "item_key": "chertezh_chip_bronya_v4",
+      "hash": "c000c0010fc01ff01ff81ff81fb81ff81ff81df81ff81ff00ff003c040000000"
+    },
+    {
+      "catalog": "blueprints",
+      "item_key": "chertezh_chip_dobycha",
+      "hash": "c000c0030fc01ff01ff81ff83ff83ff817f81bf81df81e780ff007c040000000"
+    },
+    {
+      "catalog": "blueprints",
+      "item_key": "chertezh_chip_dobycha_v2",
+      "hash": "c003c0031fe01ff81ff83ffc3efc38fc307c18fc1c781e781ff00fe040030000"
+    },
+    {
+      "catalog": "blueprints",
+      "item_key": "chertezh_chip_dobycha_v3",
+      "hash": "c000c0010fc01ff01ff81ff81fb81ff81ff81bf81ff81e700ff007c040000000"
+    },
+    {
+      "catalog": "blueprints",
+      "item_key": "chertezh_chip_dobycha_v4",
+      "hash": "c000c0010fc01ff01ff81f783fd83ff817f81ff81ff81e780ff007e040020000"
+    },
+    {
+      "catalog": "blueprints",
+      "item_key": "chertezh_chip_energosnabzhenie",
+      "hash": "c000c0010fc01ff01ff81ff81ff81ff81ff81f781f781ff00ff003c040000000"
+    },
+    {
+      "catalog": "blueprints",
+      "item_key": "chertezh_chip_energosnabzhenie_v2",
+      "hash": "c000c00107c01ff01ff81ff81ff81ff81ff81ff81ff80ff00ff003c000000000"
+    },
+    {
+      "catalog": "blueprints",
+      "item_key": "chertezh_chip_energosnabzhenie_v3",
+      "hash": "c000c0010fc01ff01ff81ff83ff81ff81ff81f781f781ff00ff007c040000000"
+    },
+    {
+      "catalog": "blueprints",
+      "item_key": "chertezh_chip_energosnabzhenie_v4",
+      "hash": "c000c0010fc01ff01ff81ff83ff81ff81ff81ff81ff81ff80ff007c040000000"
+    },
+    {
+      "catalog": "blueprints",
+      "item_key": "chertezh_chip_gdis",
+      "hash": "c000c0010fc01ff01ff81ff83ff81ff81ff81ff81ff81ff00ff007c040000000"
+    },
+    {
+      "catalog": "blueprints",
+      "item_key": "chertezh_chip_pole",
+      "hash": "c000c0010fc01ff01ff81ff81ff81ff81ff81bf81ff81ff00ff003c040000000"
+    },
+    {
+      "catalog": "blueprints",
+      "item_key": "chertezh_chip_pole_v2",
+      "hash": "c000c00107c01ff01ff81ff81ff81ff81ff81be81ff81ff00ff003c000000000"
+    },
+    {
+      "catalog": "blueprints",
+      "item_key": "chertezh_chip_pole_v3",
+      "hash": "c000c00107c01ff01ff01ff81ff81ff81ff81ff81ff80ff00ff001c000000000"
+    },
+    {
+      "catalog": "blueprints",
+      "item_key": "chertezh_chip_pole_v4",
+      "hash": "c000c0010fc01ff01ff81ff81ff81ff81ff81bf81ff81ff00ff003c000000000"
+    },
+    {
+      "catalog": "blueprints",
+      "item_key": "chertezh_chip_prochnost",
+      "hash": "c000c0010fc01ff01ff81ff81ff81ff817e819d81f781ff00ff003c040000000"
+    },
+    {
+      "catalog": "blueprints",
+      "item_key": "chertezh_chip_skorost",
+      "hash": "c000c0010fc01ff01ff81ff83ff81ff81ff81ff81ff81ff00ff007c040000000"
+    },
+    {
+      "catalog": "blueprints",
+      "item_key": "chertezh_chip_tryum",
+      "hash": "c000c0010fc01ff01ff81ff83ff81ff81ff818f81ff81ff00ff007c040000000"
+    },
+    {
+      "catalog": "blueprints",
+      "item_key": "chertezh_chip_tryum_v2",
+      "hash": "c000c0010fc01ff01ff81ff81ff81ff81ff81ff81ff81ff00ff003c040000000"
+    },
+    {
+      "catalog": "blueprints",
+      "item_key": "chertezh_chip_tryum_v3",
+      "hash": "c000c0010fc01ff01ff81ff83ff81ff81ff819f81ff81ff80ff007c040000000"
+    },
+    {
+      "catalog": "blueprints",
+      "item_key": "chertezh_chip_tryum_v4",
+      "hash": "c000c0030fc01ff01ff81ff83ff83ff81ff81bf81f781ff80ff007e040000000"
+    },
+    {
+      "catalog": "blueprints",
+      "item_key": "chertezh_derzhatel",
+      "hash": "c003c0031fe01ff837f83ffc3ffc2ffc07fc16fc1ff01f880ff00fe040020000"
+    },
+    {
+      "catalog": "blueprints",
+      "item_key": "chertezh_detal",
+      "hash": "c003c0030fe01ff01ff83ff8377c3ffc1ffc1fdc1de81fd00ff007e040020000"
+    },
+    {
+      "catalog": "blueprints",
+      "item_key": "chertezh_empp",
+      "hash": "c000c00107c00ff01ff01ff81ff81ff81ff81ff81ff80ff00fe001c000000000"
+    },
+    {
+      "catalog": "blueprints",
+      "item_key": "chertezh_empp_10b",
+      "hash": "c000c00107c00fe01ff01ff81ff81ff81ff81ff80ff80ff00fe0018000000000"
+    },
+    {
+      "catalog": "blueprints",
+      "item_key": "chertezh_empp_13b",
+      "hash": "c000c0010fc01ff01ff81ff81ff81ff81fb81ff81ff81ff00ff003c040000000"
+    },
+    {
+      "catalog": "blueprints",
+      "item_key": "chertezh_empp_16b",
+      "hash": "c000c00107c00ff01ff01ff81ff81ff81ff81ff81ff80ff00ff001c000000000"
+    },
+    {
+      "catalog": "blueprints",
+      "item_key": "chertezh_empp_18b",
+      "hash": "c000c0010fc01ff01ff81ff81ff81ff81ff81ff81ff81ff00ff003c040000000"
+    },
+    {
+      "catalog": "blueprints",
+      "item_key": "chertezh_empp_2",
+      "hash": "c000c00107c01ff01ff81ff81ff81ff81ff81ff81ff81ff00ff003c040000000"
+    },
+    {
+      "catalog": "blueprints",
+      "item_key": "chertezh_empp_21b",
+      "hash": "c000c0010fc01ff01ff81ff83ff81ff816f81ff813f81ff80ff007c040000000"
+    },
+    {
+      "catalog": "blueprints",
+      "item_key": "chertezh_empp_25b",
+      "hash": "c000c00107c00ff01ff01ff81ff81ff81ff81ff81ff80ff00fe001c000000000"
+    },
+    {
+      "catalog": "blueprints",
+      "item_key": "chertezh_empp_29b",
+      "hash": "c000c0010fc01ff01ff81ff83ff81ff81f781ef81ff81ff00ff003c040000000"
+    },
+    {
+      "catalog": "blueprints",
+      "item_key": "chertezh_empp_33b",
+      "hash": "c000c0010fc01ff01ff81ff81ff81ff81fb81ff81ff81ff00ff003c040000000"
+    },
+    {
+      "catalog": "blueprints",
+      "item_key": "chertezh_empp_37b",
+      "hash": "c000c00107c00fe01ff01ff81ff81ff81ff81ff81ff80ff00ff001c000000000"
+    },
+    {
+      "catalog": "blueprints",
+      "item_key": "chertezh_empp_41b",
+      "hash": "c000c0010fc01ff01ff81ff81ff81ff816f81ff817f81ff00ff003c040000000"
+    },
+    {
+      "catalog": "blueprints",
+      "item_key": "chertezh_empp_45b",
+      "hash": "c000c0010fc01ff01ff81ff81ff81ff81ef81ff81ff81ff00ff003c040000000"
+    },
+    {
+      "catalog": "blueprints",
+      "item_key": "chertezh_empp_5",
+      "hash": "c000c00107c00fe01ff01ff81ff81ff81ff81ff80ff80ff00fe0018000000000"
+    },
+    {
+      "catalog": "blueprints",
+      "item_key": "chertezh_empp_60b",
+      "hash": "c000c0010fc01ff01ff81ff81ff81ff81ff81ff81ff81ff00ff003c040000000"
+    },
+    {
+      "catalog": "blueprints",
+      "item_key": "chertezh_empp_7b",
+      "hash": "c000c00107c01ff01ff81ff81ff81ff81ff81ff81ff81ff00ff003c040000000"
+    },
+    {
+      "catalog": "blueprints",
+      "item_key": "chertezh_filin",
+      "hash": "c003c0031fe01ff83ff838fc3c7c3f7c39fc19fc1b781ff81ff007e040030000"
+    },
+    {
+      "catalog": "blueprints",
+      "item_key": "chertezh_forsunka",
+      "hash": "c003c0030fe01fe01e083f1c3f3c3efc1ffc1ffc1ff81ff81ff007e040020000"
+    },
+    {
+      "catalog": "blueprints",
+      "item_key": "chertezh_ionizator",
+      "hash": "c003c0031fe01ff81ff83efc3efc3cfc1cfc1cdc1cd81fb81ff00fe040030000"
+    },
+    {
+      "catalog": "blueprints",
+      "item_key": "chertezh_kazuar",
+      "hash": "c003c0031fe01ff81ff83afc38bc3f7c1f7c1fbc17f81ff81ff80fe040030000"
+    },
+    {
+      "catalog": "blueprints",
+      "item_key": "chertezh_khim_rastvor",
+      "hash": "c000c00107c00fe01ff01ff81ff81ff81fe01fe006180bf00fe0018000000000"
+    },
+    {
+      "catalog": "blueprints",
+      "item_key": "chertezh_khimicheskoe_soedinenie",
+      "hash": "c000c00107c01f801fd01ff81ff81ff81ff81ff81ff80ff00fe001c000000000"
+    },
+    {
+      "catalog": "blueprints",
+      "item_key": "chertezh_khranilishche_patronov",
+      "hash": "c003c0031fe01df839f83bfc3bfc3bfc1ffc19fc1d781d981c300fe040030000"
+    },
+    {
+      "catalog": "blueprints",
+      "item_key": "chertezh_kislota",
+      "hash": "0000800001000fe00fe00fe00ff00ff00ff00ff00ff00ff00ff0000000000000"
+    },
+    {
+      "catalog": "blueprints",
+      "item_key": "chertezh_kolpograf",
+      "hash": "c003c0031fe01ff81ff83ffc3fbc3e3c1ffc138418081c781ff00fe040030000"
+    },
+    {
+      "catalog": "blueprints",
+      "item_key": "chertezh_kondensator",
+      "hash": "c000c00107c00fe01ff01ff81ff81ff81ff81ff80ff80ff00ff001c000000000"
+    },
+    {
+      "catalog": "blueprints",
+      "item_key": "chertezh_korpus",
+      "hash": "c000c00107c00fe01fd01f181fb81fb81f381fb81fb80ff00ff003c000000000"
+    },
+    {
+      "catalog": "blueprints",
+      "item_key": "chertezh_korpus_stvola",
+      "hash": "c003c0030fe01ff81fc03f843fac3dac1c3c1c7c1ff81ff80ff007e040020000"
+    },
+    {
+      "catalog": "blueprints",
+      "item_key": "chertezh_kreptoydy",
+      "hash": "c000c00107c01ff01ff81ff807f807f817f01fe81ff81ff00cf003c000000000"
+    },
+    {
+      "catalog": "blueprints",
+      "item_key": "chertezh_kronshteyn",
+      "hash": "c003c0031fe01ff81ff83ffc3ffc37fc17dc00841c801ff81ff00fe0c0020000"
+    },
+    {
+      "catalog": "blueprints",
+      "item_key": "chertezh_lazer_10",
+      "hash": "c000c0010fc01ff01ff81ff83ff83ff81ff81ff81fc81ff80ff007e040020000"
+    },
+    {
+      "catalog": "blueprints",
+      "item_key": "chertezh_lazer_11",
+      "hash": "c000c0010fc01ff01ff81ff83ff83ff81ff81ff81fc81ff80ff007e040020000"
+    },
+    {
+      "catalog": "blueprints",
+      "item_key": "chertezh_lazer_13",
+      "hash": "c000c0010fc01ff01ff81ff81ff81ff81ff81ff81fc81ff00ff007c040000000"
+    },
+    {
+      "catalog": "blueprints",
+      "item_key": "chertezh_lazer_18",
+      "hash": "c000c0010fc01ff01ff81ff83ff83ff81f381fb81ff01ff80ff007e040020000"
+    },
+    {
+      "catalog": "blueprints",
+      "item_key": "chertezh_lazer_21",
+      "hash": "c000c0010fc01ff01ff81ff83ff81ff81f381ff81ff01ff00ff007c040000000"
+    },
+    {
+      "catalog": "blueprints",
+      "item_key": "chertezh_lazer_25",
+      "hash": "c000c0010fc01ff01ff81ff81ff81ff81df81fe81ff81ff00ff007c040000000"
+    },
+    {
+      "catalog": "blueprints",
+      "item_key": "chertezh_lazer_29",
+      "hash": "c000c0010fc01ff01ff81ff81ff81ff81f381ff81ff01ff00ff007c040000000"
+    },
+    {
+      "catalog": "blueprints",
+      "item_key": "chertezh_lazer_3",
+      "hash": "c000c0010fc01ff01ff81ff83ff83ff81ff81ff81fc81ff80ff007e040020000"
+    },
+    {
+      "catalog": "blueprints",
+      "item_key": "chertezh_lazer_33",
+      "hash": "c000c0010fc01ff01ff81ff83ff81ff81df81fe81ff81ff80ff007c040000000"
+    },
+    {
+      "catalog": "blueprints",
+      "item_key": "chertezh_lazer_39",
+      "hash": "c000c0030fc01ff01ff81ff83ff83ff81f381fb81ff01ff80ff007c040020000"
+    },
+    {
+      "catalog": "blueprints",
+      "item_key": "chertezh_lazer_43",
+      "hash": "c000c0010fc01ff01ff81ff83ff83ff81df81fe81ff81ff80ff007e040020000"
+    },
+    {
+      "catalog": "blueprints",
+      "item_key": "chertezh_lazer_5",
+      "hash": "c000c00107c01ff01ff81ff81ff81ff81ff81ff81fc81fe00ff003c040000000"
+    },
+    {
+      "catalog": "blueprints",
+      "item_key": "chertezh_lazer_60",
+      "hash": "c000c0030fe01ff01ff83ff83ff83ff81df81ee81ff81ff80ff007e040000000"
+    },
+    {
+      "catalog": "blueprints",
+      "item_key": "chertezh_lazer_8",
+      "hash": "c000c00107c01ff01ff81ff81ff81ff81ff81ff81fc81fe00ff003c040000000"
+    },
+    {
+      "catalog": "blueprints",
+      "item_key": "chertezh_mekhanizm_podachi",
+      "hash": "c003c0030fe01ff81ff83ffc3e7c3ffc1f8c1fac1e381e880ff00fe040020000"
+    },
+    {
+      "catalog": "blueprints",
+      "item_key": "chertezh_obektiv",
+      "hash": "e003c0031ff03ff83cfc38fc338c378c3f0c3a0c380c19f81ff80ff0c0030000"
+    },
+    {
+      "catalog": "blueprints",
+      "item_key": "chertezh_opticheskoe_ustroystvo",
+      "hash": "c000c0010fc01ff01ff81ff83fb83db81ff81bf81ff81ff80ff007e040020000"
+    },
+    {
+      "catalog": "blueprints",
+      "item_key": "chertezh_pak_bronya_100",
+      "hash": "c003c0031fe01ff837f834fc3c6c3ffc1dfc1fdc1e381ef81ff80fe0c0030000"
+    },
+    {
+      "catalog": "blueprints",
+      "item_key": "chertezh_pak_polya_100",
+      "hash": "c003c0031fe01ff837f834fc3fec3ffc1cfc1fdc1eb81ef81ff00fe0c0030000"
+    },
+    {
+      "catalog": "blueprints",
+      "item_key": "chertezh_pak_prochnost_100",
+      "hash": "c003c0031fe01ff817f834fc3fec3ffc3ffc1ffc1e381cf81ff00fe040030000"
+    },
+    {
+      "catalog": "blueprints",
+      "item_key": "chertezh_pak_resursy",
+      "hash": "40008001078003e017f01ff81ff81ff81f880f880ff80ff00380000000000000"
+    },
+    {
+      "catalog": "blueprints",
+      "item_key": "chertezh_pak_skorost_100",
+      "hash": "c003c0031fe01ff817f834fc3fec3ffc3ffc1ffc1e381cf81ff00fe040030000"
+    },
+    {
+      "catalog": "blueprints",
+      "item_key": "chertezh_pak_zashchita_100",
+      "hash": "c003c0031fe01ff837f8347c3c6c3ffc1ffc1fdc1e381ef81ff00fe040030000"
+    },
+    {
+      "catalog": "blueprints",
+      "item_key": "chertezh_peredatchik",
+      "hash": "c003c0031fe01ff81ff83efc3efc3efc1efc1fdc1c381cf80e700fe040030000"
+    },
+    {
+      "catalog": "blueprints",
+      "item_key": "chertezh_plata",
+      "hash": "c003c0030fe01ff81ff83e1c3fdc37dc1fdc1e6c1d881e780ff007e040020000"
+    },
+    {
+      "catalog": "blueprints",
+      "item_key": "chertezh_podarok",
+      "hash": "00008000038007c00fe00e700ff00ff00ff00ff00ff007e007c0000000000000"
+    },
+    {
+      "catalog": "blueprints",
+      "item_key": "chertezh_podarok_bolshoy",
+      "hash": "c003c0030fe01ff83ff82d6c3c3c387c1bf41ff41ff01fe81ff00fe040030000"
+    },
+    {
+      "catalog": "blueprints",
+      "item_key": "chertezh_podarok_bolshoy_khellouin",
+      "hash": "c003c0030fe01ff83ff82d6c3c3c387c1bf41ff41ff01fe81ff00fe040030000"
+    },
+    {
+      "catalog": "blueprints",
+      "item_key": "chertezh_pulemyot",
+      "hash": "c000c0010fc01ff01ff81ff83fc83f181ff81ff81ff81ff80ff007e040000000"
+    },
+    {
+      "catalog": "blueprints",
+      "item_key": "chertezh_pulemyot_11b",
+      "hash": "c000c0010fc01ff01ff81ff83fc83f181ff81ff81ff81ff80ff007e040000000"
+    },
+    {
+      "catalog": "blueprints",
+      "item_key": "chertezh_pulemyot_13b",
+      "hash": "c000c0010fc01ff01ff81ff83fc83f181ff81ff81ff81ff80ff007e040000000"
+    },
+    {
+      "catalog": "blueprints",
+      "item_key": "chertezh_pulemyot_15b",
+      "hash": "c000c0010fc01ff01ff81ff83ff83ff81ff81ff81ff81ff80ff007e040020000"
+    },
+    {
+      "catalog": "blueprints",
+      "item_key": "chertezh_pulemyot_18b",
+      "hash": "c000c0030fc01ff01ff81ff83f983ff81ff81ff81ff81ff80ff007e040020000"
+    },
+    {
+      "catalog": "blueprints",
+      "item_key": "chertezh_pulemyot_22b",
+      "hash": "c000c0010fc01ff01ff81ff81ff81ff81ff81ff81ff81ff00ff007c040000000"
+    },
+    {
+      "catalog": "blueprints",
+      "item_key": "chertezh_pulemyot_26b",
+      "hash": "c000c0030fc01ff01ff81ff83ff83ff81ff817f81ff81ff80ff007e040020000"
+    },
+    {
+      "catalog": "blueprints",
+      "item_key": "chertezh_pulemyot_30b",
+      "hash": "c000c0010fc01ff01ff81ff83f983ff81ff81ff81ff81ff80ff007e040020000"
+    },
+    {
+      "catalog": "blueprints",
+      "item_key": "chertezh_pulemyot_40b",
+      "hash": "c000c0030fc01ff01ff81ff83ff83ff81ff817f81ff81ff80ff007e040020000"
+    },
+    {
+      "catalog": "blueprints",
+      "item_key": "chertezh_pulemyot_50b",
+      "hash": "c000c0030fc01ff01ff81ff83ff83ff81ff81ff81ff81ff80ff007e040020000"
+    },
+    {
+      "catalog": "blueprints",
+      "item_key": "chertezh_pulemyot_60b",
+      "hash": "c000c0030fc01ff01ff81ff83ff83ff81ff817f81ff81ff80ff007e040000000"
+    },
+    {
+      "catalog": "blueprints",
+      "item_key": "chertezh_pulemyot_6b",
+      "hash": "c000c0010fc01ff01ff81ff83ff83ff81ff81ff81ff81ff80ff007e040020000"
+    },
+    {
+      "catalog": "blueprints",
+      "item_key": "chertezh_pulemyot_9b",
+      "hash": "c000c0010fc01ff01ff81ff83ff83f981ff81ff81ff81ff80ff007e040020000"
+    },
+    {
+      "catalog": "blueprints",
+      "item_key": "chertezh_pushka",
+      "hash": "c000c0010fc01ff01ff81ff81ff81df81ff81ff81ff81ff80ff003c040000000"
+    },
+    {
+      "catalog": "blueprints",
+      "item_key": "chertezh_pushka_12b",
+      "hash": "c000c0010fc01ff01ff81ff81ff81ff81ff81ff81ff81ff00ff003c040000000"
+    },
+    {
+      "catalog": "blueprints",
+      "item_key": "chertezh_pushka_14b",
+      "hash": "c000c0010fc01ff01ff81ff83ff81df81ff81ff81ff81ff80ff007c040000000"
+    },
+    {
+      "catalog": "blueprints",
+      "item_key": "chertezh_pushka_16b",
+      "hash": "c000c0010fc01ff01ff81ff83ff81df81ff81ff81ff81ff80ff007c040000000"
+    },
+    {
+      "catalog": "blueprints",
+      "item_key": "chertezh_pushka_18b",
+      "hash": "c000c0010fc01ff01ff81ff83ff81df81ff81ff81ff81ff80ff007c040000000"
+    },
+    {
+      "catalog": "blueprints",
+      "item_key": "chertezh_pushka_2",
+      "hash": "c000c0010fc01ff01ff81ff81ff81df81ff81ff81ff81ff00ff003c040000000"
+    },
+    {
+      "catalog": "blueprints",
+      "item_key": "chertezh_pushka_20b",
+      "hash": "c000c0010fc01ff01ff81ff81ff81ff81ff81ff81ff81ff00ff003c040000000"
+    },
+    {
+      "catalog": "blueprints",
+      "item_key": "chertezh_pushka_24b",
+      "hash": "c000c00107c01ff01ff81ff81ff81ff81ff81ff81ff80ff00ff003c040000000"
+    },
+    {
+      "catalog": "blueprints",
+      "item_key": "chertezh_pushka_28b",
+      "hash": "c000c00107c01ff01ff81ff81ff81ff81ff81ff81ff80ff00ff003c040000000"
+    },
+    {
+      "catalog": "blueprints",
+      "item_key": "chertezh_pushka_30b",
+      "hash": "c000c0010fc01ff01ff81ff81ff81ff81ff81ff81ff81ff00ff003c040000000"
+    },
+    {
+      "catalog": "blueprints",
+      "item_key": "chertezh_pushka_4",
+      "hash": "c000c00107c01ff01ff81ff81ff81ff81ff81ff81ff81ff00ff003c040000000"
+    },
+    {
+      "catalog": "blueprints",
+      "item_key": "chertezh_pushka_40b",
+      "hash": "c000c00107c00ff01ff01ff81ff81ff81ff81ff81ff80ff00ff003c000000000"
+    },
+    {
+      "catalog": "blueprints",
+      "item_key": "chertezh_pushka_50b",
+      "hash": "c000c00107c01ff01ff81ff81ff81ff81ff81ff81ff81ff00ff003c000000000"
+    },
+    {
+      "catalog": "blueprints",
+      "item_key": "chertezh_pushka_60b",
+      "hash": "c000c0010fc01ff01ff81ff83ff81ff81ff81ff81ff81ff00ff007c040000000"
+    },
+    {
+      "catalog": "blueprints",
+      "item_key": "chertezh_pushka_6b",
+      "hash": "c000c00107c01ff01ff81ff81ff81ff81ff81ff81ff81ff00ff003c040000000"
+    },
+    {
+      "catalog": "blueprints",
+      "item_key": "chertezh_pushka_9b",
+      "hash": "c000c0010fc01ff01ff81ff81ff81ff81ff81ff81ff81ff00ff003c040000000"
+    },
+    {
+      "catalog": "blueprints",
+      "item_key": "chertezh_pushka_zamorozka",
+      "hash": "c000c00107c01ff01ff81ff81fb81ff81ff81ff81bf80df00ff003c000000000"
+    },
+    {
+      "catalog": "blueprints",
+      "item_key": "chertezh_rempak_9000",
+      "hash": "e003c0031ff838f8309c20fc307c336d33dc37dc39cc3ecc1fb80ff0c0030000"
+    },
+    {
+      "catalog": "blueprints",
+      "item_key": "chertezh_rk",
+      "hash": "4000800107c00fe01ff01df81ff81ff81ff81ff80ff80ff00fe0018000000000"
+    },
+    {
+      "catalog": "blueprints",
+      "item_key": "chertezh_rk_12b",
+      "hash": "c000c00107c00fe01ff01df81ff81ff81ff81ff80ff80ff00fe0018000000000"
+    },
+    {
+      "catalog": "blueprints",
+      "item_key": "chertezh_rk_15b",
+      "hash": "c000c00107c00fe01ff01df81ff81ff81ff81ff80ff80ff00ff0018000000000"
+    },
+    {
+      "catalog": "blueprints",
+      "item_key": "chertezh_rk_17b",
+      "hash": "c000c0010fc01ff01ff81ff81ff81ff81ff81ff81ff81ff00ff003c040000000"
+    },
+    {
+      "catalog": "blueprints",
+      "item_key": "chertezh_rk_19b",
+      "hash": "c000c00107c01ff01ff81ff81ff81ff81ff81ff81ff81ff00ff003c040000000"
+    },
+    {
+      "catalog": "blueprints",
+      "item_key": "chertezh_rk_21b",
+      "hash": "c000c0010fc01ff01ff81ff83ff81f781ff81ff81ff81ff00ff007c040000000"
+    },
+    {
+      "catalog": "blueprints",
+      "item_key": "chertezh_rk_24b",
+      "hash": "c000c00107c01ff01ff81ff81ff81ff81ff81ff81ff80ff00ff003c040000000"
+    },
+    {
+      "catalog": "blueprints",
+      "item_key": "chertezh_rk_27b",
+      "hash": "c000c00107c01ff01ff81ff81ff81ff81ff81ff81ff81ff00ff003c040000000"
+    },
+    {
+      "catalog": "blueprints",
+      "item_key": "chertezh_rk_3",
+      "hash": "4000800107c00fe01ff01df81ff81ff81ff81ff80ff80ff00fe0018000000000"
+    },
+    {
+      "catalog": "blueprints",
+      "item_key": "chertezh_rk_31b",
+      "hash": "c000c0010fc01ff01ff81ff81ff81ff81ff81ff81ff81ff00ff003c040000000"
+    },
+    {
+      "catalog": "blueprints",
+      "item_key": "chertezh_rk_37b",
+      "hash": "c000c0010fc01ff01ff81ff81ff81ff81ff81ff81ff81ff00ff003c040000000"
+    },
+    {
+      "catalog": "blueprints",
+      "item_key": "chertezh_rk_41b",
+      "hash": "c000c00107c00fe01ff01df81ff81ff81ff81ff80ff80ff00ff0018000000000"
+    },
+    {
+      "catalog": "blueprints",
+      "item_key": "chertezh_rk_47b",
+      "hash": "c000c0010fc01ff01ff81ff81ff81ff81ff81ff81ff81ff00ff003c040000000"
+    },
+    {
+      "catalog": "blueprints",
+      "item_key": "chertezh_rk_5",
+      "hash": "c000c00107c00fe01ff01df81ff81ff81ff81ff80ff80ff00ff0018000000000"
+    },
+    {
+      "catalog": "blueprints",
+      "item_key": "chertezh_rk_60b",
+      "hash": "c000c00107c00ff01ff01ff81ff81ff81ff81ff81ef80ff00ff003c000000000"
+    },
+    {
+      "catalog": "blueprints",
+      "item_key": "chertezh_rk_9b",
+      "hash": "4000800107c00fe01ff01df81ff81ff81ff81ff80ff80ff00fe0018000000000"
+    },
+    {
+      "catalog": "blueprints",
+      "item_key": "chertezh_rk_enrg_10b",
+      "hash": "c000c00107c00fe01ff01ff81ff81ff81ff81ff81ff80ff00fe001c000000000"
+    },
+    {
+      "catalog": "blueprints",
+      "item_key": "chertezh_rk_enrg_13b",
+      "hash": "c000c00107c00ff01ff01ff81ff81ff81ff81ff81ff80ff00ff003c000000000"
+    },
+    {
+      "catalog": "blueprints",
+      "item_key": "chertezh_rk_enrg_14b",
+      "hash": "c000c00107c00ff01ff01ff81ff81ff81ff81ff81ff80ff00ff003c000000000"
+    },
+    {
+      "catalog": "blueprints",
+      "item_key": "chertezh_rk_enrg_16b",
+      "hash": "c000c00107c00ff01ff01ff81ff81ff81ff81ff81ff80ff00ff003c000000000"
+    },
+    {
+      "catalog": "blueprints",
+      "item_key": "chertezh_rk_enrg_19b",
+      "hash": "c000c00107c00ff01ff01ff81ff81ff81ff81ff81ff80ff00ff003c000000000"
+    },
+    {
+      "catalog": "blueprints",
+      "item_key": "chertezh_rk_enrg_22b",
+      "hash": "c000c0010fc01ff01ff81ff81ff81bf81bf81ff81ff81ff00ff003c040000000"
+    },
+    {
+      "catalog": "blueprints",
+      "item_key": "chertezh_rk_enrg_24b",
+      "hash": "c000c0010fc01ff01ff81ff83ff83bb819b81fb81ff81ff80ff007e040020000"
+    },
+    {
+      "catalog": "blueprints",
+      "item_key": "chertezh_rk_enrg_27b",
+      "hash": "c000c00107c01ff01ff01ff81ff81ff81ff81ff81ff81ff00ff003c000000000"
+    },
+    {
+      "catalog": "blueprints",
+      "item_key": "chertezh_rk_enrg_31b",
+      "hash": "c000c0010fc01ff01ff81ff83ff83bb819b81fb81ff81ff80ff007c040000000"
+    },
+    {
+      "catalog": "blueprints",
+      "item_key": "chertezh_rk_enrg_35b",
+      "hash": "c000c00107c01ff01ff81ff81ff81bf81bf81ff81ff81ff00ff003c040000000"
+    },
+    {
+      "catalog": "blueprints",
+      "item_key": "chertezh_rk_enrg_40b",
+      "hash": "c000c0010fc01ff01ff81ff81ff81ff81ff81ff81ff81ff00ff003c040000000"
+    },
+    {
+      "catalog": "blueprints",
+      "item_key": "chertezh_rk_enrg_45b",
+      "hash": "c000c0010fc01ff01ff81ff83ff81ff81bf81ff81ff81ff00ff003c040000000"
+    },
+    {
+      "catalog": "blueprints",
+      "item_key": "chertezh_rk_enrg_60b",
+      "hash": "c000c00107c01ff01ff81ff81ff81ff81ff81ff81ff81ff00ff003c000000000"
+    },
+    {
+      "catalog": "blueprints",
+      "item_key": "chertezh_rk_enrg_6b",
+      "hash": "c000c00107c00ff01ff01ff81ff81ff81ff81ff81ff80ff00ff003c000000000"
+    },
+    {
+      "catalog": "blueprints",
+      "item_key": "chertezh_rk_enrg_8b",
+      "hash": "c000c00107c00fe01ff01ff81ff81ff81ff81ff81ff80ff00fe001c000000000"
+    },
+    {
+      "catalog": "blueprints",
+      "item_key": "chertezh_shnek",
+      "hash": "c002c0030fe01ff01ff83ef83efc3f7c1efc1ef81f781ef80ff007e040020000"
+    },
+    {
+      "catalog": "blueprints",
+      "item_key": "chertezh_skhema_navedeniya",
+      "hash": "c003c0031fe01e381b38377c37ec27fc0fe407ec11e819d80c700fe040020000"
+    },
+    {
+      "catalog": "blueprints",
+      "item_key": "chertezh_snegovika",
+      "hash": "c000c00107c00ff01ff01ff81ff81df81ff81ff81ff80ff00ff001c000000000"
+    },
+    {
+      "catalog": "blueprints",
+      "item_key": "chertezh_stoktor",
+      "hash": "c000c0010fc01ff01ff81f981ef81ff81ff81ff81ff81ff80ff007c040000000"
+    },
+    {
+      "catalog": "blueprints",
+      "item_key": "chertezh_teleportator",
+      "hash": "c000c00107c00ff01ff01ff81ff81ff81ff81ff81ff80ff00ff003c000000000"
+    },
+    {
+      "catalog": "blueprints",
+      "item_key": "chertezh_tp_gruppa",
+      "hash": "c000c0010fc01ff01ff81ff81ff81ff81ff81ff81ff81ff00ff003c040000000"
+    },
+    {
+      "catalog": "blueprints",
+      "item_key": "chertezh_tp_otryad",
+      "hash": "c000c00107c01ff01ff81ff81ff81ff81ff81ff81ff81ff00ff007c040000000"
+    },
+    {
+      "catalog": "blueprints",
+      "item_key": "chertezh_tp_soyuz",
+      "hash": "c000c00107c01ff01ff81ff81ff81ff81ff81ff81ff81ff00ff007c040000000"
+    },
+    {
+      "catalog": "blueprints",
+      "item_key": "chertezh_tryum_12",
+      "hash": "c000c0010fc01ff01ff81ff83ff83f781ff81ff81ff81ff80ff007e040000000"
+    },
+    {
+      "catalog": "blueprints",
+      "item_key": "chertezh_tryum_17t",
+      "hash": "c003c0030fe01ff01ff83ff83ffc3b9c1e9c1ebc1ff81ff80ff007e040020000"
+    },
+    {
+      "catalog": "blueprints",
+      "item_key": "chertezh_tryum_25t",
+      "hash": "c002c0030fe01ff01ff83ff83ffc3f9c1e9c1eb81ff81ff80ff007e040020000"
+    },
+    {
+      "catalog": "blueprints",
+      "item_key": "chertezh_tryum_32t",
+      "hash": "c000c0030fe01ff01f783ff83ff83f781ff81ff81f781ff80ff007e040000000"
+    },
+    {
+      "catalog": "blueprints",
+      "item_key": "chertezh_tryum_40tm1",
+      "hash": "c000c0010fc01ff01ff81ff81ff81e781ff81ff81f781ff00ff003c040000000"
+    },
+    {
+      "catalog": "blueprints",
+      "item_key": "chertezh_tryum_50tm1",
+      "hash": "c002c0030fc01ff01ff81ff8377833b819f819f81ff81ff80ff007e040000000"
+    },
+    {
+      "catalog": "blueprints",
+      "item_key": "chertezh_tryum_6",
+      "hash": "c000c0010fc01ff01ff81ff83ff81f781ff81ff81ff81ff00ff007c040000000"
+    },
+    {
+      "catalog": "blueprints",
+      "item_key": "chertezh_tryum_60tm1",
+      "hash": "c000c0010fc01ff01ff81ff837f817f819f819f81ff81ff80ff007c040000000"
+    },
+    {
+      "catalog": "blueprints",
+      "item_key": "chertezh_turbina",
+      "hash": "c003c0030fe01ff01f983fb82fbc2ebc0e380fd80ff810180ff007e040020000"
+    },
+    {
+      "catalog": "blueprints",
+      "item_key": "chertezh_vidiofon",
+      "hash": "c003c0031fe01ff83f983f3c3f1c3f1c1f3c1ffc1df81eb81ff00fe040030000"
+    },
+    {
+      "catalog": "blueprints",
+      "item_key": "chertezh_vizor_krotov",
+      "hash": "c003c0031fe01ff81ff83c7c3efc3e6c1e641e741e701e700ff00fe040030000"
+    },
+    {
+      "catalog": "blueprints",
+      "item_key": "chertezh_yadokhimikat",
+      "hash": "c000c00107c01ff01fd81f981f981fd81ff81ff80ff807f00ff003c000000000"
+    },
+    {
+      "catalog": "blueprints",
+      "item_key": "chertezh_zashchitnoe_pole",
+      "hash": "c000c00107c01ff01ff81ff81ff81ff81bf81df81ff81ff00ff003c040000000"
+    },
+    {
+      "catalog": "blueprints",
+      "item_key": "chertezh_zashchitnoe_pole_12",
+      "hash": "c000c0010fc01ff01ff81ff81ff81ff81bf81df81ff81ff00ff007c040000000"
+    },
+    {
+      "catalog": "blueprints",
+      "item_key": "chertezh_zashchitnoe_pole_16",
+      "hash": "c000c00107c00fe01ff01ff81ff81bf81ff81bf818780ef00fe001c000000000"
+    },
+    {
+      "catalog": "blueprints",
+      "item_key": "chertezh_zashchitnoe_pole_20",
+      "hash": "c000c00107c00ff01ff01ff81ff81bf81ff81bf818780ef00ff003c000000000"
+    },
+    {
+      "catalog": "blueprints",
+      "item_key": "chertezh_zashchitnoe_pole_24",
+      "hash": "c000c00107c00fe01ff01ff81ff81bf81ff81bf818780ef00ff001c000000000"
+    },
+    {
+      "catalog": "blueprints",
+      "item_key": "chertezh_zashchitnoe_pole_27",
+      "hash": "c000c00107c00fe01ff01ff81ff81bf81ff81bf818780ef00fe001c000000000"
+    },
+    {
+      "catalog": "blueprints",
+      "item_key": "chertezh_zashchitnoe_pole_30",
+      "hash": "c000c00107c01ff01ff81ff81ff81bf81bf819f81cf81ff00ff003c000000000"
+    },
+    {
+      "catalog": "blueprints",
+      "item_key": "chertezh_zashchitnoe_pole_34",
+      "hash": "c000c0030fc01ff01ff81ff83ff83bf81bf81db81db81ff80ff007c040000000"
+    },
+    {
+      "catalog": "blueprints",
+      "item_key": "chertezh_zashchitnoe_pole_37",
+      "hash": "c000c00107c00fe01ff01ff81ff81bf81ff81bf818780ef00fe001c000000000"
+    },
+    {
+      "catalog": "blueprints",
+      "item_key": "chertezh_zashchitnoe_pole_4",
+      "hash": "c000c0010fc01ff01ff81ff81ff81ff81bf81df81ff81ff00ff003c040000000"
+    },
+    {
+      "catalog": "blueprints",
+      "item_key": "chertezh_zashchitnoe_pole_40",
+      "hash": "c000c0010fc01ff01ff81ff81ff81bf81bf81df81df81ff00ff003c040000000"
+    },
+    {
+      "catalog": "blueprints",
+      "item_key": "chertezh_zashchitnoe_pole_43",
+      "hash": "c000c0010fc01ff01ff81ff81ff81bf81bf81df81db81ff00ff007e040000000"
+    },
+    {
+      "catalog": "blueprints",
+      "item_key": "chertezh_zashchitnoe_pole_46",
+      "hash": "c000c00107c01ff01ff81ff81ff81bf81bf819f81cf81ff00ff003c000000000"
+    },
+    {
+      "catalog": "blueprints",
+      "item_key": "chertezh_zashchitnoe_pole_50",
+      "hash": "c000c0010fc01ff01ff81ff81ff81bf81ff819f81df81ff00ff003c040000000"
+    },
+    {
+      "catalog": "blueprints",
+      "item_key": "chertezh_zashchitnoe_pole_55",
+      "hash": "c000c0010fc01ff01ff81ff81ff81bf81ff819f81df81ff00ff007c040000000"
+    },
+    {
+      "catalog": "blueprints",
+      "item_key": "chertezh_zashchitnoe_pole_60",
+      "hash": "c000c00107c00ff01ff01ff81ff81bf81ff81bf818780ef00ff003c000000000"
+    },
+    {
+      "catalog": "blueprints",
+      "item_key": "chertezh_zashchitnoe_pole_7",
+      "hash": "c000c0010fc01ff01ff81ff81ff81ff81bf81df81ff81ff00ff003c040000000"
+    },
+    {
+      "catalog": "blueprints",
+      "item_key": "chertezh_zashchitnoe_pole_9",
+      "hash": "c000c00107c01ff01ff81ff81ff81ff81bf81df81ff81ff00ff003c000000000"
+    },
+    {
+      "catalog": "blueprints",
+      "item_key": "chertezh_zatvor",
+      "hash": "c000c00107c01ff01ff819f81df81df81bf81bf81bf81bf00ff003c000000000"
+    },
+    {
+      "catalog": "blueprints",
+      "item_key": "chertezh_zhelezo",
+      "hash": "c000c00107c00fe01ff01ff81ff81ff81ff81ff81ff80ff00ff001c000000000"
+    },
+    {
+      "catalog": "components",
+      "item_key": "blok",
+      "hash": "00007f007fc03f803dc03dc07cc07cfc7e7fff1f7fce1fee03fe01fe007c0008"
+    },
+    {
+      "catalog": "components",
+      "item_key": "blok_slezheniya",
+      "hash": "00c01fc01fc0001f00270f270f271f271f271f241f240f246f243fa400fc0004"
+    },
+    {
+      "catalog": "components",
+      "item_key": "blok_slezheniya_rasshirennyy",
+      "hash": "00000000000000003f7c6f7ed39ebf1f3d3f7dbf7ffc1f783e60260000000000"
+    },
+    {
+      "catalog": "components",
+      "item_key": "bronya",
+      "hash": "00c0008007a00e700fbc1ffc1ff01fe01fe01fc03fc03fc01ff007f803f00200"
+    },
+    {
+      "catalog": "components",
+      "item_key": "bronya_splav_v13",
+      "hash": "000003fc7ffe603e78fffffffffffffefffc3fe01bc000000000000000000000"
+    },
+    {
+      "catalog": "components",
+      "item_key": "derzhatel",
+      "hash": "000001003f007f007fc876f87c387c3c1e6e1fc61fe71ffe0ffc038000000000"
+    },
+    {
+      "catalog": "components",
+      "item_key": "detal",
+      "hash": "00001f007fc0ffe0fee05f7047707ff87ff87fde0ff603fa01fb00ef002f001c"
+    },
+    {
+      "catalog": "components",
+      "item_key": "forsunka",
+      "hash": "0042007203800300070007e00ff00fe00fe00fc01f801e003e003c003c003800"
+    },
+    {
+      "catalog": "components",
+      "item_key": "ionizator",
+      "hash": "070007f00ff80ff80efc0efc08fc0ffc0ffc0bfc0bfc0bfc09fc0df807f00780"
+    },
+    {
+      "catalog": "components",
+      "item_key": "khim_rastvor",
+      "hash": "00000000000000003ff87ffcfffffffefff8fffe7ff03f000000310000000000"
+    },
+    {
+      "catalog": "components",
+      "item_key": "khimicheskoe_soedinenie",
+      "hash": "7ffe400001000fe00f300ff00ff01ff81ff81ff81ff81ef01ff01ff81ff81ff8"
+    },
+    {
+      "catalog": "components",
+      "item_key": "khranilishche_patronov",
+      "hash": "0f001b8013001f8007f007f007f007d01ff017f813f813bc03cc03cc0e480e00"
+    },
+    {
+      "catalog": "components",
+      "item_key": "kislota",
+      "hash": "3f7817c83f781f7019f01bf03ff83ff83ffc3ffc3ffc3ffc3ffc3ffc3ffc3ffc"
+    },
+    {
+      "catalog": "components",
+      "item_key": "kolpograf",
+      "hash": "000000003f803fe03fdcffdcffdefc1e6fff0ff84fc1620230181ce003000000"
+    },
+    {
+      "catalog": "components",
+      "item_key": "kondensator",
+      "hash": "02600260026007e00ff00ff00ff00ff00ff00ff00ff00ff00ff00ff00ff00ff0"
+    },
+    {
+      "catalog": "components",
+      "item_key": "korpus",
+      "hash": "004001f807e807601f043f8c3f983f983f983f081f881f901fb00ff007c007c0"
+    },
+    {
+      "catalog": "components",
+      "item_key": "korpus_stvola",
+      "hash": "00000036006300c101b307b90dca19ce383ef80cf820fde0ff80ff005e000000"
+    },
+    {
+      "catalog": "components",
+      "item_key": "kreptoydy",
+      "hash": "007000f001f801f807f83ffc3ffe1ffe1ffe0ffe0ffc07f007e0078003000000"
+    },
+    {
+      "catalog": "components",
+      "item_key": "kronshteyn",
+      "hash": "000000000000000010387ffe7ffedfffdfffc0eee0e031c00080000000000000"
+    },
+    {
+      "catalog": "components",
+      "item_key": "mekhanizm_podachi",
+      "hash": "0000000001c00fe03ff07c387e3e7ffeffccffc07fb81f1c0e1c060002000000"
+    },
+    {
+      "catalog": "components",
+      "item_key": "obektiv",
+      "hash": "00000f003f0039007b8077c06fc07fc21f801f807f8277807d1c3e0000000000"
+    },
+    {
+      "catalog": "components",
+      "item_key": "opticheskoe_ustroystvo",
+      "hash": "00000000000001fc07fc07de3fde33de3ffe3ffe77f0ff807f001c0000000000"
+    },
+    {
+      "catalog": "components",
+      "item_key": "peredatchik",
+      "hash": "0030003000e00ff00ff01f702ef03ef01ef01ff80fe01ee0187003f002700200"
+    },
+    {
+      "catalog": "components",
+      "item_key": "plata",
+      "hash": "0000fc3efffef002f106f7ee17c687cec3cefa22fc02fbc2fbc0fc3cfc3f0000"
+    },
+    {
+      "catalog": "components",
+      "item_key": "shnek",
+      "hash": "0180018001c003e00780078000e000e003c00780038000e000e003c003c002c0"
+    },
+    {
+      "catalog": "components",
+      "item_key": "skhema_navedeniya",
+      "hash": "0000000007180f401fee1ff81ff43fdf3ff83fb81b7803fa037003c000000000"
+    },
+    {
+      "catalog": "components",
+      "item_key": "stoktor",
+      "hash": "03000fc01ff03f9f7ff77ec03ec01cc000c001c000c001c00180018001800180"
+    },
+    {
+      "catalog": "components",
+      "item_key": "turbina",
+      "hash": "000001e80f401fe03f983f8e7ecf7e1f7e1f7fc73fc73dce1e7e000c00180000"
+    },
+    {
+      "catalog": "components",
+      "item_key": "vidiofon",
+      "hash": "003801f8039003100208030803080708071807f80ff81ff039fc077c07c00100"
+    },
+    {
+      "catalog": "components",
+      "item_key": "vizor_krotov",
+      "hash": "0000fc00fe00fc40fc00fce0fc7c7c7c7c7c7c7c7c7c7c7c7c7c1e1c00240004"
+    },
+    {
+      "catalog": "components",
+      "item_key": "yadokhimikat",
+      "hash": "003000280fc81fc41fc07fc3ffe77fe77ff61ffe6ffe3ffc1ffc0fc00fc00f80"
+    },
+    {
+      "catalog": "components",
+      "item_key": "zatvor",
+      "hash": "0000000001e021f039f03ffc3fff1bfb07fb04fe04060600060006000c000000"
+    },
+    {
+      "catalog": "equipment",
+      "item_key": "bronya",
+      "hash": "00000000000000000fc01ff03ff83ff83ffc3cfe3c1e3c0e3806000000000000"
+    },
+    {
+      "catalog": "equipment",
+      "item_key": "bronya_100_m1",
+      "hash": "000003fc0ffe3ffe3bfa2bf82fe83ff830783f981f08163e1fff0ffc0ff00000"
+    },
+    {
+      "catalog": "equipment",
+      "item_key": "bronya_100_m2",
+      "hash": "000003fc0ffe3ffe3bfa2bf82fe83ff830783f981f08163e1fff0ffc0ff00000"
+    },
+    {
+      "catalog": "equipment",
+      "item_key": "bronya_13",
+      "hash": "00000000000005f00ff807f00ff00ff01ffc3ffc3ffc3ffc0430002000000000"
+    },
+    {
+      "catalog": "equipment",
+      "item_key": "bronya_18",
+      "hash": "00000000000000000fc01ff03ff83ff83ffc3cfe3c1e3c0e3806000000000000"
+    },
+    {
+      "catalog": "equipment",
+      "item_key": "bronya_22",
+      "hash": "00000000000005f00ff807f00ff00ff01ffc3ffc3ffc3ff80430002000000000"
+    },
+    {
+      "catalog": "equipment",
+      "item_key": "bronya_22m1",
+      "hash": "00000000000005f00ff807f00ff00ff01ffc3ffc3ffc3ff80430002000000000"
+    },
+    {
+      "catalog": "equipment",
+      "item_key": "bronya_26",
+      "hash": "00000000000000000fc01ff03ff83ff83ffc3cfe3c1e3c0e3806000000000000"
+    },
+    {
+      "catalog": "equipment",
+      "item_key": "bronya_29",
+      "hash": "0000000003c007f005f80ff81ffc1ffc1c7c3c003e003f001780038000000000"
+    },
+    {
+      "catalog": "equipment",
+      "item_key": "bronya_29m1",
+      "hash": "0000000003c007f005f80ff81ffc1ffc1c7c3c003e003f001780038000000000"
+    },
+    {
+      "catalog": "equipment",
+      "item_key": "bronya_33",
+      "hash": "00000000000005f00ff807f00ff00ff01ffc3ffc3ffc3ffc0430002000000000"
+    },
+    {
+      "catalog": "equipment",
+      "item_key": "bronya_35",
+      "hash": "00000000000000000fc01ff03ff83ff83ffc3cfe3c1e3c0e3806000000000000"
+    },
+    {
+      "catalog": "equipment",
+      "item_key": "bronya_38",
+      "hash": "0000000003c007f005f80ff81ffc1ffc1c7c3c003e003f001f80038000000000"
+    },
+    {
+      "catalog": "equipment",
+      "item_key": "bronya_4",
+      "hash": "00000000000005f00ff807f00ff00ff01ffc3ffc3ffc3ff80430002000000000"
+    },
+    {
+      "catalog": "equipment",
+      "item_key": "bronya_40",
+      "hash": "00000000000001f03ff83fe87fc07fee3ffe3fc63fc00f800780018000000000"
+    },
+    {
+      "catalog": "equipment",
+      "item_key": "bronya_40m1",
+      "hash": "00000000000001f03ff83fe87fc07fee3ffe3fc63fc00f800780018000000000"
+    },
+    {
+      "catalog": "equipment",
+      "item_key": "bronya_42",
+      "hash": "00000000000005f00ff807f00ff00ff01ffc3ffc3ffc3ffc0c30003000000000"
+    },
+    {
+      "catalog": "equipment",
+      "item_key": "bronya_45",
+      "hash": "00000000000005f00ff807f00ff00ff01ffc3ffc3ffc3ffc0e30003000000000"
+    },
+    {
+      "catalog": "equipment",
+      "item_key": "bronya_47",
+      "hash": "0000000003c007f005f80ff81ffc1ffc1c783c003e003f000780038000000000"
+    },
+    {
+      "catalog": "equipment",
+      "item_key": "bronya_50",
+      "hash": "00000000000001f03ff83ff87fe07ffe3ffe1fc63fc00f800700018000000000"
+    },
+    {
+      "catalog": "equipment",
+      "item_key": "bronya_50m1",
+      "hash": "00000000000001f03ff83ff87fe07ffe3ffe1fc63fc00f800700018000000000"
+    },
+    {
+      "catalog": "equipment",
+      "item_key": "bronya_60",
+      "hash": "0000000003c007e005f80ff81ffc1dfc1c383c003e003f000780038000000000"
+    },
+    {
+      "catalog": "equipment",
+      "item_key": "bronya_60m1",
+      "hash": "0000000003c007e005f80ff81ffc1dfc1c383c003e003f000780038000000000"
+    },
+    {
+      "catalog": "equipment",
+      "item_key": "bronya_71",
+      "hash": "00000000000001f03ff83ff87ff87ffe3ffe3fc63f800f800700018000000000"
+    },
+    {
+      "catalog": "equipment",
+      "item_key": "bronya_71m1",
+      "hash": "00000000000001f03ff83ff87ff87ffe3ffe3fc63f800f800700018000000000"
+    },
+    {
+      "catalog": "equipment",
+      "item_key": "bronya_8",
+      "hash": "00000000000000000fc01ff03ff83ff83ffc3cfe3c1e3c0e3806000000000000"
+    },
+    {
+      "catalog": "equipment",
+      "item_key": "bronya_81",
+      "hash": "0000000003f00ff818f81bf81ff81ffc1ffe1ffe0db40cb00ef0076000000000"
+    },
+    {
+      "catalog": "equipment",
+      "item_key": "bronya_81m1",
+      "hash": "0000000003f00ff81df81ff81ff81ffc1ffe1ffe0df40ef00ef0076000000000"
+    },
+    {
+      "catalog": "equipment",
+      "item_key": "bronya_91_m1",
+      "hash": "000007fc1ffc3ffc7bfa53f86fd87ff820f81fb81e181c3e1efe1ffc0fc00000"
+    },
+    {
+      "catalog": "equipment",
+      "item_key": "chip_bronya_15",
+      "hash": "000000000000078007f80ff80ff81ff81ff81ff01ff01ff001f0006000000000"
+    },
+    {
+      "catalog": "equipment",
+      "item_key": "chip_bronya_25",
+      "hash": "000000000000078007f80ff80ff81ff81ff81ff01ff01ff001f0006000000000"
+    },
+    {
+      "catalog": "equipment",
+      "item_key": "chip_bronya_35",
+      "hash": "000000000000078007f80ff80ff81ff81ff81ff01ff01ff001f0006000000000"
+    },
+    {
+      "catalog": "equipment",
+      "item_key": "chip_bronya_45",
+      "hash": "000000000000078007f80ff80ffc1ff81ff81ff01ff01ff003f000e000000000"
+    },
+    {
+      "catalog": "equipment",
+      "item_key": "chip_bronya_5",
+      "hash": "00000000000003c007f80ff81ff81ff81ff81ff81ff81ff001e000c000000000"
+    },
+    {
+      "catalog": "equipment",
+      "item_key": "chip_bronya_50",
+      "hash": "000000000000078007f80ff80ff80ff81ff81ff01ff01ff001f0006000000000"
+    },
+    {
+      "catalog": "equipment",
+      "item_key": "chip_bronya_55",
+      "hash": "000000000000078007f80ff80ff81ff81ff81ff01ff01ff001f0006000000000"
+    },
+    {
+      "catalog": "equipment",
+      "item_key": "chip_bronya_60",
+      "hash": "000000000000078007f80ff80ff81ff81ff81ff01ff01ff001f0006000000000"
+    },
+    {
+      "catalog": "equipment",
+      "item_key": "chip_dobycha_15",
+      "hash": "0000000000e003f807fc0ffc1ffe0ffc3ffc3ff81ff00ff007e003c001800000"
+    },
+    {
+      "catalog": "equipment",
+      "item_key": "chip_dobycha_25",
+      "hash": "0000000000e003f007f80ffc1ffc3ff83ff82ff82ff81ff00de0004000000000"
+    },
+    {
+      "catalog": "equipment",
+      "item_key": "chip_dobycha_35",
+      "hash": "0000006000f001700ffc1fec1ff43ff41ffc3ffc1ff81ff80ff0066001800000"
+    },
+    {
+      "catalog": "equipment",
+      "item_key": "chip_dobycha_45",
+      "hash": "0000006000f005780ffc1fee3ff43ff43ffc3ffc3ff81ff00fe0064001800000"
+    },
+    {
+      "catalog": "equipment",
+      "item_key": "chip_dobycha_5",
+      "hash": "0000000000e003f807fc0fec0ff60ffc1ffc3ff80ff00bf007e0004001800000"
+    },
+    {
+      "catalog": "equipment",
+      "item_key": "chip_energeticheskoe_30",
+      "hash": "0000000000000000038007f01ffe7ffe7ffc1ff807f801e000e0000000000000"
+    },
+    {
+      "catalog": "equipment",
+      "item_key": "chip_energosnabzhenie_15",
+      "hash": "00000000070007e00ff81ffe1ffe3ffc7ffc7ff83fb80ff803f0007000000000"
+    },
+    {
+      "catalog": "equipment",
+      "item_key": "chip_energosnabzhenie_25",
+      "hash": "00000000030007e00ff80ffe1ffe3ffc3ffc7ffc3ff80ff801f0007000300000"
+    },
+    {
+      "catalog": "equipment",
+      "item_key": "chip_energosnabzhenie_35",
+      "hash": "00000000030007e00ff80ffe1ffe3ffc3ffc7ffc3ff80ff803f0007000000000"
+    },
+    {
+      "catalog": "equipment",
+      "item_key": "chip_energosnabzhenie_45",
+      "hash": "00000000030007e00ff80ffe1ffe3ffc3ffc7ffc3fb80ff803f0007000000000"
+    },
+    {
+      "catalog": "equipment",
+      "item_key": "chip_energosnabzhenie_5",
+      "hash": "00000000030007e00ff80ffe1ffe3ffc3ffc7ffc3ff80ff803f0007000000000"
+    },
+    {
+      "catalog": "equipment",
+      "item_key": "chip_energosnabzhenie_50",
+      "hash": "00000000030007e00ff80ffe1ffe3ffc3ffc7ffc3ff80ff803f0007000000000"
+    },
+    {
+      "catalog": "equipment",
+      "item_key": "chip_energosnabzhenie_55",
+      "hash": "00000000030007e00ff80ffe1ffe3ffc3ffc7ffc3fb80ff803f0007000000000"
+    },
+    {
+      "catalog": "equipment",
+      "item_key": "chip_energosnabzhenie_60",
+      "hash": "00000000030007e00ff80ffe1ffe3ffc3ffc7ffc3fb80ff803f0007000000000"
+    },
+    {
+      "catalog": "equipment",
+      "item_key": "chip_ognestrelnoe_30",
+      "hash": "0000000000000000038007f03ffe7ffe7ffc1ff807f801e00000000000000000"
+    },
+    {
+      "catalog": "equipment",
+      "item_key": "chip_pole_15",
+      "hash": "00000000000007e00ff03ffc7ffe7fff7fff7fff67f61fec0eb003e000000000"
+    },
+    {
+      "catalog": "equipment",
+      "item_key": "chip_pole_25",
+      "hash": "00000000018003c00ff03ffc7fff7fff7fff7fff3ffe1ff807f003c000000000"
+    },
+    {
+      "catalog": "equipment",
+      "item_key": "chip_pole_35",
+      "hash": "00000000000007e00ff03ffc7ffe7fff7fff7fff37fe1bf807f003c000000000"
+    },
+    {
+      "catalog": "equipment",
+      "item_key": "chip_pole_45",
+      "hash": "00000000000007e00ff03ffc7fff7fff7fff7fff3ffe1ff807f003c000000000"
+    },
+    {
+      "catalog": "equipment",
+      "item_key": "chip_pole_5",
+      "hash": "00000000000007e00ff03ffc7ffe7fff7fff7fff37fe1ff807f003c000000000"
+    },
+    {
+      "catalog": "equipment",
+      "item_key": "chip_pole_50",
+      "hash": "00000000000007e00ff03ffc7fff7fff7fff7fff3ffe1ff80ff003c000000000"
+    },
+    {
+      "catalog": "equipment",
+      "item_key": "chip_pole_55",
+      "hash": "00000000001007fc0ff83ffc7eff7f7f7fff7fff37fe1ff807f003c000000000"
+    },
+    {
+      "catalog": "equipment",
+      "item_key": "chip_pole_60",
+      "hash": "00000000000007e00ff03ffc7eff7f7f7fff7fff3ff61ffc07f003e000000000"
+    },
+    {
+      "catalog": "equipment",
+      "item_key": "chip_prochnost",
+      "hash": "000000000000000003c00ff81ffc3ffc3ff80ff003e000400000000000000000"
+    },
+    {
+      "catalog": "equipment",
+      "item_key": "chip_prochnost_v2",
+      "hash": "000000000000000003c00ff81ffc3ffc3ff80ff003e000400000000000000000"
+    },
+    {
+      "catalog": "equipment",
+      "item_key": "chip_programmiruemyy",
+      "hash": "000000000000038007e00ffc1ffe3ffe3ffc3ff80ff003f000e0000000000000"
+    },
+    {
+      "catalog": "equipment",
+      "item_key": "chip_raketnyy_kompleks_30",
+      "hash": "0000000000000000038007f01ffe7ffe7ffc1ff807f801e00040000000000000"
+    },
+    {
+      "catalog": "equipment",
+      "item_key": "chip_skorost",
+      "hash": "000000000000038007e00ffc1ffe3ffe3ffc3ff80ff003f000e0000000000000"
+    },
+    {
+      "catalog": "equipment",
+      "item_key": "chip_tryum_15",
+      "hash": "000000000000000007e007fc0ffe3ffe3ffe3ffc3ffc07fc00f8003000000000"
+    },
+    {
+      "catalog": "equipment",
+      "item_key": "chip_tryum_25",
+      "hash": "000000000000000007c00ffc1ffe3ffe7ffc7ffc3ff81ff801f8005000000000"
+    },
+    {
+      "catalog": "equipment",
+      "item_key": "chip_tryum_35",
+      "hash": "000000000000000007c00ffc1ffe3ffe7ffc7ffc3ff81ff801f8005000000000"
+    },
+    {
+      "catalog": "equipment",
+      "item_key": "chip_tryum_45",
+      "hash": "000000000000000007e007fc0ffe3ffe7ffe7ffc3ffc0ffc01f8003000000000"
+    },
+    {
+      "catalog": "equipment",
+      "item_key": "chip_tryum_5",
+      "hash": "000000000000000007e007fc0ffe3ffe7ffe7ffc3ffc0ffc00f8003000000000"
+    },
+    {
+      "catalog": "equipment",
+      "item_key": "dob_modul_bur",
+      "hash": "0000000019e03dc03f8007c07ff00ff00ff80fb807dc07dc0ffe03e600c30001"
+    },
+    {
+      "catalog": "equipment",
+      "item_key": "dob_modul_bur_v2",
+      "hash": "000000601de03fc03fc07fe07f701b580fa80f980c9c0cbc0c3e066f01c70003"
+    },
+    {
+      "catalog": "equipment",
+      "item_key": "dob_modul_nasos",
+      "hash": "000000000000000003e01ff03ff03ff61ffe7ffc7ffc1ff80380000000000000"
+    },
+    {
+      "catalog": "equipment",
+      "item_key": "dob_modul_nasos_v2",
+      "hash": "000000000000000003e01ff03ff03ff61ffe7ffc7ffc1ff80380000000000000"
+    },
+    {
+      "catalog": "equipment",
+      "item_key": "dob_modul_shakhta",
+      "hash": "00000000078007c00fc00fc00fc00fc00dc007e007f007f007f007e000000000"
+    },
+    {
+      "catalog": "equipment",
+      "item_key": "dob_modul_shnek",
+      "hash": "00000000000003c007e007e006e007e20c602ef6218639de3ffe3ffe3ffe0000"
+    },
+    {
+      "catalog": "equipment",
+      "item_key": "dob_modul_shnek_v2",
+      "hash": "00000000000003c007e007e007e00fe20c602ef6218639de3ffe3ffe3ffe0000"
+    },
+    {
+      "catalog": "equipment",
+      "item_key": "nakopitel",
+      "hash": "00000000000003f80ffc1ffc1ffc1ffc3ffc1ffc1ffc0ff807e0018000000000"
+    },
+    {
+      "catalog": "equipment",
+      "item_key": "nakopitel_100_m1",
+      "hash": "0de03ff877f87f8e7d7d7f79fe3ef794dfd6d7f0fff07f30201039c008000020"
+    },
+    {
+      "catalog": "equipment",
+      "item_key": "nakopitel_12",
+      "hash": "00000000048007801fc01ff41ffc1ff817f817f81ff80ff80fc0000000000000"
+    },
+    {
+      "catalog": "equipment",
+      "item_key": "nakopitel_16",
+      "hash": "00000000068007801fc01ff41ffc1ffc1ffc1ff81ff80ffc0fc0000000000000"
+    },
+    {
+      "catalog": "equipment",
+      "item_key": "nakopitel_20m1",
+      "hash": "00000000068007801fc01ff41ffc1ffc1ffc1ff81ff80ffc0fc0000000000000"
+    },
+    {
+      "catalog": "equipment",
+      "item_key": "nakopitel_24",
+      "hash": "0000000007800fc01ff01ffc1ffc1ffc37fc37fc1ffc1ffc0ff00f0000000000"
+    },
+    {
+      "catalog": "equipment",
+      "item_key": "nakopitel_27",
+      "hash": "0000000004000fe03fe03ffc3ffc1ffc1ffc1ff80ff807f801f8007000000000"
+    },
+    {
+      "catalog": "equipment",
+      "item_key": "nakopitel_27m1",
+      "hash": "0000000004000fe03fe03ffc3ffc1ffc1ffc1ff80ff807f801f8007000000000"
+    },
+    {
+      "catalog": "equipment",
+      "item_key": "nakopitel_30",
+      "hash": "0000000004000ee03fe03ffc3ffc1ffc1ffc1ff80ff807f801f8007000000000"
+    },
+    {
+      "catalog": "equipment",
+      "item_key": "nakopitel_34",
+      "hash": "0000000004000ee03fe03ffc3ffc1ffc1ffc1ff80ff807f801f8007000000000"
+    },
+    {
+      "catalog": "equipment",
+      "item_key": "nakopitel_34m1",
+      "hash": "0000000004000ee03fe03ffc3ffc1ffc1ffc1ff80ff807f801f8007000000000"
+    },
+    {
+      "catalog": "equipment",
+      "item_key": "nakopitel_4",
+      "hash": "00000000000003f80ffc1ffc1ffc1ffc3ffc1ffc1ffc0ff807e0018000000000"
+    },
+    {
+      "catalog": "equipment",
+      "item_key": "nakopitel_44",
+      "hash": "0000000004000ee03fe03ffc3ffc1ffc1ffc1ff80ff807f801f8007000000000"
+    },
+    {
+      "catalog": "equipment",
+      "item_key": "nakopitel_44m1",
+      "hash": "0000000004000ee03fe03ffc3ffc1ffc1ffc1ff80ff807f801f8007000000000"
+    },
+    {
+      "catalog": "equipment",
+      "item_key": "nakopitel_54",
+      "hash": "00000000000002a01fc83ffc3ffc3ffc3ffc1ff81ff80fe003c0000000000000"
+    },
+    {
+      "catalog": "equipment",
+      "item_key": "nakopitel_54m1",
+      "hash": "00000000000002a01fc83ffc3ffc3ffc3ffc1ff81ff80fe003c0000000000000"
+    },
+    {
+      "catalog": "equipment",
+      "item_key": "nakopitel_64",
+      "hash": "00000000000000001fe03ffc3ffc3ffc3ffc1ff81ff80fe001c0000000000000"
+    },
+    {
+      "catalog": "equipment",
+      "item_key": "nakopitel_64m1",
+      "hash": "00000000000000001fe03ffc3ffc3ffc3ffc1ff81ff80fe001c0000000000000"
+    },
+    {
+      "catalog": "equipment",
+      "item_key": "nakopitel_7",
+      "hash": "00000000000007f81ffc1ffc1ffc3ffc3ffc1ffc3ffc07f807e0078000000000"
+    },
+    {
+      "catalog": "equipment",
+      "item_key": "nakopitel_74",
+      "hash": "00000000000000001fe03ffc3ffc3ffc3ffc1ff81ff80fe001c0000000000000"
+    },
+    {
+      "catalog": "equipment",
+      "item_key": "nakopitel_74m1",
+      "hash": "00000000000000001fe03ffc3ffc3ffc3ffc1ff81ff80fe001c0000000000000"
+    },
+    {
+      "catalog": "equipment",
+      "item_key": "nakopitel_84",
+      "hash": "00000000010003e003f807fc0ffc1ffc3ff03ff03fe00fc007c0038000000000"
+    },
+    {
+      "catalog": "equipment",
+      "item_key": "nakopitel_84m1",
+      "hash": "00000000010003e003f807fc0ffc1ffc3ff03ff03fe00fc007c0038000000000"
+    },
+    {
+      "catalog": "equipment",
+      "item_key": "nakopitel_9",
+      "hash": "00000000000003f80ffc1ffc1ffc1ffc3ffc1ffc1ffc0ff807e0018000000000"
+    },
+    {
+      "catalog": "equipment",
+      "item_key": "nakopitel_94_m1",
+      "hash": "0ce03ff837d87f0c7d787f79fe3ed780dfd0d7a0e7f07e100010000000000020"
+    },
+    {
+      "catalog": "equipment",
+      "item_key": "reaktor",
+      "hash": "0000002c13e007f80ffc1ff81ffe1ffe1ffe1ff807fc06fa0006000c00000000"
+    },
+    {
+      "catalog": "equipment",
+      "item_key": "reaktor_100_m1",
+      "hash": "08c00dd03ff05fb8f938befcf7ec31066dfa7bb87bb41cf00dc007e008000000"
+    },
+    {
+      "catalog": "equipment",
+      "item_key": "reaktor_12",
+      "hash": "00000000037003f803d803fc07fc0ffc3ffc3ff83ff83ff03a7001c000000000"
+    },
+    {
+      "catalog": "equipment",
+      "item_key": "reaktor_16",
+      "hash": "00000000037003f803d803fc07fc0ffc3ffc3ff83ff83ff03a7001c000000000"
+    },
+    {
+      "catalog": "equipment",
+      "item_key": "reaktor_20m1",
+      "hash": "00000000037003f803d803fc07fc0ffc3ffc3ff83ff83ff03a7001c000000000"
+    },
+    {
+      "catalog": "equipment",
+      "item_key": "reaktor_24",
+      "hash": "00000000037003f803d803fc07fc0ffc3ffc3ff83ff83ff03a7003c000000000"
+    },
+    {
+      "catalog": "equipment",
+      "item_key": "reaktor_27",
+      "hash": "00000000037003f803c803fc07fc0ffc3ffc3ff83ff83ff03e7001c000000000"
+    },
+    {
+      "catalog": "equipment",
+      "item_key": "reaktor_30",
+      "hash": "00000000000003f803fc07fc1ffc3ffc3ff83ff81ff81f800e00000000000000"
+    },
+    {
+      "catalog": "equipment",
+      "item_key": "reaktor_30m1",
+      "hash": "00000000000003f803fc07fc1ffc3ffc3ff83ff81ff81f800e00000000000000"
+    },
+    {
+      "catalog": "equipment",
+      "item_key": "reaktor_34",
+      "hash": "00000000000003f003fc07fc1ffc3ffc3ff83ff81ff81f800e00000000000000"
+    },
+    {
+      "catalog": "equipment",
+      "item_key": "reaktor_38",
+      "hash": "00000000000003f803fc07fc1ffc3ffc3ff83ff81ff81f800e00000000000000"
+    },
+    {
+      "catalog": "equipment",
+      "item_key": "reaktor_4",
+      "hash": "0000002c13a007f80ffc1ff81ff81ffe1ffe1ff807fc06f80006000c00000000"
+    },
+    {
+      "catalog": "equipment",
+      "item_key": "reaktor_41",
+      "hash": "00000000000003f803fc07fc1ffc3ffc3ff83ff81ff81f800f00000000000000"
+    },
+    {
+      "catalog": "equipment",
+      "item_key": "reaktor_41m1",
+      "hash": "00000000000003f803fc07fc1ffc3ffc3ff83ff81ff81f800f00000000000000"
+    },
+    {
+      "catalog": "equipment",
+      "item_key": "reaktor_44",
+      "hash": "00000000000007fc1ffc1ffe3ffe3ffc7ffc7ff07fe03f800780000000000000"
+    },
+    {
+      "catalog": "equipment",
+      "item_key": "reaktor_47",
+      "hash": "00000000000003f803fc07fc1ffc3ffc3ff83ff81ff81f800e00000000000000"
+    },
+    {
+      "catalog": "equipment",
+      "item_key": "reaktor_50",
+      "hash": "00000000000007fc1ffc1ffe3ffe3ffc7ffc7ff07fe03f800780000000000000"
+    },
+    {
+      "catalog": "equipment",
+      "item_key": "reaktor_63",
+      "hash": "00000000000007fc1ffc1ffe3ffe3ffc7ffc7ff07fe03f800780000000000000"
+    },
+    {
+      "catalog": "equipment",
+      "item_key": "reaktor_63m1",
+      "hash": "00000000000007fc1ffc1ffe3ffe3ffc7ffc7ff07fe03f800780000000000000"
+    },
+    {
+      "catalog": "equipment",
+      "item_key": "reaktor_7",
+      "hash": "0000002c13a007f80ffc1ff81ffe1ffe1ffe1ff807fc06fa0006000c00000000"
+    },
+    {
+      "catalog": "equipment",
+      "item_key": "reaktor_73",
+      "hash": "00000000000007fc1ffc1ffe3ffe3ffc7ffc7ff07fe03f800780000000000000"
+    },
+    {
+      "catalog": "equipment",
+      "item_key": "reaktor_73m1",
+      "hash": "00000000000007fc1ffc1ffe3ffe3ffc7ffc7ff07fe03f800780000000000000"
+    },
+    {
+      "catalog": "equipment",
+      "item_key": "reaktor_83",
+      "hash": "00000000007801f80ffc3ffc3ff83ff01fc003c003c003e003e001c000000000"
+    },
+    {
+      "catalog": "equipment",
+      "item_key": "reaktor_83m1",
+      "hash": "00000000007801f80ffc3ffc3ff83ff01fc003c003c003e003e001c000000000"
+    },
+    {
+      "catalog": "equipment",
+      "item_key": "reaktor_9",
+      "hash": "0000002413a007f80ffc1ff81ffc1ffe1ffe1ff807fc06f80006000c00000000"
+    },
+    {
+      "catalog": "equipment",
+      "item_key": "reaktor_93_m1",
+      "hash": "09c00ff03ff87fbcf93abefdf7ee31067dfe7bbe7bb41cf00dc007e008100800"
+    },
+    {
+      "catalog": "equipment",
+      "item_key": "tryum_1",
+      "hash": "00000000000007f007f00ff00fe00fe00fe00fe00fe00fe00fc0010000000000"
+    },
+    {
+      "catalog": "equipment",
+      "item_key": "tryum_17t",
+      "hash": "0000000001e01ff03ff83ff82fe83ff81fb81fb80df807f003f003c001800000"
+    },
+    {
+      "catalog": "equipment",
+      "item_key": "tryum_24",
+      "hash": "00000000008007f007f80ff00ff01ff01fe01fe01fe01fe00fe0078000000000"
+    },
+    {
+      "catalog": "equipment",
+      "item_key": "tryum_25t",
+      "hash": "0000000000800fe01ff01ff81ff81ff81ff00ff005f003e001e001c001000000"
+    },
+    {
+      "catalog": "equipment",
+      "item_key": "tryum_32t",
+      "hash": "000000000f600fe00ff01dfc00fc00fc00f801f80ef80ff807f803f001800000"
+    },
+    {
+      "catalog": "equipment",
+      "item_key": "tryum_40tm1",
+      "hash": "000000000f600fe00ff01dfc007c00fc00f801f80ef80ff807b807f003800000"
+    },
+    {
+      "catalog": "equipment",
+      "item_key": "tryum_48",
+      "hash": "00000000008007f007f80ff00ff00ff00fe01fe01fe00fe00fe0078000000000"
+    },
+    {
+      "catalog": "equipment",
+      "item_key": "tryum_50tm1",
+      "hash": "0000000001f000f83bf81ff81ff80fb803b003b003b003f001e001c000000000"
+    },
+    {
+      "catalog": "equipment",
+      "item_key": "tryum_6",
+      "hash": "00000000008007f007f80ff00ff00ff01fe01fe01fe01fe00fe0078000000000"
+    },
+    {
+      "catalog": "equipment",
+      "item_key": "tryum_60",
+      "hash": "00000000000007f007f00ff00fe00fe00fe00fe00fe00fe00fc0010000000000"
+    },
+    {
+      "catalog": "equipment",
+      "item_key": "tryum_60tm1",
+      "hash": "0000000001f001f83bf81ff81ff80ff817f017f007f003f001e000c000000000"
+    },
+    {
+      "catalog": "equipment",
+      "item_key": "tryum_70tm1",
+      "hash": "0000000001f001f83bf81ff81ff80ff807f017f003b003f001e000c000000000"
+    },
+    {
+      "catalog": "equipment",
+      "item_key": "tryum_9",
+      "hash": "00000000018007f007f80ff00ff01ff01fe01fe01fe01fe00fe0078000000000"
+    },
+    {
+      "catalog": "equipment",
+      "item_key": "zashchitnoe_pole",
+      "hash": "00000000064007c003c00fe00fe00ff00ff01ff81ff803f803f8000000000000"
+    },
+    {
+      "catalog": "equipment",
+      "item_key": "zashchitnoe_pole_100_m1",
+      "hash": "007e00861f7e23fe5ffe5cfc60f83f8818f820f81db85ffe38fe3c7e6ffe1fe6"
+    },
+    {
+      "catalog": "equipment",
+      "item_key": "zashchitnoe_pole_100_m2",
+      "hash": "007e00861f7e23fe5ffe5cfc60f83f8818f820f81db85ffe38fe3c7e6ffe1fe6"
+    },
+    {
+      "catalog": "equipment",
+      "item_key": "zashchitnoe_pole_12",
+      "hash": "00000000064007c003800fe00fe00fe00ff01ff81ff807f803f8000000000000"
+    },
+    {
+      "catalog": "equipment",
+      "item_key": "zashchitnoe_pole_16",
+      "hash": "000000f000f002ec2ff43ff80ffe0ffe0ffe3ffe03fe007e000e080000000000"
+    },
+    {
+      "catalog": "equipment",
+      "item_key": "zashchitnoe_pole_20",
+      "hash": "000000f000f002fc2ffc3ff80ffe0ffe1ffe3ffe03fe0076000e000000000000"
+    },
+    {
+      "catalog": "equipment",
+      "item_key": "zashchitnoe_pole_20m1",
+      "hash": "000000f000f002fc2ffc3ff80ffe0ffe1ffe3ffe03fe0076000e000000000000"
+    },
+    {
+      "catalog": "equipment",
+      "item_key": "zashchitnoe_pole_24",
+      "hash": "000000f000f002ec2ff43ff80ffe0ffe1ffe3ffe03fe0076000e000000000000"
+    },
+    {
+      "catalog": "equipment",
+      "item_key": "zashchitnoe_pole_27",
+      "hash": "000000f0007002cc2ff43ff80ffe0ffe1ffe3ffe03fe0076000e000000000000"
+    },
+    {
+      "catalog": "equipment",
+      "item_key": "zashchitnoe_pole_30",
+      "hash": "00000000018001e00ff81ff80ff807f807f81df801f801f801f000f000000000"
+    },
+    {
+      "catalog": "equipment",
+      "item_key": "zashchitnoe_pole_30m1",
+      "hash": "00000000018001e00ff81ff80ff807f807f81df801f801f801f000f000000000"
+    },
+    {
+      "catalog": "equipment",
+      "item_key": "zashchitnoe_pole_34",
+      "hash": "00000000018001e00ff81ff80ff807f807f81ff809f801f001f000c000000000"
+    },
+    {
+      "catalog": "equipment",
+      "item_key": "zashchitnoe_pole_37",
+      "hash": "000000f0007002cc2ff43ff80ffe0ffe1ffe3ffe03fe0076000e000000000000"
+    },
+    {
+      "catalog": "equipment",
+      "item_key": "zashchitnoe_pole_4",
+      "hash": "00000000064007c003c00fe00fe00fe00ff01ff81ff803f803f8000000000000"
+    },
+    {
+      "catalog": "equipment",
+      "item_key": "zashchitnoe_pole_40",
+      "hash": "00000000018001e00ff81ff80ff827f807f81ff809f801f001f000f000000000"
+    },
+    {
+      "catalog": "equipment",
+      "item_key": "zashchitnoe_pole_40m1",
+      "hash": "00000000018001e00ff81ff80ff827f807f81ff809f801f001f000f000000000"
+    },
+    {
+      "catalog": "equipment",
+      "item_key": "zashchitnoe_pole_43",
+      "hash": "00000000018001e00ff81ff80ff807f807f81ff809f801f001f0008000000000"
+    },
+    {
+      "catalog": "equipment",
+      "item_key": "zashchitnoe_pole_46",
+      "hash": "00000000018001e00ff81ff80ff807f807f81df801f801f001f000b000000000"
+    },
+    {
+      "catalog": "equipment",
+      "item_key": "zashchitnoe_pole_50",
+      "hash": "0000000001800fe00ff01ff81ff81ff81ff83bf803f803f003f0000000000000"
+    },
+    {
+      "catalog": "equipment",
+      "item_key": "zashchitnoe_pole_55",
+      "hash": "0000000001800fe00ff01ff81ff81ff81ff83bf803f803f003f0000000000000"
+    },
+    {
+      "catalog": "equipment",
+      "item_key": "zashchitnoe_pole_55m1",
+      "hash": "0000000001800fe00ff01ff81ff81ff81ff83bf803f803f003f0000000000000"
+    },
+    {
+      "catalog": "equipment",
+      "item_key": "zashchitnoe_pole_60",
+      "hash": "000000f000f002fc2ff43ff80ffe0ffe1ffe3ffe03fe0076000e000000000000"
+    },
+    {
+      "catalog": "equipment",
+      "item_key": "zashchitnoe_pole_65",
+      "hash": "0000000001800fe00ff01ff81ff81ff81ff83bf803f803f003f0000000000000"
+    },
+    {
+      "catalog": "equipment",
+      "item_key": "zashchitnoe_pole_65m1",
+      "hash": "0000000001800fe00ff01ff81ff81ff81ff83bf803f803f003f0000000000000"
+    },
+    {
+      "catalog": "equipment",
+      "item_key": "zashchitnoe_pole_7",
+      "hash": "000000000640074003c00fe00fe00fe00fe01fe81ff807f803f8000000000000"
+    },
+    {
+      "catalog": "equipment",
+      "item_key": "zashchitnoe_pole_75",
+      "hash": "0000000001800fe00ff01ff81ff81ff81ff83bf803f803f003e0000000000000"
+    },
+    {
+      "catalog": "equipment",
+      "item_key": "zashchitnoe_pole_75m1",
+      "hash": "0000000001800fe00ff01ff81ff81ff81ff83bf803f803f003e0000000000000"
+    },
+    {
+      "catalog": "equipment",
+      "item_key": "zashchitnoe_pole_85",
+      "hash": "00000000000003c007e007e007c007c00fe01ff01ff01ff01ff00ec000000000"
+    },
+    {
+      "catalog": "equipment",
+      "item_key": "zashchitnoe_pole_85m1",
+      "hash": "00000000000003c007e007e007c007c00fe01ff01ff01ff01ff00ec000000000"
+    },
+    {
+      "catalog": "equipment",
+      "item_key": "zashchitnoe_pole_9",
+      "hash": "000000000640074003c00fe00fe00fe00fe01fe81ff807f803e8000000000000"
+    },
+    {
+      "catalog": "equipment",
+      "item_key": "zashchitnoe_pole_95_m1",
+      "hash": "007e00c61ffe23fe5ffe5cf860f83f8818f820f81df85ffe20fe187e7ffe1ff6"
+    },
+    {
+      "catalog": "equipment",
+      "item_key": "zchip_gdis",
+      "hash": "000000000000038007e00ffc1ffe3ffe3ffc3ff80ff003f000e0000000000000"
+    },
+    {
+      "catalog": "items",
+      "item_key": "apgreyd_uroven_1",
+      "hash": "fffe8c028fd287fae712f9c2f16a936e83aa8432b792c7b2fb3a8002fffe0000"
+    },
+    {
+      "catalog": "items",
+      "item_key": "apgreyd_uroven_2",
+      "hash": "000040005e005ff84ffc7ff47ff87ffc7ffc5bbc5eec7ff47ff07ff840000000"
+    },
+    {
+      "catalog": "items",
+      "item_key": "apgreyd_uroven_3",
+      "hash": "00013ffd1fdd1f9f1edf3fbf1c093c1d7d1f381f1c0f17053f0f650731fd0001"
+    },
+    {
+      "catalog": "items",
+      "item_key": "apgreyd_uroven_4",
+      "hash": "0000316c10d433d43ef03ffc3fb13ddd7fde3dd83fde3fdc3fdc7f9e3bfc0000"
+    },
+    {
+      "catalog": "items",
+      "item_key": "apgreyd_uroven_5",
+      "hash": "000137fd1fdd1f9f1e9f3fbf1c39341d7d1f381f1c0f17053f0f650721fd0001"
+    },
+    {
+      "catalog": "items",
+      "item_key": "apgreyd_uroven_6",
+      "hash": "b0700fa080808e9098809c001ea87c000424079199f6dea6e83fb407bc27ffff"
+    },
+    {
+      "catalog": "items",
+      "item_key": "koltso",
+      "hash": "0000000001e007f00ff81ff83ff83f783ef83df83ff03fe01fc00f0000000000"
+    },
+    {
+      "catalog": "items",
+      "item_key": "konteyner_udachi",
+      "hash": "018003f00ffe1ffe3ffcfffcfff8fff81ff85fe05bc01bc0078003c001c00040"
+    },
+    {
+      "catalog": "items",
+      "item_key": "mishka",
+      "hash": "07e07fe07fe07ef03ff03ff03ff01c381c381df01ffc1ffe3ffe3fbe3ffe3f18"
+    },
+    {
+      "catalog": "items",
+      "item_key": "nabor_apov_15",
+      "hash": "402078604c006ff87ff077fc7bfe7ffc7ffc7b9a1ffc1fec17ec07fc03780000"
+    },
+    {
+      "catalog": "items",
+      "item_key": "nabor_apov_17",
+      "hash": "0010ffc012649ffedc111f71d6f0d6f298f09d80df18f93d1d811b0f1f8f1e07"
+    },
+    {
+      "catalog": "items",
+      "item_key": "nabor_apov_18",
+      "hash": "fff88d88080c18dc59d5dc95c015c077d455c015e8ffe07f7e7d7fff30f9067f"
+    },
+    {
+      "catalog": "items",
+      "item_key": "nevidimost_1_min",
+      "hash": "00000000000003e007f00ff81ff81ff81ff81ff81ff81ff00fe0038000000000"
+    },
+    {
+      "catalog": "items",
+      "item_key": "nevidimost_30_min",
+      "hash": "000000000e600ef01cf01ff017f01b700ef007e003c003c003e001c000000000"
+    },
+    {
+      "catalog": "items",
+      "item_key": "nevidimost_5_min",
+      "hash": "00000000000003e007f00ff81ff81f781ff81fe81ff81ff00fe0038000000000"
+    },
+    {
+      "catalog": "items",
+      "item_key": "pak_bronya_100",
+      "hash": "000025f827f83bfc3bfe327e3ffe7ffe7ffc7ffc3fec3f9825b03cc007800000"
+    },
+    {
+      "catalog": "items",
+      "item_key": "pak_polya_100",
+      "hash": "00003df827f83bfc3bfe327e3ffe7ffe7ffc7ffc3fec3fd825b03cc007800000"
+    },
+    {
+      "catalog": "items",
+      "item_key": "pak_prochnost_100",
+      "hash": "000025f827f83bfc3ade37fa3ffe7ffe7ffc7ffc3fec3f9825b03cc007800000"
+    },
+    {
+      "catalog": "items",
+      "item_key": "pak_resursy",
+      "hash": "000070001000160037807ff87ff87ffc7f863f803f83079f07ff07fc07c00400"
+    },
+    {
+      "catalog": "items",
+      "item_key": "pak_skorost_100",
+      "hash": "000025f827f83bfc3afe33fe3ffe7ffe7ffc7ffc3fec3f9825b03cc007800000"
+    },
+    {
+      "catalog": "items",
+      "item_key": "pak_zashchita_100",
+      "hash": "000025f827f83bfc3afe327e3ffe7ffe7ffc7ffc3fec3f9825b03cc007800000"
+    },
+    {
+      "catalog": "items",
+      "item_key": "podarok",
+      "hash": "000001c007f01e3c3c1c3f3c3ffc3ffc3ffc3ffc3ffc3ffc3ffc0ff001e00000"
+    },
+    {
+      "catalog": "items",
+      "item_key": "podarok_bolshoy",
+      "hash": "07f007e01fe09ff0d870701a703e603ee7de6fde37de379c37b937b817bc0f9c"
+    },
+    {
+      "catalog": "items",
+      "item_key": "podarok_ogromnyy",
+      "hash": "000007c007f00c301d581ff83ffc3ffc3ffc3ffc3ffc3ffc7ffeffe3ffff0000"
+    },
+    {
+      "catalog": "items",
+      "item_key": "potseluy",
+      "hash": "0000000003f01ff83ffc3ffe3ffe7ffe7efe7ffc7ffc1ffc0ff807f003c00000"
+    },
+    {
+      "catalog": "items",
+      "item_key": "remkomplekt_1800",
+      "hash": "00000000030003e00ff80ff80ff80ff80ff80ff80ff803f800f0000000000000"
+    },
+    {
+      "catalog": "items",
+      "item_key": "remkomplekt_20000",
+      "hash": "0000000003c01ff03ff83ffc3ffc17fc1ffc1ffc1ff80ff801f0006000000000"
+    },
+    {
+      "catalog": "items",
+      "item_key": "remkomplekt_3900",
+      "hash": "00000000030003e00ff80ff80ff80ff80ff80ff80ff803f00060000000000000"
+    },
+    {
+      "catalog": "items",
+      "item_key": "remkomplekt_900",
+      "hash": "00000000010003e00ff80ff80ff80ff80ff80ff807f803f00060000000000000"
+    },
+    {
+      "catalog": "items",
+      "item_key": "remkomplekt_9000",
+      "hash": "0000000003800ff03ff83ffc1ffc17fc1ffc1ffc1ff80ff801f0006000000000"
+    },
+    {
+      "catalog": "items",
+      "item_key": "rempak_20000",
+      "hash": "008000b003fc7ffefffe17fc0ff80ff60ffe1ffe0ff609f603fe00f400300000"
+    },
+    {
+      "catalog": "items",
+      "item_key": "rempak_3900",
+      "hash": "0000008000fc03fe03fe03fc0ff80ff60ffe1ffe1ff61ff60ffc01f400700000"
+    },
+    {
+      "catalog": "items",
+      "item_key": "rempak_9000",
+      "hash": "0080008000dc03fe03fe03fc0ffc0ff60ffe1ffe1ff61ff60ffc01f400700000"
+    },
+    {
+      "catalog": "items",
+      "item_key": "serdechko",
+      "hash": "1c383ffc7ffe7ffefffefffefffe7ffe7ffe7ffe3ffc3ff81ff00fe007c00380"
+    },
+    {
+      "catalog": "items",
+      "item_key": "shoker_bolshoy",
+      "hash": "00000000018003c007c007c007e007e00fe007e00fe00ff007e0000000000000"
+    },
+    {
+      "catalog": "items",
+      "item_key": "shoker_malyy",
+      "hash": "00000000018003c007c007c007e007e00fe007e007f0043007f0000000000000"
+    },
+    {
+      "catalog": "items",
+      "item_key": "shoker_sredniy",
+      "hash": "00000000018003c007c007c007e007e007e007e00ff00ff007f0000000000000"
+    },
+    {
+      "catalog": "items",
+      "item_key": "skaner_20000",
+      "hash": "000000000fe01ff81ff83ffc3fec3f843f043e0c360c181c1ff807f000000000"
+    },
+    {
+      "catalog": "items",
+      "item_key": "skaner_6000",
+      "hash": "000000000fe01ff81ff83ffc3fec3f843f043e0c360c181c1f7807f000000000"
+    },
+    {
+      "catalog": "items",
+      "item_key": "skaner_karty",
+      "hash": "000000000fe01ff81ff83ffc3ffc3ffc3ffc37cc300c181c1e7807f000000000"
+    },
+    {
+      "catalog": "items",
+      "item_key": "skaner_karty_1_chas",
+      "hash": "000000000fe01ff81ff83ffc3ffc3ffc3ffc37cc300c181c1e7807f000000000"
+    },
+    {
+      "catalog": "items",
+      "item_key": "skaner_karty_individualnyy",
+      "hash": "000000000fe01ff81ff83ffc3ffc3ffc3ffc37cc300c181c1e7807f000000000"
+    },
+    {
+      "catalog": "items",
+      "item_key": "teleportator",
+      "hash": "ffffffffffffffffffffffff0000000000010001ffffffffffffffffffffffff"
+    },
+    {
+      "catalog": "items",
+      "item_key": "tp_bunker_chervey",
+      "hash": "ffffffffffffffffffffffffffffffffffffff7fffffffffffffffffffffffff"
+    },
+    {
+      "catalog": "items",
+      "item_key": "tp_gruppa",
+      "hash": "ffffffffffffffffffffffffc003c003d003d003ffffffffffffffffffffffff"
+    },
+    {
+      "catalog": "items",
+      "item_key": "tp_istochnik_energii",
+      "hash": "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"
+    },
+    {
+      "catalog": "items",
+      "item_key": "tp_katorga",
+      "hash": "ffffffffffffffffffffffff0000000000000000ffffffffffffffffffffffff"
+    },
+    {
+      "catalog": "items",
+      "item_key": "tp_magazin_krada",
+      "hash": "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"
+    },
+    {
+      "catalog": "items",
+      "item_key": "tp_magazin_opora",
+      "hash": "ffffffffffffffffffffffffffffffffffffffdfffffffffffffffffffffffff"
+    },
+    {
+      "catalog": "items",
+      "item_key": "tp_magazin_treba",
+      "hash": "fffffffffffffffffffffffffffffffffffffdffffffffffffffffffffffffff"
+    },
+    {
+      "catalog": "items",
+      "item_key": "tp_obuchayushchiy_kroty",
+      "hash": "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"
+    },
+    {
+      "catalog": "items",
+      "item_key": "tp_otryad",
+      "hash": "ffffffffffffffffffffffffe007e007e007e007ffffffffffffffffffffffff"
+    },
+    {
+      "catalog": "items",
+      "item_key": "tp_pervaya_baza",
+      "hash": "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"
+    },
+    {
+      "catalog": "items",
+      "item_key": "tp_prokhod_k_baze_krotov",
+      "hash": "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"
+    },
+    {
+      "catalog": "items",
+      "item_key": "tp_soyuz",
+      "hash": "ffffffffffffffffffffffffe007e007e007e007ffffffffffffffffffffffff"
+    },
+    {
+      "catalog": "items",
+      "item_key": "tp_ukreplenie_krotov",
+      "hash": "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"
+    },
+    {
+      "catalog": "items",
+      "item_key": "tsvety",
+      "hash": "000000000000000004000f070fbf3fb83ff0fff8ffe07e80fe003c001c000000"
+    },
+    {
+      "catalog": "items",
+      "item_key": "zbatareyki_nuc100",
+      "hash": "00000000018003c007c007c007e007e00fe007e007f0043007f0000000000000"
+    },
+    {
+      "catalog": "loot",
+      "item_key": "blokirator",
+      "hash": "0007000f001e007e00fc03f807f00ff03fe07fc07f807f00fe00fe00fe00f000"
+    },
+    {
+      "catalog": "loot",
+      "item_key": "bryushko_terida",
+      "hash": "010007800fc007800780078007801fc03ee03ef83efc3e7c3c3c300000000000"
+    },
+    {
+      "catalog": "loot",
+      "item_key": "chasti_pirata_amf",
+      "hash": "0000000000000038007e03fe07fe0ffe1ffe3ff87ff03fe03f801f0000000000"
+    },
+    {
+      "catalog": "loot",
+      "item_key": "chasti_pirata_gab",
+      "hash": "0000000000f803fc0ffc1ffe0ffe1ffe3ffc3ff83fff3fe01fc0030000000000"
+    },
+    {
+      "catalog": "loot",
+      "item_key": "chasti_pirata_gip",
+      "hash": "0000000000c003f807fc0fff1fff7ffd7ffc7ff03fe01fc01fc00e0005ff0000"
+    },
+    {
+      "catalog": "loot",
+      "item_key": "chasti_pirata_mao",
+      "hash": "0000000001f803fc03fe07fe0ffc0ffc1ff83ff00fff3fc01e003e001c000000"
+    },
+    {
+      "catalog": "loot",
+      "item_key": "chasti_pirata_mor",
+      "hash": "0000002000f801fc03fc07fc07fc07f807f807e00fc01fc03fc03f001e000000"
+    },
+    {
+      "catalog": "loot",
+      "item_key": "chasti_pirata_pif",
+      "hash": "0000001c003e007e00fc03fc07f81ff03fe03fe027c03f803f003f0018000000"
+    },
+    {
+      "catalog": "loot",
+      "item_key": "chasti_pirata_rakh",
+      "hash": "00000000007001f801fc03fe03bc07f80ff81fc77f801f000c00000000000000"
+    },
+    {
+      "catalog": "loot",
+      "item_key": "chasti_pirata_sat",
+      "hash": "000000000e001f801fe00ff00ff01ff83ff87ffe7cfe383e101c000c00000000"
+    },
+    {
+      "catalog": "loot",
+      "item_key": "chasti_pirata_tig",
+      "hash": "00000000007800fc00fe03fe7ffe3ffe3ff23ffc2ff817f817c007c000800000"
+    },
+    {
+      "catalog": "loot",
+      "item_key": "chasti_pirata_ugs",
+      "hash": "00000000007c00fe01ee07fe0ffe0ff81fe07fc03f803f003c007fff30000000"
+    },
+    {
+      "catalog": "loot",
+      "item_key": "demultipleksator",
+      "hash": "00f003c01fe03ff0fff0fff0fff0fff0ff58fe10d079c3fe0fe03e0020000000"
+    },
+    {
+      "catalog": "loot",
+      "item_key": "dvoynaya_elitra_tuka",
+      "hash": "0000000006701ff81ffc3ffe7f7efe7fffbffc3ffa5ff81f542a200400000000"
+    },
+    {
+      "catalog": "loot",
+      "item_key": "dvoynoy_shchit_senokosetsa",
+      "hash": "1c381ff82006100c000180018c719fe9b99dbfdda3c5e3e3e7e77fff3a4c0a58"
+    },
+    {
+      "catalog": "loot",
+      "item_key": "elementy_broni_tarana",
+      "hash": "0038003801fc070c1f6c1f7c1f5c1ffc1f081d8816c812681f680428060007f0"
+    },
+    {
+      "catalog": "loot",
+      "item_key": "elitra_tuka",
+      "hash": "00001e783ef83efc3efc3ef83ef83ee83ee836e816f81e500a500e7406600000"
+    },
+    {
+      "catalog": "loot",
+      "item_key": "glaz_tuka_krasnogo",
+      "hash": "00000000000000007dfe781e71e26ff01ff05fee7ffe7ffe07f7000000000000"
+    },
+    {
+      "catalog": "loot",
+      "item_key": "glaz_varana",
+      "hash": "0000000003f807fe07fe1f7f1f7e3f7c3f3c6e787ff0ffe0da00000000000000"
+    },
+    {
+      "catalog": "loot",
+      "item_key": "kapyushon_varana",
+      "hash": "0000000000001ff87ffe6ff7de7bfe7fbf7dfe7fbe7d1ff91c3827e61e380000"
+    },
+    {
+      "catalog": "loot",
+      "item_key": "khilitsery_pauka_glavnogo",
+      "hash": "381c7ffeffff87e1a247f81e781e700e700e700e300420042004000000000004"
+    },
+    {
+      "catalog": "loot",
+      "item_key": "khrebet_roytuka",
+      "hash": "00000070007c01fc01fe07fe07fc07fc0ffc1fff3fef3fc07f807f007c000000"
+    },
+    {
+      "catalog": "loot",
+      "item_key": "khvost_varana",
+      "hash": "00000000000000030007000f003f007f01ff0ffe7ffaffaaefff3ffc00000000"
+    },
+    {
+      "catalog": "loot",
+      "item_key": "kleshnya_skorpiona",
+      "hash": "00f800fd01ff03f807f30fe20fe67fec7ff87fe07fe03ff01ff01ff01ff007c0"
+    },
+    {
+      "catalog": "loot",
+      "item_key": "klyki_medvedya",
+      "hash": "000000000000074000300ff81ffc1ffc181c380c381c381c31cc13cc13c80000"
+    },
+    {
+      "catalog": "loot",
+      "item_key": "kogot_medvedya",
+      "hash": "000060007000701e73ff707f783e387e3cfc1ffc07f803f800f0000000000000"
+    },
+    {
+      "catalog": "loot",
+      "item_key": "kogot_psa",
+      "hash": "0f800200380030006f02d9c2c7e0efb04ff00ff00ff40ff603cc03d801800000"
+    },
+    {
+      "catalog": "loot",
+      "item_key": "kogot_psa_bolshogo",
+      "hash": "022071f031f8707cf0dcfbe4fef4fff0fef21ef00e305f805fe00f78040c0004"
+    },
+    {
+      "catalog": "loot",
+      "item_key": "kogot_psa_ogromnogo",
+      "hash": "0ff007fc1ffc7ffb7fc17f837fb37f317f317f015f0003000200000000d00014"
+    },
+    {
+      "catalog": "loot",
+      "item_key": "kompaund_krotov",
+      "hash": "000002003fe07ff07ffeffe3dfc9dfdd5fbd7bbd2cdb29e202fc000000000000"
+    },
+    {
+      "catalog": "loot",
+      "item_key": "komplekt_zp_krotov",
+      "hash": "19981fd81bf81bf81bf81bf819f819ff19d819fc01fc07543ffc3ffc3ffc1f74"
+    },
+    {
+      "catalog": "loot",
+      "item_key": "krotoskop",
+      "hash": "00000000000000003ff83ff8ffffffffefffeeffecfb63fe3ff8060000000000"
+    },
+    {
+      "catalog": "loot",
+      "item_key": "krototranslyator",
+      "hash": "0cc00cc03ffe308230c310c21fff3ff03ff803f80ff81ff80ff83ffe3ffe3ffe"
+    },
+    {
+      "catalog": "loot",
+      "item_key": "lapa_bogomola",
+      "hash": "e000e000f000f000f000f8007c007fc03ffe3ffe0ffe07c70007000700060002"
+    },
+    {
+      "catalog": "loot",
+      "item_key": "lapa_teri",
+      "hash": "000000000000000000002000f000fe06fffefff87fe000000000000000000000"
+    },
+    {
+      "catalog": "loot",
+      "item_key": "led",
+      "hash": "0000000003f81ff83ffc38c43b9c3f9c3f9c3f9e3f9e3ffc3ff80fe000800000"
+    },
+    {
+      "catalog": "loot",
+      "item_key": "magma_konteyner",
+      "hash": "07f00ff00ff009b0083019b019b839bc39bc3dbc7ffe7ffe7ffe2fc000000000"
+    },
+    {
+      "catalog": "loot",
+      "item_key": "magnitnye_zhelezy_narata",
+      "hash": "0000000001c007e007f00ff81ff81ff81ff81ffc1ffc1ff81c78001800180000"
+    },
+    {
+      "catalog": "loot",
+      "item_key": "parapodii_chervya",
+      "hash": "03f07ff0fff8ffe07ff87fc03f121f100fc811c609c803c807f802b002700240"
+    },
+    {
+      "catalog": "loot",
+      "item_key": "polikozha_krota",
+      "hash": "00003e007ffcffdfffefffafff873fef1fef1fe707fe037400540054007c0000"
+    },
+    {
+      "catalog": "loot",
+      "item_key": "segment_chervya",
+      "hash": "0000000000000ff01ff80ff01ff81ff81ff81ff007f007f007f0000007000000"
+    },
+    {
+      "catalog": "loot",
+      "item_key": "sertifikat_90_orudiya_i_nizhe",
+      "hash": "00000000000000033ffd3ffd3ffd3ffd3ffd7ffd7ffd7ffd40017fff00000000"
+    },
+    {
+      "catalog": "loot",
+      "item_key": "sertifikat_95_orudiya",
+      "hash": "00000000000000033ffd3ffd3ffd3ffd3ffd7ffd7ffd7ffd40017fff00000000"
+    },
+    {
+      "catalog": "loot",
+      "item_key": "sertifikat_rozygrysh",
+      "hash": "00000000000000eb3ffd3ffd3ffd3fdd7ffd7ffd7ffd7ffd40017fff00000000"
+    },
+    {
+      "catalog": "loot",
+      "item_key": "shchit_senokosetsa",
+      "hash": "0c101c382ff633ec1bd87dfd93cda3e7f7ef6bf55fff6bde3bce02401b580000"
+    },
+    {
+      "catalog": "loot",
+      "item_key": "shchit_zhuka_glavnogo",
+      "hash": "1db81ff8ce738e711f797fff799e798e799e7dbe5c3c566a06602004199803c0"
+    },
+    {
+      "catalog": "loot",
+      "item_key": "shipy_tuka_serogo",
+      "hash": "0000000000f801f803f007f00ff80ff81ffc1ffc1ff83fe03fc0380020000000"
+    },
+    {
+      "catalog": "loot",
+      "item_key": "shkura_ryy",
+      "hash": "000000007f207ff03ff87ffe7fff7fff7ffe7ffe7df87fc03f00280000000000"
+    },
+    {
+      "catalog": "loot",
+      "item_key": "shkura_vuryy",
+      "hash": "000001f811f83ffc3cfc18ff0cfe0cfe0efc167c1f7f1f3c1f941bc807000000"
+    },
+    {
+      "catalog": "loot",
+      "item_key": "snezhnyy_kom",
+      "hash": "00000000000007e00ff01ff81ff81ff81ff81ff81ff80ff007e0000000000000"
+    },
+    {
+      "catalog": "loot",
+      "item_key": "stimulyator",
+      "hash": "0078007c00fc01f803f003f007e00fc00fc01fdc1ffe3ffe3dfc3f3c201c0008"
+    },
+    {
+      "catalog": "loot",
+      "item_key": "stoker",
+      "hash": "00000000000000000002001e19fe7ffe7ffe3ff21c000c000000000000000000"
+    },
+    {
+      "catalog": "loot",
+      "item_key": "struktura_liryy",
+      "hash": "00000000000002a002ff45ff7bfffffefffeffff7ff87ff03fc0000000000000"
+    },
+    {
+      "catalog": "loot",
+      "item_key": "tykva",
+      "hash": "0000000002001e3c3ffe7ffd7ffefffefffeffff7ffe7fff3ffe0ff800000000"
+    },
+    {
+      "catalog": "loot",
+      "item_key": "usy_bogomola",
+      "hash": "c003f00f381c181c1008380c180c181c181818181c381c381e78067007f007e0"
+    },
+    {
+      "catalog": "loot",
+      "item_key": "usy_tuka_sinego",
+      "hash": "0000000000080018007200e603cc07dc0f381ee03fe03fc07f003f001c000000"
+    },
+    {
+      "catalog": "loot",
+      "item_key": "verkhniy_rider",
+      "hash": "1c181e380f7f3ff83ff00ff80bc80c183ffc3fff3fbc3f9e3f9e3f9e0fbf03b8"
+    },
+    {
+      "catalog": "loot",
+      "item_key": "vertlug_teridiona",
+      "hash": "0000000000e003f00ff81ff81ff01ff00fe00fe007e001e001e001ff00000000"
+    },
+    {
+      "catalog": "loot",
+      "item_key": "yadovitaya_zheleza_pauka",
+      "hash": "000019181ff83ffc3ffc1e3c1819300c381c7c1e3c3c1ffc03c003e000000000"
+    },
+    {
+      "catalog": "loot",
+      "item_key": "zakhvat",
+      "hash": "00003f803f807f807f807f007f866786e1fee0fec0fec0fe20fe10fe0cfc0000"
+    },
+    {
+      "catalog": "loot",
+      "item_key": "zashchita_tuka_zheltogo",
+      "hash": "00000000000c003c00f801f807f00fe00fe01bc013c03fff3e003c0000000000"
+    },
+    {
+      "catalog": "loot",
+      "item_key": "zaslon",
+      "hash": "07c03fe0fe78fe3ef63bc37183d1d839781f181f3f3c3e607f007f807f003800"
+    },
+    {
+      "catalog": "loot",
+      "item_key": "zatvor_modifitsirovannyy",
+      "hash": "000000000000c000e00078007fe03ffc3ffe1ffe0fff07ff02d5011400000000"
+    },
+    {
+      "catalog": "loot",
+      "item_key": "zhalo_skorpiona",
+      "hash": "3f801fc00ff003f001f801f801fc01fc01fe01fe19f01ff01fe01f8007000000"
+    },
+    {
+      "catalog": "loot",
+      "item_key": "zhalo_zhuka_glavnogo",
+      "hash": "0c000f8009c008e007f007f003f8027f022c0038003c007c007e03fe03fe03fe"
+    },
+    {
+      "catalog": "mechs",
+      "item_key": "aero_tyagach_60",
+      "hash": "000006000e001b00138003f80ff817f81fec1efe1ffc1fe83760204000000000"
+    },
+    {
+      "catalog": "mechs",
+      "item_key": "aero_tyagach_70",
+      "hash": "1c003c003f002f903ff81ffc7ffc7ffe7ffe3efe3ffe3e907600601000100000"
+    },
+    {
+      "catalog": "mechs",
+      "item_key": "aero_tyagach_80_m",
+      "hash": "00001c00360027801fd01ff80ffc6ffc77f03ffc1bfc37806720602000000000"
+    },
+    {
+      "catalog": "mechs",
+      "item_key": "aero_tyagach_90_m",
+      "hash": "00001c00160027801ff01ff87ff87ff87dfa3bf8774862c040c0000000000000"
+    },
+    {
+      "catalog": "mechs",
+      "item_key": "aero_tyagach_95_m",
+      "hash": "00001c00160027801ff01ff87ff87ff87dfa3bf8774862c040c0000000000000"
+    },
+    {
+      "catalog": "mechs",
+      "item_key": "bekas_96",
+      "hash": "01800fb00ff87ffc7fde7ffa7ff01fb00fb01e0010300c701e780f6808000000"
+    },
+    {
+      "catalog": "mechs",
+      "item_key": "bekas_96_m",
+      "hash": "01800fb00ff87ffc7fde7ffa7ff01fb00fb01e0010300c701e780f6808000000"
+    },
+    {
+      "catalog": "mechs",
+      "item_key": "bekas_96_mk",
+      "hash": "01800fb00ff87ffc7fde7ffa7ff01fb00fb01e0010300c701e780f6808000000"
+    },
+    {
+      "catalog": "mechs",
+      "item_key": "berkut_100",
+      "hash": "07c01fe03ff03fff7ffe7fe63fc03cc031c030c030c038c038f01c380e000400"
+    },
+    {
+      "catalog": "mechs",
+      "item_key": "berkut_35",
+      "hash": "00000ff007f03efe3ffe3ffe1fe01fc018c030c038e018c018f01c380f180600"
+    },
+    {
+      "catalog": "mechs",
+      "item_key": "berkut_38",
+      "hash": "00000ff03ffc3fff1fff3fe61fe01fe0104010c0186018e018700e200c000000"
+    },
+    {
+      "catalog": "mechs",
+      "item_key": "berkut_45",
+      "hash": "00001ff01ff83ffe7ffe7fee1fc03fe030c030c038c0384038701c380e180f00"
+    },
+    {
+      "catalog": "mechs",
+      "item_key": "berkut_55",
+      "hash": "07c01fe03ff03fff7ffe7fe63fc03cc031c030c030c038c038f01c380e000400"
+    },
+    {
+      "catalog": "mechs",
+      "item_key": "bkm_pervyy",
+      "hash": "00000f000fe03ff87ff87ef87ff87ff87ff87ff87efc3f3f0f8d07c000000000"
+    },
+    {
+      "catalog": "mechs",
+      "item_key": "bkm_vtoroy",
+      "hash": "000000000fe03ff87ff87ef86ffc7ff87ff87ff87efc3f3f0f8c03c000000000"
+    },
+    {
+      "catalog": "mechs",
+      "item_key": "bugay_100",
+      "hash": "000011b87ffcfffffffffff007f00ff00ff80e20082006780f780f200c000000"
+    },
+    {
+      "catalog": "mechs",
+      "item_key": "bugay_100_m",
+      "hash": "000011b87ffcfffffffffff007f00ff00ff80e20082006780f780f200c000000"
+    },
+    {
+      "catalog": "mechs",
+      "item_key": "bugay_100_mk",
+      "hash": "000011b87ffcfffffffffff007f00ff00ff80e20082006780f780f200c000000"
+    },
+    {
+      "catalog": "mechs",
+      "item_key": "bugay_100_t",
+      "hash": "000011b87ffcfffffffffff007f00ff00ff80e20082006780f780f200c000000"
+    },
+    {
+      "catalog": "mechs",
+      "item_key": "bugay_100_tmk",
+      "hash": "000011b87ffcfffffffffff007f00ff00ff80e20082006780f780f200c000000"
+    },
+    {
+      "catalog": "mechs",
+      "item_key": "bugay_92_m",
+      "hash": "000000703ffc7ffe7fff7ff27ff00ff00ff006b01f00002004700f7807000000"
+    },
+    {
+      "catalog": "mechs",
+      "item_key": "bugay_94",
+      "hash": "000011b87ffcfffffffffffa7ff00ff00ff00e00082006780f780f380f000000"
+    },
+    {
+      "catalog": "mechs",
+      "item_key": "bugay_98_m",
+      "hash": "000000703ffc7ffe7fff7ff27ff00ff00ff006b01f00002004700f7807000000"
+    },
+    {
+      "catalog": "mechs",
+      "item_key": "burovoy_pervyy",
+      "hash": "000002000200060007e01ff83ff83ff83ffc3ffc3ef01e28103c1e080f000000"
+    },
+    {
+      "catalog": "mechs",
+      "item_key": "drof_80",
+      "hash": "0000003c17fe7fff7fff7eea7cf0073007d803d006300638073c07a406800000"
+    },
+    {
+      "catalog": "mechs",
+      "item_key": "drof_90",
+      "hash": "0000003c17fe7fff7fff7eea7cf0073007d803d006300638073c07a406800000"
+    },
+    {
+      "catalog": "mechs",
+      "item_key": "drof_90_bronya",
+      "hash": "0000000003f01ffc7fff7fff3fe83ff007f007b00770077007e0078000000000"
+    },
+    {
+      "catalog": "mechs",
+      "item_key": "drof_90_polya",
+      "hash": "01800ff00ff87fff7fff3ff03ff01ff007900f00183006700f7c07a004000000"
+    },
+    {
+      "catalog": "mechs",
+      "item_key": "drof_94",
+      "hash": "0000000033fc7fff7fff7fc359e00ff007f00690003007700f780fe004000000"
+    },
+    {
+      "catalog": "mechs",
+      "item_key": "faeton_15",
+      "hash": "000001803dfc3ffc3ffc3ffc0ff00ff00ff00e300e780e780430043004300000"
+    },
+    {
+      "catalog": "mechs",
+      "item_key": "faeton_28",
+      "hash": "0000000001007b7c783c1ff80ff01ff01ff01c701e701e701c70083008300010"
+    },
+    {
+      "catalog": "mechs",
+      "item_key": "faeton_35",
+      "hash": "000001103fbc7ffc7ffc3ff80fe00fe00ff00c700e700e700e700c200c200c20"
+    },
+    {
+      "catalog": "mechs",
+      "item_key": "filin_100",
+      "hash": "00000c600ff81ff81ef81e780e7c0ffe0dbf0dd20bd00a300eb00f7007200600"
+    },
+    {
+      "catalog": "mechs",
+      "item_key": "filin_43",
+      "hash": "00c01bf01ff01ff01ff01cf01ff81ffe1bf61fa01ee01ce01ef01e700e000000"
+    },
+    {
+      "catalog": "mechs",
+      "item_key": "filin_56",
+      "hash": "00000c600ff81ff81ef81e780e7c0ffe0dbf0dd20bd00a300eb00f7007200600"
+    },
+    {
+      "catalog": "mechs",
+      "item_key": "garpiy_1",
+      "hash": "000007e00ff81ff81ffc1ffc1ff80ff80edc0fd80e0000080e3c0f3c0f000000"
+    },
+    {
+      "catalog": "mechs",
+      "item_key": "garpiy_5",
+      "hash": "00c00ff83ffc3ffe1ffe3ff01ff80fd006980e0008300e380f3c0fa40c000000"
+    },
+    {
+      "catalog": "mechs",
+      "item_key": "gornyak_90_m",
+      "hash": "00000380038003803ff83ffcfffffffffedffbe3f3f2e3ffe3ffe18060000000"
+    },
+    {
+      "catalog": "mechs",
+      "item_key": "grifon_40",
+      "hash": "008003c01ff87ff83ff81ff81fe01cc01cc01ce00ee00ef01efc1ffe0f800600"
+    },
+    {
+      "catalog": "mechs",
+      "item_key": "grifon_50",
+      "hash": "00c001e01ffc7ff83ff81fe80ce01ce00ce00ee00ef01cd80ffc0ffe07c00300"
+    },
+    {
+      "catalog": "mechs",
+      "item_key": "grifon_60",
+      "hash": "008001c01ff83ff83ff81ff80ce00ce00c600ee00ee00ed80ffc078400800000"
+    },
+    {
+      "catalog": "mechs",
+      "item_key": "kazuar",
+      "hash": "0f003fe07ff87ff07ff86df071f0f8707800700070e070f0fc7c7c7f703f0018"
+    },
+    {
+      "catalog": "mechs",
+      "item_key": "kondor_100_m",
+      "hash": "00001ff01ff01ff01ff81ff80fd80dc00ee00ec00fe00fe00ee00fe00e000000"
+    },
+    {
+      "catalog": "mechs",
+      "item_key": "kondor_52",
+      "hash": "000010381f181b00098c0ce80ef00ef00ff00ff00f700ef00ef01ff00f700e00"
+    },
+    {
+      "catalog": "mechs",
+      "item_key": "kondor_60",
+      "hash": "000001a03ff027e01ff81df81fd81fe01ce01c601ce01ce01fe03df01ef01e00"
+    },
+    {
+      "catalog": "mechs",
+      "item_key": "kondor_70",
+      "hash": "000000100df01ff01bf80ffc0efc07e00cf00fb00ee00ef00ef00ff00f700700"
+    },
+    {
+      "catalog": "mechs",
+      "item_key": "kondor_90",
+      "hash": "000001f01ff01bf019f81df81ff81fe01ef01e700c600e601ee01e700e000000"
+    },
+    {
+      "catalog": "mechs",
+      "item_key": "krechet_15",
+      "hash": "000003f07ff079b0f8d8f7d8f77cf9fcfbc47ec01ec00fe00fe00f4007000000"
+    },
+    {
+      "catalog": "mechs",
+      "item_key": "krechet_70",
+      "hash": "000003f07ff079b0f9b8f01cfd1cfffcffcc7fc01ec006e00fe00fc007000000"
+    },
+    {
+      "catalog": "mechs",
+      "item_key": "krechet_80",
+      "hash": "000003f07ff07ff0fff8ffdcff3cfffcffcc7fc01fc00e000de00bc001000000"
+    },
+    {
+      "catalog": "mechs",
+      "item_key": "krechet_90",
+      "hash": "000003e07f807f90fffcfffcff7cff7cffcc7fc01fc00fe00fe00fc007800000"
+    },
+    {
+      "catalog": "mechs",
+      "item_key": "lun_10",
+      "hash": "002000f003f80ffc1ffc1ff01ff00fc01dc01ce01cf01cf03ef83ff83e000000"
+    },
+    {
+      "catalog": "mechs",
+      "item_key": "lun_70",
+      "hash": "002000f003f80ffc1ffc1ff01ff01fc01dc01ce01cf01ef03ff83ff80c000000"
+    },
+    {
+      "catalog": "mechs",
+      "item_key": "manakin_15",
+      "hash": "00000000078007e007f807f80ff81ff87ffc7b0e338603840100010000000000"
+    },
+    {
+      "catalog": "mechs",
+      "item_key": "manakin_21",
+      "hash": "00000000078007e007f807f80ff83ff87ffc7b0e338603840100010000000000"
+    },
+    {
+      "catalog": "mechs",
+      "item_key": "manakin_8",
+      "hash": "00000000078007e007f807f80ff83ff87ffc7b0e338603840100010000000000"
+    },
+    {
+      "catalog": "mechs",
+      "item_key": "muravey_50",
+      "hash": "00000f800fe01ff01ff03fe01ff01ff81bf819f819f81c781c20183801b80180"
+    },
+    {
+      "catalog": "mechs",
+      "item_key": "muravey_60",
+      "hash": "010007c007c01ff03ff83ff01ff01ff00ff00bf01f701ff01ef002e007600300"
+    },
+    {
+      "catalog": "mechs",
+      "item_key": "muravey_70",
+      "hash": "06000fc00fc01ff03ff03fe01fe01fe01fe019e01be01ff01d40012003200300"
+    },
+    {
+      "catalog": "mechs",
+      "item_key": "muravey_80_m",
+      "hash": "03801b0019303c583cf03ff01ff81ff81ff81c3c1ddc1ff01f981db801f801c0"
+    },
+    {
+      "catalog": "mechs",
+      "item_key": "orel_67",
+      "hash": "008071fcfbfcfffc63f01ff80fd80ff81ff81df01c381e3c1e7e3fb83d001c00"
+    },
+    {
+      "catalog": "mechs",
+      "item_key": "orel_69",
+      "hash": "001007bc07f47fec77e03be01fc004f817f01ff00df018bc1c7c1e3c1f001e00"
+    },
+    {
+      "catalog": "mechs",
+      "item_key": "orlan_40",
+      "hash": "007001f83ff87ff87fd87bdc3dec3dec3e6c1e200ac00a200460066006200200"
+    },
+    {
+      "catalog": "mechs",
+      "item_key": "orlan_60",
+      "hash": "007001f83ff83ff83fdc3bdc1ade1c7e1e6e1e640ee00ee00e700e7002000000"
+    },
+    {
+      "catalog": "mechs",
+      "item_key": "orlan_80_m",
+      "hash": "00406fc01fc04bf87bd83ffc3fff3fff3efe3eee0ce01de01fc00e6006600200"
+    },
+    {
+      "catalog": "mechs",
+      "item_key": "sapsan_1",
+      "hash": "000003f81ffc3ffc3ffc3ffe3ff20ff806f806f80f00000000000e680f780000"
+    },
+    {
+      "catalog": "mechs",
+      "item_key": "sapsan_100",
+      "hash": "000003603ff8f7fcfff7ffe139e00cf00ff00fb004000000046006700e700400"
+    },
+    {
+      "catalog": "mechs",
+      "item_key": "sapsan_100_m",
+      "hash": "000003603ff8f7fcfff7ffe139e00cf00ff00fb004000000046006700e700400"
+    },
+    {
+      "catalog": "mechs",
+      "item_key": "sapsan_100_mk",
+      "hash": "000003603ff8f7fcfff7ffe139e00cf00ff00fb004000000046006700e700400"
+    },
+    {
+      "catalog": "mechs",
+      "item_key": "sapsan_25",
+      "hash": "000003f81ffc3ffc3ffc3ffe3ff20ff806f806f80f00000000000e680f780000"
+    },
+    {
+      "catalog": "mechs",
+      "item_key": "sapsan_92_m",
+      "hash": "00301bf83ffc3ffc7ffe3fef1ff20ff007f00720040000000478077807000000"
+    },
+    {
+      "catalog": "mechs",
+      "item_key": "sapsan_98_m",
+      "hash": "00301bf83ffc3ffc7ffe3fef1ff20ff007f00720040000000478077807000000"
+    },
+    {
+      "catalog": "mechs",
+      "item_key": "shakhter_70_m",
+      "hash": "000001e01ff83fd83ff837fc35fc3ffc1f7c077e079e03fe07f007f003c00000"
+    },
+    {
+      "catalog": "mechs",
+      "item_key": "shakhter_m",
+      "hash": "000007c003f07ffcfffcfffc7fe07fe47ff67766066207fa0ff807f807e00700"
+    },
+    {
+      "catalog": "mechs",
+      "item_key": "skop_70",
+      "hash": "03007fffffffb3fe3bee1bef3ffe3bfe0efc07de021e031e079807f8073c003c"
+    },
+    {
+      "catalog": "mechs",
+      "item_key": "skop_80",
+      "hash": "03007fffffffbbfe3bee1bef3ffe3bfe0edc07fe031a039e079907d8073c003c"
+    },
+    {
+      "catalog": "mechs",
+      "item_key": "skop_90",
+      "hash": "03007fffffffbbfe3bee1bef3ffe3bfe0edc07de021e031e079807f8073c003c"
+    },
+    {
+      "catalog": "mechs",
+      "item_key": "skop_96",
+      "hash": "02007fffffff33fe3bee1bee3bfe3bfe02fc07de021e0316079807b8073c003c"
+    },
+    {
+      "catalog": "mechs",
+      "item_key": "sokol_20",
+      "hash": "00000e700ff83ff83ff010f007f007300330077007f00ff80ffc0ffc01c00000"
+    },
+    {
+      "catalog": "mechs",
+      "item_key": "sokol_30",
+      "hash": "00600fe01ff01ff03fe009e007e007c002e007e007e00fc007f00ff007b00180"
+    },
+    {
+      "catalog": "mechs",
+      "item_key": "strizh_100",
+      "hash": "0000000003f01ffc7fff7fff3fe83ff007f007b00770077007e0078000000000"
+    },
+    {
+      "catalog": "mechs",
+      "item_key": "strizh_100_m",
+      "hash": "0000000003f01ffc7fff7fff3fe83ff007f007b00770077007e0078000000000"
+    },
+    {
+      "catalog": "mechs",
+      "item_key": "strizh_100_mk",
+      "hash": "0000000003f01ffc7fff7fff3fe83ff007f007b00770077007e0078000000000"
+    },
+    {
+      "catalog": "mechs",
+      "item_key": "strizh_sport",
+      "hash": "0000000003f01ffc7fff7fff3fe83ff007f007b00770077007e0078000000000"
+    },
+    {
+      "catalog": "mechs",
+      "item_key": "termit_100_m",
+      "hash": "1f801fc00ff01ff85bfc6f7e61fe793f79337c263ff79cff18d418c03c003c00"
+    },
+    {
+      "catalog": "mechs",
+      "item_key": "titanis_100_m",
+      "hash": "000001e03ffc3ffefffefbebfbf7ffef7fe37f607bf03ef00a5009400f000000"
+    },
+    {
+      "catalog": "mechs",
+      "item_key": "titanis_70",
+      "hash": "000007f03ffe3ffefffeffeb7ff5ffff7fe36fe07ff01ef00e70097009000000"
+    },
+    {
+      "catalog": "mechs",
+      "item_key": "titanis_80",
+      "hash": "000001f03ffc3ffefffefbeffbf5ffff7fe36f207bf01ef00a5009700b000000"
+    },
+    {
+      "catalog": "mechs",
+      "item_key": "titanis_90",
+      "hash": "000001f03ffc3ffefffefbeffbf5ffef7fe36f607bf02ef00a7001700b000000"
+    },
+    {
+      "catalog": "mechs",
+      "item_key": "tornis_95_m",
+      "hash": "08000bc03ffefffef1cf7ef87fe83fe65ffe2ffe0fc61f871e061e001e001e00"
+    },
+    {
+      "catalog": "mechs",
+      "item_key": "trogan_85_m",
+      "hash": "000007c03fe03fe03ff01ff837fc77fe33fe23ce078e07020300030000000000"
+    },
+    {
+      "catalog": "mechs",
+      "item_key": "trogan_90_m",
+      "hash": "000007c03fe03fe03ff01ff837fc77fe33fe23de078e07020300030000000000"
+    },
+    {
+      "catalog": "mechs",
+      "item_key": "trogan_92_m",
+      "hash": "000007c03fe03fe03ff01ff837fc77fe33fe23de078e07020300030000000000"
+    },
+    {
+      "catalog": "mechs",
+      "item_key": "trogan_95",
+      "hash": "000007c03fe03fe03ff01ff837fc77fe33fe23de078e07020300030000000000"
+    },
+    {
+      "catalog": "mechs",
+      "item_key": "trogan_95_m",
+      "hash": "000007c03fe03fe03ff01ff837fc77fe33fe23de078e07020300030000000000"
+    },
+    {
+      "catalog": "mechs",
+      "item_key": "tyagach_28",
+      "hash": "02c007e00fe00ff01f581ffc1ffe1fff3ff03ff03ff8083c3c7c7e3c3e000800"
+    },
+    {
+      "catalog": "mechs",
+      "item_key": "tyagach_35",
+      "hash": "000003e00fe00ff01ff01ff80e0e1e0e3e101bf83bf838b8387c3e3c0e000c00"
+    },
+    {
+      "catalog": "ore",
+      "item_key": "gafniy",
+      "hash": "0000000000000007007f07ff7fffffff7ffe7fe07f0038000000000000000000"
+    },
+    {
+      "catalog": "ore",
+      "item_key": "kristall_krasnyy",
+      "hash": "000c062e067e07fe3ffc7bfc7ffc3ffc3ff83ff81ff81ff01ff01f600c200000"
+    },
+    {
+      "catalog": "ore",
+      "item_key": "kristall_siniy",
+      "hash": "000c00dc11dc19dc1fdc3ffc3ff83ff81ff81ff80ff80ff00ff00fc007000300"
+    },
+    {
+      "catalog": "ore",
+      "item_key": "kristall_zelenyy",
+      "hash": "00200070007c2bfc3bfc7ffc3ffc3ffc3ffc3ffc3ffc1ff81ff81ff807f003e0"
+    },
+    {
+      "catalog": "ore",
+      "item_key": "magma",
+      "hash": "04000ff80ffc3a3c703c303e003e0c3c1e3e1fbe0ffe0ffe3ffe3ffd1ff811b9"
+    },
+    {
+      "catalog": "ore",
+      "item_key": "tseziy",
+      "hash": "00000070007800fc01f603fe07fe0ffc0ff83ff07fe07fc07f803f000c000000"
+    },
+    {
+      "catalog": "ore",
+      "item_key": "zheleznaya_ruda",
+      "hash": "0000000000000fe01ffc3ffe3ffe7fee7fe37ff37e0334023c7e0ffc00000000"
+    },
+    {
+      "catalog": "ore",
+      "item_key": "zhelezo",
+      "hash": "800303000f801fe11fe03ff03ff83ff83ffc2ffe61fe303e0f0f01fe001c0003"
+    },
+    {
+      "catalog": "weapons",
+      "item_key": "empp",
+      "hash": "0000000000003c003f003f803ff03ff80ffc03fe01fe01fc01dc01c000000000"
+    },
+    {
+      "catalog": "weapons",
+      "item_key": "empp_100bm1",
+      "hash": "0000000000000fc01fe03ff03ff03ff01e780fec03fc01f800f8007000000000"
+    },
+    {
+      "catalog": "weapons",
+      "item_key": "empp_100bm2",
+      "hash": "00000000f600fd80d3c097700ff62ff71ff70ff77cef7ffc7ffc3dc40b800000"
+    },
+    {
+      "catalog": "weapons",
+      "item_key": "empp_10b",
+      "hash": "0000000000003c003f003f803ff03ff80ffc03fe01fe01fc01dc01c000000000"
+    },
+    {
+      "catalog": "weapons",
+      "item_key": "empp_13b",
+      "hash": "0000000000000000000c007e03fe1ffc7ff87fe03ce038000000000000000000"
+    },
+    {
+      "catalog": "weapons",
+      "item_key": "empp_16b",
+      "hash": "0000000000003c003f003f803ff03ff80ffc03fe01fe01fc01dc01c000000000"
+    },
+    {
+      "catalog": "weapons",
+      "item_key": "empp_18b",
+      "hash": "0000000000000000000c007e03fe1ffc7ff83ff03ce038000000000000000000"
+    },
+    {
+      "catalog": "weapons",
+      "item_key": "empp_18bm1",
+      "hash": "0000000000000000000c007e03fe1ffc7ff83ff03ce038000000000000000000"
+    },
+    {
+      "catalog": "weapons",
+      "item_key": "empp_2",
+      "hash": "0000000000000000000c007e03fe1ffc7ff83fe03ce038000000000000000000"
+    },
+    {
+      "catalog": "weapons",
+      "item_key": "empp_21b",
+      "hash": "0000000000000000001c07fe1ffc1ffc0ffc3ff81fe00f803e00000000000000"
+    },
+    {
+      "catalog": "weapons",
+      "item_key": "empp_21bm1",
+      "hash": "0000000000000000001c07fe1ffc1ffc0ffc3ff81fe00f803e00000000000000"
+    },
+    {
+      "catalog": "weapons",
+      "item_key": "empp_25b",
+      "hash": "0000000000003c003f003f803ff03ff80ffc03fe01fe01fc01dc01c000000000"
+    },
+    {
+      "catalog": "weapons",
+      "item_key": "empp_25bm1",
+      "hash": "0000000000003c003f003f803ff03ff80ffc03fe01fe01fc01dc01c000000000"
+    },
+    {
+      "catalog": "weapons",
+      "item_key": "empp_29b",
+      "hash": "0000000000001c003ff07ff07f1c7ffe7e5f7de70cff0fff05bc01d801c00000"
+    },
+    {
+      "catalog": "weapons",
+      "item_key": "empp_29bm1",
+      "hash": "0000000000001c003ff07ff07f1c7ffe7e5f7de70cff0fff05bc01d801c00000"
+    },
+    {
+      "catalog": "weapons",
+      "item_key": "empp_33b",
+      "hash": "0000000000000000000c007e03fe1ffc7ff87ff03ce038000000000000000000"
+    },
+    {
+      "catalog": "weapons",
+      "item_key": "empp_33bm1",
+      "hash": "0000000000000000000c007e03fe1ffc7ff87ff03ce038000000000000000000"
+    },
+    {
+      "catalog": "weapons",
+      "item_key": "empp_37b",
+      "hash": "0000000000003c003f003f803ff03ff80ffc03fe01fe01fc01dc01c000000000"
+    },
+    {
+      "catalog": "weapons",
+      "item_key": "empp_37bm1",
+      "hash": "0000000000003c003f003f803ff03ff80ffc03fe01fe01fc01dc01c000000000"
+    },
+    {
+      "catalog": "weapons",
+      "item_key": "empp_41b",
+      "hash": "0000000000000000001c07fc1ffc3ffc3ffc3ff81fe03f803e00000000000000"
+    },
+    {
+      "catalog": "weapons",
+      "item_key": "empp_41bm1",
+      "hash": "0000000000000000001c07fc1ffc3ffc3ffc3ff81fe03f803e00000000000000"
+    },
+    {
+      "catalog": "weapons",
+      "item_key": "empp_45b",
+      "hash": "0000000000000000001c07fc1ffc3ffc3ffc3ff83fe03f803e00000000000000"
+    },
+    {
+      "catalog": "weapons",
+      "item_key": "empp_45bm1",
+      "hash": "0000000000000000001c07fc1ffc3ffc3ffc3ff83fe03f803e00000000000000"
+    },
+    {
+      "catalog": "weapons",
+      "item_key": "empp_5",
+      "hash": "0000000000003c003f003f803ff03ff80ffc03fe01fe01fc01dc01c000000000"
+    },
+    {
+      "catalog": "weapons",
+      "item_key": "empp_60b",
+      "hash": "0000000000001d803ff07ff07e1c7efe7e5f75ef1eef1f3f0ffe03d801c00000"
+    },
+    {
+      "catalog": "weapons",
+      "item_key": "empp_60bm1",
+      "hash": "0000000000001d803ff07ff07e1c7efe7e5f75ef1eef1f3f0ffe03d801c00000"
+    },
+    {
+      "catalog": "weapons",
+      "item_key": "empp_70b",
+      "hash": "0000000000000000001c07fc1ffc3ffc3ffc3ff83fe03f803e00000000000000"
+    },
+    {
+      "catalog": "weapons",
+      "item_key": "empp_70bm1",
+      "hash": "0000000000000000001c07fc1ffc3ffc3ffc3ff83fe03f803e00000000000000"
+    },
+    {
+      "catalog": "weapons",
+      "item_key": "empp_7b",
+      "hash": "0000000000000000000c007e03fe1ffc7ff83ff03ce038000000000000000000"
+    },
+    {
+      "catalog": "weapons",
+      "item_key": "empp_80b",
+      "hash": "0000000000001d803ff07ff07e1c7efe7e5f75af18ef1f3f0ffe03d801c00000"
+    },
+    {
+      "catalog": "weapons",
+      "item_key": "empp_80bm1",
+      "hash": "0000000000001d803ff07ff07e1c7efe7e5f75af18ef1f3f0ffe03d801c00000"
+    },
+    {
+      "catalog": "weapons",
+      "item_key": "empp_90b",
+      "hash": "0000000000003e003f803ee03c301b180ffc07fe01fe007e003c000000000000"
+    },
+    {
+      "catalog": "weapons",
+      "item_key": "empp_90bm1",
+      "hash": "0000000000003e003f803ee03c301b180ffc07fe01fe007e003c000000000000"
+    },
+    {
+      "catalog": "weapons",
+      "item_key": "empp_90bm2",
+      "hash": "00000000fe00fd80ffc0bf700ff62ff71ff70ff77cef7ffc7ffc3dec0b800000"
+    },
+    {
+      "catalog": "weapons",
+      "item_key": "empp_95bm1",
+      "hash": "0000000000000fc01fe03ff03ff03ff01e780fec03fc01f800f8007000000000"
+    },
+    {
+      "catalog": "weapons",
+      "item_key": "empp_95bm2",
+      "hash": "00000000fe00ff80ffc0bf702ff62ff71ff70ff77eef7ffc7ffc1dfc0fc00000"
+    },
+    {
+      "catalog": "weapons",
+      "item_key": "fazer_100bm1",
+      "hash": "000000000000000003f007f03ff83ffc3ffc1ffc07fc03fc00fc000000000000"
+    },
+    {
+      "catalog": "weapons",
+      "item_key": "fazer_40b",
+      "hash": "0000000000001c003e003fe03ff07ff023fc1cfc1ffe0ffe063e000000000000"
+    },
+    {
+      "catalog": "weapons",
+      "item_key": "fazer_40bm1",
+      "hash": "0000000000001c003e003fe03ff07ff023fc1cfc1ffe0ffe063e000000000000"
+    },
+    {
+      "catalog": "weapons",
+      "item_key": "fazer_50b",
+      "hash": "00000000000000000e001f001fe01ffc3ffc3ffc3ffc00fc0000000000000000"
+    },
+    {
+      "catalog": "weapons",
+      "item_key": "fazer_50bm1",
+      "hash": "00000000000000000e001f001fe01ffc3ffc3ffc3ffc00fc0000000000000000"
+    },
+    {
+      "catalog": "weapons",
+      "item_key": "fazer_60b",
+      "hash": "00000000000000000e001f001fe01ffc3ffc3ffc3ffc00fc0000000000000000"
+    },
+    {
+      "catalog": "weapons",
+      "item_key": "fazer_60bm1",
+      "hash": "00000000000000000e001f001fe01ffc3ffc3ffc3ffc00fc0000000000000000"
+    },
+    {
+      "catalog": "weapons",
+      "item_key": "fazer_70b",
+      "hash": "00000000000038003f803fb07fc03fc83ff23ffa1efe07fe01fc000000000000"
+    },
+    {
+      "catalog": "weapons",
+      "item_key": "fazer_70bm1",
+      "hash": "00000000000038003f803fb07fc03fc83ff23ffa1efe07fe01fc000000000000"
+    },
+    {
+      "catalog": "weapons",
+      "item_key": "fazer_80b",
+      "hash": "00000000000038003f803fb07fc03fc83ff23ffa1efe07fe01fc000000000000"
+    },
+    {
+      "catalog": "weapons",
+      "item_key": "fazer_80bm1",
+      "hash": "00000000000038003f803fb07fc03fc83ff23ffa1efe07fe01fc000000000000"
+    },
+    {
+      "catalog": "weapons",
+      "item_key": "fazer_90b",
+      "hash": "00000000000000000e003f9c3ffc7ffe7fde3ffe1ffc07f001c0000000000000"
+    },
+    {
+      "catalog": "weapons",
+      "item_key": "fazer_90bm1",
+      "hash": "00000000000000000e003f9c3ffc7ffe7fde3ffe1ffc07f001c0000000000000"
+    },
+    {
+      "catalog": "weapons",
+      "item_key": "fazer_95bm1",
+      "hash": "000000000000000003f007f03ff83ffc3ffc1ffc07fc03fc00fc000000000000"
+    },
+    {
+      "catalog": "weapons",
+      "item_key": "gaubitsa_100bm1",
+      "hash": "0000000018003fb03ff83ffc1e7c0e1c071c07ac07e803d803f001a000000000"
+    },
+    {
+      "catalog": "weapons",
+      "item_key": "gaubitsa_40b",
+      "hash": "000000000000000000003e7c7ffe7ffe3ffe0f7e01fe00fc0078000000000000"
+    },
+    {
+      "catalog": "weapons",
+      "item_key": "gaubitsa_40bm1",
+      "hash": "000000000000000000003e7c7ffe7ffe3ffe0f7e01fe00fc0078000000000000"
+    },
+    {
+      "catalog": "weapons",
+      "item_key": "gaubitsa_50b",
+      "hash": "000000000000000000003e7c7ffe7ffe3ffe0f7e01fe00fc0078000000000000"
+    },
+    {
+      "catalog": "weapons",
+      "item_key": "gaubitsa_50bm1",
+      "hash": "000000000000000000003e7c7ffe7ffe3ffe0f7e01fe00fc0078000000000000"
+    },
+    {
+      "catalog": "weapons",
+      "item_key": "gaubitsa_60b",
+      "hash": "000000000000000038003f003ffc3ffc1ffc07fe03fe00fe007c000000000000"
+    },
+    {
+      "catalog": "weapons",
+      "item_key": "gaubitsa_60bm1",
+      "hash": "000000000000000038003f003ffc3ffc1ffc07fe03fe00fe007c000000000000"
+    },
+    {
+      "catalog": "weapons",
+      "item_key": "gaubitsa_70b",
+      "hash": "000000000000000038003f003ffc3ffc1ffc07ce03de00de007c000000000000"
+    },
+    {
+      "catalog": "weapons",
+      "item_key": "gaubitsa_70bm1",
+      "hash": "000000000000000038003f003ffc3ffc1ffc07ce03de00de007c000000000000"
+    },
+    {
+      "catalog": "weapons",
+      "item_key": "gaubitsa_80b",
+      "hash": "00000000000018003f007fc07ff03ffc0ffc03fe03fe00fe0020000000000000"
+    },
+    {
+      "catalog": "weapons",
+      "item_key": "gaubitsa_80bm1",
+      "hash": "00000000000018003f007fc07ff03ffc0ffc03fe03fe00fe0020000000000000"
+    },
+    {
+      "catalog": "weapons",
+      "item_key": "gaubitsa_90b",
+      "hash": "00000000000018003f0077c07bf03ffc0fdc03be03fa00fe0020000000000000"
+    },
+    {
+      "catalog": "weapons",
+      "item_key": "gaubitsa_90bm1",
+      "hash": "00000000000018003f0077c07bf03ffc0fdc03be03fa00fe0020000000000000"
+    },
+    {
+      "catalog": "weapons",
+      "item_key": "gaubitsa_95bm1",
+      "hash": "0000000018003fb03ff83ffc1efc0e1c071c07bc07f803f803f001a000000000"
+    },
+    {
+      "catalog": "weapons",
+      "item_key": "gaubitsa_enrg_100bm1",
+      "hash": "000000000000000003e03ff07ff87fbc3ecc1fc60ff601fe007c003800180000"
+    },
+    {
+      "catalog": "weapons",
+      "item_key": "gaubitsa_enrg_40",
+      "hash": "0000000000000000000c00fe03ff39ff7ffe7ffc7ff87f803f00000000000000"
+    },
+    {
+      "catalog": "weapons",
+      "item_key": "gaubitsa_enrg_50b",
+      "hash": "0000000000000000000c00fe03fe3bfe7ffe7ffc7ff87f803f80000000000000"
+    },
+    {
+      "catalog": "weapons",
+      "item_key": "gaubitsa_enrg_60b",
+      "hash": "0000000000000000000c00fe03ff39ff7ffe7ffc7ff87f803f00000000000000"
+    },
+    {
+      "catalog": "weapons",
+      "item_key": "gaubitsa_enrg_70bm1",
+      "hash": "0000000000001e003f007fc07ff07ff81f9c07de039e01fe00f0000000000000"
+    },
+    {
+      "catalog": "weapons",
+      "item_key": "gaubitsa_enrg_80bm1",
+      "hash": "0000000000001e003f007fc07ff07ff81f9c079e03be01fe00e0000000000000"
+    },
+    {
+      "catalog": "weapons",
+      "item_key": "gaubitsa_enrg_90bm1",
+      "hash": "0000000000001e003f007fc07ff03ffc1ffe07fe03fe03fe00fe001c00000000"
+    },
+    {
+      "catalog": "weapons",
+      "item_key": "gaubitsa_enrg_95bm1",
+      "hash": "000000000000000003e03ff07ff87fbc3fcc1fe60ffe01fe007c003800180000"
+    },
+    {
+      "catalog": "weapons",
+      "item_key": "granatomet_100bm1",
+      "hash": "00000000000000003f807ff07a787e3c3fdc3ffe07fe03fe01fe003e00000000"
+    },
+    {
+      "catalog": "weapons",
+      "item_key": "granatomet_40b",
+      "hash": "00000000000000003c003fc03ff03ff807fc01fc00fc003c001e000400000000"
+    },
+    {
+      "catalog": "weapons",
+      "item_key": "granatomet_40bm1",
+      "hash": "00000000000000003c003fc03ff03ff807fc01fc00fc003c001e000400000000"
+    },
+    {
+      "catalog": "weapons",
+      "item_key": "granatomet_50b",
+      "hash": "00000000000000003c003fc03ff03ff807fc01fc00fc003c001e000400000000"
+    },
+    {
+      "catalog": "weapons",
+      "item_key": "granatomet_50bm1",
+      "hash": "00000000000000003c003fc03ff03ff807fc01fc00fc003c001e000400000000"
+    },
+    {
+      "catalog": "weapons",
+      "item_key": "granatomet_60b",
+      "hash": "0000000038003de03ff83ff80ffc01fc00fe00fc00f000f000e0007800180000"
+    },
+    {
+      "catalog": "weapons",
+      "item_key": "granatomet_60bm1",
+      "hash": "0000000038003de03ff83ff80ffc01fc00fe00fc00f000f000e0007800180000"
+    },
+    {
+      "catalog": "weapons",
+      "item_key": "granatomet_70b",
+      "hash": "0000000038003de03ff83ff80ffc01fc00fe00fc00f000f000e0007800180000"
+    },
+    {
+      "catalog": "weapons",
+      "item_key": "granatomet_70bm1",
+      "hash": "0000000038003de03ff83ff80ffc01fc00fe00fc00f000f000e0007800180000"
+    },
+    {
+      "catalog": "weapons",
+      "item_key": "granatomet_80b",
+      "hash": "0000000010003c003e303ff81efc0ffc00fc00fc00fc00f800f800f000000000"
+    },
+    {
+      "catalog": "weapons",
+      "item_key": "granatomet_80bm1",
+      "hash": "0000000010003c003e303ff81efc0ffc00fc00fc00fc00f800f800f000000000"
+    },
+    {
+      "catalog": "weapons",
+      "item_key": "granatomet_90b",
+      "hash": "0000000010003c0036303bf81ef40fb4009400dc00ac00f800f800f000000000"
+    },
+    {
+      "catalog": "weapons",
+      "item_key": "granatomet_90bm1",
+      "hash": "0000000010003c0036303bf81ef40fb4009400dc00ac00f800f800f000000000"
+    },
+    {
+      "catalog": "weapons",
+      "item_key": "granatomet_95bm1",
+      "hash": "00000000000000007f807ff07ff83fbc3ffc3ffe07fe03fe01fe003e00000000"
+    },
+    {
+      "catalog": "weapons",
+      "item_key": "granatomet_enrg",
+      "hash": "0f000f405ea05ec01fc078c0c960e9a0fdf0fffa7ffe3ff607ff05ff01ff003e"
+    },
+    {
+      "catalog": "weapons",
+      "item_key": "granatomet_enrg_10",
+      "hash": "07002f405f005e401f8078c0c160e1a0f9b0ffba7ff23ff607ff05ff01ff003e"
+    },
+    {
+      "catalog": "weapons",
+      "item_key": "granatomet_enrg_100bm1",
+      "hash": "00000000000000003e001fc01ffc2ffe3ffe3fff03ff00fc001e000000000000"
+    },
+    {
+      "catalog": "weapons",
+      "item_key": "granatomet_enrg_15",
+      "hash": "0000000001800ee01ef01efc1ffc1fbc3efc3ffc3efe0ff63c00020000000000"
+    },
+    {
+      "catalog": "weapons",
+      "item_key": "granatomet_enrg_20",
+      "hash": "0000000001800ee01ef01efc3ffc1fbc3efc3ffc3efe0ff63c08020000000000"
+    },
+    {
+      "catalog": "weapons",
+      "item_key": "granatomet_enrg_30",
+      "hash": "0000000001800ee01ef01efc17fc1fbc3efc3ffc38fe0ff63c00020000000000"
+    },
+    {
+      "catalog": "weapons",
+      "item_key": "granatomet_enrg_40",
+      "hash": "0000000000007800be00ffe06ff87ffcfffe7eff0fff03f00070000e00000000"
+    },
+    {
+      "catalog": "weapons",
+      "item_key": "granatomet_enrg_5",
+      "hash": "0f000f405fa05ec01fc078c0c960f9a0fdf0fffa7ffe3ff607ff05ff01ff003e"
+    },
+    {
+      "catalog": "weapons",
+      "item_key": "granatomet_enrg_50",
+      "hash": "0000000000007800fe00ffe06ffc7ffcfffe7fff0fff03f9007c000e00000000"
+    },
+    {
+      "catalog": "weapons",
+      "item_key": "granatomet_enrg_60",
+      "hash": "0000000000007800fe00ffe06ff87ffcfffe7fff0fff03fb007f000e00000000"
+    },
+    {
+      "catalog": "weapons",
+      "item_key": "granatomet_enrg_70m1",
+      "hash": "0000000000003c003f003b807fe07ff87ffc7ffc7ffe0fef003e003800000000"
+    },
+    {
+      "catalog": "weapons",
+      "item_key": "granatomet_enrg_80bm1",
+      "hash": "0000000000003c003f003fc07fe07ff87ffc7ffe7efe0fef003e003800000000"
+    },
+    {
+      "catalog": "weapons",
+      "item_key": "granatomet_enrg_90bm1",
+      "hash": "0000000000003c003f003fc07fe07ff87ffc7efe7efe0fef003e003800000000"
+    },
+    {
+      "catalog": "weapons",
+      "item_key": "granatomet_enrg_95bm1",
+      "hash": "00000000000000003e001fc01ffc2ffe3ffe3fff03ff00fc001e000000000000"
+    },
+    {
+      "catalog": "weapons",
+      "item_key": "lazer",
+      "hash": "00000000000000003f003ff03ff83ffc3ffe0ffe01fe00740070000c00000000"
+    },
+    {
+      "catalog": "weapons",
+      "item_key": "lazer_10",
+      "hash": "00000000000000003f003ff03ff83ffc3ffe0ffe01fe00740070000c00000000"
+    },
+    {
+      "catalog": "weapons",
+      "item_key": "lazer_100bm1",
+      "hash": "000000000000000038003e003fc03ee033f01efc03fc01fc0070000000000000"
+    },
+    {
+      "catalog": "weapons",
+      "item_key": "lazer_11",
+      "hash": "00000000000000003f003ff03ff83ffc3ffe0ffe01fe00740070000c00000000"
+    },
+    {
+      "catalog": "weapons",
+      "item_key": "lazer_13",
+      "hash": "00000000000000003f003ff03ff83ffc3ffe0ffe01fe00740070000c00000000"
+    },
+    {
+      "catalog": "weapons",
+      "item_key": "lazer_16",
+      "hash": "00000000000000003f003ff03ff83ffc3ffe0ffe01fe00740070000c00000000"
+    },
+    {
+      "catalog": "weapons",
+      "item_key": "lazer_18",
+      "hash": "00000000000002003fc03ff03ff81ffc03ff00ff007f001f0001000000000000"
+    },
+    {
+      "catalog": "weapons",
+      "item_key": "lazer_21",
+      "hash": "00000000000002003fc03ff03ff81ffc03ff00ff007f001f0001000000000000"
+    },
+    {
+      "catalog": "weapons",
+      "item_key": "lazer_21m1",
+      "hash": "00000000000002003fc03ff03ff81ffc03ff00ff007f001f0001000000000000"
+    },
+    {
+      "catalog": "weapons",
+      "item_key": "lazer_25",
+      "hash": "00001c001fc00fc007c07bf0e3d2e3fc71fe0cfe07fa07da07fe0ff000000000"
+    },
+    {
+      "catalog": "weapons",
+      "item_key": "lazer_29",
+      "hash": "00000000000002003fc03ff03ff81ffc03ff00ff007f001f0001000000000000"
+    },
+    {
+      "catalog": "weapons",
+      "item_key": "lazer_29m1",
+      "hash": "00000000000002003fc03ff03ff81ffc03ff00ff007f001f0001000000000000"
+    },
+    {
+      "catalog": "weapons",
+      "item_key": "lazer_3",
+      "hash": "00000000000000003f003ff03ff83ffc3ffe0ffe01fe00740070000c00000000"
+    },
+    {
+      "catalog": "weapons",
+      "item_key": "lazer_33",
+      "hash": "00001c001fc00fc007c07bf0f3d2e3fc71fe0efe07fa07da07fe0ff000000000"
+    },
+    {
+      "catalog": "weapons",
+      "item_key": "lazer_39",
+      "hash": "00000000000002003fc03ff03ff81ffc03ff00ff007f001f0001000000000000"
+    },
+    {
+      "catalog": "weapons",
+      "item_key": "lazer_39m1",
+      "hash": "00000000000002003fc03ff03ff81ffc03ff00ff007f001f0001000000000000"
+    },
+    {
+      "catalog": "weapons",
+      "item_key": "lazer_43",
+      "hash": "00001c001fc00fc007c07bf0ebd2e3fc71fe0cfe07fa07da07fe0ff000000000"
+    },
+    {
+      "catalog": "weapons",
+      "item_key": "lazer_5",
+      "hash": "00000000000000003f003ff03ff83ffc3ffe0ffe01fe00740030000c00000000"
+    },
+    {
+      "catalog": "weapons",
+      "item_key": "lazer_60",
+      "hash": "00001c001fc00fc007e07bf0ebd2e3fe71fe0cfe06fa07da0ffe0ff000000000"
+    },
+    {
+      "catalog": "weapons",
+      "item_key": "lazer_60m1",
+      "hash": "00001c001fc00fc007e07bf0ebd2e3fe71fe0cfe06fa07da0ffe0ff000000000"
+    },
+    {
+      "catalog": "weapons",
+      "item_key": "lazer_70",
+      "hash": "00001c001fc00fc007c07bf0f3d2f3fc71fe0efe07fa07da07fe0ff000000000"
+    },
+    {
+      "catalog": "weapons",
+      "item_key": "lazer_70m1",
+      "hash": "00001c001fc00fc007c07bf0f3d2f3fc71fe0efe07fa07da07fe0ff000000000"
+    },
+    {
+      "catalog": "weapons",
+      "item_key": "lazer_8",
+      "hash": "00000000000000003f003ff03ff83ffc3ffe0ffe01fe00740020000c00000000"
+    },
+    {
+      "catalog": "weapons",
+      "item_key": "lazer_80",
+      "hash": "00001c001fc00fc007e07bf0ebd2e3fc71fe0cfe07fa07da07fe0ff000000000"
+    },
+    {
+      "catalog": "weapons",
+      "item_key": "lazer_80m1",
+      "hash": "00001c001fc00fc007e07bf0ebd2e3fc71fe0cfe07fa07da07fe0ff000000000"
+    },
+    {
+      "catalog": "weapons",
+      "item_key": "lazer_90",
+      "hash": "0000000030003c003e003f800ff007fc017c01fc01fc01fc01fc00f000000000"
+    },
+    {
+      "catalog": "weapons",
+      "item_key": "lazer_90m1",
+      "hash": "0000000030003c003e003f800ff007fc017c01fc01fc01fc01fc00f000000000"
+    },
+    {
+      "catalog": "weapons",
+      "item_key": "lazer_95bm1",
+      "hash": "000000000000000038003e003fc03fe033f01efc03fc01fc0070000000000000"
+    },
+    {
+      "catalog": "weapons",
+      "item_key": "mortira",
+      "hash": "00000000000006003f803fc03ffc3ffc3ffc1ffc03fc01f80000000000000000"
+    },
+    {
+      "catalog": "weapons",
+      "item_key": "mortira_10",
+      "hash": "00000000000006003f803dc03ffc3bfc3bfc1f7c07f001800000000000000000"
+    },
+    {
+      "catalog": "weapons",
+      "item_key": "mortira_100bm1",
+      "hash": "0000000000000000180038c03efc7fbe7ffe3ffe3ffc03d80000000000000000"
+    },
+    {
+      "catalog": "weapons",
+      "item_key": "mortira_100bm2",
+      "hash": "0000000000000b003f803fe07ffc7ffe3dfe3dfe7fff7fff0ffc00f000000000"
+    },
+    {
+      "catalog": "weapons",
+      "item_key": "mortira_15",
+      "hash": "000000003f003f807fc01ff03fb83ebc3efc2ffc2ffe7ffe7ffc0ff000000000"
+    },
+    {
+      "catalog": "weapons",
+      "item_key": "mortira_20",
+      "hash": "000000003e003f807fc01ff01fb83ebc3efc2ffc2ffe7ffc3ffc0ff000000000"
+    },
+    {
+      "catalog": "weapons",
+      "item_key": "mortira_30",
+      "hash": "000000003f003f807fc01ff03fb83ebc3efc2ffc2ffe7ffc7ffc0ff000000000"
+    },
+    {
+      "catalog": "weapons",
+      "item_key": "mortira_40",
+      "hash": "00000000000000001c003ff037fc7ffc7ffe7ffe3ffc3ff00000000000000000"
+    },
+    {
+      "catalog": "weapons",
+      "item_key": "mortira_5",
+      "hash": "00000000000007003f803fc03ffc3bfc3bfc1f7c07c001080000000000000000"
+    },
+    {
+      "catalog": "weapons",
+      "item_key": "mortira_50",
+      "hash": "00000000000000001c003ff837fc3ffe7ffe7ffe3ffc3fe00000000000000000"
+    },
+    {
+      "catalog": "weapons",
+      "item_key": "mortira_60",
+      "hash": "00000000000000001e003ff837fc3ffe7ffe7ffe3ffc3fe00000000000000000"
+    },
+    {
+      "catalog": "weapons",
+      "item_key": "mortira_70m1",
+      "hash": "f800ff00ffc0fff0ffb0ffa0ffc0ff80ffc0cf000300098000c0000000000000"
+    },
+    {
+      "catalog": "weapons",
+      "item_key": "mortira_80bm1",
+      "hash": "f800ff00ffc0fff0ffb0ffa0ffc0ff80ffc0cf000300098000c0000000000000"
+    },
+    {
+      "catalog": "weapons",
+      "item_key": "mortira_90bm1",
+      "hash": "f800ff00ffc0fff0ffb8ffa1ff80ff00fc00cc000700098000c0004000000000"
+    },
+    {
+      "catalog": "weapons",
+      "item_key": "mortira_90bm2",
+      "hash": "0000000000000b003f803fe07ffc7ffe3ffe3dfe7fff7fff1ffc00f000000000"
+    },
+    {
+      "catalog": "weapons",
+      "item_key": "mortira_95bm1",
+      "hash": "000000000000000018003ef83ffc7fbe7ffe3ffe3ffc03d80000000000000000"
+    },
+    {
+      "catalog": "weapons",
+      "item_key": "mortira_95bm2",
+      "hash": "0000000000000b003f803fe07ffc7ffe3ffe3dfe7fff7fff1ffc00f000000000"
+    },
+    {
+      "catalog": "weapons",
+      "item_key": "pulemyot",
+      "hash": "000000000000003800fc07fc0ffc3ff83ff01fe01f801f003e001c0000000000"
+    },
+    {
+      "catalog": "weapons",
+      "item_key": "pulemyot_100bm1",
+      "hash": "00000000000000001c003f803ff83ffc3ffe03f600fc00fc0000000000000000"
+    },
+    {
+      "catalog": "weapons",
+      "item_key": "pulemyot_11b",
+      "hash": "000000000000003800fc07fc0ffc3ff83ff01fe01f801f003e001c0000000000"
+    },
+    {
+      "catalog": "weapons",
+      "item_key": "pulemyot_13b",
+      "hash": "000000000000003800fc07fc0ffc3ff83ff01fe01f801f003e001c0000000000"
+    },
+    {
+      "catalog": "weapons",
+      "item_key": "pulemyot_15b",
+      "hash": "000000000000003800fc07fc0ffc3ffc3ff01fe01f801f003e001c0000000000"
+    },
+    {
+      "catalog": "weapons",
+      "item_key": "pulemyot_18b",
+      "hash": "000000000000007e007e007e00fe03fe1ffc7fc07f803e003800000000000000"
+    },
+    {
+      "catalog": "weapons",
+      "item_key": "pulemyot_18bm1",
+      "hash": "000000000000007e007e007e00fe03fe1ffc7fc07f803e003800000000000000"
+    },
+    {
+      "catalog": "weapons",
+      "item_key": "pulemyot_22b",
+      "hash": "000000000000007e007e007e00fe03fe1ffc7fc07f803e003800000000000000"
+    },
+    {
+      "catalog": "weapons",
+      "item_key": "pulemyot_26b",
+      "hash": "000000000000003e007e007e01fe07fc1ff83f803f003e001800000000000000"
+    },
+    {
+      "catalog": "weapons",
+      "item_key": "pulemyot_30b",
+      "hash": "000000000000007e007e007e01fe03fe1ffc7fc07f803e003800000000000000"
+    },
+    {
+      "catalog": "weapons",
+      "item_key": "pulemyot_30bm1",
+      "hash": "000000000000007e007e007e01fe03fe1ffc7fc07f803e003800000000000000"
+    },
+    {
+      "catalog": "weapons",
+      "item_key": "pulemyot_40b",
+      "hash": "000000000000003e007e007e01fe07fc1ff83f803f003e001800000000000000"
+    },
+    {
+      "catalog": "weapons",
+      "item_key": "pulemyot_40bm1",
+      "hash": "000000000000003e007e007e01fe07fc1ff83f803f003e001800000000000000"
+    },
+    {
+      "catalog": "weapons",
+      "item_key": "pulemyot_50b",
+      "hash": "000000000000007e007e007e00fe03fe1ffc7fc07f803e003800000000000000"
+    },
+    {
+      "catalog": "weapons",
+      "item_key": "pulemyot_50bm1",
+      "hash": "000000000000007e007e007e00fe03fe1ffc7fc07f803e003800000000000000"
+    },
+    {
+      "catalog": "weapons",
+      "item_key": "pulemyot_60b",
+      "hash": "000000000000003e007e007e01fe07fc1ff83f803f003e001800000000000000"
+    },
+    {
+      "catalog": "weapons",
+      "item_key": "pulemyot_60bm1",
+      "hash": "000000000000003e007e007e01fe07fc1ff83f803f003e001800000000000000"
+    },
+    {
+      "catalog": "weapons",
+      "item_key": "pulemyot_6b",
+      "hash": "000000000000003800fc07fc0ffc3ffc3ff01fe01f801f003e001c0000000000"
+    },
+    {
+      "catalog": "weapons",
+      "item_key": "pulemyot_70b",
+      "hash": "000000000000003e007e007e01fe07fc1ff83f803f003e001800000000000000"
+    },
+    {
+      "catalog": "weapons",
+      "item_key": "pulemyot_70bm1",
+      "hash": "000000000000003e007e007e01fe07fc1ff83f803f003e001800000000000000"
+    },
+    {
+      "catalog": "weapons",
+      "item_key": "pulemyot_80b",
+      "hash": "000000000000003e007e007e01fe07fc1ff83f803f003e001800000000000000"
+    },
+    {
+      "catalog": "weapons",
+      "item_key": "pulemyot_80bm1",
+      "hash": "000000000000003e007e007e01fe07fc1ff83f803f003e001800000000000000"
+    },
+    {
+      "catalog": "weapons",
+      "item_key": "pulemyot_90b",
+      "hash": "00000000000000001f303ff83ff83ffc3ffc1ffc00fc00000000000000000000"
+    },
+    {
+      "catalog": "weapons",
+      "item_key": "pulemyot_90bm1",
+      "hash": "00000000000000001f303ff83ff83ffc3ffc1ffc00fc00000000000000000000"
+    },
+    {
+      "catalog": "weapons",
+      "item_key": "pulemyot_95bm1",
+      "hash": "00000000000000001c003f803ff83ffc3ffe03fe00fc00fc0000000000000000"
+    },
+    {
+      "catalog": "weapons",
+      "item_key": "pulemyot_9b",
+      "hash": "000000000000003800fc07fc0ffc3ffc3ff01fe01f801f003e001c0000000000"
+    },
+    {
+      "catalog": "weapons",
+      "item_key": "pulemyot_enrg_100bm1",
+      "hash": "0000000000003be03fe03ff83ff81ffc1ffc0ffc01fc01fc01f8000000000000"
+    },
+    {
+      "catalog": "weapons",
+      "item_key": "pulemyot_enrg_40b",
+      "hash": "0000000000000000000018703ff03ffc3ffe1ffe01fc00fc0020000000000000"
+    },
+    {
+      "catalog": "weapons",
+      "item_key": "pulemyot_enrg_40bm1",
+      "hash": "0000000000000000000018703ff03ffc3ffe1ffe01fc00fc0020000000000000"
+    },
+    {
+      "catalog": "weapons",
+      "item_key": "pulemyot_enrg_50b",
+      "hash": "0000000000000000000018703ff03ffc3ffe1ffe01fc00fc0020000000000000"
+    },
+    {
+      "catalog": "weapons",
+      "item_key": "pulemyot_enrg_50bm1",
+      "hash": "0000000000000000000018703ff03ffc3ffe1ffe01fc00fc0020000000000000"
+    },
+    {
+      "catalog": "weapons",
+      "item_key": "pulemyot_enrg_60b",
+      "hash": "00000000000003001f803fc03ff83ffc1ffe07fe01fe00fe0078001000000000"
+    },
+    {
+      "catalog": "weapons",
+      "item_key": "pulemyot_enrg_60bm1",
+      "hash": "00000000000003001f803fc03ff83ffc1ffe07fe01fe00fe0078001000000000"
+    },
+    {
+      "catalog": "weapons",
+      "item_key": "pulemyot_enrg_70b",
+      "hash": "00000000000003001d803fc03ff83ffc1ffe07fe01ee00fe0078001000000000"
+    },
+    {
+      "catalog": "weapons",
+      "item_key": "pulemyot_enrg_70bm1",
+      "hash": "00000000000003001d803fc03ff83ffc1ffe07fe01ee00fe0078001000000000"
+    },
+    {
+      "catalog": "weapons",
+      "item_key": "pulemyot_enrg_80b",
+      "hash": "000000000000000038003ee03ff83ffc0ffe01fe00fe00f800f8000000000000"
+    },
+    {
+      "catalog": "weapons",
+      "item_key": "pulemyot_enrg_80bm1",
+      "hash": "000000000000000038003ee03ff83ffc0ffe01fe00fe00f800f8000000000000"
+    },
+    {
+      "catalog": "weapons",
+      "item_key": "pulemyot_enrg_90b",
+      "hash": "000000000000000038003ee03ff83ffc0ffe01fe00fe00f800f8000000000000"
+    },
+    {
+      "catalog": "weapons",
+      "item_key": "pulemyot_enrg_90bm1",
+      "hash": "000000000000000038003ee03ff83ffc0ffe01fe00fe00f800f8000000000000"
+    },
+    {
+      "catalog": "weapons",
+      "item_key": "pulemyot_enrg_95bm1",
+      "hash": "0000000000003be03fe03ff83fb81ffc1ffc0ffc01fc01fc01f8000000000000"
+    },
+    {
+      "catalog": "weapons",
+      "item_key": "pulemyot_krupnokalibernyy_100bm1",
+      "hash": "000000000000000030007e007f807ff07fdc1fee03ce008600fc001800000000"
+    },
+    {
+      "catalog": "weapons",
+      "item_key": "pulemyot_krupnokalibernyy_40",
+      "hash": "00000000000000003e003ff03ffc7ffe3ffe1ffe1ffe0e000000000000000000"
+    },
+    {
+      "catalog": "weapons",
+      "item_key": "pulemyot_krupnokalibernyy_50",
+      "hash": "00000000000000002e003ff03ffc7ffe7ffe1ffe0fe60e000000000000000000"
+    },
+    {
+      "catalog": "weapons",
+      "item_key": "pulemyot_krupnokalibernyy_60",
+      "hash": "00000000000000001e003ff03ffc3ffe3ffe1ffe1ffe0e000000000000000000"
+    },
+    {
+      "catalog": "weapons",
+      "item_key": "pulemyot_krupnokalibernyy_70m1",
+      "hash": "000000000000000038007f007ff07ff07ffc3ffe03fc00fe003e001200000000"
+    },
+    {
+      "catalog": "weapons",
+      "item_key": "pulemyot_krupnokalibernyy_80bm1",
+      "hash": "000000000000000038007f007ff07ff07ffc3ffe03fc00fe003e001200000000"
+    },
+    {
+      "catalog": "weapons",
+      "item_key": "pulemyot_krupnokalibernyy_90bm1",
+      "hash": "000000000000000038007f007ff07ff07ffc3ffe03fc00fe003e001200000000"
+    },
+    {
+      "catalog": "weapons",
+      "item_key": "pulemyot_krupnokalibernyy_95bm1",
+      "hash": "000000000000000030007e007ff07ff07fdc1fce038e00ce00fe001800000000"
+    },
+    {
+      "catalog": "weapons",
+      "item_key": "pushka",
+      "hash": "0000000006021f821fc20ffa0ffa1ffa013a007200f200f200f220a23ffc0000"
+    },
+    {
+      "catalog": "weapons",
+      "item_key": "pushka_100bm1",
+      "hash": "00003c007f00ed60fffcf3ffef7fff9bff83ff13fff6003e001a001d000f000c"
+    },
+    {
+      "catalog": "weapons",
+      "item_key": "pushka_100bm2",
+      "hash": "00000000000000003c003f803ff83f5c1ffc0ffc03f601fe0030000000000000"
+    },
+    {
+      "catalog": "weapons",
+      "item_key": "pushka_12b",
+      "hash": "0000000006021f821fc20ffa0ffa1ffa013a007200f200f200f220a23ffc0000"
+    },
+    {
+      "catalog": "weapons",
+      "item_key": "pushka_14b",
+      "hash": "00000000000617860bc60fe607c611fe0036007600f600f600263fbe3ffc0000"
+    },
+    {
+      "catalog": "weapons",
+      "item_key": "pushka_16b",
+      "hash": "00000000000617860bc60fe607c611fe0036007600f600f600263fbe3ffc0000"
+    },
+    {
+      "catalog": "weapons",
+      "item_key": "pushka_18b",
+      "hash": "0000000006021f821fc60ffe0ffa1ffe013a007200f200f200f230a23ffc0000"
+    },
+    {
+      "catalog": "weapons",
+      "item_key": "pushka_2",
+      "hash": "00000000000617860fc60ff607fe01fe0016007600f600e600663fbe3ffc0000"
+    },
+    {
+      "catalog": "weapons",
+      "item_key": "pushka_20b",
+      "hash": "00000000000617860fc60ff607fe01fe0016007600f600e600663fbe3ffc0000"
+    },
+    {
+      "catalog": "weapons",
+      "item_key": "pushka_20bm1",
+      "hash": "00000000000617860fc60ff607fe01fe0016007600f600e600663fbe3ffc0000"
+    },
+    {
+      "catalog": "weapons",
+      "item_key": "pushka_24b",
+      "hash": "0000000000000008007e01fc0ffc1ff83ffc3ff81ff81ff00f00000000000000"
+    },
+    {
+      "catalog": "weapons",
+      "item_key": "pushka_28b",
+      "hash": "0000000000000008007e01fc0ffc1ff83ffc3ff81ff81ff00f00000000000000"
+    },
+    {
+      "catalog": "weapons",
+      "item_key": "pushka_28bm1",
+      "hash": "0000000000000008007e01fc0ffc1ff83ffc3ff81ff81ff00f00000000000000"
+    },
+    {
+      "catalog": "weapons",
+      "item_key": "pushka_30b",
+      "hash": "000000000000003c007c00fe07fe1ffc3ff83ff03fc03e803c00000000000000"
+    },
+    {
+      "catalog": "weapons",
+      "item_key": "pushka_30bm1",
+      "hash": "000000000000003c007c00fe07fe1ffc3ff83ff03fc03e803c00000000000000"
+    },
+    {
+      "catalog": "weapons",
+      "item_key": "pushka_4",
+      "hash": "0000000006021f821fc20ffa0ffa1ffa013a007200f200f200f200a23ffc0000"
+    },
+    {
+      "catalog": "weapons",
+      "item_key": "pushka_40b",
+      "hash": "0000000000000008007e01fc0ffc1ff83ffc3ff81ff81ff00f00000000000000"
+    },
+    {
+      "catalog": "weapons",
+      "item_key": "pushka_40bm1",
+      "hash": "0000000000000008007e01fc0ffc1ff83ffc3ff81ff81ff00f00000000000000"
+    },
+    {
+      "catalog": "weapons",
+      "item_key": "pushka_50b",
+      "hash": "0000000000000008007e01fc0ffc1ff83ffc3ff81ff81ff00f00000000000000"
+    },
+    {
+      "catalog": "weapons",
+      "item_key": "pushka_50bm1",
+      "hash": "0000000000000008007e01fc0ffc1ff83ffc3ff81ff81ff00f00000000000000"
+    },
+    {
+      "catalog": "weapons",
+      "item_key": "pushka_60b",
+      "hash": "000000000000001c007c00fe07fc1ffc3ff83ff03fc03f803c00000000000000"
+    },
+    {
+      "catalog": "weapons",
+      "item_key": "pushka_60bm1",
+      "hash": "000000000000001c007c00fe07fc1ffc3ff83ff03fc03f803c00000000000000"
+    },
+    {
+      "catalog": "weapons",
+      "item_key": "pushka_6b",
+      "hash": "00000000000617860fc60ff607fe01fe0036007600f600f600263fbe3ffc0000"
+    },
+    {
+      "catalog": "weapons",
+      "item_key": "pushka_70b",
+      "hash": "000000000000003c007c00fe07fe1ffc3ff83ff03fc03e803c00000000000000"
+    },
+    {
+      "catalog": "weapons",
+      "item_key": "pushka_70bm1",
+      "hash": "000000000000003c007c00fe07fe1ffc3ff83ff03fc03e803c00000000000000"
+    },
+    {
+      "catalog": "weapons",
+      "item_key": "pushka_80b",
+      "hash": "000000000000001c007c00fc0ffc2ff83ff83ff03fc03f803c00000000000000"
+    },
+    {
+      "catalog": "weapons",
+      "item_key": "pushka_80bm1",
+      "hash": "000000000000001c007c00fc0ffc2ff83ff83ff03fc03f803c00000000000000"
+    },
+    {
+      "catalog": "weapons",
+      "item_key": "pushka_90b",
+      "hash": "000000000c001f003f803fc03ff81ffc0ffc03fc01fc01f800f0000000000000"
+    },
+    {
+      "catalog": "weapons",
+      "item_key": "pushka_90bm1",
+      "hash": "000000000c001f003f803fc03ff81ffc0ffc03fc01fc01f800f0000000000000"
+    },
+    {
+      "catalog": "weapons",
+      "item_key": "pushka_90bm2",
+      "hash": "00000000000000003c003f8039f83bfc1ffc0ffc03fe01fe0030000000000000"
+    },
+    {
+      "catalog": "weapons",
+      "item_key": "pushka_95bm1",
+      "hash": "00003c007f00ed60fffcf3ffef7fff9bff83ff17fff6003e001a001d000f000c"
+    },
+    {
+      "catalog": "weapons",
+      "item_key": "pushka_95bm2",
+      "hash": "00000000000000003c003f803bf83ffc1ffc0ffc03fe01fe0030000000000000"
+    },
+    {
+      "catalog": "weapons",
+      "item_key": "pushka_9b",
+      "hash": "00000000000617860fc60ff607c601fe0016007600f600e600263fbe3ffc0000"
+    },
+    {
+      "catalog": "weapons",
+      "item_key": "pushka_enrg",
+      "hash": "00000000000018007e007f001ff01ff81ffe1fbe1fde07ce0176000200000000"
+    },
+    {
+      "catalog": "weapons",
+      "item_key": "pushka_enrg_10",
+      "hash": "00000000000018007e007f001ff01ff81ffe1fbe1fde07de0176000200000000"
+    },
+    {
+      "catalog": "weapons",
+      "item_key": "pushka_enrg_100bm1",
+      "hash": "0000000000000c003f803fe07ff87ffc7ffe7fff1fff07ff007c000000000000"
+    },
+    {
+      "catalog": "weapons",
+      "item_key": "pushka_enrg_100bm2",
+      "hash": "0000000000000c001e001f801f801ffc3f7e3ffe07fc007c003c000000000000"
+    },
+    {
+      "catalog": "weapons",
+      "item_key": "pushka_enrg_15",
+      "hash": "00000000000000003d803ff03fc03fe0077c03fc01be00fc003c000000000000"
+    },
+    {
+      "catalog": "weapons",
+      "item_key": "pushka_enrg_20",
+      "hash": "00000000000000003d803ff03fc02fe0067c03dc039e01fc0018000000000000"
+    },
+    {
+      "catalog": "weapons",
+      "item_key": "pushka_enrg_30",
+      "hash": "00000000000000003f807ff03fc03fe0077c03fc03be01fc005c000000000000"
+    },
+    {
+      "catalog": "weapons",
+      "item_key": "pushka_enrg_40",
+      "hash": "00000000000017803fc03fe83fb83ef43e783e7a0f9c07fe03be010400000000"
+    },
+    {
+      "catalog": "weapons",
+      "item_key": "pushka_enrg_5",
+      "hash": "00000000000018007e007f001ff01ff81ffe1fbe1fde07de0176000200000000"
+    },
+    {
+      "catalog": "weapons",
+      "item_key": "pushka_enrg_50",
+      "hash": "00000000000017803f803fe83fb83ef43e783e7a0f9c07fe03be010400000000"
+    },
+    {
+      "catalog": "weapons",
+      "item_key": "pushka_enrg_60",
+      "hash": "00000000000017803fc03fe83fb83ed43e783e3a0f8c07fe03be010400000000"
+    },
+    {
+      "catalog": "weapons",
+      "item_key": "pushka_enrg_70m1",
+      "hash": "00000000000018007e007f001ff01ff81ffe1fbe1fde07ce0176000200000000"
+    },
+    {
+      "catalog": "weapons",
+      "item_key": "pushka_enrg_80bm1",
+      "hash": "00000000000018007e007f001ff01ff81ffe1fbe1fde07de0176000200000000"
+    },
+    {
+      "catalog": "weapons",
+      "item_key": "pushka_enrg_90bm1",
+      "hash": "00000000000018007e007f001ff01ff81ffe1fbe1fde07de0176000200000000"
+    },
+    {
+      "catalog": "weapons",
+      "item_key": "pushka_enrg_90bm2",
+      "hash": "0000000000000c001e001f801f801ffc3f7e3fff07fc007c003c000000000000"
+    },
+    {
+      "catalog": "weapons",
+      "item_key": "pushka_enrg_95bm1",
+      "hash": "0000000000003c003f807fe0fff8e6fc7ffe7de31feb07ff007c000000000000"
+    },
+    {
+      "catalog": "weapons",
+      "item_key": "pushka_enrg_95bm2",
+      "hash": "0000000000000c001e001f801f801ffc3f7e3fd607fc007c003c000000000000"
+    },
+    {
+      "catalog": "weapons",
+      "item_key": "remontnaya_pushka_10d",
+      "hash": "00000000000001b007fc0ff41ffc3ffc3ffc3ff83ff01ff00f80000000000000"
+    },
+    {
+      "catalog": "weapons",
+      "item_key": "remontnaya_pushka_10dm1",
+      "hash": "00000000000001b007fc0ff41ffc3ffc3ffc3ff83ff01ff00f80000000000000"
+    },
+    {
+      "catalog": "weapons",
+      "item_key": "remontnaya_pushka_10t",
+      "hash": "00000000000001b007fc0ff41ffc3ffc3ffc3ff83ff01ff00f80000000000000"
+    },
+    {
+      "catalog": "weapons",
+      "item_key": "remontnaya_pushka_10tm1",
+      "hash": "00000000000001b007fc0ff41ffc3ffc3ffc3ff83ff01ff00f80000000000000"
+    },
+    {
+      "catalog": "weapons",
+      "item_key": "remontnaya_pushka_17d",
+      "hash": "00000000000001f007fc0ff41ffc3ffc3ffc3ff83ff01ff00f80000000000000"
+    },
+    {
+      "catalog": "weapons",
+      "item_key": "remontnaya_pushka_17dm1",
+      "hash": "00000000000001f007fc0ff41ffc3ffc3ffc3ff83ff01ff00f80000000000000"
+    },
+    {
+      "catalog": "weapons",
+      "item_key": "remontnaya_pushka_17t",
+      "hash": "00000000000001f007fc0ff41ffc3ffc3ffc3ff83ff01ff00f80000000000000"
+    },
+    {
+      "catalog": "weapons",
+      "item_key": "remontnaya_pushka_17tm1",
+      "hash": "00000000000001f007fc0ff41ffc3ffc3ffc3ff83ff01ff00f80000000000000"
+    },
+    {
+      "catalog": "weapons",
+      "item_key": "remontnaya_pushka_25d",
+      "hash": "00000000000001b007fc0ff41ffc3ffc3ffc3ff83ff01ff00f80000000000000"
+    },
+    {
+      "catalog": "weapons",
+      "item_key": "remontnaya_pushka_25t",
+      "hash": "00000000000001b007fc0ff41ffc3ffc3ffc3ff83ff01ff00f80000000000000"
+    },
+    {
+      "catalog": "weapons",
+      "item_key": "remontnaya_pushka_32dm1",
+      "hash": "00000000000001b007fc0ff41ffc3ffc3ffc3ff83ff01ff00780000000000000"
+    },
+    {
+      "catalog": "weapons",
+      "item_key": "remontnaya_pushka_32tm1",
+      "hash": "00000000000001b007fc0ff41ffc3ffc3ffc3ff83ff01ff00780000000000000"
+    },
+    {
+      "catalog": "weapons",
+      "item_key": "remontnaya_pushka_40d",
+      "hash": "00000000000001b007fc0ff41ffc3ffc3ffc3ff83ff01ff00f80000000000000"
+    },
+    {
+      "catalog": "weapons",
+      "item_key": "remontnaya_pushka_40tm1",
+      "hash": "00000000000001b007fc0ff41ffc3ffc3ffc3ff83ff01ff00f80000000000000"
+    },
+    {
+      "catalog": "weapons",
+      "item_key": "remontnaya_pushka_45tm1",
+      "hash": "0000000003fc0fff1fff1fff3fff7ffffffcfe38f9ace7b0fe6061c000000000"
+    },
+    {
+      "catalog": "weapons",
+      "item_key": "remontnaya_pushka_50tm1",
+      "hash": "0000000003fc0fff1fff1fff3fff7ffffffefe30f9ace798fe6061c000000000"
+    },
+    {
+      "catalog": "weapons",
+      "item_key": "remontnaya_pushka_55tm1",
+      "hash": "0000000003fc0fff1fff1fff3fff7ffffffefe38f9ace7b0fe6061c000000000"
+    },
+    {
+      "catalog": "weapons",
+      "item_key": "remontnaya_pushka_60tm1",
+      "hash": "0000000003fc0fff1fff1fff3fff7ffffffefe38f9bce7b8ff6061c000000000"
+    },
+    {
+      "catalog": "weapons",
+      "item_key": "remontnaya_pushka_65tm1",
+      "hash": "0000000003fc0fff1fff1fff3fff7ffffffefe38f9ece7b0fe6061c000000000"
+    },
+    {
+      "catalog": "weapons",
+      "item_key": "remontnaya_pushka_70tm1",
+      "hash": "0000000000003f807fc057fcf7f6f7ffffe7dfc77f8f3f871ffe03c800000000"
+    },
+    {
+      "catalog": "weapons",
+      "item_key": "rk",
+      "hash": "0000000004000300038007e007f03ff82ffc3ffc1ffc0ffc007c000000000000"
+    },
+    {
+      "catalog": "weapons",
+      "item_key": "rk_100bm1",
+      "hash": "00000000000000003c003e003f003ff00fd803c801dc00cc00fc003c00000000"
+    },
+    {
+      "catalog": "weapons",
+      "item_key": "rk_100bm2",
+      "hash": "000080007f807bfc3ffe7fff7fff7fff7fff7fff3fff0fff07ff07ff00080000"
+    },
+    {
+      "catalog": "weapons",
+      "item_key": "rk_12b",
+      "hash": "00000000060003000b8007e007f03ff82ffc3ffc1ffc0ffc007c000000000000"
+    },
+    {
+      "catalog": "weapons",
+      "item_key": "rk_15b",
+      "hash": "00000000060003000b8007e007f03ff82ffc3ffc1ffc0ffc007c000000000000"
+    },
+    {
+      "catalog": "weapons",
+      "item_key": "rk_17b",
+      "hash": "00000000000018003e007fc03fe01fe01ff803fc007e007e003c000000000000"
+    },
+    {
+      "catalog": "weapons",
+      "item_key": "rk_19b",
+      "hash": "00000000000018003e007fc03fe01fe01ff803fc00fe007e003c000000000000"
+    },
+    {
+      "catalog": "weapons",
+      "item_key": "rk_21b",
+      "hash": "00000000000018003e007f803fe03fe01ff803fc007e007e003c000000000000"
+    },
+    {
+      "catalog": "weapons",
+      "item_key": "rk_21bm1",
+      "hash": "00000000000018003e007f803fe03fe01ff803fc007e007e003c000000000000"
+    },
+    {
+      "catalog": "weapons",
+      "item_key": "rk_24b",
+      "hash": "00000000000018003e003fc03fe01fe01ff807fc00fe007e003c000000000000"
+    },
+    {
+      "catalog": "weapons",
+      "item_key": "rk_27b",
+      "hash": "00000000000018003e003fc03fe01fe01ff807fc00fe007e003c000000000000"
+    },
+    {
+      "catalog": "weapons",
+      "item_key": "rk_3",
+      "hash": "0000000004000300038007e007f03ff82ffc3ffc1ffc0ffc007c000000000000"
+    },
+    {
+      "catalog": "weapons",
+      "item_key": "rk_31b",
+      "hash": "00000000000018003e007fc03fe01fe01ff807fc00fe007e003c000000000000"
+    },
+    {
+      "catalog": "weapons",
+      "item_key": "rk_31bm1",
+      "hash": "00000000000018003e007fc03fe01fe01ff807fc00fe007e003c000000000000"
+    },
+    {
+      "catalog": "weapons",
+      "item_key": "rk_37b",
+      "hash": "00000000000018003e007f803fe03fe01ff803fc007e007e003c000000000000"
+    },
+    {
+      "catalog": "weapons",
+      "item_key": "rk_41b",
+      "hash": "00000000060003000b8007e007f03ff82ffc3ffc1ffc0ffc007c000000000000"
+    },
+    {
+      "catalog": "weapons",
+      "item_key": "rk_41bm1",
+      "hash": "00000000060003000b8007e007f03ff82ffc3ffc1ffc0ffc007c000000000000"
+    },
+    {
+      "catalog": "weapons",
+      "item_key": "rk_47b",
+      "hash": "00000000000018003e007f803fe01fe01ff803fc00fe007e003c000000000000"
+    },
+    {
+      "catalog": "weapons",
+      "item_key": "rk_5",
+      "hash": "00000000060003000b8007e007f03ff82ffc3ffc1ffc0ffc007c000000000000"
+    },
+    {
+      "catalog": "weapons",
+      "item_key": "rk_60b",
+      "hash": "000000001c0016001fc03ff83ff83ffc3ffc3ffc3efc17fe1ffe011800000000"
+    },
+    {
+      "catalog": "weapons",
+      "item_key": "rk_60bm1",
+      "hash": "000000001c0016001fc03ff83ff83ffc3ffc3ffc3efc17fe1ffe011800000000"
+    },
+    {
+      "catalog": "weapons",
+      "item_key": "rk_70b",
+      "hash": "000000001c001e001fc03ff83ff83ffc3ffc3ffc3efc17fe1ffc001800000000"
+    },
+    {
+      "catalog": "weapons",
+      "item_key": "rk_70bm1",
+      "hash": "000000001c001e001fc03ff83ff83ffc3ffc3ffc3efc17fe1ffc001800000000"
+    },
+    {
+      "catalog": "weapons",
+      "item_key": "rk_80b",
+      "hash": "000000001c0016003fc03ff83ff83ffc3ffc3ffc3ffc17fe1ffe013800000000"
+    },
+    {
+      "catalog": "weapons",
+      "item_key": "rk_80bm1",
+      "hash": "000000001c0016003fc03ff83ff83ffc3ffc3ffc3ffc17fe1ffe013800000000"
+    },
+    {
+      "catalog": "weapons",
+      "item_key": "rk_90b",
+      "hash": "00000000000000003fc03ff86ffe2ffe3ff4077203fe00fc0000000000000000"
+    },
+    {
+      "catalog": "weapons",
+      "item_key": "rk_90bm1",
+      "hash": "00000000000000003fc03ff86ffe2ffe3ff4077203fe00fc0000000000000000"
+    },
+    {
+      "catalog": "weapons",
+      "item_key": "rk_95bm1",
+      "hash": "00000000000000003c003e003f003ff00ff803f801fc00fc00fc003c00000000"
+    },
+    {
+      "catalog": "weapons",
+      "item_key": "rk_95bm2",
+      "hash": "00003e00ff80f7f0fbfcf3fef8ffffcfffe77fe31fff0fe707f303f901ff0000"
+    },
+    {
+      "catalog": "weapons",
+      "item_key": "rk_9b",
+      "hash": "0000000004000300038007e007f03ff82ffc3ffc1ffc0ffc007c000000000000"
+    },
+    {
+      "catalog": "weapons",
+      "item_key": "rk_enrg_100bm1",
+      "hash": "000000000e007f80ffc0fff0fffcf5fa7f7e7ffe5ffe01ff01fe01f000000000"
+    },
+    {
+      "catalog": "weapons",
+      "item_key": "rk_enrg_100bm2",
+      "hash": "00000000000000003ce03ff01ff807fc03cc01fc007e007e0000000000000000"
+    },
+    {
+      "catalog": "weapons",
+      "item_key": "rk_enrg_10b",
+      "hash": "000000000c000e000f005fe07fe07ff87ff83ffc1ffc1ffc1ffc07f800000000"
+    },
+    {
+      "catalog": "weapons",
+      "item_key": "rk_enrg_13b",
+      "hash": "000000000c000e000f005fe07ff07ff87ff83ffc1ffc1ffc1ffc07f800000000"
+    },
+    {
+      "catalog": "weapons",
+      "item_key": "rk_enrg_14b",
+      "hash": "000000000c000e000f005fe07ff07ff87ff83ffc1ffc1ffc1ffc07f800000000"
+    },
+    {
+      "catalog": "weapons",
+      "item_key": "rk_enrg_16b",
+      "hash": "000000000c000e000f005fe07ff87ff87ff83ffc1ffc1ffc1ffc07f800000000"
+    },
+    {
+      "catalog": "weapons",
+      "item_key": "rk_enrg_19b",
+      "hash": "000000000c000e000f005fe07ff07ff87ff83ffc1ffc1ffc1ffc07f800000000"
+    },
+    {
+      "catalog": "weapons",
+      "item_key": "rk_enrg_19bm1",
+      "hash": "000000000c000e000f005fe07ff07ff87ff83ffc1ffc1ffc1ffc07f800000000"
+    },
+    {
+      "catalog": "weapons",
+      "item_key": "rk_enrg_22b",
+      "hash": "000000000000000000001c6006f03ff83ffc1ffc1ffc00fe003c000000000000"
+    },
+    {
+      "catalog": "weapons",
+      "item_key": "rk_enrg_24b",
+      "hash": "000000000000000000001c6006f03ff83ffc1ffc1ffc01fe003c000000000000"
+    },
+    {
+      "catalog": "weapons",
+      "item_key": "rk_enrg_27b",
+      "hash": "000000000000000000001c601ff03ff83ffc1ffc1ffc00fe003c000000000000"
+    },
+    {
+      "catalog": "weapons",
+      "item_key": "rk_enrg_31b",
+      "hash": "000000000000000000001c6006f03ff83ffc1ffc1ffc00fe003c000000000000"
+    },
+    {
+      "catalog": "weapons",
+      "item_key": "rk_enrg_31bm1",
+      "hash": "000000000000000000001c6006f03ff83ffc1ffc1ffc00fe003c000000000000"
+    },
+    {
+      "catalog": "weapons",
+      "item_key": "rk_enrg_35b",
+      "hash": "000000000000000000001c6006f03ff83ffc1ffc1ffc00fe003c000000000000"
+    },
+    {
+      "catalog": "weapons",
+      "item_key": "rk_enrg_40b",
+      "hash": "000000000000000000001c601ff03ff83ffc1ffc1ffc00fe003c000000000000"
+    },
+    {
+      "catalog": "weapons",
+      "item_key": "rk_enrg_40bm1",
+      "hash": "000000000000000000001c601ff03ff83ffc1ffc1ffc00fe003c000000000000"
+    },
+    {
+      "catalog": "weapons",
+      "item_key": "rk_enrg_45b",
+      "hash": "000000000000000000001c6006f03ff83ffc1ffc1ffc00fe003c000000000000"
+    },
+    {
+      "catalog": "weapons",
+      "item_key": "rk_enrg_60b",
+      "hash": "00000000000000003f003e703ff83ff81ffc03fc01fc01fe0008000000000000"
+    },
+    {
+      "catalog": "weapons",
+      "item_key": "rk_enrg_60bm1",
+      "hash": "00000000000000003f003e703ff83ff81ffc03fc01fc01fe0008000000000000"
+    },
+    {
+      "catalog": "weapons",
+      "item_key": "rk_enrg_6b",
+      "hash": "000000000c000e000f005fe07ff07ff87ff83ffc1ffc1ffc1ffc07f800000000"
+    },
+    {
+      "catalog": "weapons",
+      "item_key": "rk_enrg_70b",
+      "hash": "00000000000000003f003e703ff83ff81ffc03fc01fc01fe0008000000000000"
+    },
+    {
+      "catalog": "weapons",
+      "item_key": "rk_enrg_70bm1",
+      "hash": "00000000000000003f003e703ff83ff81ffc03fc01fc01fe0008000000000000"
+    },
+    {
+      "catalog": "weapons",
+      "item_key": "rk_enrg_80b",
+      "hash": "00000000000000003f003e703ff83ff80ffc03fc01fc01fe0008000000000000"
+    },
+    {
+      "catalog": "weapons",
+      "item_key": "rk_enrg_80bm1",
+      "hash": "00000000000000003f003e703ff83ff80ffc03fc01fc01fe0008000000000000"
+    },
+    {
+      "catalog": "weapons",
+      "item_key": "rk_enrg_8b",
+      "hash": "000000000c000e000f005fe07fe07ff87ff83ffc1ffc1ffc1ffc07f800000000"
+    },
+    {
+      "catalog": "weapons",
+      "item_key": "rk_enrg_90b",
+      "hash": "00000000000000003f803fe03ff81f3c0fce07fe03fe01fc0038000000000000"
+    },
+    {
+      "catalog": "weapons",
+      "item_key": "rk_enrg_90bm1",
+      "hash": "00000000000000003f803fe03ff81f3c0fce07fe03fe01fc0038000000000000"
+    },
+    {
+      "catalog": "weapons",
+      "item_key": "rk_enrg_90bm2",
+      "hash": "00000000000000003ce03ff01f7807fc03cc01fc007e007e0000000000000000"
+    },
+    {
+      "catalog": "weapons",
+      "item_key": "rk_enrg_95bm1",
+      "hash": "000000000e007f80ffc0fff0fffcf5fa7f7e7ffe5ffe01ff01fe01f000000000"
+    },
+    {
+      "catalog": "weapons",
+      "item_key": "rk_enrg_95bm2",
+      "hash": "00000000000000003ce03ff01f7807fc03cc01fc007e007e0000000000000000"
+    }
+  ]
+}

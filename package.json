@@ -29,7 +29,8 @@
     "setup:sheets": "tsx scripts/setup-sheets-columns/index.ts",
     "setup:todo": "tsx scripts/setup-todo-sheet/index.ts",
     "sync:wiki": "tsx scripts/parser-wiki/index.ts",
-    "convert:webp": "tsx scripts/convert-to-webp/index.ts"
+    "convert:webp": "tsx scripts/convert-to-webp/index.ts",
+    "build:phash": "node apps/inventory-parser/scripts/build-phash-index.mjs"
   },
   "dependencies": {
     "@dnd-kit/core": "^6.3.1",

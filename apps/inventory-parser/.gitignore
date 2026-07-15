@@ -12,10 +12,11 @@ dist
 dist-ssr
 *.local
 
-# Автогенерируется build-скриптом (scripts/build-phash-index.mjs) из
-# data/icons/**/*.webp основного репо. В git не коммитим — экономит ~160 KB
-# и предотвращает конфликты, когда каталог иконок пополняется.
-src/generated/
+# ⚠️ Файл `src/generated/phash-index.json` КОММИТИТСЯ (см. README/CHANGELOG).
+# Он детерминированно генерируется из `data/icons/**/*.webp` основного
+# репо: `npm run build:phash` из корня монорепы. Sharp живёт только в
+# root devDependencies — не тащим его в Tauri-приложение, чтобы Windows-CI
+# `npm ci` не ломался на нативных биндингах Sharp.
 
 # Editor directories and files
 .vscode/*

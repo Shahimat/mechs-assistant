@@ -2,8 +2,20 @@
 /**
  * Build-time скрипт: перебирает `data/icons/**\/*.webp` (относительно корня
  * моно-репы), вычисляет 64-битный perceptual hash каждой иконки, пишет
- * результат в `src/generated/phash-index.json` для использования в
- * React-клиенте.
+ * результат в `apps/inventory-parser/src/generated/phash-index.json`.
+ *
+ * ⚠️ Запускается ТОЛЬКО из корня монорепы:
+ *
+ *     npm run build:phash
+ *
+ * Sharp живёт в root `package.json` (devDependency), а НЕ в
+ * `apps/inventory-parser`. Это осознанно: нативный Sharp хронически
+ * ломает `npm ci` на Windows-CI Tauri-сборки. Индекс детерминированный
+ * (зависит только от иконок) → сгенерированный JSON коммитится в git,
+ * Tauri-build его просто импортирует, Sharp там не нужен.
+ *
+ * После изменения `data/icons/**\/*.webp` — перегенерь и закоммить
+ * новый `phash-index.json`.
  *
  * Алгоритм pHash — классический average-hash по 16×16 grayscale:
  *   1. Ресайз до 16×16 через lanczos3 (устойчиво к масштабированию
