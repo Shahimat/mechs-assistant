@@ -15,6 +15,12 @@ jobs:
       actions: write
     steps:
       - uses: actions/checkout@v4
+        with:
+          # PAT под учёткой владельца — нужен, чтобы push в main прошёл
+          # bypass ruleset (Write-role bypass покрывает людей, а не
+          # github-actions[bot]). Тот же секрет, что в
+          # merge-develop-to-main.
+          token: ${{ secrets.MERGE_PAT }}
 
       - uses: actions/setup-node@v4
         with:

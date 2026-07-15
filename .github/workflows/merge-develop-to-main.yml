@@ -24,6 +24,11 @@ jobs:
         with:
           fetch-depth: 0
           ref: main
+          # PAT под учёткой владельца — нужен, чтобы push в main прошёл
+          # bypass ruleset (Write-role bypass покрывает людей, а не
+          # github-actions[bot]). Секрет заводится вручную в Settings →
+          # Secrets and variables → Actions.
+          token: ${{ secrets.MERGE_PAT }}
 
       - name: Configure git
         run: |

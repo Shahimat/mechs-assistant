@@ -283,16 +283,20 @@ clone` без ключей. Пороги перехода на Git LFS или о
 **Защита `main` от прямых push'ей (2026-07-15).** Ruleset на `main`
 c `Enforcement: Active` и правилом `Require a pull request before
 merging` (approvals = 0) + `Restrict deletions` + `Block force
-pushes`. Bypass — роль `Write` со статусом `Always allow`; попадают
-под неё все коллабораторы с Write+ (сейчас — только автор как admin
-и `GITHUB_TOKEN` в workflow'ах). Практический эффект:
+pushes`. Bypass — роль `Write` со статусом `Always allow`; попадает
+под неё автор как admin (Write+ автоматически). Практический эффект:
 
 - Обычный collaborator с Write ролью **вынужден** идти через PR.
 - Автор-admin **технически** может push'ить прямо в `main` (bypass
   срабатывает), но по договорённости работает только через `develop`
   → PR → `main`. Защита от опечатки — дисциплиной, не enforcement.
-- Sync-workflow'ы продолжают пушить в `main` напрямую под тем же
-  bypass — не нужны PR-cycle правки.
+- Sync-workflow'ы, которые push'ят в `main` напрямую
+  (`sync-sheets.yml`, `merge-develop-to-main.yml`), используют
+  fine-grained PAT из secret `MERGE_PAT` — checkout под ним делает
+  push от имени автора, попадает под тот же Write-bypass. Дефолтный
+  `GITHUB_TOKEN` не подошёл: он работает под identity
+  `github-actions[bot]`, а Write-role bypass покрывает только
+  людей-коллабораторов. Скоуп PAT — `Contents: Read & write` на репо.
 - Рабочая ветка по умолчанию — `develop`; `main` = «то, что
   задеплоено».
 
