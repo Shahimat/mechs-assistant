@@ -258,7 +258,7 @@ React Router (когда роутер появится).
 clone` без ключей. Пороги перехода на Git LFS или отдельное хранилище
 — «когда почувствуем боль».
 
-**GitHub Actions как исполнитель — три отдельные ручки.**
+**GitHub Actions как исполнитель — четыре отдельные ручки.**
 
 Разделение по стабильности процесса:
 
@@ -269,9 +269,32 @@ clone` без ключей. Пороги перехода на Git LFS или о
 - **`sync-sheets.yml`** — частый запуск, **прямой push в `main`**.
   Google Sheets API стабилен, overlay-правки точечные, редакторам не
   надо ждать review.
+- **`merge-develop-to-main.yml`** — merge коммитов из `develop` в
+  `main` через `git merge --no-ff`. Триггеры: `workflow_dispatch`
+  (ручная кнопка) и nightly `cron: '0 3 * * *'`. Early-exit если в
+  develop нет новых коммитов — не создаёт пустой merge-commit, не
+  триггерит deploy. При конфликте — job падает, разрешать локально
+  (`git checkout develop && git merge origin/main`, push, снова
+  кнопку).
 - **`deploy.yml`** — **автомат по push в `main`** (с фильтром путей:
   `data/`, `src/`, `package.json`, config), плюс возможность повторить
   вручную через `workflow_dispatch`.
+
+**Защита `main` от прямых push'ей (2026-07-15).** Ruleset на `main`
+c `Enforcement: Active` и правилом `Require a pull request before
+merging` (approvals = 0) + `Restrict deletions` + `Block force
+pushes`. Bypass — роль `Write` со статусом `Always allow`; попадают
+под неё все коллабораторы с Write+ (сейчас — только автор как admin
+и `GITHUB_TOKEN` в workflow'ах). Практический эффект:
+
+- Обычный collaborator с Write ролью **вынужден** идти через PR.
+- Автор-admin **технически** может push'ить прямо в `main` (bypass
+  срабатывает), но по договорённости работает только через `develop`
+  → PR → `main`. Защита от опечатки — дисциплиной, не enforcement.
+- Sync-workflow'ы продолжают пушить в `main` напрямую под тем же
+  bypass — не нужны PR-cycle правки.
+- Рабочая ветка по умолчанию — `develop`; `main` = «то, что
+  задеплоено».
 
 Триггер всех трёх — только вручную (кроме автоматического `deploy`),
 никакого cron. Права на `workflow_dispatch` — у Collaborators с

@@ -10,6 +10,15 @@
 # игрокам) живут в отдельной системе: лист `todo` в Google Sheets →
 # `data/overrides/todos.yml` → страница `/todo`. Разделение
 # зафиксировано в convention `todo-split`.
+#
+# Рабочий цикл git (с 2026-07-15): все правки — в ветке `develop`,
+# в `main` вливаем через PR (merge через веб-UI). `main` защищён
+# ruleset'ом (require PR + block force pushes + restrict deletions);
+# bypass у роли Write со статусом Always — пропускает admin-автора и
+# `GITHUB_TOKEN` sync-workflow'ов, коллабораторов заставляет идти
+# через PR. Автор технически может push'нуть в main, но по
+# договорённости не делает. Подробнее — в roadmap.md, секция
+# «Защита main от прямых push'ей».
 
 ## blocker
 

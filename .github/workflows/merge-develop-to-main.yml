@@ -1,0 +1,57 @@
+name: merge-develop-to-main
+
+on:
+  # Ручная кнопка: GitHub → Actions → merge-develop-to-main → Run workflow.
+  workflow_dispatch:
+  # Nightly в 03:00 UTC (06:00 MSK) — если в develop появились коммиты
+  # с прошлого merge, они попадут в main без ручного действия. Если
+  # ничего нового — job делает early exit и не триггерит deploy.
+  schedule:
+    - cron: '0 3 * * *'
+
+concurrency:
+  group: merge-develop
+  cancel-in-progress: false
+
+jobs:
+  merge:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      actions: write
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          ref: main
+
+      - name: Configure git
+        run: |
+          git config user.email "sync-bot@users.noreply.github.com"
+          git config user.name "mechs-sync-bot"
+
+      - name: Fetch develop
+        run: git fetch origin develop
+
+      - name: Check if there is anything to merge
+        id: check
+        run: |
+          if [ -z "$(git log HEAD..origin/develop --oneline)" ]; then
+            echo "В develop нет новых коммитов относительно main — пропускаем."
+            echo "should_merge=false" >> "$GITHUB_OUTPUT"
+          else
+            echo "should_merge=true" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Merge develop into main
+        if: steps.check.outputs.should_merge == 'true'
+        run: |
+          git merge --no-ff origin/develop \
+            -m "merge: develop → main ($(date -u +%Y-%m-%dT%H:%M:%SZ))"
+          git push
+
+      - name: Trigger deploy
+        if: steps.check.outputs.should_merge == 'true'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: gh workflow run deploy.yml --ref main
