@@ -21,6 +21,12 @@ tauri-build = { version = "2", features = [] }
 tauri = { version = "2", features = [] }
 tauri-plugin-global-shortcut = "2"
 tauri-plugin-store = "2"
+# Phase L2: auto-updater через GitHub Releases. Endpoint + pubkey
+# сконфигурированы в tauri.conf.json, приватный ключ подписи и его
+# пароль — GitHub secrets (TAURI_SIGNING_PRIVATE_KEY[_PASSWORD]).
+tauri-plugin-updater = "2"
+# Нужен для `relaunch()` после установки апдейта.
+tauri-plugin-process = "2"
 serde = { version = "1", features = ["derive"] }
 serde_json = "1"
 # Снимки окон по hwnd/title без активации. Кросс-платформ, работает на

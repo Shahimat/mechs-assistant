@@ -7,6 +7,7 @@ import { WindowList } from './components/WindowList';
 import { CaptureView } from './components/CaptureView';
 import { InventoryResult } from './components/InventoryResult';
 import { GridSettings } from './components/GridSettings';
+import { UpdateBanner } from './components/UpdateBanner';
 import {
   DEFAULT_GRID,
   recognizePage,
@@ -14,6 +15,7 @@ import {
   type InventoryCorner,
 } from './pipeline/recognize';
 import { mergeSeries } from './pipeline/mergeSeries';
+import { buildDiagnosticZip, downloadZip } from './pipeline/diagnostic';
 import type { CapturedWindow, Recognized, SeriesState } from './types';
 
 const CAPTURE_HOTKEY = 'Alt+Q';
@@ -26,6 +28,9 @@ const TITLE_PATTERN_KEY = 'titlePattern';
 function App() {
   const [titlePattern, setTitlePattern] = useState('');
   const titleStoreRef = useRef<LazyStore | null>(null);
+  // Phase K: перехватываем console.warn/error за сессию, чтобы уложить
+  // в diagnostic-ZIP. Ref, а не state — не нужно ре-рендерить UI.
+  const logRef = useRef<string[]>([]);
   const [captured, setCaptured] = useState<CapturedWindow | null>(null);
   const [error, setError] = useState<string | null>(null);
   const [recognized, setRecognized] = useState<Recognized[]>([]);
@@ -140,8 +145,52 @@ function App() {
     })();
   }, [titlePattern]);
 
+  // Глобальный перехват console.warn/error за сессию — все ошибки
+  // pipeline'а и Rust-команд, которые печатались в консоль, попадают в
+  // diagnostic-ZIP. Оригинальные методы вызываются как раньше, поэтому
+  // devtools продолжают работать штатно.
+  useEffect(() => {
+    const origWarn = console.warn;
+    const origError = console.error;
+    const capture = (level: 'WARN' | 'ERROR', orig: typeof console.warn) => {
+      return (...args: unknown[]) => {
+        const line = `[${new Date().toISOString()}] ${level}: ${args
+          .map((a) => (typeof a === 'string' ? a : JSON.stringify(a)))
+          .join(' ')}`;
+        logRef.current.push(line);
+        if (logRef.current.length > 500) logRef.current.shift();
+        orig(...args);
+      };
+    };
+    console.warn = capture('WARN', origWarn);
+    console.error = capture('ERROR', origError);
+    return () => {
+      console.warn = origWarn;
+      console.error = origError;
+    };
+  }, []);
+
+  async function handleExportDiagnostic() {
+    setError(null);
+    try {
+      const bytes = await buildDiagnosticZip({
+        captured,
+        corner,
+        grid,
+        recognized,
+        seriesPageCount: series.pages.length,
+        logLines: logRef.current.slice(),
+      });
+      const stamp = new Date().toISOString().replace(/[:.]/g, '-');
+      downloadZip(bytes, `inventory-parser-diagnostic-${stamp}.zip`);
+    } catch (e) {
+      setError(`Ошибка экспорта диагностики: ${e}`);
+    }
+  }
+
   return (
     <main className="container">
+      <UpdateBanner />
       <h1>Inventory Parser</h1>
 
       <section className="section">
@@ -187,6 +236,19 @@ function App() {
         <section className="section">
           <h2>Скрин окна</h2>
           <CaptureView captured={captured} corner={corner} grid={grid} />
+        </section>
+      )}
+
+      {captured && (
+        <section className="section">
+          <h2>Диагностика</h2>
+          <p className="muted">
+            ZIP с полным state сессии (скрин + оверлей + все ячейки-кропы + лог) — для отправки
+            агенту одним файлом, без множественных скринов.
+          </p>
+          <button type="button" onClick={() => void handleExportDiagnostic()}>
+            Экспортировать диагностику
+          </button>
         </section>
       )}
 
