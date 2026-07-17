@@ -80,10 +80,16 @@ jobs:
 
       - name: Build Tauri app
         run: |
+          # dev-сборка НЕ подписывает updater-артефакты: pubkey в
+          # tauri.conf.json глобальный, но приватного ключа в dev-job нет
+          # (подпись — только в release-job). Без override tauri падает
+          # «public key found, but no private key». Отключаем
+          # createUpdaterArtifacts через config-merge.
+          '{"bundle":{"createUpdaterArtifacts":false}}' | Set-Content updater-off.json
           if ('${{ env.BUILD_PROFILE }}' -eq 'debug') {
-            npm run tauri build -- --debug
+            npm run tauri build -- --debug --config updater-off.json
           } else {
-            npm run tauri build
+            npm run tauri build -- --config updater-off.json
           }
         shell: pwsh
 
