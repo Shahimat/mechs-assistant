@@ -40,7 +40,7 @@ description: |
 
   Overlay `data/overrides/items.yml` синкается из Google Sheets (лист
   `items`) через `parser--google-sheets`. Схема — TS-типы в
-  `src/types/item.ts`.
+  `apps/web/src/types/item.ts`.
 
 source_files:
   parsed: data/items.json
@@ -48,7 +48,7 @@ source_files:
   merged: .build/data/items.json # build-time
   merger: scripts/build-data/index.ts
   parser: scripts/parser-wiki/resolvers/items.ts
-  types: src/types/item.ts
+  types: apps/web/src/types/item.ts
 
 wiki_source:
   root_page_id: 3111 # оглавление «Используемые»

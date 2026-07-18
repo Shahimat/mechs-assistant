@@ -1,7 +1,7 @@
 key: mui
 rule: |
-  MUI v5+ (Core). Правила использования:
-    - обязательный ThemeProvider на корне (см. `src/index.tsx`, `src/theme.ts`);
+  MUI v7 (Core). Правила использования:
+    - обязательный ThemeProvider на корне (см. `apps/web/src/index.tsx`, `apps/web/src/theme.ts`);
     - кастомизация — через `styled()` (Emotion) или `sx` prop;
     - иконки — из `@mui/icons-material`;
     - избегать `@mui/lab` в production-коде;

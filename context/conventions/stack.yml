@@ -1,11 +1,11 @@
 key: stack
 rule: |
   Фиксированный стек проекта:
-    - React 18 (функциональные компоненты, hooks)
-    - MUI v5 (Material-UI Core) + Emotion (@emotion/react, @emotion/styled — styled components)
+    - React 19 (функциональные компоненты, hooks)
+    - MUI v7 (Material-UI Core) + Emotion (@emotion/react, @emotion/styled — styled components)
     - dnd-kit (@dnd-kit/core, @dnd-kit/sortable) — drag-and-drop сортировка карточек избранного
     - Zustand (глобальное состояние) + собственный indexedDB middleware
-    - TanStack Query v5 (подключён в bootstrap; реальных queries пока нет — см. active.todo)
+    - TanStack Query v5 (подключён в bootstrap; реальных queries пока нет — см. goal--infra)
     - TypeScript strict (см. convention `typescript`)
     - Rspack (bundler)
     - Jest + React Testing Library (см. convention `testing`)

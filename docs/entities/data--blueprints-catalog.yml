@@ -55,7 +55,7 @@ description: |
 
   Overlay `data/overrides/blueprints.yml` синкается из Google Sheets
   (лист `blueprints`) через `parser--google-sheets`. Схема — TS-типы
-  в `src/types/blueprint.ts`.
+  в `apps/web/src/types/blueprint.ts`.
 
 source_files:
   parsed: data/blueprints.json
@@ -63,7 +63,7 @@ source_files:
   merged: .build/data/blueprints.json # build-time
   merger: scripts/build-data/index.ts
   parser: scripts/parser-wiki/resolvers/blueprints.ts
-  types: src/types/blueprint.ts
+  types: apps/web/src/types/blueprint.ts
 
 wiki_source:
   root_page_id: 3034 # оглавление (бесполезное)
@@ -131,7 +131,7 @@ verified_note: |
   upgrade, 4 teleport), build-data cross-catalog resolve через
   двухпроходной merger с keyIndex, типы `Blueprint` + `BlueprintIngredient`
   + `BlueprintCategory` (+'mech' post-processing из pack по префиксу
-  `robot_` в producesKey), стор `src/stores/blueprints/store.ts`,
+  `robot_` в producesKey), стор `apps/web/src/stores/blueprints/store.ts`,
   view+card+detail+sortable, роут `/catalogs/blueprints-catalog`.
   Cross-catalog связка требует, чтобы к моменту прогона blueprints
   resolver все другие каталоги были собраны — иначе `ingredients.catalog`

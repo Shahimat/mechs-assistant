@@ -1,43 +1,58 @@
 key: monorepo-shared-config
 rule: |
-  Подпроекты `apps/*` не тащат свои копии тяжёлых build-time
-  зависимостей, но **обязаны иметь свой собственный `.npmrc`** —
-  идентичный корневому. Правило-микс: контент шарится, файлы физически
-  лежат в каждом подпроекте.
+  Репозиторий — **npm workspaces** (E1). Корневой `package.json` с
+  `private: true` и `workspaces: ["apps/*", "packages/*"]`. Один общий
+  `package-lock.json` в корне на весь монорепо; у подпроектов своего
+  lockfile нет. Подпроекты: `apps/web` (@mechs/web, публичный SPA),
+  `apps/cop` (@mechs/cop, Tauri-десктоп COP), `packages/shared`
+  (@mechs/shared, скаффолд общего слоя).
 
   Конкретика:
 
-  - **`.npmrc` / registry** — держим и в корне (`./.npmrc`), и в
-    каждом `apps/<x>/.npmrc`. Содержимое одинаковое. Причина: npm cli
-    ищет `.npmrc` только в cwd + user config + global, вверх по дереву
-    не walks-up. Если в `apps/<x>` нет своего `.npmrc`, то `npm ci`
-    оттуда упадёт с непредсказуемым registry (глобальный / зеркала /
-    прокси), и на CI-сборке (где нет `~/.npmrc`) вылетит с
-    невнятными ошибками вида «Exit handler never called!». Env-override
-    типа `NPM_CONFIG_USERCONFIG=…/.npmrc` умышленно не используем: он
-    прячет конфиг в workflow-файле, а физический `.npmrc` в подпроекте
-    — самодокументируем и не зависит от того, как именно запущена
-    сборка. При изменении root `.npmrc` — синхронизируй все копии в
-    `apps/*/.npmrc` вручную (сейчас копия одна, чек-лист лёгкий).
+  - **Установка — всегда из корня.** `npm ci` / `npm install` запускаем
+    в корне репозитория; npm поднимает все workspaces разом из единого
+    lockfile и хойстит зависимости в root `node_modules`. Никогда не
+    делаем `npm ci` из `apps/<x>` — там нет своего lockfile. CI ставит
+    так же: один `npm ci` на корне до сборки конкретного приложения
+    (`build-desktop`, `deploy`).
+
+  - **`.npmrc` / registry — только в корне** (`./.npmrc`,
+    `registry=https://registry.npmjs.org/`). Поскольку install всегда
+    идёт из корневого cwd, npm находит корневой `.npmrc` штатно; копии
+    в `apps/*/.npmrc` НЕ нужны (это было правило до перехода на
+    workspaces). Env-override типа `NPM_CONFIG_USERCONFIG` не
+    используем.
+
+  - **Общий конфиг — через `extends`, а не дублирование.** Базовый
+    `tsconfig.base.json` в корне; `apps/*/tsconfig.json` и
+    `packages/*/tsconfig.json` наследуют его через
+    `extends: "../../tsconfig.base.json"` и добавляют только своё
+    (paths, include). ESLint (flat `eslint.config.js`) и Prettier —
+    единые в корне, гоняются оттуда (`eslint .`, корневой `npm run
+    lint`/`format`).
 
   - **Тяжёлые build-time зависимости** (Sharp, ImageMagick-биндинги,
     Playwright browsers и т.п.) — держим ТОЛЬКО в root `package.json`
     (`devDependencies`), даже если скрипт живёт в `apps/<x>/scripts/`.
-    Скрипт запускается из корня (`npm run <task>` в root); пути
-    внутри резолвит от собственного `__dirname`. Причина: (1) избегаем
-    множественных копий нативных модулей; (2) не тащим Sharp/аналоги
-    в `apps/*` `npm ci` — на Windows-CI native optional deps
-    хронически ломают install. Артефакты таких скриптов, если они
+    Скрипт запускается из корня (`npm run <task>` в root); пути внутри
+    резолвит от собственного `__dirname`. Причина: (1) избегаем
+    множественных копий нативных модулей; (2) не тащим Sharp/аналоги в
+    workspace конкретного приложения — на Windows-CI native optional
+    deps хронически ломают install. Артефакты таких скриптов, если они
     детерминированные (зависят только от версионируемых входов) —
     коммитятся в git, а не генерятся на CI (пример —
-    `apps/inventory-parser/src/generated/phash-index.json`).
+    `apps/cop/src/generated/phash-index.json`, скрипт
+    `apps/cop/scripts/build-phash-index.mjs` запускается корневым
+    `npm run build:phash`).
 
-  - **Lint / formatter / базовый tsconfig** — если появится второе
-    приложение, ESLint/Prettier/базовый tsconfig шарить из корня
-    через `extends: "../../<root>.json"`. Не дублировать конфиги
-    ради «локальности».
+  Root `package.json` держит data-pipeline тулинг (tsx, cheerio,
+  googleapis, sharp, js-yaml, dotenv) + оркестрирующие скрипты
+  (`build:data`, `sync:*`, `setup:*`, `dev`/`build`/`test` с
+  `-w @mechs/web`). Runtime-зависимости приложения (React, MUI,
+  @tauri-apps/*, tesseract.js и т.п.) — в `package.json` этого
+  приложения.
 
-  Проверка при добавлении новой зависимости в `apps/<x>/package.json`:
-  спроси — «это runtime-зависимость самого приложения или build-time
-  инструмент?». Build-time инструмент → в root. Runtime приложения →
-  локально.
+  Проверка при добавлении новой зависимости: спроси — «это
+  runtime-зависимость конкретного приложения или общий build-time
+  инструмент / data-pipeline?». Build-time / pipeline → в root.
+  Runtime приложения → в `apps/<x>/package.json`.

@@ -43,5 +43,5 @@ verified_at: 2026-07-14
 verified_note: |
   Реализация: `BlueprintDetail.tsx` + подключение `useDeepLinkOpen` в
   `BlueprintsCatalog.tsx`. Ингредиенты — через shared
-  `IngredientMiniCard` из `src/components/catalog/`. Deep-link
+  `IngredientMiniCard` из `apps/web/src/components/catalog/`. Deep-link
   протестирован через full build.

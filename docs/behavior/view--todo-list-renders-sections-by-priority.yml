@@ -41,7 +41,7 @@ verified_note: |
   Реализация: `TodoList.tsx` (4 секции по фиксированному массиву
   `TODO_PRIORITIES`, пустые секции скрыты), `TodoCard.tsx` (chip
   цвет по статусу через STATUS_COLOR), кнопка «Предложить задачу»
-  → TODO_SHEET_URL из `src/config/links.ts`. Плитка «Планы
+  → TODO_SHEET_URL из `apps/web/src/config/links.ts`. Плитка «Планы
   разработки» на HomePage с placeholder-иконкой `Checklist`
-  (замена — из raw/4-icons-on-main-page.png, см. active.todo).
+  (замена — из raw/4-icons-on-main-page.png, см. goal--catalogs).
   Роут `/todo` в router.tsx. Build зелёный.

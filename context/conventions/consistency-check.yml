@@ -9,8 +9,8 @@ rule: |
       без пересмотра verified-статуса;
     - manual ссылается на удалённое / переименованное поле entity;
     - одна convention противоречит другой convention;
-    - `context/views/active.todo` содержит задачу без ссылки на
-      конкретный manual + пункт (при наличии manuals);
+    - задача в файле цели (`goal--<key>.yaml`) содержит процедурный шаг
+      без ссылки на конкретный manual + пункт (при наличии manuals);
     - `features_enabled` в entity не отражён ни в одной behavior;
     - имя файла и `id` внутри YAML не совпадают;
     - запись в `context/index.yml` расходится с фактическим наличием /

@@ -31,7 +31,7 @@ source_files:
   merged: .build/data/todos.json # build-time
   merger: scripts/build-data/index.ts
   parser: scripts/parser-google-sheets/index.ts # расширен обработкой листа `todo`
-  types: src/types/todo.ts
+  types: apps/web/src/types/todo.ts
   setup: scripts/setup-todo-sheet/index.ts # идемпотентная настройка заголовков + dropdown
 
 sheet:

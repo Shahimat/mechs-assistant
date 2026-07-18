@@ -31,7 +31,7 @@ description: |
 
   Overlay `data/overrides/components.yml` синкается из Google Sheets
   (лист `components`) через `parser--google-sheets`. Схема — TS-типы
-  в `src/types/component.ts`.
+  в `apps/web/src/types/component.ts`.
 
 source_files:
   parsed: data/components.json
@@ -39,7 +39,7 @@ source_files:
   merged: .build/data/components.json # build-time
   merger: scripts/build-data/index.ts
   parser: scripts/parser-wiki/resolvers/components.ts
-  types: src/types/component.ts
+  types: apps/web/src/types/component.ts
 
 wiki_source:
   page_ids: [3955]

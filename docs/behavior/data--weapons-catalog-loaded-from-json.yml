@@ -30,7 +30,7 @@ verified: true
 verified_at: 2026-07-12
 verified_note: |
   Проверено чтением кода и прогоном парсера:
-  `useWeaponsStore.initializeWeapons` (`src/stores/weapons/store.ts:48-63`)
+  `useWeaponsStore.initializeWeapons` (`apps/web/src/stores/weapons/store.ts:48-63`)
   импортирует данные из `@build/data/weapons.json` (merged JSON) и
   синхронно ставит `weapons`, `isLoading=false`, `error=null` через
   try/catch. `WeaponsCatalog.tsx:34-38` вызывает `initializeWeapons()`

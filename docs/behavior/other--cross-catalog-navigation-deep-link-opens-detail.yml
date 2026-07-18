@@ -45,7 +45,7 @@ scenarios:
 verified: true
 verified_at: 2026-07-14
 verified_note: |
-  Реализация: `src/components/catalog/hooks/useDeepLinkOpen.ts`.
+  Реализация: `apps/web/src/components/catalog/hooks/useDeepLinkOpen.ts`.
   Подключён во всех 10 карточных каталогов (Blueprints/Weapons/Mechs/
   Ammo/Items/Ore/Components/Loot/Skills + EquipmentSubCatalog — покрывает
   7 UI-подкаталогов). getKey/onOpen/onClose хранятся в ref — эффект не

@@ -9,7 +9,7 @@ scenarios:
     when: файл `store.ts` импортирует `skillsData` из `@build/data/skills.json`
       и приводит его к `Skill[]`
     then: |
-      сборка проходит без ошибок типа, `Skill`-типы из `src/types/skill.ts`
+      сборка проходит без ошибок типа, `Skill`-типы из `apps/web/src/types/skill.ts`
       применимы ко всем 12 записям.
 
   - given: в JSON появилась запись без `kind` или `affects`
@@ -27,4 +27,4 @@ scenarios:
 verified: true
 verified_at: 2026-07-14
 verified_note: |
-  Проверено: `npm run build` и `tsc --noEmit` проходят без ошибок типа. `Skill`/`SkillKind` описаны в `src/types/skill.ts`. Все 12 записей содержат `key`/`name`/`kind`/`description`/`affects`. У 7 ability заполнен `perStatPercent` (5 skill — без него, `perStatPercent?: number` опциональное). Оговорка про runtime-валидацию та же, что для всех data-каталогов.
+  Проверено: `npm run build` и `tsc --noEmit` проходят без ошибок типа. `Skill`/`SkillKind` описаны в `apps/web/src/types/skill.ts`. Все 12 записей содержат `key`/`name`/`kind`/`description`/`affects`. У 7 ability заполнен `perStatPercent` (5 skill — без него, `perStatPercent?: number` опциональное). Оговорка про runtime-валидацию та же, что для всех data-каталогов.

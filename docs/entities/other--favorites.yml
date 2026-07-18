@@ -13,7 +13,7 @@ description: |
   избранному может быть добавлена позже (MVP2+).
 
 source_files:
-  store: src/stores/robots/store.ts               # поле `favorites: string[]`, action `toggleFavorite`
+  store: apps/web/src/stores/robots/store.ts               # поле `favorites: string[]`, action `toggleFavorite`
 
 state:
   storage_key: favorites                # ключ в zustand-состоянии и в indexedDB

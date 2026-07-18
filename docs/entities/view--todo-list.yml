@@ -19,21 +19,21 @@ description: |
   В шапке страницы — кнопка «Предложить задачу» с внешней ссылкой
   на Google Sheets (target=_blank). Ссылка — из
   `context/project.yml::external_links.todo_sheet`, в бандл попадает
-  через `src/config/links.ts`.
+  через `apps/web/src/config/links.ts`.
 
   Точка входа — плитка «Планы разработки» на HomePage (иконка
-  временно placeholder, замена — см. active.todo, задача про
+  временно placeholder, замена — см. goal--catalogs, задача про
   4-icons-on-main-page).
 
   Данные читает из `data--todo-list` через `useTodosStore`. Стор
   простой: `todos: Todo[]` + `initializeTodos()`, без favorites/DnD.
 
 source_files:
-  page: src/pages/TodoPage.tsx
-  view: src/components/todos/TodoList.tsx
-  card: src/components/todos/TodoCard.tsx
-  store: src/stores/todos/store.ts
-  links_config: src/config/links.ts
+  page: apps/web/src/pages/TodoPage.tsx
+  view: apps/web/src/components/todos/TodoList.tsx
+  card: apps/web/src/components/todos/TodoCard.tsx
+  store: apps/web/src/stores/todos/store.ts
+  links_config: apps/web/src/config/links.ts
 
 features_enabled:
   - grouped-by-priority

@@ -1,0 +1,49 @@
+[package]
+name = "mechs-cop"
+version = "0.1.0"
+description = "Clan Operations Platform (COP) — десктоп-клиент клана «Мехи.Земля»"
+authors = ["Gevorg Nakhapetyan <ngs22071993@gmail.com>"]
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[lib]
+# The `_lib` suffix may seem redundant but it is necessary
+# to make the lib name unique and wouldn't conflict with the bin name.
+# This seems to be only an issue on Windows, see https://github.com/rust-lang/cargo/issues/8519
+name = "mechs_cop_lib"
+crate-type = ["staticlib", "cdylib", "rlib"]
+
+[build-dependencies]
+tauri-build = { version = "2", features = [] }
+
+[dependencies]
+tauri = { version = "2", features = [] }
+tauri-plugin-global-shortcut = "2"
+tauri-plugin-store = "2"
+# Phase L2: auto-updater через GitHub Releases. Endpoint + pubkey
+# сконфигурированы в tauri.conf.json, приватный ключ подписи и его
+# пароль — GitHub secrets (TAURI_SIGNING_PRIVATE_KEY[_PASSWORD]).
+tauri-plugin-updater = "2"
+# Нужен для `relaunch()` после установки апдейта.
+tauri-plugin-process = "2"
+# Диалог сохранения файла — юзер сам выбирает путь для diagnostic-ZIP
+# (раньше уходил в Downloads вслепую). Запись байтов делает своя
+# Rust-команда write_file_base64, fs-плагин со скоупами не нужен.
+tauri-plugin-dialog = "2"
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+# Снимки окон по hwnd/title без активации. Кросс-платформ, работает на
+# Windows/macOS/Linux — на Mac позволит хотя бы дебажить UI, реальный
+# use case (окно Windows-игры) тестируется на Windows.
+xcap = "0.6"
+# Работа с изображениями (crop, decode/encode) для последующего
+# template matching + разбиения на ячейки сетки инвентаря.
+image = "0.25"
+# Async-runtime — нужен для Tauri команд, которые вызывают долгие
+# операции (screenshot, image processing).
+tokio = { version = "1", features = ["full"] }
+# PNG кодирование → base64 → передача снимков окна из Rust в React (WebView).
+base64 = "0.22"
+# Template matching для Phase D — поиск UI-рамки инвентаря на скрине.
+imageproc = "0.25"

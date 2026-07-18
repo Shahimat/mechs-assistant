@@ -11,13 +11,13 @@ rule: |
     - `docs/entities/*.yml` и `docs/behavior/*.yml` по `namespace`
       задачи (выбранные через индекс);
     - `docs/manuals/*.md` — только для процедурных задач;
-    - `context/views/active.todo` — только в сценариях `report` /
-      `execute`.
+    - `context/views/goals.yaml` + релевантные `goal--<key>.yaml` —
+      только в сценариях `report` / `execute` / `plan`.
 
   Не делать:
     - полного обхода `docs/` или `context/` подряд;
     - чтения всех behavior подряд «на всякий случай»;
-    - чтения `active.todo` вне сценариев `report` / `execute`;
+    - чтения файлов целей вне сценариев `report` / `execute` / `plan`;
     - чтения behavior / entity вне релевантного namespace без причины.
 
   Если контекст задачи неоднозначен — сначала спросить юзера, а не

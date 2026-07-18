@@ -80,7 +80,7 @@ URL сайта будет `<username>.github.io/<repo-name>/`. Чтобы пол
 1. [vercel.com/new](https://vercel.com/new) → импортировать из GitHub.
 2. **Framework Preset:** Other.
 3. **Build Command:** `npm run build`.
-4. **Output Directory:** `dist`.
+4. **Output Directory:** `apps/web/dist`.
 5. **Deploy**.
 
 `publicPath: '/mechs/'` настраивается в rspack config.
@@ -218,11 +218,15 @@ on:
     branches: [main]
     paths:
       - 'data/**'
-      - 'src/**'
+      - 'assets/**'
+      - 'apps/web/**'
+      - 'packages/shared/**'
+      - 'scripts/build-data/**'
+      - 'scripts/catalogs.config.ts'
       - 'package.json'
       - 'package-lock.json'
-      - 'rspack.config.*'
-      - 'tsconfig.json'
+      - 'tsconfig.base.json'
+      - '.github/workflows/deploy.yml'
   workflow_dispatch:
 
 concurrency:
@@ -230,7 +234,7 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
-  deploy:
+  build-and-deploy:
     runs-on: ubuntu-latest
     permissions:
       contents: read
@@ -243,23 +247,85 @@ jobs:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with:
-          node-version: '20'
+          node-version: '22'
+          cache: 'npm'
 
       - name: Install dependencies
-        run: npm ci
+        run: npm ci --foreground-scripts
 
       - name: Build
         run: npm run build
 
-      - name: Upload artifact
+      - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: dist
+          path: apps/web/dist
 
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
 ```
+
+#### 6d. `.github/workflows/merge-develop-to-main.yml`
+
+Мержит `develop → main` через `git merge --no-ff`. Триггер — только
+`workflow_dispatch` (кнопка); автомерджа по крону нет (снят осознанно —
+merge в main запускается вручную). Early-exit, если в `develop` нет
+новых коммитов относительно `main` — не создаёт пустой merge-commit и
+не триггерит deploy. При конфликте job падает — разрешать локально
+(`git checkout develop && git merge origin/main`, push, снова кнопку).
+
+```yaml
+name: merge-develop-to-main
+on:
+  workflow_dispatch:
+
+jobs:
+  merge:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          ref: main
+          token: ${{ secrets.MERGE_PAT }}
+      - name: Merge develop
+        run: |
+          git config user.name "mechs-sync-bot"
+          git config user.email "sync-bot@users.noreply.github.com"
+          if [ -z "$(git log main..origin/develop --oneline)" ]; then
+            echo "develop без новых коммитов — выходим"; exit 0
+          fi
+          git merge --no-ff origin/develop -m "merge: develop → main"
+          git push origin main
+```
+
+### 7. Ветка `develop` и защита `main`
+
+Рабочая модель: дефолтная ветка разработки — `develop`, `main` = «то,
+что задеплоено». В `main` попадаем только через PR (веб-UI) или через
+`merge-develop-to-main.yml`.
+
+**Ruleset на `main`** (**Settings → Rules → Rulesets → New branch
+ruleset**):
+
+- **Enforcement status: Active**, target branch — `main`.
+- **Require a pull request before merging** (Required approvals = 0).
+- **Restrict deletions** + **Block force pushes**.
+- **Bypass list**: роль `Write` со статусом **Always allow**. Под неё
+  попадает автор-admin (Write+ автоматически) и `GITHUB_TOKEN`.
+
+Эффект: обычный collaborator с Write **вынужден** идти через PR;
+автор-admin технически может push'ить в `main`, но по договорённости
+работает через `develop → PR → main`.
+
+**Secret `MERGE_PAT`.** Workflow'ы, пушащие в `main` напрямую
+(`sync-sheets`, `merge-develop-to-main`), используют fine-grained PAT
+(scope `Contents: Read & write`) вместо `GITHUB_TOKEN`: push под PAT
+идёт от имени автора-человека и попадает под Write-bypass, а
+`GITHUB_TOKEN` работает под `github-actions[bot]`, которого bypass не
+покрывает. Завести: **Settings → Developer settings → Fine-grained
+tokens**, положить в **Secrets → Actions** как `MERGE_PAT`.
 
 ## Проверка
 

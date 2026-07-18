@@ -1,0 +1,32 @@
+key: catalogs
+title: Доводка справочного слоя каталогов
+status: active
+
+why: |
+  MVP1 (11 data-сущностей + 16 UI-роутов + cross-catalog навигация: deep-link +
+  мини-карточки) закрыт 2026-07-14. Остаётся живой «хвост»: наполнение overlay
+  реальными уточнениями, доуточнение неоднозначностей автопарса, валидация
+  схем — всё это повышает точность каталогов относительно вики.
+
+description: |
+  Источник правды overlay — Google Sheets (одна таблица, лист на каталог) →
+  parser-google-sheets тянет через API → data/overrides/<catalog>.yml (авто-кэш
+  в репе, не редактируется вручную) → build-time merge поверх parsed-JSON.
+  Наполнение = ручная работа редакторов (2 разработчика + доверенные игроки).
+  Детали конвейера — convention data-overlay.
+
+tasks:
+  blocker: []
+  high: []
+
+  medium:
+    - 'наполнять overlay в Google Sheets для weapons/equipment/items/components/loot/ore — сейчас все overlay пустые (0 with overlay); прогонять sync:sheets и вносить уточнения; повышение точности каталогов относительно вики → фаза feat → нет'
+    - 'вынести CATEGORY_LABELS + LABEL_TO_CATEGORY из WeaponsCatalog.tsx в общую утилиту apps/web/src/utils/weaponCategories.ts (сейчас дублируется в WeaponsCatalog и AmmoCatalog) → фаза refactor → нет'
+
+  low:
+    - "blueprints: финальная привязка producesKey к конкретным вариантам целей через overlay — parser даёт translit имени без резолва ambiguity (Чертеж Пулемёт → 'pulemyot', но в weapons 15+ пулемётов разного уровня); редактор указывает точную привязку через Sheets → фаза feat → нет"
+    - 'добавить недостающих мехов через overlay (Грач — свежий, отсутствует в вики; Снеговик/Стужа — сезонные, страница вики 404) → нужен ручной ввод → нет'
+    - 'TS-приведение robotsData as Robot[] не даёт runtime-валидации — рассмотреть zod/valibot для JSON-схемы (актуально для всех 11 data-сущностей) → нет'
+    - 'заменить placeholder-иконку плитки «Планы разработки» на HomePage — финальный ассет из assets/raw/4-icons-on-main-page.png → фаза feat → нет'
+
+depends_on: []

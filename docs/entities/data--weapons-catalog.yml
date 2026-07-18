@@ -39,7 +39,7 @@ description: |
   добавлять и полностью новые сущности — merger заводит запись, даже
   если ключа нет в parsed (см. convention `data-overlay`, раздел
   «Что живёт в overlay», пункт про новые сущности). Схема — TS-типы
-  в `src/types/weapon.ts`.
+  в `apps/web/src/types/weapon.ts`.
 
   **Трансформация weapon (`transformsFrom`).** Большинство weapon'ов
   на вики имеют цепочку преобразований: `Мортира ← Мортира 5 ← Мортира
@@ -57,7 +57,7 @@ source_files:
   merged: .build/data/weapons.json # build-time
   merger: scripts/build-data/index.ts
   parser: scripts/parser-wiki/resolvers/weapons.ts # специфичный резолвер
-  types: src/types/weapon.ts
+  types: apps/web/src/types/weapon.ts
 
 wiki_source:
   root_page_id: 3341 # оглавление «Вооружение»

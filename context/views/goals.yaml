@@ -1,0 +1,85 @@
+# Индекс целей проекта.
+#
+# Порядок записи ниже = приоритет ЦЕЛИ (сверху — важнее / раньше по времени).
+# Каждая цель — отдельный файл goal--<key>.yaml в этой же папке.
+# Приоритет задач ВНУТРИ цели = их порядок в секции (blocker/high/medium/low),
+# «фаз»-нумерации больше нет — очередь задаётся положением в списке.
+#
+# ПРОГРАММЫ. Крупная инициатива с общей техбазой и набором подцелей заводится как
+# программа — файл program--<key>.yaml (kind: program) с собственным why +
+# description + платформенным слоем задач (tasks). Её подцели — обычные
+# goal--<key>.yaml с полем `program: <key>`; в индексе ниже они вложены под
+# `subgoals:` записи программы, порядок вложенности = их приоритет. Устройство —
+# convention `goals`, секция «Программы».
+#
+# Жизненный цикл цели: цель решена → запись в CHANGELOG.md → удалить
+# goal--<key>.yaml и вычеркнуть отсюда. Статуса `done` не бывает —
+# решённой цели в структуре не существует. Живые статусы:
+#   active   — работаем сейчас / есть незакрытые задачи в работе;
+#   planned  — согласована, но ещё не стартовала (ждёт предшественников);
+#   paused   — сознательно отложена.
+#
+# Правила системы — convention `goals`. Кросс-целевая непротиворечивость
+# (нельзя «настроить X» в одной цели и «убрать X» в другой) — convention
+# `goal-consistency`, прогон обязателен при создании цели и уточнении плана.
+
+goals:
+  - key: cop
+    kind: program
+    file: program--cop.yaml
+    status: active
+    one_liner: COP — единый Tauri-инструмент клана (техбаза SPA+Tauri+SQLite+KV-sync) с набором подцелей; порядок подцелей ниже = приоритет.
+    subgoals:
+      - key: cop-assistant
+        file: goal--cop-assistant.yaml
+        status: active
+        one_liner: Помощник по рутине игры (хоткеи, автосброс лута, автопополнение боеприпасов, автоподсчёт) + парсер инвентаря.
+      - key: cop-warehouse
+        file: goal--cop-warehouse.yaml
+        status: planned
+        one_liner: Клановый склад (WMS) — внесение через парсер, master SQLite + KV-sync, custody, заявки на выдачу.
+      - key: cop-personal-planner
+        file: goal--cop-personal-planner.yaml
+        status: planned
+        one_liner: Индивидуальный планировщик — личные задачи/накопления/расписание, локально, без клановой синхронизации.
+      - key: cop-debts
+        file: goal--cop-debts.yaml
+        status: planned
+        one_liner: Тет-а-тет учёт долгов кто→кому с двусторонним подтверждением, синхронизация через платформу.
+      - key: cop-calc-integration
+        file: goal--cop-calc-integration.yaml
+        status: planned
+        one_liner: Мост калькуляторы ↔ COP — автоподстановка остатков, goal_requirements, сохранение расчёта как клановой цели.
+      - key: cop-team-goals
+        file: goal--cop-team-goals.yaml
+        status: planned
+        one_liner: Общекомандные цели — прогресс + вклад мемберов с usefulness-весом, поверх склада и калькуляторов.
+      - key: cop-voice-chat
+        file: goal--cop-voice-chat.yaml
+        status: planned
+        one_liner: Общекомандный войс с чатом — исследование realtime-транспорта (WebRTC/SFU), автономно от KV-sync.
+
+  - key: catalogs
+    file: goal--catalogs.yaml
+    status: active
+    one_liner: Доводка справочного слоя — наполнение overlay, доуточнение каталогов, валидация схем.
+
+  - key: infra
+    file: goal--infra.yaml
+    status: active
+    one_liner: Инфраструктура и CI — задачи, всплывающие по факту (updater-ключ, бэкапы, техдолг сборки).
+
+  - key: calculator
+    file: goal--calculator.yaml
+    status: planned
+    one_liner: Калькулятор прокачки (MVP2) — что нужно, чтобы прокачать меха до уровня N; движок для COP-целей.
+
+  - key: combat-calculator
+    file: goal--combat-calculator.yaml
+    status: planned
+    one_liner: Боевой калькулятор (MVP4) — выживаемость / исход боя, spec-sheet + radar.
+
+  - key: improvements
+    file: goal--improvements.yaml
+    status: planned
+    one_liner: Улучшения и полировка (nice-to-have) — отложенные UX-идеи и косметика без своей продуктовой цели.

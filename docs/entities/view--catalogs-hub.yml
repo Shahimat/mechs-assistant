@@ -6,7 +6,7 @@ version: "0.x"
 description: |
   Хаб каталогов (`/catalogs`). Сетка из 11 квадратных плиток
   (`other--tile`), каждая — переход в конкретный каталог. У каждой
-  плитки — тематическая webp-иконка из `assets/images/catalog-icons/`.
+  плитки — тематическая webp-иконка из `apps/web/assets/images/catalog-icons/`.
 
   На момент 2026-07-12 работает только каталог мехов
   (`/catalogs/mechs-catalog` → `view--robots-catalog`); остальные 10
@@ -20,8 +20,8 @@ description: |
   `other--tile` / `TileGrid` переиспользуются напрямую.
 
 source_files:
-  page: src/pages/CatalogsHubPage.tsx
-  stub: src/pages/catalogs/CatalogStubPage.tsx    # универсальная заглушка для 10 каталогов в разработке
+  page: apps/web/src/pages/CatalogsHubPage.tsx
+  stub: apps/web/src/pages/catalogs/CatalogStubPage.tsx    # универсальная заглушка для 10 каталогов в разработке
 
 features_enabled:
   - tiles-grid

@@ -250,7 +250,11 @@ conventions:
   - key: code-style
     one_liner: Стиль кода — Prettier + ESLint (2 пробела, одинарные кавычки, trailing commas).
   - key: completeness
-    one_liner: Новая сущность/правило = сразу файл + двусторонние ссылки + index + active.todo.
+    one_liner: Новая сущность/правило = сразу файл + двусторонние ссылки + index + цель (goals).
+  - key: goals
+    one_liner: Система целей — internal-очередь работы (goals.yaml индекс + goal--<key>.yaml, крупные инициативы — program--<key>.yaml с подцелями). Приоритет = порядок; статусы active/planned/paused; решённая уходит в CHANGELOG и удаляется.
+  - key: goal-consistency
+    one_liner: Кросс-целевая проверка непротиворечивости при создании/уточнении цели (конфликт интентов, дубли задач, циклы и согласованность depends_on, приоритеты).
   - key: consistency-check
     one_liner: Чек-лист непротиворечивости перед сохранением сущности (ссылки, verified, имена).
   - key: context-minimization
@@ -266,17 +270,17 @@ conventions:
   - key: language
     one_liner: Русский для содержательной части; английский — только идентификаторы/YAML-ключи/имена.
   - key: mui
-    one_liner: MUI v5+ Core, ThemeProvider на корне, кастомизация через `styled()` или `sx`.
+    one_liner: MUI v7 Core, ThemeProvider на корне, кастомизация через `styled()` или `sx`.
   - key: no-code-comments
     one_liner: Комментарии в коде по умолчанию не пишем; только короткие «почему» для скрытых инвариантов.
   - key: styling
     one_liner: Стили компонентов — CSS-модули (`*.module.css`) рядом с TSX; `sx` только для крайних случаев.
   - key: theme-colors
-    one_liner: Цвета в одном месте — `src/theme.ts` через MUI CssVars; в CSS доступ через `var(--mui-palette-*)`.
+    one_liner: Цвета в одном месте — `apps/web/src/theme.ts` через MUI CssVars (createTheme+ThemeProvider); в CSS доступ через `var(--mui-palette-*)`.
   - key: todo-split
-    one_liner: Две системы задач — active.todo (dev/internal, привязана к workflow.md) и Sheets `todo`/страница /todo (product-facing, transparency). Не смешивать. Агент читает обе при report-сценариях.
+    one_liner: Две системы задач — структура целей (dev/internal, goals.yaml + goal--<key>.yaml) и Sheets `todo`/страница /todo (product-facing, transparency). Не смешивать. Агент читает обе при report-сценариях.
   - key: monorepo-shared-config
-    one_liner: apps/* держат свой .npmrc (копия root — npm не walks-up) и НЕ тащат тяжёлые build-time зависимости (Sharp живёт только в root).
+    one_liner: npm workspaces — единый root package-lock.json + .npmrc, npm ci из корня ставит все apps/*; общий tsconfig.base.json через extends; тяжёлый build-time (Sharp) только в root.
   - key: mui-imports
     one_liner: Именованные импорты MUI из корня пакета для tree-shaking.
   - key: openness
@@ -284,11 +288,11 @@ conventions:
   - key: ui-no-engineering-leak
     one_liner: В UI не пропускаем инженерную кухню (data--*, «MVP2», overlay, TS-типы) — юзер видит факты игры, служебное живёт в docs/*.yml.
   - key: react
-    one_liner: React 18+, только функциональные компоненты + hooks.
+    one_liner: React 19, только функциональные компоненты + hooks.
   - key: rspack
-    one_liner: Rspack — сборщик и dev-сервер, конфиг ESM, порт 3000, swc-loader.
+    one_liner: Rspack — сборщик и dev-сервер обоих приложений (свой конфиг у каждого), ESM, SPA порт 3000 / COP 1420, swc-loader.
   - key: stack
-    one_liner: 'Фиксированный стек — React 18, MUI v5, Zustand, TanStack Query, Rspack, Jest+RTL.'
+    one_liner: 'Фиксированный стек — React 19, MUI v7, Zustand, TanStack Query, Rspack, Jest+RTL.'
   - key: tanstack-query
     one_liner: TanStack Query v5 подключён в bootstrap; реальных queries пока нет.
   - key: testing
@@ -298,7 +302,7 @@ conventions:
   - key: verification
     one_liner: Механика verified в docs/behavior/*.yml — ставить/сбрасывать по правилам контракта.
   - key: zustand
-    one_liner: Zustand — единственное глобальное состояние клиента; стор `src/stores/robots/store.ts`.
+    one_liner: Zustand — единственное глобальное состояние клиента; стор `apps/web/src/stores/robots/store.ts`.
 
 # Ручные процедуры для человека.
 manuals:
@@ -311,4 +315,4 @@ manuals:
   - id: design-clan-warehouse-schema
     one_liner: Учебная задача для начинающего backend-разработчика — спроектировать реляционную схему БД для кланового склада (постановка + требования + вопросы для размышления + критерии оценки, без готовой схемы).
   - id: setup-tauri-updater-signing
-    one_liner: Одноразовая генерация Ed25519-ключпары для подписи Tauri auto-updater'а inventory-parser'а, заливка приватной части в GitHub secrets, публичной — в tauri.conf.json.
+    one_liner: Одноразовая генерация Ed25519-ключпары для подписи Tauri auto-updater'а COP (apps/cop), заливка приватной части в GitHub secrets, публичной — в tauri.conf.json.

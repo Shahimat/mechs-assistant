@@ -10,7 +10,7 @@ scenarios:
       `@build/data/ammo.json` и приводит его к `Ammo[]`
     then: |
       сборка проходит без ошибок типа, `Ammo`-типы из
-      `src/types/ammo.ts` применимы ко всем записям (`key`, `name`,
+      `apps/web/src/types/ammo.ts` применимы ко всем записям (`key`, `name`,
       `model`, `family`, `compatibleCategories`, `stats.*`).
 
   - given: в JSON появилась запись, у которой отсутствует обязательное
@@ -32,4 +32,4 @@ scenarios:
 verified: true
 verified_at: 2026-07-13
 verified_note: |
-  Проверено: `npm run build` и `tsc --noEmit` проходят без ошибок типа. `Ammo.powerBonus?: number` описан в `src/types/ammo.ts`. Прогон `sync:wiki ammo` → 58/58 записей получили `powerBonus`: 14 «Стандарт» = 0, остальные +10/+15/+20/+25/+30/+35/+40. Оговорка про runtime-валидацию та же, что для robots/weapons/equipment (assert `as Ammo[]`, не zod).
+  Проверено: `npm run build` и `tsc --noEmit` проходят без ошибок типа. `Ammo.powerBonus?: number` описан в `apps/web/src/types/ammo.ts`. Прогон `sync:wiki ammo` → 58/58 записей получили `powerBonus`: 14 «Стандарт» = 0, остальные +10/+15/+20/+25/+30/+35/+40. Оговорка про runtime-валидацию та же, что для robots/weapons/equipment (assert `as Ammo[]`, не zod).

@@ -1,12 +1,17 @@
 key: rspack
 rule: |
-  Rspack — сборщик и dev-сервер.
-    - Конфиг — `rspack.config.js` (ESM, `defineConfig` из `@rspack/cli`).
-    - dev: `npm run dev` → порт 3000, hot reload через
-      `@rspack/plugin-react-refresh`.
-    - production: `npm run build` → `dist/`, чистится через `clean: true`.
+  Rspack — сборщик и dev-сервер обоих приложений (у каждого свой
+  конфиг).
+    - Конфиг — `apps/<x>/rspack.config.js` (ESM, `defineConfig` из
+      `@rspack/cli`). SPA — `apps/web/rspack.config.js`, COP —
+      `apps/cop/rspack.config.js`.
+    - dev SPA: `npm run dev` (в корне) → порт 3000; dev COP: `npm run
+      dev -w @mechs/cop` → порт 1420 (его слушает Tauri). Hot reload —
+      через `@rspack/plugin-react-refresh`.
+    - production: `npm run build` → `apps/web/dist/` (SPA) /
+      `apps/cop/dist/` (COP, дальше упаковывается Tauri).
     - TS/TSX — `builtin:swc-loader` (без `ts-loader`).
-    - Alias `@` → `./src`.
+    - Alias `@` → `apps/web/src` (в SPA-конфиге).
     - `optimization.usedExports + sideEffects` включены — MUI
       tree-shaking работает при именованных импортах (см. convention
       `mui-imports`).

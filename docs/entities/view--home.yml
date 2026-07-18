@@ -15,7 +15,7 @@ description: |
   плиток». Отличие только в наборе плиток.
 
 source_files:
-  page: src/pages/HomePage.tsx
+  page: apps/web/src/pages/HomePage.tsx
 
 features_enabled:
   - tiles-grid            # сетка Tile через TileGrid

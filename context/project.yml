@@ -1,5 +1,5 @@
 name: mechs-assistant
-description: WEB-ассистент игры Мехи.Земля. Карточный каталог мехов (MVP1) + фундамент под расширение на 10 других каталогов и калькулятор прокачки.
+description: Ассистент игры Мехи.Земля — монорепо (npm workspaces). apps/web — публичный WEB-справочник (карточные каталоги + фундамент под калькулятор прокачки); apps/cop — десктоп-клиент клана (Tauri, COP); packages/shared — скаффолд общего слоя.
 author:
   name: Gevorg Nakhapetyan
   email: ngs22071993@gmail.com
@@ -7,7 +7,7 @@ author:
 
 # Продуктовое позиционирование. Задаёт рамку для решений «нужно/не
 # нужно» (i18n, аналитика, онбординг, публичный хостинг) и приоритеты
-# MVP. Полный план развития — в context/roadmap.md.
+# MVP. Полный план развития — в context/views/goals.yaml + goal--<key>.yaml.
 product:
   audience: |
     Микро-сообщество игры Мехи.Земля: сейчас порядка 5 человек, потенциально
@@ -17,8 +17,8 @@ product:
   positioning: |
     Ассистент решений для игроков и кланов Мехи.Земля. Не «энциклопедия
     характеристик», а инструмент для конкретных задач: калькулятор прокачки,
-    боевой калькулятор, учёт клановых ресурсов. Развивается по MVP-эпикам,
-    см. context/roadmap.md.
+    боевой калькулятор, учёт клановых ресурсов. Развивается по целям,
+    см. context/views/goals.yaml.
 
 # Синхронизация с источниками (см. workflow.md, раздел «Синхронизация с
 # источниками»). Все SHA-256 — hex-строка. Fetch — только curl, WebFetch
@@ -33,17 +33,17 @@ sync:
 
 stack:
   language: TypeScript (strict)
-  ui: React 18 + MUI v5 + Emotion (styled components)
+  ui: React 19 + MUI v7 + Emotion (styled components)
   dnd: dnd-kit — drag-and-drop сортировка избранных карточек
   state: Zustand + собственный indexedDB middleware
-  data_layer: TanStack Query (v5) — подключён в bootstrap, реальных queries пока нет (см. active.todo, решить судьбу)
+  data_layer: TanStack Query (v5) — подключён в bootstrap, реальных queries пока нет (см. goal--infra, решить судьбу)
   bundler: Rspack
   testing: Jest + React Testing Library
   lint: ESLint (@typescript-eslint) + Prettier
   deploy: GitHub Pages (deploy-pages@v4) под префиксом /mechs-assistant/
 
 runtime:
-  dev_port: 3000
+  dev_port: 3000 # apps/web (SPA); apps/cop (Tauri) — 1420
   dev_server: rspack serve
   indexeddb:
     db_name: mechs-assistant
@@ -52,14 +52,14 @@ runtime:
     persisted_keys: [favorites]
 
 paths:
-  source: src/
+  source: apps/web/src/ # SPA-справочник; десктоп-клиент — apps/cop/src/, общий слой — packages/shared/src/
   data_processed: data/robots.json
   data_raw: raw-data/ # gitignored, HTML-выгрузки со страниц вики (исходники для robots.json)
   docs_entities: docs/entities/
   docs_behavior: docs/behavior/
   conventions: context/conventions/
   workflow: context/workflow.md
-  active_todo: context/views/active.todo
+  goals: context/views/goals.yaml
 
 namespaces:
   - catalog # каталоги, парсеры (wiki + Sheets), build-time merger
@@ -83,7 +83,7 @@ external_links:
   upgrade_calculator: https://new.mechs.su/help/upgrade-robots # референс онлайн-калькулятора прокачки для MVP2, клиентский Redux
   mechs_earth_system: https://github.com/MechsEarth/System # community-maintained база знаний ЕСИ, возможный вторичный источник (не первичный)
   # todo_sheet: URL публичного листа `todo` в overlay-spreadsheet — не в git.
-  # Собирается в src/config/links.ts из env `MECHS_OVERLAY_SPREADSHEET_ID`
+  # Собирается в apps/web/src/config/links.ts из env `MECHS_OVERLAY_SPREADSHEET_ID`
   # (инжектится rspack DefinePlugin) + фиксированного GID листа. Кнопка
   # «Предложить задачу» на /todo скрывается если ID не задан. См.
   # .env.local.example.

@@ -10,7 +10,7 @@ scenarios:
       `@build/data/weapons.json` и приводит его к `Weapon[]`
     then: |
       сборка проходит без ошибок типа. `Weapon`-тип из
-      `src/types/weapon.ts` (category / group / slot / stats.* / …).
+      `apps/web/src/types/weapon.ts` (category / group / slot / stats.* / …).
 
   - given: в JSON появилась запись без обязательного поля (`category`
       / `stats.damageMin` / `stats.durability` / ...)
@@ -30,8 +30,8 @@ scenarios:
 verified: true
 verified_at: 2026-07-14
 verified_note: |
-  `Weapon.transformsFrom?: Transform` реализован в `src/types/weapon.ts`
-  (Transform из `src/types/common.ts`). Резолвер
+  `Weapon.transformsFrom?: Transform` реализован в `apps/web/src/types/weapon.ts`
+  (Transform из `apps/web/src/types/common.ts`). Резолвер
   `scripts/parser-wiki/resolvers/weapons.ts::extractTransform`
   распаковывает td «Преобразуется из» + «Для преобразования требуется»:
   275 из 323 записей получили transformsFrom. Merger резолвит

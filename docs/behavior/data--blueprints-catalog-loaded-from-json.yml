@@ -24,7 +24,7 @@ scenarios:
 verified: true
 verified_at: 2026-07-14
 verified_note: |
-  Стор `src/stores/blueprints/store.ts` создан по паттерну items, читает
+  Стор `apps/web/src/stores/blueprints/store.ts` создан по паттерну items, читает
   `@build/data/blueprints.json` (211 записей). Прогон `sync:wiki
   blueprints` + `build:data` — успешен. Три сценария соответствуют
   реализации: `initializeBlueprints` синхронно грузит массив, ставит

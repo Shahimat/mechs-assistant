@@ -19,7 +19,15 @@ const noRelativeParentImports = [
 
 export default tseslint.config(
   {
-    ignores: ['.build/**', 'dist/**', 'data/**', 'node_modules/**', 'coverage/**'],
+    ignores: [
+      '.build/**',
+      '**/dist/**',
+      'data/**',
+      '**/node_modules/**',
+      '**/coverage/**',
+      '**/src-tauri/target/**',
+      '**/generated/**',
+    ],
   },
   js.configs.recommended,
   ...tseslint.configs.recommended,
@@ -57,7 +65,9 @@ export default tseslint.config(
     },
   },
   {
-    files: ['scripts/**/*'],
+    // scripts/** и apps/cop/** не имеют alias-инфраструктуры (@/ и т.п.):
+    // локальные относительные импорты `../` там штатны.
+    files: ['scripts/**/*', 'apps/cop/**/*'],
     rules: {
       'no-restricted-imports': 'off',
     },

@@ -28,7 +28,7 @@ scenarios:
 verified: true
 verified_at: 2026-07-14
 verified_note: |
-  Реализация: `src/components/catalogs/blueprints/BlueprintsCatalog.tsx`
+  Реализация: `apps/web/src/components/catalogs/blueprints/BlueprintsCatalog.tsx`
   + `BlueprintCard.tsx`. Категории раздельные (по решению юзера отошли от
   пар в пользу паттерна мехов); категория 'mech' добавлена первой.
   Иконка чертежа — композит `assets/raw/blueprint.png` + product-иконка

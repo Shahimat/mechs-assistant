@@ -1,0 +1,32 @@
+key: infra
+title: Инфраструктура и CI
+status: active
+
+why: |
+  Кросс-сквозные инфраструктурные задачи — всплывают по факту, не спекулятивно.
+  Держим отдельной целью, чтобы мелкие «всплывёт при необходимости» пункты не
+  засоряли продуктовые цели.
+
+description: |
+  Хостинг публичного SPA — GitHub Pages под префиксом /mechs-assistant/. Tauri-
+  приложения раздаются через GitHub Releases. Git/CI-процесс (workflow-ручки,
+  ruleset защиты main, дисциплина develop→PR→main) описан в context/workflow.md.
+  Data-конвейер (parser-wiki / parser-google-sheets / merge) — convention
+  data-overlay.
+
+tasks:
+  blocker: []
+  high: []
+
+  medium:
+    - 'Tauri auto-updater — разовая настройка ключа юзером (см. docs/manuals/setup-tauri-updater-signing.md): локально `npx @tauri-apps/cli signer generate --write-keys ~/tauri-updater-mechs-cop` → пароль; содержимое .pub в tauri.conf.json вместо REPLACE_ME placeholder; приватную часть целиком + пароль в GitHub Secrets TAURI_SIGNING_PRIVATE_KEY[_PASSWORD]. До этого updater неактивен (баннер не появляется, check() тихо возвращает null/error), приложение работает через ручное скачивание .msi из Actions Artifacts → шаг юзера → нет'
+
+  low:
+    - 'программный бэкап Google Sheets → отдельный GitHub Actions workflow, дампы в backups/gsheets/YYYY-MM-DD.json → фаза feat → возникает по факту инцидента или роста числа редакторов'
+    - 'решить судьбу @tanstack/react-query — либо начать использовать, либо убрать → нет'
+    - 'react-window числится в deps, но не используется — решить (убрать / использовать) → нет'
+    - 'рассмотреть Git LFS при росте размера иконок в data/icons/ выше 100 MB → нет'
+    - 'включить сплит-чанки / lazy-import — main-бандл ~1.5 MiB после подключения всех каталогов + blueprints иконок (варнинг rspack при production build) → фаза perf → нет (заведено по факту 2026-07-14, не блокирует)'
+    - 'scripts/parser-wiki/index.ts:287 — @typescript-eslint/no-explicit-any (осталось от старого коммита d48ed8a, не блокирует CI) → фаза chore → нет'
+
+depends_on: []

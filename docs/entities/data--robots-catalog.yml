@@ -12,14 +12,14 @@ description: |
   `data/overrides/robots.yml`, каждый мех получает `_meta.overlayFields`,
   `_meta.overlayUpdatedAt`, `_meta.overlaySource` — на них UI строит
   подсветку уточнённых полей. Схема — TypeScript-типы в
-  `src/types/robot.ts`.
+  `apps/web/src/types/robot.ts`.
 
   Первичный источник — вики `new.mechs.su`, подстраницы по типам мехов:
   Боец (page_id=3301), Транспортник (3088), Добытчик (3099),
   Разведчик (3102). Наполнение и обновление `data/robots.json` —
   универсальный парсер `parser--wiki`. Overlay `data/overrides/robots.yml`
   синкается из Google Sheets через `parser--google-sheets`
-  (см. context/roadmap.md, сквозной эпик «Данные»).
+  (см. convention `data-overlay`).
 
   Пилот-каталог MVP1 (подход C): цепочка
   `wiki → parser--wiki → data/robots.json → merger → .build/data/robots.json
@@ -32,7 +32,7 @@ source_files:
   overlay: data/overrides/robots.yml
   merged: .build/data/robots.json # генерируется build-time, импортируется стором
   merger: scripts/build-data/index.ts
-  types: src/types/robot.ts
+  types: apps/web/src/types/robot.ts
 
 wiki_source:
   page_ids: [3301, 3088, 3099, 3102]

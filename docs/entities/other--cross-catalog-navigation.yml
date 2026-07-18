@@ -11,7 +11,7 @@ description: |
   `?open=<key>` + shared hook `useDeepLinkOpen` + утилита
   `catalogPathFor`.
 
-  **Компоненты и утилиты (все в `src/components/catalog/` и `src/utils/`):**
+  **Компоненты и утилиты (все в `apps/web/src/components/catalog/` и `apps/web/src/utils/`):**
     - `IngredientMiniCard` — карточка ссылки: иконка сверху, `×N` снизу
       (count опционален — для секции «Крафт» не показывается), MUI
       Tooltip с именем, клик → навигация. Fallback: если catalog+key не
@@ -39,12 +39,12 @@ description: |
   kristall_zelenyy` → «Назад» возвращает к чертежу.
 
 source_files:
-  ingredient_card: src/components/catalog/IngredientMiniCard.tsx
-  ingredient_card_styles: src/components/catalog/IngredientMiniCard.styles.ts
-  blueprint_chip_list: src/components/catalog/BlueprintChipList.tsx
-  cross_catalog_lookup: src/utils/crossCatalogLookup.ts
-  catalog_path: src/utils/catalogPath.ts
-  deep_link_hook: src/components/catalog/hooks/useDeepLinkOpen.ts
+  ingredient_card: apps/web/src/components/catalog/IngredientMiniCard.tsx
+  ingredient_card_styles: apps/web/src/components/catalog/IngredientMiniCard.styles.ts
+  blueprint_chip_list: apps/web/src/components/catalog/BlueprintChipList.tsx
+  cross_catalog_lookup: apps/web/src/utils/crossCatalogLookup.ts
+  catalog_path: apps/web/src/utils/catalogPath.ts
+  deep_link_hook: apps/web/src/components/catalog/hooks/useDeepLinkOpen.ts
 
 features_enabled:
   - url-query-state # ?open=<key> как источник правды для открытого Detail

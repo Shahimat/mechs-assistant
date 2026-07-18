@@ -16,7 +16,7 @@ description: |
     - focus-ring для клавиатурной навигации.
 
   Иконка передаётся снаружи (`icon: ReactNode`) — может быть MUI-иконкой
-  или `<img src={webpUrl}>` из `assets/images/` (импорт через alias
+  или `<img src={webpUrl}>` из `apps/web/assets/images/` (импорт через alias
   `@img`). Заготовки-исходники лежат в `assets/raw/`, конвертация в
   webp — `npm run convert:webp` (см. convention `assets-layout`).
 
@@ -24,10 +24,10 @@ description: |
   через `aspect-ratio: 1`).
 
 source_files:
-  tile: src/components/tiles/Tile.tsx
-  tile_styles: src/components/tiles/Tile.styles.ts
-  grid: src/components/tiles/TileGrid.tsx
-  grid_styles: src/components/tiles/TileGrid.styles.ts
+  tile: apps/web/src/components/tiles/Tile.tsx
+  tile_styles: apps/web/src/components/tiles/Tile.styles.ts
+  grid: apps/web/src/components/tiles/TileGrid.tsx
+  grid_styles: apps/web/src/components/tiles/TileGrid.styles.ts
 
 features_enabled:
   - hover-scale

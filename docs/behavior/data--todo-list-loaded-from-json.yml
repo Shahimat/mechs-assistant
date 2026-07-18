@@ -24,7 +24,7 @@ scenarios:
 verified: true
 verified_at: 2026-07-14
 verified_note: |
-  Стор `src/stores/todos/store.ts` создан по паттерну items (без
+  Стор `apps/web/src/stores/todos/store.ts` создан по паттерну items (без
   IndexedDB — нет favorites/DnD), читает `@build/data/todos.json`.
   Прогон `sync:sheets` + `build:data` — успешен (0 записей на
   момент проверки: лист `todo` пуст, ждёт наполнения редакторами).

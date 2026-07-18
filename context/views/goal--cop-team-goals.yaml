@@ -1,0 +1,39 @@
+key: cop-team-goals
+program: cop
+title: Общекомандные цели
+status: planned
+
+why: |
+  Клановые цели с трекингом прогресса и вклада каждого мембера: «прокачать меха
+  X до уровня N», «накопить ресурс Y» — видно, кто сколько внёс, с учётом
+  полезности вклада. Верхнеуровневая надстройка над складом и калькуляторами.
+
+description: |
+  Требует и склада (goal--cop-warehouse — источник остатков и движений для
+  прогресса/вклада), и интеграции калькуляторов (goal--cop-calc-integration —
+  вычисление goal_requirements и сохранение расчёта как цели).
+
+  Состав:
+  - `goals(...)` — описание, цель-меха/ресурс, целевой уровень, deadline;
+  - `goal_requirements(...)` — что нужно (из калькулятора);
+  - `contributions(...)` — вклад каждого мембера, считается из warehouse_events;
+  - UI цели: прогресс-бар + вклад каждого мембера с **usefulness-weighting**
+    (частичное соответствие требованию — вклад чертежа соседнего уровня — весит
+    меньше полного).
+
+  Проекции прогресса/вклада uuid не несут (пересобираемы из событий склада) —
+  см. правило uuid в program--cop.
+
+tasks:
+  blocker: []
+
+  high: []
+
+  medium: []
+
+  low:
+    - 'goals-таблица (описание, цель-меха/ресурс, целевой уровень, deadline) + goal_requirements + contributions (вклад из warehouse_events); UI прогресс-бар + вклад мемберов с usefulness-weight частичного соответствия → фаза feat → блокеры: cop-warehouse, cop-calc-integration'
+
+depends_on:
+  - cop-calc-integration
+  - cop-warehouse

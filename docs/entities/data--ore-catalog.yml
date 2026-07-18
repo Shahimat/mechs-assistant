@@ -29,7 +29,7 @@ description: |
 
   Overlay `data/overrides/ore.yml` синкается из Google Sheets (лист
   `ore`) через `parser--google-sheets`. Схема — TS-типы в
-  `src/types/ore.ts`.
+  `apps/web/src/types/ore.ts`.
 
 source_files:
   parsed: data/ore.json
@@ -37,7 +37,7 @@ source_files:
   merged: .build/data/ore.json # build-time
   merger: scripts/build-data/index.ts
   parser: scripts/parser-wiki/resolvers/ore.ts
-  types: src/types/ore.ts
+  types: apps/web/src/types/ore.ts
 
 wiki_source:
   page_ids: [3036]

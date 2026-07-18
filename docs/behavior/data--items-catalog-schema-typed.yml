@@ -10,7 +10,7 @@ scenarios:
       `@build/data/items.json` и приводит его к `Item[]`
     then: |
       сборка проходит без ошибок типа, `Item`-типы из
-      `src/types/item.ts` применимы ко всем записям.
+      `apps/web/src/types/item.ts` применимы ко всем записям.
 
   - given: в JSON появилась запись с отсутствующим `subtype` или `stats.weight`
     when: разработчик пытается собрать проект (`npm run build`)

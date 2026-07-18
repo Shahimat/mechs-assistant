@@ -40,7 +40,7 @@ description: |
 
   Overlay `data/overrides/ammo.yml` синкается из Google Sheets (лист
   `ammo`) через `parser--google-sheets`. Схема — TS-типы в
-  `src/types/ammo.ts`.
+  `apps/web/src/types/ammo.ts`.
 
   **Прирост мощности** (`powerBonus`). Каждое описание боеприпаса на
   вики оканчивается на «+N мощности» или «стандартной мощности».
@@ -56,7 +56,7 @@ source_files:
   merged: .build/data/ammo.json # build-time
   merger: scripts/build-data/index.ts
   parser: scripts/parser-wiki/resolvers/ammo.ts
-  types: src/types/ammo.ts
+  types: apps/web/src/types/ammo.ts
 
 wiki_source:
   page_ids: [3661]
