@@ -310,3 +310,5 @@ manuals:
     one_liner: Настройка публичности репо, Collaborators, GitHub Pages, deploy prefix /mechs-assistant/, три workflow-ручки (sync-wiki PR, sync-sheets прямой push с автотриггером deploy, deploy автомат).
   - id: design-clan-warehouse-schema
     one_liner: Учебная задача для начинающего backend-разработчика — спроектировать реляционную схему БД для кланового склада (постановка + требования + вопросы для размышления + критерии оценки, без готовой схемы).
+  - id: setup-tauri-updater-signing
+    one_liner: Одноразовая генерация Ed25519-ключпары для подписи Tauri auto-updater'а inventory-parser'а, заливка приватной части в GitHub secrets, публичной — в tauri.conf.json.

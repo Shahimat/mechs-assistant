@@ -1,13 +1,29 @@
 name: build-inventory-parser
 
 # Собирает Tauri-приложение apps/inventory-parser под Windows.
-# Запуск — только вручную (workflow_dispatch). Артефакты (.exe, .msi)
-# кладутся в Actions → run → Artifacts на 30 дней.
 #
-# Не триггерится по push, чтобы не жечь CI-минуты на каждый мелкий
-# коммит; собираем осознанно, когда хотим свежий билд для теста.
+# Триггеры:
+#   - push в develop/main с изменениями в apps/inventory-parser/** или
+#     самом workflow-файле (Phase L1, автобилд без ручных кликов);
+#   - workflow_dispatch для ручного запуска с выбором debug/release
+#     профиля (диагностика проблемных билдов).
+#
+# Два job'а:
+#   - build-dev: любой push НЕ в main или workflow_dispatch. Артефакты
+#     (.exe, .msi, NSIS setup) в Actions → run → Artifacts на 30 дней.
+#     Итеративный тестинг разработчика.
+#   - release: push в main. Через tauri-apps/tauri-action билдит,
+#     подписывает Ed25519-ключом, создаёт GitHub Release с .msi.zip +
+#     latest.json манифестом, который auto-updater фетчит из клиента.
+#     Версия = 0.1.<run_number>, тег = inventory-parser-v<version>.
+#     Долгосрочное хранение релизов (пока репозиторий существует).
 
 on:
+  push:
+    branches: [develop, main]
+    paths:
+      - 'apps/inventory-parser/**'
+      - '.github/workflows/build-inventory-parser.yml'
   workflow_dispatch:
     inputs:
       profile:
@@ -20,15 +36,27 @@ on:
           - debug
 
 concurrency:
-  group: build-inventory-parser
-  cancel-in-progress: false
+  # На push из develop cancel-in-progress=true — если пушим коммит поверх
+  # ещё не собранного, старый билд ни к чему. На main и workflow_dispatch
+  # concurrency-группа отдельная, чтоб ручные запуски и релизы не
+  # отменяли друг друга.
+  group: build-inventory-parser-${{ github.ref }}-${{ github.event_name }}
+  cancel-in-progress: ${{ github.event_name == 'push' && github.ref == 'refs/heads/develop' }}
 
 jobs:
-  build:
+  build-dev:
+    # Итеративная dev-сборка: push в develop / workflow_dispatch на любой
+    # ветке кроме main. Артефакты в CI Actions на 30 дней. Быстрее чем
+    # release-flow, не требует подписи.
+    if: github.ref != 'refs/heads/main'
     runs-on: windows-latest
     defaults:
       run:
         working-directory: apps/inventory-parser
+    env:
+      # Профиль сборки. Из workflow_dispatch приходит через inputs;
+      # из push триггера inputs.profile пустой → fallback release.
+      BUILD_PROFILE: ${{ inputs.profile || 'release' }}
     steps:
       - uses: actions/checkout@v4
 
@@ -52,10 +80,16 @@ jobs:
 
       - name: Build Tauri app
         run: |
-          if ('${{ inputs.profile }}' -eq 'debug') {
-            npm run tauri build -- --debug
+          # dev-сборка НЕ подписывает updater-артефакты: pubkey в
+          # tauri.conf.json глобальный, но приватного ключа в dev-job нет
+          # (подпись — только в release-job). Без override tauri падает
+          # «public key found, but no private key». Отключаем
+          # createUpdaterArtifacts через config-merge.
+          '{"bundle":{"createUpdaterArtifacts":false}}' | Set-Content updater-off.json
+          if ('${{ env.BUILD_PROFILE }}' -eq 'debug') {
+            npm run tauri build -- --debug --config updater-off.json
           } else {
-            npm run tauri build
+            npm run tauri build -- --config updater-off.json
           }
         shell: pwsh
 
@@ -63,7 +97,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: inventory-parser-exe
-          path: apps/inventory-parser/src-tauri/target/${{ inputs.profile }}/inventory-parser.exe
+          path: apps/inventory-parser/src-tauri/target/${{ env.BUILD_PROFILE }}/inventory-parser.exe
           if-no-files-found: warn
           retention-days: 30
 
@@ -72,7 +106,78 @@ jobs:
         with:
           name: inventory-parser-installers
           path: |
-            apps/inventory-parser/src-tauri/target/${{ inputs.profile }}/bundle/msi/*.msi
-            apps/inventory-parser/src-tauri/target/${{ inputs.profile }}/bundle/nsis/*.exe
+            apps/inventory-parser/src-tauri/target/${{ env.BUILD_PROFILE }}/bundle/msi/*.msi
+            apps/inventory-parser/src-tauri/target/${{ env.BUILD_PROFILE }}/bundle/nsis/*.exe
           if-no-files-found: warn
           retention-days: 30
+
+  release:
+    # Релиз-сборка: только push в main. Строит через tauri-action, который
+    # автоматически: (a) подписывает .msi.zip Ed25519-ключом из secret,
+    # (b) создаёт/обновляет GitHub Release с тегом, (c) генерит latest.json
+    # с сигнатурами — то, что фетчит auto-updater из клиента.
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    runs-on: windows-latest
+    env:
+      # Версия = 0.1.<run_number>. Стабильно возрастает, не требует
+      # ручных бампов. Semver формально валиден.
+      APP_VERSION: 0.1.${{ github.run_number }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: 'npm'
+          cache-dependency-path: apps/inventory-parser/package-lock.json
+
+      - name: Setup Rust
+        uses: dtolnay/rust-toolchain@stable
+
+      - name: Cache Rust build
+        uses: Swatinem/rust-cache@v2
+        with:
+          workspaces: apps/inventory-parser/src-tauri
+
+      - name: Install JS dependencies
+        working-directory: apps/inventory-parser
+        run: npm ci
+
+      - name: Inject version into tauri.conf.json and package.json
+        working-directory: apps/inventory-parser
+        shell: pwsh
+        run: |
+          $version = $env:APP_VERSION
+          (Get-Content src-tauri/tauri.conf.json) `
+            -replace '"version":\s*"[^"]+"', ('"version": "' + $version + '"') `
+            | Set-Content src-tauri/tauri.conf.json
+          (Get-Content package.json) `
+            -replace '"version":\s*"[^"]+"', ('"version": "' + $version + '"') `
+            | Set-Content package.json
+          Write-Host "Version set to $version"
+
+      - name: Build, sign, and publish release
+        uses: tauri-apps/tauri-action@v0
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          TAURI_SIGNING_PRIVATE_KEY: ${{ secrets.TAURI_SIGNING_PRIVATE_KEY }}
+          TAURI_SIGNING_PRIVATE_KEY_PASSWORD: ${{ secrets.TAURI_SIGNING_PRIVATE_KEY_PASSWORD }}
+        with:
+          projectPath: apps/inventory-parser
+          tagName: inventory-parser-v${{ env.APP_VERSION }}
+          releaseName: 'Inventory Parser v${{ env.APP_VERSION }}'
+          releaseBody: |
+            Автосборка из main (commit ${{ github.sha }}).
+
+            Установка: скачай `.msi` или NSIS `-setup.exe` ниже,
+            запусти. Уже установленное приложение обновится
+            автоматически — не надо вручную качать.
+          releaseDraft: false
+          prerelease: false
+          # latest.json содержит подписанные ссылки на артефакты для
+          # auto-updater. Endpoint в tauri.conf.json именно на него смотрит.
+          includeUpdaterJson: true
+          # У нас MSI как основной формат установки (NSIS тоже собирается,
+          # но updater предпочитает msi — стабильнее на Windows).
+          updaterJsonPreferNsis: false

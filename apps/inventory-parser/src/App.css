@@ -20,6 +20,44 @@
   padding: 24px 20px 48px;
 }
 
+/* Баннер апдейтера — Phase L2. Появляется сверху при наличии новой версии. */
+.update-banner {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 14px;
+  margin-bottom: 16px;
+  background: #eaf3ff;
+  border: 1px solid #b3d3ff;
+  border-radius: 6px;
+  font-size: 13px;
+  color: #1e3a5f;
+}
+
+.update-banner button {
+  margin-left: auto;
+  background: #396cd8;
+  color: #fff;
+  border-color: #396cd8;
+}
+
+.update-banner button:hover {
+  background: #2a58b8;
+  border-color: #2a58b8;
+}
+
+.update-banner__error {
+  color: #b00020;
+}
+
+@media (prefers-color-scheme: dark) {
+  .update-banner {
+    background: #1a2a3a;
+    border-color: #2a4060;
+    color: #b3d3ff;
+  }
+}
+
 h1 {
   margin: 0 0 8px;
   font-size: 20px;
