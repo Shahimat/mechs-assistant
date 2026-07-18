@@ -1,0 +1,64 @@
+key: cop-warehouse
+program: cop
+title: Клановый склад (WMS)
+status: planned
+
+why: |
+  Общий склад клана: удобное внесение прихода (через парсер инвентаря),
+  децентрализованное хранение (master на диске владельца + KV-sync), заявки на
+  выдачу, двухуровневый admin (владелец + доверенные лица с custody). Ядро COP —
+  ради чего затевалась вся программа.
+
+description: |
+  Требует платформы программы (единый codebase + сервер + синхронизация + auth —
+  см. program--cop, секция tasks) и движка парсера (goal--cop-assistant) для
+  внесения прихода.
+
+  ## Модель данных (уточнена 2026-07-17 по разбору ER-диаграммы юзера)
+  Движения склада = **документ + строки** (один Alt+Q-снимок = один deposit с
+  N предметами):
+  - `members(id, name, role, token_hash, status, added_at)` — role owner/
+    delegate/member; status active/revoked (ротация токенов). Ведётся
+    платформенным auth-слоем программы.
+  - `items(id, catalog, item_key, name_cache, added_at)` — справочник предметов
+    склада; **идентичность = кросс-каталожная ссылка (catalog, item_key)**,
+    UNIQUE по ней; name_cache — денормализованное имя для отображения, не
+    первичный ключ; иконка/навигация в UI через crossCatalogLookup(catalog,
+    item_key).
+  - `warehouse_events(id, uuid, ts, type, actor_id, target_id, origin,
+    custody_from, note, applied_at)` — **шапка** движения; type = deposit/
+    withdrawal/correction (узко = только товародвижение); uuid — идемпотентный
+    ключ для drain'а из KV; actor_id (кто) + target_id (кому выдали, nullable)
+    колонками, без M2M; **без deleted_at** — append-only, правка = новое
+    событие correction.
+  - `warehouse_event_items(id, event_id, item_id, count_delta)` — **строки**;
+    count_delta знаковый (deposit +, withdrawal −).
+  - `warehouse(item_id UNIQUE, quantity, updated_at)` — **материализованная
+    проекция** остатка, пересобираемая из событий; источник для snapshot:latest
+    в KV; своя идентичность по предмету, uuid не нужен.
+  - `withdrawal_requests(id, uuid, ts, by_member, items_json, urgency, reason,
+    status, resolved_by, resolved_at, resolution_note)` — **отдельная
+    сущность**, не подтип Event.
+  - `custody_events(...)` — на машинах delegate, временный слой (uuid обязателен).
+
+  ## Риски / открытые вопросы
+  - Concurrent write conflicts: append-only + SUM(count_delta) снимает
+    большинство; отрицательный остаток → warning владельцу, разбор вручную.
+
+tasks:
+  blocker:
+    - 'платформа программы: единый codebase + сервер + система синхронизации + auth (см. program--cop, tasks). Без них склад некуда синхронизировать → фаза refactor/feat → блокер: платформа программы'
+    - 'движок парсера инвентаря для внесения прихода (goal--cop-assistant) → блокер: cop-assistant'
+
+  high:
+    - 'Основа WMS (~2 недели): master SQLite схема + миграции (items/warehouse_events/warehouse_event_items/warehouse/withdrawal_requests); события deposit + withdrawal_direct + correction; ПОЛНОЦЕННЫЙ UI кланового склада — (а) список текущего состояния с фильтрами/поиском и иконками из существующих каталогов, (б) timeline событий «Х внёс 5 чертежей ПОЛЕ 2 часа назад», (в) статистика вклада мемберов за период; локальный SQLite «личный склад» (без sync) с кнопкой «внести в клановый»; onboarding-экран вставки токена → приложение проверяет доступ → синхронизирует snapshot. По явному решению юзера 2026-07-16 включает полноценный функционал склада, а не «список позиций и хватит» → фаза feat → блокер: платформа программы'
+    - 'внесение прихода через парсер: снимок инвентаря (Alt+Q) → distinct deposit с N строками в личный склад → «внести в клановый» пушит warehouse_event в KV → фаза feat → блокер: WMS + cop-assistant'
+
+  medium:
+    - 'Two-host (~3-4 дня): роль delegate + custody-механика — custody-таблица на диске delegate; KV keyspace custody:*, POST /custody; UI владельца «Ожидает custody-transfer» + «Принять всё / выборочно»; UI delegate «Владелец оффлайн X дней, я держу N событий в custody» → фаза feat → блокер: WMS'
+    - "Заявки на выдачу (~3-4 дня): withdrawal_requests таблица + UI подачи (мембер) + UI обработки approve/deny/partial с комментарием (owner/delegate); KV notifications-канал + Tauri system notifications (tauri-plugin-notification) для admin'ов при открытом приложении; timeline расширяется заявками/одобрениями/отказами → фаза feat → блокер: two-host"
+
+  low: []
+
+depends_on:
+  - cop-assistant

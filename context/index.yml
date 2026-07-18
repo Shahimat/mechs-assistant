@@ -252,7 +252,7 @@ conventions:
   - key: completeness
     one_liner: Новая сущность/правило = сразу файл + двусторонние ссылки + index + цель (goals).
   - key: goals
-    one_liner: Система целей — internal-очередь работы (goals.yaml индекс + goal--<key>.yaml). Приоритет = порядок; статусы active/planned/paused; решённая цель уходит в CHANGELOG и удаляется.
+    one_liner: Система целей — internal-очередь работы (goals.yaml индекс + goal--<key>.yaml, крупные инициативы — program--<key>.yaml с подцелями). Приоритет = порядок; статусы active/planned/paused; решённая уходит в CHANGELOG и удаляется.
   - key: goal-consistency
     one_liner: Кросс-целевая проверка непротиворечивости при создании/уточнении цели (конфликт интентов, дубли задач, циклы и согласованность depends_on, приоритеты).
   - key: consistency-check
