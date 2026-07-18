@@ -15,7 +15,7 @@ import {
   type InventoryCorner,
 } from './pipeline/recognize';
 import { mergeSeries } from './pipeline/mergeSeries';
-import { buildDiagnosticZip, downloadZip } from './pipeline/diagnostic';
+import { buildDiagnosticZip, saveZip } from './pipeline/diagnostic';
 import type { CapturedWindow, Recognized, SeriesState } from './types';
 
 const CAPTURE_HOTKEY = 'Alt+Q';
@@ -37,6 +37,7 @@ function App() {
   const [corner, setCorner] = useState<InventoryCorner | null>(null);
   const [series, setSeries] = useState<SeriesState>({ active: false, pages: [] });
   const [grid, setGrid] = useState<GridConfig>(DEFAULT_GRID);
+  const [savedPath, setSavedPath] = useState<string | null>(null);
 
   // Handlers, к которым обращаются глобальные хоткеи, замыкают state на
   // момент регистрации. Чтобы всегда читать актуальные значения, держим
@@ -172,6 +173,7 @@ function App() {
 
   async function handleExportDiagnostic() {
     setError(null);
+    setSavedPath(null);
     try {
       const bytes = await buildDiagnosticZip({
         captured,
@@ -182,7 +184,8 @@ function App() {
         logLines: logRef.current.slice(),
       });
       const stamp = new Date().toISOString().replace(/[:.]/g, '-');
-      downloadZip(bytes, `inventory-parser-diagnostic-${stamp}.zip`);
+      const path = await saveZip(bytes, `inventory-parser-diagnostic-${stamp}.zip`);
+      if (path) setSavedPath(path);
     } catch (e) {
       setError(`Ошибка экспорта диагностики: ${e}`);
     }
@@ -247,8 +250,13 @@ function App() {
             агенту одним файлом, без множественных скринов.
           </p>
           <button type="button" onClick={() => void handleExportDiagnostic()}>
-            Экспортировать диагностику
+            Сохранить диагностику…
           </button>
+          {savedPath && (
+            <p className="muted">
+              Сохранено: <code>{savedPath}</code>
+            </p>
+          )}
         </section>
       )}
 

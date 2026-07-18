@@ -261,6 +261,69 @@ jobs:
         uses: actions/deploy-pages@v4
 ```
 
+#### 6d. `.github/workflows/merge-develop-to-main.yml`
+
+Мержит `develop → main` через `git merge --no-ff`. Триггеры:
+`workflow_dispatch` (кнопка) + nightly cron. Early-exit, если в
+`develop` нет новых коммитов относительно `main` — не создаёт пустой
+merge-commit и не триггерит deploy. При конфликте job падает —
+разрешать локально (`git checkout develop && git merge origin/main`,
+push, снова кнопку).
+
+```yaml
+name: merge-develop-to-main
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '0 3 * * *'
+
+jobs:
+  merge:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          ref: main
+          token: ${{ secrets.MERGE_PAT }}
+      - name: Merge develop
+        run: |
+          git config user.name "mechs-sync-bot"
+          git config user.email "sync-bot@users.noreply.github.com"
+          if [ -z "$(git log main..origin/develop --oneline)" ]; then
+            echo "develop без новых коммитов — выходим"; exit 0
+          fi
+          git merge --no-ff origin/develop -m "merge: develop → main"
+          git push origin main
+```
+
+### 7. Ветка `develop` и защита `main`
+
+Рабочая модель: дефолтная ветка разработки — `develop`, `main` = «то,
+что задеплоено». В `main` попадаем только через PR (веб-UI) или через
+`merge-develop-to-main.yml`.
+
+**Ruleset на `main`** (**Settings → Rules → Rulesets → New branch
+ruleset**):
+
+- **Enforcement status: Active**, target branch — `main`.
+- **Require a pull request before merging** (Required approvals = 0).
+- **Restrict deletions** + **Block force pushes**.
+- **Bypass list**: роль `Write` со статусом **Always allow**. Под неё
+  попадает автор-admin (Write+ автоматически) и `GITHUB_TOKEN`.
+
+Эффект: обычный collaborator с Write **вынужден** идти через PR;
+автор-admin технически может push'ить в `main`, но по договорённости
+работает через `develop → PR → main`.
+
+**Secret `MERGE_PAT`.** Workflow'ы, пушащие в `main` напрямую
+(`sync-sheets`, `merge-develop-to-main`), используют fine-grained PAT
+(scope `Contents: Read & write`) вместо `GITHUB_TOKEN`: push под PAT
+идёт от имени автора-человека и попадает под Write-bypass, а
+`GITHUB_TOKEN` работает под `github-actions[bot]`, которого bypass не
+покрывает. Завести: **Settings → Developer settings → Fine-grained
+tokens**, положить в **Secrets → Actions** как `MERGE_PAT`.
+
 ## Проверка
 
 ### Sync wiki (через PR)

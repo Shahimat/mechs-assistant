@@ -1,7 +1,7 @@
 id: view--robots-catalog
 kind: entity
 namespace: ui
-version: "0.x"
+version: '0.x'
 
 description: |
   Основной UI-компонент MVP1 — карточный каталог мехов. Сетка карточек
@@ -17,14 +17,14 @@ description: |
   hook'и (`useSearchFilter`, `useLevelRangeFilter`, `useTypeFilter`).
 
   Заменяет снесённые `robots-grid` и `base-robot-comparison`. Полная
-  сравнительная механика (spec-sheet + radar overlay) вернётся в MVP4
-  (боевой калькулятор), см. context/roadmap.md.
+  сравнительная механика (spec-sheet + radar overlay) вернётся в цели
+  `combat-calculator`, см. context/views/goal--combat-calculator.yaml.
 
   Читает данные каталога из `data--robots-catalog` через zustand-стор,
   использует механику избранного из `other--favorites`.
 
 source_files:
-  page: src/pages/catalogs/MechsCatalogPage.tsx        # роутовая обёртка (/catalogs/mechs-catalog)
+  page: src/pages/catalogs/MechsCatalogPage.tsx # роутовая обёртка (/catalogs/mechs-catalog)
   view: src/components/catalogs/mechs/MechsCatalog.tsx # композиция примитивов + бизнес-логика
   card: src/components/catalogs/mechs/RobotCard.tsx
   detail: src/components/catalogs/mechs/RobotDetail.tsx
@@ -34,21 +34,21 @@ source_files:
   overlay_badge: src/components/catalogs/mechs/OverlayBadge.tsx
 
 features_enabled:
-  - cards-grid           # сетка карточек мехов
-  - mech-detail-view     # детализация меха по клику (MUI Dialog)
-  - favorites-star       # звёздочка избранного прямо в карточке
-  - favorites-dnd        # сортировка избранных через dnd-kit
-  - overlay-highlight    # OverlayBadge + OverlayPill для полей из overlay
-  - filter-type          # ToggleButtonGroup по типу меха
-  - filter-level-range   # Slider по requiredLevel
-  - search-in-section    # отдельный поиск в секциях «Избранные» / «Все мехи»
+  - cards-grid # сетка карточек мехов
+  - mech-detail-view # детализация меха по клику (MUI Dialog)
+  - favorites-star # звёздочка избранного прямо в карточке
+  - favorites-dnd # сортировка избранных через dnd-kit
+  - overlay-highlight # OverlayBadge + OverlayPill для полей из overlay
+  - filter-type # ToggleButtonGroup по типу меха
+  - filter-level-range # Slider по requiredLevel
+  - search-in-section # отдельный поиск в секциях «Избранные» / «Все мехи»
 
 features_disabled:
-  - transposed-table     # таблица снесена
-  - base-robot-diff      # diff-подсветка снесена, вернётся в MVP4
+  - transposed-table # таблица снесена
+  - base-robot-diff # diff-подсветка снесена, вернётся в MVP4
 
 manuals: []
 behaviors:
   - view--robots-catalog-renders-cards-grid
   - view--robots-catalog-opens-mech-detail-on-click
-  - other--favorites-toggle-on-star-click   # звёздочка живёт внутри карточки меха
+  - other--favorites-toggle-on-star-click # звёздочка живёт внутри карточки меха

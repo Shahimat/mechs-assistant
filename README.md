@@ -3,7 +3,7 @@
 WEB-ассистент игры Мехи.Земля. Карточный каталог мехов (MVP1) с характеристиками,
 ценами, прокачкой, избранным и подсветкой overlay-полей из Google Sheets.
 Дальше — расширение на остальные 10 каталогов, калькулятор прокачки, клановый склад,
-боевой калькулятор (см. `context/roadmap.md`).
+боевой калькулятор (см. `context/views/goals.yaml`).
 
 Живой прод: https://shahimat.github.io/mechs-assistant/
 
@@ -38,7 +38,7 @@ npm run lint     # eslint
 - `docs/behavior/` — BDD-описание ожидаемого поведения с полем `verified`.
 - `docs/manuals/` — процедурные ману́алы (setup Google Sheets, GitHub workflow).
 - `context/` — рабочие материалы AI-агента: `project.yml`, `workflow.md`,
-  `conventions/`, `views/active.todo`, `roadmap.md`.
+  `conventions/`, `views/goals.yaml` + `views/goal--<key>.yaml`.
 - `CLAUDE.md` — точка входа и порядок чтения для AI-агента.
 
 ## Документация

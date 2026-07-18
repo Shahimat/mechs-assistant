@@ -1,0 +1,53 @@
+# Индекс целей проекта.
+#
+# Порядок записи ниже = приоритет ЦЕЛИ (сверху — важнее / раньше по времени).
+# Каждая цель — отдельный файл goal--<key>.yaml в этой же папке.
+# Приоритет задач ВНУТРИ цели = их порядок в секции (blocker/high/medium/low),
+# «фаз»-нумерации больше нет — очередь задаётся положением в списке.
+#
+# Жизненный цикл цели: цель решена → запись в CHANGELOG.md → удалить
+# goal--<key>.yaml и вычеркнуть отсюда. Статуса `done` не бывает —
+# решённой цели в структуре не существует. Живые статусы:
+#   active   — работаем сейчас / есть незакрытые задачи в работе;
+#   planned  — согласована, но ещё не стартовала (ждёт предшественников);
+#   paused   — сознательно отложена.
+#
+# Правила системы — convention `goals`. Кросс-целевая непротиворечивость
+# (нельзя «настроить X» в одной цели и «убрать X» в другой) — convention
+# `goal-consistency`, прогон обязателен при создании цели и уточнении плана.
+
+goals:
+  - key: inventory-parser
+    file: goal--inventory-parser.yaml
+    status: active
+    one_liner: Автопарсер инвентаря игры (Tauri Windows) — доработки точности после первого реального теста.
+
+  - key: clan-operations-platform
+    file: goal--clan-operations-platform.yaml
+    status: planned
+    one_liner: COP — единый Tauri-инструмент клана (WMS + заявки + цели) на self-hosted master + KV-sync.
+
+  - key: calculator
+    file: goal--calculator.yaml
+    status: planned
+    one_liner: Калькулятор прокачки (MVP2) — что нужно, чтобы прокачать меха до уровня N; движок для целей COP.
+
+  - key: catalogs
+    file: goal--catalogs.yaml
+    status: active
+    one_liner: Доводка справочного слоя — наполнение overlay, доуточнение каталогов, валидация схем.
+
+  - key: combat-calculator
+    file: goal--combat-calculator.yaml
+    status: planned
+    one_liner: Боевой калькулятор (MVP4) — выживаемость / исход боя, spec-sheet + radar.
+
+  - key: infra
+    file: goal--infra.yaml
+    status: active
+    one_liner: Инфраструктура и CI — задачи, всплывающие по факту (updater-ключ, бэкапы, техдолг сборки).
+
+  - key: improvements
+    file: goal--improvements.yaml
+    status: planned
+    one_liner: Улучшения и полировка (nice-to-have) — отложенные UX-идеи и косметика без своей продуктовой цели.

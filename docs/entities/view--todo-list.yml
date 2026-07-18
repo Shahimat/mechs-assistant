@@ -22,7 +22,7 @@ description: |
   через `src/config/links.ts`.
 
   Точка входа — плитка «Планы разработки» на HomePage (иконка
-  временно placeholder, замена — см. active.todo, задача про
+  временно placeholder, замена — см. goal--catalogs, задача про
   4-icons-on-main-page).
 
   Данные читает из `data--todo-list` через `useTodosStore`. Стор

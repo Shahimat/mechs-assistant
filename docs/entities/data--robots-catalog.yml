@@ -19,7 +19,7 @@ description: |
   Разведчик (3102). Наполнение и обновление `data/robots.json` —
   универсальный парсер `parser--wiki`. Overlay `data/overrides/robots.yml`
   синкается из Google Sheets через `parser--google-sheets`
-  (см. context/roadmap.md, сквозной эпик «Данные»).
+  (см. convention `data-overlay`).
 
   Пилот-каталог MVP1 (подход C): цепочка
   `wiki → parser--wiki → data/robots.json → merger → .build/data/robots.json

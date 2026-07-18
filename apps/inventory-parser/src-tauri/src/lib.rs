@@ -241,6 +241,19 @@ async fn debug_visualize_corner(png_base64: String) -> Result<String, String> {
     Ok(base64::engine::general_purpose::STANDARD.encode(&out))
 }
 
+/// Пишет байты (переданные из фронтенда как base64) в выбранный
+/// пользователем путь. Путь приходит из диалога сохранения
+/// (`tauri-plugin-dialog` на клиенте); саму запись делаем здесь, чтобы
+/// не тащить `fs`-плагин с настройкой scope. Своя команда через
+/// invoke_handler разрешена без ACL-записи.
+#[tauri::command]
+fn write_file_base64(path: String, contents_base64: String) -> Result<(), String> {
+    let bytes = base64::engine::general_purpose::STANDARD
+        .decode(&contents_base64)
+        .map_err(|e| format!("base64 decode failed: {}", e))?;
+    std::fs::write(&path, bytes).map_err(|e| format!("Не удалось записать «{}»: {}", path, e))
+}
+
 #[cfg_attr(mobile, tauri::mobile_entry_point)]
 pub fn run() {
     tauri::Builder::default()
@@ -248,11 +261,13 @@ pub fn run() {
         .plugin(tauri_plugin_store::Builder::new().build())
         .plugin(tauri_plugin_updater::Builder::new().build())
         .plugin(tauri_plugin_process::init())
+        .plugin(tauri_plugin_dialog::init())
         .invoke_handler(tauri::generate_handler![
             list_windows,
             capture_window,
             find_inventory_corner,
             debug_visualize_corner,
+            write_file_base64,
         ])
         .run(tauri::generate_context!())
         .expect("error while running tauri application");

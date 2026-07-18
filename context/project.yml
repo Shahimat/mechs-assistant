@@ -7,7 +7,7 @@ author:
 
 # Продуктовое позиционирование. Задаёт рамку для решений «нужно/не
 # нужно» (i18n, аналитика, онбординг, публичный хостинг) и приоритеты
-# MVP. Полный план развития — в context/roadmap.md.
+# MVP. Полный план развития — в context/views/goals.yaml + goal--<key>.yaml.
 product:
   audience: |
     Микро-сообщество игры Мехи.Земля: сейчас порядка 5 человек, потенциально
@@ -17,8 +17,8 @@ product:
   positioning: |
     Ассистент решений для игроков и кланов Мехи.Земля. Не «энциклопедия
     характеристик», а инструмент для конкретных задач: калькулятор прокачки,
-    боевой калькулятор, учёт клановых ресурсов. Развивается по MVP-эпикам,
-    см. context/roadmap.md.
+    боевой калькулятор, учёт клановых ресурсов. Развивается по целям,
+    см. context/views/goals.yaml.
 
 # Синхронизация с источниками (см. workflow.md, раздел «Синхронизация с
 # источниками»). Все SHA-256 — hex-строка. Fetch — только curl, WebFetch
@@ -36,7 +36,7 @@ stack:
   ui: React 18 + MUI v5 + Emotion (styled components)
   dnd: dnd-kit — drag-and-drop сортировка избранных карточек
   state: Zustand + собственный indexedDB middleware
-  data_layer: TanStack Query (v5) — подключён в bootstrap, реальных queries пока нет (см. active.todo, решить судьбу)
+  data_layer: TanStack Query (v5) — подключён в bootstrap, реальных queries пока нет (см. goal--infra, решить судьбу)
   bundler: Rspack
   testing: Jest + React Testing Library
   lint: ESLint (@typescript-eslint) + Prettier
@@ -59,7 +59,7 @@ paths:
   docs_behavior: docs/behavior/
   conventions: context/conventions/
   workflow: context/workflow.md
-  active_todo: context/views/active.todo
+  goals: context/views/goals.yaml
 
 namespaces:
   - catalog # каталоги, парсеры (wiki + Sheets), build-time merger

@@ -1,4 +1,6 @@
 import { zipSync, strToU8 } from 'fflate';
+import { invoke } from '@tauri-apps/api/core';
+import { save } from '@tauri-apps/plugin-dialog';
 import type { CapturedWindow, Recognized } from '../types';
 import type { GridConfig, InventoryCorner } from './recognize';
 import { drawAnnotatedCapture, loadImageFromBase64 } from '../utils/annotateCanvas';
@@ -138,19 +140,27 @@ export async function buildDiagnosticZip(state: DiagnosticState): Promise<Uint8A
   return zipSync(files);
 }
 
+function bytesToBase64(bytes: Uint8Array): string {
+  let binary = '';
+  const chunk = 0x8000;
+  for (let i = 0; i < bytes.length; i += chunk) {
+    binary += String.fromCharCode(...bytes.subarray(i, i + chunk));
+  }
+  return btoa(binary);
+}
+
 /**
- * Тригерит скачивание ZIP в default-папку загрузок браузерным Anchor'ом.
- * В Tauri webview это работает — файл падает в `~/Downloads` на маке,
- * `%USERPROFILE%\Downloads` на Windows.
+ * Открывает системный диалог сохранения (`tauri-plugin-dialog`), даёт
+ * юзеру самому выбрать путь, затем пишет ZIP по этому пути через
+ * Rust-команду `write_file_base64`. Возвращает выбранный путь или null,
+ * если пользователь отменил диалог.
  */
-export function downloadZip(bytes: Uint8Array, filename: string): void {
-  const blob = new Blob([bytes as BlobPart], { type: 'application/zip' });
-  const url = URL.createObjectURL(blob);
-  const a = document.createElement('a');
-  a.href = url;
-  a.download = filename;
-  document.body.appendChild(a);
-  a.click();
-  document.body.removeChild(a);
-  URL.revokeObjectURL(url);
+export async function saveZip(bytes: Uint8Array, defaultName: string): Promise<string | null> {
+  const path = await save({
+    defaultPath: defaultName,
+    filters: [{ name: 'ZIP-архив', extensions: ['zip'] }],
+  });
+  if (!path) return null;
+  await invoke('write_file_base64', { path, contentsBase64: bytesToBase64(bytes) });
+  return path;
 }

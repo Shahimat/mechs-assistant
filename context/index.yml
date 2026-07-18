@@ -250,7 +250,11 @@ conventions:
   - key: code-style
     one_liner: Стиль кода — Prettier + ESLint (2 пробела, одинарные кавычки, trailing commas).
   - key: completeness
-    one_liner: Новая сущность/правило = сразу файл + двусторонние ссылки + index + active.todo.
+    one_liner: Новая сущность/правило = сразу файл + двусторонние ссылки + index + цель (goals).
+  - key: goals
+    one_liner: Система целей — internal-очередь работы (goals.yaml индекс + goal--<key>.yaml). Приоритет = порядок; статусы active/planned/paused; решённая цель уходит в CHANGELOG и удаляется.
+  - key: goal-consistency
+    one_liner: Кросс-целевая проверка непротиворечивости при создании/уточнении цели (конфликт интентов, дубли задач, циклы и согласованность depends_on, приоритеты).
   - key: consistency-check
     one_liner: Чек-лист непротиворечивости перед сохранением сущности (ссылки, verified, имена).
   - key: context-minimization
@@ -274,7 +278,7 @@ conventions:
   - key: theme-colors
     one_liner: Цвета в одном месте — `src/theme.ts` через MUI CssVars; в CSS доступ через `var(--mui-palette-*)`.
   - key: todo-split
-    one_liner: Две системы задач — active.todo (dev/internal, привязана к workflow.md) и Sheets `todo`/страница /todo (product-facing, transparency). Не смешивать. Агент читает обе при report-сценариях.
+    one_liner: Две системы задач — структура целей (dev/internal, goals.yaml + goal--<key>.yaml) и Sheets `todo`/страница /todo (product-facing, transparency). Не смешивать. Агент читает обе при report-сценариях.
   - key: monorepo-shared-config
     one_liner: apps/* держат свой .npmrc (копия root — npm не walks-up) и НЕ тащат тяжёлые build-time зависимости (Sharp живёт только в root).
   - key: mui-imports

@@ -10,4 +10,4 @@ rule: |
     - для состояния загрузки — MUI (`CircularProgress` — как в
       `RobotsCatalog.tsx:184-190`, `Skeleton` для сетки карточек).
   Пока queries не появятся — вопрос «оставить или снести Provider»
-  висит в `active.todo`.
+  висит в `goal--infra`.
