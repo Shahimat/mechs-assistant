@@ -2,12 +2,8 @@ name: merge-develop-to-main
 
 on:
   # Ручная кнопка: GitHub → Actions → merge-develop-to-main → Run workflow.
+  # Автомерджа по крону нет — merge develop → main запускается вручную.
   workflow_dispatch:
-  # Nightly в 03:00 UTC (06:00 MSK) — если в develop появились коммиты
-  # с прошлого merge, они попадут в main без ручного действия. Если
-  # ничего нового — job делает early exit и не триггерит deploy.
-  schedule:
-    - cron: '0 3 * * *'
 
 concurrency:
   group: merge-develop

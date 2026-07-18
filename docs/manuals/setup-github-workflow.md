@@ -263,19 +263,17 @@ jobs:
 
 #### 6d. `.github/workflows/merge-develop-to-main.yml`
 
-Мержит `develop → main` через `git merge --no-ff`. Триггеры:
-`workflow_dispatch` (кнопка) + nightly cron. Early-exit, если в
-`develop` нет новых коммитов относительно `main` — не создаёт пустой
-merge-commit и не триггерит deploy. При конфликте job падает —
-разрешать локально (`git checkout develop && git merge origin/main`,
-push, снова кнопку).
+Мержит `develop → main` через `git merge --no-ff`. Триггер — только
+`workflow_dispatch` (кнопка); автомерджа по крону нет (снят осознанно —
+merge в main запускается вручную). Early-exit, если в `develop` нет
+новых коммитов относительно `main` — не создаёт пустой merge-commit и
+не триггерит deploy. При конфликте job падает — разрешать локально
+(`git checkout develop && git merge origin/main`, push, снова кнопку).
 
 ```yaml
 name: merge-develop-to-main
 on:
   workflow_dispatch:
-  schedule:
-    - cron: '0 3 * * *'
 
 jobs:
   merge:

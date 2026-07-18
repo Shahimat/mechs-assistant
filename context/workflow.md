@@ -249,10 +249,11 @@ deletions` + `Block force pushes`. Bypass — роль `Write` со статус
 - **`sync-sheets.yml`** — часто, **прямой push в `main`**. Google Sheets
   API стабилен, overlay-правки точечные, редакторам не ждать review.
 - **`merge-develop-to-main.yml`** — merge коммитов `develop → main`
-  через `git merge --no-ff`. Триггеры: `workflow_dispatch` (ручная
-  кнопка) + nightly `cron: '0 3 * * *'`. Early-exit, если в `develop`
-  нет новых коммитов (не создаёт пустой merge-commit, не триггерит
-  deploy). Конфликт → job падает, разрешать локально
+  через `git merge --no-ff`. Триггер — только `workflow_dispatch`
+  (ручная кнопка), автомерджа по крону нет (снят осознанно — merge в
+  main запускается вручную). Early-exit, если в `develop` нет новых
+  коммитов (не создаёт пустой merge-commit, не триггерит deploy).
+  Конфликт → job падает, разрешать локально
   (`git checkout develop && git merge origin/main`, push, снова кнопку).
 - **`deploy.yml`** — **автомат по push в `main`** (path-фильтр `data/`,
   `src/`, `package.json`, config) + ручной повтор через
