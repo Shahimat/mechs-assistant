@@ -33,11 +33,11 @@ description: |
   месте, «Руды» — переименована из «Ископаемое» 2026-07-13).
 
 source_files:
-  page: src/pages/catalogs/OreCatalogPage.tsx
-  view: src/components/catalogs/ore/OreCatalog.tsx
-  card: src/components/catalogs/ore/OreCard.tsx
-  detail: src/components/catalogs/ore/OreDetail.tsx
-  sortable_card: src/components/catalogs/ore/SortableOreCard.tsx
+  page: apps/web/src/pages/catalogs/OreCatalogPage.tsx
+  view: apps/web/src/components/catalogs/ore/OreCatalog.tsx
+  card: apps/web/src/components/catalogs/ore/OreCard.tsx
+  detail: apps/web/src/components/catalogs/ore/OreDetail.tsx
+  sortable_card: apps/web/src/components/catalogs/ore/SortableOreCard.tsx
 
 features_enabled:
   - cards-grid

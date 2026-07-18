@@ -19,7 +19,7 @@ tasks:
   high: []
 
   medium:
-    - 'Tauri auto-updater — разовая настройка ключа юзером (см. docs/manuals/setup-tauri-updater-signing.md): локально `npx @tauri-apps/cli signer generate --write-keys ~/tauri-updater-inventory-parser` → пароль; содержимое .pub в tauri.conf.json вместо REPLACE_ME placeholder; приватную часть целиком + пароль в GitHub Secrets TAURI_SIGNING_PRIVATE_KEY[_PASSWORD]. До этого updater неактивен (баннер не появляется, check() тихо возвращает null/error), приложение работает через ручное скачивание .msi из Actions Artifacts → шаг юзера → нет'
+    - 'Tauri auto-updater — разовая настройка ключа юзером (см. docs/manuals/setup-tauri-updater-signing.md): локально `npx @tauri-apps/cli signer generate --write-keys ~/tauri-updater-mechs-cop` → пароль; содержимое .pub в tauri.conf.json вместо REPLACE_ME placeholder; приватную часть целиком + пароль в GitHub Secrets TAURI_SIGNING_PRIVATE_KEY[_PASSWORD]. До этого updater неактивен (баннер не появляется, check() тихо возвращает null/error), приложение работает через ручное скачивание .msi из Actions Artifacts → шаг юзера → нет'
 
   low:
     - 'программный бэкап Google Sheets → отдельный GitHub Actions workflow, дампы в backups/gsheets/YYYY-MM-DD.json → фаза feat → возникает по факту инцидента или роста числа редакторов'

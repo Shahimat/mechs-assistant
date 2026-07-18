@@ -1,35 +1,41 @@
 # mechs-assistant
 
-WEB-ассистент игры Мехи.Земля. Карточный каталог мехов (MVP1) с характеристиками,
-ценами, прокачкой, избранным и подсветкой overlay-полей из Google Sheets.
-Дальше — расширение на остальные 10 каталогов, калькулятор прокачки, клановый склад,
-боевой калькулятор (см. `context/views/goals.yaml`).
+Ассистент игры Мехи.Земля — монорепо (npm workspaces). `apps/web` — публичный
+WEB-справочник: карточные каталоги с характеристиками, ценами, прокачкой,
+избранным и подсветкой overlay-полей из Google Sheets. `apps/cop` — десктоп-клиент
+клана (Tauri, COP). Дальше — калькулятор прокачки, клановый склад, боевой
+калькулятор (см. `context/views/goals.yaml`).
 
-Живой прод: https://shahimat.github.io/mechs-assistant/
+Живой прод (apps/web): https://shahimat.github.io/mechs-assistant/
 
 ## Стек
 
-React 18 + MUI v5 (Emotion styled) + dnd-kit + Zustand + Rspack + TypeScript strict.
-Publish: GitHub Actions → GitHub Pages.
+React 19 + MUI v7 (Emotion styled) + dnd-kit + Zustand + Rspack + TypeScript strict.
+Десктоп — Tauri 2.x. Publish: GitHub Actions → GitHub Pages (apps/web),
+Releases (apps/cop).
 
 ## Локальный запуск
 
+Монорепо на npm workspaces; `npm install` из корня ставит все воркспейсы.
+
 ```sh
 npm install
-npm run dev      # dev-сервер на http://localhost:3000
-npm run build    # production-сборка в dist/
+npm run dev      # dev-сервер apps/web на http://localhost:3000
+npm run build    # production-сборка apps/web в apps/web/dist/
 npm test         # jest
 npm run lint     # eslint
 ```
 
 ## Где что лежит
 
-- `src/` — исходники приложения.
+- `apps/web/src/` — исходники WEB-справочника (SPA).
+- `apps/cop/` — десктоп-клиент клана (Tauri, COP; Rust — `apps/cop/src-tauri/`).
+- `packages/shared/` — скаффолд общего слоя (`@mechs/shared`).
 - `data/robots.json` — parsed каталог мехов из вики (первичный источник для build-time merger).
 - `data/overrides/robots.yml` — overlay из Google Sheets (авто-кэш, не редактируется вручную).
 - `data/icons/mechs/` — иконки мехов из вики (webp).
-- `assets/raw/` — исходники изображений (png/jpg/svg — «идеи»).
-- `assets/images/` — готовые для прода webp (импорт через alias `@img`).
+- `assets/raw/` — исходники изображений (png/jpg/svg — «идеи»; корень репо, alias `@raw`).
+- `apps/web/assets/images/` — готовые для прода webp (импорт через alias `@img`).
 - `scripts/parser-wiki/` — парсер вики `new.mechs.su`.
 - `scripts/parser-google-sheets/` — синк overlay из Google Sheets.
 - `scripts/build-data/` — build-time merger `data/*.json` + `data/overrides/*.yml` → `.build/`.

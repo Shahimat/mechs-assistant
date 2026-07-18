@@ -32,7 +32,7 @@ description: |
 
   Overlay `data/overrides/skills.yml` синкается из Google Sheets (лист
   `skills`) через `parser--google-sheets`. Схема — TS-типы в
-  `src/types/skill.ts`.
+  `apps/web/src/types/skill.ts`.
 
 source_files:
   parsed: data/skills.json
@@ -40,7 +40,7 @@ source_files:
   merged: .build/data/skills.json # build-time
   merger: scripts/build-data/index.ts
   parser: scripts/parser-wiki/resolvers/skills.ts
-  types: src/types/skill.ts
+  types: apps/web/src/types/skill.ts
 
 wiki_source:
   page_ids: [2902, 2905]

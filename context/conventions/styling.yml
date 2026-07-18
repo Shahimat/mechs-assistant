@@ -8,8 +8,8 @@ rule: |
     - `Component.styles.ts` — все стилизованные обёртки. Экспорт:
       `export const Header = styled('div')(...)`,
       `export const Card = styled(MuiCard)(...)`.
-    - Переиспользуемые styled-компоненты — `src/styles/<name>.ts`
-      (например `src/styles/overlay.ts` c `OverlayPill`).
+    - Переиспользуемые styled-компоненты — `apps/web/src/styles/<name>.ts`
+      (например `apps/web/src/styles/overlay.ts` c `OverlayPill`).
 
   **Почему styled(), а не sx / CSS-модули:**
 
@@ -17,7 +17,7 @@ rule: |
       при перекрытии встроенных стилей.
     - TypeScript-типы и доступ к theme через второй аргумент
       (`theme.palette.*`, `theme.spacing()`, `theme.vars.palette.*` при
-      CssVarsProvider).
+      включённых cssVariables в `createTheme`).
     - Условные стили через props: `shouldForwardProp` исключает
       кастомные пропсы из DOM.
 

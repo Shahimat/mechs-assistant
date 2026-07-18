@@ -1,6 +1,8 @@
 key: typescript
 rule: |
-  Строгий TypeScript (`strict: true`). Активные флаги в `tsconfig.json`:
+  Строгий TypeScript (`strict: true`). Общие флаги — в корневом
+  `tsconfig.base.json`, приложения наследуют его через `extends`
+  (`apps/*/tsconfig.json`). Активные флаги:
     noImplicitAny, strictNullChecks, strictFunctionTypes,
     strictBindCallApply, strictPropertyInitialization, noImplicitThis,
     alwaysStrict, noUnusedLocals, noUnusedParameters,
@@ -11,5 +13,6 @@ rule: |
       проверкой типа.
     - `resolveJsonModule: true` — данные из `data/*.json` импортируем
       как модули с типом (`as Robot[]`).
-    - Модульные пути через alias `@/*` → `src/*` (см. tsconfig `paths`
-      и rspack.config `resolve.alias`).
+    - Модульные пути через alias `@/*` → `apps/web/src/*` (см.
+      `apps/web/tsconfig.json` `paths` и `apps/web/rspack.config.js`
+      `resolve.alias`).

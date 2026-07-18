@@ -21,7 +21,7 @@ tasks:
 
   medium:
     - 'наполнять overlay в Google Sheets для weapons/equipment/items/components/loot/ore — сейчас все overlay пустые (0 with overlay); прогонять sync:sheets и вносить уточнения; повышение точности каталогов относительно вики → фаза feat → нет'
-    - 'вынести CATEGORY_LABELS + LABEL_TO_CATEGORY из WeaponsCatalog.tsx в общую утилиту src/utils/weaponCategories.ts (сейчас дублируется в WeaponsCatalog и AmmoCatalog) → фаза refactor → нет'
+    - 'вынести CATEGORY_LABELS + LABEL_TO_CATEGORY из WeaponsCatalog.tsx в общую утилиту apps/web/src/utils/weaponCategories.ts (сейчас дублируется в WeaponsCatalog и AmmoCatalog) → фаза refactor → нет'
 
   low:
     - "blueprints: финальная привязка producesKey к конкретным вариантам целей через overlay — parser даёт translit имени без резолва ambiguity (Чертеж Пулемёт → 'pulemyot', но в weapons 15+ пулемётов разного уровня); редактор указывает точную привязку через Sheets → фаза feat → нет"

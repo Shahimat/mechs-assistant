@@ -25,4 +25,4 @@ scenarios:
 verified: true
 verified_at: 2026-07-14
 verified_note: |
-  Проверено чтением кода и прогонами: `src/stores/skills/store.ts` — `initializeSkills` импортирует `@build/data/skills.json` и синхронно ставит `skills`, `isLoading=false`, `error=null`. `SkillsCatalog.tsx` вызывает `initializeSkills()` через useEffect при пустом сторе. Merged JSON собирается `scripts/build-data`: `npm run build:data → ✓ skills: merged 12 entries (0 with overlay) → .build/data/skills.json`. `npm run build`, `tsc --noEmit`, `npm run lint` — зелёные.
+  Проверено чтением кода и прогонами: `apps/web/src/stores/skills/store.ts` — `initializeSkills` импортирует `@build/data/skills.json` и синхронно ставит `skills`, `isLoading=false`, `error=null`. `SkillsCatalog.tsx` вызывает `initializeSkills()` через useEffect при пустом сторе. Merged JSON собирается `scripts/build-data`: `npm run build:data → ✓ skills: merged 12 entries (0 with overlay) → .build/data/skills.json`. `npm run build`, `tsc --noEmit`, `npm run lint` — зелёные.

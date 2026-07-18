@@ -32,7 +32,7 @@ description: |
   Overlay `data/overrides/equipment.yml` синкается из Google Sheets
   (лист `equipment`) через `parser--google-sheets`. Через overlay можно
   добавлять и полностью новые сущности — merger заводит запись, даже
-  если ключа нет в parsed. Схема — TS-типы в `src/types/equipment.ts`.
+  если ключа нет в parsed. Схема — TS-типы в `apps/web/src/types/equipment.ts`.
 
 source_files:
   parsed: data/equipment.json
@@ -40,7 +40,7 @@ source_files:
   merged: .build/data/equipment.json # build-time
   merger: scripts/build-data/index.ts
   parser: scripts/parser-wiki/resolvers/equipment.ts # специфичный резолвер
-  types: src/types/equipment.ts
+  types: apps/web/src/types/equipment.ts
 
 wiki_source:
   root_page_ids: [3682, 3657, 3106, 3108]
@@ -151,8 +151,8 @@ behaviors:
 verified_note: |
   Data-слой закрыт 2026-07-13: parser-wiki собрал 173 записи, build-data
   мержит parsed + overlay в `.build/data/equipment.json`, стор
-  `src/stores/equipment/store.ts` читает merged JSON. UI-раздроб на 7
+  `apps/web/src/stores/equipment/store.ts` читает merged JSON. UI-раздроб на 7
   view (chips/shields/armour/accumulators/reactors/drills/cargos)
   реализован: единый store, общие карточные компоненты
-  `src/components/catalogs/equipment/`, 7 тонких обёрток над
+  `apps/web/src/components/catalogs/equipment/`, 7 тонких обёрток над
   `EquipmentSubCatalog`. Все behaviors verified 2026-07-13.

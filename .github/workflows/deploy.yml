@@ -5,13 +5,14 @@ on:
     branches: [main]
     paths:
       - 'data/**'
-      - 'src/**'
-      - 'public/**'
+      - 'assets/**'
+      - 'apps/web/**'
+      - 'packages/shared/**'
       - 'scripts/build-data/**'
+      - 'scripts/catalogs.config.ts'
       - 'package.json'
       - 'package-lock.json'
-      - 'rspack.config.*'
-      - 'tsconfig.json'
+      - 'tsconfig.base.json'
       - '.github/workflows/deploy.yml'
   workflow_dispatch:
 
@@ -58,7 +59,7 @@ jobs:
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: dist
+          path: apps/web/dist
 
       - name: Deploy to GitHub Pages
         id: deployment

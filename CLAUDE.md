@@ -64,7 +64,22 @@
   Подробности — `context/workflow.md`, секция «Git-процесс проекта
   (ветки, ручки, защита main)».
 
+## Структура монорепо
+
+npm workspaces `["apps/*", "packages/*"]`, единый корневой
+`package-lock.json`, `npm ci` из корня ставит все воркспейсы.
+
+- `apps/web/` — публичный WEB-справочник (SPA, rspack, dev-порт 3000).
+  Здесь живут все namespace-ы каталогов (см. ниже).
+- `apps/cop/` — десктоп-клиент клана (Tauri, COP; dev-порт 1420). Rust —
+  `apps/cop/src-tauri/`, phash-индекс — `apps/cop/src/generated/`.
+- `packages/shared/` — скаффолд общего слоя (`@mechs/shared`).
+- `scripts/`, `data/`, `assets/raw/` — общие, остаются в **корне** репо
+  (единый вход data-pipeline; не переезжали в apps/).
+
 ## Namespace-ы проекта
+
+Все относятся к `apps/web` (SPA-справочник):
 
 - `catalog` — каталоги игровых сущностей, парсеры (wiki + Google Sheets), build-time merger.
 - `ui` — карточные view каталогов и общие UI-компоненты.
@@ -73,24 +88,29 @@
 
 ## Точки входа кода
 
-- `src/index.tsx` — bootstrap (React, CssVarsProvider, QueryClientProvider).
-- `src/App.tsx` — `<RouterProvider router={router} />`.
-- `src/router.tsx` — createBrowserRouter, basename `/mechs-assistant` в prod, 16 роутов каталогов.
-- `src/components/layout/` — AppLayout, AppHeader, Breadcrumbs.
-- `src/pages/` — HomePage, CatalogsHubPage, `catalogs/*CatalogPage.tsx` (16 тонких обёрток, по одной на каталог).
-- `src/components/catalog/` — общие примитивы каталога:
+SPA — под `apps/web/src/`:
+
+- `apps/web/src/index.tsx` — bootstrap (React 19, ThemeProvider MUI v7, QueryClientProvider).
+- `apps/web/src/App.tsx` — `<RouterProvider router={router} />`.
+- `apps/web/src/router.tsx` — createBrowserRouter, basename `/mechs-assistant` в prod, 16 роутов каталогов.
+- `apps/web/src/components/layout/` — AppLayout, AppHeader, Breadcrumbs.
+- `apps/web/src/pages/` — HomePage, CatalogsHubPage, `catalogs/*CatalogPage.tsx` (16 тонких обёрток, по одной на каталог).
+- `apps/web/src/components/catalog/` — общие примитивы каталога:
   - Compositional: Header, Section, Grid, FilterPanel, SearchField, LevelRangeFilter, PairToggleGroup, FavoritesDnDSection, OverlayBadge.
   - Cross-catalog: `IngredientMiniCard` (иконка+×N+tooltip+клик-навигация, count опционален), `BlueprintChipList` (мини-карточки чертежей для секции «Крафт»).
   - Hook'и: `useSearchFilter`, `useLevelRangeFilter`, `useTypeFilter`, `usePairFilter`, `useDeepLinkOpen` (URL ?open=<key> для открытия Detail с историей браузера).
-- `src/components/catalogs/<slug>/` — карточные view + Card/Detail/SortableCard для каждого каталога (mechs/weapons/ammo/items/ore/loot/components/skills/blueprints + equipment общий + 7 тонких обёрток chips/shields/armour/accumulators/reactors/drills/cargos).
-- `src/components/tiles/` — Tile, TileGrid (плитки навигации).
-- `src/stores/indexedDBMiddleware.ts` — общий middleware Zustand.
-- `src/stores/<slug>/store.ts` — 10 сторов (robots, weapons, equipment, ammo, items, ore, loot, components, skills, blueprints); каждый на отдельной IndexedDB базе.
-- `src/utils/overlay.ts` — helpers для `_meta.overlayFields` (принимает любую сущность с `_meta`).
-- `src/utils/crossCatalogLookup.ts` — единый lookup name/iconPath/subtype по (catalog, key) + `lookupBlueprintKeyByName(name)` для секции «Крафт».
-- `src/utils/catalogPath.ts` — `catalogPathFor(catalog, key)` → URL `/catalogs/<slug>-catalog?open=<key>`; equipment → resolve subtype в 7 UI-подкаталогов.
-- `src/utils/icons.ts` — `resolveIconUrl(iconPath)` для сборки URL иконки.
-- `src/types/{common,robot,weapon,equipment,ammo,item,ore,loot,component,skill,blueprint}.ts` — Price/OverlayMeta/Transform + типы каталогов.
+- `apps/web/src/components/catalogs/<slug>/` — карточные view + Card/Detail/SortableCard для каждого каталога (mechs/weapons/ammo/items/ore/loot/components/skills/blueprints + equipment общий + 7 тонких обёрток chips/shields/armour/accumulators/reactors/drills/cargos).
+- `apps/web/src/components/tiles/` — Tile, TileGrid (плитки навигации).
+- `apps/web/src/stores/indexedDBMiddleware.ts` — общий middleware Zustand.
+- `apps/web/src/stores/<slug>/store.ts` — 10 сторов (robots, weapons, equipment, ammo, items, ore, loot, components, skills, blueprints); каждый на отдельной IndexedDB базе.
+- `apps/web/src/utils/overlay.ts` — helpers для `_meta.overlayFields` (принимает любую сущность с `_meta`).
+- `apps/web/src/utils/crossCatalogLookup.ts` — единый lookup name/iconPath/subtype по (catalog, key) + `lookupBlueprintKeyByName(name)` для секции «Крафт».
+- `apps/web/src/utils/catalogPath.ts` — `catalogPathFor(catalog, key)` → URL `/catalogs/<slug>-catalog?open=<key>`; equipment → resolve subtype в 7 UI-подкаталогов.
+- `apps/web/src/utils/icons.ts` — `resolveIconUrl(iconPath)` для сборки URL иконки.
+- `apps/web/src/types/{common,robot,weapon,equipment,ammo,item,ore,loot,component,skill,blueprint}.ts` — Price/OverlayMeta/Transform + типы каталогов.
+
+Общие (корень репо):
+
 - `data/*.json` (parsed) + `data/overrides/*.yml` (overlay) — источники данных.
 - `assets/raw/blueprint.png` — фон-«планшет» для композита иконок чертежей.
 - `scripts/catalogs.config.ts` — единый конфиг каталогов (пути, лист Sheets, папки иконок, опциональный `iconBackgroundPath`).
@@ -99,10 +119,10 @@
 - `scripts/parser-google-sheets/index.ts` — синк overlay из Sheets.
 - `scripts/setup-sheets-columns/` — идемпотентная настройка колонок 10 листов (columns.ts + index.ts).
 
-## Импорты в src/
+## Импорты в apps/web/src/
 
-- Алиасы: `@/` → `src/`, `@build/` → `.build/`, `@img/` → `assets/images/`, `@raw/` → `assets/raw/`.
-- **Относительные импорты `../` в `src/**/*.{ts,tsx}` запрещены** правилом
+- Алиасы (SPA): `@/` → `apps/web/src/`, `@build/` → корневой `.build/`, `@img/` → `apps/web/assets/images/`, `@raw/` → корневой `assets/raw/`. Конфиг — `apps/web/rspack.config.js` (`resolve.alias`) + `apps/web/tsconfig.json` (`paths`).
+- **Относительные импорты `../` в `apps/web/src/**/*.{ts,tsx}` запрещены** правилом
   `no-restricted-imports` в `eslint.config.js`. Соседние импорты через `./`
   разрешены. Для сущностей уровня повыше — только через `@/…`.
 - Правило не применяется к `scripts/**/*` (там нет alias-инфраструктуры, локальные `../` работают штатно).

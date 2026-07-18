@@ -9,7 +9,7 @@ scenarios:
     when: файл `store.ts` импортирует `oreData` из `@build/data/ore.json` и
       приводит его к `Ore[]`
     then: |
-      сборка проходит без ошибок типа, `Ore`-типы из `src/types/ore.ts`
+      сборка проходит без ошибок типа, `Ore`-типы из `apps/web/src/types/ore.ts`
       применимы ко всем записям.
 
   - given: в JSON появилась запись без `stats.weight`
@@ -21,4 +21,4 @@ scenarios:
 verified: true
 verified_at: 2026-07-13
 verified_note: |
-  Проверено: `npm run build` и `tsc --noEmit` проходят без ошибок типа. `Ore`/`OreStats` описаны в `src/types/ore.ts` (`stats.weight` + опциональные `foundIn: string[]`, `sellPrice`, `craftFromBlueprints`, `description`). Все 8 записей содержат `stats.weight` (валидация в parsePage). Оговорка про runtime-валидацию та же, что для всех data-каталогов (assert `as Ore[]`, не zod).
+  Проверено: `npm run build` и `tsc --noEmit` проходят без ошибок типа. `Ore`/`OreStats` описаны в `apps/web/src/types/ore.ts` (`stats.weight` + опциональные `foundIn: string[]`, `sellPrice`, `craftFromBlueprints`, `description`). Все 8 записей содержат `stats.weight` (валидация в parsePage). Оговорка про runtime-валидацию та же, что для всех data-каталогов (assert `as Ore[]`, не zod).

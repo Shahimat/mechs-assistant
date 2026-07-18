@@ -80,7 +80,7 @@ URL сайта будет `<username>.github.io/<repo-name>/`. Чтобы пол
 1. [vercel.com/new](https://vercel.com/new) → импортировать из GitHub.
 2. **Framework Preset:** Other.
 3. **Build Command:** `npm run build`.
-4. **Output Directory:** `dist`.
+4. **Output Directory:** `apps/web/dist`.
 5. **Deploy**.
 
 `publicPath: '/mechs/'` настраивается в rspack config.
@@ -218,11 +218,15 @@ on:
     branches: [main]
     paths:
       - 'data/**'
-      - 'src/**'
+      - 'assets/**'
+      - 'apps/web/**'
+      - 'packages/shared/**'
+      - 'scripts/build-data/**'
+      - 'scripts/catalogs.config.ts'
       - 'package.json'
       - 'package-lock.json'
-      - 'rspack.config.*'
-      - 'tsconfig.json'
+      - 'tsconfig.base.json'
+      - '.github/workflows/deploy.yml'
   workflow_dispatch:
 
 concurrency:
@@ -230,7 +234,7 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
-  deploy:
+  build-and-deploy:
     runs-on: ubuntu-latest
     permissions:
       contents: read
@@ -243,18 +247,19 @@ jobs:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with:
-          node-version: '20'
+          node-version: '22'
+          cache: 'npm'
 
       - name: Install dependencies
-        run: npm ci
+        run: npm ci --foreground-scripts
 
       - name: Build
         run: npm run build
 
-      - name: Upload artifact
+      - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: dist
+          path: apps/web/dist
 
       - name: Deploy to GitHub Pages
         id: deployment

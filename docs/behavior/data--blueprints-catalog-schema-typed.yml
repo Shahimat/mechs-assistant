@@ -10,7 +10,7 @@ scenarios:
       и приводит к `Blueprint[]`
     then: |
       сборка проходит без ошибок типа. `Blueprint`-тип из
-      `src/types/blueprint.ts` (category + optional subtype + producesKey +
+      `apps/web/src/types/blueprint.ts` (category + optional subtype + producesKey +
       producesCatalog + output + ingredients[] + stats.durability +
       optional skillSpecialist/bondsCost/reglsCost).
 
@@ -29,7 +29,7 @@ scenarios:
 verified: true
 verified_at: 2026-07-14
 verified_note: |
-  Тип `Blueprint` в `src/types/blueprint.ts` реализован: category+optional
+  Тип `Blueprint` в `apps/web/src/types/blueprint.ts` реализован: category+optional
   subtype, producesKey+producesCatalog+output, ingredients[] с
   BlueprintIngredient { key, catalog?, count }, stats.durability,
   опциональные skillSpecialist/bondsCost/reglsCost/sellPrice/description/

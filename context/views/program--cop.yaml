@@ -12,8 +12,8 @@ why: |
   калькулятор без auth.
 
   COP — это **программа**, а не одна цель: у неё общая технологическая база
-  (единый codebase SPA+Tauri, Rust-мосты, локальный SQLite, KV-транспорт,
-  токен-авторизация) и набор функциональных **подцелей** (goal--cop-*),
+  (монорепо с общим переиспользуемым слоем, Rust-мосты, локальный SQLite,
+  KV-транспорт, токен-авторизация) и набор функциональных **подцелей** (goal--cop-*),
   каждая со своим приоритетом и жизненным циклом. Платформенный слой (техбаза
   + сервер + синхронизация + авторизация) живёт в `tasks` этого файла; подцель,
   которой он нужен, отмечает блокер «ждёт платформу программы».
@@ -38,10 +38,17 @@ description: |
   (Discord/Telegram).
 
   ## Платформенная архитектура (общая техбаза)
-  Клиент (Tauri) — единый codebase с публичным SPA (общий React из корневого
-  src/), плюс Tauri-only роуты и Rust-мосты (parser, sqlite, cop-client).
-  Локальный SQLite через tauri-plugin-sql. Offline-first: snapshot из кэша
-  мгновенно, KV в фоне.
+  Монорепо (npm workspaces) с **двумя раздельными приложениями** и общим
+  переиспользуемым слоем — публичный SPA и десктопный COP концептуально разные
+  сущности под разные задачи, их НЕ сливаем в один бандл. `apps/web` — SPA (GH
+  Pages), `apps/cop` — Tauri-клиент, `packages/shared` (@mechs/shared) —
+  переиспользуемый код (типы, каталожные компоненты, утилиты, сторы), который
+  импортят оба. Оба приложения на React 19 + rspack. COP несёт Tauri-only Rust-
+  мосты (parser, sqlite, cop-client) и локальный SQLite через tauri-plugin-sql;
+  каталоги и калькуляторы тянет из `@mechs/shared`, а не дублирует. Offline-first:
+  snapshot из кэша мгновенно, KV в фоне. Переиспользование инкрементальное —
+  общий слой вычленяется из `apps/web` в `packages/shared` по мере надобности
+  COP-подцелей, а не разом.
 
   Master SQLite на диске владельца — единственный источник правды для клановых
   данных. Cloudflare Workers KV (free-tier, упираемся в ~5% лимитов) —
@@ -100,7 +107,6 @@ tasks:
   blocker: []
 
   high:
-    - 'единый codebase SPA+Tauri: переезд apps/inventory-parser на общий React из корневого src/ + Tauri-only роуты + Rust-мосты (parser, sqlite, cop-client) + локальный SQLite через tauri-plugin-sql + переименование приложения (рабочее «Мехи COP», финализировать). Иначе дублируем UI-код каталогов и калькулятора → фаза refactor → нет'
     - 'сервер: Cloudflare Worker + KV setup (deploy через wrangler в apps/cop-worker/), эндпоинты POST/GET/DELETE /pending, GET /snapshot, POST /custody, POST /request, GET /notifications → фаза feat → нет'
     - 'система синхронизации: generic KV-транспорт (pending/snapshot/custody/notify) — клиентский drain/apply, идемпотентность по uuid, offline-first snapshot-кэш. Независим от доменной схемы склада → фаза feat → блокер: сервер'
     - "auth/authz: генерация персональных bearer-токенов + ручная выдача, роли owner/delegate/member, ротация/revoke (members.status active/revoked), сверка токена Worker'ом против кэша members в KV → фаза feat → блокер: сервер"

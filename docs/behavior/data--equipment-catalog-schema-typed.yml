@@ -10,7 +10,7 @@ scenarios:
       `@build/data/equipment.json` и приводит его к `Equipment[]`
     then: |
       сборка проходит без ошибок типа, `Equipment`-типы из
-      `src/types/equipment.ts` применимы ко всем записям (`key`, `name`,
+      `apps/web/src/types/equipment.ts` применимы ко всем записям (`key`, `name`,
       `model`, `family`, `subtype`, `stats.*`).
 
   - given: в JSON появилась запись, у которой отсутствует обязательное поле
@@ -26,7 +26,7 @@ verified: true
 verified_at: 2026-07-14
 verified_note: |
   `Equipment.transformsFrom?: Transform` реализован в
-  `src/types/equipment.ts`. Резолвер `resolvers/equipment.ts` тянет
+  `apps/web/src/types/equipment.ts`. Резолвер `resolvers/equipment.ts` тянет
   «Преобразуется из» тем же паттерном, что weapons. Merger резолвит
   `ingredients[i].catalog` через `resolveCrossCatalogRefs`. UI: chip
   «Транс.» в EquipmentCard + секция «Преобразование» в EquipmentDetail

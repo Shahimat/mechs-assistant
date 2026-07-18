@@ -35,11 +35,11 @@ description: |
   (уже на месте).
 
 source_files:
-  page: src/pages/catalogs/ComponentsCatalogPage.tsx
-  view: src/components/catalogs/components/ComponentsCatalog.tsx
-  card: src/components/catalogs/components/ComponentCard.tsx
-  detail: src/components/catalogs/components/ComponentDetail.tsx
-  sortable_card: src/components/catalogs/components/SortableComponentCard.tsx
+  page: apps/web/src/pages/catalogs/ComponentsCatalogPage.tsx
+  view: apps/web/src/components/catalogs/components/ComponentsCatalog.tsx
+  card: apps/web/src/components/catalogs/components/ComponentCard.tsx
+  detail: apps/web/src/components/catalogs/components/ComponentDetail.tsx
+  sortable_card: apps/web/src/components/catalogs/components/SortableComponentCard.tsx
 
 features_enabled:
   - cards-grid

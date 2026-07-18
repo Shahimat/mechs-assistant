@@ -40,7 +40,7 @@ description: |
 
   Overlay `data/overrides/loot.yml` синкается из Google Sheets (лист
   `loot`) через `parser--google-sheets`. Схема — TS-типы в
-  `src/types/loot.ts`.
+  `apps/web/src/types/loot.ts`.
 
 source_files:
   parsed: data/loot.json
@@ -48,7 +48,7 @@ source_files:
   merged: .build/data/loot.json # build-time
   merger: scripts/build-data/index.ts
   parser: scripts/parser-wiki/resolvers/loot.ts
-  types: src/types/loot.ts
+  types: apps/web/src/types/loot.ts
 
 wiki_source:
   root_page_ids: [3023, 3027, 20118] # seeds для BFS, каждая с зашитым source

@@ -1,5 +1,5 @@
 name: mechs-assistant
-description: WEB-ассистент игры Мехи.Земля. Карточный каталог мехов (MVP1) + фундамент под расширение на 10 других каталогов и калькулятор прокачки.
+description: Ассистент игры Мехи.Земля — монорепо (npm workspaces). apps/web — публичный WEB-справочник (карточные каталоги + фундамент под калькулятор прокачки); apps/cop — десктоп-клиент клана (Tauri, COP); packages/shared — скаффолд общего слоя.
 author:
   name: Gevorg Nakhapetyan
   email: ngs22071993@gmail.com
@@ -33,7 +33,7 @@ sync:
 
 stack:
   language: TypeScript (strict)
-  ui: React 18 + MUI v5 + Emotion (styled components)
+  ui: React 19 + MUI v7 + Emotion (styled components)
   dnd: dnd-kit — drag-and-drop сортировка избранных карточек
   state: Zustand + собственный indexedDB middleware
   data_layer: TanStack Query (v5) — подключён в bootstrap, реальных queries пока нет (см. goal--infra, решить судьбу)
@@ -43,7 +43,7 @@ stack:
   deploy: GitHub Pages (deploy-pages@v4) под префиксом /mechs-assistant/
 
 runtime:
-  dev_port: 3000
+  dev_port: 3000 # apps/web (SPA); apps/cop (Tauri) — 1420
   dev_server: rspack serve
   indexeddb:
     db_name: mechs-assistant
@@ -52,7 +52,7 @@ runtime:
     persisted_keys: [favorites]
 
 paths:
-  source: src/
+  source: apps/web/src/ # SPA-справочник; десктоп-клиент — apps/cop/src/, общий слой — packages/shared/src/
   data_processed: data/robots.json
   data_raw: raw-data/ # gitignored, HTML-выгрузки со страниц вики (исходники для robots.json)
   docs_entities: docs/entities/
@@ -83,7 +83,7 @@ external_links:
   upgrade_calculator: https://new.mechs.su/help/upgrade-robots # референс онлайн-калькулятора прокачки для MVP2, клиентский Redux
   mechs_earth_system: https://github.com/MechsEarth/System # community-maintained база знаний ЕСИ, возможный вторичный источник (не первичный)
   # todo_sheet: URL публичного листа `todo` в overlay-spreadsheet — не в git.
-  # Собирается в src/config/links.ts из env `MECHS_OVERLAY_SPREADSHEET_ID`
+  # Собирается в apps/web/src/config/links.ts из env `MECHS_OVERLAY_SPREADSHEET_ID`
   # (инжектится rspack DefinePlugin) + фиксированного GID листа. Кнопка
   # «Предложить задачу» на /todo скрывается если ID не задан. См.
   # .env.local.example.

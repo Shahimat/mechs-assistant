@@ -40,11 +40,11 @@ description: |
   механику избранного `other--favorites` (список ключей + IndexedDB).
 
 source_files:
-  page: src/pages/catalogs/WeaponsCatalogPage.tsx # роутовая обёртка (/catalogs/weapons-catalog)
-  view: src/components/catalogs/weapons/WeaponsCatalog.tsx
-  card: src/components/catalogs/weapons/WeaponCard.tsx
-  detail: src/components/catalogs/weapons/WeaponDetail.tsx
-  sortable_card: src/components/catalogs/weapons/SortableWeaponCard.tsx
+  page: apps/web/src/pages/catalogs/WeaponsCatalogPage.tsx # роутовая обёртка (/catalogs/weapons-catalog)
+  view: apps/web/src/components/catalogs/weapons/WeaponsCatalog.tsx
+  card: apps/web/src/components/catalogs/weapons/WeaponCard.tsx
+  detail: apps/web/src/components/catalogs/weapons/WeaponDetail.tsx
+  sortable_card: apps/web/src/components/catalogs/weapons/SortableWeaponCard.tsx
 
 features_enabled:
   - cards-grid

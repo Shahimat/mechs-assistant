@@ -9,7 +9,7 @@ scenarios:
     when: файл `store.ts` импортирует `todosData` из `@build/data/todos.json`
       и приводит к `Todo[]`
     then: |
-      сборка проходит без ошибок типа. `Todo`-тип из `src/types/todo.ts`:
+      сборка проходит без ошибок типа. `Todo`-тип из `apps/web/src/types/todo.ts`:
         interface Todo {
           key: string;             // 'row-<N>' из parser'а
           text: string;            // «Задача»
@@ -31,6 +31,6 @@ verified: true
 verified_at: 2026-07-14
 verified_note: |
   Тип `Todo` + enum-константы `TODO_PRIORITIES`/`TODO_STATUSES` в
-  `src/types/todo.ts`. Парсер `parser-google-sheets::syncTodoSheet`
+  `apps/web/src/types/todo.ts`. Парсер `parser-google-sheets::syncTodoSheet`
   проставляет `key=row-<N>` и fallback-даты, записывает даты
   обратно в Sheets (batchUpdate). `npx tsc --noEmit` — 0 ошибок.

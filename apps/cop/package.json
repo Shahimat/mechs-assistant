@@ -1,0 +1,36 @@
+{
+  "name": "@mechs/cop",
+  "version": "0.1.0",
+  "description": "Clan Operations Platform — десктоп-клиент клана «Мехи.Земля» (Tauri)",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "dev": "rspack serve",
+    "build": "rspack build",
+    "typecheck": "tsc --noEmit",
+    "tauri": "tauri"
+  },
+  "dependencies": {
+    "@tauri-apps/api": "^2",
+    "@tauri-apps/plugin-dialog": "^2",
+    "@tauri-apps/plugin-global-shortcut": "^2",
+    "@tauri-apps/plugin-process": "^2.3.1",
+    "@tauri-apps/plugin-store": "^2",
+    "@tauri-apps/plugin-updater": "^2.10.1",
+    "fflate": "^0.8.3",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
+    "tesseract.js": "^7.0.0"
+  },
+  "devDependencies": {
+    "@rspack/cli": "^1.0.5",
+    "@rspack/core": "^1.0.5",
+    "@rspack/plugin-react-refresh": "^1.5.3",
+    "@tauri-apps/cli": "^2",
+    "@types/react": "^19.1.8",
+    "@types/react-dom": "^19.1.6",
+    "html-webpack-plugin": "^5.6.0",
+    "react-refresh": "^0.14.2",
+    "typescript": "~5.8.3"
+  }
+}

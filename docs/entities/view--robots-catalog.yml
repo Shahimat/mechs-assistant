@@ -24,14 +24,14 @@ description: |
   использует механику избранного из `other--favorites`.
 
 source_files:
-  page: src/pages/catalogs/MechsCatalogPage.tsx # роутовая обёртка (/catalogs/mechs-catalog)
-  view: src/components/catalogs/mechs/MechsCatalog.tsx # композиция примитивов + бизнес-логика
-  card: src/components/catalogs/mechs/RobotCard.tsx
-  detail: src/components/catalogs/mechs/RobotDetail.tsx
-  sortable_card: src/components/catalogs/mechs/SortableRobotCard.tsx
-  filters: src/components/catalogs/mechs/MechFilters.tsx
-  level_filter: src/components/catalogs/mechs/LevelRangeFilter.tsx
-  overlay_badge: src/components/catalogs/mechs/OverlayBadge.tsx
+  page: apps/web/src/pages/catalogs/MechsCatalogPage.tsx # роутовая обёртка (/catalogs/mechs-catalog)
+  view: apps/web/src/components/catalogs/mechs/MechsCatalog.tsx # композиция примитивов + бизнес-логика
+  card: apps/web/src/components/catalogs/mechs/RobotCard.tsx
+  detail: apps/web/src/components/catalogs/mechs/RobotDetail.tsx
+  sortable_card: apps/web/src/components/catalogs/mechs/SortableRobotCard.tsx
+  filters: apps/web/src/components/catalogs/mechs/MechFilters.tsx
+  level_filter: apps/web/src/components/catalogs/mechs/LevelRangeFilter.tsx
+  overlay_badge: apps/web/src/components/catalogs/mechs/OverlayBadge.tsx
 
 features_enabled:
   - cards-grid # сетка карточек мехов

@@ -8,7 +8,7 @@ scenarios:
   - given: TypeScript strict включён (`strict: true`) и `resolveJsonModule: true`
     when: файл `store.ts` импортирует `robotsData` и приводит его к `Robot[]`
     then: |
-      сборка проходит без ошибок типа, `Robot`-типы из `src/types/robot.ts`
+      сборка проходит без ошибок типа, `Robot`-типы из `apps/web/src/types/robot.ts`
       применимы ко всем записям (`key`, `name`, `model`, `type`,
       `requiredLevel`, `stats.*`).
 
@@ -25,7 +25,7 @@ verified: true
 verified_at: 2026-07-04
 verified_note: |
   Проверено: `npm run build` проходит без ошибок типа, `resolveJsonModule`
-  включён в tsconfig.json, `Robot` описан в src/types/robot.ts.
+  включён в tsconfig.json, `Robot` описан в apps/web/src/types/robot.ts.
   Оговорка: приведение `robotsData as Robot[]` в store.ts — это assert,
   а не runtime-валидация. Если в JSON появится некорректная запись,
   строгая проверка не сработает. Второй сценарий behavior — «падает

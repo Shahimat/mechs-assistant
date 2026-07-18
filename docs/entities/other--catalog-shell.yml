@@ -21,20 +21,20 @@ description: |
   а не переписать его, — обобщение состоялось.
 
 source_files:
-  header: src/components/catalog/CatalogHeader.tsx
-  section: src/components/catalog/CatalogSection.tsx
-  grid: src/components/catalog/CatalogGrid.tsx
-  favorites: src/components/catalog/FavoritesDnDSection.tsx
-  filter_panel: src/components/catalog/FilterPanel.tsx
-  search_field: src/components/catalog/SearchField.tsx
-  level_range: src/components/catalog/LevelRangeFilter.tsx # Slider-фильтр по requiredLevel, вынесен из mechs
-  pair_toggle: src/components/catalog/PairToggleGroup.tsx # split-капсулы для парных и одиночных значений
-  overlay_badge: src/components/catalog/OverlayBadge.tsx # индикатор overlay-полей на карточке/детали
-  page_styles: src/components/catalog/CatalogPage.styles.ts
-  hook_search: src/components/catalog/hooks/useSearchFilter.ts
-  hook_level: src/components/catalog/hooks/useLevelRangeFilter.ts
-  hook_type: src/components/catalog/hooks/useTypeFilter.ts
-  hook_pair: src/components/catalog/hooks/usePairFilter.ts # трёх-стадийные пары (none/both/only-a/only-b) + одиночные
+  header: apps/web/src/components/catalog/CatalogHeader.tsx
+  section: apps/web/src/components/catalog/CatalogSection.tsx
+  grid: apps/web/src/components/catalog/CatalogGrid.tsx
+  favorites: apps/web/src/components/catalog/FavoritesDnDSection.tsx
+  filter_panel: apps/web/src/components/catalog/FilterPanel.tsx
+  search_field: apps/web/src/components/catalog/SearchField.tsx
+  level_range: apps/web/src/components/catalog/LevelRangeFilter.tsx # Slider-фильтр по requiredLevel, вынесен из mechs
+  pair_toggle: apps/web/src/components/catalog/PairToggleGroup.tsx # split-капсулы для парных и одиночных значений
+  overlay_badge: apps/web/src/components/catalog/OverlayBadge.tsx # индикатор overlay-полей на карточке/детали
+  page_styles: apps/web/src/components/catalog/CatalogPage.styles.ts
+  hook_search: apps/web/src/components/catalog/hooks/useSearchFilter.ts
+  hook_level: apps/web/src/components/catalog/hooks/useLevelRangeFilter.ts
+  hook_type: apps/web/src/components/catalog/hooks/useTypeFilter.ts
+  hook_pair: apps/web/src/components/catalog/hooks/usePairFilter.ts # трёх-стадийные пары (none/both/only-a/only-b) + одиночные
 
 api_shape:
   primitives:

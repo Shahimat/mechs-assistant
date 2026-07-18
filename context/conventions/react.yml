@@ -1,6 +1,6 @@
 key: react
 rule: |
-  React 18+. Только функциональные компоненты + hooks.
+  React 19. Только функциональные компоненты + hooks.
     - Тип компонента — `React.FC<Props>` или явное описание props.
     - Обёртки над MUI-компонентами — свои функциональные компоненты
       с явной сигнатурой props.
@@ -9,4 +9,4 @@ rule: |
       `react-window` числится в deps, но не используется — см. goal--infra.
     - Корневой bootstrap завёрнут в `React.StrictMode` +
       `QueryClientProvider` + `ThemeProvider` + `CssBaseline`
-      (см. `src/index.tsx`).
+      (см. `apps/web/src/index.tsx`).

@@ -25,4 +25,4 @@ scenarios:
 verified: true
 verified_at: 2026-07-14
 verified_note: |
-  Проверено чтением кода и прогонами: `src/stores/loot/store.ts` — `initializeLoot` импортирует `@build/data/loot.json` и синхронно ставит `loot`, `isLoading=false`, `error=null`. `LootCatalog.tsx` вызывает `initializeLoot()` через useEffect при пустом сторе. Merged JSON собирается `scripts/build-data`: `npm run build:data → ✓ loot: merged 65 entries (0 with overlay) → .build/data/loot.json`. `npm run build`, `tsc --noEmit`, `npm run lint` — зелёные. Empty/error state — Alert.
+  Проверено чтением кода и прогонами: `apps/web/src/stores/loot/store.ts` — `initializeLoot` импортирует `@build/data/loot.json` и синхронно ставит `loot`, `isLoading=false`, `error=null`. `LootCatalog.tsx` вызывает `initializeLoot()` через useEffect при пустом сторе. Merged JSON собирается `scripts/build-data`: `npm run build:data → ✓ loot: merged 65 entries (0 with overlay) → .build/data/loot.json`. `npm run build`, `tsc --noEmit`, `npm run lint` — зелёные. Empty/error state — Alert.

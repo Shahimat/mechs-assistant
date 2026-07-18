@@ -11,10 +11,10 @@ description: |
 
   Монтируется по маршруту `/catalogs/armour-catalog` через
   `ArmourCatalogPage`. Читает данные из единого стора
-  `useEquipmentStore` (`src/stores/equipment/store.ts`) и фильтрует
+  `useEquipmentStore` (`apps/web/src/stores/equipment/store.ts`) и фильтрует
   массив по `subtype`. Общие для семи view карточные компоненты
   (`EquipmentCard`, `EquipmentDetail`, `SortableEquipmentCard`) живут
-  в `src/components/catalogs/equipment/` — по subtype не размножаются.
+  в `apps/web/src/components/catalogs/equipment/` — по subtype не размножаются.
 
   Собирается из примитивов `other--catalog-shell` (`CatalogHeader`,
   `CatalogSection`, `CatalogGrid`, `FavoritesDnDSection`, `SearchField`,
@@ -33,11 +33,11 @@ description: |
   не по subtype).
 
 source_files:
-  page: src/pages/catalogs/ArmourCatalogPage.tsx  # роутовая обёртка (/catalogs/armour-catalog)
-  view: src/components/catalogs/armour/ArmourCatalog.tsx
-  shared_card: src/components/catalogs/equipment/EquipmentCard.tsx
-  shared_detail: src/components/catalogs/equipment/EquipmentDetail.tsx
-  shared_sortable: src/components/catalogs/equipment/SortableEquipmentCard.tsx
+  page: apps/web/src/pages/catalogs/ArmourCatalogPage.tsx  # роутовая обёртка (/catalogs/armour-catalog)
+  view: apps/web/src/components/catalogs/armour/ArmourCatalog.tsx
+  shared_card: apps/web/src/components/catalogs/equipment/EquipmentCard.tsx
+  shared_detail: apps/web/src/components/catalogs/equipment/EquipmentDetail.tsx
+  shared_sortable: apps/web/src/components/catalogs/equipment/SortableEquipmentCard.tsx
 
 features_enabled:
   - cards-grid

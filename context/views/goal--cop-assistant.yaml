@@ -20,7 +20,7 @@ description: |
 
   ## Парсер инвентаря (medium, миграция)
   Сквозной конвейер уже работает и закрыт кодом (см. CHANGELOG 2026-07-15/16):
-  Tauri 2.x + React 19 + Vite; xcap снимает окно по hwnd без переключения
+  Tauri 2.x + React 19 + Rspack; xcap снимает окно по hwnd без переключения
   фокуса; imageproc template matching UI-угла рамки инвентаря; pHash 16×16
   против index из data/icons/**/*.webp; tesseract.js OCR чисел под иконками;
   серия страниц пагинации с дедупом; diagnostic-export ZIP; автобилд на push +

@@ -21,8 +21,8 @@
 Локально в терминале мака:
 
 ```bash
-cd /Users/shahimat/prj/mechs-assistant/apps/inventory-parser
-npx @tauri-apps/cli signer generate --write-keys ~/tauri-updater-inventory-parser
+cd /Users/shahimat/prj/mechs-assistant/apps/cop
+npx @tauri-apps/cli signer generate --write-keys ~/tauri-updater-mechs-cop
 ```
 
 Спросит пароль на приватный ключ — придумай нормальный (длинный),
@@ -30,19 +30,19 @@ npx @tauri-apps/cli signer generate --write-keys ~/tauri-updater-inventory-parse
 
 Результат — две файла:
 
-- `~/tauri-updater-inventory-parser` — **приватный** (защищён паролем),
+- `~/tauri-updater-mechs-cop` — **приватный** (защищён паролем),
   ни в коем случае не в git.
-- `~/tauri-updater-inventory-parser.pub` — **публичный**, идёт в
+- `~/tauri-updater-mechs-cop.pub` — **публичный**, идёт в
   `tauri.conf.json`, коммитится в git.
 
 ## Шаг 2 — публичный ключ в `tauri.conf.json`
 
-Открой `~/tauri-updater-inventory-parser.pub`, скопируй одной строкой
+Открой `~/tauri-updater-mechs-cop.pub`, скопируй одной строкой
 всё содержимое (что-то вроде
 `dW50cnVzdGVkIGNvbW1lbnQ6IG1pbmlzaWduIHB1YmxpYy...`).
 
 Замени placeholder в
-`apps/inventory-parser/src-tauri/tauri.conf.json`:
+`apps/cop/src-tauri/tauri.conf.json`:
 
 ```json
 "plugins": {
@@ -63,7 +63,7 @@ npx @tauri-apps/cli signer generate --write-keys ~/tauri-updater-inventory-parse
 для репозитория `Shahimat/mechs-assistant`:
 
 - `TAURI_SIGNING_PRIVATE_KEY` = содержимое файла
-  `~/tauri-updater-inventory-parser` целиком (весь base64 внутри, со
+  `~/tauri-updater-mechs-cop` целиком (весь base64 внутри, со
   включая заголовок `untrusted comment:` — не подрезай).
 - `TAURI_SIGNING_PRIVATE_KEY_PASSWORD` = пароль, который ты придумал
   в Шаге 1.
@@ -74,18 +74,18 @@ npx @tauri-apps/cli signer generate --write-keys ~/tauri-updater-inventory-parse
 
 ## Шаг 4 — проверка
 
-Push в develop с любой правкой в `apps/inventory-parser/**` →
+Push в develop с любой правкой в `apps/cop/**` →
 `build-dev` job зелёный, никакой подписи не делает (в dev-flow она
 не нужна).
 
 Merge develop → main через `merge-develop-to-main.yml` (или через PR)
 → триггерится `release` job → `tauri-action` подписывает,
-создаёт релиз `Inventory Parser v0.1.<N>`, прикладывает `.msi`,
+создаёт релиз `Mechs COP v0.1.<N>`, прикладывает `.msi`,
 `.msi.zip`, `.msi.zip.sig` и `latest.json`.
 
 Проверь в `Releases`:
 
-- Тег вида `inventory-parser-v0.1.<N>`.
+- Тег вида `mechs-cop-v0.1.<N>`.
 - Файлы включают `latest.json` — открой его, там `{"version":
 "0.1.N", "platforms": {"windows-x86_64": {"signature": "...",
 "url": "..."}}}`.

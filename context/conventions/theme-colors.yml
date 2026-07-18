@@ -1,11 +1,13 @@
 key: theme-colors
 rule: |
-  Цвета определяются в одном месте — `src/theme.ts`.
+  Цвета определяются в одном месте — `apps/web/src/theme.ts`.
 
-    - Используем MUI `experimental_extendTheme` / `CssVarsProvider`.
+    - Используем MUI `createTheme({ cssVariables: … })` + `ThemeProvider`
+      (стабильный CSS-vars API MUI v7; экспериментальные
+      `experimental_extendTheme` / `CssVarsProvider` больше не нужны).
     - Палитра описана один раз, MUI сам генерирует CSS-переменные вида
       `--mui-palette-primary-main`, `--mui-palette-background-default`.
-    - Кастомные цвета вне палитры — тоже в theme.ts (например
+    - Кастомные цвета вне палитры — тоже в `apps/web/src/theme.ts` (например
       `theme.vars.custom.overlayHighlight`).
 
   Доступ из кода:
