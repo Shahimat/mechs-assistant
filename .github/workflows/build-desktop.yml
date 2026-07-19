@@ -67,21 +67,11 @@ jobs:
             npm run tauri build -- --config updater-off.json
           }
 
-      - name: Upload .exe artifact
+      - name: Upload .msi artifact
         uses: actions/upload-artifact@v4
         with:
-          name: mechs-cop-exe
-          path: apps/cop/src-tauri/target/${{ env.BUILD_PROFILE }}/mechs-cop.exe
-          if-no-files-found: warn
-          retention-days: 30
-
-      - name: Upload installer artifacts (.msi + .exe setup)
-        uses: actions/upload-artifact@v4
-        with:
-          name: mechs-cop-installers
-          path: |
-            apps/cop/src-tauri/target/${{ env.BUILD_PROFILE }}/bundle/msi/*.msi
-            apps/cop/src-tauri/target/${{ env.BUILD_PROFILE }}/bundle/nsis/*.exe
+          name: mechs-cop-msi
+          path: apps/cop/src-tauri/target/${{ env.BUILD_PROFILE }}/bundle/msi/*.msi
           if-no-files-found: warn
           retention-days: 30
 
@@ -137,10 +127,8 @@ jobs:
           releaseBody: |
             Ручная сборка из main (commit ${{ github.sha }}).
 
-            Установка: скачай `.msi` или NSIS `-setup.exe` ниже,
-            запусти. Уже установленное приложение обновится
-            автоматически — не надо вручную качать.
+            Установка: скачай `.msi` ниже и запусти. Уже установленное
+            приложение обновится автоматически — не надо вручную качать.
           releaseDraft: false
           prerelease: false
           includeUpdaterJson: true
-          updaterJsonPreferNsis: false
