@@ -3,34 +3,13 @@ import { invoke } from '@tauri-apps/api/core';
 import { LazyStore } from '@tauri-apps/plugin-store';
 import { RotateCcw, Save, Trash2, X } from 'lucide-react';
 import { HomeIconButton } from './HomeIconButton';
+import { DEFAULT_REMAP, MOUSE_KEY, MOUSE_STORE_FILE, type MouseRemap } from './mouseRemap';
 
 interface SettingEntry {
   key: string;
   type: string;
   value: string;
 }
-
-interface MouseBinding {
-  button: string;
-  key: string;
-}
-
-interface MouseRemap {
-  enabled: boolean;
-  bindings: MouseBinding[];
-}
-
-const STORE_FILE = 'settings.json';
-const MOUSE_KEY = 'mouseRemap';
-
-// Дефолт повторяет AHK-скрипт игрока: боковые кнопки мыши шлют цифры 4/6.
-const DEFAULT_REMAP: MouseRemap = {
-  enabled: false,
-  bindings: [
-    { button: 'XButton1', key: '4' },
-    { button: 'XButton2', key: '6' },
-  ],
-};
 
 const BUTTON_LABEL: Record<string, string> = {
   XButton1: 'Боковая 1 (XButton1)',
@@ -75,7 +54,7 @@ export function GameSettingsModal({ gameDir, onClose }: { gameDir: string; onClo
   const [remap, setRemap] = useState<MouseRemap>(DEFAULT_REMAP);
 
   const baseDir = gameDir || null;
-  const store = useMemo(() => new LazyStore(STORE_FILE), []);
+  const store = useMemo(() => new LazyStore(MOUSE_STORE_FILE), []);
 
   // Начальный loading=true покрывает монтирование; при restore индикатор не
   // нужен — там активен флаг busy.

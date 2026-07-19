@@ -73,6 +73,7 @@ source_files:
   view: apps/cop/src/features/home/HomeView.tsx
   styles: apps/cop/src/features/home/home.css
   settings_modal: apps/cop/src/features/home/GameSettingsModal.tsx # редактор UserDefault.xml (feat)
+  mouse_remap: apps/cop/src/features/home/mouseRemap.ts # общие типы/дефолт ребинда + applyStoredMouseRemap (арминг на старте, зовётся из App.tsx)
   registry: apps/cop/src/shell/features.ts # таб 'home' первым, enabled
   tooltip: apps/cop/src/shell/Tooltip.tsx # переиспользуется для icon-only кнопок главной
   launch_icon: apps/cop/assets/images/launch_icon.webp # логотип «Мехи» на кнопке запуска (исходник — assets/raw/launch_icon.png)
