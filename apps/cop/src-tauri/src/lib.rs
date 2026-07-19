@@ -807,7 +807,7 @@ mod win {
     /// и отпустил файл. Иначе одновременные лаунчеры ловят «файл версии не
     /// корректен» (гонка чтения/записи). Если проверка версии на медленном
     /// коннекте длиннее — увеличить.
-    const LAUNCH_STAGGER: Duration = Duration::from_secs(5);
+    const LAUNCH_STAGGER: Duration = Duration::from_millis(1500);
 
     struct RawWindow {
         hwnd: HWND,
