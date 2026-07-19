@@ -28,6 +28,18 @@
   -webkit-text-size-adjust: 100%;
 }
 
+/* Базовый сброс: единая border-box-модель и снятие дефолтного отступа body
+   (иначе окно Tauri имеет белую рамку по краям). */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
 .container {
   max-width: 900px;
   margin: 0 auto;
