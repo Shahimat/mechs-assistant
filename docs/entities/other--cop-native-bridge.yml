@@ -1,0 +1,41 @@
+id: other--cop-native-bridge
+kind: entity
+namespace: cop
+version: '0.x'
+
+description: |
+  Rust-часть Tauri-клиента COP — мост между WebView и ОС/CV-библиотеками.
+  Пять команд через invoke_handler + набор Tauri-плагинов. UI, pHash и OCR
+  живут во фронтенде (parser--inventory / view--inventory-parser); Rust
+  отвечает только за то, что нельзя сделать в WebView: снятие окон ОС и
+  template matching UI-рамки.
+
+  **Команды (`src-tauri/src/lib.rs`):**
+    - `list_windows` — перечисление окон ОС (xcap): id/title/размер/minimized.
+    - `capture_window(title_pattern)` — PNG-снимок первого окна, чей title
+      содержит паттерн (case-insensitive), base64 в WebView; без активации
+      и переключения фокуса; Err, если окно свёрнуто или не найдено.
+    - `find_inventory_corner(png)` — template matching UI-угла рамки инвентаря
+      (imageproc, SumOfSquaredErrorsNormalized); минимум ищется только в
+      правой половине скрина (инвентарь всегда справа); score > 0.5 → None.
+      Эталон угла захардкожен через include_bytes!
+      (`src-tauri/assets/inventory-corner.png`).
+    - `debug_visualize_corner(png)` — тот же поиск + красная рамка поверх
+      скрина для дебага промахов.
+    - `write_file_base64(path, contents)` — запись байтов в выбранный
+      диалогом путь (без fs-плагина и scope-настройки).
+
+  **Плагины:** global-shortcut, store, updater, process, dialog.
+
+  UI игры стабилен 10+ лет — калибровки нет; ломается template → правим
+  `inventory-corner.png` и пересобираем, а не логику.
+
+source_files:
+  lib: apps/cop/src-tauri/src/lib.rs
+  main: apps/cop/src-tauri/src/main.rs
+  corner_template: apps/cop/src-tauri/assets/inventory-corner.png
+  config: apps/cop/src-tauri/tauri.conf.json
+
+manuals: []
+behaviors:
+  - other--cop-native-bridge-captures-window-without-focus

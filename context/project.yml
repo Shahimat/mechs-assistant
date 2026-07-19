@@ -62,10 +62,13 @@ paths:
   goals: context/views/goals.yaml
 
 namespaces:
+  # apps/web (SPA-справочник)
   - catalog # каталоги, парсеры (wiki + Sheets), build-time merger
   - ui # карточные view каталогов, общие UI-компоненты
   - comparison # избранное (список ключей + drag-and-drop сортировка)
   - persistence # IndexedDB-персистенция
+  # apps/cop (Tauri-клиент)
+  - cop # Rust-мост, pipeline распознавания инвентаря, UI парсера
 
 commands:
   install: npm install

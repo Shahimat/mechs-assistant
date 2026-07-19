@@ -1,0 +1,33 @@
+id: parser--inventory-recognizes-page-from-capture
+kind: behavior
+namespace: cop
+entities: [parser--inventory]
+title: recognizePage превращает снимок окна в список позиций инвентаря
+
+scenarios:
+  - given: снятый CapturedWindow с открытым инвентарём и GridConfig
+    when: вызывается recognizePage(captured, grid)
+    then: |
+      find_inventory_corner находит угол UI-рамки; от него по сетке
+      (offset + col/row * cell_size) вырезаются ячейки; для каждой —
+      pHash иконки (верхние 75%) matchNearest по phash-индексу и OCR
+      цифры (нижние 25%); возвращается { items: Recognized[], corner }.
+
+  - given: угол рамки не найден (score > 0.5)
+    when: recognizePage
+    then: возвращается { items: [], corner: null } + console.warn.
+
+  - given: ячейка без числа (пустой слот) либо match confidence < 0.6
+    when: обход сетки
+    then: пустой слот скипается; слабый match → позиция unresolved с
+      сырой ячейкой вместо item_key.
+
+verified: true
+verified_at: 2026-07-19
+verified_note: |
+  Проверено чтением apps/cop/src/pipeline/recognize.ts: recognizePage →
+  findInventoryCorner (invoke), decodeCapturedToCanvas, двойной цикл
+  rows×cols, cropToCanvas icon(0.75)/count(0.25), computePHash +
+  matchNearest(preferCatalogs=INVENTORY_CATALOGS), recognizeCount, skip
+  при count null/0, unresolved при confidence < 0.6. mergeSeries дедупит
+  страницы серии по (catalog, item_key).

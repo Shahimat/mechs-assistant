@@ -79,12 +79,18 @@ npm workspaces `["apps/*", "packages/*"]`, единый корневой
 
 ## Namespace-ы проекта
 
-Все относятся к `apps/web` (SPA-справочник):
+`apps/web` (SPA-справочник):
 
 - `catalog` — каталоги игровых сущностей, парсеры (wiki + Google Sheets), build-time merger.
 - `ui` — карточные view каталогов и общие UI-компоненты.
 - `comparison` — избранное (список ключей + drag-and-drop сортировка).
 - `persistence` — IndexedDB-персистенция состояния Zustand.
+
+`apps/cop` (Tauri-клиент клана):
+
+- `cop` — десктоп-клиент: Rust-мост (xcap/imageproc), pipeline распознавания
+  инвентаря (pHash + OCR), UI парсера, auto-updater. Стек намеренно отличается
+  от web (plain React + CSS, без MUI/Zustand/router) — см. convention `cop-stack`.
 
 ## Точки входа кода
 

@@ -1,0 +1,25 @@
+key: cop-stack
+rule: |
+  Десктоп-клиент COP (`apps/cop`) намеренно на другом фронтенд-стеке, чем
+  публичный SPA (`apps/web`) — не приводить его к web-конвенциям
+  автоматически.
+
+  **Что в COP:**
+    - React 19 + rspack (общее с web), TypeScript strict.
+    - Стили — глобальный `src/App.css` (обычный CSS, БЕЗ CSS-модулей, MUI,
+      styled(), темы). Тёмная тема — через `prefers-color-scheme`.
+    - Состояние — локальные React-хуки в App.tsx; персист — tauri-store
+      (`settings.json`), НЕ Zustand и НЕ IndexedDB.
+    - Навигация — пока одностраничная (App.tsx-стек секций), react-router
+      нет. Таб-навигация (layout--cop-shell) — отдельная работа.
+    - Нативка — Tauri-плагины (global-shortcut, store, updater, process,
+      dialog) + Rust-мост (other--cop-native-bridge).
+
+  **Почему отдельно.** COP и web — концептуально разные приложения под
+  разные задачи (см. program--cop), в один бандл не сливаются; MUI /
+  Zustand / router оправданы каталожным SPA, но избыточны для узкого
+  десктоп-инструмента. Конвенции styling / mui / mui-imports /
+  theme-colors / zustand описывают web и на COP не распространяются.
+
+  Общий переиспользуемый слой (@mechs/shared) вычленяется инкрементально
+  по мере COP-подцелей — см. convention monorepo-shared-config.
