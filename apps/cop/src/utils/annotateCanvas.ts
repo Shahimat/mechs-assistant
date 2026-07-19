@@ -1,4 +1,4 @@
-import type { GridConfig, InventoryCorner } from '../pipeline/recognize';
+import type { GridConfig, InventoryCorner } from '@/pipeline/recognize';
 
 /**
  * Общая логика отрисовки скрина окна + оверлея (красная рамка вокруг

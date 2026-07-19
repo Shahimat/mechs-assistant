@@ -1,5 +1,5 @@
 import { useMemo, useState } from 'react';
-import type { Recognized } from '../types';
+import type { Recognized } from '@/types';
 
 interface InventoryResultProps {
   items: Recognized[];

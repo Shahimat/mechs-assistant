@@ -65,9 +65,10 @@ export default tseslint.config(
     },
   },
   {
-    // scripts/** и apps/cop/** не имеют alias-инфраструктуры (@/ и т.п.):
-    // локальные относительные импорты `../` там штатны.
-    files: ['scripts/**/*', 'apps/cop/**/*'],
+    // Скрипты (корневые data-pipeline и локальный apps/cop/scripts) не имеют
+    // alias-инфраструктуры (@/ и т.п.): локальные относительные импорты `../`
+    // там штатны. Для apps/cop/src alias'ы есть — запрет `../` действует.
+    files: ['scripts/**/*', 'apps/cop/scripts/**/*'],
     rules: {
       'no-restricted-imports': 'off',
     },

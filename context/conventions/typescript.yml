@@ -13,6 +13,10 @@ rule: |
       проверкой типа.
     - `resolveJsonModule: true` — данные из `data/*.json` импортируем
       как модули с типом (`as Robot[]`).
-    - Модульные пути через alias `@/*` → `apps/web/src/*` (см.
-      `apps/web/tsconfig.json` `paths` и `apps/web/rspack.config.js`
-      `resolve.alias`).
+    - Модульные пути через alias `@/*` → `<app>/src/*` (см.
+      `apps/<app>/tsconfig.json` `paths` и `apps/<app>/rspack.config.js`
+      `resolve.alias`). Web: `@/ @build/ @raw/ @img/`; COP: `@/ @img/`.
+      Относительные импорты вверх (`../`) запрещены eslint-правилом
+      `no-restricted-imports` в `apps/*/src` — только alias'ы; соседние
+      `./` разрешены. Исключение — `scripts/**` (там alias-инфраструктуры
+      нет, локальные `../` штатны).

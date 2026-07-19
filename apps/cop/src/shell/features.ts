@@ -3,6 +3,7 @@ import {
   Bot,
   CalendarClock,
   Calculator,
+  House,
   MessagesSquare,
   PackageSearch,
   Scale,
@@ -11,7 +12,8 @@ import {
   Warehouse,
   type LucideIcon,
 } from 'lucide-react';
-import { InventoryParserView } from '../features/inventory-parser/InventoryParserView';
+import { HomeView } from '@/features/home/HomeView';
+import { InventoryParserView } from '@/features/inventory-parser/InventoryParserView';
 
 // Дескриптор фичи-таба. Добавление хотелки = одна строка реестра (+ вью,
 // когда фичу делаем). `enabled: false` — disabled-плейсхолдер: кнопка в
@@ -27,6 +29,14 @@ export interface FeatureTab {
 
 // Порядок = порядок в рельсе. Приоритеты подцелей — program--cop.
 export const FEATURES: FeatureTab[] = [
+  {
+    id: 'home',
+    icon: House,
+    label: 'Главная',
+    tooltip: 'Запуск игры и общая сводка',
+    Component: HomeView,
+    enabled: true,
+  },
   {
     id: 'inventory-parser',
     icon: PackageSearch,

@@ -1,0 +1,55 @@
+/* Главная страница COP: блок запуска игры сверху. Палитра — переменные
+   из App.css (:root). */
+
+.launch-game h1 {
+  font-size: 22px;
+}
+
+.btn-launch {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 8px;
+  padding: 10px 20px 10px 12px;
+  font-size: 15px;
+  font-weight: 600;
+  color: #1b1e24;
+  background: var(--accent);
+  border: 1px solid var(--accent);
+}
+
+.btn-launch__icon {
+  width: 28px;
+  height: 28px;
+  object-fit: contain;
+}
+
+.btn-launch:hover:not(:disabled) {
+  background: var(--accent-hover);
+  border-color: var(--accent-hover);
+}
+
+.btn-launch:disabled {
+  opacity: 0.6;
+  cursor: default;
+}
+
+.link-toggle {
+  display: block;
+  margin-top: 16px;
+  padding: 0;
+  background: transparent;
+  border: none;
+  color: var(--text-muted);
+  font-size: 13px;
+  text-decoration: underline;
+}
+
+.link-toggle:hover {
+  color: var(--text);
+  border: none;
+}
+
+.game-dir-settings {
+  margin-top: 8px;
+}

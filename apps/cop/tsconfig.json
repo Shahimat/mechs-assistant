@@ -1,4 +1,11 @@
 {
   "extends": "../../tsconfig.base.json",
+  "compilerOptions": {
+    /* Paths — с TS 5.5+ baseUrl не требуется, paths относятся к директории tsconfig */
+    "paths": {
+      "@/*": ["./src/*"],
+      "@img/*": ["./assets/images/*"]
+    }
+  },
   "include": ["src"]
 }

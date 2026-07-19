@@ -27,10 +27,12 @@ description: |
 
   **Keep-mounted.** Активная фича сохраняет session-state при уходе на
   другую: смонтированные вью прячутся (`hidden`/`display:none`), не
-  размонтируются. Сейчас живой таб один (view--inventory-parser), но
-  паттерн заложен под 2+.
+  размонтируются. Живых таба два (view--cop-home, view--inventory-parser).
 
-  **Табы (по подцелям program--cop).** Живой: Парсер инвентаря
+  **Дефолтный таб** — первый `enabled` в реестре (`view--cop-home`).
+
+  **Табы (по подцелям program--cop).** Живые: Главная (view--cop-home,
+  первый/дефолтный, запуск игры), Парсер инвентаря
   (view--inventory-parser). Disabled-плейсхолдеры («скоро»): Помощник/
   автоматизация, Клановый склад, Планировщик, Долги, Калькуляторы,
   Командные цели, Войс/чат, ⚙ Настройки.
@@ -40,7 +42,7 @@ source_files:
   tab_rail: apps/cop/src/shell/TabRail.tsx
   icon_tab: apps/cop/src/shell/IconTab.tsx # квадратная кнопка + hover-тултип
   tooltip: apps/cop/src/shell/Tooltip.tsx
-  registry: apps/cop/src/shell/features.ts # реестр фич (FeatureTab[])
+  registry: apps/cop/src/shell/features.ts # реестр фич (FeatureTab[]), 'home' первым
   styles: apps/cop/src/shell/shell.css # beveled-панели + янтарный акцент
 
 features_enabled:

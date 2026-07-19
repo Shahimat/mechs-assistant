@@ -22,6 +22,10 @@ export default defineConfig({
   },
   resolve: {
     extensions: ['.tsx', '.ts', '.jsx', '.js'],
+    alias: {
+      '@': path.resolve(__dirname, 'src'),
+      '@img': path.resolve(__dirname, 'assets/images'),
+    },
   },
   module: {
     rules: [

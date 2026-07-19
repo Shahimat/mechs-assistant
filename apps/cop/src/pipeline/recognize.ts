@@ -1,5 +1,5 @@
 import { invoke } from '@tauri-apps/api/core';
-import type { CapturedWindow, Recognized } from '../types';
+import type { CapturedWindow, Recognized } from '@/types';
 import { computePHash, matchNearest, unresolved } from './phash';
 import { recognizeCount } from './ocr';
 

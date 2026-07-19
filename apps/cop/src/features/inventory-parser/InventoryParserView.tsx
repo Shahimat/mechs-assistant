@@ -2,19 +2,19 @@ import { useEffect, useRef, useState } from 'react';
 import { invoke } from '@tauri-apps/api/core';
 import { register, unregisterAll } from '@tauri-apps/plugin-global-shortcut';
 import { LazyStore } from '@tauri-apps/plugin-store';
-import { WindowList } from '../../components/WindowList';
-import { CaptureView } from '../../components/CaptureView';
-import { InventoryResult } from '../../components/InventoryResult';
-import { GridSettings } from '../../components/GridSettings';
+import { WindowList } from '@/components/WindowList';
+import { CaptureView } from '@/components/CaptureView';
+import { InventoryResult } from '@/components/InventoryResult';
+import { GridSettings } from '@/components/GridSettings';
 import {
   DEFAULT_GRID,
   recognizePage,
   type GridConfig,
   type InventoryCorner,
-} from '../../pipeline/recognize';
-import { mergeSeries } from '../../pipeline/mergeSeries';
-import { buildDiagnosticZip, saveZip } from '../../pipeline/diagnostic';
-import type { CapturedWindow, Recognized, SeriesState } from '../../types';
+} from '@/pipeline/recognize';
+import { mergeSeries } from '@/pipeline/mergeSeries';
+import { buildDiagnosticZip, saveZip } from '@/pipeline/diagnostic';
+import type { CapturedWindow, Recognized, SeriesState } from '@/types';
 
 const CAPTURE_HOTKEY = 'Alt+Q';
 const SERIES_PAGE_HOTKEY = 'Alt+Shift+Q';
