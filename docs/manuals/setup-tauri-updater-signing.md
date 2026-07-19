@@ -78,10 +78,12 @@ Push в develop с любой правкой в `apps/cop/**` →
 `build-dev` job зелёный, никакой подписи не делает (в dev-flow она
 не нужна).
 
-Merge develop → main через `merge-develop-to-main.yml` (или через PR)
-→ триггерится `release` job → `tauri-action` подписывает,
-создаёт релиз `Mechs COP v0.1.<N>`, прикладывает `.msi`,
-`.msi.zip`, `.msi.zip.sig` и `latest.json`.
+Релиз запускается **строго вручную**: влей develop → main, затем
+GitHub → Actions → workflow `build-desktop` → **Run workflow**,
+ветка `main`, input `job: release`. Стартует `release` job →
+`tauri-action` подписывает, создаёт релиз `Mechs COP v0.1.<N>`,
+прикладывает `.msi`, `.msi.zip`, `.msi.zip.sig` и `latest.json`.
+(Запуск с `job: release` из ветки не-`main` намеренно skip'ается.)
 
 Проверь в `Releases`:
 
