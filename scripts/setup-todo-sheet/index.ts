@@ -33,7 +33,7 @@ const COLUMNS: Array<{ name: string; description: string; dropdown?: string[] }>
   {
     name: 'Статус',
     description: 'Стадия задачи',
-    dropdown: ['Новая', 'В работе', 'Готово'],
+    dropdown: ['Новая', 'В работе', 'Готово', 'Удален'],
   },
   {
     name: 'Задача',
