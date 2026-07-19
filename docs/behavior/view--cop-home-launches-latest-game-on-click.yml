@@ -1,0 +1,34 @@
+id: view--cop-home-launches-latest-game-on-click
+kind: behavior
+namespace: cop
+entities: [view--cop-home]
+title: Главная страница COP показывает последнюю версию игры и запускает её по клику
+
+scenarios:
+  - given: HomeView смонтирован (первый таб shell), путь до папки игры
+      прочитан из tauri-store (settings.json → gameDir; пусто = дефолт)
+    when: компонент монтируется
+    then: |
+      Вызывает find_latest_game({ baseDir: gameDir || null }); при успехе
+      показывает «Последняя установленная версия: <version_label>», при
+      ошибке — подсказку про путь и текст ошибки.
+
+  - given: показана главная страница
+    when: пользователь жмёт «Запустить игру»
+    then: |
+      Вызывается launch_game({ baseDir }); кнопка на время блокируется
+      («Запуск…»). Успех — обновляет показанную версию; ошибка —
+      выводит её в блок .error, процесс не стартует.
+
+  - given: открыта настройка пути
+    when: пользователь сохраняет непустой путь или жмёт «Сброс»
+    then: |
+      Значение пишется в tauri-store (gameDir) и переживает перезапуск;
+      сразу переспрашивается find_latest_game с новым путём.
+
+verified: false
+verified_note: |
+  Спецификация добавлена вместе с реализацией (HomeView.tsx + features.ts
+  таб 'home' первым/enabled). TS typecheck пройден (tsc --noEmit). UI в
+  Tauri-окне не прогонялся (нужен Windows + установленная игра для
+  реального find/launch), поэтому verified: false.

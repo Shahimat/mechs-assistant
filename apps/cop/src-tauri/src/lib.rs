@@ -254,6 +254,121 @@ fn write_file_base64(path: String, contents_base64: String) -> Result<(), String
     std::fs::write(&path, bytes).map_err(|e| format!("Не удалось записать «{}»: {}", path, e))
 }
 
+/// Найденная установленная версия игрового клиента.
+#[derive(Serialize)]
+struct GameBuild {
+    /// Человекочитаемая версия, например «4.1.1 (build 8733)».
+    version_label: String,
+    /// Имя папки версии, например «v4-1-1-8733».
+    dir_name: String,
+    /// Полный путь до исполняемого файла игры.
+    exe_path: String,
+}
+
+const GAME_EXE: &str = "MechsEarth.exe";
+
+/// Дефолтная папка игры: `%LOCALAPPDATA%\MechsEarth\bin`. На не-Windows
+/// LOCALAPPDATA нет — вернёт None, команда попросит указать путь вручную.
+fn default_game_dir() -> Option<std::path::PathBuf> {
+    std::env::var_os("LOCALAPPDATA")
+        .map(|la| std::path::PathBuf::from(la).join("MechsEarth").join("bin"))
+}
+
+/// Разбирает имя папки версии `v<A>-<B>-<C>-<BUILD>` в вектор чисел для
+/// сравнения. Число компонентов не фиксировано — сравниваем лексикографически.
+fn parse_version(name: &str) -> Option<Vec<u64>> {
+    let stripped = name.strip_prefix('v').or_else(|| name.strip_prefix('V'))?;
+    let parts: Result<Vec<u64>, _> = stripped.split('-').map(str::parse::<u64>).collect();
+    match parts {
+        Ok(v) if !v.is_empty() => Some(v),
+        _ => None,
+    }
+}
+
+fn format_version(parts: &[u64]) -> String {
+    match parts {
+        [a, b, c, build] => format!("{}.{}.{} (build {})", a, b, c, build),
+        rest => rest
+            .iter()
+            .map(u64::to_string)
+            .collect::<Vec<_>>()
+            .join("."),
+    }
+}
+
+/// Сканирует папку игры, выбирает подпапку версии с максимальным номером,
+/// внутри которой лежит `MechsEarth.exe`. Устойчиво к смене папки версии
+/// после установки апдейта — жёсткий путь не хранится.
+fn resolve_latest(base_dir: Option<String>) -> Result<GameBuild, String> {
+    let base = match base_dir {
+        Some(d) if !d.trim().is_empty() => std::path::PathBuf::from(d.trim()),
+        _ => default_game_dir()
+            .ok_or("Не удалось определить %LOCALAPPDATA% — укажи путь до папки игры вручную")?,
+    };
+    if !base.is_dir() {
+        return Err(format!("Папка игры не найдена: {}", base.display()));
+    }
+
+    let entries =
+        std::fs::read_dir(&base).map_err(|e| format!("Не удалось прочитать {}: {}", base.display(), e))?;
+
+    let mut best: Option<(Vec<u64>, std::path::PathBuf, String)> = None;
+    for entry in entries {
+        let entry = entry.map_err(|e| e.to_string())?;
+        if !entry.file_type().map(|t| t.is_dir()).unwrap_or(false) {
+            continue;
+        }
+        let name = entry.file_name().to_string_lossy().into_owned();
+        let Some(version) = parse_version(&name) else {
+            continue;
+        };
+        let exe = entry.path().join(GAME_EXE);
+        if !exe.is_file() {
+            continue;
+        }
+        let better = best.as_ref().map(|(bv, _, _)| version > *bv).unwrap_or(true);
+        if better {
+            best = Some((version, exe, name));
+        }
+    }
+
+    match best {
+        Some((version, exe, dir_name)) => Ok(GameBuild {
+            version_label: format_version(&version),
+            dir_name,
+            exe_path: exe.to_string_lossy().into_owned(),
+        }),
+        None => Err(format!(
+            "В {} не найдено ни одной версии игры (папки вида vA-B-C-BUILD с {})",
+            base.display(),
+            GAME_EXE
+        )),
+    }
+}
+
+/// Возвращает последнюю установленную версию игры без запуска — UI
+/// показывает её на главной странице.
+#[tauri::command]
+fn find_latest_game(base_dir: Option<String>) -> Result<GameBuild, String> {
+    resolve_latest(base_dir)
+}
+
+/// Находит последнюю установленную версию и запускает её. Всегда стартует
+/// самый свежий билд независимо от того, как поменялась папка версии.
+#[tauri::command]
+fn launch_game(base_dir: Option<String>) -> Result<GameBuild, String> {
+    let build = resolve_latest(base_dir)?;
+    let exe = std::path::PathBuf::from(&build.exe_path);
+    let mut command = std::process::Command::new(&exe);
+    if let Some(dir) = exe.parent() {
+        command.current_dir(dir);
+    }
+    command
+        .spawn()
+        .map_err(|e| format!("Не удалось запустить {}: {}", build.exe_path, e))?;
+    Ok(build)
+}
+
 #[cfg_attr(mobile, tauri::mobile_entry_point)]
 pub fn run() {
     tauri::Builder::default()
@@ -268,6 +383,8 @@ pub fn run() {
             find_inventory_corner,
             debug_visualize_corner,
             write_file_base64,
+            find_latest_game,
+            launch_game,
         ])
         .run(tauri::generate_context!())
         .expect("error while running tauri application");

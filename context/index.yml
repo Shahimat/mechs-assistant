@@ -235,6 +235,35 @@ namespaces:
       - id: other--indexeddb-persistence-writes-on-key-change
         one_liner: Middleware записывает в IndexedDB только те persistKeys, значение которых изменилось.
 
+  cop:
+    description: Десктоп-клиент клана (apps/cop, Tauri) — Rust-мост, pipeline распознавания инвентаря, UI парсера. Стек отличается от web (см. convention cop-stack).
+    entities:
+      - id: layout--cop-shell
+        one_liner: 'Оболочка COP — таб-навигация на React-стейте (без router): icon-рельса квадратных беведённых кнопок + свои тултипы + keep-mounted вью + always-dark тёмная тема (слейт-панели, янтарный акцент); реестр фич (10 табов), живые — Главная (первая/дефолтная) и парсер, остальные подцели — disabled-плейсхолдеры.'
+      - id: view--cop-home
+        one_liner: 'Главная страница COP — первый/дефолтный таб shell; блок запуска игры (find_latest_game/launch_game — всегда самый свежий билд MechsEarth, устойчиво к смене папки версии) + настройка пути до папки игры (tauri-store gameDir). Скачивание/синхронизация параметров — не реализованы.'
+      - id: other--cop-native-bridge
+        one_liner: 'Rust-часть Tauri COP — 7 команд (list_windows, capture_window без фокуса, find_inventory_corner template-matching в правой половине, debug_visualize_corner, write_file_base64, find_latest_game, launch_game) + плагины global-shortcut/store/updater/process/dialog.'
+      - id: parser--inventory
+        one_liner: 'Клиентский pipeline распознавания скрина инвентаря → Recognized[]: угол рамки (Rust) → сетка GridConfig (48/3/4) → pHash иконки + OCR цифры (tesseract) по ячейкам → дедуп серии; pHash-индекс 1025 иконок из data/icons/.'
+      - id: view--inventory-parser
+        one_liner: 'Feature-view парсера (features/inventory-parser/InventoryParserView.tsx) — оркестратор: целевое окно, настройки сетки, capture-оверлей (рамка+сетка), диагностика-ZIP, таблица результата, список окон; 3 глобальных хоткея. Plain React+CSS, без MUI/router; первый таб cop-shell.'
+    behaviors:
+      - id: layout--cop-shell-switches-active-tab
+        one_liner: Клик по icon-табу переключает activeTab-стейт; неактивные вью не размонтируются (keep-mounted) — session-state сохраняется.
+      - id: layout--cop-shell-shows-tooltip-on-hover
+        one_liner: Hover по icon-кнопке показывает свой absolute-тултип (заголовок+описание, layout не сдвигает); disabled-плейсхолдер → «скоро».
+      - id: other--cop-native-bridge-captures-window-without-focus
+        one_liner: capture_window снимает окно по части заголовка через xcap без активации фокуса; свёрнутое/ненайденное → Err.
+      - id: other--cop-native-bridge-launches-latest-game
+        one_liner: 'find_latest_game/launch_game сканируют папку игры (дефолт %LOCALAPPDATA%\MechsEarth\bin), выбирают подпапку с максимальной версией v<A-B-C-BUILD> и запускают MechsEarth.exe; устойчиво к смене папки версии. verified:false (нужен Windows).'
+      - id: view--cop-home-launches-latest-game-on-click
+        one_liner: 'Главная COP при монтировании показывает последнюю версию (find_latest_game), по кнопке запускает игру (launch_game), путь до папки игры персистится в tauri-store. verified:false (UI не прогнан).'
+      - id: parser--inventory-recognizes-page-from-capture
+        one_liner: recognizePage → угол рамки → сетка ячеек → pHash+OCR → Recognized[]; пустой слот скип, confidence<0.6 → unresolved; серия дедупится.
+      - id: view--inventory-parser-registers-global-hotkeys
+        one_liner: App регистрирует Alt+Q / Alt+Shift+Q / Alt+Ctrl+Shift+Q через global-shortcut, живые handler'ы в ref, unregisterAll до/после.
+
 # Атомарные conventions — кросс-namespace, читаются по релевантности задачи.
 # Соответствие «правка → convention» самоочевидно из ключа (rspack.yml
 # про rspack и т.д.); перечисляем только описания.
@@ -259,6 +288,8 @@ conventions:
     one_liner: Чек-лист непротиворечивости перед сохранением сущности (ссылки, verified, имена).
   - key: context-minimization
     one_liner: Читать ровно то, что нужно для задачи; не обходить `docs/` подряд.
+  - key: cop-stack
+    one_liner: COP (apps/cop) на plain React+CSS без MUI/Zustand/router, персист tauri-store; конвенции styling/mui/theme-colors/zustand описывают web и на COP не распространяются.
   - key: data-overlay
     one_liner: Overlay для гибридных data-сущностей — data/overrides/<catalog>.yml поверх parsed-JSON, merge при build-time.
   - key: entity-naming

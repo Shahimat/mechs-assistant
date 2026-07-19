@@ -1,0 +1,26 @@
+id: layout--cop-shell-shows-tooltip-on-hover
+kind: behavior
+namespace: cop
+entities: [layout--cop-shell]
+title: Hover по icon-табу показывает поясняющий тултип
+
+scenarios:
+  - given: рельса icon-кнопок, у каждой только иконка (без подписи)
+    when: юзер наводит курсор на кнопку и держит (короткая задержка)
+    then: |
+      появляется свой Tooltip (absolute-позиционируемый, layout не
+      сдвигается) с жирным заголовком фичи и приглушённым описанием;
+      уводит курсор — тултип скрывается.
+
+  - given: кнопка — disabled-плейсхолдер будущей фичи
+    when: hover
+    then: тултип показывает пометку «скоро» (фича ещё не сделана).
+
+verified: true
+verified_at: 2026-07-19
+verified_note: |
+  Проверено чтением apps/cop/src/shell/IconTab.tsx + Tooltip.tsx:
+  onMouseEnter ставит setTimeout(HOVER_DELAY_MS=350), по нему hovered=true;
+  onMouseLeave чистит таймер и hovered=false. Tooltip — position:absolute
+  (shell.css .cop-tooltip, layout не сдвигается), title = label + ' — скоро'
+  при disabled. Typecheck + eslint + rspack build — чисто.

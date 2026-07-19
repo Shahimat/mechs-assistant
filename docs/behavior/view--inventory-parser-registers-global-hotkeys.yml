@@ -1,0 +1,34 @@
+id: view--inventory-parser-registers-global-hotkeys
+kind: behavior
+namespace: cop
+entities: [view--inventory-parser]
+title: view--inventory-parser регистрирует глобальные хоткеи снятия одиночной страницы и серии
+
+scenarios:
+  - given: InventoryParserView смонтирован
+    when: отрабатывает эффект регистрации
+    then: |
+      через tauri-plugin-global-shortcut регистрируются Alt+Q (снять
+      страницу), Alt+Shift+Q (очередная страница серии),
+      Alt+Ctrl+Shift+Q (закрыть серию и слить); перед регистрацией —
+      unregisterAll, при размонтировании — unregisterAll.
+
+  - given: нажат Alt+Q (state='Pressed')
+    when: срабатывает коллбэк global-shortcut
+    then: вызывается актуальный handleCapture через ref (замыкание читает
+      свежий titlePattern/grid, не устаревший на момент регистрации).
+
+  - given: активна серия, нажат Alt+Ctrl+Shift+Q
+    when: handleSeriesEnd
+    then: страницы серии сливаются mergeSeries в recognized, серия
+      сбрасывается.
+
+verified: true
+verified_at: 2026-07-19
+verified_note: |
+  Проверено чтением apps/cop/src/features/inventory-parser/InventoryParserView.tsx
+  (после refactor-выноса из App.tsx; логика хоткеев без изменений):
+  register CAPTURE_HOTKEY 'Alt+Q'
+  / SERIES_PAGE 'Alt+Shift+Q' / SERIES_END 'Alt+Ctrl+Shift+Q' в
+  useEffect([]); handler'ы через *Ref.current (синхронизация в useEffect
+  без deps); unregisterAll до регистрации и в cleanup.

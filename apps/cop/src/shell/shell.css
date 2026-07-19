@@ -1,0 +1,159 @@
+/* Оболочка COP: always-dark игровая эстетика (слейт-панели, янтарный
+   акцент, беведённые квадратные icon-кнопки). Палитра — переменные из
+   App.css (:root). */
+
+.app-shell {
+  min-height: 100vh;
+}
+
+.tab-content {
+  padding-top: 20px;
+}
+
+/* Горизонтальная рельса icon-табов сверху. */
+.tab-rail {
+  display: flex;
+  gap: 6px;
+  padding: 8px 10px;
+  background: var(--panel);
+  border-bottom: 1px solid var(--border-strong);
+  box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.4);
+  position: sticky;
+  top: 0;
+  z-index: 20;
+}
+
+.icon-tab-wrap {
+  position: relative;
+  display: flex;
+}
+
+/* Квадратная беведённая кнопка. */
+.icon-tab {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  border-radius: 6px;
+  color: var(--text-muted);
+  background: var(--elevated);
+  border: 1px solid var(--border);
+  border-top-color: var(--border);
+  border-bottom-color: #14161b;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.04),
+    0 1px 2px rgba(0, 0, 0, 0.4);
+  transition:
+    color 0.12s,
+    background 0.12s,
+    border-color 0.12s;
+}
+
+.icon-tab:hover {
+  color: var(--text);
+  border-color: var(--border-strong);
+  background: #313742;
+}
+
+/* Активная — «вдавлена» + янтарная подсветка. */
+.icon-tab--active,
+.icon-tab--active:hover {
+  color: var(--accent);
+  background: var(--accent-soft);
+  border-color: var(--accent);
+  box-shadow:
+    inset 0 2px 4px rgba(0, 0, 0, 0.5),
+    0 0 0 1px rgba(224, 160, 32, 0.25);
+}
+
+.icon-tab--active::after {
+  content: '';
+  position: absolute;
+  left: 8px;
+  right: 8px;
+  bottom: -9px;
+  height: 2px;
+  background: var(--accent);
+  border-radius: 1px;
+}
+
+/* Disabled-плейсхолдер: приглушён, курсор-«нельзя», но hover-тултип живёт. */
+.icon-tab--disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.icon-tab--disabled:hover {
+  color: var(--text-muted);
+  background: var(--elevated);
+  border-color: var(--border);
+}
+
+.icon-tab:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+/* Тултип — absolute, не сдвигает layout. */
+.cop-tooltip {
+  position: absolute;
+  top: calc(100% + 8px);
+  z-index: 30;
+  min-width: 160px;
+  max-width: 260px;
+  padding: 8px 10px;
+  background: #0f1115;
+  border: 1px solid var(--border-strong);
+  border-radius: 6px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.55);
+  pointer-events: none;
+}
+
+.cop-tooltip--center {
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.cop-tooltip--left {
+  left: 0;
+}
+
+.cop-tooltip--right {
+  right: 0;
+}
+
+.cop-tooltip::before {
+  content: '';
+  position: absolute;
+  bottom: 100%;
+  border: 5px solid transparent;
+  border-bottom-color: var(--border-strong);
+}
+
+.cop-tooltip--center::before {
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.cop-tooltip--left::before {
+  left: 20px;
+}
+
+.cop-tooltip--right::before {
+  right: 20px;
+}
+
+.cop-tooltip__title {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--accent);
+}
+
+.cop-tooltip__desc {
+  margin-top: 3px;
+  font-size: 12px;
+  line-height: 1.35;
+  color: var(--text-muted);
+}

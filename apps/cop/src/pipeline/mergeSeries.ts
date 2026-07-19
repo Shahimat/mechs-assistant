@@ -1,4 +1,4 @@
-import type { Recognized } from '../types';
+import type { Recognized } from '@/types';
 
 /**
  * Сливает массив страниц (каждая — список Recognized) в единый список

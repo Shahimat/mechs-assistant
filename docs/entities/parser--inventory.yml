@@ -1,0 +1,44 @@
+id: parser--inventory
+kind: entity
+namespace: cop
+version: '0.x'
+
+description: |
+  Клиентский pipeline распознавания скриншота инвентаря игры в список
+  позиций `Recognized[]`. Аналог parser--wiki, но источник — не HTML, а
+  пиксели снятого окна (см. other--cop-native-bridge).
+
+  **Конвейер (`src/pipeline/`):**
+    1. `find_inventory_corner` (Rust) → угол UI-рамки инвентаря.
+    2. `GridConfig` (offset_x/y, cell_size, cols, rows) → сетка ячеек;
+       DEFAULT_GRID = 48/3/4 под 1920×1080, докалибровка юзером через UI
+       и персист в tauri-store (вне pipeline).
+    3. По каждой ячейке: верхние ~75% → иконка → `computePHash` (16×16 /
+       256 бит) → `matchNearest` против phash-индекса; нижние ~25% → цифра
+       → `recognizeCount` (tesseract.js OCR).
+    4. Пустой слот (count null/0) скипается; match confidence < 0.6 →
+       позиция unresolved с сырой ячейкой вместо item_key.
+    5. `mergeSeries` — дедуп страниц пагинации по (catalog, item_key).
+
+  **pHash-индекс.** `scripts/build-phash-index.mjs` (sharp, в root)
+  собирает `data/icons/**/*.webp` → коммиченный
+  `src/generated/phash-index.json` (1025 иконок). Пул матчинга ограничен
+  INVENTORY_CATALOGS (ammo, components, equipment, items, loot, ore,
+  weapons, blueprints) — сужает false-positive'ы.
+
+  `Recognized.item_key` / `catalog` — ключи из data-каталогов основного
+  проекта; парсер — движок внесения прихода в клановый склад
+  (goal--cop-warehouse).
+
+source_files:
+  recognize: apps/cop/src/pipeline/recognize.ts
+  phash: apps/cop/src/pipeline/phash.ts
+  ocr: apps/cop/src/pipeline/ocr.ts
+  merge_series: apps/cop/src/pipeline/mergeSeries.ts
+  types: apps/cop/src/types.ts
+  index_builder: apps/cop/scripts/build-phash-index.mjs
+  generated_index: apps/cop/src/generated/phash-index.json
+
+manuals: []
+behaviors:
+  - parser--inventory-recognizes-page-from-capture

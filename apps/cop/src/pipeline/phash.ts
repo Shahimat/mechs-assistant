@@ -1,5 +1,5 @@
-import phashIndex from '../generated/phash-index.json';
-import type { Recognized } from '../types';
+import phashIndex from '@/generated/phash-index.json';
+import type { Recognized } from '@/types';
 
 interface IndexEntry {
   catalog: string;

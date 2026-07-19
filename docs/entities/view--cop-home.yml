@@ -1,0 +1,36 @@
+id: view--cop-home
+kind: entity
+namespace: cop
+version: '0.x'
+
+description: |
+  Главная страница COP — первый (дефолтный) таб layout--cop-shell,
+  стартовый экран клиента. Сейчас несёт один блок — запуск игры;
+  дальше может обрастать сводками других подцелей.
+
+  **Блок запуска игры:**
+    - Заголовок + строка последней найденной версии (или подсказка «игра
+      не найдена»), подтягивается при монтировании через
+      invoke('find_latest_game').
+    - Кнопка «Запустить игру» → invoke('launch_game') — Rust выбирает
+      подпапку с максимальной версией и стартует MechsEarth.exe. Всегда
+      свежий билд независимо от смены папки версии после апдейта (см.
+      other--cop-native-bridge-launches-latest-game).
+    - Настройка пути до папки игры (сворачиваемая): текстовое поле, пусто =
+      дефолт %LOCALAPPDATA%\MechsEarth\bin. Персист в tauri-store
+      (settings.json, ключ gameDir) — по аналогии с GridSettings парсера.
+      «Сброс» очищает путь обратно к дефолту.
+
+  Стек — plain React + CSS-модуль рядом (home.css), без MUI/Zustand/router
+  (convention cop-stack). Скачивание последней версии и синхронизация
+  базовых параметров игры (см. goal--cop-launch-game) — ещё НЕ реализованы.
+
+source_files:
+  view: apps/cop/src/features/home/HomeView.tsx
+  styles: apps/cop/src/features/home/home.css
+  registry: apps/cop/src/shell/features.ts # таб 'home' первым, enabled
+  launch_icon: apps/cop/assets/images/launch_icon.webp # логотип «Мехи» на кнопке запуска (исходник — assets/raw/launch_icon.png)
+
+manuals: []
+behaviors:
+  - view--cop-home-launches-latest-game-on-click

@@ -1,0 +1,32 @@
+id: layout--cop-shell-switches-active-tab
+kind: behavior
+namespace: cop
+entities: [layout--cop-shell]
+title: Клик по icon-табу меняет активный вью, не теряя state соседних
+
+scenarios:
+  - given: открыт COP, активен таб «Парсер инвентаря»
+    when: юзер кликает по другой (enabled) icon-кнопке рельсы
+    then: |
+      activeTab (React-стейт) переключается на выбранную фичу; её вью
+      показывается, прежний прячется (hidden/display:none), но остаётся
+      смонтированным — session-state сохраняется.
+
+  - given: у активной фичи накоплен session-state (например, снятый скрин
+      и распознанные позиции в парсере)
+    when: юзер уходит на другой таб и возвращается
+    then: состояние восстанавливается как было — вью не перемонтировался.
+
+  - given: icon-кнопка — disabled-плейсхолдер будущей фичи
+    when: юзер по ней кликает
+    then: переключения не происходит (кнопка неактивна).
+
+verified: true
+verified_at: 2026-07-19
+verified_note: |
+  Проверено чтением apps/cop/src/App.tsx + apps/cop/src/shell/: activeTab
+  через useState (DEFAULT_TAB = первая enabled-фича). Вью с Component
+  рендерятся все и прячутся через атрибут hidden (f.id !== activeTab) —
+  keep-mounted, session-state сохраняется. IconTab.onClick для
+  enabled=false не вызывает onSelect (disabled-плейсхолдер не
+  переключает). Typecheck + eslint + rspack build — чисто.

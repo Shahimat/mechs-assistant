@@ -1,0 +1,51 @@
+id: view--inventory-parser
+kind: entity
+namespace: cop
+version: '0.x'
+
+description: |
+  Экран COP (сейчас единственный живой таб) — оркестратор парсера
+  инвентаря. `InventoryParserView` держит всё состояние сессии и рендерит
+  вертикальный стек секций; pipeline (parser--inventory) и Rust-мост
+  (other--cop-native-bridge) вызываются отсюда.
+
+  **Секции:**
+    - Целевое окно — ввод части title + «Снять сейчас»; персист
+      titlePattern в tauri-store.
+    - Настройки сетки — форма GridConfig (GridSettings).
+    - Скрин окна — CaptureView: canvas-оверлей (красная рамка угла +
+      жёлтая сетка ячеек с номерами + строка статуса), перерисовывается
+      при смене GridConfig без переснятия.
+    - Диагностика — экспорт ZIP всей сессии (скрин + оверлей + кропы
+      ячеек + перехваченный console-лог) через diagnostic.ts.
+    - Распознано — InventoryResult: таблица позиций, копирование
+      TSV/JSON/plain, подсветка low-confidence.
+    - Все окна ОС — WindowList: список окон, клик подставляет title.
+
+  **Хоткеи (global-shortcut):** Alt+Q — снять страницу; Alt+Shift+Q —
+  очередная страница серии; Alt+Ctrl+Shift+Q — закрыть серию и слить.
+  Живые handler'ы держатся в ref (замыкание хоткея читает актуальный
+  state, а не устаревший на момент регистрации).
+
+  Апдейтер (UpdateBanner) — не часть этого view: рендерится на уровне
+  оболочки (App.tsx), над таб-контентом. См. layout--cop-shell.
+
+  Стек — plain React + глобальный App.css, без MUI/Zustand/router
+  (convention cop-stack). `InventoryParserView` — самодостаточный
+  feature-view (все секции + вся логика сессии внутри); App.tsx —
+  тонкая оболочка-обёртка. Рендерится как первый (сейчас единственный
+  живой) таб layout--cop-shell.
+
+source_files:
+  view: apps/cop/src/features/inventory-parser/InventoryParserView.tsx
+  styles: apps/cop/src/App.css
+  capture_view: apps/cop/src/components/CaptureView.tsx
+  grid_settings: apps/cop/src/components/GridSettings.tsx
+  inventory_result: apps/cop/src/components/InventoryResult.tsx
+  window_list: apps/cop/src/components/WindowList.tsx
+  diagnostic: apps/cop/src/pipeline/diagnostic.ts
+  annotate: apps/cop/src/utils/annotateCanvas.ts
+
+manuals: []
+behaviors:
+  - view--inventory-parser-registers-global-hotkeys

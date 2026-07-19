@@ -1,0 +1,31 @@
+id: other--cop-native-bridge-captures-window-without-focus
+kind: behavior
+namespace: cop
+entities: [other--cop-native-bridge]
+title: capture_window снимает окно по части заголовка без активации фокуса
+
+scenarios:
+  - given: в ОС открыто окно, часть заголовка которого совпадает с
+      title_pattern (case-insensitive, contains)
+    when: фронтенд вызывает invoke('capture_window', { titlePattern })
+    then: |
+      Rust находит первое подходящее окно через xcap Window::all, снимает
+      его capture_image() без переключения фокуса/активации, кодирует PNG
+      в base64 и возвращает CapturedWindow { title, width, height,
+      png_base64 }.
+
+  - given: подходящее окно свёрнуто
+    when: вызывается capture_window
+    then: возвращается Err «Окно … свёрнуто — сначала разверни его».
+
+  - given: ни одно окно не содержит паттерн либо паттерн пустой
+    when: вызывается capture_window
+    then: возвращается Err с понятным сообщением, снимок не делается.
+
+verified: true
+verified_at: 2026-07-19
+verified_note: |
+  Проверено чтением apps/cop/src-tauri/src/lib.rs: capture_window делает
+  xcap::Window::all → find по title.to_lowercase().contains, проверяет
+  is_minimized (Err), capture_image → PngEncoder → base64. xcap снимает
+  по буферу окна без активации.

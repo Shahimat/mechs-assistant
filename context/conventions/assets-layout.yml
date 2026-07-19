@@ -19,6 +19,13 @@ rule: |
     в `apps/web/dist/favicon/` через `CopyRspackPlugin`, ссылаются из
     HTML-шаблона относительными путями.
 
+  - `apps/cop/assets/images/` — **готовые webp UI-ассетов COP** (по аналогии
+    с `apps/web/assets/images`, но для десктоп-клиента). Импортируются через
+    alias `@img` (`apps/cop/tsconfig.json` `paths` + `apps/cop/rspack.config.js`
+    `resolve.alias`), в bundle попадают через правило `asset/resource` в
+    `apps/cop/rspack.config.js`. Исходники всё так же в корневом
+    `assets/raw/`.
+
   **Правило.** webp (или любой другой output-формат) **не хранится
   в `assets/raw/`** — там только заготовки. Скрипт `convert:webp` по
   умолчанию кладёт webp рядом с исходником; для корректного размещения

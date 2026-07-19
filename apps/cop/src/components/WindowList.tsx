@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { invoke } from '@tauri-apps/api/core';
-import type { WindowInfo } from '../types';
+import type { WindowInfo } from '@/types';
 
 interface WindowListProps {
   /** Клик по строке пробрасывает title наверх — юзер быстро выбирает целевое окно. */

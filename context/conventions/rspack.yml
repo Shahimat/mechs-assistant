@@ -11,7 +11,10 @@ rule: |
     - production: `npm run build` → `apps/web/dist/` (SPA) /
       `apps/cop/dist/` (COP, дальше упаковывается Tauri).
     - TS/TSX — `builtin:swc-loader` (без `ts-loader`).
-    - Alias `@` → `apps/web/src` (в SPA-конфиге).
+    - Alias'ы `resolve.alias`: SPA — `@`→`apps/web/src`,
+      `@img`→`apps/web/assets/images` (+ tsconfig `@build @raw`); COP —
+      `@`→`apps/cop/src`, `@img`→`apps/cop/assets/images`. Держать в
+      синхроне с `paths` в соответствующем `tsconfig.json`.
     - `optimization.usedExports + sideEffects` включены — MUI
       tree-shaking работает при именованных импортах (см. convention
       `mui-imports`).

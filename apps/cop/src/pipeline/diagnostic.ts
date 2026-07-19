@@ -1,9 +1,9 @@
 import { zipSync, strToU8 } from 'fflate';
 import { invoke } from '@tauri-apps/api/core';
 import { save } from '@tauri-apps/plugin-dialog';
-import type { CapturedWindow, Recognized } from '../types';
+import type { CapturedWindow, Recognized } from '@/types';
 import type { GridConfig, InventoryCorner } from './recognize';
-import { drawAnnotatedCapture, loadImageFromBase64 } from '../utils/annotateCanvas';
+import { drawAnnotatedCapture, loadImageFromBase64 } from '@/utils/annotateCanvas';
 
 /**
  * Phase K: сборка диагностического ZIP с полным контекстом сессии для

@@ -1,0 +1,39 @@
+id: other--cop-native-bridge-launches-latest-game
+kind: behavior
+namespace: cop
+entities: [other--cop-native-bridge]
+title: find_latest_game / launch_game выбирают и запускают самый свежий билд игры
+
+scenarios:
+  - given: в папке игры (base_dir или дефолт %LOCALAPPDATA%\MechsEarth\bin)
+      есть подпапки версий вида v<A-B-C-BUILD>, внутри которых лежит
+      MechsEarth.exe
+    when: фронтенд вызывает invoke('find_latest_game', { baseDir })
+    then: |
+      Rust читает base_dir, парсит имена подпапок parse_version (strip 'v',
+      split '-', в Vec<u64>), берёт максимум по лексикографическому
+      сравнению версий, проверяет наличие MechsEarth.exe и возвращает
+      GameBuild { version_label, dir_name, exe_path }. Запуск не делается.
+
+  - given: то же дерево папок
+    when: вызывается invoke('launch_game', { baseDir })
+    then: |
+      Тот же resolve последней версии + std::process::Command::spawn
+      найденного exe с current_dir = папка билда. Возвращает GameBuild
+      запущенной версии. Жёсткий путь к конкретной версии не хранится —
+      после установки апдейта (новая папка v…) запускается новый билд.
+
+  - given: base_dir пуст/не задан и %LOCALAPPDATA% недоступен (не-Windows),
+      либо папка не существует, либо в ней нет ни одного билда с MechsEarth.exe
+    when: вызывается find_latest_game или launch_game
+    then: возвращается Err с понятным сообщением (указать путь вручную /
+      папка не найдена / версий не найдено); процесс не стартует.
+
+verified: false
+verified_note: |
+  Спецификация добавлена вместе с реализацией (lib.rs: parse_version,
+  resolve_latest, find_latest_game, launch_game). Компиляция подтверждена
+  `cargo check` (Finished). НО фактический запуск игрового процесса и
+  выбор максимальной версии на реальном дереве папок не прогонялись —
+  нужен Windows с установленным клиентом MechsEarth. До прогона на
+  Windows остаётся verified: false.

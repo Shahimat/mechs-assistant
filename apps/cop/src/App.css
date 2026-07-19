@@ -1,11 +1,25 @@
+/* COP — always-dark игровая эстетика: слейт-панели, янтарный акцент.
+   Тема не зависит от prefers-color-scheme (см. convention cop-stack). */
 :root {
+  --bg: #1b1e24;
+  --panel: #22262e;
+  --elevated: #2b3038;
+  --border: #363c46;
+  --border-strong: #474e5a;
+  --text: #e6e8ec;
+  --text-muted: #9aa2ad;
+  --accent: #e0a020;
+  --accent-hover: #f2b53a;
+  --accent-soft: rgba(224, 160, 32, 0.14);
+  --danger: #ff8080;
+
   font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
   font-size: 14px;
   line-height: 1.5;
   font-weight: 400;
 
-  color: #0f0f0f;
-  background-color: #f6f6f6;
+  color: var(--text);
+  background-color: var(--bg);
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -26,12 +40,12 @@
   align-items: center;
   gap: 12px;
   padding: 10px 14px;
-  margin-bottom: 16px;
-  background: #eaf3ff;
-  border: 1px solid #b3d3ff;
+  margin: 12px;
+  background: #1a2a3a;
+  border: 1px solid #2a4060;
   border-radius: 6px;
   font-size: 13px;
-  color: #1e3a5f;
+  color: #b3d3ff;
 }
 
 .update-banner button {
@@ -47,33 +61,26 @@
 }
 
 .update-banner__error {
-  color: #b00020;
-}
-
-@media (prefers-color-scheme: dark) {
-  .update-banner {
-    background: #1a2a3a;
-    border-color: #2a4060;
-    color: #b3d3ff;
-  }
+  color: var(--danger);
 }
 
 h1 {
   margin: 0 0 8px;
   font-size: 20px;
+  color: var(--text);
 }
 
 h2 {
   margin: 0 0 8px;
   font-size: 15px;
   font-weight: 600;
-  color: #555;
+  color: var(--text-muted);
 }
 
 .section {
   margin-top: 24px;
   padding-top: 16px;
-  border-top: 1px solid #e0e0e0;
+  border-top: 1px solid var(--border);
 }
 
 .section:first-of-type {
@@ -97,13 +104,13 @@ button.link {
 }
 
 button.link:hover {
-  background: rgba(57, 108, 216, 0.08);
+  background: rgba(255, 255, 255, 0.05);
 }
 
 .capture-image {
   max-width: 100%;
   max-height: 60vh;
-  border: 1px solid #ccc;
+  border: 1px solid var(--border);
   border-radius: 4px;
   display: block;
   margin-top: 8px;
@@ -120,15 +127,15 @@ button.link:hover {
 .results th,
 .results td {
   padding: 4px 8px;
-  border-bottom: 1px solid #eee;
+  border-bottom: 1px solid var(--border);
   text-align: left;
   vertical-align: middle;
 }
 
 .results th {
-  background: rgba(0, 0, 0, 0.03);
+  background: rgba(255, 255, 255, 0.04);
   font-weight: 600;
-  color: #555;
+  color: var(--text-muted);
 }
 
 .results td.num {
@@ -137,14 +144,14 @@ button.link:hover {
 }
 
 .results tr.low-conf {
-  background: rgba(255, 200, 0, 0.08);
+  background: rgba(255, 200, 0, 0.12);
 }
 
 .cell-thumb {
   width: 32px;
   height: 32px;
   object-fit: contain;
-  border: 1px solid #ddd;
+  border: 1px solid var(--border);
   border-radius: 3px;
 }
 
@@ -152,8 +159,8 @@ button.link:hover {
   display: inline-block;
   margin-left: 6px;
   padding: 1px 6px;
-  background: #e0a020;
-  color: #fff;
+  background: var(--accent);
+  color: #1b1e24;
   border-radius: 3px;
   font-size: 11px;
 }
@@ -171,7 +178,7 @@ button.link:hover {
   flex-direction: column;
   gap: 2px;
   font-size: 12px;
-  color: #666;
+  color: var(--text-muted);
 }
 
 .grid-form label input {
@@ -179,14 +186,14 @@ button.link:hover {
 }
 
 .muted {
-  color: #666;
+  color: var(--text-muted);
   font-size: 13px;
   margin: 6px 0;
 }
 
 code {
   font-family: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
-  background: rgba(0, 0, 0, 0.06);
+  background: rgba(255, 255, 255, 0.1);
   padding: 1px 5px;
   border-radius: 4px;
   font-size: 0.9em;
@@ -203,14 +210,15 @@ code {
 }
 
 input,
-button {
+button,
+select {
   border-radius: 6px;
-  border: 1px solid #ccc;
+  border: 1px solid var(--border);
   padding: 6px 10px;
   font-size: 13px;
   font-family: inherit;
-  color: #0f0f0f;
-  background-color: #ffffff;
+  color: var(--text);
+  background-color: var(--elevated);
   transition: border-color 0.15s;
 }
 
@@ -219,22 +227,22 @@ button {
 }
 
 button:hover {
-  border-color: #396cd8;
+  border-color: var(--accent);
 }
 
 button:active {
-  background-color: #e8e8e8;
+  background-color: #1a1a1a;
 }
 
 input:focus,
 button:focus {
-  outline: 2px solid #396cd8;
+  outline: 2px solid var(--accent);
   outline-offset: 1px;
 }
 
 .error {
-  color: #b00020;
-  background: #fff0f0;
+  color: var(--danger);
+  background: #3a1a1a;
   padding: 8px 12px;
   border-radius: 6px;
   margin: 12px 0;
@@ -244,7 +252,7 @@ button:focus {
   list-style: none;
   padding: 0;
   margin: 8px 0;
-  border: 1px solid #e0e0e0;
+  border: 1px solid var(--border);
   border-radius: 6px;
   overflow: hidden;
 }
@@ -255,7 +263,7 @@ button:focus {
   align-items: center;
   gap: 16px;
   padding: 6px 12px;
-  border-top: 1px solid #eee;
+  border-top: 1px solid var(--border);
   font-size: 13px;
 }
 
@@ -274,76 +282,4 @@ button:focus {
   color: #888;
   font-size: 12px;
   font-family: 'JetBrains Mono', ui-monospace, monospace;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    color: #f6f6f6;
-    background-color: #1e1e1e;
-  }
-
-  code {
-    background: rgba(255, 255, 255, 0.1);
-  }
-
-  input,
-  button,
-  select {
-    color: #ffffff;
-    background-color: #2b2b2b;
-    border-color: #444;
-  }
-
-  button:active {
-    background-color: #1a1a1a;
-  }
-
-  .error {
-    color: #ff8080;
-    background: #3a1a1a;
-  }
-
-  .windows,
-  .capture-image {
-    border-color: #444;
-  }
-
-  .windows li {
-    border-top-color: #333;
-  }
-
-  .muted,
-  h2 {
-    color: #aaa;
-  }
-
-  .windows .meta {
-    color: #888;
-  }
-
-  .section {
-    border-top-color: #333;
-  }
-
-  button.link:hover {
-    background: rgba(255, 255, 255, 0.05);
-  }
-
-  .results th {
-    background: rgba(255, 255, 255, 0.04);
-    color: #aaa;
-  }
-
-  .results th,
-  .results td {
-    border-bottom-color: #333;
-  }
-
-  .results tr.low-conf {
-    background: rgba(255, 200, 0, 0.12);
-  }
-
-  .cell-thumb {
-    border-color: #444;
-  }
 }

@@ -1,7 +1,7 @@
 import { useEffect, useRef } from 'react';
-import type { CapturedWindow } from '../types';
-import type { GridConfig, InventoryCorner } from '../pipeline/recognize';
-import { drawAnnotatedCapture, loadImageFromBase64 } from '../utils/annotateCanvas';
+import type { CapturedWindow } from '@/types';
+import type { GridConfig, InventoryCorner } from '@/pipeline/recognize';
+import { drawAnnotatedCapture, loadImageFromBase64 } from '@/utils/annotateCanvas';
 
 interface CaptureViewProps {
   captured: CapturedWindow;

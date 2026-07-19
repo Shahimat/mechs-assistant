@@ -79,12 +79,18 @@ npm workspaces `["apps/*", "packages/*"]`, единый корневой
 
 ## Namespace-ы проекта
 
-Все относятся к `apps/web` (SPA-справочник):
+`apps/web` (SPA-справочник):
 
 - `catalog` — каталоги игровых сущностей, парсеры (wiki + Google Sheets), build-time merger.
 - `ui` — карточные view каталогов и общие UI-компоненты.
 - `comparison` — избранное (список ключей + drag-and-drop сортировка).
 - `persistence` — IndexedDB-персистенция состояния Zustand.
+
+`apps/cop` (Tauri-клиент клана):
+
+- `cop` — десктоп-клиент: Rust-мост (xcap/imageproc), pipeline распознавания
+  инвентаря (pHash + OCR), UI парсера, auto-updater. Стек намеренно отличается
+  от web (plain React + CSS, без MUI/Zustand/router) — см. convention `cop-stack`.
 
 ## Точки входа кода
 
@@ -119,10 +125,11 @@ SPA — под `apps/web/src/`:
 - `scripts/parser-google-sheets/index.ts` — синк overlay из Sheets.
 - `scripts/setup-sheets-columns/` — идемпотентная настройка колонок 10 листов (columns.ts + index.ts).
 
-## Импорты в apps/web/src/
+## Импорты в apps/*/src/
 
-- Алиасы (SPA): `@/` → `apps/web/src/`, `@build/` → корневой `.build/`, `@img/` → `apps/web/assets/images/`, `@raw/` → корневой `assets/raw/`. Конфиг — `apps/web/rspack.config.js` (`resolve.alias`) + `apps/web/tsconfig.json` (`paths`).
-- **Относительные импорты `../` в `apps/web/src/**/*.{ts,tsx}` запрещены** правилом
-  `no-restricted-imports` в `eslint.config.js`. Соседние импорты через `./`
-  разрешены. Для сущностей уровня повыше — только через `@/…`.
-- Правило не применяется к `scripts/**/*` (там нет alias-инфраструктуры, локальные `../` работают штатно).
+- Алиасы SPA: `@/` → `apps/web/src/`, `@build/` → корневой `.build/`, `@img/` → `apps/web/assets/images/`, `@raw/` → корневой `assets/raw/`. Конфиг — `apps/web/rspack.config.js` (`resolve.alias`) + `apps/web/tsconfig.json` (`paths`).
+- Алиасы COP: `@/` → `apps/cop/src/`, `@img/` → `apps/cop/assets/images/`. Конфиг — `apps/cop/rspack.config.js` (`resolve.alias`) + `apps/cop/tsconfig.json` (`paths`).
+- **Относительные импорты `../` в `apps/*/src/**/*.{ts,tsx}` запрещены** правилом
+  `no-restricted-imports` в `eslint.config.js` (и для web, и для COP). Соседние
+  импорты через `./` разрешены. Для сущностей уровня повыше — только через `@/…`.
+- Правило не применяется к `scripts/**/*` и `apps/cop/scripts/**/*` (там нет alias-инфраструктуры, локальные `../` работают штатно).

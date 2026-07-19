@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { LazyStore } from '@tauri-apps/plugin-store';
-import { DEFAULT_GRID, type GridConfig } from '../pipeline/recognize';
+import { DEFAULT_GRID, type GridConfig } from '@/pipeline/recognize';
 
 interface GridSettingsProps {
   onChange: (grid: GridConfig) => void;
