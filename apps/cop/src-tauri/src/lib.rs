@@ -800,6 +800,15 @@ mod win {
     const WINDOW_WAIT: Duration = Duration::from_secs(15);
     const POLL_STEP: Duration = Duration::from_millis(250);
 
+    /// Пауза между стартами инстансов при мультизапуске (после появления окна
+    /// предыдущего). У игры общий на всю папку version-файл; лаунчер трогает
+    /// его на этапе «Проверка обновления» уже ПОСЛЕ показа окна, поэтому мало
+    /// дождаться окна — нужен grace, чтобы предыдущий лаунчер прошёл проверку
+    /// и отпустил файл. Иначе одновременные лаунчеры ловят «файл версии не
+    /// корректен» (гонка чтения/записи). Если проверка версии на медленном
+    /// коннекте длиннее — увеличить.
+    const LAUNCH_STAGGER: Duration = Duration::from_secs(5);
+
     struct RawWindow {
         hwnd: HWND,
         pid: u32,
@@ -941,31 +950,30 @@ mod win {
         let exe = std::path::PathBuf::from(&build.exe_path);
         let cwd = exe.parent().map(|p| p.to_path_buf());
 
-        // 1) стартуем N инстансов, запоминаем PID каждого в порядке запуска.
-        let mut pids: Vec<Option<u32>> = Vec::with_capacity(slots.len());
+        // Запуск ПОСЛЕДОВАТЕЛЬНЫЙ, не залпом: спавн → ждём окно этого инстанса
+        // → раскладываем → пауза (LAUNCH_STAGGER) перед следующим стартом.
+        // Иначе одновременные лаунчеры конкурируют за общий version-файл папки
+        // → «файл версии не корректен» / зависание на «Проверка обновления».
         let mut warnings = Vec::new();
         let mut launched = 0usize;
-        for (i, _) in slots.iter().enumerate() {
+        let mut arranged = 0usize;
+        let total = slots.len();
+        for (i, slot) in slots.iter().enumerate() {
             let mut command = std::process::Command::new(&exe);
             if let Some(dir) = &cwd {
                 command.current_dir(dir);
             }
-            match command.spawn() {
+            let pid = match command.spawn() {
                 Ok(child) => {
-                    pids.push(Some(child.id()));
                     launched += 1;
+                    child.id()
                 }
                 Err(e) => {
-                    pids.push(None);
                     warnings.push(format!("Инстанс {}: не удалось запустить — {}", i + 1, e));
+                    continue;
                 }
-            }
-        }
+            };
 
-        // 2) для каждого PID ждём окно и кладём в соответствующий слот.
-        let mut arranged = 0usize;
-        for (i, slot) in slots.iter().enumerate() {
-            let Some(pid) = pids[i] else { continue };
             match wait_for_window(pid) {
                 Some(hwnd) if arrange_window(hwnd, slot) => arranged += 1,
                 Some(_) => warnings.push(format!(
@@ -979,6 +987,12 @@ mod win {
                     pid,
                     WINDOW_WAIT.as_secs()
                 )),
+            }
+
+            // Grace перед следующим стартом (после последнего не нужен): даём
+            // текущему лаунчеру пройти проверку версии и отпустить файл.
+            if i + 1 < total {
+                std::thread::sleep(LAUNCH_STAGGER);
             }
         }
 
