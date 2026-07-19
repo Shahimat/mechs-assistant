@@ -34,6 +34,10 @@ goals:
         file: goal--cop-assistant.yaml
         status: active
         one_liner: Помощник по рутине игры (хоткеи, автосброс лута, автопополнение боеприпасов, автоподсчёт) + парсер инвентаря.
+      - key: cop-launch-game
+        file: goal--cop-launch-game.yaml
+        status: planned
+        one_liner: Главная страница COP (первый маршрут) + запуск игры сверху — всегда самая свежая версия клиента, устойчиво к смене папки версии после апдейта.
       - key: cop-warehouse
         file: goal--cop-warehouse.yaml
         status: planned
