@@ -10,10 +10,11 @@
   padding-top: 20px;
 }
 
-/* Горизонтальная рельса icon-табов сверху. */
+/* Горизонтальная шапка сверху: бренд слева, рельса icon-табов справа. */
 .tab-rail {
   display: flex;
-  gap: 6px;
+  align-items: center;
+  gap: 14px;
   padding: 8px 10px;
   background: var(--panel);
   border-bottom: 1px solid var(--border-strong);
@@ -21,6 +22,32 @@
   position: sticky;
   top: 0;
   z-index: 20;
+}
+
+/* Бренд: логотип + название, слева от табов. */
+.tab-rail__brand {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+.tab-rail__logo {
+  width: 30px;
+  height: 30px;
+  object-fit: contain;
+}
+
+.tab-rail__title {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--text);
+  white-space: nowrap;
+}
+
+.tab-rail__tabs {
+  display: flex;
+  gap: 6px;
 }
 
 .icon-tab-wrap {

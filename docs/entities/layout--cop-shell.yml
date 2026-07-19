@@ -15,7 +15,10 @@ description: |
   icon-кнопки, плотные панели с рамкой.
 
   **Состав:**
-    - `TabRail` — горизонтальная рельса-панель icon-кнопок сверху.
+    - `TabRail` — горизонтальная шапка сверху: слева бренд (шестиугольный
+      логотип «Мехи» + название «Mechs.COP»), справа рельса icon-кнопок.
+      Логотип — тот же, что иконка приложения (исходник
+      assets/raw/logo_hex.png).
     - `IconTab` — квадратная беведённая кнопка; активная «вдавлена» +
       янтарная подсветка; disabled-плейсхолдер для ещё не сделанных фич.
     - `Tooltip` — свой, absolute-позиционируемый (не сдвигает layout, в
@@ -39,7 +42,8 @@ description: |
 
 source_files:
   app: apps/cop/src/App.tsx # тонкая оболочка: UpdateBanner + TabRail + keep-mounted вью
-  tab_rail: apps/cop/src/shell/TabRail.tsx
+  tab_rail: apps/cop/src/shell/TabRail.tsx # бренд (логотип + «Mechs.COP») слева + рельса табов
+  logo: apps/cop/assets/images/logo.webp # шестиугольный логотип в шапке (исходник — assets/raw/logo_hex.png, он же источник иконок приложения)
   icon_tab: apps/cop/src/shell/IconTab.tsx # квадратная кнопка + hover-тултип
   tooltip: apps/cop/src/shell/Tooltip.tsx
   registry: apps/cop/src/shell/features.ts # реестр фич (FeatureTab[]), 'home' первым

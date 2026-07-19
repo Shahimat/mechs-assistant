@@ -1,0 +1,61 @@
+id: other--cop-native-bridge-remaps-mouse-to-active-window
+kind: behavior
+namespace: cop
+entities: [other--cop-native-bridge]
+title: start/stop_mouse_remap шлёт клавишу только в активное окно игры по нажатию кнопки мыши
+
+scenarios:
+  - given: игра нативно не понимает боковые кнопки мыши (XButton1/XButton2);
+      сейчас игрок закрывает это AHK-скриптом (ControlSend "4"/"6" в
+      MechsEarth.exe). COP на Windows
+    when: фронтенд вызывает invoke('start_mouse_remap', { bindings })
+    then: |
+      `bindings` — массив `{ button, key }` (какая кнопка мыши ребиндится на
+      какую игровую клавишу; дефолт повторяет AHK: XButton1→'4',
+      XButton2→'6', но настраивается). Rust ставит низкоуровневый хук мыши
+      `WH_MOUSE_LL` на выделенном потоке с message-loop (GetMessage), маппинг
+      сохраняется в tauri-store (ключ mouseRemap) — переживает перезапуск.
+      Возвращается Ok. Windows-only.
+
+  - given: хук установлен, ребинд активен, открыто несколько окон игры
+      (может быть и 5)
+    when: пользователь жмёт замапленную кнопку мыши, и активное окно
+      (GetForegroundWindow) принадлежит процессу MechsEarth.exe
+    then: |
+      Клавиша шлётся ТОЛЬКО в это активное окно: PostMessage WM_KEYDOWN +
+      WM_KEYUP с VK замапленной клавиши на HWND переднего окна. Остальные
+      окна игры НЕ получают ввод (ключевое требование — работать на активном
+      окне, а не на всех). Исходное mouse-событие проглатывается (return 1),
+      чтобы кнопка не срабатывала дважды.
+
+  - given: хук установлен, но активное окно — не окно игры (браузер, COP,
+      рабочий стол)
+    when: пользователь жмёт ту же кнопку мыши
+    then: |
+      Событие пропускается без изменений (CallNextHookEx) — боковая кнопка
+      работает штатно вне игры, ребинд не вмешивается в чужие приложения.
+
+  - given: ребинд активен
+    when: вызывается invoke('stop_mouse_remap')
+    then: хук снимается (UnhookWindowsHookEx), message-loop поток
+      останавливается; кнопки мыши снова ведут себя нативно.
+
+  - given: COP запущен не на Windows (dev macOS/Linux)
+    when: вызывается start_mouse_remap или stop_mouse_remap
+    then: возвращается Err «доступно только на Windows» (low-level mouse hook +
+      PostMessage — Windows-API; игра всё равно Windows-only).
+
+verified: false
+verified_note: |
+  Реализовано в src-tauri/src/lib.rs, модуль `mouse_remap` под #[cfg(windows)]
+  (SetWindowsHookExW WH_MOUSE_LL на выделенном потоке с message-loop; колбэк
+  дёшево отсеивает немапленные события до проверки активного окна;
+  GetForegroundWindow + сверка PID с MechsEarth.exe через ToolHelp-снимок;
+  PostMessage WM_KEYDOWN/WM_KEYUP, return 1 — проглатывание; stop через
+  PostThreadMessage WM_QUIT + join). Маппинг персистится фронтендом в
+  tauri-store (ключ mouseRemap), дефолт XButton1→'4'/XButton2→'6'. Весь код
+  Windows-only — на macOS не компилируется и `cargo check`/тестами НЕ
+  проверяется (провалидированы лишь сигнатуры winapi ручным обзором + feature-
+  флаги libloaderapi/processthreadsapi в Cargo.toml). До прогона на Windows с
+  реальным мультибоксом (хук ловит боковые кнопки, клавиша уходит только в
+  активное окно, вне игры кнопки штатны) — verified: false.

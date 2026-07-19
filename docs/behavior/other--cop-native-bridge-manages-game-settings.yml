@@ -1,0 +1,82 @@
+id: other--cop-native-bridge-manages-game-settings
+kind: behavior
+namespace: cop
+entities: [other--cop-native-bridge]
+title: read/write/restore/strip_registration + open_game_folder читают, правят и восстанавливают UserDefault.xml
+
+scenarios:
+  - given: конфиг игры лежит по пути `…\MechsEarth\UserDefault.xml` (на уровень
+      выше папки `bin`, которую хранит gameDir); формат — плоский
+      `<userDefaultRoot>` с листовыми `<Key type="int|bool|float|str">value</Key>`
+    when: фронтенд вызывает invoke('read_game_settings', { baseDir })
+    then: |
+      Rust резолвит путь конфига: `gameDir.parent()/UserDefault.xml`
+      (дефолт `%LOCALAPPDATA%\MechsEarth\UserDefault.xml`, если baseDir пуст).
+      Парсинг ТОЛЕРАНТНЫЙ: часть ключей содержит `:` и `::`
+      (`Keyboard:UseWeapon1`, `Game:Colors:MySet`, `Render:QualityGraphics`) —
+      это невалидные имена элементов по строгому XML, но игра читает своим
+      снисходительным парсером; поэтому читаем построчно/толерантно, не через
+      namespace-aware XML. Возвращается упорядоченный список
+      `SettingEntry { key, type, value }` в исходном порядке файла (порядок
+      сохраняем для обратной записи). Ошибка чтения/отсутствие файла — Err.
+
+  - given: конфиг читается впервые и `…\MechsEarth\UserDefault.backup.xml`
+      ещё нет
+    when: идёт read_game_settings
+    then: |
+      Создаётся бэкап-дамп рядом с конфигом (`UserDefault.backup.xml`) —
+      снимок текущих настроек для кнопки «вернуть как было». В бэкап НЕ
+      попадают регистрационные ключи `LastEmail` и `LicenseKey` (дамп не
+      должен содержать регданные). Если бэкап уже есть — не перезаписываем
+      (первый снимок = эталон «как было до правок»).
+
+  - given: пользователь отредактировал значения в модалке
+    when: вызывается invoke('write_game_settings', { baseDir, entries })
+    then: |
+      Rust пишет значения обратно в `UserDefault.xml`, СОХРАНЯЯ формат:
+      исходный порядок ключей, type-атрибуты, а также нетронутые и
+      нередактируемые ключи (регистрация, непрозрачные блобы `UI:Setting`
+      base64, `Game:Colors:*`) остаются как были — правим только пришедшие
+      в entries. Ошибка записи — Err.
+
+  - given: в конфиге есть регистрационные данные (`LastEmail`, `LicenseKey`)
+    when: вызывается invoke('strip_registration', { baseDir })
+    then: |
+      Значения `LastEmail` и `LicenseKey` в живом конфиге затираются
+      (пустая строка), сами ключи остаются на месте. Функция «удалить из
+      конфига данные регистрации» — email + лицензионный ключ.
+
+  - given: бэкап-дамп существует (создан при первом чтении, без регданных)
+    when: вызывается invoke('restore_game_settings', { baseDir })
+    then: |
+      Rust применяет значения из `UserDefault.backup.xml` к живому конфигу —
+      «вернуть дефолтные». КРИТИЧНО: текущие `LastEmail` и `LicenseKey`
+      сохраняются как есть и НЕ затираются (в бэкапе их нет намеренно —
+      восстановление настроек не должно разлогинивать игру). Нет бэкапа — Err.
+
+  - given: путь до папки игры известен (gameDir или дефолт)
+    when: вызывается invoke('open_game_folder', { baseDir })
+    then: |
+      Открывается системный файловый менеджер на папке игры
+      (`…\MechsEarth`, родитель `bin`/`UserDefault.xml`) — быстрый доступ
+      к файлам билда/конфига. На Windows — Explorer.
+
+  - given: COP запущен не на Windows (dev macOS/Linux)
+    when: вызывается read/write/restore/strip_registration с явным baseDir
+    then: |
+      Чтение/запись/восстановление/затирание — чистые fs+XML, не привязаны
+      к Windows-API: при явном baseDir работают и в dev (можно проверить
+      парсинг и обратную запись на тестовом файле). Только `open_game_folder`
+      (Explorer) — Windows-специфичен, иначе Err; дефолтный путь через
+      `%LOCALAPPDATA%` разворачивается лишь на Windows.
+
+verified: false
+verified_note: |
+  Реализовано в src-tauri/src/lib.rs (read/write/restore/strip_registration/
+  open_game_folder). Ядро fs+XML покрыто unit-тестами `settings_tests`
+  (3 passed на macOS): толерантный парсинг ключей с `:`/`::` с сохранением
+  порядка и type-атрибутов, точечная обратная запись значений (нетронутые
+  ключи не трогаются), registration_blank затирает данные, сохраняя ключи.
+  НЕ проверено на Windows/e2e: резолв дефолтного пути через %LOCALAPPDATA%,
+  создание бэкапа на реальном файле, open_game_folder (Explorer), интеграция
+  в живом приложении. До прогона на Windows с реальным конфигом — verified: false.

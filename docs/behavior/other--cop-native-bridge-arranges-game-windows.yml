@@ -1,0 +1,51 @@
+id: other--cop-native-bridge-arranges-game-windows
+kind: behavior
+namespace: cop
+entities: [other--cop-native-bridge]
+title: list_game_windows / launch_and_arrange читают и расставляют окна игры по пресету
+
+scenarios:
+  - given: запущены одно или несколько окон игры (процессы MechsEarth.exe),
+      COP на Windows
+    when: фронтенд вызывает invoke('list_game_windows')
+    then: |
+      Rust находит процессы MechsEarth.exe по имени exe, для каждого берёт
+      top-level видимое окно с ненулевым размером и возвращает
+      GameWindow { pid, title, x, y, width, height } — координаты абсолютные
+      (виртуальный рабочий стол, возможны отрицательные при мультимониторе).
+      Фронтенд сохраняет геометрию как пресет раскладки (tauri-store).
+
+  - given: сохранён пресет из N слотов { x, y, width, height }
+    when: вызывается invoke('launch_and_arrange', { baseDir, slots })
+    then: |
+      Rust резолвит последнюю версию (как launch_game) и запускает N =
+      slots.len() инстансов MechsEarth.exe (cwd = папка билда). Для каждого
+      нового PID поллит появление его top-level окна с таймаутом; как окно
+      появилось — SW_RESTORE + SetWindowPos в слот i (слот↔окно по порядку
+      запуска PID). Возвращает сводку: сколько запущено/размещено +
+      предупреждения по окнам, не появившимся за таймаут. Команда async,
+      блокирующий цикл — в spawn_blocking, главный поток не фризит.
+
+  - given: окно какого-то инстанса не появилось за таймаут (медленная
+      загрузка / игра не дала второй инстанс / окно под дочерним PID)
+    when: идёт launch_and_arrange
+    then: |
+      Это окно пропускается с предупреждением в сводке, остальные окна
+      всё равно раскладываются — частичный успех не роняет всю операцию.
+
+  - given: COP запущен не на Windows (dev macOS/Linux)
+    when: вызывается list_game_windows или launch_and_arrange
+    then: возвращается Err «доступно только на Windows» (перечисление и
+      позиционирование окон — Windows-API; игра всё равно Windows-only).
+
+verified: false
+verified_note: |
+  Реализовано (code-complete): list_game_windows / launch_and_arrange в
+  src-tauri/src/lib.rs, модуль `win` под #[cfg(windows)] на crate `winapi`
+  (EnumWindows + ToolHelp32 для окон MechsEarth.exe по имени exe,
+  SetWindowPos + SW_RESTORE, поллинг PID-окна с таймаутом 15с, частичный
+  успех), обе команды async + spawn_blocking. `cargo check` на macOS
+  проходит (компилируется not(windows) ветка → Err), TS typecheck + eslint
+  чисты. Windows-специфичный код не собирается `cargo check` на macOS —
+  нужен билд и прогон на Windows с установленной игрой и открытым
+  мультибоксом. До этого verified: false.

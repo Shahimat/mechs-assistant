@@ -47,3 +47,23 @@ tokio = { version = "1", features = ["full"] }
 base64 = "0.22"
 # Template matching для Phase D — поиск UI-рамки инвентаря на скрине.
 imageproc = "0.25"
+
+# Раскладка окон мультибокса (list_game_windows / launch_and_arrange):
+# перечисление окон процессов MechsEarth.exe (EnumWindows + ToolHelp) и их
+# позиционирование (SetWindowPos). Плюс нативный ребинд мыши
+# (start/stop_mouse_remap): низкоуровневый хук WH_MOUSE_LL на выделенном
+# потоке (libloaderapi — GetModuleHandleW, processthreadsapi —
+# GetCurrentThreadId). winapi 0.3 заморожен — стабильные C-сигнатуры без
+# дрейфа между версиями (важно: этот код не собирается `cargo check` на
+# macOS, проверяется только Windows-билдом). Только под Windows — игра
+# Windows-only.
+[target.'cfg(windows)'.dependencies]
+winapi = { version = "0.3", features = [
+    "winuser",
+    "tlhelp32",
+    "handleapi",
+    "windef",
+    "minwindef",
+    "libloaderapi",
+    "processthreadsapi",
+] }

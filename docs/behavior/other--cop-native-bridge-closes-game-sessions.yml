@@ -1,0 +1,32 @@
+id: other--cop-native-bridge-closes-game-sessions
+kind: behavior
+namespace: cop
+entities: [other--cop-native-bridge]
+title: close_all_games закрывает все запущенные сессии игры одним вызовом
+
+scenarios:
+  - given: запущено одно или несколько окон игры (процессы MechsEarth.exe),
+      COP работает на Windows
+    when: фронтенд вызывает invoke('close_all_games')
+    then: |
+      Rust форсированно снимает все процессы игры: taskkill /F /IM
+      MechsEarth.exe. Закрываются все сессии разом (мультибокс на несколько
+      окон — тоже). Возвращает Ok(()).
+
+  - given: ни одной сессии игры не запущено (taskkill возвращает код 128
+      «процесс не найден»)
+    when: вызывается close_all_games
+    then: код 128 трактуется как успех «закрывать нечего» — Ok(()), не Err.
+
+  - given: COP запущен не на Windows (dev-окружение macOS/Linux)
+    when: вызывается close_all_games
+    then: возвращается Err «доступно только на Windows» (taskkill —
+      Windows-инструмент, игра всё равно Windows-only).
+
+verified: false
+verified_note: |
+  Спецификация добавлена вместе с реализацией (lib.rs: close_all_games,
+  cfg(target_os = "windows") + taskkill). Компиляция подтверждена
+  `cargo check` (Finished). Фактическое закрытие процессов игры на Windows
+  не прогонялось — нужен Windows с запущенным клиентом MechsEarth. До
+  прогона остаётся verified: false.

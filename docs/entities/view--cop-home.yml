@@ -9,17 +9,61 @@ description: |
   дальше может обрастать сводками других подцелей.
 
   **Блок запуска игры:**
-    - Заголовок + строка последней найденной версии (или подсказка «игра
-      не найдена»), подтягивается при монтировании через
-      invoke('find_latest_game').
+    - Собственного заголовка у блока нет — бренд (логотип + «Mechs.COP»)
+      живёт в шапке layout--cop-shell слева от табов. Первая строка —
+      последняя найденная версия (или подсказка «игра не найдена»),
+      подтягивается при монтировании через invoke('find_latest_game').
     - Кнопка «Запустить игру» → invoke('launch_game') — Rust выбирает
       подпапку с максимальной версией и стартует MechsEarth.exe. Всегда
       свежий билд независимо от смены папки версии после апдейта (см.
-      other--cop-native-bridge-launches-latest-game).
+      other--cop-native-bridge-launches-latest-game). Кулдаун-гард: во
+      время запуска и ~400мс после повторный клик игнорируется (кнопка
+      disabled) — защита от дабл-клика/спама, чтобы случайно не наплодить
+      инстансов.
+    - Кнопка «Закрыть все сессии» → invoke('close_all_games') — форсированно
+      снимает все процессы MechsEarth.exe разом (taskkill). Намеренно унесена
+      в крайнее правое положение ряда (порядок: запуск → открыть папку →
+      настройки → закрыть все сессии) — чтобы деструктивное действие не
+      нажали случайно.
+
+  **Блок раскладки окон (мультизапуск):**
+    - «Запомнить текущую раскладку» → invoke('list_game_windows') — считывает
+      геометрию открытых окон игры и сохраняет пресет `{ slots: {x,y,w,h}[] }`
+      в tauri-store (ключ windowLayout). Число слотов = сколько окон открыто
+      сейчас (произвольное, обычно ≤10). Ручного ввода координат нет —
+      только «запомни как сейчас».
+    - «Запустить и разложить» → invoke('launch_and_arrange', { baseDir, slots })
+      — запускает N = число слотов инстансов и раскладывает их окна по пресету.
+      Активна, только если пресет сохранён; на неё распространяется тот же
+      кулдаун-гард. См. other--cop-native-bridge-arranges-game-windows.
     - Настройка пути до папки игры (сворачиваемая): текстовое поле, пусто =
       дефолт %LOCALAPPDATA%\MechsEarth\bin. Персист в tauri-store
       (settings.json, ключ gameDir) — по аналогии с GridSettings парсера.
       «Сброс» очищает путь обратно к дефолту.
+    - Иконка-кнопка «Открыть папку игры» → invoke('open_game_folder') —
+      Explorer на `…\MechsEarth`.
+
+  **Блок настроек игры (редактор UserDefault.xml):**
+    - Иконка-шестерёнка открывает модалку редактора: invoke('read_game_settings')
+      отдаёт упорядоченный `SettingEntry[]`, при первом открытии Rust создаёт
+      бэкап-дамп без регданных. Редактор ГЕНЕРИЧЕСКИЙ — виджет по типу
+      (int/float → число, bool → тумблер, str → текст, `Keyboard:*` → захват
+      клавиши), ключи сгруппированы по префиксу до `:`. Сохранение →
+      invoke('write_game_settings') с сохранением формата/порядка/нетронутых
+      ключей.
+    - Регистрационные поля (`LastEmail`, `LicenseKey`) в редакторе скрыты;
+      единственный путь их тронуть — иконка-корзина «Удалить регданные»
+      (invoke('strip_registration')). «Вернуть как было» (invoke('restore_game_settings'))
+      применяет бэкап, сохраняя текущие регданные. См.
+      other--cop-native-bridge-manages-game-settings, view--cop-home-edits-game-settings.
+    - Секция ребинда мыши: «кнопка мыши → игровая клавиша» +
+      invoke('start_mouse_remap')/'stop_mouse_remap'; заменяет внешний
+      AHK-скрипт, клавиша уходит только в активное окно игры. См.
+      other--cop-native-bridge-remaps-mouse-to-active-window.
+
+  **Стиль главной — минимализм (icon-only):** действия на кнопках без
+  текста — только иконка + тултип по hover (переиспользуется shell Tooltip;
+  logo-кнопка запуска сохраняет webp-логотип «Мехи»). Иконки — lucide-react.
 
   Стек — plain React + CSS-модуль рядом (home.css), без MUI/Zustand/router
   (convention cop-stack). Скачивание последней версии и синхронизация
@@ -28,9 +72,13 @@ description: |
 source_files:
   view: apps/cop/src/features/home/HomeView.tsx
   styles: apps/cop/src/features/home/home.css
+  settings_modal: apps/cop/src/features/home/GameSettingsModal.tsx # редактор UserDefault.xml (feat)
   registry: apps/cop/src/shell/features.ts # таб 'home' первым, enabled
+  tooltip: apps/cop/src/shell/Tooltip.tsx # переиспользуется для icon-only кнопок главной
   launch_icon: apps/cop/assets/images/launch_icon.webp # логотип «Мехи» на кнопке запуска (исходник — assets/raw/launch_icon.png)
 
 manuals: []
 behaviors:
   - view--cop-home-launches-latest-game-on-click
+  - view--cop-home-manages-window-layout
+  - view--cop-home-edits-game-settings

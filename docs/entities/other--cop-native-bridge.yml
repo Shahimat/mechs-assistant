@@ -5,10 +5,11 @@ version: '0.x'
 
 description: |
   Rust-часть Tauri-клиента COP — мост между WebView и ОС/CV-библиотеками.
-  Семь команд через invoke_handler + набор Tauri-плагинов. UI, pHash и OCR
-  живут во фронтенде (parser--inventory / view--inventory-parser); Rust
+  Семнадцать команд через invoke_handler + набор Tauri-плагинов. UI, pHash и
+  OCR живут во фронтенде (parser--inventory / view--inventory-parser); Rust
   отвечает только за то, что нельзя сделать в WebView: снятие окон ОС,
-  template matching UI-рамки, запуск внешнего процесса игры.
+  template matching UI-рамки, запуск/закрытие внешних процессов игры,
+  расстановку их окон, правку конфига игры и нативный ребинд мыши.
 
   **Команды (`src-tauri/src/lib.rs`):**
     - `list_windows` — перечисление окон ОС (xcap): id/title/размер/minimized.
@@ -32,7 +33,56 @@ description: |
     - `launch_game(base_dir?)` — то же разрешение последней версии +
       `std::process::Command::spawn` найденного exe (cwd = папка билда).
       Жёсткий путь версии не хранится → после апдейта запускается новый
-      билд без правки настроек.
+      билд без правки настроек. `async` + `spawn_blocking`: `CreateProcess`
+      (его тормозит Defender) уходит в blocking-пул, главный поток не фризит.
+    - `close_all_games()` — закрывает все запущенные сессии игры разом:
+      форсированный `taskkill /F /IM MechsEarth.exe`. Код 128 (процессов
+      нет) трактуется как успех; на не-Windows — Err.
+    - `list_game_windows()` — перечисляет top-level видимые окна процессов
+      `MechsEarth.exe` с геометрией: `GameWindow { pid, title, x, y, width,
+      height }` (координаты абсолютные, в системе виртуального рабочего
+      стола → мультимонитор из коробки, x/y могут быть отрицательными).
+      Процессы ищутся по имени exe, не по заголовку (устойчиво к
+      локализации). Фронтенд использует для «запомнить текущую раскладку».
+      Windows-only (`#[cfg(windows)]`, `windows`-crate); иначе Err.
+    - `launch_and_arrange(base_dir?, slots)` — мультизапуск + раскладка:
+      запускает `slots.len()` инстансов последней версии (тот же resolve,
+      что launch_game), ждёт появления окна каждого нового PID (поллинг с
+      таймаутом), затем позиционирует окно i в слот i (`SetWindowPos`,
+      предварительно `SW_RESTORE`). `slots` — массив `{ x, y, width,
+      height }` из пресета. Сопоставление слот↔окно по порядку запуска PID.
+      Возвращает сводку (сколько запущено/размещено + предупреждения по
+      окнам, не появившимся за таймаут). Windows-only. `async` +
+      `spawn_blocking` (блокирующий цикл поллинга/спавна вне главного потока).
+    - `read_game_settings(base_dir?)` — читает конфиг игры
+      `…\MechsEarth\UserDefault.xml` (родитель `bin`; дефолт
+      `%LOCALAPPDATA%\MechsEarth\UserDefault.xml`). Толерантный парсинг
+      плоского XML (ключи с `:`/`::` невалидны по строгому XML, но игра их
+      читает) → упорядоченный `SettingEntry { key, type, value }`. При первом
+      чтении создаёт бэкап-дамп `UserDefault.backup.xml` БЕЗ регданных.
+    - `write_game_settings(base_dir?, entries)` — пишет значения обратно с
+      сохранением формата: исходный порядок ключей, type-атрибуты,
+      нетронутые/нередактируемые ключи (регистрация, блобы `UI:Setting`,
+      `Game:Colors:*`) остаются как были.
+    - `restore_game_settings(base_dir?)` — применяет `UserDefault.backup.xml`
+      («вернуть как было»), СОХРАНЯЯ текущие `LastEmail`/`LicenseKey` (в
+      бэкапе их нет — восстановление не разлогинивает игру).
+    - `strip_registration(base_dir?)` — затирает `LastEmail` и `LicenseKey`
+      в живом конфиге (удалить регданные: email + лицензионный ключ).
+    - `open_game_folder(base_dir?)` — открывает файловый менеджер на папке
+      игры `…\MechsEarth` (Explorer на Windows).
+    - `start_mouse_remap(bindings)` / `stop_mouse_remap()` — нативный ребинд
+      боковых кнопок мыши (замена AHK). `WH_MOUSE_LL` на выделенном потоке с
+      message-loop; по нажатию замапленной кнопки, если активное окно
+      (`GetForegroundWindow`) принадлежит `MechsEarth.exe`, шлёт клавишу
+      `PostMessage WM_KEYDOWN/WM_KEYUP` ТОЛЬКО в это окно (не во все) и
+      проглатывает исходное событие; иначе — пропускает штатно. Маппинг
+      `{ button, key }[]` персистится в tauri-store (ключ mouseRemap).
+      Windows-only.
+
+  read/write/restore/strip_registration — чистые fs+XML, при явном baseDir
+  работают и в dev (не Windows). open_game_folder + mouse-remap — Windows-only.
+  `find_latest_game` тоже `async` — скан папки не блокирует главный поток.
 
   **Плагины:** global-shortcut, store, updater, process, dialog.
 
@@ -49,3 +99,7 @@ manuals: []
 behaviors:
   - other--cop-native-bridge-captures-window-without-focus
   - other--cop-native-bridge-launches-latest-game
+  - other--cop-native-bridge-closes-game-sessions
+  - other--cop-native-bridge-arranges-game-windows
+  - other--cop-native-bridge-manages-game-settings
+  - other--cop-native-bridge-remaps-mouse-to-active-window

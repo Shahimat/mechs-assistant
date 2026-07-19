@@ -22,6 +22,8 @@ scenarios:
       найденного exe с current_dir = папка билда. Возвращает GameBuild
       запущенной версии. Жёсткий путь к конкретной версии не хранится —
       после установки апдейта (новая папка v…) запускается новый билд.
+      Команда async, а сам spawn вынесен в tauri spawn_blocking — старт
+      процесса (CreateProcess) не блокирует главный поток и UI.
 
   - given: base_dir пуст/не задан и %LOCALAPPDATA% недоступен (не-Windows),
       либо папка не существует, либо в ней нет ни одного билда с MechsEarth.exe
@@ -32,7 +34,8 @@ scenarios:
 verified: false
 verified_note: |
   Спецификация добавлена вместе с реализацией (lib.rs: parse_version,
-  resolve_latest, find_latest_game, launch_game). Компиляция подтверждена
+  resolve_latest, find_latest_game, launch_game — обе команды переведены
+  в async, spawn вынесен в spawn_blocking). Компиляция подтверждена
   `cargo check` (Finished). НО фактический запуск игрового процесса и
   выбор максимальной версии на реальном дереве папок не прогонялись —
   нужен Windows с установленным клиентом MechsEarth. До прогона на
