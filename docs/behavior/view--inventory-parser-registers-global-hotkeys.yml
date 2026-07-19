@@ -2,10 +2,10 @@ id: view--inventory-parser-registers-global-hotkeys
 kind: behavior
 namespace: cop
 entities: [view--inventory-parser]
-title: App регистрирует глобальные хоткеи снятия одиночной страницы и серии
+title: view--inventory-parser регистрирует глобальные хоткеи снятия одиночной страницы и серии
 
 scenarios:
-  - given: приложение COP смонтировано
+  - given: InventoryParserView смонтирован
     when: отрабатывает эффект регистрации
     then: |
       через tauri-plugin-global-shortcut регистрируются Alt+Q (снять
@@ -26,7 +26,9 @@ scenarios:
 verified: true
 verified_at: 2026-07-19
 verified_note: |
-  Проверено чтением apps/cop/src/App.tsx: register CAPTURE_HOTKEY 'Alt+Q'
+  Проверено чтением apps/cop/src/features/inventory-parser/InventoryParserView.tsx
+  (после refactor-выноса из App.tsx; логика хоткеев без изменений):
+  register CAPTURE_HOTKEY 'Alt+Q'
   / SERIES_PAGE 'Alt+Shift+Q' / SERIES_END 'Alt+Ctrl+Shift+Q' в
   useEffect([]); handler'ы через *Ref.current (синхронизация в useEffect
   без deps); unregisterAll до регистрации и в cleanup.

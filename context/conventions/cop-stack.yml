@@ -6,12 +6,16 @@ rule: |
 
   **Что в COP:**
     - React 19 + rspack (общее с web), TypeScript strict.
-    - Стили — глобальный `src/App.css` (обычный CSS, БЕЗ CSS-модулей, MUI,
-      styled(), темы). Тёмная тема — через `prefers-color-scheme`.
-    - Состояние — локальные React-хуки в App.tsx; персист — tauri-store
+    - Стили — глобальный `src/App.css` + `src/shell/shell.css` (обычный
+      CSS, БЕЗ CSS-модулей, MUI, styled()). Тема — always-dark, тёмная
+      игровая эстетика (слейт-панели, янтарный акцент, беведённые
+      квадратные кнопки), НЕ `prefers-color-scheme`.
+    - Иконки — `lucide-react` (line-иконки для фич-табов).
+    - Состояние — локальные React-хуки; персист — tauri-store
       (`settings.json`), НЕ Zustand и НЕ IndexedDB.
-    - Навигация — пока одностраничная (App.tsx-стек секций), react-router
-      нет. Таб-навигация (layout--cop-shell) — отдельная работа.
+    - Навигация — таб-шелл на React-стейте (`activeTab`), react-router
+      НЕТ; keep-mounted сохраняет session-state вкладок. См.
+      layout--cop-shell.
     - Нативка — Tauri-плагины (global-shortcut, store, updater, process,
       dialog) + Rust-мост (other--cop-native-bridge).
 

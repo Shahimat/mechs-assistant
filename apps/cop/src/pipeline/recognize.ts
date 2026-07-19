@@ -3,20 +3,6 @@ import type { CapturedWindow, Recognized } from '../types';
 import { computePHash, matchNearest, unresolved } from './phash';
 import { recognizeCount } from './ocr';
 
-/**
- * Phase D + E: полный пайплайн распознавания одной страницы инвентаря.
- *
- *   captured (PNG всего окна игры)
- *     → Rust `find_inventory_corner` → { x, y, template_w, template_h, score }
- *     → gridConfig (cell_size, cols, rows, offset_from_corner) → сетка ячеек
- *     → для каждой ячейки: pHash → matchNearest + OCR числа
- *     → Recognized[]
- *
- * Пороги/размеры сетки — параметры пайплайна (см. GridConfig). Первый
- * запуск с дефолтами: cell_size=35, cols=4, rows=6. Юзер калибрует
- * через UI (сохраняется в tauri-store, вне этого модуля).
- */
-
 export interface InventoryCorner {
   x: number;
   y: number;

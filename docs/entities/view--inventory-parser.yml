@@ -4,9 +4,9 @@ namespace: cop
 version: '0.x'
 
 description: |
-  Экран COP (сейчас единственный) — оркестратор парсера инвентаря.
-  `App.tsx` держит всё состояние сессии и рендерит вертикальный стек
-  секций; pipeline (parser--inventory) и Rust-мост
+  Экран COP (сейчас единственный живой таб) — оркестратор парсера
+  инвентаря. `InventoryParserView` держит всё состояние сессии и рендерит
+  вертикальный стек секций; pipeline (parser--inventory) и Rust-мост
   (other--cop-native-bridge) вызываются отсюда.
 
   **Секции:**
@@ -27,22 +27,22 @@ description: |
   Живые handler'ы держатся в ref (замыкание хоткея читает актуальный
   state, а не устаревший на момент регистрации).
 
-  **Апдейтер:** UpdateBanner — проверка при монтировании, баннер новой
-  версии → downloadAndInstall + relaunch (tauri-updater; разовая
-  настройка ключа — manual setup-tauri-updater-signing).
+  Апдейтер (UpdateBanner) — не часть этого view: рендерится на уровне
+  оболочки (App.tsx), над таб-контентом. См. layout--cop-shell.
 
   Стек — plain React + глобальный App.css, без MUI/Zustand/router
-  (convention cop-stack). Переезд на таб-навигацию (layout--cop-shell) —
-  отдельная работа программы cop.
+  (convention cop-stack). `InventoryParserView` — самодостаточный
+  feature-view (все секции + вся логика сессии внутри); App.tsx —
+  тонкая оболочка-обёртка. Рендерится как первый (сейчас единственный
+  живой) таб layout--cop-shell.
 
 source_files:
-  app: apps/cop/src/App.tsx
+  view: apps/cop/src/features/inventory-parser/InventoryParserView.tsx
   styles: apps/cop/src/App.css
   capture_view: apps/cop/src/components/CaptureView.tsx
   grid_settings: apps/cop/src/components/GridSettings.tsx
   inventory_result: apps/cop/src/components/InventoryResult.tsx
   window_list: apps/cop/src/components/WindowList.tsx
-  update_banner: apps/cop/src/components/UpdateBanner.tsx
   diagnostic: apps/cop/src/pipeline/diagnostic.ts
   annotate: apps/cop/src/utils/annotateCanvas.ts
 

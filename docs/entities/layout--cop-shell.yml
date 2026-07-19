@@ -1,0 +1,59 @@
+id: layout--cop-shell
+kind: entity
+namespace: cop
+version: '0.x'
+
+description: |
+  Оболочка десктоп-клиента COP — таб-навигация на React-стейте, без
+  react-router (см. convention cop-stack). Пришла на смену прежнему
+  одностраничному `App.tsx` (вертикальный стек секций парсера): теперь
+  `App.tsx` держит только shell (UpdateBanner + TabRail + keep-mounted
+  контент), а каждая фича — отдельный вью-таб.
+
+  Визуальный язык — always-dark тёмная игровая эстетика: слейт-фон
+  панелей, янтарный акцент на активном/фокусе, беведённые квадратные
+  icon-кнопки, плотные панели с рамкой.
+
+  **Состав:**
+    - `TabRail` — горизонтальная рельса-панель icon-кнопок сверху.
+    - `IconTab` — квадратная беведённая кнопка; активная «вдавлена» +
+      янтарная подсветка; disabled-плейсхолдер для ещё не сделанных фич.
+    - `Tooltip` — свой, absolute-позиционируемый (не сдвигает layout, в
+      духе convention interactive-stability): жирный заголовок +
+      приглушённое описание, задержка на hover.
+    - Реестр фич — массив дескрипторов
+      `{ id, icon (lucide-react), label, tooltip, Component, enabled }`.
+      Добавление хотелки = одна строка реестра + вью.
+
+  **Keep-mounted.** Активная фича сохраняет session-state при уходе на
+  другую: смонтированные вью прячутся (`hidden`/`display:none`), не
+  размонтируются. Сейчас живой таб один (view--inventory-parser), но
+  паттерн заложен под 2+.
+
+  **Табы (по подцелям program--cop).** Живой: Парсер инвентаря
+  (view--inventory-parser). Disabled-плейсхолдеры («скоро»): Помощник/
+  автоматизация, Клановый склад, Планировщик, Долги, Калькуляторы,
+  Командные цели, Войс/чат, ⚙ Настройки.
+
+source_files:
+  app: apps/cop/src/App.tsx # тонкая оболочка: UpdateBanner + TabRail + keep-mounted вью
+  tab_rail: apps/cop/src/shell/TabRail.tsx
+  icon_tab: apps/cop/src/shell/IconTab.tsx # квадратная кнопка + hover-тултип
+  tooltip: apps/cop/src/shell/Tooltip.tsx
+  registry: apps/cop/src/shell/features.ts # реестр фич (FeatureTab[])
+  styles: apps/cop/src/shell/shell.css # beveled-панели + янтарный акцент
+
+features_enabled:
+  - state-based-tabs
+  - icon-rail-with-tooltips
+  - keep-mounted-views
+  - always-dark-theme
+
+features_disabled:
+  - react-router # осознанно нет, см. convention cop-stack
+  - settings-tab-content # ⚙ пока disabled-плейсхолдер
+
+manuals: []
+behaviors:
+  - layout--cop-shell-switches-active-tab
+  - layout--cop-shell-shows-tooltip-on-hover

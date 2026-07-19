@@ -238,13 +238,19 @@ namespaces:
   cop:
     description: Десктоп-клиент клана (apps/cop, Tauri) — Rust-мост, pipeline распознавания инвентаря, UI парсера. Стек отличается от web (см. convention cop-stack).
     entities:
+      - id: layout--cop-shell
+        one_liner: 'Оболочка COP — таб-навигация на React-стейте (без router): icon-рельса квадратных беведённых кнопок + свои тултипы + keep-mounted вью + always-dark тёмная тема (слейт-панели, янтарный акцент); реестр фич (9 табов), живой — парсер, остальные подцели — disabled-плейсхолдеры.'
       - id: other--cop-native-bridge
         one_liner: 'Rust-часть Tauri COP — 5 команд (list_windows, capture_window без фокуса, find_inventory_corner template-matching в правой половине, debug_visualize_corner, write_file_base64) + плагины global-shortcut/store/updater/process/dialog.'
       - id: parser--inventory
         one_liner: 'Клиентский pipeline распознавания скрина инвентаря → Recognized[]: угол рамки (Rust) → сетка GridConfig (48/3/4) → pHash иконки + OCR цифры (tesseract) по ячейкам → дедуп серии; pHash-индекс 1025 иконок из data/icons/.'
       - id: view--inventory-parser
-        one_liner: 'Экран COP (App.tsx) — оркестратор парсера: целевое окно, настройки сетки, capture-оверлей (рамка+сетка), диагностика-ZIP, таблица результата, список окон; 3 глобальных хоткея; UpdateBanner. Plain React+CSS, без MUI/router.'
+        one_liner: 'Feature-view парсера (features/inventory-parser/InventoryParserView.tsx) — оркестратор: целевое окно, настройки сетки, capture-оверлей (рамка+сетка), диагностика-ZIP, таблица результата, список окон; 3 глобальных хоткея. Plain React+CSS, без MUI/router; первый таб cop-shell.'
     behaviors:
+      - id: layout--cop-shell-switches-active-tab
+        one_liner: Клик по icon-табу переключает activeTab-стейт; неактивные вью не размонтируются (keep-mounted) — session-state сохраняется.
+      - id: layout--cop-shell-shows-tooltip-on-hover
+        one_liner: Hover по icon-кнопке показывает свой absolute-тултип (заголовок+описание, layout не сдвигает); disabled-плейсхолдер → «скоро».
       - id: other--cop-native-bridge-captures-window-without-focus
         one_liner: capture_window снимает окно по части заголовка через xcap без активации фокуса; свёрнутое/ненайденное → Err.
       - id: parser--inventory-recognizes-page-from-capture
