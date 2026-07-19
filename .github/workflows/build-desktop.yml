@@ -1,39 +1,23 @@
 name: build-desktop
 
-# Собирает Tauri-приложение apps/cop (COP — десктоп-клиент клана) под
-# Windows.
-#
-# Триггеры:
-#   - push в develop/main с изменениями в apps/cop/** или самом
-#     workflow-файле (автобилд без ручных кликов);
-#   - workflow_dispatch для ручного запуска с выбором debug/release
-#     профиля (диагностика проблемных билдов).
-#
-# Монорепо: npm workspaces, единый package-lock.json в корне. `npm ci`
-# ставит ВСЕ workspaces сразу (корневая команда), потом сборка идёт из
-# apps/cop. beforeBuildCommand (`npm run build` = rspack) и tauri-action
-# работают с уже установленными зависимостями workspace.
-#
-# Два job'а:
-#   - build-dev: любой push НЕ в main или workflow_dispatch. Артефакты
-#     (.exe, .msi, NSIS setup) в Actions → run → Artifacts на 30 дней.
-#     Итеративный тестинг разработчика.
-#   - release: push в main. Через tauri-apps/tauri-action билдит,
-#     подписывает Ed25519-ключом, создаёт GitHub Release с .msi.zip +
-#     latest.json манифестом, который auto-updater фетчит из клиента.
-#     Версия = 0.1.<run_number>, тег = mechs-cop-v<version>.
-#     Долгосрочное хранение релизов (пока репозиторий существует).
-
 on:
   push:
-    branches: [develop, main]
+    branches: [develop]
     paths:
       - 'apps/cop/**'
       - '.github/workflows/build-desktop.yml'
   workflow_dispatch:
     inputs:
+      job:
+        description: 'Что собрать: dev (тест-артефакты) или release (публикация)'
+        required: true
+        default: 'dev'
+        type: choice
+        options:
+          - dev
+          - release
       profile:
-        description: 'Cargo build profile'
+        description: 'Cargo-профиль (только для job=dev)'
         required: true
         default: 'release'
         type: choice
@@ -42,23 +26,14 @@ on:
           - debug
 
 concurrency:
-  # На push из develop cancel-in-progress=true — если пушим коммит поверх
-  # ещё не собранного, старый билд ни к чему. На main и workflow_dispatch
-  # concurrency-группа отдельная, чтоб ручные запуски и релизы не
-  # отменяли друг друга.
   group: build-desktop-${{ github.ref }}-${{ github.event_name }}
-  cancel-in-progress: ${{ github.event_name == 'push' && github.ref == 'refs/heads/develop' }}
+  cancel-in-progress: ${{ github.event_name == 'push' }}
 
 jobs:
   build-dev:
-    # Итеративная dev-сборка: push в develop / workflow_dispatch на любой
-    # ветке кроме main. Артефакты в CI Actions на 30 дней. Быстрее чем
-    # release-flow, не требует подписи.
-    if: github.ref != 'refs/heads/main'
+    if: github.event_name == 'push' || (github.event_name == 'workflow_dispatch' && inputs.job == 'dev')
     runs-on: windows-latest
     env:
-      # Профиль сборки. Из workflow_dispatch приходит через inputs;
-      # из push триггера inputs.profile пустой → fallback release.
       BUILD_PROFILE: ${{ inputs.profile || 'release' }}
     steps:
       - uses: actions/checkout@v4
@@ -68,7 +43,6 @@ jobs:
         with:
           node-version: '22'
           cache: 'npm'
-          # Единый lockfile монорепо — в корне.
           cache-dependency-path: package-lock.json
 
       - name: Setup Rust
@@ -80,19 +54,12 @@ jobs:
           workspaces: apps/cop/src-tauri
 
       - name: Install JS dependencies
-        # Корневой npm ci ставит все workspaces (apps/web, apps/cop,
-        # packages/shared) из единого lockfile.
         run: npm ci
 
       - name: Build Tauri app
         working-directory: apps/cop
         shell: pwsh
         run: |
-          # dev-сборка НЕ подписывает updater-артефакты: pubkey в
-          # tauri.conf.json глобальный, но приватного ключа в dev-job нет
-          # (подпись — только в release-job). Без override tauri падает
-          # «public key found, but no private key». Отключаем
-          # createUpdaterArtifacts через config-merge.
           '{"bundle":{"createUpdaterArtifacts":false}}' | Set-Content updater-off.json
           if ('${{ env.BUILD_PROFILE }}' -eq 'debug') {
             npm run tauri build -- --debug --config updater-off.json
@@ -100,34 +67,18 @@ jobs:
             npm run tauri build -- --config updater-off.json
           }
 
-      - name: Upload .exe artifact
+      - name: Upload .msi artifact
         uses: actions/upload-artifact@v4
         with:
-          name: mechs-cop-exe
-          path: apps/cop/src-tauri/target/${{ env.BUILD_PROFILE }}/mechs-cop.exe
-          if-no-files-found: warn
-          retention-days: 30
-
-      - name: Upload installer artifacts (.msi + .exe setup)
-        uses: actions/upload-artifact@v4
-        with:
-          name: mechs-cop-installers
-          path: |
-            apps/cop/src-tauri/target/${{ env.BUILD_PROFILE }}/bundle/msi/*.msi
-            apps/cop/src-tauri/target/${{ env.BUILD_PROFILE }}/bundle/nsis/*.exe
+          name: mechs-cop-msi
+          path: apps/cop/src-tauri/target/${{ env.BUILD_PROFILE }}/bundle/msi/*.msi
           if-no-files-found: warn
           retention-days: 30
 
   release:
-    # Релиз-сборка: только push в main. Строит через tauri-action, который
-    # автоматически: (a) подписывает .msi.zip Ed25519-ключом из secret,
-    # (b) создаёт/обновляет GitHub Release с тегом, (c) генерит latest.json
-    # с сигнатурами — то, что фетчит auto-updater из клиента.
-    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    if: github.event_name == 'workflow_dispatch' && inputs.job == 'release' && github.ref == 'refs/heads/main'
     runs-on: windows-latest
     env:
-      # Версия = 0.1.<run_number>. Стабильно возрастает, не требует
-      # ручных бампов. Semver формально валиден.
       APP_VERSION: 0.1.${{ github.run_number }}
     steps:
       - uses: actions/checkout@v4
@@ -148,7 +99,6 @@ jobs:
           workspaces: apps/cop/src-tauri
 
       - name: Install JS dependencies
-        # Корневой npm ci — ставит workspace целиком до tauri-action.
         run: npm ci
 
       - name: Inject version into tauri.conf.json and package.json
@@ -175,16 +125,10 @@ jobs:
           tagName: mechs-cop-v${{ env.APP_VERSION }}
           releaseName: 'Mechs COP v${{ env.APP_VERSION }}'
           releaseBody: |
-            Автосборка из main (commit ${{ github.sha }}).
+            Ручная сборка из main (commit ${{ github.sha }}).
 
-            Установка: скачай `.msi` или NSIS `-setup.exe` ниже,
-            запусти. Уже установленное приложение обновится
-            автоматически — не надо вручную качать.
+            Установка: скачай `.msi` ниже и запусти. Уже установленное
+            приложение обновится автоматически — не надо вручную качать.
           releaseDraft: false
           prerelease: false
-          # latest.json содержит подписанные ссылки на артефакты для
-          # auto-updater. Endpoint в tauri.conf.json именно на него смотрит.
           includeUpdaterJson: true
-          # У нас MSI как основной формат установки (NSIS тоже собирается,
-          # но updater предпочитает msi — стабильнее на Windows).
-          updaterJsonPreferNsis: false

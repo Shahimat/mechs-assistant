@@ -92,6 +92,8 @@ async function syncTodoSheet(sheets: ReturnType<typeof google.sheets>): Promise<
     const status = (row[2] ?? '').trim();
     const text = (row[3] ?? '').trim();
     if (!text) return;
+    // «Удален» — строка целиком исключается из системы (не в yml/JSON/UI).
+    if (status === 'Удален') return;
     if (!priority || !status) {
       console.warn(`  ⚠ todo row ${idx + 3}: priority/status пустые, пропуск`);
       return;
